@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+div {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 200px;
+  background: #000;
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  margin:6.25rem auto 0;
+}

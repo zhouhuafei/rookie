@@ -1,0 +1,100 @@
+@charset "gb2312";
+/* CSS Document */
+@import "base.less";
+/*feature*/
+.w{
+        width:96.875%;
+        margin:0 auto;
+}
+/*list-location*/
+#list-location{
+        border-top:30/64rem solid #e1e1e1;
+        h2{
+                .w;
+                color:#555555;
+                font-size:30/64rem;
+                a:last-of-type{
+                        color:@c;
+                }
+                padding:30/64rem 0 25/64rem 0;
+        }
+}
+/*dynamic*/
+#dynamic{
+        .w;
+        dl{
+                &:first-child{
+                        border-top:1px solid #787878;
+                }
+                .clear-fix;
+                height:80/64rem;
+                line-height:80/64rem;
+                font-size:32/64rem;
+                color:#555555;
+                border-bottom:1px solid #e6e6e6;
+                display:none;
+                &.active{
+                        display:block;
+                }
+                &:last-of-type{
+                        border-bottom:none;
+                }
+        }
+        .more.active{
+                display:none;
+        }
+        dt{
+                .fl;
+        }
+        dd{
+                .fr;
+                width:33/64rem;
+                height:28/64rem;
+                margin-top:26/64rem;
+                a{
+                        vertical-align:top;
+                }
+        }
+}
+/*more*/
+.more{
+        height:80/64rem;
+        line-height:80/64rem;
+        text-align:center;
+        color:@c;
+        font-size:30/64rem;
+        em{
+                transform:rotate(90deg) translateY(-10/64rem);
+                -webkit-transform:rotate(90deg) translateY(-10/64rem);
+        }
+}
+/*other-banner*/
+#other-banner{
+        border-top:30/64rem solid #e1e1e1;
+        height:273/64rem;
+        overflow:hidden;
+        position:relative;
+        .hd{
+                position:absolute;
+                z-index:4;
+                bottom:8/64rem;
+                text-align:center;
+                width:100%;
+                ul{
+                        .clear-fix;
+                        display:inline-block;
+                }
+                li{
+                        .fl;
+                        margin:0 5px;
+                        width:10px;
+                        height:10px;
+                        background:#4b4b4b;
+                        border-radius:50%;
+                        bottom:8px;
+                        &.on{
+                                background:@c;
+                        }
+                }
+        }
+}

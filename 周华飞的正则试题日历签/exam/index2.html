@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                text-align:center;
+                        }
+                </style>
+        </head>
+        <body>
+                <h2>找到字符串中最多的字符</h2>
+                <h3>asdasdasdasdasdasfaskldjalsjdlaksjflkasjlkdajlkasjdl</h3>
+                <h4></h4>
+                <h4></h4>
+                <script>
+                        var oH3=document.getElementsByTagName('h3')[0];
+                        var oH4=document.getElementsByTagName('h4')[0];
+                        var oH5=document.getElementsByTagName('h4')[1];
+                        function test(){
+                                var str=oH3.innerHTML;
+                                var obj={};
+                                for(var i=0;i<str.length;i++){
+                                        if(!obj[str.charAt(i)]){
+                                                obj[str.charAt(i)]=[];
+                                        }
+                                        obj[str.charAt(i)].push(str.charAt(i));
+                                }
+                                var num=0;
+                                var value='';
+                                for(var attr in obj){
+                                        if(obj.hasOwnProperty(attr)){
+                                                if(num<=obj[attr].length){
+                                                        num=obj[attr].length;
+                                                        value=obj[attr][0];
+                                                }
+                                        }
+                                }
+                                oH4.innerHTML='普通:出现次数最多的字符是'+value+',出现了'+num+'次';
+                        }
+                        test();
+                        function test2(){
+                                var str=oH3.innerHTML;
+                                var arr=str.split('');
+                                arr.sort();
+                                str=arr.join('');
+                                var re=/(\w)\1+/g;
+                                var num=0;
+                                var value='';
+                                str.replace(re,function($0,$1){
+                                        if(num<=$0.length){
+                                                num=$0.length;
+                                                value=$1;
+                                        }
+                                });
+                                oH5.innerHTML='普通:出现次数最多的字符是'+value+',出现了'+num+'次';
+                        }
+                        test2();
+                </script>
+        </body>
+</html>

@@ -1,0 +1,214 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+html {
+        font-size: 62.5%;
+}
+body, div, menu, ol, ul, li, dl, dd, dt, h1, h2, h3, h4, h5, h6, input, p, form, header, nav, article, section, aside, footer, video, audio, figure, textarea {
+        padding: 0;
+        margin: 0;
+}
+input, select, textarea, img, area {
+        outline: none;
+        border: none;
+}
+input, select, textarea {
+        background: #FFF;
+}
+mark {
+        background: none;
+}
+img {
+        vertical-align: middle;
+}
+textarea {
+        resize: none;
+}
+menu, ul, ol {
+        list-style-type: none;
+}
+body {
+        line-height: 1;
+}
+em, i, strong, b, small, h1, h2, h3, h4, h5, h6, address {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 100%;
+}
+span, b, em, i, strong, small, label, a, mark {
+        display: inline-block;
+}
+em, i, strong, b, small, span, li, a, mark {
+        transition: all 0.4s;
+}
+ul li {
+        transition: 0s;
+}
+ol li {
+        float: left;
+}
+ol:after {
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+        line-height: 0;
+        content: "";
+        font-size: 0;
+}
+a {
+        text-decoration: none;
+        outline: none;
+        color: inherit;
+}
+/*clearFix*/
+.clearFix {
+        clear: both;
+        *zoom: 1;
+}
+.clearFix:after {
+        clear: both;
+        display: block;
+        visibility: hidden;
+        height: 0;
+        line-height: 0;
+        content: "";
+        font-size: 0;
+}
+/*common*/
+.fl {
+        float: left;
+}
+.fr {
+        float: right;
+}
+.w1000 {
+        width: 1020px;
+        margin: 0 auto;
+        overflow: hidden;
+}
+/*banner*/
+#banner{ height: 437px; background: url(../images/banner.jpg) center no-repeat; margin-bottom: 50px;}
+#banner div{ width: 1000px; height: 100%; margin: 0 auto; position: relative;}
+#banner a{ width: 210px; height: 60px; position: absolute; right: 140px; bottom:65px;}
+/*nav*/
+.nav1 {
+        position: fixed;
+        right: 30px;
+        top: 75px;
+        width: 120px;
+        font-size: 14px;
+        z-index: 1000;
+}
+.nav1 li {
+        height: 33px;
+        margin: 1px auto;
+        background: url(../images/nav_xf_bg.png) no-repeat 0 -33px;
+        line-height: 33px;
+}
+.nav1 li a {
+        color: #b1b1b1
+}
+.nav1 li span {
+        width: 18px;
+        height: 18px;
+        padding: 0 10px 0 25px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        display: inline-block;
+}
+.nav1 .active span {
+        color: #006ec0
+}
+.nav1 .active {
+        height: 33px;
+        margin: 1px auto;
+        background: url(../images/nav_xf_bg.png) no-repeat 0 0;
+}
+.nav1 .active a {
+        color: #fff;
+}
+/*box*/
+#box {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.9;
+        filter: alpha(opacity=90);
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 2147483646;
+        display: none;
+}
+#box.active {
+        display: block;
+}
+/*boxs*/
+#popup {
+        width: 500px;
+        height: 420px;
+        background: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 10px;
+        display: none;
+        z-index: 2147483647;
+}
+#popup.active {
+        display: block;
+}
+#popup em {
+        width: 49px;
+        height: 49px;
+        cursor: pointer;
+        position: absolute;
+        right: -15px;
+        top: -15px;
+}
+#popup span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(../images/text.jpg) center center no-repeat;
+}
+/*main*/
+#main li{
+        width: 320px;
+        float: left;
+        padding: 0 10px;
+        text-align: center;
+}
+#main div{
+        width: 320px;
+        height: 240px;
+}
+#main img{
+        width: 100%;
+        height: 100%;
+        transition: 0.4s;
+        transform:translateY(200px) scale(0);
+        -webkit-transform:translateY(200px) scale(0);
+}
+#main img.active{
+        transform:translateY(0px) scale(1);
+        -webkit-transform:translateY(0px) scale(1);
+}
+#main p{
+        font-size: 22px;
+        color: #0063b4;
+        line-height: 100px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+}

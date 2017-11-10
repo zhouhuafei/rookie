@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                text-align:center;
+                        }
+                </style>
+        </head>
+        <body>
+                <h2>千分符</h2>
+                <h3>31895433242093872873982887</h3>
+                <h4></h4>
+                <h4></h4>
+                <script>
+                        var oH3=document.getElementsByTagName('h3')[0];
+                        var oH4=document.getElementsByTagName('h4')[0];
+                        var oH5=document.getElementsByTagName('h4')[1];
+                        function test(){
+                                var str=oH3.innerHTML;
+                                var remainder=str.length%3;
+                                var remainderStr='';
+                                var arr=[];
+                                if(remainder!=0){
+                                        remainderStr=str.substring(0,remainder);
+                                        arr.push(remainderStr);
+                                }
+                                str=str.substring(remainder);
+                                var num=0;
+                                var compose='';
+                                for(var i=0;i<str.length;i++){
+                                        num++;
+                                        compose+=str.charAt(i);
+                                        if(num==3){
+                                                arr.push(compose);
+                                                num=0;
+                                                compose='';
+                                        }
+                                }
+                                str=arr.join(',');
+                                oH4.innerHTML='普通:'+str;
+                        }
+                        test();
+                        function test2(){
+                                var str=oH3.innerHTML;
+                                //var re=/(?=(?!\b)(\d{3})+$)/g;
+                                var re=/(?!\b)(?=(\d{3})+$)/g;
+                                str=str.replace(re,',');
+                                oH5.innerHTML='正则:'+str;
+                        }
+                        test2();
+                </script>
+        </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>copy</title>
+  </head>
+  <body>
+    <h1>点击复制(文本框hahahahah)</h1>
+    <form action=""><label for="user"></label><input id="user" name="user" type="text" value="hahahahah"></form>
+    <script>
+      document.onclick=function(){
+        document.getElementsByTagName('input')[0].select();
+        this.execCommand('Copy');
+      }
+    </script>
+  </body>
+</html>

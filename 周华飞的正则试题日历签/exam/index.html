@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                text-align:center;
+                        }
+                </style>
+        </head>
+        <body>
+                <h2>转驼峰的两种方法</h2>
+                <h3>data-myself-defined</h3>
+                <h4></h4>
+                <h4></h4>
+                <script>
+                        var oH3=document.getElementsByTagName('h3')[0];
+                        var oH4=document.getElementsByTagName('h4')[0];
+                        var oH5=document.getElementsByTagName('h4')[1];
+                        function test(){
+                                var str=oH3.innerHTML;
+                                var arr=str.split('-');
+                                for(var i=1;i<arr.length;i++){
+                                        arr[i]=arr[i][0].toUpperCase()+arr[i].substring(1);
+                                }
+                                str=arr.join('');
+                                oH4.innerHTML='普通:'+str;
+                        }
+                        test();
+                        function test2(){
+                                var str=oH3.innerHTML;
+                                var re=/-(\w)/g;
+                                str=str.replace(re,function($0,$1){
+                                        return $1.toUpperCase();
+                                });
+                                oH5.innerHTML='正则:'+str;
+                        }
+                        test2();
+                </script>
+        </body>
+</html>

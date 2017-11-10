@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        a,span{
+                                display:block;
+                        }
+                        img,menu{
+                                width:600px;
+                                height:450px;
+                        }
+                        menu{
+                                perspective:800px;
+                                margin:100px auto 0;
+                        }
+                        menu:after{
+                                content:"";
+                                display:block;
+                                overflow:hidden;
+                                height:0;
+                                clear:both;
+                                visibility:hidden;
+                        }
+                        li,a{
+                                width:100%;
+                                height:100%;
+                        }
+                        li{
+                                position:relative;
+                                transform-style:preserve-3d;
+                                float:left;
+                                transform-origin:center center -225px;
+                        }
+                        a,span{
+                                position:absolute;
+                        }
+                        span{
+
+                        }
+                        a:nth-of-type(1){
+                                background:url("1.jpg");
+                        }
+                        a:nth-of-type(2){
+                                background:url("2.jpg");
+                                bottom:450px;
+                                transform-origin:bottom;
+                                transform:rotateX(90deg);
+                        }
+                        a:nth-of-type(3){
+                                background:url("3.jpg");
+                                top:450px;
+                                transform-origin:top;
+                                transform:rotateX(-90deg);
+                        }
+                        a:nth-of-type(4){
+                                background:url("4.jpg");
+                                transform:translateZ(-450px) rotateX(180deg);
+                        }
+                        span{
+                                width:450px;
+                                height:450px;
+                                background:#000;
+                        }
+                        span:nth-of-type(1){
+                                transform-origin:left;
+                                transform:rotateY(90deg);
+                        }
+                        span:nth-of-type(2){
+                                right:0;
+                                transform-origin:right;
+                                transform:rotateY(-90deg);
+                        }
+                        section{
+                                width:100%;
+                                height:40px;
+                                text-align:center;
+                                margin-top:100px;
+                                position:relative;
+                                -moz-user-select:none;
+                        }
+                        div{
+                                width:40px;
+                                height:40px;
+                                text-align:center;
+                                line-height:40px;
+                                background:#000;
+                                color:#ffffff;
+                                display:inline-block;
+                                font-size:30px;
+                                border-radius:50%;
+                                cursor:pointer;
+                        }
+                        div.active{
+                                background:#f3840c;
+                        }
+                        p{
+                                position:absolute;
+                                width:100%;
+                                height:20px;
+                                line-height:20px;
+                                text-align:center;
+                                font-size:12px;
+                                left:0;
+                                top:-40px;
+                                color:#f00;
+                        }
+                </style>
+        </head>
+        <body>
+                <menu>
+                        <!--
+                        <li>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <a href=""></a>
+                                <span></span>
+                                <span></span>
+                        </li>
+                        -->
+                </menu>
+                <section>
+                        <p>点击下面的按钮进行切换(仅支持高版本浏览器)</p>
+                        <div class="active">1</div>
+                        <div>2</div>
+                        <div>3</div>
+                        <div>4</div>
+                </section>
+                <script>
+                        var oMenu=document.getElementsByTagName('menu')[0];
+                        var ali=oMenu.getElementsByTagName('li');
+                        var oSection=document.getElementsByTagName('section')[0];
+                        oSection.onselectstart=function(){
+                                return false;
+                        };
+                        var aBtn=document.getElementsByTagName('div');
+                        var oP=document.getElementsByTagName('p')[0];
+                        var sP=oP.innerHTML;
+                        var iW=40;
+                        var iLen=oMenu.clientWidth/iW;
+                        var html='';
+                        var zIndex=0;
+                        var now=0;
+                        var bTure=true;
+                        for(var i=0;i<iLen;i++){
+                                if(i>=iLen/2){
+                                        zIndex--;
+                                }else{
+                                        zIndex++;
+                                }
+                                html+='<li style="width:'+iW+'px;z-index:'+zIndex+'"><a href="" style="background-position:'+-i*iW+'px 0"></a><a href="" style="background-position:'+-i*iW+'px 0"></a><a href="" style="background-position:'+-i*iW+'px 0"></a><a href="" style="background-position:'+-i*iW+'px 0"></a><span></span><span></span></li>';
+                        }
+                        oMenu.innerHTML=html;
+                        for(var j=0;j<aBtn.length;j++){
+                                //闭包写法一
+                                aBtn[j].onclick=function(num){
+                                        return function(){
+                                                if(bTure){
+                                                        bTure=false;
+                                                        var duration=0.5*Math.abs(num-now);
+                                                        var delay=0.05;
+                                                        for(var i=0;i<iLen;i++){
+                                                                ali[i].style.transition=duration+'s '+delay*i+'s';
+                                                                ali[i].style.transform='rotateX('+num*90+'deg)';
+                                                        }
+                                                        var timing=(duration+delay*iLen)*1000;
+                                                        setTimeout(function(){
+                                                                bTure=true;
+                                                                oP.innerHTML=sP;
+                                                        },timing);
+                                                        aBtn[now].className='';
+                                                        aBtn[num].className='active';
+                                                        now=num;
+                                                }else{
+                                                        oP.innerHTML='请等本次切换完毕之后再进行下次切换';
+                                                }
+                                        }
+                                }(j);
+                                //闭包写法二
+                                /*
+                                (function(num){
+                                        aBtn[num].onclick=function(){
+                                                if(bTure){
+                                                        bTure=false;
+                                                        var duration=0.5*Math.abs(num-now);
+                                                        var delay=0.05;
+                                                        for(var i=0;i<iLen;i++){
+                                                                ali[i].style.transition=duration+'s '+delay*i+'s';
+                                                                ali[i].style.transform='rotateX('+num*90+'deg)';
+                                                        }
+                                                        var timing=(duration+delay*iLen)*1000;
+                                                        setTimeout(function(){
+                                                                bTure=true;
+                                                                oP.innerHTML=sP;
+                                                        },timing);
+                                                        aBtn[now].className='';
+                                                        this.className='active';
+                                                        now=num;
+                                                }else{
+                                                        oP.innerHTML='请等本次切换完毕之后再进行下次切换';
+                                                }
+                                        };
+                                })(j)
+                                */
+                        }
+                </script>
+        </body>
+</html>

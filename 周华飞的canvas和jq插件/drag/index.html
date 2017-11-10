@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>firefox支持的不全面,safari不支持</title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                                font-style:normal;
+                        }
+                        body{
+                                font:20px/1.5 "Microsoft YaHei";
+                        }
+                        div{
+                                text-align:center;
+                                color:#ffffff;
+                        }
+                        div:nth-last-of-type(1){
+                                margin-top:150px;
+                        }
+                        span{
+                                display:inline-block;
+                                width:300px;
+                                height:300px;
+                                background:#000;
+                                margin:0 5px;
+                                word-break:break-all;
+                                overflow:auto;
+                        }
+                        i, small{
+                                display:inline-block;
+                                width:200px;
+                                height:200px;
+                                background:#ff0000;
+                                margin:0 5px;
+                                word-break:break-all;
+                                overflow:hidden;
+                                text-align:justify;
+                        }
+                        h1{
+                                text-align:center;
+                                line-height:2;
+                        }
+                </style>
+        </head>
+        <body>
+                <h1>把第一个红方块和第二个红方块拖入第四个黑方块</h1>
+                <div>
+                        <span>--dragenter--</span><!--
+                        --><span>--dragover--</span><!--
+                        --><span>--dragleave--</span><!--
+                        --><span>--drop--</span>
+                </div>
+                <div>
+                        <i draggable="true">--dragstart--</i><!--
+                        --><i draggable="true">--drag(火狐无效)--</i><!--
+                        --><i draggable="true">--dragend(火狐无效)--</i>
+                </div>
+                <script>
+                        var aSpan = document.getElementsByTagName('span');
+                        var aI = document.getElementsByTagName('i');
+                        aI[0].addEventListener('dragstart', function (e) {
+                                this.innerHTML += e.type;
+                                e.dataTransfer.setData('Text', '0');//dragstart时设置
+                        }, false);
+                        aI[1].addEventListener('dragstart', function (e) {
+                                this.innerHTML += e.type;
+                                e.dataTransfer.setData('Text', '1');//dragstart时设置
+                        }, false);
+                        aI[1].addEventListener('drag', function (e) {
+                                this.innerHTML += e.type;
+                        }, false);
+                        aI[2].addEventListener('dragend', function (e) {
+                                this.innerHTML += e.type;
+                        }, false);
+                        aSpan[0].addEventListener('dragenter', function (e) {
+                                this.innerHTML += e.type;
+                        }, false);
+                        aSpan[1].addEventListener('dragover', function (e) {
+                                this.innerHTML += e.type;
+                        }, false);
+                        aSpan[2].addEventListener('dragleave', function (e) {
+                                this.innerHTML += e.type;
+                        }, false);
+                        aSpan[3].addEventListener('drop', function (e) {
+                                e.stopPropagation();
+                                e.preventDefault();//针对火狐
+                                var num = e.dataTransfer.getData('Text');//drop时获取
+                                if (num) {
+                                        var obj = document.createElement('small');
+                                        obj.innerHTML = aI[num].innerHTML;
+                                        this.appendChild(obj);
+                                } else {
+                                        this.innerHTML += e.type;
+                                }
+                        }, false);
+                        for (var i = 0; i < aSpan.length; i++) {
+                                aSpan[i].addEventListener('drop', function (e) {
+                                        e.stopPropagation();
+                                        e.preventDefault();//针对火狐
+                                }, false);
+                                //以下针对火狐
+                                aSpan[i].addEventListener('dragover', function (e) {
+                                        e.preventDefault();
+                                }, false);
+                        }
+                        //拖拽配合表单上传
+                        //目标区域进行drop事件,然后下一行进行文件信息的获取,当然阻止默认事件和冒泡是必须的
+                        //操作文件           var files=dataTransfer.files
+                        //配合表单提交文件    var formData=new FormData()
+                        //循环并             formData.append('file'+i,files[i]);
+                </script>
+        </body>
+</html>

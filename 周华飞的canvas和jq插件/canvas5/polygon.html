@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>you are browser do not support canvas</canvas>
+                <script>
+                        (function(wind,doc,undefined){
+                                var iW=doc.documentElement.clientWidth;
+                                var iH=doc.documentElement.clientHeight;
+                                var oCanvas=doc.getElementsByTagName('canvas')[0];
+                                var c=oCanvas.getContext('2d');
+                                var radian=Math.PI/180;
+                                var num=Math.round(Math.random()*7+3);
+                                var prefectInterval=1000/60;
+                                var timer=null;
+                                var iClose=100;
+                                oCanvas.width=iW;
+                                oCanvas.height=iH;
+                                oCanvas.x=iW/2;
+                                oCanvas.y=iH/2;
+                                oCanvas.r=300;
+                                var gradient=c.createRadialGradient(oCanvas.x,oCanvas.y,0,oCanvas.x,oCanvas.y,oCanvas.y);
+                                gradient.addColorStop(0,'#f00');
+                                gradient.addColorStop(0.1,'#00f');
+                                gradient.addColorStop(0.2,'#0f0');
+                                gradient.addColorStop(0.3,'#f0f');
+                                gradient.addColorStop(0.4,'#0f0');
+                                gradient.addColorStop(0.5,'#ff0');
+                                gradient.addColorStop(0.6,'#0ff');
+                                gradient.addColorStop(0.7,'#f0f');
+                                gradient.addColorStop(0.8,'#f0f');
+                                gradient.addColorStop(0.9,'#ff0');
+                                gradient.addColorStop(1,'#f00');
+                                c.strokeStyle=gradient;
+                                function polygon(num){
+                                        var angle=360/num;
+                                        c.save();
+                                        c.beginPath();
+                                        for(var i=0;i<num;i++){
+                                                var nowRadian=angle*i*radian;
+                                                c.lineTo(oCanvas.x+oCanvas.r*Math.sin(nowRadian),oCanvas.y+oCanvas.r*Math.cos(nowRadian));
+                                        }
+                                        c.closePath();
+                                        c.restore();
+                                        c.stroke();
+                                }
+                                timer=setInterval(function(){
+                                        polygon(num);
+                                        oCanvas.r=Math.round(Math.random()*oCanvas.y);
+                                        num=Math.round(Math.random()*7+3);
+                                        iClose--;
+                                        if(iClose<=0){
+                                                clearInterval(timer);
+                                        }
+                                },prefectInterval)
+                        })(window,document);
+                </script>
+        </body>
+</html>

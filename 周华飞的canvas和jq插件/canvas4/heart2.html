@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var radian=Math.PI/180;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        canvas.width=w;
+                        canvas.height=h;
+                        canvas.x=w/2;
+                        canvas.y=h/2;
+                        canvas.r=16;
+                        var context=canvas.getContext('2d');
+                        var len=360;
+                        context.translate(canvas.x,canvas.y);
+                        var point=[];
+                        for(var i=0;i<len;i++){
+                                var angle=i*radian;
+                                var x=-canvas.r*(16*Math.pow(Math.sin(angle),3));
+                                var y=-canvas.r*(13*Math.cos(angle)-5*Math.cos(2*angle)-2*Math.cos(3*angle)-Math.cos(4*angle));
+                                point.push([x,y]);
+                        }
+                        var num=0;
+                        context.fillStyle='rgba(255,0,0,0.2)';
+                        context.strokeStyle='rgba(255,0,0,0.6)';
+                        var timer=null;
+                        timer=setInterval(function(){
+                                heart(point[num][0],point[num][1]);
+                                num++;
+                                if(num==len){
+                                        clearInterval(timer);
+                                        num=0;
+                                        timer=setInterval(function(){
+                                                drawStar(point[num][0],point[num][1]);
+                                                num++;
+                                                if(num==len){
+                                                        clearInterval(timer);
+                                                        love(0,0,'love');
+                                                }
+                                        },30);
+                                }
+                        },10);
+                        function heart(x,y){
+                                r=0.4;
+                                context.save();
+                                context.beginPath();
+                                for(var i=0;i<len;i++){
+                                        var angle=i*radian;
+                                        var xs=x-r*(16*Math.pow(Math.sin(angle),3));
+                                        var ys=y-r*(13*Math.cos(angle)-5*Math.cos(2*angle)-2*Math.cos(3*angle)-Math.cos(4*angle));
+                                        context.lineTo(xs,ys);
+                                }
+                                context.closePath();
+                                context.fill();
+                                context.stroke();
+                                context.restore();
+                        }
+                        function drawStar(x,y){
+                                var radian=Math.PI/180;
+                                var star=Math.PI/5*4;
+                                var len=5;
+                                var r=10;
+                                var angle=14;
+                                function start(num){
+                                        context.save();
+                                        context.beginPath();
+                                        context.fillStyle='rgba(255,0,255,0.1)';
+                                        context.strokeStyle='rgba(255,255,255,0.2)';
+                                        context.translate(x,y);
+                                        context.rotate(num*angle*radian);
+                                        for(var i=0;i<len;i++){
+                                                context.lineTo(-r*Math.sin(i*star),-r*Math.cos(i*star));
+                                        }
+                                        context.closePath();
+                                        context.fill();
+                                        context.stroke();
+                                        context.restore();
+                                }
+                                var num=0;
+                                var timer=null;
+                                var max=5;
+                                timer=setInterval(function(){
+                                        setTimeout(function(){
+                                                start(num);
+                                                num++;
+                                                if(num==max){
+                                                        clearInterval(timer);
+                                                }
+                                        },30);
+                                },30)
+                        }
+                        function love(x,y,t){
+                                context.save();
+                                context.beginPath();
+                                context.textAlign='center';
+                                context.textBaseline='middle';
+                                context.fillStyle='rgba(255,0,255,0.4)';
+                                context.strokeStyle='rgba(255,255,255,0.6)';
+                                context.font='60px 微软雅黑';
+                                context.fillText(t,x,y);
+                                context.strokeText(t,x,y);
+                                context.closePath();
+                                context.restore();
+                        }
+                </script>
+        </body>
+</html>

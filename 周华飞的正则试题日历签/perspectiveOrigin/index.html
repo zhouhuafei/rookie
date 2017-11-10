@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        div{
+                                width:200px;
+                                height:200px;
+                                box-shadow:0 0 5px #000;
+                                display:-moz-box;
+                                -moz-box-pack:center;
+                                -moz-box-align:center;
+                                margin:50px;
+                                transform-style:preserve-3d;
+                                perspective:400px;
+                        }
+                        div:nth-last-of-type(1){
+                                perspective-origin:top;/*站在顶部俯视看*/
+                        }
+                        p{
+                                width:100px;
+                                height:100px;
+                                background:#000000;
+                                transition:0.4s;
+                        }
+                        div:hover p{
+                                transform:rotateY(90deg);
+                        }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <p></p>
+                </div>
+                <div>
+                        <p></p>
+                </div>
+        </body>
+</html>

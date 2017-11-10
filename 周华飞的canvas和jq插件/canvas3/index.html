@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                margin:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                                padding:0;
+                                margin:0;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var context=canvas.getContext('2d');
+                        canvas.width=w;
+                        canvas.height=h;
+                        canvas.x=w/2;
+                        canvas.y=h/2;
+                        canvas.r=h/2-50;
+                        canvas.radian=Math.PI/180;
+                        canvas.angle=90*canvas.radian;
+                        context.fillStyle='rgba(255,0,0,0.8)';
+                        context.strokeStyle='rgba(255,0,0,0.8)';
+                        context.beginPath();
+                        context.arc(canvas.x,canvas.y,canvas.r,0,canvas.angle);
+                        context.fill();
+                        context.beginPath();
+                        context.arc(canvas.x-100,canvas.y-100,canvas.r,0,canvas.angle);
+                        context.fill();
+                        context.beginPath();
+                        context.arc(canvas.x-200,canvas.y-200,canvas.r,0,canvas.angle);
+                        context.fill();
+                        canvas.num=0;
+                        canvas.timer=null;
+                        canvas.timer=setInterval(function(){
+                                context.beginPath();
+                                canvas.angleStart=canvas.num*canvas.radian;
+                                canvas.num++;
+                                canvas.angleEnd=canvas.num*canvas.radian;
+                                context.arc(canvas.x-300,canvas.y-100,canvas.r-200,canvas.angleStart,canvas.angleEnd);
+                                context.stroke();
+                                context.closePath();
+                                if(canvas.num>=360){
+                                        clearInterval(canvas.timer);
+                                }
+                        },30);
+                </script>
+        </body>
+</html>

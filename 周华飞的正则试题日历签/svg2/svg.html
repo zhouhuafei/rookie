@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>svg</title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        div{
+                                width:10%;
+                                height:10%;
+                                margin:0 auto;
+                        }
+                        img{
+                                width:100%;
+                                height:100%;
+                                vertical-align:middle;
+                        }
+                </style>
+        </head>
+        <body>
+                <!--不推荐,svg直接嵌入img会导致请求增多(慢了很多),建议class控制base64背景-->
+                <div><img src="icon1.svg" alt=""></div>
+                <div><img src="icon2.svg" alt=""></div>
+                <div><img src="icon3.svg" alt=""></div>
+                <div><img src="icon4.svg" alt=""></div>
+                <div><img src="icon5.svg" alt=""></div>
+                <div><img src="icon6.svg" alt=""></div>
+                <div><img src="icon7.svg" alt=""></div>
+        </body>
+</html>

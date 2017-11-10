@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+
+                        html,body{
+                                margin:0;
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                                background:#000;
+                        }
+                        canvas{
+                                background:#000;
+                                display:block;
+                                margin:0 auto;
+                        }
+                        p{
+                                color:#ffffff;
+                                font:18px/1 "楷体";
+                                text-align:center;
+                                margin:50px 0;
+                        }
+                </style>
+        </head>
+        <body>
+                <p>按上下左右进行移动,按空格进行射击</p>
+                <canvas width="500" height="500">your browser does not support canvas elements</canvas>
+                <script>
+                        var game={
+                                fnInitial:function(){
+                                        this.fnGetEle();
+                                        this.fnDrawMap();
+                                        this.fnDrawTank(this.tankX,this.tankY,this.dir,true);
+                                        this.fnMyTankMove();
+                                        this.fnBulletMove();
+                                        this.fnEnemy();
+                                        this.fnEnemyTankMove();
+                                        this.fnEnemyBulletMove();
+                                },
+                                fnGetEle:function(){
+                                        this.canvas=document.getElementsByTagName('canvas')[0];
+                                        this.width=parseFloat(this.canvas.width);
+                                        this.height=parseFloat(this.canvas.height);
+                                        this.context=this.canvas.getContext('2d');
+                                        this.tankW=20;
+                                        this.tankH=30;
+                                        this.gra=this.context.createLinearGradient(0,0,this.width,this.height);
+                                        this.gra.addColorStop(0,'#8B00FF');
+                                        this.gra.addColorStop(0.1,'#FF7F00');
+                                        this.gra.addColorStop(0.2,'#FFFF00');
+                                        this.gra.addColorStop(0.3,'#FF0000');
+                                        this.gra.addColorStop(0.4,'#00FF00');
+                                        this.gra.addColorStop(0.5,'#0000FF');
+                                        this.gra.addColorStop(0.6,'#00FF00');
+                                        this.gra.addColorStop(0.7,'#FF0000');
+                                        this.gra.addColorStop(0.8,'#FFFF00');
+                                        this.gra.addColorStop(0.9,'#FF7F00');
+                                        this.gra.addColorStop(1,'#8B00FF');
+                                        this.dir='up';
+                                        this.tankX=this.width/2;
+                                        this.tankY=this.height-this.tankH;
+                                        this.bulletTrue=true;
+                                        this.bulletDir=this.dir;
+                                        this.bulletX=this.tankX;
+                                        this.bulletY=this.tankY;
+                                        this.bulletH=2;
+                                        this.bulletW=2;
+                                        this.enemy=[];
+                                        this.enemyLen=5;
+                                },
+                                fnClearRect:function(){
+                                        this.context.clearRect(0,0,this.width,this.height);
+                                },
+                                fnDrawMap:function(){
+                                        this.border=4;
+                                        this.context.save();
+                                        this.context.fillStyle=this.gra;
+                                        this.context.fillRect(0,0,this.width,this.height);
+                                        this.context.fillStyle='#000';
+                                        this.context.fillRect(this.border,this.border,this.width-2*this.border,this.height-2*this.border);
+                                        this.context.restore();
+                                },
+                                fnDrawTank:function(x,y,dir,color){
+                                        this.dir=this.bulletDir;
+                                        this.context.save();
+                                        this.context.fillStyle=color?this.gra:'#fff';
+                                        if(dir=='up'||dir=='down'){
+                                                this.context.fillRect(x-this.tankW/2,y-this.tankH/2,this.tankW,this.tankH);
+                                        }else if(dir=='left'||dir=='right'){
+                                                this.context.fillRect(x-this.tankH/2,y-this.tankW/2,this.tankH,this.tankW);
+                                        }
+                                        this.context.beginPath();
+                                        this.context.fillStyle='#000';
+                                        this.context.arc(x,y,this.tankW/3,0,2*Math.PI);
+                                        this.context.fill();
+                                        this.context.closePath();
+                                        if(dir=='up'){
+                                                this.context.fillRect(x-1,y-this.tankH/2.4,2,this.tankH/2);
+                                        }else if(dir=='down'){
+                                                this.context.fillRect(x-1,y,2,this.tankH/2.4);
+                                        }else if(dir=='left'){
+                                                this.context.fillRect(x-this.tankH/2.4,y-1,this.tankH/2.4,2);
+                                        }else if(dir=='right'){
+                                                this.context.fillRect(x,y-1,this.tankH/2.4,2);
+                                        }
+                                        this.context.restore();
+                                },
+                                fnMyTankMove:function(){
+                                        var self=this;
+                                        var timer=null;
+                                        var bTrue=true;
+                                        var step=2;
+                                        document.onkeydown=function(ev){
+                                                switch (ev.keyCode){
+                                                        case 37:
+                                                                self.dir='left';
+                                                                self.bulletDir=self.dir;
+                                                                break;
+                                                        case 38:
+                                                                self.dir='up';
+                                                                self.bulletDir=self.dir;
+                                                                break;
+                                                        case 39:
+                                                                self.dir='right';
+                                                                self.bulletDir=self.dir;
+                                                                break;
+                                                        case 40:
+                                                                self.dir='down';
+                                                                self.bulletDir=self.dir;
+                                                                break;
+                                                        default :
+                                                                self.dir='';
+                                                                break;
+                                                }
+                                                if(bTrue&&self.dir){
+                                                        timer=setInterval(function(){
+                                                                if(self.dir=='right'){
+                                                                        self.tankX+=step;
+                                                                        if(self.tankX>=self.width-self.border-+self.tankH/2){
+                                                                                self.tankX=self.width-self.border-+self.tankH/2;
+                                                                        }
+                                                                }else if(self.dir=='left'){
+                                                                        self.tankX-=step;
+                                                                        if(self.tankX<=self.border+self.tankH/2){
+                                                                                self.tankX=self.border+self.tankH/2;
+                                                                        }
+                                                                }else if(self.dir=='up'){
+                                                                        self.tankY-=step;
+                                                                        if(self.tankY<=self.border+self.tankH/2){
+                                                                                self.tankY=self.border+self.tankH/2;
+                                                                        }
+                                                                }else if(self.dir=='down'){
+                                                                        self.tankY+=step;
+                                                                        if(self.tankY>=self.height-self.border-self.tankH/2){
+                                                                                self.tankY=self.height-self.border-self.tankH/2;
+                                                                        }
+                                                                }
+                                                                self.bulletX=self.tankX;
+                                                                self.bulletY=self.tankY;
+                                                                self.fnClearRect();
+                                                                self.fnDrawMap();
+                                                                self.fnDrawTank(self.tankX,self.tankY,self.dir,true);
+                                                                self.fnBullet(self.fnBullet.x,self.fnBullet.y,self.fnBullet.dir);
+                                                                for(var i=0;i<self.enemyLen;i++){
+                                                                        self.fnDrawTank(self.enemy[i].x,self.enemy[i].y,self.enemy[i].dir);
+                                                                        if(self.enemy.create){
+                                                                                self.fnDrawEnemyBullet(self.enemy[i].bullet.x,self.enemy[i].bullet.y,self.enemy[i].bullet.dir);
+                                                                        }
+                                                                }
+                                                        },10);
+                                                }
+                                                bTrue=false;
+                                        };
+                                        document.onkeyup=function(){
+                                                clearInterval(timer);
+                                                bTrue=true;
+                                        }
+                                },
+                                fnBullet:function(x,y,dir){
+                                        this.context.save();
+                                        this.context.fillStyle=this.gra;
+                                        if(dir=='up'){
+                                                this.context.fillRect(x-this.bulletW/2,y-this.tankH/2-this.bulletH,this.bulletW,this.bulletH);
+                                        }else if(dir=='down'){
+                                                this.context.fillRect(x-this.bulletW/2,y+this.tankH/2,this.bulletW,this.bulletH);
+                                        }else if(dir=='left'){
+                                                this.context.fillRect(x-this.tankH/2-this.bulletH,y-this.bulletW/2,this.bulletH,this.bulletW);
+                                        }else if(dir=='right'){
+                                                this.context.fillRect(x+this.tankH/2,y-this.bulletW/2,this.bulletH,this.bulletW);
+                                        }
+                                        this.context.restore();
+                                },
+                                fnBulletMove:function(){
+                                        var self=this;
+                                        document.addEventListener('keydown',function(ev){
+                                                var timer=null;
+                                                if(ev.keyCode==32){
+                                                        if(self.bulletTrue){
+                                                                self.bulletTrue=false;
+                                                                var x=self.bulletX;
+                                                                var y=self.bulletY;
+                                                                var dir=self.bulletDir;
+                                                                timer=setInterval(function(){
+                                                                        self.fnClearRect();
+                                                                        self.fnDrawMap();
+                                                                        self.fnDrawTank(self.tankX,self.tankY,self.dir,true);
+                                                                        for(var i=0;i<self.enemyLen;i++){
+                                                                                self.fnDrawTank(self.enemy[i].x,self.enemy[i].y,self.enemy[i].dir);
+                                                                                if(self.enemy.create){
+                                                                                        self.fnDrawEnemyBullet(self.enemy[i].bullet.x,self.enemy[i].bullet.y,self.enemy[i].bullet.dir);
+                                                                                }
+                                                                        }
+                                                                        self.fnBullet.x=x;
+                                                                        self.fnBullet.y=y;
+                                                                        self.fnBullet.dir=dir;
+                                                                        self.fnBullet(x,y,dir);
+                                                                        if(dir=='up'){
+                                                                                y--;
+                                                                        }else if(dir=='down'){
+                                                                                y++;
+                                                                        }else if(dir=='left'){
+                                                                                x--;
+                                                                        }else if(dir=='right'){
+                                                                                x++;
+                                                                        }
+                                                                        if(x<=0||x>=self.width||y<=0||y>=self.height){
+                                                                                clearInterval(timer);
+                                                                                self.bulletTrue=true;
+                                                                        }
+                                                                        for(var j=0;j<self.enemyLen;j++){
+                                                                                if(self.enemy[j].dir=='right'||self.enemy[j].dir=='left'){
+                                                                                        if(x>=self.enemy[j].x-self.tankH/2&&x<=self.enemy[j].x+self.tankH/2&&y>=self.enemy[j].y-self.tankW/2&&y<=self.enemy[j].y+self.tankW/2){
+                                                                                                clearInterval(timer);
+                                                                                                self.bulletTrue=true;
+                                                                                                self.fnBullet.dir='';
+                                                                                                self.enemy.splice(j,1);
+                                                                                                self.enemyLen--;
+                                                                                                if(self.enemyLen==0){
+                                                                                                        alert('通关');
+                                                                                                        window.location.reload();
+                                                                                                }
+                                                                                        }
+                                                                                }else{
+                                                                                        if(x>=self.enemy[j].x-self.tankW/2&&x<=self.enemy[j].x+self.tankW/2&&y>=self.enemy[j].y-self.tankH/2&&y<=self.enemy[j].y+self.tankH/2){
+                                                                                                clearInterval(timer);
+                                                                                                self.bulletTrue=true;
+                                                                                                self.fnBullet.dir='';
+                                                                                                self.enemy.splice(j,1);
+                                                                                                self.enemyLen--;
+                                                                                                if(self.enemyLen==0){
+                                                                                                        alert('通关');
+                                                                                                        window.location.reload();
+                                                                                                }
+                                                                                        }
+                                                                                }
+                                                                        }
+                                                                },1);
+                                                        }
+                                                }
+                                        },false)
+                                },
+                                fnEnemy:function(){
+                                        for(var i=0;i<this.enemyLen;i++){
+                                                this.enemy[i]={};
+                                                this.enemy[i].x=(i+1)*this.width/(this.enemyLen+1);
+                                                this.enemy[i].y=100;
+                                                this.enemy[i].dir='down';
+                                                this.enemy[i].step=1;
+                                                this.enemy[i].bullet={};
+                                                this.enemy[i].bullet.x=this.enemy[i].x;
+                                                this.enemy[i].bullet.y=this.enemy[i].y;
+                                                this.enemy[i].bullet.step=1;
+                                                this.enemy[i].bullet.dir=this.enemy[i].dir;
+                                                this.enemy[i].bullet.bTrue=true;
+                                                this.enemy[i].bullet.timer=null;
+                                                this.fnDrawTank(this.enemy[i].x,this.enemy[i].y,this.enemy[i].dir);
+                                        }
+                                },
+                                fnEnemyTankMove:function(){
+                                        var self=this;
+                                        var arr=['up','down','left','right'];
+                                        var bTrue=true;
+                                        setInterval(function(){
+                                                for(var i=0;i<self.enemyLen;i++){
+                                                        if(self.enemy[i].dir=='right'){
+                                                                self.enemy[i].x+=self.enemy[i].step;
+                                                                if(self.enemy[i].x>=self.width-self.border-+self.tankH/2){
+                                                                        self.enemy[i].x=self.width-self.border-+self.tankH/2;
+                                                                        self.enemy[i].dir=arr[Math.floor(Math.random()*arr.length)];
+                                                                }
+                                                        }else if(self.enemy[i].dir=='left'){
+                                                                self.enemy[i].x-=self.enemy[i].step;
+                                                                if(self.enemy[i].x<=self.border+self.tankH/2){
+                                                                        self.enemy[i].x=self.border+self.tankH/2;
+                                                                        self.enemy[i].dir=arr[Math.floor(Math.random()*arr.length)];
+                                                                }
+                                                        }else if(self.enemy[i].dir=='up'){
+                                                                self.enemy[i].y-=self.enemy[i].step;
+                                                                if(self.enemy[i].y<=self.border+self.tankH/2){
+                                                                        self.enemy[i].y=self.border+self.tankH/2;
+                                                                        self.enemy[i].dir=arr[Math.floor(Math.random()*arr.length)];
+                                                                }
+                                                        }else if(self.enemy[i].dir=='down'){
+                                                                self.enemy[i].y+=self.enemy[i].step;
+                                                                if(self.enemy[i].y>=self.height-self.border-self.tankH/2){
+                                                                        self.enemy[i].y=self.height-self.border-self.tankH/2;
+                                                                        self.enemy[i].dir=arr[Math.floor(Math.random()*arr.length)];
+                                                                }
+                                                        }
+                                                }
+                                                if(bTrue){
+                                                        bTrue=false;
+                                                        setTimeout(function(){
+                                                                self.enemy[Math.floor(Math.random()*self.enemyLen)].dir=arr[Math.floor(Math.random()*arr.length)];
+                                                                bTrue=true;
+                                                        },300);
+                                                }
+                                                self.fnClearRect();
+                                                self.fnDrawMap();
+                                                self.fnDrawTank(self.tankX,self.tankY,self.dir,true);
+                                                self.fnBullet(self.fnBullet.x,self.fnBullet.y,self.fnBullet.dir);
+                                                for(var j=0;j<self.enemyLen;j++){
+                                                        self.fnDrawTank(self.enemy[j].x,self.enemy[j].y,self.enemy[j].dir);
+                                                        if(self.enemy.create){
+                                                                self.fnDrawEnemyBullet(self.enemy[j].bullet.x,self.enemy[j].bullet.y,self.enemy[j].bullet.dir);
+                                                        }
+                                                }
+                                        },10)
+                                },
+                                fnDrawEnemyBullet:function(x,y,dir){
+                                        var self=this;
+                                        self.context.save();
+                                        self.context.fillStyle='#fff';
+                                        if(dir=='right'){
+                                                self.context.fillRect(x+self.tankH/2,y-self.bulletW/2,self.bulletH,self.bulletW);
+                                        }else if(dir=='left'){
+                                                self.context.fillRect(x-self.tankH/2-self.bulletH,y-self.bulletW/2,self.bulletH,self.bulletW);
+                                        }else if(dir=='up'){
+                                                self.context.fillRect(x-self.bulletW/2,y-self.tankH/2-self.bulletH,self.bulletW,self.bulletH);
+                                        }else if(dir=='down'){
+                                                self.context.fillRect(x-self.bulletW/2,y+self.tankH/2,self.bulletW,self.bulletH);
+                                        }
+                                        self.context.restore();
+                                },
+                                fnEnemyBulletMove:function(){
+                                        var self=this;
+                                        for(var i=0;i<self.enemyLen;i++){
+                                                setInterval(function(i){
+                                                        self.enemy.create=true;
+                                                        if(self.enemy[i]!=undefined){
+                                                                if(self.enemy[i].bullet.bTrue){
+                                                                        self.enemy[i].bullet.bTrue=false;
+                                                                        self.enemy[i].bullet.x=self.enemy[i].x;
+                                                                        self.enemy[i].bullet.y=self.enemy[i].y;
+                                                                        self.enemy[i].bullet.dir=self.enemy[i].dir;
+                                                                        self.enemy[i].bullet.timer=setInterval(function(i){
+                                                                                if(self.enemy[i]!=undefined){
+                                                                                        if(self.enemy[i].bullet.dir=='right'){
+                                                                                                self.enemy[i].bullet.x++;
+                                                                                        }else if(self.enemy[i].bullet.dir=='left'){
+                                                                                                self.enemy[i].bullet.x--;
+                                                                                        }else if(self.enemy[i].bullet.dir=='up'){
+                                                                                                self.enemy[i].bullet.y--;
+                                                                                        }else if(self.enemy[i].bullet.dir=='down'){
+                                                                                                self.enemy[i].bullet.y++;
+                                                                                        }
+                                                                                        self.fnDrawEnemyBullet(self.enemy[i].bullet.x,self.enemy[i].bullet.y,self.enemy[i].bullet.dir);
+                                                                                        if(self.enemy[i].bullet.x<=0||self.enemy[i].bullet.x>=self.width||self.enemy[i].bullet.y<=0||self.enemy[i].bullet.y>=self.height){
+                                                                                                clearInterval(self.enemy[i].bullet.timer);
+                                                                                                self.enemy[i].bullet.bTrue=true;
+                                                                                        }
+                                                                                        if(self.dir=='right'||self.dir=='left'){
+                                                                                                if(self.enemy[i].bullet.x>=self.tankX-self.tankH/2&&self.enemy[i].bullet.x<=self.tankX+self.tankH/2&&self.enemy[i].bullet.y>=self.tankY-self.tankW/2&&self.enemy[i].bullet.y<=self.tankY+self.tankW/2){
+                                                                                                        alert('game over');
+                                                                                                        window.location.reload();
+                                                                                                }
+                                                                                        }else{
+                                                                                                if(self.enemy[i].bullet.x>=self.tankX-self.tankW/2&&self.enemy[i].bullet.x<=self.tankX+self.tankW/2&&self.enemy[i].bullet.y>=self.tankY-self.tankH/2&&self.enemy[i].bullet.y<=self.tankY+self.tankH/2){
+                                                                                                        alert('game over');
+                                                                                                        window.location.reload();
+                                                                                                }
+                                                                                        }
+                                                                                }
+                                                                        },1,i);
+                                                                }
+                                                        }
+                                               },1000,i);
+                                        }
+                                }
+                        };
+                        game.fnInitial();
+                </script>
+        </body>
+</html>

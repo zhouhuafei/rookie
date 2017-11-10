@@ -1,0 +1,43 @@
+*{
+        margin:0;
+        padding:0;
+        list-style-type:none;
+}
+html,body{
+        width:100%;
+        height:100%;
+        background:#000000;
+}
+div{
+        width:5rem;
+        height:5rem;
+        float:left;
+        background:#000000;
+        background-size:100% 100%;
+}
+div:nth-of-type(1){
+        background-image:inline-image("icon.svg");
+}
+div:nth-of-type(2){
+        background-image:inline-image("icon2.svg");
+}
+div:nth-of-type(3){
+        background-image:inline-image("icon3.svg");
+}
+div:nth-of-type(4){
+        background-image:inline-image("icon4.svg");
+}
+div:nth-of-type(5){
+        background-image:inline-image("icon5.svg");
+}
+div:nth-of-type(6){
+        background-image:inline-image("icon6.svg");
+        cursor:pointer;
+}
+div:nth-of-type(7){
+        border-radius:50%;
+        overflow:hidden;
+}
+div:nth-of-type(8){
+        background-image:inline-image("icon8.svg");
+}

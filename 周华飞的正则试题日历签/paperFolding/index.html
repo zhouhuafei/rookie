@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        section{
+                                width:400px;
+                                margin:0 auto;
+                                text-align:center;
+                                line-height:40px;
+                                color:#ffffff;
+                                position:relative;
+                                perspective:2000px;
+                        }
+                        h2{
+                                background:#ff0000;
+                                position:relative;
+                                z-index:10;
+                        }
+                        aside{
+                                position:absolute;
+                                top:42px;
+                                width:100%;
+                                background:#0aa0b4;
+                                transform-origin:top;
+                                transform:rotateX(-180deg);
+                                transform-style:preserve-3d;
+                                transition:1s cubic-bezier(0.02,0.98,0.47,1.37);
+                        }
+                        section aside.active{
+                                transform:rotateX(0deg);
+                        }
+                </style>
+        </head>
+        <body>
+                <section>
+                        <h2>title</h2>
+                        <aside>1
+                                <aside>2
+                                        <aside>3
+                                                <aside>4
+                                                        <aside>5
+                                                                <aside>6
+                                                                        <aside>7</aside>
+                                                                </aside>
+                                                        </aside>
+                                                </aside>
+                                        </aside>
+                                </aside>
+                        </aside>
+                </section>
+                <script>
+                        var oSection=document.getElementsByTagName('section')[0];
+                        var aDiv=document.getElementsByTagName('aside');
+                        oSection.onmouseover=function(){
+                                for(var i=0;i<aDiv.length;i++){
+                                        aDiv[i].style.transitionDelay=i*0.1+'s';
+                                        aDiv[i].className='active';
+                                }
+                        };
+                        oSection.onmouseout=function(){
+                                for(var i=aDiv.length-1;i>=0;i--){
+                                        aDiv[i].style.transitionDelay=(aDiv.length-1-i)*0.1+'s';
+                                        aDiv[i].className='';
+                                }
+                        }
+                </script>
+        </body>
+</html>

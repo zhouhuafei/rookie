@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <form action="http://localhost:8080/form">
+                        <fieldset>
+                                <legend>username</legend>
+                                <input type="text" name="username" value="username" placeholder="username"/>
+                        </fieldset>
+                        <fieldset>
+                                <legend>password</legend>
+                                <input type="password" name="password" value="password" placeholder="password"/>
+                        </fieldset>
+                        <fieldset>
+                                <legend>sex</legend>
+                                <input type="text" name="sex" value="man" placeholder="sex"/>
+                        </fieldset>
+                        <fieldset>
+                                <legend>height</legend>
+                                <input type="text" name="height" value="182" placeholder="height"/>
+                        </fieldset>
+                        <fieldset>
+                                <legend>submit</legend>
+                                <button>提交数据</button>
+                        </fieldset>
+                </form>
+                <div></div>
+        </body>
+        <script>
+                var oForm = document.forms.item(0);
+                var sFormData = new FormData(oForm);
+                var oSubmit = document.getElementsByTagName('button')[0];
+                var oDiv = document.getElementsByTagName('div')[0];
+                var aInput = document.getElementsByTagName('input');
+                var sInfo = '';
+                for (var i = 0; i < aInput.length; i++) {
+                        if (i == aInput.length - 1) {
+                                sInfo += aInput[i].name + '=' + aInput[i].value;
+                        } else {
+                                sInfo += aInput[i].name + '=' + aInput[i].value + '&';
+                        }
+                }
+                oSubmit.onclick = function (ev) {
+                        ev.preventDefault();
+                        var xml = new XMLHttpRequest();
+                        xml.onreadystatechange = function () {
+                                if (xml.readyState == 4 && xml.status == 200) {
+                                        oDiv.innerHTML = decodeURI(xml.responseText);
+                                } else {
+                                        oDiv.innerHTML = xml.status + ':' + xml.statusText;
+                                }
+                        };
+                        xml.open('POST', oForm.action, true);
+                        //下面这句代码要放在open之后,如果使用了FormData可省略下面这句代码
+                        xml.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                        xml.send(sInfo);
+                }
+        </script>
+</html>

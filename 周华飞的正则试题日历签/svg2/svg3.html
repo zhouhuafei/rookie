@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>svg3</title>
+                <link rel="stylesheet" href="svg.css">
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        div{
+                                width:100px;
+                                height:100px;
+                                margin:0 auto;
+                        }
+                </style>
+        </head>
+        <body>
+                <!--
+                        建议使用这种方式
+                        compass base64
+
+                        0.background-image:inline-image(“xxx.xxx”);
+                        1.同样的图标记得用class控制,否则会重复性生成base64数据,导致增加css大小
+                        2.转成base64只能减少请求,不能减少大小,因为大小集成到了css里
+                        3.html直接使用svg也是同样的原理,大小直接集成到了html里
+                        4.所以用class命名同样的图标才能有优化效果,否则效果只会更差
+
+                        result:最好的方法就是,转成base64,用class定义同样的图标,按需引入
+                -->
+                <div></div>
+                <div></div>
+        </body>
+</html>

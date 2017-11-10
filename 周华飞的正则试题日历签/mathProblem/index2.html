@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>index</title>
+    </head>
+    <body>
+        <script>
+            //有3个人，天使说真话，魔鬼说假话，凡人有时真有时假。
+            //金发妹子说我不是魔鬼，黑发妹子说我不是天使，棕发妹子说我不是凡人。
+            //请问谁是天使，凡人，魔鬼。
+            "use strict";
+            {
+                //假设三人分别是a,b,c
+                let i=null;//i金发妹子
+                let j=null;//j黑发妹子
+                let k=null;//k棕发妹子
+                //假设天使,魔鬼,和凡人分别为0,1,2
+                let arr=['天使','魔鬼','凡人'];
+                for(let i=0;i<3;i++){
+                    for(let j=0;j<3;j++){
+                        if(i==j){
+                            continue;
+                        }
+                        for(let k=0;k<3;k++){
+                            if(j==k||k==i){
+                                continue;
+                            }
+                            //console.log(i,j,k);//所有可能的排列组合
+                            //黑发妹子不可能是天使,所以黑发妹子(j!=0);
+                            //黑发妹子不可能是魔鬼,所以黑发妹子(j!=1);
+                            //棕发妹子不可能是魔鬼,所以棕发妹子(k!=1);
+                            if(j!=0&&j!=1&&k!=1){
+                                console.log('金发妹子:'+arr[i],'黑发妹子:'+arr[j],'棕发妹子:'+arr[k]);
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

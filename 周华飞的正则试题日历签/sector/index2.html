@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        ul{
+                                width:400px;
+                                height:400px;
+                                overflow:hidden;
+                                border-radius:50%;
+                                background:#000000;
+                                position:relative;
+                                margin:100px auto;
+                                box-shadow:0 0 0 4px #eee,0 0 0 8px #ccc,0 0 0 12px #999,0 0 0 16px #666,0 0 0 20px #333;
+                        }
+                        li{
+                                width:100%;
+                                height:100%;
+                                position:absolute;
+                                left:50%;
+                                top:50%;
+                                transform-origin:left top;
+                        }
+                        a{
+                                position:absolute;
+                                left:40px;
+                                top:40px;
+                                transform:skewX(-30deg) rotate(30deg);
+                        }
+                        li:nth-of-type(1){
+                                background:#ff0000;
+                                /*90-60《==》30*/
+                                transform:rotate(0deg) skewX(30deg);
+                        }
+                        li:nth-of-type(2){
+                                background:#ff00ff;
+                                /*90-60《==》30*/
+                                transform:rotate(60deg) skewX(30deg);
+                        }
+                        li:nth-of-type(3){
+                                background:#0000ff;
+                                /*90-60《==》30*/
+                                transform:rotate(120deg) skewX(30deg);
+                        }
+                        li:nth-of-type(4){
+                                background:#00ffff;
+                                /*90-60《==》30*/
+                                transform:rotate(180deg) skewX(30deg);
+                        }
+                        li:nth-of-type(5){
+                                background:#00bbff;
+                                /*90-60《==》30*/
+                                transform:rotate(240deg) skewX(30deg);
+                        }
+                        li:nth-of-type(6){
+                                background:#ffff00;
+                                /*90-60《==》30*/
+                                transform:rotate(300deg) skewX(30deg);
+                        }
+                </style>
+        </head>
+        <body>
+                <ul>
+                        <li><a href="">0等奖品</a></li>
+                        <li><a href="">1等奖品</a></li>
+                        <li><a href="">2等奖品</a></li>
+                        <li><a href="">3等奖品</a></li>
+                        <li><a href="">4等奖品</a></li>
+                        <li><a href="">5等奖品</a></li>
+                </ul>
+        </body>
+</html>

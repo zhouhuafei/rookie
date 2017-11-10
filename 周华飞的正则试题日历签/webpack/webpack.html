@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>webpack</title>
+    </head>
+    <body>
+        <!--
+            在project目录下运行
+            webpack -wp one.js js.js
+            把one.js里的js打包到js.js里,one.js里引用了two.js里到模块
+            所以js.js拥有了one.js和two.js里的所有内容
+            -w  监听
+            -p  压缩
+            也可以用配置文件webpack.config.js进行配置
+        -->
+        <script src="js.js"></script>
+    </body>
+</html>

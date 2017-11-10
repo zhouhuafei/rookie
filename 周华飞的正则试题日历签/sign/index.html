@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <!--自适应以及默认处理-->
+                <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+                <meta name="apple-mobile-web-app-capable" content="yes"/>
+                <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+                <meta name="format-detection" content="telephone=no"/>
+                <!--uc和qq强制竖屏-->
+                <meta name="screen-orientation" content="portrait">
+                <meta name="x5-orientation" content="portrait">
+                <!--uc和qq强制全屏-->
+                <meta name="full-screen" content="yes">
+                <meta name="x5-fullscreen" content="true">
+                <link rel="stylesheet" href="base.css"/>
+                <!--以下是你要引入的css-->
+                <style>
+                        #calendar-box{
+                                position:relative;
+                                margin-top:1rem;
+                        }
+                        #calendar-sign{
+                                position:absolute;
+                                right:1rem;
+                                top:0;
+                                width:1rem;
+                                height:1rem;
+                                background:#000000;
+                                color:#ffffff;
+                                text-align:center;
+                                line-height:1rem;
+                                border-radius:50%;
+                                cursor:pointer;
+                        }
+                        #calendar{
+                                text-align:center;
+                                font-size:0.46rem;
+                                word-spacing:20px;
+                                line-height:1.4rem;
+                        }
+                        #calendar{
+                                width:9.8rem;
+                                margin:0 auto;
+                        }
+                        #calendar td{
+                                width:1.4rem;
+                                height:1.4rem;
+                                border-radius:50%;;
+                        }
+                        #calendar h3{
+                                height:1.4rem;
+                        }
+                        .active{
+                                background:#ff0000;
+                                color:#ffffff;
+                        }
+                </style>
+                <!--以上是你要引入的css-->
+        </head>
+        <body>
+                <div id="container">
+                        <script>
+                                (function(win,doc){
+                                        var oContainer=doc.getElementById('container');
+                                        var oHtml=doc.getElementsByTagName('html')[0];
+                                        fnResetHtmlFontSize();
+                                        function fnResetHtmlFontSize(){
+                                                var iContainerWidth=oContainer.offsetWidth;
+                                                oHtml.style.fontSize=iContainerWidth/10+'px';
+                                                console.log(iContainerWidth,oHtml.style.fontSize);
+                                        }
+                                        window.addEventListener('resize',fnResetHtmlFontSize,false);
+                                })(window,document);
+                        </script>
+                        <!--以下是你要引入的html-->
+                        <div id="calendar-box">
+                                <div id="calendar-sign">签到</div>
+                                <div id="calendar">
+                                        <p>Please enable Javascript to view this calendar.</p>
+                                </div>
+                        </div>
+                        <!--以上是你要引入的html-->
+                </div>
+                <!--以下是你要引入的js-->
+                <script type="text/javascript" src="../jq/jq.js"></script>
+                <script type="text/javascript" src="sign.js"></script>
+                <script>
+                        (function(){
+                                var myDate=new Date();
+                                var nowMon=myDate.getMonth();
+                                var nowYear=myDate.getFullYear();
+                                var $calendar=$('#calendar');
+                                //调用日历插件
+                                $calendar.calendarWidget({
+                                        month: nowMon,
+                                        year: nowYear
+                                });
+                                //签到相关
+                                var arr=[1,2,3,4,5,6,7,10];//假设这几天已经签到了
+                                var $td=$calendar.find('td');
+                                var $sign=$('#calendar-sign');
+                                $td.each(function(index,element){
+                                        var $e=$(element);
+                                        var bClass=$e.hasClass('current-month');
+                                        var iNow=$e.find('span').html();
+                                        if(bClass){
+                                                $.each(arr,function(i,v){
+                                                        if(iNow==v){
+                                                                $e.addClass('active');
+                                                        }
+                                                })
+                                        }
+                                });
+                                $sign.on('click',function(){
+                                        var nowDate=myDate.getDate();
+                                        $td.each(function(index,element){
+                                                var $e=$(element);
+                                                var iNow=$e.find('span').html();
+                                                var bClass=$e.hasClass('active');
+                                                if(iNow==nowDate&&!bClass){
+                                                        $e.addClass('active');
+                                                }
+                                        })
+                                })
+                        })();
+                </script>
+                <!--以上是你要引入的js-->
+        </body>
+</html>

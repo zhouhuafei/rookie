@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <script>
+                        //根据索引属性值检索多条数据之游标(先运行index7(main).html,确保已经创建了数据库)
+                        window.indexedDB=window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
+                        window.IDBTransaction=window.IDBTransaction||window.webkitIDBTransaction||window.msIDBTransaction;
+                        window.IDBKeyRange=window.IDBKeyRange||window.webkitIDBKeyRange||window.msIDBKeyRange;
+                        window.IDBCursor=window.IDBCursor||window.webkitIDBCursor||window.msIDBCursor;
+                        function getData(){
+                                var IDBOpenDBRequest=indexedDB.open('indexedDBTest','20160127');
+                                IDBOpenDBRequest.onsuccess=function(ev){
+                                        var idb=ev.target.result;
+                                        var tx=idb.transaction(['user'],'readwrite');
+                                        var store=tx.objectStore('user');
+                                        var idx=store.index('userIndex');
+                                        //var range=IDBKeyRange.lowerBound('zhouhuafei');
+                                        var range=IDBKeyRange.bound('zhouhuafei','zhouhuafei3');
+                                        var direction=IDBCursor.NEXT;
+                                        var req=idx.openCursor(range,direction);
+                                        req.onsuccess=function(){
+                                                var cursor=this.result;
+                                                if(cursor){
+                                                        console.log('cursor:',cursor,'cursor.value:',cursor.value);
+                                                        cursor.continue();
+                                                }
+                                        };
+                                        req.onerror=function(){
+                                                console.log('检索数据失败');
+                                        }
+                                };
+                                IDBOpenDBRequest.onerror=function(){
+                                        console.log('读取数据库失败');
+                                }
+                        }
+                        getData();
+                        //indexedDB.deleteDatabase('user');删除某个数据库
+                </script>
+        </body>
+</html>

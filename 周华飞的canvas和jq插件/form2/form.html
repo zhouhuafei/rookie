@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+<form method="post">
+        <fieldset>
+                <legend>用户名：</legend>
+                <input type="text" name="user" value="user" placeholder="user"/>
+        </fieldset>
+        <fieldset>
+                <legend>密码：</legend>
+                <input type="email" name="email" value="1123486116@qq.com" placeholder="email"/>
+        </fieldset>
+        <fieldset>
+                <legend>上传文件：</legend>
+                <input type="file" name="file" multiple/>
+        </fieldset>
+        <input type="submit" value="提交"/>
+</form>
+<div></div>
+<script>
+        //php需要上传到服务器才可以查看
+        var oDiv = document.getElementsByTagName('div')[0];
+        var oInput = document.querySelector('input[type=submit]');
+        oInput.onclick = function (ev) {
+                ev.preventDefault();
+                var oForm = document.forms[0];
+                var data = new FormData(oForm);
+                var oAjax = new XMLHttpRequest();
+                oAjax.open('POST', 'test.php', true);
+                oAjax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+                oAjax.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                                if (this.status == 200) {
+                                        oDiv.innerHTML = this.responseText;
+                                } else {
+                                        oDiv.innerHTML = this.status;
+                                }
+                        }
+                };
+                oAjax.send(data);
+        }
+</script>
+</body>
+</html>

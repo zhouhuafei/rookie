@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                *{
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                }
+                div{
+                        width: 100px;
+                        height: 100px;
+                        background: #f20000;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: 50%;
+                        margin-left: -50px;
+                        top: 0;
+                }
+        </style>
+</head>
+<body>
+<div></div>
+<script>
+        var oDiv=document.getElementsByTagName('div')[0];
+        var iClientW=document.documentElement.clientWidth;
+        var iClientH=document.documentElement.clientHeight;
+        var iHeight=oDiv.offsetHeight;
+        var iSpeed=0;
+        var iStep=1;
+        var iTop=oDiv.offsetTop;
+        setInterval(function(){
+                iSpeed+=iStep;
+                iTop+=iSpeed;
+                if(iTop>=iClientH-iHeight){
+                        iTop=iClientH-iHeight;
+                        iSpeed*=-1;
+                        iSpeed*=0.75;
+                }
+                oDiv.style.top=iTop+'px';
+                console.log(iSpeed,iTop);
+        },30)
+</script>
+</body>
+</html>

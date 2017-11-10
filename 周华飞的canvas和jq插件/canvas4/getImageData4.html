@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var random=0;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        canvas.width=w;
+                        canvas.height=h;
+                        var context=canvas.getContext('2d');
+                        var image=new Image();
+                        var point=[];
+                        image.src='canvas.png';
+                        image.onload=function(){
+                                context.drawImage(image,0,0);
+                                var imageData=context.getImageData(0,0,w,h);
+                                var data=imageData.data;
+                                document.onmousedown=function(){
+                                        document.onmousemove=function(ev){
+                                                var x=ev.clientX;
+                                                var y=ev.clientY;
+                                                var r=(w*y+x)*4;
+                                                point.push([x,y]);
+                                                random=Math.floor(Math.random()*256);
+                                                data[r]=random;
+                                                random=Math.floor(Math.random()*256);
+                                                data[r+1]=random;
+                                                random=Math.floor(Math.random()*256);
+                                                data[r+2]=random;
+                                                data[r+3]=255;
+                                                context.putImageData(imageData,0,0);
+                                        };
+                                        document.onmouseup=function(){
+                                                document.onmousemove=null;
+                                                document.onmouseup=null;
+                                                var num=0;
+                                                var timer=null;
+                                                context.fillStyle='rgba(255,0,255,0.4)';
+                                                context.strokeStyle='rgba(255,255,255,0.6)';
+                                                timer=setInterval(function(){
+                                                        var x=point[num][0];
+                                                        var y=point[num][1];
+                                                        var xb=point[num-1==-1?0:num-1][0];
+                                                        var yb=point[num-1==-1?0:num-1][1];
+                                                        drawLine(xb,yb,x,y);
+                                                        num++;
+                                                        if(num==point.length){
+                                                                clearInterval(timer);
+                                                                num=0;
+                                                                timer=null;
+                                                                timer=setInterval(function(){
+                                                                        x=point[num][0];
+                                                                        y=point[num][1];
+                                                                        drawStar(x,y);
+                                                                        num++;
+                                                                        if(num==point.length){
+                                                                                clearInterval(timer);
+                                                                        }
+                                                                },30);
+                                                        }
+                                                },30);
+
+                                        }
+                                }
+                        };
+                        function drawStar(x,y){
+                                var radian=Math.PI/180;
+                                var star=Math.PI/5*4;
+                                var len=5;
+                                var r=10;
+                                var angle=14;
+                                function start(num){
+                                        context.save();
+                                        context.beginPath();
+                                        context.translate(x,y);
+                                        context.rotate(num*angle*radian);
+                                        for(var i=0;i<len;i++){
+                                                context.lineTo(-r*Math.sin(i*star),-r*Math.cos(i*star));
+                                        }
+                                        context.closePath();
+                                        context.fill();
+                                        context.stroke();
+                                        context.restore();
+                                }
+                                var num=0;
+                                var timer=null;
+                                var max=5;
+                                timer=setInterval(function(){
+                                        start(num);
+                                        num++;
+                                        if(num==max){
+                                                clearInterval(timer);
+                                        }
+                                },30)
+                        }
+                        function drawLine(xb,yb,xa,ya){
+                                context.save();
+                                context.beginPath();
+                                context.strokeStyle='rgba(255,0,255,0.4)';
+                                context.lineWidth=1;
+                                context.moveTo(xb+0.5,yb+0.5);
+                                context.lineTo(xa+0.5,ya+0.5);
+                                context.stroke();
+                                context.closePath();
+                                context.restore();
+                        }
+                </script>
+        </body>
+</html>

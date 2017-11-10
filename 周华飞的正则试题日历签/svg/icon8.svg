@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,640,640">
+    <line x1="0" y1="0" x2="640" y2="640" stroke="red" stroke-width="5" stroke-opacity="0.8"/>
+    <line x1="640" y1="0" x2="0" y2="640" stroke="blue" stroke-width="5" stroke-opacity="0.8"/>
+    <line x1="0" y1="320" x2="640" y2="320" stroke="yellow" stroke-width="5" stroke-opacity="0.8"/>
+</svg>

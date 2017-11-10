@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>copy</title>
+        </head>
+        <body>
+                <h1>点击复制(非文本框h2h2h22h2h2h2h2h2)</h1>
+                <h2>h2h2h22h2h2h2h2h23</h2>
+                <script>
+                        document.onclick=function(){
+                                var h2=document.getElementsByTagName('h2')[0];
+                                var select=document.getSelection();
+                                var range=document.createRange();
+                                range.selectNodeContents(h2);
+                                select.removeAllRanges();
+                                select.addRange(range);
+                                this.execCommand('Copy');
+                        }
+                </script>
+        </body>
+</html>

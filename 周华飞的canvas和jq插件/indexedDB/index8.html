@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <script>
+                        //获取数据(先运行index7(main).html,确保已经创建了数据库)
+                        window.indexedDB=window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
+                        function getData(){
+                                var IDBOpenDBRequest=indexedDB.open('indexedDBTest','20160127');
+                                IDBOpenDBRequest.onsuccess=function(ev){
+                                        var IDBDatabase=ev.target.result;
+                                        var IDBTransaction=IDBDatabase.transaction(['user'],'readonly');
+                                        var IDBObjectStore=IDBTransaction.objectStore('user');
+                                        var IDBRequest=IDBObjectStore.get(1);//通过仓库直接获取
+                                        IDBRequest.onsuccess=function(ev){
+                                                var objData=ev.target.result;
+                                                console.log('通过数据库仓库直接获取:',objData);
+                                        };
+                                        IDBRequest.onerror=function(){
+                                                console.log('读取数据失败');
+                                        };
+                                        //通过仓库的索引获取
+                                        var IDBIndex=IDBObjectStore.index('userIndex');
+                                        var IDBRequest2=IDBIndex.get('zhouqiang');
+                                        IDBRequest2.onsuccess=function(ev){
+                                                var objData=ev.target.result;
+                                                console.log('通过数据库仓库索引获取:',objData);
+                                        };
+                                        IDBRequest2.onerror=function(){
+                                                console.log('读取数据失败');
+                                        };
+                                };
+                                IDBOpenDBRequest.onerror=function(){
+                                        console.log('读取数据库失败');
+                                }
+                        }
+                        getData();
+                        //indexedDB.deleteDatabase('user');删除某个数据库
+                </script>
+        </body>
+</html>

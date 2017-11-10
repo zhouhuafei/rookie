@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var game={
+                                fnInitial:function(){
+                                        this.fnGetEle();
+                                        this.fnSetAttr();
+                                        this.fnSetGradient();
+                                        this.fnDrawMap();
+                                        this.fnImgLoad();
+                                        this.fnDrawData();
+                                },
+                                fnGetEle:function(){
+                                        this.canvas=document.getElementsByTagName('canvas')[0];
+                                        this.context=this.canvas.getContext('2d');
+                                        this.clientW=document.documentElement.clientWidth;
+                                        this.clientH=document.documentElement.clientHeight;
+                                        this.centerX=this.clientW/2;
+                                        this.centerY=this.clientH/2;
+                                        this.radian=Math.PI/180;
+                                },
+                                fnSetAttr:function(){
+                                        this.canvas.width=this.clientW;
+                                        this.canvas.height=this.clientH;
+                                        this.bigCircleRadius=this.clientH/2-50;
+                                        this.smallCircleRadius=this.clientH/2-100;
+                                        this.smallCenterX=this.centerX-this.bigCircleRadius+this.smallCircleRadius;
+                                        this.smallTopY=this.centerY-this.smallCircleRadius;
+                                        this.overX=this.smallCenterX+this.smallCircleRadius;
+                                        this.overR=30;
+                                        this.ball=[];
+                                        this.ball.push({
+                                                x:this.centerX,
+                                                y:this.centerY-this.bigCircleRadius,
+                                                r:this.bigCircleRadius,
+                                                angle:0,
+                                                startX:this.centerX,
+                                                startY:this.centerY-this.bigCircleRadius
+                                        });
+                                        this.bullet=[];
+                                        this.ballSpeed=500;
+                                        this.ballTimer=null;
+                                        this.myBlood=3;
+                                        this.myScore=0;
+                                        this.bestSpeed=1000/60;
+                                        this.bulletGap=200;
+                                },
+                                fnSetGradient:function(){
+                                        this.gra=this.context.createLinearGradient(0,0,this.clientW,this.clientH);
+                                        this.gra.addColorStop(0,'#8B00FF');
+                                        this.gra.addColorStop(0.1,'#FF7F00');
+                                        this.gra.addColorStop(0.2,'#FFFF00');
+                                        this.gra.addColorStop(0.3,'#FF0000');
+                                        this.gra.addColorStop(0.4,'#00FF00');
+                                        this.gra.addColorStop(0.5,'#0000FF');
+                                        this.gra.addColorStop(0.6,'#00FF00');
+                                        this.gra.addColorStop(0.7,'#FF0000');
+                                        this.gra.addColorStop(0.8,'#FFFF00');
+                                        this.gra.addColorStop(0.9,'#FF7F00');
+                                        this.gra.addColorStop(1,'#8B00FF');
+                                        this.context.fillStyle=this.gra;
+                                        this.context.strokeStyle='#fff';
+                                },
+                                fnImgLoad:function(){
+                                        var self=this;
+                                        this.matsu=new Image();
+                                        this.matsuW=80;
+                                        this.matsuH=80;
+                                        this.matsuRotate=0;
+                                        this.matsu.onload=function(){
+                                                self.fnDrawMatsu();
+                                                self.fnMatsuRotate();
+                                                self.fnBallMove();
+                                                self.fnAddBall();
+                                                self.fnAddBullet();
+                                        };
+                                        this.matsu.src='matsu.jpg';
+                                },
+                                fnDrawMatsu:function(){
+                                        this.context.save();
+                                        this.context.translate(this.smallCenterX,this.centerY);
+                                        this.context.rotate(this.matsuRotate*this.radian);
+                                        this.context.drawImage(this.matsu,-this.matsuW/2,-this.matsuH/2);
+                                        this.context.restore();
+                                },
+                                fnMatsuRotate:function(){
+                                        var self=this;
+                                        this.canvas.onmousemove=function(ev){
+                                                var clientX=ev.clientX;
+                                                var clientY=ev.clientY;
+                                                var x=clientX-self.centerX;
+                                                var y=clientY-self.centerY;
+                                                self.matsuRotate=Math.atan2(y,x)*180/Math.PI;
+                                        }
+                                },
+                                fnDrawMap:function(){
+                                        this.context.beginPath();
+                                        this.context.arc(this.centerX,this.centerY,this.bigCircleRadius,-90*this.radian,180*this.radian);
+                                        this.context.stroke();
+                                        this.context.closePath();
+                                        this.context.beginPath();
+                                        this.context.arc(this.smallCenterX,this.centerY,this.smallCircleRadius,180*this.radian,0);
+                                        this.context.stroke();
+                                        this.context.closePath();
+                                        this.context.beginPath();
+                                        this.context.arc(this.overX,this.centerY,this.overR,0,360*this.radian);
+                                        this.context.stroke();
+                                        this.context.closePath();
+                                },
+                                fnDrawBall:function(){
+                                        this.context.save();
+                                        this.context.fillStyle='#fff';
+                                        for(var i=0;i<this.ball.length;i++){
+                                                this.context.beginPath();
+                                                this.context.arc(this.ball[i].x,this.ball[i].y,this.overR,0,360*this.radian);
+                                                this.context.fill();
+                                                this.context.closePath();
+                                        }
+                                        this.context.restore();
+                                        this.fnChangeBall();
+                                },
+                                fnChangeBall:function(){
+                                        for(var i=0;i<this.ball.length;i++){
+                                                if(this.ball[i].angle>=270){
+                                                        this.ball[i].r=this.smallCircleRadius;
+                                                        this.ball[i].startX=this.smallCenterX;
+                                                        this.ball[i].startY=this.smallTopY;
+                                                }
+                                                if(this.ball[i].angle>=450){
+                                                        this.myBlood--;
+                                                        if(this.myBlood<0){
+                                                                alert('game over');
+                                                                location.reload();
+                                                        }
+                                                        this.ball.splice(i,1);
+                                                        break;
+                                                }
+                                                this.ball[i].angle++;
+                                                var x=this.ball[i].r*Math.sin(this.ball[i].angle*this.radian);
+                                                var y=this.ball[i].r-this.ball[i].r*Math.cos(this.ball[i].angle*this.radian);
+                                                this.ball[i].x=this.ball[i].startX+x;
+                                                this.ball[i].y=this.ball[i].startY+y;
+                                        }
+                                },
+                                fnBallMove:function(){
+                                        var self=this;
+                                        setInterval(function(){
+                                                self.context.clearRect(0,0,self.clientW,self.clientH);
+                                                self.fnDrawMap();
+                                                self.fnDrawMatsu();
+                                                self.fnDrawBall();
+                                                self.fnDrawBullet();
+                                                self.fnDrawData();
+                                                self.fnImpactTest();
+                                        },this.bestSpeed)
+                                },
+                                fnAddBall:function(){
+                                        var self=this;
+                                        this.ballTimer=setInterval(function(){
+                                                self.ball.push({
+                                                        x:self.centerX,
+                                                        y:self.centerY-self.bigCircleRadius,
+                                                        r:self.bigCircleRadius,
+                                                        angle:0,
+                                                        startX:self.centerX,
+                                                        startY:self.centerY-self.bigCircleRadius
+                                                });
+                                        },this.ballSpeed);
+                                },
+                                fnDrawData:function(){
+                                        this.context.save();
+                                        this.context.beginPath();
+                                        this.context.font='14px 微软雅黑';
+                                        this.context.textAlign='center';
+                                        this.context.textBaseline='middle';
+                                        this.context.fillText('击杀'+this.myScore+'个,剩余'+this.myBlood+'命',this.centerX/4,this.centerY/8);
+                                        this.context.fillText('鼠标移动控制方向,按空格键发射子弹',this.centerX/4,this.centerY/6);
+                                        this.context.closePath();
+                                        this.context.restore();
+                                },
+                                fnDrawBullet:function(){
+                                        this.context.save();
+                                        this.context.fillStyle=this.gra;
+                                        for(var i=0;i<this.bullet.length;i++){
+                                                this.context.beginPath();
+                                                this.context.arc(this.bullet[i].x,this.bullet[i].y,this.overR,0,360*this.radian);
+                                                this.context.fill();
+                                                this.context.closePath();
+                                        }
+                                        this.context.restore();
+                                        this.fnBulletChange();
+                                },
+                                fnBulletChange:function(){
+                                        for(var i=0;i<this.bullet.length;i++){
+                                                var c=this.bigCircleRadius;
+                                                var a=c*Math.cos(this.bullet[i].angle*this.radian);
+                                                var b=c*Math.sin(this.bullet[i].angle*this.radian);
+                                                var speedX=this.bullet[i].speed*a/c;
+                                                var speedY=this.bullet[i].speed*b/c;
+                                                this.bullet[i].x+=speedX;
+                                                this.bullet[i].y+=speedY;
+                                        }
+                                },
+                                fnAddBullet:function(){
+                                        var self=this;
+                                        var bTrue=true;
+                                        document.onkeydown=function(ev){
+                                                if(bTrue){
+                                                        bTrue=false;
+                                                        setTimeout(function(){
+                                                                bTrue=true;
+                                                        },self.bulletGap);
+                                                        if(ev.keyCode==32){
+                                                                self.bullet.push({
+                                                                        x:self.smallCenterX,
+                                                                        y:self.centerY,
+                                                                        speed:5,
+                                                                        angle:self.matsuRotate
+                                                                });
+                                                        }
+                                                }
+                                        };
+                                },
+                                fnImpact:function(x1,y1,r1,x2,y2,r2){
+                                        var r=r1+r2;
+                                        var a=x1-x2;
+                                        var b=y1-y2;
+                                        var c=Math.sqrt(a*a+b*b);
+                                        if(c<=r){
+                                                return '1';
+                                        }else{
+                                                return '';
+                                        }
+                                },
+                                fnImpactTest:function(){
+                                        for(var i=0;i<this.bullet.length;i++){
+                                                for(var j=0;j<this.ball.length;j++){
+                                                        var x1=this.bullet[i].x;
+                                                        var y1=this.bullet[i].y;
+                                                        var r1=this.overR;
+                                                        var x2=this.ball[j].x;
+                                                        var y2=this.ball[j].y;
+                                                        var r2=this.overR;
+                                                        if(this.fnImpact(x1,y1,r1,x2,y2,r2)){
+                                                                this.myScore++;
+                                                                if(this.myScore%100==0&&this.bulletGap>100){
+                                                                        this.bulletGap-=50;
+                                                                }
+                                                                console.log(this.bulletGap);
+                                                                if(this.ballSpeed>200){
+                                                                        this.ballSpeed-=10;
+                                                                        clearInterval(this.ballTimer);
+                                                                        this.fnAddBall();
+                                                                }
+                                                                this.bullet.splice(i,1);
+                                                                this.ball.splice(j,1);
+                                                                break;
+                                                        }
+                                                }
+                                        }
+                                }
+                        };
+                        game.fnInitial();
+                </script>
+        </body>
+</html>

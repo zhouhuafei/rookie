@@ -1,0 +1,203 @@
+@charset "gb2312";
+/* CSS Document */
+/* CSS Document */
+/*zero*/
+html {
+  font-size: 62.5%;
+}
+body,
+div,
+menu,
+ol,
+ul,
+li,
+dl,
+dd,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+p,
+form,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+video,
+audio,
+figure,
+textarea {
+  padding: 0;
+  margin: 0;
+}
+input,
+select,
+textarea,
+img,
+area {
+  outline: none;
+  border: none;
+}
+input,
+select,
+textarea {
+  background: #FFF;
+}
+mark {
+  background: none;
+}
+img {
+  vertical-align: middle;
+}
+textarea {
+  resize: none;
+}
+li {
+  list-style-type: none;
+}
+body {
+  font: 14px/1 "Microsoft YaHei";
+}
+em,
+i,
+strong,
+b,
+small,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+address {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+}
+span,
+b,
+em,
+i,
+strong,
+small,
+label,
+a,
+mark {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+/*clear-fix*/
+.clear-fix {
+  clear: both;
+  *zoom: 1;
+}
+.clear-fix:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+  font-size: 0;
+}
+/*common*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.w320 {
+  width: 320px;
+  margin: 0 auto;
+}
+.w640 {
+  width: 640px;
+  margin: 0 auto;
+}
+/*noSpacing*/
+.no-mt {
+  margin-top: 0 !important;
+}
+.no-mr {
+  margin-right: 0 !important;
+}
+.no-mb {
+  margin-bottom: 0 !important;
+}
+.no-ml {
+  margin-left: 0 !important;
+}
+.no-pt {
+  padding-top: 0 !important;
+}
+.no-pr {
+  padding-right: 0 !important;
+}
+.no-pb {
+  padding-bottom: 0 !important;
+}
+.no-pl {
+  padding-left: 0 !important;
+}
+.no-bt {
+  border-top: none !important;
+}
+.no-br {
+  border-right: none !important;
+}
+.no-bb {
+  border-bottom: none !important;
+}
+.no-bl {
+  border-left: none !important;
+}
+.no-ti {
+  text-indent: 0;
+  color: #f00;
+}
+#container img {
+  width: 100%;
+}
+/*media*/
+@media (min-width: 480px) and (max-width: 639px) {
+  /*html*/
+  html {
+    font-size: 46.875%;
+  }
+  /*container*/
+  #container {
+    width: 100%;
+  }
+}
+@media (min-width: 400px) and (max-width: 479px) {
+  /*html*/
+  html {
+    font-size: 39.0625%;
+  }
+  /*container*/
+  #container {
+    width: 100%;
+  }
+}
+@media (min-width: 320px) and (max-width: 399px) {
+  /*html*/
+  html {
+    font-size: 31.25%;
+  }
+  /*container*/
+  #container {
+    width: 100%;
+  }
+}
+/*banner*/

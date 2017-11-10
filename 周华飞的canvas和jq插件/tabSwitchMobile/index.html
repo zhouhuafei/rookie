@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html{
+                                font-size:60px;
+                        }
+                        article{
+                                width:100%;
+                                max-width:600px;
+                                margin:4% auto 0;
+                                position:relative;
+                                height:7.5rem;
+                                overflow:hidden;
+                                background:#000;
+                        }
+                        ul{
+                                position:absolute;
+                                width:400%;
+                                height:100%;
+                                transition:0.5s;
+                                left:0;
+                                top:0;
+                        }
+                        ul:after{
+                                content:"";
+                                display:block;
+                                clear:both;
+                                overflow:hidden;
+                                height:0;
+                        }
+                        li{
+                                float:left;
+                                width:25%;
+                        }
+                        img{
+                                width:100%;
+                                vertical-align:middle;
+                        }
+                        section{
+                                width:100%;
+                                height:10px;
+                                text-align:right;
+                                -moz-user-select:none;
+                                position:absolute;
+                                left:0;
+                                bottom:5px;
+                        }
+                        div{
+                                width:10px;
+                                height:10px;
+                                text-align:right;
+                                background:#000;
+                                color:#ffffff;
+                                border-radius:50%;
+                                cursor:pointer;
+                                float:left;
+                                margin:0 5px;
+                        }
+                        div.active{
+                                background:#f3840c;
+                        }
+                        nav:after{
+                                content:"";
+                                display:block;
+                                height:0;
+                                overflow:hidden;
+                                clear:both;
+                        }
+                        nav{
+                                display:inline-block;
+                                vertical-align:top;
+                        }
+                </style>
+        </head>
+        <body>
+                <article>
+                        <ul>
+                                <li><img src="1.jpg" alt=""/></li>
+                                <li><img src="2.jpg" alt=""/></li>
+                                <li><img src="3.jpg" alt=""/></li>
+                                <li><img src="4.jpg" alt=""/></li>
+                        </ul>
+                        <section>
+                                <nav>
+                                        <div class="active"></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                </nav>
+                        </section>
+                </article>
+                <script>
+                        //电脑自适应
+                        var html=document.getElementsByTagName('html')[0];
+                        var maxW=600;
+                        var clientW=document.documentElement.clientWidth;
+                        clientW=clientW>=maxW?maxW:clientW;
+                        html.style.fontSize=clientW/10+'px';
+                        window.onresize=function(){
+                                clientW=document.documentElement.clientWidth;
+                                clientW=clientW>=maxW?maxW:clientW;
+                                html.style.fontSize=clientW/10+'px';
+                        };
+                        //禁止选中文字
+                        var oSection=document.getElementsByTagName('section')[0];
+                        oSection.onselectstart=function(){
+                                return false;
+                        };
+                        //手机切换
+                        //document.ontouchstart等于null表示是手机端
+                        //document.ontouchstart等于undefined表示是电脑端
+                        var aBtn=document.getElementsByTagName('div');
+                        var oUl=document.getElementsByTagName('ul')[0];
+                        var oParent=document.getElementsByTagName('article')[0];
+                        var nowNum=0;
+                        var iW=oParent.clientWidth;
+                        var nowLeft=0;
+                        var disX=0;
+                        var timer=null;
+                        oUl.addEventListener('touchstart',function(ev){
+                                clearInterval(timer);
+                                var e=ev.changedTouches[0];
+                                disX=e.pageX;
+                        },false);
+                        oUl.addEventListener('touchmove',function(ev){
+                                var e=ev.changedTouches[0];
+                                nowLeft=e.pageX-disX+nowNum*iW;
+                                oUl.style.transition='0s';
+                                oUl.style.left=nowLeft+'px';
+                        },false);
+                        oUl.addEventListener('touchend',function(){
+                                nowNum=Math.round(nowLeft/iW);
+                                if(nowNum<-(aBtn.length-1))
+                                {
+                                        nowNum=-(aBtn.length-1);
+                                }
+                                if(nowNum>0){
+                                        nowNum=0;
+                                }
+                                tab();
+                                autoPlay();
+                        },false);
+                        function tab(){
+                                for(var i=0;i<aBtn.length;i++){
+                                        aBtn[i].className='';
+                                }
+                                aBtn[Math.abs(nowNum)].className='active';
+                                oUl.style.transition='0.6s';
+                                oUl.style.left=nowNum*iW+'px';
+                        }
+                        function autoPlay(){
+                                timer=setInterval(function(){
+                                        nowNum--;
+                                        if(nowNum<-(aBtn.length-1)){
+                                                nowNum=0;
+                                        }
+                                        tab();
+                                },2000);
+                        }
+                        autoPlay();
+                </script>
+        </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <title>table drag</title>
+                <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+                <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+                <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+                <style type="text/css">
+                        .cursor{
+                                cursor:ew-resize;
+                        }
+                </style>
+        </head>
+        <body>
+                <table class="table table-bordered">
+                        <thead>
+                                <tr>
+                                        <td class="active">这是第一列</td>
+                                        <td class="success">这是第二列</td>
+                                        <td class="warning">这是第三列</td>
+                                        <td class="danger">这是第四列</td>
+                                        <td class="info">这是第五列</td>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>1111111</td>
+                                        <td>2222222</td>
+                                        <td>3333333</td>
+                                        <td>4444444</td>
+                                        <td>5555555</td>
+                                </tr>
+                                <tr>
+                                        <td>1111111</td>
+                                        <td>2222222</td>
+                                        <td>3333333</td>
+                                        <td>4444444</td>
+                                        <td>5555555</td>
+                                </tr>
+                                <tr>
+                                        <td>1111111</td>
+                                        <td>2222222</td>
+                                        <td>3333333</td>
+                                        <td>4444444</td>
+                                        <td>5555555</td>
+                                </tr>
+                                <tr>
+                                        <td>1111111</td>
+                                        <td>2222222</td>
+                                        <td>3333333</td>
+                                        <td>4444444</td>
+                                        <td>5555555</td>
+                                </tr>
+                                <tr>
+                                        <td>1111111</td>
+                                        <td>2222222</td>
+                                        <td>3333333</td>
+                                        <td>4444444</td>
+                                        <td>5555555</td>
+                                </tr>
+                                <tr>
+                                        <td>1111111</td>
+                                        <td>2222222</td>
+                                        <td>3333333</td>
+                                        <td>4444444</td>
+                                        <td>5555555</td>
+                                </tr>
+                        </tbody>
+                </table>
+                <script type="text/javascript">
+                        $(function(){
+                                var bTrue=false;//点击的时候应该在什么范围才可以进行缩放
+                                var bClick=false;//那个光标应该在什么情形下进行恢复
+                                var iW=2;//临界值
+                                $('.table thead td').mousemove(function(e){
+                                        var $this=$(this);
+                                        if($this.outerWidth()+$this.offset().left-e.pageX<=iW){
+                                                $('.table').addClass('cursor');
+                                        }else{
+                                                if(!bClick){
+                                                        $('.table').removeClass('cursor');
+                                                }
+                                        }
+                                });
+                                $('.table thead td').mousedown(function(e){
+                                        if($(this).outerWidth()+$(this).offset().left-e.pageX<=iW){
+                                                bTrue=true;
+                                                bClick=true;
+                                        }else{
+                                                bTrue=false;
+                                                bClick=false;
+                                        }
+                                        if(bTrue){
+                                                var index=$(this).index('.table thead td');
+                                                var $this=$(this);
+                                                var iClentX=e.pageX;
+                                                var iWidth=$(this).width();
+                                                $(document).bind('mousemove',fnMove);
+                                                $(document).bind('mouseup',fnUp);
+                                        }
+                                        function fnMove(e){
+                                                if(index==$('.table thead td').length-1){
+                                                        return false;
+                                                }else{
+                                                        $this.width(iWidth+(e.pageX-iClentX));
+                                                }
+                                        }
+                                        function fnUp(e){
+                                                if(bClick){
+                                                        $('.table').removeClass('cursor');
+                                                        bClick=false;
+                                                }
+                                                $(document).unbind('mousemove',fnMove);
+                                                $(document).unbind('mouseup',fnUp);
+                                        }
+                                        return false;
+                                });
+                        });
+                </script>
+        </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        text-decoration: none;
+                }
+                body {
+                        height: 2000px;
+                }
+        </style>
+</head>
+<body>
+<style>
+        #sidebar {
+                width: 100px;
+                line-height: 34px;
+                text-align: center;
+                font-size: 14px;
+                color: #fff;
+                background: #444955;
+                position: fixed;
+                left: 0;
+                top: 100px;
+                cursor: pointer;
+        }
+        #sidebar li.active {
+                background: #006db8;
+        }
+        #sidebar li:hover {
+                background: #006db8;
+        }
+        #sidebar li.last {
+                line-height: 60px;
+                position: relative;
+        }
+        #sidebar li.last:after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border: 10px solid transparent;
+                border-bottom: 10px solid #fff;
+                position: absolute;
+                left: 50%;
+                margin-left: -10px;
+                top: -5px;
+        }
+        #sidebar a {
+                color: inherit;
+        }
+</style>
+<div id="sidebar">
+        <ul>
+                <li class="active"><a href="/spzx/" target="_blank">视频中心</a></li>
+                <li><a href="/pbl/" target="_blank">病例墙</a></li>
+                <li><a href="/zt/2014_CaseList/npx.html#npx" target="_blank">银屑病</a></li>
+                <li><a href="/zt/2014_CaseList/bdf.html#bdf" target="_blank">白癜风</a></li>
+                <li><a href="/zt/2014_CaseList/index.html#qcd" target="_blank">青春痘</a></li>
+                <li><a href="/zt/2014_CaseList/ban.html#ban" target="_blank">斑类</a></li>
+                <li><a href="/zt/2014_CaseList/hzj.html#hzj" target="_blank">灰指甲</a></li>
+                <li><a href="/zt/2014_CaseList/py.html#py" target="_blank">皮炎</a></li>
+                <li><a href="/zt/2014_CaseList/sz.html#sz" target="_blank">湿疹</a></li>
+                <li><a href="/zt/2014_CaseList/tf.html#tf" target="_blank">脱发</a></li>
+                <li><a href="/zt/2014_CaseList/xmz.html#xmz" target="_blank">荨麻疹</a></li>
+                <li><a href="/zt/2014_CaseList/ylb.html#ylb" target="_blank">鱼鳞病</a></li>
+                <li><a href="/kangfubingli/" target="_blank">其他</a></li>
+                <li class="last" onclick="window.scrollTo(0,0)">点击回顶部</li>
+        </ul>
+</div>
+<script>
+        (function(doc,win){
+                var arr = [
+                        'http://pfk.nanningyiyuan.com/spzx/',
+                        'http://pfk.nanningyiyuan.com/pbl/',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/npx.html#npx',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/bdf.html#bdf',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/index.html#qcd',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/ban.html#ban',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/hzj.html#hzj',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/py.html#py',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/sz.html#sz',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/tf.html#tf',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/xmz.html#xmz',
+                        'http://pfk.nanningyiyuan.com/zt/2014_CaseList/ylb.html#ylb',
+                        'http://pfk.nanningyiyuan.com/kangfubingli/'
+                ];
+                var iLen=arr.length;
+                var aLi=doc.getElementById('sidebar').getElementsByTagName('li');
+                var sHref=win.location.href;
+                for(var i=0;i<iLen;i++){
+                        if(sHref==arr[i]){
+                                aLi[i].className='active';
+                        }
+                }
+        })(document,window);
+</script>
+</body>
+</html>

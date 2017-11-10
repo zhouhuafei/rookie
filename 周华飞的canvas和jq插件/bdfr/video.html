@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="gb2312">
+        <meta name="author" content="rookie"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <title>白癜风媒体报道</title>
+        <link rel="stylesheet" href="css/base.css"/>
+        <style>
+                div#video{
+                        width: 100%;
+                        margin: 0 auto;
+                        max-width: 640px;
+                }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="http://pj.skinjc.com/socket.php?ym=http://pfb.skinjc.com/&title=医院评价&action=1"></script>
+</head>
+<body>
+<div id="container">
+        <!--header-->
+        <script type="text/javascript" src="/zt/tongyong/header.js"></script>
+        <script>
+                (function(doc,win){
+                        doc.writeln("<div id=\"video\">");
+                        var oDiv=doc.getElementsByTagName('div')[0];
+                        var iWidth=oDiv.offsetWidth;//视频宽度
+                        var iHeight=iWidth*0.75;//视频高度
+                        var iVid=win.location.hash.substring(1);//视频编号
+                        doc.writeln("<script language=\'javascript\' src=\'http://www.5etv.com/video/v2_player_html5.jsp?vid="+iVid+"&s=www.5etv.com&width="+iWidth+"&height="+iHeight+"&soValue=100&playMode=0&toolzt=yes&startzt=yes\'><\/script>");
+                        doc.writeln("</div>");
+                })(document,window);
+        </script>
+        <!--footer-->
+        <script src="/zt/tongyong/footer.js"></script>
+</div>
+</body>
+</html>

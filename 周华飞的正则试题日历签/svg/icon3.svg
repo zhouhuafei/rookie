@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,640,640">
+    <rect x="0" y="0" width="640" height="640" fill="transparent" stroke="red" stroke-width="5" rx="10" ry="10"/>
+    <rect x="100" y="100" width="440" height="440" fill="transparent" stroke="blue" stroke-width="5" rx="10"/>
+</svg>

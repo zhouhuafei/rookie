@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                }
+                ul {
+                        width: 200px;
+                        height: 200px;
+                        margin: 0 auto;
+                        color: #FFFFFF;
+                }
+                li {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        transform-style: preserve-3d;
+                        perspective: 200px;
+                        transition: 1s;
+                }
+                p {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #0000ff;
+                        backface-visibility: hidden;
+                }
+                p:nth-of-type(2) {
+                        background: #ff0000;
+                        left: 200px;
+                        transform-origin: left;
+                        transform: rotateY(180deg);
+                }
+                li:hover {
+                        transform: rotateY(180deg);
+                }
+        </style>
+</head>
+<body>
+<ul>
+        <li>
+                <p>1</p>
+
+                <p>2</p>
+        </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>postMessage</title>
+        </head>
+        <body>
+                <div>
+                        <button id="post">postMessage</button>
+                </div>
+                <iframe name="iframe" src="http://localhost:63342/www/postMessage/receiveMessage.html"></iframe>
+                <script>
+                        window.onload = function () {
+                                var obj = '{\
+                                        "name":"zhouhuafei",\
+                                        "sex":"man",\
+                                        "height":"182cm",\
+                                        "age":"22",\
+                                        "birthday":"1993/02/14"\
+                                }';
+                                var oPost = document.getElementById('post');
+                                var oIframeWindow = window['iframe'];//返回指定名称内嵌文档的Window
+                                //console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById('receive').innerHTML);//IE6,IE7支持
+                                //console.log(document.getElementsByTagName('iframe')[0].contentDocument.getElementById('receive').innerHTML);//IE6,IE7不支持
+                                oPost.onclick = function () {
+                                        oIframeWindow.postMessage(obj, 'http://localhost:63342');
+                                }
+                        }
+                </script>
+        </body>
+</html>

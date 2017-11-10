@@ -1,0 +1,410 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*section*/
+.section {
+        overflow: hidden;
+}
+/*fp-nav*/
+#fp-nav {
+        top: auto;
+        margin-bottom: 20px;
+        bottom: 0;
+        width: 42px;
+        text-align: center;
+        padding-bottom: 95px;
+        background: url("../images/side.png") center bottom no-repeat;
+}
+#fp-nav ul {
+        display: inline-block;
+}
+#fp-nav ul li a span {
+        background: #FFFFFF;
+        border-color: transparent;
+}
+#fp-nav ul li a.active span {
+        background: transparent;
+        border-color: #f9e103;
+}
+/*one*/
+.one {
+        background: url("../images/bg1.jpg") center no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+}
+.one div {
+        padding-top: 100px;
+        width: 740px;
+        height: 242px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+}
+.one div p {
+        margin-bottom: 14px;
+        opacity: 0;
+        transform: translateY(400px);
+        -webkit-transform: translateY(400px);
+        transition: 0.4s;
+}
+.one div p:nth-of-type(1) {
+        transition-delay: 0.1s;
+}
+.one div p:nth-of-type(2) {
+        transition-delay: 0.2s;
+}
+.one div p:nth-of-type(3) {
+        transition-delay: 0.3s;
+}
+.one.active p {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+}
+/*two*/
+.two {
+        background: url("../images/bg2.jpg") center no-repeat;
+        background-size: 100% 100%;
+}
+.two dt {
+        width: 44%;
+        padding-top: 3%;
+}
+.two dt .fr {
+        width: 70%;
+}
+.two dt ul img {
+        width: 100%;
+}
+.two dt ul li {
+        margin-bottom: 10px;
+}
+.two dd {
+        width: 56%;
+}
+.two dd img {
+        width: 100%;
+}
+.two dd h2 {
+        width: 80%;
+        margin: 2% auto;
+}
+.two dd ul {
+        width: 76%;
+        margin: 0 auto;
+}
+.two dd ul li {
+        width: 44%;
+        margin-bottom: 10px;
+        box-shadow: 0 0 5px #000;
+        transition: 0.8s;
+        opacity: 0;
+        position: relative;
+        overflow: hidden;
+}
+.two dd ul li a {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -200px;
+        opacity: 0;
+}
+.two dd ul li:hover a {
+        opacity: 1;
+        bottom: 0;
+}
+.two dd ul:nth-of-type(1) li:nth-of-type(1) {
+        transform: translateY(-200px);
+        -webkit-transform: translateY(-200px);
+}
+.two dd ul:nth-of-type(1) li:nth-of-type(2) {
+        transform: translateY(-200px);
+        -webkit-transform: translateY(-200px);
+}
+.two dd ul:nth-of-type(2) li:nth-of-type(1) {
+        transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+}
+.two dd ul:nth-of-type(2) li:nth-of-type(2) {
+        transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+}
+.two.active dl dd ul li:nth-of-type(n) {
+        opacity: 1;
+        /*������������������*/
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+}
+/*thr*/
+.thr {
+        background: url("../images/bg3.jpg") center no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+}
+.thr img {
+        width: 100%;
+}
+.thr dt {
+        width: 25%;
+        margin-left: 10%;
+        position: absolute;
+        bottom: 0;
+        height: 30%;
+}
+.thr dt a {
+        display: block;
+        width: 100%;
+        height: 100%;
+}
+.thr dd {
+        width: 46%;
+        margin-right: 9%;
+}
+.thr dd h2 {
+        transition: 0.8s;
+        margin-top: 20%;
+        margin-bottom: 4%;
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+}
+.thr dd p {
+        transition: 0.8s;
+        width: 80%;
+        margin: 0 auto 4%;
+        font-size: 18px;
+        line-height: 1.5;
+        color: #fff;
+        transform: translateX(-200px);
+        -webkit-transform: translateX(-200px);
+}
+.thr dd .video {
+        width: 64%;
+        cursor: pointer;
+        margin: 0 auto;
+}
+.thr.active dd h2,
+.thr.active dd p {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+}
+/*til*/
+.til {
+        font-size: 40px;
+        text-align: center;
+        color: #008c9d;
+        margin: 2% 0;
+}
+.til img {
+        margin-top: 1%;
+        transition: 0.8s;
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+}
+.til h2 {
+        transition: 0.8s;
+        transform: translateX(-200px);
+        -webkit-transform: translateX(-200px);
+}
+.active .til img,
+.active .til h2 {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+}
+/*fou*/
+.fou {
+        background: url("../images/bg4.jpg") center no-repeat;
+        background-size: 100% 100%;
+}
+.fou dt {
+        width: 40%;
+        margin-left: 3%;
+}
+.fou dt h2 {
+        width: 75%;
+        transition: 0.8s;
+        transform: translateX(-200px);
+        -webkit-transform: translateX(-200px);
+}
+.fou dt h2:nth-of-type(1) {
+        margin-bottom: 4%;
+}
+.fou dt img {
+        width: 100%;
+}
+.fou dd {
+        background: #008c9d;
+        width: 40%;
+        padding: 4% 1%;
+        margin-right: 4%;
+}
+.fou dd p {
+        font-size: 20px;
+        line-height: 26px;
+        color: #fff;
+        margin-bottom: 4%;
+}
+.fou dd img {
+        width: 100%;
+}
+.fou dd a {
+        display: block;
+        text-align: right;
+        margin-top: 6%;
+}
+.fou dd a img {
+        width: 50%;
+}
+.fou.active dt h2 {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+}
+/*fiv*/
+.fiv {
+        background: url("../images/bg2.jpg") center no-repeat;
+        background-size: 100% 100%;
+}
+.fiv ul {
+        width: 90%;
+        margin: 0 auto 2%;
+}
+.fiv ul li {
+        float: left;
+        width: 33.33333333%;
+        transition: 0.8s;
+}
+.fiv ul li img {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+}
+.fiv ul li .tils {
+        border-top: 2px solid #cecece;
+        border-bottom: 2px solid #cecece;
+        text-align: center;
+        margin-bottom: 3%;
+        position: relative;
+}
+.fiv ul li .tils span {
+        padding: 0 16px;
+        font-size: 30px;
+        color: #008293;
+        line-height: 1.5;
+        position: relative;
+}
+.fiv ul li .tils span:after,
+.fiv ul li .tils span:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 8px;
+        background: #008293;
+        left: 0;
+        top: -6px;
+}
+.fiv ul li .tils span:before {
+        top: auto;
+        bottom: -6px;
+}
+.fiv ul li:nth-of-type(1) .tils:after,
+.fiv ul li:nth-of-type(1) .tils:before,
+.fiv ul li:nth-of-type(3) .tils:after,
+.fiv ul li:nth-of-type(3) .tils:before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: #cecece;
+        position: absolute;
+}
+.fiv ul li:nth-of-type(1) .tils:after {
+        top: -8px;
+        left: 0;
+}
+.fiv ul li:nth-of-type(1) .tils:before {
+        bottom: -8px;
+        left: 0;
+}
+.fiv ul li:nth-of-type(3) .tils:after {
+        top: -8px;
+        right: 0;
+}
+.fiv ul li:nth-of-type(3) .tils:before {
+        bottom: -8px;
+        right: 0;
+}
+.fiv ul li .text-img {
+        padding: 0 5%;
+}
+.fiv ul li .text-img p {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 3%;
+}
+.fiv ul li:nth-of-type(1) {
+        transform: translateX(-200px);
+        -webkit-transform: translateX(-200px);
+}
+.fiv ul li:nth-of-type(3) {
+        transform: translateX(200px);
+        -webkit-transform: translateX(200px);
+}
+.fiv .btn {
+        text-align: center;
+}
+.fiv.active li:nth-of-type(n) {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+}
+/*six*/
+.six {
+        background: url("../images/bg6.jpg") center top no-repeat;
+        background-size: 100%;
+}
+/*sev*/
+.sev {
+        background: url("../images/bg2.jpg") center no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+}
+.sev dl {
+        text-align: center;
+}
+.sev dl dt {
+        margin-bottom: 2%;
+}
+.sev dl p {
+        font-size: 18px;
+        margin-bottom: 2%;
+        transition: 0.8s;
+        opacity: 0;
+        transform: translateY(800px);
+        -webkit-transform: translateY(800px);
+}
+.sev dl p:nth-of-type(1) {
+        transition-delay: 0.2s;
+}
+.sev dl p:nth-of-type(2) {
+        transition-delay: 0.4s;
+}
+.sev dl p:nth-of-type(3) {
+        transition-delay: 0.6s;
+}
+.sev a {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+}
+.sev.active p {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+}

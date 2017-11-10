@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <script>
+                        //添加数据
+                        window.indexedDB=window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
+                        window.IDBTransaction=window.IDBTransaction||window.webkitIDBTransaction||window.msIDBTransaction;
+                        window.IDBKeyRange=window.IDBKeyRange||window.webkitIDBKeyRange||window.msIDBKeyRange;
+                        window.IDBCursor=window.IDBCursor||window.webkitIDBCursor||window.msIDBCursor;
+                        function connectDBtest(){
+                                var dbName='indexedDBTest';
+                                var dbVersion='20160133';
+                                var dbConnect=indexedDB.open(dbName,dbVersion);//返回IDBOpenDBRequest对象
+                                dbConnect.onsuccess=function(ev){
+                                        var idb=ev.target.result;//返回IDBDatabase对象
+                                        console.log('链接成功',idb);
+                                        var storeName=['user'];
+                                        //var mode='readonly';//只读事物
+                                        var mode='readwrite';//读写事物
+                                        var tx=idb.transaction(storeName,mode);//返回IDBTransaction对象,表示被开启的事物
+                                        var store=tx.objectStore('user');//返回IDBObjectStore对象
+                                        var value={
+                                                userId:1,
+                                                userName:'zhouhuafei',
+                                                address:'China'
+                                        };
+                                        var req=store.put(value);//保存数据
+                                        req.onsuccess=function(){
+                                                console.log('数据保存成功',req);
+                                        };
+                                        req.onerror=function(){
+                                                console.log('数据保存失败',req);
+                                        };
+                                        //多保存几条数据
+                                        var value2={
+                                                userId:2,
+                                                userName:'zhouhuafei2',
+                                                address:'China'
+                                        };
+                                        store.put(value2);//保存数据
+                                        var value3={
+                                                userId:3,
+                                                userName:'zhouhuafei3',
+                                                address:'China'
+                                        };
+                                        store.put(value3);//保存数据
+                                        var value4={
+                                                userId:4,
+                                                userName:'zhouhuafei4',
+                                                address:'China'
+                                        };
+                                        store.put(value4);//保存数据
+                                        //下面是追加数据,但是应该添加判定,如果数据已经存在就不往里面重复添加,否则会出错的
+                                        var IDBRequest=store.get(101);//获取数据,下个页面会讲到
+                                        IDBRequest.onsuccess=function(ev){
+                                                if(!ev.target.result){
+                                                        var add=store.add({userId:101,userName:'zhouqiang2',like:['play','game','music']});//追加数据
+                                                        add.onsuccess=function(){
+                                                                console.log('数据保存成功',add);
+                                                        };
+                                                        add.onerror=function(){
+                                                                console.log('数据保存失败',add);
+                                                        };
+                                                }
+                                        }
+                                };
+                                dbConnect.onerror=function(){
+                                        console.log('连接失败');
+                                };
+                                dbConnect.onupgradeneeded=function(ev){//版本dbVersion(变大)变化就会触发
+                                        var idb=ev.target.result;//返回IDBDatabase对象
+                                        var tx=ev.target.transaction;//返回IDBTransaction对象
+                                        var oldVersion=ev.oldVersion;
+                                        var newVersion=ev.newVersion;
+                                        console.log('oldVersion:'+oldVersion,'newVersion:'+newVersion);
+                                        //应该先创建一次,这里以后换台电脑应该会出问题,只需要把for和判定去掉,直接创建一次就行,这里就不做修改了
+                                        for(var i=0;i<idb.objectStoreNames.length;i++){
+                                                if(idb.objectStoreNames[i]!='user'){//仓库不存在,创建仓库和索引
+                                                        var storeName='user';
+                                                        var storeOptionalParameters={
+                                                                keyPath:'userId',
+                                                                autoIncrement:false
+                                                        };
+                                                        var store=idb.createObjectStore(storeName,storeOptionalParameters);//创建仓库
+                                                        var indexName='userIndex';
+                                                        var indexKeyPath='userName';
+                                                        var indexOptionalParameters={
+                                                                unique:false,
+                                                                multiEntry:false
+                                                        };
+                                                        store.createIndex(indexName,indexKeyPath,indexOptionalParameters);////创建索引,返回IDBIndex方法
+                                                }
+                                        }
+                                };
+                                //indexedDB.deleteDatabase('indexedDBTest');//清除数据库
+                        }
+                        connectDBtest();
+
+                </script>
+        </body>
+</html>

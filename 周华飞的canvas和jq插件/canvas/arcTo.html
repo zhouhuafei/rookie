@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        canvas{
+                                background:#000;
+                        }
+                        kbd{
+                                color:#ff0000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas width="1000" height="500" id="canvas">your browser doesn't support <code>canvas</code> element
+                </canvas>
+                <h3>按着<kbd>shift键</kbd>移动鼠标控制第一个点,按着<kbd>ctrl</kbd>键移动鼠标控制第二个点,按着<kbd>alt</kbd>键移动鼠标控制第三个点
+                        <button id="button">图形重置</button>
+                </h3>
+                <script>
+                        function Game(json) {
+                                this.json = json || {};
+                                this.canvas = this.json.id || 'canvas';
+                                this.button = this.json.button || 'button';
+                                this.onePoint = localStorage.onePoint ? localStorage.onePoint.split(',') : [100.5, 100.5];
+                                this.twoPoint = localStorage.twoPoint ? localStorage.twoPoint.split(',') : [300.5, 100.5];
+                                this.threePoint = localStorage.threePoint ? localStorage.threePoint.split(',') : [300.5, 300.5];
+                                this.allPoint = [this.onePoint, this.twoPoint, this.threePoint];
+                                this.radius = 50;
+                                this.fnInitial();
+                        }
+                        Game.prototype = {
+                                constructor: Game,
+                                fnInitial: function () {
+                                        this.fnGetElement();
+                                        this.fnDrawArcTo();
+                                        this.fnMouseMove();
+                                        this.fnResetButton();
+                                },
+                                fnGetElement: function () {
+                                        this.canvas = document.getElementById(this.canvas);
+                                        this.context = this.canvas.getContext('2d');
+                                        this.button = document.getElementById('button');
+                                },
+                                fnClearRect: function () {
+                                        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                                },
+                                fnDrawArcTo: function () {
+                                        this.fnClearRect();
+                                        this.context.beginPath();
+                                        this.context.strokeStyle = '#f00';
+                                        this.context.moveTo(this.onePoint[0], this.onePoint[1]);
+                                        this.context.arcTo(this.twoPoint[0], this.twoPoint[1], this.threePoint[0], this.threePoint[1], this.radius);
+                                        this.context.stroke();
+                                        this.context.closePath();
+                                        for (var i = 0; i < this.allPoint.length; i++) {
+                                                this.fnDrawRect(this.allPoint[i], i + 1);
+                                        }
+                                        this.fnDrawLine();
+                                },
+                                fnDrawRect: function (point, index) {
+                                        this.context.strokeStyle = 'rgba(96,96,96,0.4)';
+                                        this.context.strokeRect(point[0] - 2, point[1] - 2, 4, 4);
+                                        this.context.fillStyle = 'rgba(96,96,96,0.4)';
+                                        this.context.font = "10px 微软雅黑";
+                                        this.context.textAlign = 'center';
+                                        this.context.textBaseline = 'center';
+                                        this.context.fillText(index, point[0] - 10, point[1] - 10);
+                                },
+                                fnDrawLine: function () {
+                                        this.context.beginPath();
+                                        this.context.moveTo(this.onePoint[0], this.onePoint[1]);
+                                        this.context.lineTo(this.twoPoint[0], this.twoPoint[1]);
+                                        this.context.lineTo(this.threePoint[0], this.threePoint[1]);
+                                        this.context.stroke();
+                                        this.context.closePath();
+                                },
+                                fnMouseMove: function () {
+                                        var self = this;
+                                        this.canvas.onmousemove = function (e) {
+                                                if (e.shiftKey) {
+                                                        self.onePoint = localStorage.onePoint = [e.clientX, e.clientY];
+                                                } else if (e.ctrlKey) {
+                                                        self.twoPoint = localStorage.twoPoint = [e.clientX, e.clientY];
+                                                } else if (e.altKey) {
+                                                        self.threePoint = localStorage.threePoint = [e.clientX, e.clientY];
+                                                }
+                                                self.allPoint = [localStorage.onePoint ? localStorage.onePoint.split(',') : self.onePoint, localStorage.twoPoint ? localStorage.twoPoint.split(',') : self.twoPoint, localStorage.threePoint ? localStorage.threePoint.split(',') : self.threePoint];
+                                                self.fnDrawArcTo();
+                                        }
+                                },
+                                fnResetButton: function () {
+                                        var self = this;
+                                        this.button.onclick = function () {
+                                                localStorage.clear();
+                                                self.onePoint = [100.5, 100.5];
+                                                self.twoPoint = [300.5, 100.5];
+                                                self.threePoint = [300.5, 300.5];
+                                                self.allPoint = [self.onePoint, self.twoPoint, self.threePoint];
+                                                self.fnDrawArcTo();
+                                        };
+                                }
+                        };
+                        new Game();
+                </script>
+        </body>
+</html>

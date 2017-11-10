@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html,body{
+                                height:100%;
+                        }
+                        body{
+                                transform-style:preserve-3d;
+                                perspective:2000px;
+                                background:#000;
+                        }
+                        ul{
+                                width:400px;
+                                height:400px;
+                                position:absolute;
+                                left:50%;
+                                margin-left:-200px;
+                                top:50%;
+                                margin-top:-200px;
+                                transform-style:preserve-3d;
+                                perspective:2000px;
+                        }
+                        li{
+                                width:14px;
+                                height:14px;
+                                border-radius:50%;
+                                position:absolute;
+                                left:50%;
+                                margin-left:-7px;
+                                top:50%;
+                                margin-top:-7px;
+                                font-size:14px;
+                                color:#fff;
+                        }
+                </style>
+                <script>
+                        /*
+                        * 球的推导公式
+                        * @当作theta角
+                        * &当作phi角
+                        * x=r*sin@*sin&;
+                        * y=r*cos@;
+                        * z=r*sin@*cos&;
+                        * */
+                        window.onload=function(){
+                                var arr=[1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,29,27,25,23,21,19,17,15,13,11,9,7,5,3,1];//球的分层以及每层多少个点
+                                var theta=Math.PI/(arr.length-1);//theta角(每一层占了多少弧度)
+                                var phi=null;//phi角(每一层上的每一点占了多少弧度)
+                                var oLi=null;//创建的li
+                                var oUl=document.getElementsByTagName('ul')[0];//获取ul
+                                var r=190;//球的半径
+                                for(var i=0;i<arr.length;i++){//多少层
+                                        phi=Math.PI*2/arr[i];
+                                        for(var j=0;j<arr[i];j++){//每层多少个点
+                                                oLi=document.createElement('li');
+                                                oLi.innerHTML='飞';
+                                                oLi.x=r*Math.sin(theta*i)*Math.sin(phi*j);
+                                                oLi.y=r*Math.cos(theta*i);
+                                                oLi.z=r*Math.sin(theta*i)*Math.cos(phi*j);
+                                                oLi.rotateX=theta*i-Math.PI/2;
+                                                oLi.rotateY=phi*j;
+                                                oLi.style.transform='translate3D('+oLi.x+'px,'+oLi.y+'px,'+oLi.z+'px) rotateX('+oLi.rotateX+'rad) rotateY('+oLi.rotateY+'rad)';
+                                                oUl.appendChild(oLi);
+                                        }
+                                }
+                                var angle=0;
+                                setInterval(function(){
+                                        angle++;
+                                        oUl.style.transform='rotateX('+angle+'deg) rotateY('+angle+'deg)';
+                                },60);
+                        }
+        </script>
+        </head>
+        <body>
+                <ul>
+                        <!--<li></li>-->
+                </ul>
+        </body>
+</html>

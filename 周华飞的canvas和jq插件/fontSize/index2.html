@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style type="text/css">
+                * {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                }
+                html {
+                        text-align: center;
+                }
+                body {
+                        overflow: hidden;
+                        display: inline-block;
+                }
+                body:after {
+                        content: "";
+                        clear: both;
+                        display: block;
+                }
+                div {
+                        width: 2rem;
+                        height: 2rem;
+                        background: #000;
+                        text-align: center;
+                        line-height: 2rem;
+                        font-size: 0.5rem;
+                        color: #FFFFFF;
+                        margin: 1rem;
+                        display: inline-block;
+                        float: left;
+                        border-radius: 50%;
+                        transition: 0.4s;
+                }
+                div:hover {
+                        transform: rotate(360deg);
+                        font-size: 0.1rem;
+                }
+        </style>
+        <script>
+                function fontSize() {
+                        document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth / 10 + 'px';
+                }
+                fontSize();
+                window.onresize = fontSize;
+        </script>
+</head>
+<body>
+<div>fontSize</div>
+</body>
+</html>

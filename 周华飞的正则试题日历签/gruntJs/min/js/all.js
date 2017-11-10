@@ -1,0 +1,1 @@
+alert("js0"),alert("js1"),alert("js2"),alert("js3");

@@ -1,0 +1,80 @@
+@charset "gb2312";
+/* CSS Document */
+@import "base.less";
+/*feature*/
+.w{
+        width:96.875%;
+        margin:0 auto;
+}
+/*article-location*/
+#article-location{
+        border-top:30/64rem solid #e1e1e1;
+        h2{
+                .w;
+                color:#555555;
+                font-size:30/64rem;
+                a:last-of-type{
+                        color:@c;
+                }
+                padding:30/64rem 0 25/64rem 0;
+        }
+}
+/*article*/
+#article{
+        .w;
+        border-top:1px solid #787878;
+        padding-top:30/64rem;
+        h2{
+                color:@c;
+                font-size:32/64rem;
+                padding-bottom:10/64rem;
+                text-align:center;
+        }
+        h3{
+                padding-bottom:28/64rem;
+                font-size:24/64rem;
+                color:#969696;
+                text-align:center;
+        }
+        .article-txt{
+                border-bottom:1px solid #e7e7e7;
+                border-top:1px solid #e7e7e7;
+                padding:20/64rem;
+        }
+        .aiticle-list{
+                font-size:32/64rem;
+                line-height:60/64rem;
+                color:@c;
+                padding:20/64rem 0;
+        }
+}
+/*other-banner*/
+#other-banner{
+        border-top:30/64rem solid #e1e1e1;
+        height:273/64rem;
+        overflow:hidden;
+        position:relative;
+        .hd{
+                position:absolute;
+                z-index:4;
+                bottom:8/64rem;
+                text-align:center;
+                width:100%;
+                ul{
+                        .clear-fix;
+                        display:inline-block;
+                }
+                li{
+                        .fl;
+                        margin:0 5px;
+                        width:10px;
+                        height:10px;
+                        background:#4b4b4b;
+                        border-radius:50%;
+                        bottom:8px;
+                        &.on{
+                                background:@c;
+                        }
+                }
+        }
+}

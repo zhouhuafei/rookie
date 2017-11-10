@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        * {
+                                margin: 0;
+                                padding: 0;
+                                list-style-type: none;
+                        }
+                </style>
+                <script>
+                        window.onload = function () {
+                                var aInput = document.getElementsByTagName('input');
+                                var iLen = aInput.length;
+                                var oDiv = document.getElementsByTagName('div')[0];
+                                var obj = {
+                                        "name": "zhouhuafei",
+                                        "sex": "man",
+                                        "url": "index.html"
+                                };
+                                window.onpopstate = function (ev) {//点击前进或者后退时就会触发事件
+                                        var attr = window.location.search.substring(1);
+                                        oDiv.innerHTML = ev.state[attr];//window.history.state    <==>    ev.state
+                                };
+                                for (var i = 0; i < iLen; i++) {
+                                        aInput[i].onclick = function () {
+                                                oDiv.innerHTML = this.value;
+                                                window.history.pushState(obj, '', '?' + this.value);//向浏览器历史中添加一个条目,会创建一个后退(历史纪录的后退按钮可以点击并回到上个状态)
+                                                //window.history.replaceState(obj,'','?'+this.value);//replaceState替换浏览器历史中的当前条目,不会创建一个后退(历史纪录的后退按钮不可以点击,就算可以点击也不会回到上个状态,因为上个状态被替换掉了)
+                                        }
+                                }
+                        }
+                </script>
+        </head>
+        <body>
+                <div></div>
+                <label for="btn1"><input id="btn1" name="btn1" type="button" value="name"/></label><br/>
+                <label for="btn2"><input id="btn2" name="btn2" type="button" value="sex"/></label><br/>
+        </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>index</title>
+    </head>
+    <body>
+        <script>
+            //桌子上有9堆瓜子，第一堆11个，已知相邻的3堆加起来和相等。请问，第8个最多多少颗。总数33
+            "use strict";
+            {
+                //多线程异步运算,faster(更快);
+                let work=new Worker('./work.js');
+                work.postMessage(33);
+                work.onmessage=function(e){
+                    console.log(e.data);
+                }
+            }
+
+            //普通写法(大量运算,消耗性能)
+            /*
+            const init=0;
+            const first=11;
+            const all=33;
+            const result=all/3;
+            for(let i=init;i<=result;i++){
+                for(let j=init;j<=result;j++){
+                    if(first+i+j!=result){
+                        continue;
+                    }
+                    for(let k=init;k<=result;k++){
+                        for(let l=init;l<=result;l++){
+                            for(let m=init;m<=result;m++){
+                                if(k+l+m!=result){
+                                    continue;
+                                }
+                                for(let n=init;n<=result;n++){
+                                    for(let x=init;x<=result;x++){
+                                        for(let y=init;y<=result;y++){
+                                            if(n+x+y!=result){
+                                                continue;
+                                            }
+                                            if(first+i+j+k+l+m+n+x+y==all){
+                                                //第8个最多为result个,当第8个为result个时,可能的排列为以下打印出来的结果
+                                                if(x!=result){
+                                                    continue;
+                                                }
+                                                console.log(first,i,j,k,l,m,n,x,y);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            */
+        </script>
+    </body>
+</html>

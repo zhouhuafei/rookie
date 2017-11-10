@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        canvas{
+                                background:#000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas width="1000" height="500"></canvas>
+                <br/>
+                <button>copy</button>
+                <button>destination-atop</button>
+                <button>destination-in</button>
+                <button>destination-over</button>
+                <button>destination-out</button>
+                <button>lighter</button>
+                <button>source-atop</button>
+                <button>source-in</button>
+                <button>source-over</button>
+                <button>source-out</button>
+                <button>xor</button>
+                <script>
+                        var oCanvas = document.getElementsByTagName('canvas')[0];
+                        var oContext = oCanvas.getContext('2d');
+                        var aBtn = document.getElementsByTagName('button');
+                        var iLen = aBtn.length;
+                        function draw(str) {
+                                oContext.clearRect(0, 0, oCanvas.width, oCanvas.height);
+                                oContext.save();
+                                oContext.fillStyle = '#f00';
+                                oContext.globalAlpha = 0.8;
+                                oContext.fillRect(0, 0, 600, 200);
+                                oContext.globalCompositeOperation = str;
+                                oContext.globalAlpha = 0.4;
+                                oContext.fillStyle = '#0f0';
+                                oContext.fillRect(100, 100, 600, 200);
+                                oContext.restore();
+                        }
+                        for (var i = 0; i < iLen; i++) {
+                                aBtn[i].onclick = function () {
+                                        draw(this.innerHTML);
+                                };
+                        }
+                        draw('source-over');
+                </script>
+        </body>
+</html>

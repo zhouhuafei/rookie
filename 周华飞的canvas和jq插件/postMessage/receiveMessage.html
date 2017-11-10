@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>receiveMessage</title>
+        </head>
+        <body>
+                <div id="receiveMessage">receiveMessage</div>
+                <script>
+                        var oReceiveMessage = document.getElementById('receiveMessage');
+                        window.addEventListener('message', function (e) {
+                                if (e.origin == 'http://localhost:63342') {
+                                        oReceiveMessage.innerHTML = e.data;
+                                        console.log(JSON.parse(e.data));
+                                } else {
+                                        oReceiveMessage.innerHTML = 'message discarded';
+                                }
+                        }, false)
+                </script>
+        </body>
+</html>

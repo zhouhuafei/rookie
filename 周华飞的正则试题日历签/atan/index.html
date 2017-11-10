@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        div{
+                                width:400px;
+                                height:400px;
+                                text-align:center;
+                                line-height:400px;
+                                color:#ffffff;
+                                background:#000000;
+                                margin:100px auto;
+                                position:relative;
+                        }
+                        div:after,div:before{
+                                position:absolute;
+                                content:"";
+                                background:#f00;
+                        }
+                        div:after{
+                                width:1px;
+                                height:100%;
+                                left:50%;
+                                top:0;
+                        }
+                        div:before{
+                                width:100%;
+                                height:1px;
+                                top:50%;
+                                left:0;
+                        }
+                </style>
+        </head>
+        <body>
+                <div></div>
+                <script>
+                        //此处讲解的是atan(y/x)或者atan(x/y),然后其实atan2(y,x)更好用.请翻阅atan2文件夹
+                        var oDiv=document.getElementsByTagName('div')[0];
+                        function findDir(obj){
+                                var x=offset(obj).x+obj.offsetWidth/2;
+                                var y=offset(obj).y+obj.offsetHeight/2;
+                                //角度45应该通过计算得到,详情请观看index2.html;
+                                obj.onmouseout=obj.onmouseover=function(ev){
+                                        var a=Math.abs(ev.clientX-x);
+                                        var b=Math.abs(ev.clientY-y);
+                                        //如果不在第一屏,那么b值需要减去滚动条的高度,滚动条的高度要先获取,再参与运算
+                                        if(ev.clientX>x&&ev.clientY>y){//右下
+                                                if(Math.atan(b/a)*180/Math.PI<=45){
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从右边进入':'从右边出去';
+                                                }else{
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从下边进入':'从下边出去';
+                                                }
+                                        }else if(ev.clientX>x&&ev.clientY<y){//右上
+                                                if(Math.atan(b/a)*180/Math.PI<=45){
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从右边进入':'从右边出去';
+                                                }else{
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从上边进入':'从上边出去';
+                                                }
+                                        }else if(ev.clientX<x&&ev.clientY<y){//左上
+                                                if(Math.atan(b/a)*180/Math.PI<=45){
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从左边进入':'从左边出去';
+                                                }else{
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从上边进入':'从上边出去';
+                                                }
+                                        }else if(ev.clientX<x&&ev.clientY>y){//左下
+                                                if(Math.atan(b/a)*180/Math.PI<=45){
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从左边进入':'从左边出去';
+                                                }else{
+                                                        oDiv.innerHTML=ev.type=='mouseover'?'从下边进入':'从下边出去';
+                                                }
+                                        }
+                                }
+                        }
+                        findDir(oDiv);
+                        function offset(obj){
+                                var x=obj.offsetLeft;
+                                var y=obj.offsetTop;
+                                while(obj.offsetParent){
+                                        x+=obj.offsetParent.offsetLeft;
+                                        y+=obj.offsetParent.offsetTop;
+                                        obj=obj.offsetParent;
+                                }
+                                return {x:x,y:y}
+                        }
+                </script>
+        </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                }
+                canvas {
+                        background: #000000;
+                }
+        </style>
+</head>
+<body>
+<canvas>your navigator is not support canvas</canvas>
+<script>
+        (function (doc) {
+                var oCanvas = doc.getElementsByTagName('canvas')[0];
+                var oContext = oCanvas.getContext('2d');
+                var iClientW = doc.documentElement.clientWidth;
+                var iClientH = doc.documentElement.clientHeight;
+                var x = 0;
+                var y = 0;
+                var r = 300;
+                var iRadian = Math.PI / 180;
+                oCanvas.width = iClientW;
+                oCanvas.height = iClientH;
+                oContext.translate(iClientW / 2, iClientH / 2);
+                var i = 0;
+                setInterval(function () {
+                        i += 10;
+                        oContext.save();
+                        oContext.beginPath();
+                        oContext.strokeStyle = '#fccd1f';
+                        oContext.arc(x, y, r - i, i * iRadian, (r - i) * iRadian, false);
+                        oContext.stroke();
+                        oContext.closePath();
+                        oContext.restore();
+                }, 200);
+        })(document);
+</script>
+</body>
+</html>

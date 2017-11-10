@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>svg2</title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        div{
+                                width:10%;
+                                height:10%;
+                                margin:0 auto;
+                        }
+                        svg{
+                                width:100%;
+                                height:100%;
+                        }
+                        div:nth-of-type(1) polygon{
+                                fill:#ccc;
+                        }
+                </style>
+        </head>
+        <body>
+                <!--不推荐,svg会导致html页面大小增加很多(慢的不是很明显),建议class控制base64背景-->
+                <!--重点关注:path的id和g的xlink:href要对应,且path的id不能和其他的path的id重复,否则会导致变形等等的BUG-->
+                <div>
+                        <svg width="15px" height="14px" viewBox="2636 65 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                        <path d="M13.925,12.7071 L8.218,7 L13.925,1.2928 C14.073,1.1449 14.147,0.9512 14.147,0.7574 C14.147,0.5636 14.073,0.3697 13.925,0.2218 C13.629,-0.0739 13.15,-0.0739 12.854,0.2218 L7.147,5.9289 L1.44,0.2218 C1.144,-0.0739 0.665,-0.0739 0.369,0.2218 C0.073,0.5176 0.073,0.9971 0.369,1.2929 L6.076,7 L0.369,12.7071 C0.073,13.0028 0.073,13.4823 0.369,13.7782 C0.665,14.0739 1.144,14.0739 1.44,13.7782 L7.147,8.071 L12.854,13.7782 C13.002,13.9261 13.196,14 13.389,14 C13.583,14 13.777,13.9261 13.925,13.7782 C14.221,13.4824 14.221,13.0028 13.925,12.7071 L13.925,12.7071 Z" id="path-1" ></path>
+                                </defs>
+                                <g id="Group-586" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(2636.000000, 65.000000)">
+                                        <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <g id="Clip-585"></g>
+                                        <polygon id="Fill-584" fill="#666666" mask="url(#mask-2)" points="-4.853 -5 19.147 -5 19.147 19 -4.853 19"></polygon>
+                                </g>
+                        </svg>
+                </div>
+                <div>
+                        <svg width="20px" height="21px" viewBox="2663 60 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                        <path d="M17.2,3.9 L15.2,3.9 C14.9,3.1 14.5,2.2 13.8,1.5 C12.8,0.5 11.6,0 10,0 C8.5,0 7.2,0.5 6.2,1.5 C5.5,2.2 5.1,3 4.8,3.9 L2.8,3.9 C1.3,3.9 0,5.2 0,6.7 L0,13.7 C0,14.1 0.3,14.4 0.7,14.4 C1.1,14.4 1.4,14.1 1.4,13.7 L1.4,6.7 C1.4,5.9 2,5.3 2.8,5.3 L4.4,5.3 C4.2,6.1 4.2,6.8 4.2,7.4 C3.9,7.6 3.7,8 3.7,8.3 C3.7,8.9 4.2,9.5 4.9,9.5 C5.5,9.5 6.1,9 6.1,8.3 C6.1,7.9 5.9,7.6 5.6,7.4 C5.6,7 5.7,6.5 5.7,6 C5.7,5.8 5.8,5.6 5.8,5.4 L14.1,5.4 C14.3,6.2 14.3,7 14.4,7.5 C14.1,7.7 13.9,8.1 13.9,8.4 C13.9,9 14.4,9.6 15.1,9.6 C15.7,9.6 16.3,9.1 16.3,8.4 C16.3,8 16.1,7.7 15.8,7.5 C15.8,7 15.7,6.3 15.6,5.4 L17.3,5.4 C18.1,5.4 18.7,6 18.7,6.8 L18.7,17.4 C18.7,18.2 18.1,18.8 17.3,18.8 L2.8,18.8 C2,18.8 1.4,18.2 1.4,17.4 C1.4,17 1.1,16.7 0.7,16.7 C0.3,16.7 0,17 0,17.4 C0,18.9 1.3,20.2 2.8,20.2 L17.2,20.2 C18.7,20.2 20,19 20,17.4 L20,6.8 C20,5.2 18.8,3.9 17.2,3.9 L17.2,3.9 Z M6.3,3.9 C6.5,3.4 6.8,2.9 7.2,2.5 C7.9,1.8 8.8,1.4 10,1.4 C11.2,1.4 12.1,1.8 12.8,2.5 C13.2,2.9 13.5,3.4 13.7,3.9 L6.3,3.9 L6.3,3.9 Z" id="path-2"></path>
+                                </defs>
+                                <g id="Group-52" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(2663.000000, 60.000000)">
+                                        <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-2"></use>
+                                        </mask>
+                                        <g id="Clip-51"></g>
+                                        <polygon id="Fill-50" fill="#2BA79E" mask="url(#mask-2)" points="-5 -5 25 -5 25 25.2 -5 25.2"></polygon>
+                                </g>
+                        </svg>
+                </div>
+                <div>
+                        <svg width="15px" height="12px" viewBox="2695 65 15 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                        <path d="M14.98,0.4644 C14.94,0.8224 14.791,1.1671 14.537,1.4401 L8.604,7.769 C7.996,8.4167 7.004,8.4167 6.396,7.769 L0.4631,1.4401 C0.2071,1.1671 0.0588,0.8207 0.0198,0.4644 C0.012,0.5327 0.0073,0.601 0.0073,0.6709 L0.0073,9.3291 C0.0073,10.2449 0.7098,10.9941 1.5683,10.9941 L13.432,10.9941 C14.29,10.9941 14.993,10.2449 14.993,9.3291 L14.993,0.6709 C14.993,0.601 14.988,0.5327 14.98,0.4644 L14.98,0.4644 Z" id="path-3"></path>
+                                        <path d="M8.604,7.5568 L14.824,0.9216 C14.567,0.3788 14.037,0.0059 13.432,0.0059 L1.5683,0.0059 C0.9626,0.0059 0.4335,0.3788 0.1759,0.9216 L6.396,7.5568 C7.004,8.2045 7.996,8.2045 8.604,7.5568 L8.604,7.5568 Z" id="path-4"></path>
+                                </defs>
+                                <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(2695.000000, 65.000000)">
+                                        <g id="Group-81" transform="translate(0.000000, 1.000000)">
+                                                <mask id="mask-2" fill="white">
+                                                        <use xlink:href="#path-3"></use>
+                                                </mask>
+                                                <g id="Clip-80"></g>
+                                                <polygon id="Fill-79" fill="#FFD2CA" mask="url(#mask-2)" points="-4.9927 -4.5356 19.993 -4.5356 19.993 15.9941 -4.9927 15.9941"></polygon>
+                                        </g>
+                                        <g id="Group-84">
+                                                <mask id="mask-4" fill="white">
+                                                        <use xlink:href="#path-4"></use>
+                                                </mask>
+                                                <g id="Clip-83"></g>
+                                                <polygon id="Fill-82" fill="#FFD2CA" mask="url(#mask-4)" points="-4.8241 -4.9941 19.824 -4.9941 19.824 13.0426 -4.8241 13.0426"></polygon>
+                                        </g>
+                                </g>
+                        </svg>
+                </div>
+                <div>
+                        <svg width="18px" height="18px" viewBox="2721 60 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <path d="M2722,69 C2722,64.581722 2725.59071,61 2730,61 L2730,61 C2734.41828,61 2738,64.590712 2738,69 L2738,69 C2738,73.41828 2734.40929,77 2730,77 L2730,77 C2725.58172,77 2722,73.40929 2722,69 L2722,69 L2722,69 Z" id="Stroke-616" stroke="#DDDDDD" stroke-width="2" fill="none"></path>
+                        </svg>
+                </div>
+                <div>
+                        <svg width="36px" height="36px" viewBox="2746 53 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                        <path d="M17.9,25.6 C21.76599,25.6 24.9,22.466 24.9,18.6 C24.9,14.734 21.76599,11.6 17.9,11.6 C14.03401,11.6 10.9,14.734 10.9,18.6 C10.9,22.466 14.03401,25.6 17.9,25.6 L17.9,25.6 Z M35.1,22.3 C35.4,20.7 35.6,19.1 35.5,17.4 C35,8.4 27.5,1.1 18.4,0.9 C8.2,0.7 -0.1,9.2 0.5,19.6 C1.1,28.3 8.1,35.3 16.8,35.9 C20.1,36.1 23.1,35.4 25.8,34.1 C27.6,33.2 27.9,30.8 26.4,29.5 C25.6,28.8 24.3,28.6 23.3,29.1 C21.4,30 19.3,30.5 17,30.3 C11.2,29.9 6.4,25.2 6,19.3 C5.5,12.1 11.6,6 19,6.6 C24.7,7.1 29.4,11.6 29.9,17.4 C30,18.7 29.9,20 29.7,21.2 C29.4,22.5 30.1,23.8 31.3,24.3 C32.8,24.9 34.7,24 35.1,22.3 L35.1,22.3 Z" id="path-7"></path>
+                                </defs>
+                                <g id="Group-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(2746.000000, 53.000000)">
+                                        <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-7"></use>
+                                        </mask>
+                                        <g id="Clip-19"></g>
+                                        <polygon id="Fill-18" fill="#BB4645" mask="url(#mask-2)" points="-4.53061 -4.1035 40.52601 -4.1035 40.52601 40.9338 -4.53061 40.9338"></polygon>
+                                </g>
+                        </svg>
+                </div>
+                <div>
+                        <svg width="6px" height="10px" viewBox="2814 65 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                        <path d="M0.1092,4.7453 L4.8212,0.117 C4.966,-0.0251 5.2006,-0.0251 5.3448,0.117 C5.4896,0.2589 5.4896,0.4893 5.3448,0.6312 L0.8947,5.0024 L5.3448,9.3736 C5.4896,9.5154 5.4896,9.7459 5.3448,9.8877 C5.2006,10.0296 4.966,10.0296 4.8212,9.8877 L0.1092,5.2595 C-0.0355,5.1173 -0.0355,4.8871 0.1092,4.7453 L0.1092,4.7453 Z" id="path-8"></path>
+                                </defs>
+                                <g id="Group-439" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(2814.000000, 65.000000)">
+                                        <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-8"></use>
+                                        </mask>
+                                        <g id="Clip-438"></g>
+                                        <polygon id="Fill-437" fill="#404549" mask="url(#mask-2)" points="-4.9993 -4.9896 10.4534 -4.9896 10.4534 14.9941 -4.9993 14.9941"></polygon>
+                                </g>
+                        </svg>
+                </div>
+                <div>
+                        <svg width="6px" height="10px" viewBox="2834 65 6 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+                                <desc>Created with Sketch.</desc>
+                                <defs>
+                                        <path d="M5.3535,4.7409 L0.6368,0.1079 C0.4918,-0.0344 0.257,-0.0344 0.1126,0.1079 C-0.0323,0.2498 -0.0323,0.4806 0.1126,0.6225 L4.5673,4.9982 L0.1126,9.3739 C-0.0323,9.5159 -0.0323,9.7466 0.1126,9.8886 C0.257,10.0306 0.4918,10.0306 0.6368,9.8886 L5.3535,5.2556 C5.4985,5.1133 5.4985,4.8829 5.3535,4.7409 L5.3535,4.7409 Z" id="path-9"></path>
+                                </defs>
+                                <g id="Group-427" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(2834.000000, 65.000000)">
+                                        <mask id="mask-2" fill="white">
+                                                <use xlink:href="#path-9"></use>
+                                        </mask>
+                                        <g id="Clip-426"></g>
+                                        <polygon id="Fill-425" fill="#404549" mask="url(#mask-2)" points="-4.9961 -4.9988 10.4622 -4.9988 10.4622 14.9951 -4.9961 14.9951"></polygon>
+                                </g>
+                        </svg>
+                </div>
+        </body>
+</html>

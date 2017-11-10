@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        ul{
+                                width:400px;
+                                margin:400px auto 0;
+                        }
+                        li{
+                                line-height:40px;
+                                background:#000000;
+                                border-bottom:1px solid #fff;
+                                text-align:center;
+                                color:#ffffff;
+                        }
+                        li.active{
+                                background:#cccccc;
+                        }
+                </style>
+        </head>
+        <body>
+                <ul>
+                        <li>0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                </ul>
+                <script>
+                        var oUl=document.getElementsByTagName('ul')[0];
+                        var aLi=oUl.getElementsByTagName('li');
+                        var iLen=aLi.length;
+                        var iDefaultT=oUl.offsetTop;
+                        var dir=0;
+                        var iHeight=aLi[0].offsetHeight;
+                        var iMoveTop=0;
+                        var iReselutIndex=0;
+                        var timer=null;
+                        var scrollTop=0;
+                        function resetIndex(){
+                                for(var i=0;i<iLen;i++){
+                                        aLi[i].index=i;
+                                        aLi[i].className='';
+                                }
+                        }
+                        for(var i=0;i<iLen;i++){
+                                aLi[i].index=i;
+                                aLi[i].onmousedown=function(ev){
+                                        var self=this;
+                                        scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                                        self.className='active';
+                                        dir=ev.clientY-iDefaultT+scrollTop;
+                                        iMoveTop=ev.clientY-iDefaultT+scrollTop;
+                                        document.onmousemove=function(ev){
+                                                iMoveTop=ev.clientY-iDefaultT+scrollTop;
+                                                if(iMoveTop>dir){//向下
+                                                        iReselutIndex=parseInt(iMoveTop/iHeight)+1;
+                                                        //下面的判断没必要,因为insertBefore的特性不会报错
+                                                        if(iReselutIndex>iLen){
+                                                                iReselutIndex=iLen;
+                                                        }
+                                                }else{//向上
+                                                        iReselutIndex=parseInt(iMoveTop/iHeight);
+                                                        if(iReselutIndex<0){
+                                                                iReselutIndex=0;
+                                                        }
+                                                }
+                                                oUl.insertBefore(self,aLi[iReselutIndex]);
+                                                console.log(iHeight,iMoveTop,iReselutIndex);
+                                        };
+                                        document.onmouseup=function(){
+                                                document.onmouseup=null;
+                                                document.onmousemove=null;
+                                                resetIndex();
+                                        };
+                                        return false;
+                                }
+                        }
+                </script>
+        </body>
+</html>

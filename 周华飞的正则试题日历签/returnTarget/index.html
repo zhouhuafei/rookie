@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scalable=1,user-scalable=no"/>
+        <title>index</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                list-style-type:none;
+            }
+            ul:after{
+                content:"";
+                display:block;
+                height:0;
+                overflow:hidden;
+                clear:both;
+            }
+            li{
+                float:left;
+                width:50%;
+                height:400px;
+                text-align:center;
+                line-height:400px;
+                font-size:20px;
+                background:#000000;
+                box-sizing:border-box;
+                border:1px solid #fff;
+                color:#ffffff;
+            }
+            a{
+                color:inherit;
+                text-decoration:none;
+            }
+            h2{
+                height:30px;
+                line-height:30px;
+                background:#cccccc;
+                font-size:18px;
+                color:#ff0000;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a href="list.html">1</a></li>
+            <li><a href="list.html">2</a></li>
+            <li><a href="list.html">3</a></li>
+            <li><a href="list.html">4</a></li>
+            <li><a href="list.html">5</a></li>
+            <li><a href="list.html">6</a></li>
+            <li><a href="list.html">7</a></li>
+            <li><a href="list.html">8</a></li>
+            <li><a href="list.html">9</a></li>
+            <li><a href="list.html">10</a></li>
+        </ul>
+        <h2>加载更多</h2>
+        <script>
+            var doc=document;
+            var oStyle=doc.getElementsByTagName('style')[0];
+            var oUl=doc.getElementsByTagName('ul')[0];
+            var aLi=oUl.getElementsByTagName('li');
+            var oH2=doc.getElementsByTagName('h2')[0];
+            var clickNum=sessionStorage.getItem('clickNum')==null?0:parseInt(sessionStorage.getItem('clickNum'));//点击次数
+            var loadNum=10;//加载个数
+            var defaultNum=oUl.children.length;//默认显示的数据条数
+            oH2.addEventListener('click',function(){
+                var str='';
+                //以下应该放在ajax的回调里
+                for(var i=defaultNum+1+clickNum*loadNum;i<defaultNum+1+(clickNum+1)*loadNum;i++){
+                    str+='<li><a href="list.html">'+i+'</a></li>';
+                }
+                oUl.innerHTML+=str;
+                clickNum++;
+                sessionStorage.setItem('clickNum',clickNum);
+                var html=sessionStorage.getItem('html')==null?(sessionStorage.getItem('html')+str).substring(4):sessionStorage.getItem('html')+str;
+                sessionStorage.setItem('html',html);
+            },false);
+
+            window.addEventListener('DOMContentLoaded',function(){
+                var str=sessionStorage.getItem('html');
+                if(str==null){
+                    return false;
+                }
+                oUl.innerHTML+=str;
+            },false);
+            //列表页点击加载更多,然后点击链接进入详情页,点返回时怎么回到指定位置
+            //实现思路:
+            //1.把点击次数和加载的数据存到sessionStorage里
+            //2.点返回时把数据填充到原来的结构里
+        </script>
+    </body>
+</html>

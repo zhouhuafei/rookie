@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+<div id="sj">1</div>
+<script>
+        (function () {
+                var obj = document.getElementById('sj');
+                var max = 3;//最大值(可修改)
+                var min = 1;//最小值(可修改)
+                var int = 3000;//间隔(可修改)
+                var res = null;
+                setInterval(function () {
+                        res = Math.round(Math.random() * (max - min) + min);
+                        obj.innerHTML = res;
+                }, int)
+        })();
+</script>
+</body>
+</html>

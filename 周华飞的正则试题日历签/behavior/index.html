@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>用户行为分析</title>
+                <meta name="viewport" content="width=device-width user-scalable=no"/>
+                <style>
+                        body,div,table,h1,h2,iframe,dl,dt,dd{
+                                margin:0;
+                                padding:0;
+                        }
+                        div{
+                                line-height:2;
+                        }
+                        div>div{
+                                width:96%;
+                                margin:0 auto;
+                        }
+                        h1,h2{
+                                text-align:center;
+                                font-size:16px;
+                                margin:20px 0;
+                        }
+                        h2{
+                                margin:0;
+                                padding-top:20px;
+                                border-top:10px solid #000;
+                        }
+                        table{
+                                width:100%;
+                                margin-bottom:20px;
+                                border-left:1px solid #ccc;
+                                border-top:1px solid #ccc;
+                                text-indent:30px;
+                        }
+                        tr{
+                                width:50%;
+                        }
+                        tr:first-of-type{
+                                background:#333;
+                                color:#ffffff;
+                        }
+                        td{
+                                border-right:1px solid #ccc;
+                                border-bottom:1px solid #ccc;
+                        }
+                        tbody{
+                                border-bottom:10px solid #f00;
+                        }
+                        dl{
+                                width:0;
+                                height:0;
+                                margin:0 auto;
+                                box-shadow:0 0 10px #ccc;
+                                overflow:hidden;
+                                position:relative;
+                                text-align:center;
+                        }
+                        dt{
+                                width:100%;
+                                height:100%;
+                        }
+                        dd{
+                                background:rgba(0,0,0,0.4);
+                                color:#cccccc;
+                                position:absolute;
+                        }
+                        dd:nth-of-type(1){
+                                width:100%;
+                                left:0;
+                                top:0;
+                        }
+                        dd:nth-of-type(2){
+                                width:50%;
+                                left:0;
+                                bottom:0;
+                                cursor:pointer;
+                        }
+                        dd:nth-of-type(3){
+                                width:50%;
+                                right:0;
+                                bottom:0;
+                                cursor:pointer;
+                        }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <dl>
+                                <dt><iframe width="100%" height="100%" frameborder="0"></iframe></dt>
+                                <dd>用户所在页面连接</dd>
+                                <dd>查看上一条记录</dd>
+                                <dd>查看下一条记录</dd>
+                        </dl>
+                        <h2>简易视图演示</h2>
+                        <h1>用户行为分析</h1>
+                        <div></div>
+                </div>
+                <script>
+                        (function(win,doc){
+                                var oDiv=doc.getElementsByTagName('div')[1];
+                                if(!localStorage.behovior){
+                                        oDiv.innerHTML='没有任何记录';
+                                        return false;
+                                }
+                                var info=JSON.parse(localStorage.behovior);
+                                var len=info.length;
+                                //信息呈现
+                                var html='';//结果
+                                for(var i=0;i<info.length;i++){
+                                        var obj=info[i];
+                                        var str='';//拼接
+                                        for(var attr in obj){
+                                                if(obj.hasOwnProperty(attr)){
+                                                        str+='<tr><td>'+attr+'</td><td>'+obj[attr]+'</td></tr>';
+                                                }
+                                        }
+                                        html='<table cellpadding=0 cellspacing=0>'+str+'</table>'+html;
+                                }
+                                oDiv.innerHTML=html;
+                                //localStorage更新
+                                window.addEventListener('storage',function(){
+                                        info=JSON.parse(localStorage.behovior);
+                                        len=info.length;
+                                        var obj=info[info.length-1];
+                                        var str='';//拼接
+                                        var html='';//结果
+                                        for(var attr in obj){
+                                                if(obj.hasOwnProperty(attr)){
+                                                        str+='<tr><td>'+attr+'</td><td>'+obj[attr]+'</td></tr>';
+                                                }
+                                                html='<table cellpadding=0 cellspacing=0>'+str+'</table>';
+                                        }
+                                        oDiv.innerHTML=html+oDiv.innerHTML;
+                                },false);
+                                //动态演示
+                                var oH2=doc.getElementsByTagName('h2')[0];
+                                var oDl=doc.getElementsByTagName('dl')[0];
+                                var aDd=oDl.getElementsByTagName('dd');
+                                var oIframe=doc.getElementsByTagName('iframe')[0];
+                                var pageInfo={};//用户操作的页面记录(全部数据都存在这里)
+                                var pageLength=1;//用来累加的一个变量(得出对象个数)
+                                var pageNum=0;//用来累加的一个变量(给对应的对象赋值)
+                                var infoCache={};//临时存储
+                                for(var j=0;j<len;j++){
+                                        infoCache=info[j];//信息分类临时存储
+                                        if(info[j+1]){
+                                                //可视区宽不同或者可视区高不同或者连接地址不一样都视为进行了切换页面
+                                                if(infoCache.href!=info[j+1].href||infoCache.clientH!=info[j+1].clientH||infoCache.clientW!=info[j+1].clientW){
+                                                        pageLength++;
+                                                }
+                                        }
+                                }
+                                for(var k=0;k<pageLength;k++){
+                                        pageInfo['page'+k]={};
+                                        var pageCacha=pageInfo['page'+k];//页面分类临时存储
+                                        pageCacha.client={};
+                                        pageCacha.point=[];
+                                }
+                                for(var l=len-1;l>=0;l--){//倒叙
+                                        infoCache=info[l];//信息分类临时存储
+                                        var pageInfoCache=pageInfo['page'+pageNum];//页面分类临时存储
+                                        if(!pageInfoCache.href){
+                                                pageInfo['page'+pageNum].href=infoCache.href;
+                                        }
+                                        var clientW=infoCache.clientW;
+                                        var clientH=infoCache.clientH;
+                                        var pageX=infoCache.scrollX+infoCache.clientX;
+                                        var pageY=infoCache.scrollY+infoCache.clientY;
+                                        if(!pageInfoCache.client.clientW){
+                                                pageInfoCache.client.clientW=clientW;
+                                        }
+                                        if(!pageInfoCache.client.clientH){
+                                                pageInfoCache.client.clientH=clientH;
+                                        }
+                                        pageInfoCache.point.push([pageX,pageY]);
+                                        if(info[l-1]){
+                                                //可视区宽不同或者可视区高不同或者连接地址不一样都视为进行了切换页面
+                                                if(infoCache.href!=info[l-1].href||infoCache.clientH!=info[l-1].clientH||infoCache.clientW!=info[l-1].clientW){
+                                                        pageNum++;
+                                                }
+                                        }
+                                }
+                                var infoNum=0;//用户操作了哪个页面,以及操作记录
+                                //上一条记录
+                                aDd[1].addEventListener('click',function(){
+                                        infoNum++;
+                                        if(infoNum>pageLength-1){
+                                                infoNum=pageLength-1;
+                                                this.innerHTML='没有上一条记录';
+                                                return false;
+                                        }
+                                        aDd[2].innerHTML='查看下一条记录';
+                                        showInfo();
+                                },false);
+                                //下一条记录
+                                aDd[2].addEventListener('click',function(){
+                                        infoNum--;
+                                        if(infoNum<0){
+                                                infoNum=0;
+                                                this.innerHTML='没有下一条记录';
+                                                return false;
+                                        }
+                                        aDd[1].innerHTML='查看上一条记录';
+                                        showInfo();
+                                },false);
+                                //点击进行视图演示
+                                oH2.addEventListener('click',function(){
+                                        this.parentNode.removeChild(this);
+                                        showInfo();
+                                },false);
+                                //showInfo
+                                function showInfo(){
+                                        window.scrollTo(0,0);
+                                        doc.documentElement.style.overflow='hidden';
+                                        var obj=pageInfo['page'+infoNum];
+                                        oDl.style.width=obj.client.clientW+'px';
+                                        oDl.style.height=obj.client.clientH+'px';
+                                        oIframe.src=obj.href;
+                                        aDd[0].innerHTML='用户所在页面连接:'+obj.href;
+                                        oIframe.onload=function(){
+                                                for(var i=0;i<obj.point.length;i++){
+                                                        var docF=oIframe.contentDocument;
+                                                        var oDiv=docF.createElement('div');
+                                                        var left=obj.point[i][0];
+                                                        var top=obj.point[i][1];
+                                                        oDiv.style.cssText='width:10px;height:10px;background:rgba(255,0,0,0.96);border-radius:50%;position:absolute;left:'+left+'px;top:'+top+'px';
+                                                        docF.body.appendChild(oDiv);
+                                                }
+                                        };
+                                }
+                        })(window,document);
+                </script>
+        </body>
+</html>

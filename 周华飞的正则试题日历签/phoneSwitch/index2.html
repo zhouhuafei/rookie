@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <!--自适应以及默认处理-->
+                <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+                <meta name="apple-mobile-web-app-capable" content="yes"/>
+                <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+                <meta name="format-detection" content="telephone=no"/>
+                <!--uc和qq强制竖屏-->
+                <meta name="screen-orientation" content="portrait">
+                <meta name="x5-orientation" content="portrait">
+                <!--uc和qq强制全屏-->
+                <meta name="full-screen" content="yes">
+                <meta name="x5-fullscreen" content="true">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        div#wrap{
+                                background:#000000;
+                                position:relative;
+                                width:320px;
+                                height:200px;
+                                overflow:hidden;
+                                margin:0 auto;
+                        }
+                        div.bd{
+                                width:100%;
+                                height:100%;
+                                position:relative;
+                        }
+                        div.bd ul{
+                                position:absolute;
+                                left:0;
+                                top:0;
+                                width:400%;
+                                height:100%;
+                        }
+                        div.bd li{
+                                width:25%;
+                                height:100%;
+                                background:#000000;
+                                color:#ffffff;
+                                text-align:center;
+                                line-height:200px;
+                                font-size:60px;
+                                float:left;
+                        }
+                </style>
+        </head>
+        <body>
+                <div id="wrap">
+                        <div class="bd">
+                                <ul>
+                                        <li>1111111111</li>
+                                        <li>2222222222</li>
+                                        <li>3333333333</li>
+                                        <li>4444444444</li>
+                                </ul>
+                        </div>
+                </div>
+                <script>
+                        var oParent=document.getElementById('wrap');
+                        var oCut=oParent.getElementsByTagName('ul')[0];
+                        var aCut=oCut.getElementsByTagName('li');
+                        var iW=aCut[0].offsetWidth;
+                        var iNum=0;
+                        var iLeft=oCut.offsetLeft;
+                        var disX=0;
+                        var timer=null;
+                        var speedStart=0;//出手前的位移
+                        var speedX=0;//出手速度
+                        var l=0;
+                        oCut.addEventListener('touchstart',function(e){
+                                oCut.style.transition='0s';
+                                clearInterval(timer);
+                                var target=e.changedTouches[0];
+                                disX=target.pageX;
+                                speedStart=target.pageX;
+                                iLeft=oCut.offsetLeft;
+                        },false);
+                        oCut.addEventListener('touchmove',function(e){
+                                var target=e.changedTouches[0];
+                                l=target.pageX-disX+iLeft;
+                                if(l>0){
+                                        l=(target.pageX-disX)/6;//减速  有问题
+                                }
+                                if(l<iW-oCut.offsetWidth){
+                                        l=iW-oCut.offsetWidth+(target.pageX-disX)/6;//减速
+                                }
+                                oCut.style.left=l+'px';
+                                speedX=target.pageX-speedStart;//X轴的速度,手速越快,速度越快
+                                speedStart=target.pageX;
+                        },false);
+                        oCut.addEventListener('touchend',function(){
+                                clearInterval(timer);
+                                timer=setInterval(function(){
+                                        console.log(speedX);
+                                        if(Math.abs(speedX)<=1||oCut.offsetLeft>=20||oCut.offsetLeft<=-oCut.offsetWidth+oParent.offsetWidth-20){
+                                                clearInterval(timer);
+                                                oCut.style.transition='0.4s';
+                                                if(oCut.offsetLeft>=0){
+                                                        oCut.style.left='0';
+                                                }else if(oCut.offsetLeft<=-oCut.offsetWidth+oParent.offsetWidth){
+                                                        oCut.style.left=-oCut.offsetWidth+oParent.offsetWidth+'px';
+                                                }
+                                        }else{
+                                                speedX*=0.95;
+                                                oCut.style.left=oCut.offsetLeft+speedX+'px';
+                                        }
+                                },30);
+                        });
+                </script>
+        </body>
+</html>

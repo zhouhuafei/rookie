@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <input type="text" placeholder="key"/><br/>
+                <input type="text" placeholder="value"/><br/>
+                <button>add</button>
+                <script>
+                        //如果要是遍历localStorage,请不要使用for in,因为会把方法也遍历出来
+                        var oBtn = document.getElementsByTagName('button')[0];
+                        var oKey = document.getElementsByTagName('input')[0];
+                        var oValue = document.getElementsByTagName('input')[1];
+                        var table = null;
+                        oBtn.onclick = function () {
+                                localStorage.setItem(oKey.value, oValue.value);
+                                if (table) {
+                                        document.body.removeChild(table);
+                                }
+                                disPlay();
+                        };
+                        function disPlay() {
+                                table = document.createElement('table');
+                                table.setAttribute('border', '1');
+                                table.setAttribute('cellspacing', '1');
+                                table.setAttribute('cellpadding', '1');
+                                table.innerHTML = '<tr><th>key</th><th>value</th><th>index</th></tr>';
+                                for (var i = 0; i < localStorage.length; i++) {
+                                        table.innerHTML += '<tr><td>' + localStorage.key(i) + '</td><td>' + localStorage[localStorage.key(i)] + '</td><td>' + i + '</td></tr>';
+                                }
+                                document.body.appendChild(table);
+                        }
+                        disPlay();
+                </script>
+        </body>
+</html>

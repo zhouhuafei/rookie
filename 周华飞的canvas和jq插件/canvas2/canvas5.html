@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                }
+                canvas {
+                        background: #000000;
+                        display: block;
+                        margin: 30px auto;
+                }
+        </style>
+</head>
+<body>
+<canvas width="500" height="500" id="canvas1">您的浏览器不支持canvas</canvas>
+<canvas width="500" height="500" id="canvas2">您的浏览器不支持canvas</canvas>
+<script>
+        var Game = null;
+        //构造函数创建
+        (function () {
+                Game = function (json) {
+                        this.json = json || {};
+                        this.oCanvas = this.json.oCanvas || 'canvas1';
+                        this.iRadian = Math.PI / 180;
+                };
+                Game.prototype = {
+                        //指向修正
+                        constructor: Game,
+                        //初始化
+                        fnInit: function () {
+                                this.fnEle();
+                                this.fnContext();
+                                if (this.oCanvas.id == 'canvas1') {
+                                        this.fnArcTo();
+                                } else if (this.oCanvas.id == 'canvas2') {
+                                        this.fnArcTo2();
+                                }
+                        },
+                        //获取元素
+                        fnEle: function () {
+                                this.oCanvas = document.getElementById(this.oCanvas);
+                                this.oContext = this.oCanvas.getContext('2d');
+                                this.iWidth = this.oCanvas.width;
+                                this.iHeight = this.oCanvas.height;
+                                this.iRadius = this.oCanvas.width / 2;
+                        },
+                        //画布基础背景
+                        fnContext: function () {
+                                this.oContext.translate(this.iWidth / 2, this.iHeight / 2);
+                                var rgd = this.oContext.createRadialGradient(0, 0, 0, 0, 0, this.iRadius);
+                                rgd.addColorStop(0, 'rgba(255, 0, 0,0.5)');
+                                rgd.addColorStop(0.1, 'rgba(255, 165, 0,0.5)');
+                                rgd.addColorStop(0.2, 'rgba(255, 255, 0,0.5)');
+                                rgd.addColorStop(0.5, 'rgba(0, 255, 0,0.5)');
+                                rgd.addColorStop(0.7, 'rgba(0, 127, 255,0.5)');
+                                rgd.addColorStop(0.8, 'rgba(0, 0, 255,0.5)');
+                                rgd.addColorStop(0.9, 'rgba(139, 0, 255,0.5)');
+                                rgd.addColorStop(1, 'rgba(0, 127, 255,0.5)');
+                                this.oContext.strokeStyle = rgd;
+                        },
+                        //画圆弧
+                        fnArcTo: function () {
+                                var self = this;
+                                self.oContext.beginPath();
+                                self.oContext.moveTo(-self.iRadius, 0);
+                                self.oContext.arcTo(self.iRadius, 0, self.iRadius, self.iRadius, self.iRadius);
+                                self.oContext.stroke();
+                                self.oContext.closePath();
+                        },
+                        //画圆弧
+                        fnArcTo2: function () {
+                                var self = this;
+                                var num = 0;
+                                var step = 5;
+                                setInterval(function () {
+                                        num += step;
+                                        if (Math.abs(num) >= self.iRadius) {
+                                                step *= -1;
+                                        }
+                                        self.oContext.clearRect(-self.iRadius, -self.iRadius, self.iWidth, self.iHeight);
+                                        self.oContext.beginPath();
+                                        self.oContext.moveTo(-self.iRadius, num);
+                                        self.oContext.arcTo(self.iRadius, -self.iRadius, num, self.iRadius, self.iRadius);
+                                        self.oContext.stroke();
+                                        self.oContext.closePath();
+                                }, 30);
+                        }
+                }
+        })();
+        //构造函数调用
+        (function () {
+                var obj = new Game();
+                obj.fnInit();
+                obj.oCanvas = 'canvas2';
+                obj.fnInit();
+        })();
+</script>
+</body>
+</html>

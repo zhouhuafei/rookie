@@ -1,0 +1,98 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+#main {
+        margin-top: 4%;
+}
+#main ul:after {
+        content: "";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+}
+#main li {
+        width: 50%;
+        float: left;
+        padding: 2%;
+        box-sizing: border-box;
+        display: none;
+}
+#main li.active {
+        display: block;
+}
+#main dl {
+        box-shadow: 0 0 8px #000;
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 2%;
+}
+#main dt {
+        border-radius: 8px 8px 0 0;
+        overflow: hidden;
+}
+#main dd {
+        text-align: center;
+        line-height: 2;
+}
+#main h2 {
+        color: #252525;
+        font-size: 2.6rem;
+        border-bottom: 1px solid #ededed;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+#main p {
+        color: #666666;
+        font-size: 2.4rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+#more {
+        font-size: 3.6rem;
+        text-align: center;
+        color: #1364b6;
+        border: 1px solid #1364b6;
+        line-height: 2;
+        width: 96%;
+        margin: 8% auto;
+        position: relative;
+        display: none;
+}
+#more.active {
+        display: block;
+}
+#more em {
+        width: 5%;
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        margin-left: -3.5%;
+        bottom: -10%;
+        padding: 0 1%;
+        animation: arrow 1s infinite;
+        -webkit-animation: arrow 1s infinite;
+}
+@keyframes arrow {
+        0% {
+                transform: translateY(0px);
+        }
+        100% {
+                transform: translateY(2px);
+        }
+}
+@-webkit-keyframes arrow {
+        0% {
+                -webkit-transform: translateY(0px);
+        }
+        100% {
+                -webkit-transform: translateY(2px);
+        }
+}
+

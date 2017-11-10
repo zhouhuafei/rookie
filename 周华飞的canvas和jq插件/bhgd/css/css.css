@@ -1,0 +1,700 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/* CSS Document */
+/*********************************
+ *rookie QQ:626727887
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+html {
+  font-size: 62.5%;
+}
+body,
+div,
+menu,
+ol,
+ul,
+li,
+dl,
+dd,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+p,
+form,
+header,
+nav,
+article,
+section,
+aside,
+footer,
+video,
+audio,
+figure,
+textarea {
+  padding: 0;
+  margin: 0;
+}
+input,
+select,
+textarea,
+img,
+area {
+  outline: none;
+  border: none;
+}
+input,
+select,
+textarea {
+  background: #FFF;
+}
+mark {
+  background: none;
+}
+img {
+  vertical-align: middle;
+  width: 100%;
+}
+textarea {
+  resize: none;
+}
+menu,
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+body {
+  font: 100%/1 "Microsoft YaHei";
+}
+em,
+i,
+strong,
+b,
+small,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+address {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+}
+span,
+b,
+em,
+i,
+strong,
+small,
+label,
+a,
+mark {
+  display: inline-block;
+}
+em,
+i,
+strong,
+b,
+small,
+span,
+li,
+a,
+mark {
+  transition: all 0.4s;
+}
+ul li {
+  transition: 0s;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  color: inherit;
+}
+/*clearFix*/
+.clearFix {
+  clear: both;
+  *zoom: 1;
+}
+.clearFix:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+  font-size: 0;
+}
+/*common*/
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+/*noSpacing*/
+.noMt {
+  margin-top: 0 !important;
+}
+.noMr {
+  margin-right: 0 !important;
+}
+.noMb {
+  margin-bottom: 0 !important;
+}
+.noMl {
+  margin-left: 0 !important;
+}
+.noPt {
+  padding-top: 0 !important;
+}
+.noPr {
+  padding-right: 0 !important;
+}
+.noPb {
+  padding-bottom: 0 !important;
+}
+.noPl {
+  padding-left: 0 !important;
+}
+.noBt {
+  border-top: none !important;
+}
+.noBr {
+  border-right: none !important;
+}
+.noBb {
+  border-bottom: none !important;
+}
+.noBl {
+  border-left: none !important;
+}
+/*container*/
+#container {
+  width: 640px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/*top*/
+#top {
+  font-size: 2.4rem;
+  color: #1364b6;
+  padding: 1.5625% 0;
+  background: #eee;
+}
+#top dt {
+  width: 50%;
+}
+#top dt a {
+  margin: 0 3.125%;
+}
+#top dd {
+  width: 50%;
+  color: #000;
+}
+#top dd i {
+  color: #f00;
+}
+/*nav*/
+#nav {
+  text-align: center;
+  font-size: 18px;
+  color: #1364b6;
+}
+#nav a {
+  width: 100%;
+}
+#nav li {
+  float: left;
+  width: 25%;
+  background: #ececec;
+  border: 1px solid #fff;
+  box-shadow: 0 0 5px #dadada inset;
+  box-sizing: border-box;
+}
+#nav li.reset {
+  margin-right: 0;
+}
+#nav p {
+  line-height: 1.3;
+}
+/*night*/
+#night {
+  margin: 2% 0 1.6% 0;
+}
+/*tils*/
+#tils {
+  background: #1364b6;
+  font-size: 2.8rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+}
+/*forms*/
+#forms {
+  color: #666666;
+  border: 1px solid #1264b7;
+  padding: 1.5%;
+  font-size: 2.4rem;
+}
+#forms h2 {
+  line-height: 1.6;
+}
+#forms em {
+  margin-right: 1.5%;
+}
+#forms i {
+  color: #f20000;
+}
+#forms form {
+  margin-top: 3%;
+}
+#forms div.clearFix {
+  margin-bottom: 4.8%;
+}
+#forms label[for='man'],
+#forms label[for='woman'] {
+  width: auto;
+  padding: 0 5px;
+}
+#forms label {
+  width: 21%;
+  text-align: right;
+  line-height: 1.6;
+}
+#forms input[type='tel'],
+#forms input[type='text'],
+#forms textarea {
+  width: 79%;
+  border: 1px solid #d6d6d6;
+  font-size: 2.4rem;
+  text-indent: 10px;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+#forms input[type='submit'] {
+  background: #fa9a00;
+  line-height: 1.6;
+  font-size: 2.4rem;
+  text-align: center;
+  width: 180px;
+  color: #fff;
+}
+#forms div.submit {
+  margin-bottom: 4.8%;
+  text-align: center;
+}
+/*footer*/
+#footer {
+  padding: 4.6875% 1.5625% 12.8125% 1.5625%;
+  background: #0068af;
+  margin-top: 3.125%;
+  font-size: 2.4rem;
+  color: #fff;
+  text-align: center;
+  line-height: 2.7;
+}
+#footer div {
+  margin-top: 3%;
+  padding-top: 3%;
+  border-top: 2px solid #fff;
+}
+/*fixedNav*/
+#fixedNav {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+#fixedNav img {
+  width: auto;
+  height: auto;
+  margin-right: 5px;
+}
+#fixedNav a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+  position: relative;
+}
+#fixedNav a.phone {
+  width: 33%;
+  background: #368ce1;
+}
+#fixedNav a.home {
+  width: 34%;
+  background: #F4C628;
+}
+#fixedNav a.message {
+  width: 33%;
+  background: #368ce1;
+}
+/*media*/
+@media (min-width: 480px) and (max-width: 639px) {
+  /*html*/
+  html {
+    font-size: 46.875%;
+  }
+  /*container*/
+  #container {
+    width: 100%;
+  }
+}
+@media (min-width: 400px) and (max-width: 479px) {
+  /*html*/
+  html {
+    font-size: 39.0625%;
+  }
+  /*container*/
+  #container {
+    width: 100%;
+  }
+}
+@media (min-width: 320px) and (max-width: 399px) {
+  /*html*/
+  html {
+    font-size: 31.25%;
+  }
+  /*container*/
+  #container {
+    width: 100%;
+  }
+}
+body {
+  font-size: 12px;
+}
+/*banner*/
+#banner {
+  margin-top: 5px;
+}
+/*til*/
+.til {
+  font-size: 4rem;
+  color: #005bb4;
+  padding-bottom: 1.5%;
+  position: relative;
+  border-bottom: 1px solid #005bb4;
+  text-align: center;
+  margin: 6% 0 4.5%;
+}
+.til:after {
+  content: "";
+  width: 100px;
+  height: 9px;
+  background: url("../images/til.png") no-repeat center;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -50px;
+}
+/*btn*/
+.btn {
+  clear: both;
+  *zoom: 1;
+  width: 75%;
+  margin: 6% auto;
+  color: #FFFFFF;
+  font-size: 3.7rem;
+  line-height: 1.8;
+}
+.btn:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+  font-size: 0;
+}
+.btn p {
+  width: 48%;
+  float: left;
+}
+.btn p a {
+  display: block;
+  background: #f6b42c;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.btn p a em {
+  width: 27%;
+  vertical-align: middle;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #f9b552;
+}
+.btn p a span {
+  vertical-align: middle;
+}
+.btn p:last-child {
+  float: right;
+}
+.btn p:last-child a {
+  background: #005bb4;
+}
+.btn p:last-child a em {
+  border: 1px solid #005bb4;
+}
+/*w600*/
+.w600 {
+  width: 93.75%;
+  margin: 0 auto;
+}
+/*w620*/
+.w620 {
+  width: 96.875%;
+  margin: 0 auto;
+}
+/*remove*/
+#remove {
+  width: 93.75%;
+  margin: 0 auto;
+}
+#remove dl {
+  clear: both;
+  *zoom: 1;
+  box-shadow: 0 0 5px #000;
+  padding: 3%;
+  margin-bottom: 3%;
+}
+#remove dl:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+  font-size: 0;
+}
+#remove dl dt {
+  float: left;
+  width: 48.75%;
+}
+#remove dl dd {
+  float: right;
+  width: 48.75%;
+}
+/*share*/
+#share {
+  width: 93.75%;
+  margin: 0 auto;
+}
+#share dl {
+  margin-bottom: 8%;
+}
+#share dl dt {
+  width: 74%;
+  margin: 0 auto;
+  padding: 2%;
+  border: 1px solid #005bb4;
+}
+#share dl dd h2 {
+  line-height: 1.8;
+  margin-top: 1%;
+  font-size: 3rem;
+  text-align: center;
+  color: #005bb4;
+}
+#share dl dd p {
+  line-height: 1.6;
+  font-size: 2.4rem;
+  text-align: justify;
+}
+#share dl dd p a {
+  color: #ff0000;
+}
+#share .share-more {
+  background: #a7a7a7;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2.6rem;
+  line-height: 1.8;
+  display: block;
+  width: 100%;
+}
+/*music*/
+#music {
+  width: 96.875%;
+  margin: 0 auto;
+}
+#music dl {
+  margin-bottom: 6%;
+}
+#music dl dd {
+  font-size: 2.4rem;
+  color: #484848;
+  line-height: 1.6;
+  padding: 2.4% 1.6%;
+  background: url("../images/music-bg.jpg");
+  text-align: justify;
+}
+/*expert*/
+#expert {
+  width: 96.875%;
+  margin: 0 auto;
+}
+#expert dl {
+  position: relative;
+}
+#expert dl dt {
+  margin-bottom: 6%;
+  width: 43%;
+}
+#expert dl:last-child dt {
+  width: 58%;
+}
+#expert dl dd {
+  position: absolute;
+  width: 52%;
+  right: 0;
+  top: 0;
+  font-size: 2.4rem;
+}
+#expert dl dd h2 {
+  padding-top: 8%;
+  font-size: 5.6rem;
+  padding-bottom: 8%;
+  color: #005bb4;
+}
+#expert dl dd h3 {
+  padding-bottom: 6%;
+}
+#expert dl dd h3 em {
+  color: #005bb4;
+  vertical-align: middle;
+  margin-right: 2%;
+}
+#expert dl dd h4 {
+  line-height: 1.6;
+  color: #ff6600;
+  text-align: justify;
+}
+#expert dl dd a {
+  background: #ff6600;
+  width: 68.75%;
+  line-height: 1.6;
+  text-align: center;
+  border-radius: 100px;
+  color: #ffffff;
+  margin-top: 2%;
+}
+/*equipment*/
+#equipment {
+  width: 96.875%;
+  margin: 0 auto;
+}
+#equipment dl {
+  clear: both;
+  *zoom: 1;
+  margin-bottom: 6%;
+  position: relative;
+}
+#equipment dl:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+  font-size: 0;
+}
+#equipment dl dt {
+  width: 31%;
+}
+#equipment dl dd {
+  position: absolute;
+  bottom: 6%;
+  z-index: -1;
+  width: 71%;
+  background: #005bb4;
+}
+#equipment dl dd div {
+  margin: 1%;
+  border: 1px dashed #fff;
+  padding: 4.6%;
+  color: #ffffff;
+}
+#equipment dl dd div h2 {
+  font-size: 3rem;
+  margin-bottom: 2%;
+}
+#equipment dl dd div p {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  text-align: justify;
+}
+#equipment dl:nth-of-type(2n+1) dt {
+  float: right;
+}
+#equipment dl:nth-of-type(2n) dt {
+  float: left;
+}
+#equipment dl:nth-of-type(2n+1) dd {
+  left: 0;
+}
+#equipment dl:nth-of-type(2n+1) dd div {
+  padding-right: 6%;
+}
+#equipment dl:nth-of-type(2n) dd {
+  right: 0;
+}
+#equipment dl:nth-of-type(2n) dd div {
+  padding-left: 6%;
+}
+#equipment dl:nth-last-of-type(2) {
+  margin-bottom: 0;
+}
+/*advantage*/
+#advantage {
+  width: 96.875%;
+  margin: 0 auto;
+}
+#advantage dl {
+  clear: both;
+  *zoom: 1;
+  margin-bottom: 4%;
+}
+#advantage dl:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+  content: "";
+  font-size: 0;
+}
+#advantage dl dd:first-child {
+  float: left;
+  width: 45%;
+}
+#advantage dl dd {
+  float: right;
+  width: 45%;
+}
+#advantage dl p {
+  text-align: center;
+  color: #ffffff;
+  background: #005bb4;
+  line-height: 2;
+  font-size: 2.4rem;
+}

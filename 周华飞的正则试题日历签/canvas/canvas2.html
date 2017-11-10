@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your borswer does not support canvas elements</canvas>
+                <script>
+                        var oC=document.getElementsByTagName('canvas')[0];
+                        oC.width=document.documentElement.clientWidth;
+                        oC.height=document.documentElement.clientHeight;
+                        var c=oC.getContext('2d');
+                        var arr=[];
+                        setInterval(fnDrawCircle,1000/60);
+                        function fnDrawCircle(){
+                                c.clearRect(0,0,oC.width,oC.height);
+                                for(var i=0;i<arr.length;i++){
+                                        c.save();
+                                        c.beginPath();
+                                        c.fillStyle='rgba('+arr[i].r+','+arr[i].g+','+arr[i].b+','+arr[i].a+')';
+                                        c.arc(arr[i].x,arr[i].y,arr[i].radius,0,360*Math.PI/180,false);
+                                        c.fill();
+                                        c.closePath();
+                                        c.restore();
+                                }
+                                for(var j=0;j<arr.length;j++){
+                                        arr[j].radius++;
+                                        arr[j].a-=0.01;
+                                        if(arr[j].a<=0){
+                                                arr.splice(j,1);
+                                        }
+                                }
+                        }
+                        function fnAddData(){
+                                arr.push({
+                                        x:Math.round(Math.random()*document.documentElement.clientWidth),
+                                        y:Math.round(Math.random()*document.documentElement.clientHeight),
+                                        radius:10,
+                                        r:Math.round(Math.random()*255),
+                                        g:Math.round(Math.random()*255),
+                                        b:Math.round(Math.random()*255),
+                                        a:1
+                                })
+                        }
+                        setInterval(fnAddData,30);
+                </script>
+        </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        #wrap{
+                                position:relative;
+                                width:200px;
+                                height:200px;
+                                text-align:center;
+                                line-height:200px;
+                                margin:50px auto;
+                        }
+                        #wrap div{
+                                width:100%;
+                                height:100%;
+                                color:#ffffff;
+                                background:url("http://pic2.ooopic.com/13/14/72/50b1OOOPIC2e.jpg");
+                                background-size:100% 100%;
+                                border-radius:50%;
+                        }
+                        #wrap p{
+                                width:90px;
+                                height:90px;
+                                line-height:90px;
+                                position:absolute;
+                                left:50%;
+                                top:50%;
+                                margin:-45px 0 0 -45px;
+                                color:#fff;
+                                cursor:pointer;
+                        }
+                </style>
+        </head>
+        <body>
+                <div id="wrap">
+                        <div></div>
+                        <p>抽奖</p>
+                </div>
+                <script>
+                        /*封闭的环境,避免作弊*/
+                        (function(win,doc,undefined){
+                                var oDiv=doc.querySelector('#wrap div');//旋转的那个
+                                var oP=doc.querySelector('#wrap p');//点击的那个
+                                var prize=['0等奖188','1等奖情侣电影票','2等奖68','3等奖谢谢','4等奖88','5等奖毛绒玩具','6等奖108','7等奖谢谢'];//奖品
+                                var len=prize.length;
+                                var bTrue=true;//默认开关(旋转的时候不可以点击)
+                                var timer=null;//旋转的定时器
+                                var nowAngle=0;//开始角度
+                                var angle=0;//变量备用(结束角度)
+                                var speed=0;//变量备用(速度)
+                                var result=0;//变量备用(旋转到那里了)
+                                var obj=null;//变量备用(用户信息)
+                                //ajax请求用户的基础数据,假如获取了如下数据
+                                //以下代码应该写在成功的回调里
+                                obj={
+                                        num:Math.round(Math.random()*7),//中奖号码(这里是用随机数模拟的)
+                                        count:3//剩余抽奖次数
+                                };
+                                angle=3600+obj.num*360/len;//结束角度
+                                oP.onclick=function(){
+                                        //开关打开并且用户还有剩余点击次数,才可以进行点击
+                                        if(bTrue&&obj.count>0){
+                                                bTrue=false;
+                                                timer=setInterval(function(){
+                                                        speed=Math.ceil((angle-nowAngle)/10);//速度(缓冲运动)
+                                                        result=nowAngle+speed;//旋转到那个角度了
+                                                        if(result>=angle){//当旋转到结束角度
+                                                                result=angle;
+                                                                clearInterval(timer);//清楚定时器
+                                                                alert(prize[obj.num]);//中了几等奖
+                                                                obj.count--;
+                                                                //再次发送ajax告诉后台用户中了几等奖以及剩余几次抽奖次数,并返回结果告诉我下次让用户中几等奖,这里用随机数模拟
+                                                                //以下代码应该写在成功的回调里
+                                                                bTrue=true;//更新开关
+                                                                obj.num=Math.round(Math.random()*7);//获取中几等奖(这里是用随机数模拟的)
+                                                                angle=3600+obj.num*360/len;//更新结束角度
+                                                                nowAngle=0;//更新开始角度
+                                                                speed=Math.ceil((angle-nowAngle)/10);//更新速度(缓冲运动)
+                                                                result=nowAngle+speed;//更新旋转到那个角度了
+                                                        }else{
+                                                                oDiv.style.transform='rotate('+result+'deg)';
+                                                                nowAngle=result;//更新开始角度
+                                                        }
+                                                },30);
+
+                                        }
+                                        //抽奖次数用光了
+                                        if(obj.count<=0){
+                                                alert('抽奖次数已经用光,请充值');
+                                        }
+                                }
+                        })(window,document);
+                </script>
+        </body>
+</html>

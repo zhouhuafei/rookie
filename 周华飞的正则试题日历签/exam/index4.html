@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                text-align:center;
+                        }
+                </style>
+        </head>
+        <body>
+                <h2>检索数字</h2>
+                <h3>zhe123is345number888</h3>
+                <h4></h4>
+                <h4></h4>
+                <script>
+                        var oH3=document.getElementsByTagName('h3')[0];
+                        var oH4=document.getElementsByTagName('h4')[0];
+                        var oH5=document.getElementsByTagName('h4')[1];
+                        function test(){
+                                var str=oH3.innerHTML;
+                                var step='';
+                                var arr=[];
+                                for(var i=0;i<str.length;i++){
+                                        if(str.charAt(i)>=0&&str.charAt(i)<=9){
+                                                step+=str.charAt(i);
+                                        }else{
+                                                if(step){
+                                                        arr.push(step);
+                                                        step='';
+                                                }
+                                        }
+                                }
+                                if(step){
+                                        arr.push(step);
+                                }
+                                var result=arr.join(',');
+                                oH4.innerHTML='普通:数字分别是,'+result;
+                        }
+                        test();
+                        function test2(){
+                                var str=oH3.innerHTML;
+                                var re=/\d+/g;
+                                var arr=str.match(re);
+                                var result=arr.join(',');
+                                oH5.innerHTML='正则:数字分别是,'+result;
+                        }
+                        test2();
+                </script>
+        </body>
+</html>

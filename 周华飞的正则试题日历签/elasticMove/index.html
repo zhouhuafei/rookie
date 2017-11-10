@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      *{
+        margin:0;
+        padding:0;
+        list-style-type:none;
+      }
+      div{
+        margin:200px auto 0;
+        width:100px;
+        height:100px;
+        border:1px solid #000;
+        border-radius:50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      var oDiv=document.getElementsByTagName('div')[0];
+      function elasticMove(obj,opt,fn){
+        var speed=0;
+        obj.timer=setInterval(function(){
+          var bTrue=true;
+          for(var attr in opt){
+            if(opt.hasOwnProperty(attr)){
+              var iOwnAttr=parseInt(getComputedStyle(obj)[attr]);
+              var targetAttr=opt[attr];
+              speed+=(targetAttr-iOwnAttr)/9;
+              speed*=0.9;
+              console.log(Math.abs(speed),Math.abs(targetAttr-iOwnAttr));
+              if(Math.abs(speed)<=1&&Math.abs(targetAttr-iOwnAttr)<=1){
+                obj.style[attr]=targetAttr+'px';
+              }else{
+                bTrue=false;
+                obj.style[attr]=iOwnAttr+speed+'px';
+              }
+            }
+          }
+          if(bTrue){
+            clearInterval(obj.timer);
+            fn&&fn();
+          }
+        },30);
+      }
+      elasticMove(oDiv,{width:400,height:400},function(){alert('elastic move over');});
+      //尽量只控制一个值,如果控制多个值的,尽量控制初始值和变化值一样,否则,Math.abs(targetAttr-iOwnAttr)<=1不成立
+    </script>
+  </body>
+</html>

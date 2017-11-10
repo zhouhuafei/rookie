@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        * {
+                                margin: 0;
+                                padding: 0;
+                                list-style-type: none;
+                        }
+                        body {
+                                height: 2000px;
+                        }
+                        #sidebar-box {
+                                font-family: "Microsoft YaHei";
+                                width: 139px;
+                                padding-left: 10px;
+                                position: absolute;
+                                top: 705px;
+                                font-size: 14px;
+                                line-height: 1;
+                                transform-style: preserve-3d;
+                                perspective: 200px;
+                                z-index: 100;
+                        }
+                        #sidebar-box img {
+                                vertical-align: middle;
+                        }
+                        #sidebar-hint {
+                                text-align: right;
+                                margin-bottom: 3px;
+                        }
+                        #sidebar-hd li {
+                                height: 35px;
+                                line-height: 35px;
+                                text-indent: 15px;
+                                padding-bottom: 6px;
+                                position: relative;
+                                background: #f5f5f5;
+                                cursor: pointer;
+                        }
+                        #sidebar-hd span {
+                                color: #6c6c6c;
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                padding-left: 10px;
+                                position: absolute;
+                                left: -10px;
+                                top: 0;
+                        }
+                        #sidebar-hd li.active span {
+                                background: url("images/hd.png") no-repeat;
+                                color: #fff;
+                        }
+                        #sidebar-bd {
+                                width: 521px;
+                                height: 199px;
+                                border: 3px solid #ff9601;
+                                background: #ffffff;
+                                position: absolute;
+                                left: 100%;
+                                top: 69px;
+                                overflow: hidden;
+                                transition: 0.4s;
+                                transform-origin: left center;
+                        }
+                        #sidebar-bd.active {
+                                width: 0;
+                                opacity: 0;
+                                filter: alpha(opacity=0);
+                                transform: rotateY(30deg);
+                                -webkit-transform: rotateY(30deg);
+                        }
+                        #sidebar-bd:after, #sidebar-bd li:after {
+                                content: "";
+                                display: block;
+                                height: 0;
+                                overflow: hidden;
+                                clear: both;
+                        }
+                        #sidebar-bd ul {
+                                float: left;
+                                width: 485px;
+                                height: 100%;
+                        }
+                        #sidebar-bd li {
+                                height: 100%;
+                                display: none;
+                        }
+                        #sidebar-bd li.active {
+                                display: block;
+                        }
+                        #sidebar-bd dl {
+                                height: 100%;
+                        }
+                        #sidebar-bd dd {
+                                padding: 20px 10px 10px 5px;
+                        }
+                        #sidebar-bd h2 {
+                                color: #000000;
+                                padding: 0 0 16px 5px;
+                                font-weight: normal;
+                                font-size: 14px;
+                        }
+                        #sidebar-bd a {
+                                display: inline-block;
+                                text-decoration: none;
+                                color: #898989;
+                                border-right: 1px solid #898989;
+                                line-height: 16px;
+                                margin-bottom: 8px;
+                                padding: 0 5px;
+                        }
+                        #sidebar-bd a:hover {
+                                text-decoration: underline;
+                        }
+                        #sidebar-bd div {
+                                float: right;
+                                width: 20px;
+                                padding: 0 8px;
+                                text-align: center;
+                                background: #ff9601;
+                                height: 100%;
+                                color: #FFFFFF;
+                                cursor: pointer;
+                        }
+                        #sidebar-bd span {
+                                display: block;
+                                margin: 70px 0 22px;
+                        }
+                        #sidebar-bd .sidebar-bd-fl {
+                                width: 242px;
+                                float: left;
+                                border-right: 1px dashed #dfdfdf;
+                        }
+                        #sidebar-bd .sidebar-bd-fr {
+                                float: right;
+                                width: 242px;
+                        }
+                </style>
+        </head>
+        <body>
+                <div id="sidebar-box">
+                        <div id="sidebar-hint">
+                                <img src="images/hint.png" alt="图片加载中..."/>
+                        </div>
+                        <div id="sidebar-hd">
+                                <ul>
+                                        <li class="active"><span>视频中心</span></li>
+                                        <li><span>社会公益</span></li>
+                                        <li><span>病友交流</span></li>
+                                        <li><span>照片墙</span></li>
+                                        <li><span>今日江城</span></li>
+                                        <div><img src="images/top.png" alt="图片加载中..."/></div>
+                                </ul>
+                        </div>
+                        <div id="sidebar-bd">
+                                <ul>
+                                        <!--视频中心-->
+                                        <li class="active">
+                                                <dl>
+                                                        <dd>
+                                                                <a href="#" target="_blank">牛皮癣</a>
+                                                                <a href="#" target="_blank">青春痘</a>
+                                                                <a href="#" target="_blank">灰指甲</a>
+                                                                <a href="#" target="_blank">生发&amp;脱发</a>
+                                                                <a href="#" target="_blank">白癜风</a>
+                                                                <a href="#" target="_blank">鱼鳞病</a>
+                                                                <a href="#" target="_blank">皮肤外科</a>
+                                                                <a href="#" target="_blank"> 皮肤美容</a>
+                                                                <a href="#" target="_blank">皮炎湿疹\荨麻疹</a>
+                                                                <a href="#" target="_blank">社会公益</a>
+                                                                <a href="#" target="_blank">治疗技术</a>
+                                                                <a href="#" target="_blank">专家讲座</a>
+                                                                <a href="#" target="_blank">媒体采访</a>
+                                                        </dd>
+                                                </dl>
+                                        </li>
+                                        <!--社会公益-->
+                                        <li>
+                                                <dl>
+                                                        <dd>
+                                                                <a href="#" target="_blank">牛皮癣宝宝</a>
+                                                                <a href="#" target="_blank">世界白癜风日</a>
+                                                                <a href="#" target="_blank">纪念抗战胜利70周年</a>
+                                                                <a href="#" target="_blank">第二届治疗成果展 </a>
+                                                                <a href="#" target="_blank">第一届治疗成果展</a>
+                                                                <a href="#" target="_blank">血管瘤患者感恩</a>
+                                                                <a href="#" target="_blank">社会反歧视周年展</a>
+                                                                <a href="#" target="_blank">熊猫女婴 </a>
+                                                                <a href="#" target="_blank">社会反歧视体系成立</a>
+                                                                <a href="#" target="_blank">社区送温暖</a>
+                                                                <a href="#" target="_blank">余姚义诊</a>
+                                                                <a href="#" target="_blank">媒体专访学术科普</a>
+                                                                <a href="#" target="_blank">血管瘤患者回访之旅</a>
+                                                                <a href="#" target="_blank">其他</a>
+                                                        </dd>
+                                                </dl>
+                                        </li>
+                                        <!--病友交流-->
+                                        <li>
+                                                <dl class="sidebar-bd-fl">
+                                                        <dd>
+                                                                <h2>病种</h2>
+                                                                <a href="#" target="_blank">银屑病</a>
+                                                                <a href="#" target="_blank">白癜风</a>
+                                                                <a href="#" target="_blank">青春痘</a>
+                                                                <a href="#" target="_blank"> 血管瘤</a>
+                                                                <a href="#" target="_blank"> 斑类</a>
+                                                                <a href="#" target="_blank"> 疣类</a>
+                                                                <a href="#" target="_blank"> 灰指甲</a>
+                                                                <a href="#" target="_blank"> 皮炎</a>
+                                                                <a href="#" target="_blank"> 湿疹</a>
+                                                                <a href="#" target="_blank"> 脱发</a>
+                                                                <a href="#" target="_blank"> 荨麻疹</a>
+                                                                <a href="#" target="_blank"> 鱼鳞病</a>
+                                                                <a href="#" target="_blank"> 腋臭</a>
+                                                                <a href="#" target="_blank"> 植发</a>
+                                                                <a href="#" target="_blank"> 疤痕</a>
+                                                                <a href="#" target="_blank"> 其他</a>
+                                                        </dd>
+                                                </dl>
+                                                <dl class="sidebar-bd-fr">
+                                                        <dd>
+                                                                <h2>医生</h2>
+                                                                <a href="#" target="_blank">吴玉琴</a>
+                                                                <a href="#" target="_blank"> 顾昌林</a>
+                                                                <a href="#" target="_blank"> 李衡华</a>
+                                                                <a href="#" target="_blank"> 郭晔</a>
+                                                                <a href="#" target="_blank"> 夏风</a>
+                                                                <a href="#" target="_blank"> 叶华成</a>
+                                                                <a href="#" target="_blank"> 李正森</a>
+                                                                <a href="#" target="_blank"> 林柳益</a>
+                                                                <a href="#" target="_blank"> 陆辉群 </a>
+                                                                <a href="#" target="_blank">罗兰珍</a>
+                                                                <a href="#" target="_blank"> 石玉成</a>
+                                                                <a href="#" target="_blank"> 肖军</a>
+                                                                <a href="#" target="_blank"> 赵宇辉 </a>
+                                                                <a href="#" target="_blank">李秀芬 </a>
+                                                                <a href="#" target="_blank">王曰云</a>
+                                                                <a href="#" target="_blank"> 刘毅勇</a>
+                                                        </dd>
+                                                </dl>
+                                        </li>
+                                        <!--照片墙-->
+                                        <li>
+                                                <dl>
+                                                        <dd>
+                                                                <a href="#" target="_blank">照片墙</a>
+                                                        </dd>
+                                                </dl>
+                                        </li>
+                                        <!--今日江城-->
+                                        <li>
+                                                <dl>
+                                                        <dd>
+                                                                <a href="#" target="_blank">今日江城</a>
+                                                        </dd>
+                                                </dl>
+                                        </li>
+                                </ul>
+                                <div><span>收</span>起</div>
+                        </div>
+                </div>
+                <script>
+                        (function (doc, win) {
+                                var Game = {
+                                        //初始化
+                                        fnInit: function () {
+                                                this.fnEle();
+                                                this.fnEvent();
+                                                this.fnScroll();
+                                                this.fnTop();
+                                        },
+                                        //获取元素
+                                        fnEle: function () {
+                                                this.oParent = doc.getElementById('sidebar-box');//整体盒子
+                                                this.oBtn = doc.getElementById('sidebar-hd');//按钮盒子
+                                                this.aBtn = this.oBtn.getElementsByTagName('li');//按钮
+                                                this.iLen = this.aBtn.length;//按钮个数
+                                                this.oTop = this.oBtn.getElementsByTagName('div')[0];//返回顶部
+                                                this.oCut = doc.getElementById('sidebar-bd');//切换盒子
+                                                this.aCut = this.oCut.getElementsByTagName('li');//切换
+                                                this.oClose = this.oCut.getElementsByTagName('div')[0];//收起
+                                        },
+                                        //事件
+                                        fnEvent: function () {
+                                                var self = this;
+                                                for (var i = 0; i < this.iLen; i++) {
+                                                        this.aBtn[i].index = i;
+                                                        this.aBtn[i].onmouseover = function () {
+                                                                if (self.oCut.className == 'active') {
+                                                                        self.oCut.className = '';
+                                                                }
+                                                                for (var i = 0; i < self.iLen; i++) {
+                                                                        if (self.aBtn[i].className == 'active') {
+                                                                                self.aBtn[i].className = '';
+                                                                        }
+                                                                        if (self.aCut[i].className == 'active') {
+                                                                                self.aCut[i].className = '';
+                                                                        }
+                                                                }
+                                                                if (this.className != 'active') {
+                                                                        this.className = 'active';
+                                                                }
+                                                                if (self.aCut[this.index].className != 'active') {
+                                                                        self.aCut[this.index].className = 'active';
+                                                                }
+                                                        };
+                                                }
+                                                this.oParent.onmouseout = this.oClose.onclick = function () {
+                                                        self.oCut.className = 'active';
+                                                };
+                                                this.oCut.onmouseover = this.oParent.onmouseover = function () {
+                                                        self.oCut.className = '';
+                                                }
+                                        },
+                                        //事件绑定
+                                        fnBind: function (obj, ev, fn) {
+                                                if (obj.attachEvent) {
+                                                        obj.attachEvent('on' + ev, function () {
+                                                                fn.call(obj, win.event);
+                                                        });
+                                                } else {
+                                                        obj.addEventListener(ev, fn, false);
+                                                }
+                                        },
+                                        //粘性导航
+                                        fnScroll: function () {
+                                                var self = this;
+                                                var iTop = this.oParent.offsetTop;
+                                                var iScroll = 0;
+
+                                                function scroll() {
+                                                        iScroll = doc.documentElement.scrollTop || doc.body.scrollTop;
+                                                        if (iScroll >= iTop) {
+                                                                self.oParent.style.position = 'fixed';
+                                                                self.oParent.style.top = 0;
+                                                        } else {
+                                                                self.oParent.style.position = 'absolute';
+                                                                self.oParent.style.top = iTop + 'px';
+                                                        }
+                                                }
+
+                                                scroll();
+                                                this.fnBind(win, 'scroll', scroll);
+                                        },
+                                        //返回顶部
+                                        fnTop: function () {
+                                                this.oTop.onclick = function () {
+                                                        win.scrollTo(0, 0);
+                                                }
+                                        }
+                                };
+                                Game.fnInit();
+                        })(document, window);
+                </script>
+        </body>
+</html>

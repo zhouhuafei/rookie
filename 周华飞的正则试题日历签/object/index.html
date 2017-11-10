@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        ol li.on{
+                                background:#000000;
+                                color:#ffffff;
+                        }
+                        ul li{
+                                display:none;
+                                width:400px;
+                                height:200px;
+                                background:#333;
+                                color:#ffffff;
+                        }
+                        ul li.on{
+                                display:block;
+                        }
+                </style>
+        </head>
+        <body>
+                <ol>
+                        <li class="on">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                </ol>
+                <ul>
+                        <li class="on">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                </ul>
+                <script>
+                        var aBtn=document.querySelectorAll('ol li');
+                        var aCut=document.querySelectorAll('ul li');
+                        function Tab(json){
+                                this.obj=json||{};
+                                this.aBtn=this.obj.aBtn;
+                                this.aCut=this.obj.aCut;
+                                this.iLen=this.aBtn.length;
+                                this.click();
+                        }
+                        Tab.prototype.click=function(){
+                                var self=this;
+                                for(var i=0;i<this.aBtn.length;i++){
+                                        (function(index){
+                                                self.aBtn[index].onclick=function(){
+                                                        self.tab(index);
+                                                };
+                                        })(i);
+                                }
+                        };
+                        Tab.prototype.tab=function(index){
+                                for(var i=0;i<this.aBtn.length;i++){
+                                        this.aBtn[i].className='';
+                                        this.aCut[i].className='';
+                                }
+                                this.aBtn[index].className='on';
+                                this.aCut[index].className='on';
+                        };
+                        new Tab({aBtn:aBtn,aCut:aCut});
+                </script>
+        </body>
+</html>

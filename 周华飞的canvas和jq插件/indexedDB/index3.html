@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <script>
+                        //创建数据库对象仓库
+                        window.indexedDB=window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
+                        window.IDBTransaction=window.IDBTransaction||window.webkitIDBTransaction||window.msIDBTransaction;
+                        window.IDBKeyRange=window.IDBKeyRange||window.webkitIDBKeyRange||window.msIDBKeyRange;
+                        window.IDBCursor=window.IDBCursor||window.webkitIDBCursor||window.msIDBCursor;
+                        function connectDBtest(){
+                                var dbName='indexedDBTest';
+                                var dbVersion='20160131';
+                                var dbConnect=indexedDB.open(dbName,dbVersion);//IDBOpenDBRequest对象
+                                dbConnect.onsuccess=function(ev){
+                                        var idb=ev.target.result;//IDBDatabase对象
+                                        console.log('链接成功',idb);
+                                };
+                                dbConnect.onerror=function(){
+                                        console.log('连接失败');
+                                };
+                                //indexedDB.deleteDatabase('test');根据indexed数据库名称删除某个indexed数据库
+                                dbConnect.onupgradeneeded=function(ev){
+                                        //版本dbVersion(变大)变化就会触发
+                                        var idb=ev.target.result;//IDBDatabase对象
+                                        var tx=ev.target.transaction;//IDBTransaction对象
+                                        var oldVersion=ev.oldVersion;
+                                        var newVersion=ev.newVersion;
+                                        console.log('oldVersion:'+oldVersion,'newVersion:'+newVersion);
+                                        var storeName='user';
+                                        var storeOptionalParameters={
+                                                keyPath:'userId',
+                                                autoIncrement:false
+                                        };
+                                        var store=idb.createObjectStore(storeName,storeOptionalParameters);
+                                }
+                        }
+                        connectDBtest();
+
+                </script>
+        </body>
+</html>

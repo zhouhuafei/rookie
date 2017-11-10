@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        div{
+                                width:200px;
+                                height:200px;
+                                display:none;
+                                background:#000000;
+                                color:#ffffff;
+                        }
+                        div.active{
+                                display:block;
+                        }
+                        em,span{
+                                display:inline-block;
+                                width:100px;
+                                height:50px;
+                        }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <em>取消</em>
+                        <span>确认</span>
+                </div>
+                <a>删除</a>
+                <h2>取消/确认</h2>
+                <script>
+                        function alert1(fn1,fn2){
+                                var oDiv=document.getElementsByTagName('div')[0];
+                                var oEm=document.getElementsByTagName('em')[0];
+                                var oSpan=document.getElementsByTagName('span')[0];
+                                alert1.bTrue=false;
+                                oDiv.className='active';
+                                if(!oSpan.onclick){
+                                        oSpan.onclick=function(){
+                                                oDiv.className='';
+                                                fn1();
+                                        }
+                                }
+                                if(!oEm.onclick){
+                                        oEm.onclick=function(){
+                                                oDiv.className='';
+                                                fn2();
+                                        }
+                                }
+                        }
+                        var oA=document.getElementsByTagName('a')[0];
+                        var oH2=document.getElementsByTagName('h2')[0];
+                        oA.onclick=function(){
+                                alert1(function(){
+                                        oH2.innerHTML='确认';
+                                },function(){
+                                        oH2.innerHTML='取消';
+                                });
+                        };
+                </script>
+        </body>
+</html>

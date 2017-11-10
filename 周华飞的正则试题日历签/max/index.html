@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>max</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            img{
+                max-width:100%;
+                max-height:100%;
+                vertical-align:middle;
+            }
+            div{
+                text-align:center;
+                margin:0 auto 10px;
+                width:400px;
+                height:200px;
+                background:#000;
+            }
+            div:last-of-type{
+                margin-bottom:0;
+            }
+            div:after{
+                content:"";
+                display:inline-block;
+                height:100%;
+                width:0;
+                vertical-align:middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div><img src="a.jpg" alt=""></div>
+        <div><img src="b.jpg" alt=""></div>
+        <div><img src="c.jpg" alt=""></div>
+        <div><img src="d.jpg" alt=""></div>
+        <div><img src="e.jpg" alt=""></div>
+    </body>
+</html>

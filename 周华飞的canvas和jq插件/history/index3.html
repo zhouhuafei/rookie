@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        * {
+                                margin: 0;
+                                padding: 0;
+                                list-style-type: none;
+                        }
+                </style>
+                <script>
+                        window.onload = function () {
+                                var body=document.getElementsByTagName('body')[0];
+                                var state={num:0};
+                                window.onpopstate=function(e){
+                                        body.innerHTML= e.state.num;
+                                };
+                                document.onclick=function(){
+                                        state.num++;
+                                        window.history.pushState(state,'','');
+                                }
+                        }
+                </script>
+        </head>
+        <body></body>
+</html>

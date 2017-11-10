@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>video</title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                </style>
+        </head>
+        <body>
+                <script>
+                        var vid=window.location.hash.substring(1);
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        document.writeln("<script language=\'javascript\' src=\'http://www.5etv.com/video/v2_player_html5.jsp?vid="+vid+"&s=www.5etv.com&width="+w+"&height="+h+"&soValue=100&playMode=0&toolzt=yes&startzt=yes\'><\/script>");
+                </script>
+        </body>
+</html>

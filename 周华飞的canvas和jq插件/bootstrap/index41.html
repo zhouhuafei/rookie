@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+                <title></title>
+                <!--bootstrap-->
+                <link rel="stylesheet" href="css/bootstrap.css">
+                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]>
+                <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+                <![endif]-->
+                <style>
+                        a:focus,
+                        .btn:focus,
+                        .btn.focus,
+                        .btn:active:focus,
+                        .btn:active.focus,
+                        .btn.active:focus,
+                        .btn.active.focus{
+                                outline: none;
+                        }
+                        /*
+                        #my-carousel .carousel-control span{
+                                position:absolute;
+                                top:calc(50% - 70px);
+                                left:calc(50% - 15px);
+                                font-size:100px;
+                        }
+                        */
+                        /*my-carousel*/
+                        #my-carousel{
+                                margin-top:71px;
+                        }
+                        /*why*/
+                        div.why div.why-title h2{
+                                text-align:center;
+                                font-size:20px;
+                                color:#006db8;
+                        }
+                        div.why div.why-title p{
+                                text-align:center;
+                                font-size:14px;
+                                color:#ccc;
+                                margin-bottom:20px;
+                        }
+                        div.why img{
+                                max-width:100px;
+                                max-height:100px;
+                        }
+                        div.why p.text-muted{
+                                text-decoration:line-through;
+                        }
+                        div.why h4.media-heading{
+                                margin:5px auto 10px;
+                        }
+                        div.why div.col-md-6{
+                                margin-bottom:20px;
+                        }
+                        /*power*/
+                        div.power div.row{
+                                margin-bottom:20px;
+                                background:#eee;
+                                text-align:center;
+                                padding:15px 0;
+                        }
+                        div.power h3{
+                                font-size:18px;
+                        }
+                        div.power img{
+                                width:60%;
+                        }
+                        /*footer*/
+                        footer.footer{
+                                text-align:center;
+                        }
+                        /*list*/
+                        .list .row{
+                                margin-bottom:20px;
+                        }
+                        /*重点：*/
+                        /*上面应该是以超小屏幕 手机 (<768px)优先写样式*/
+                        /*移动端优先,下面是大屏幕的*/
+                        /*小屏幕 平板 (≥768px)*/
+                        @media(min-width:768px){
+                                /*why*/
+                                div.why div.why-title h2{
+                                        font-size:30px;
+                                }
+                                div.why div.why-title p{
+                                        font-size:18px;
+                                }
+                                /*pow*/
+                                div.power h3{
+                                        font-size:24px;
+                                }
+                                div.power div.row:first-of-type>div:first-of-type{
+                                        float:right;
+                                }
+                                div.power div.row:first-of-type>div:last-of-type{
+                                        float:left;
+                                }
+                                div.power div.row>div:last-of-type{
+                                        margin-top:123px;
+                                }
+                        }
+                        /*中等屏幕 桌面显示器 (≥992px)*/
+                        @media(min-width:992px){
+
+                        }
+                        /*大屏幕 大桌面显示器 (≥1200px)*/
+                        @media(min-width:1200px){
+
+                        }
+                </style>
+        </head>
+        <body>
+                <!--class="hidden-xs"    小于768隐藏-->
+                <!--如果缩小不想换行  直接使用class="col-xs-num"系列-->
+                <!--navbar-->
+                <nav class="navbar navbar-default navbar-fixed-top">
+                        <div class="container">
+                                <div class="navbar-header">
+                                        <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-list">
+                                                <span class="sr-only">栏目列表</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                        </button>
+                                        <a href="" class="navbar-brand">LOGO</a>
+                                </div>
+                                <div id="navbar-collapse-list" class="collapse navbar-collapse">
+                                        <ul class="nav navbar-nav">
+                                                <li><a href="">首页<span class="glyphicon glyphicon-home"></span></a></li>
+                                                <li><a href="">nav1</a></li>
+                                                <li><a href="">nav2</a></li>
+                                                <li><a href="">nav3</a></li>
+                                                <li><a href="">nav4</a></li>
+                                        </ul>
+                                        <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="#register" data-toggle="modal">注册</a></li>
+                                                <li><a href="#login" data-toggle="modal">登陆</a></li>
+                                        </ul>
+                                </div>
+                        </div>
+                </nav>
+                <!--my-carouse-->
+                <div id="my-carousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                                <li data-slide-to="0" data-target="#my-carousel" class="active"></li>
+                                <li data-slide-to="1" data-target="#my-carousel"></li>
+                                <li data-slide-to="2" data-target="#my-carousel"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                                <div class="item active"><a href=""><img class="center-block" src="images/pic.jpg" alt=""/></a></div>
+                                <div class="item"><a href=""><img class="center-block" src="images/pic.jpg" alt=""/></a></div>
+                                <div class="item"><a href=""><img class="center-block" src="images/pic.jpg" alt=""/></a></div>
+                        </div>
+                        <!--<a data-slide="prev" href="#my-carousel" class="carousel-control left"><span>&lsaquo;</span></a>
+                        <a data-slide="next" href="#my-carousel" class="carousel-control right"><span>&rsaquo;</span></a>-->
+                        <a data-slide="prev" href="#my-carousel" class="carousel-control left"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                        <a data-slide="next" href="#my-carousel" class="carousel-control right"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+                <!--why-->
+                <div class="why">
+                        <div class="container">
+                                <div class="why-title">
+                                        <h2>h2哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</h2>
+                                        <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-6">
+                                                <div class="media">
+                                                        <div class="media-left"><a href=""><img src="images/pic.jpg" alt=""/></a></div>
+                                                        <div class="media-body">
+                                                                <h4 class="media-heading">h2哈哈哈哈哈哈哈哈哈哈哈哈哈</h4>
+                                                                <p class="text-muted">p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="media">
+                                                        <div class="media-left"><a href=""><img src="images/pic.jpg" alt=""/></a></div>
+                                                        <div class="media-body">
+                                                                <h4 class="media-heading">h2哈哈哈哈哈哈哈哈哈哈哈哈哈</h4>
+                                                                <p class="text-muted">p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="media">
+                                                        <div class="media-left"><a href=""><img src="images/pic.jpg" alt=""/></a></div>
+                                                        <div class="media-body">
+                                                                <h4 class="media-heading">h2哈哈哈哈哈哈哈哈哈哈哈哈哈</h4>
+                                                                <p class="text-muted">p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                                <div class="media">
+                                                        <div class="media-left"><a href=""><img src="images/pic.jpg" alt=""/></a></div>
+                                                        <div class="media-body">
+                                                                <h4 class="media-heading">h2哈哈哈哈哈哈哈哈哈哈哈哈哈</h4>
+                                                                <p class="text-muted">p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--power-->
+                <div class="power">
+                        <div class="container">
+                                <div class="row">
+                                                <div class="col-md-6 col-sm-6"><img class="img-responsive center-block" src="images/pic.jpg" alt=""/></div>
+                                                <div class="col-md-6 col-sm-6">
+                                                        <h3>h3哈哈哈哈</h3>
+                                                        <p>p哈哈哈</p>
+                                                </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-md-6 col-sm-6"><img class="img-responsive center-block" src="images/pic.jpg" alt=""/></div>
+                                        <div class="col-md-6 col-sm-6">
+                                                <h3>h3哈哈哈哈</h3>
+                                                <p>p哈哈哈</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--jumbotron-->
+                <div class="jumbotron">
+                        <div class="container">
+                                <h4>h4哈哈哈</h4>
+                                <p>p哈哈哈</p>
+                        </div>
+                </div>
+                <!--list-->
+                <div class="container list">
+                        <div class="row">
+                                <div class="col-md-8">
+                                        <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-xs-4"><img class="img-responsive" src="images/pic.jpg" alt=""/></div>
+                                                        <div class="col-xs-8">
+                                                                <h4>h4哈哈</h4>
+                                                                <p>p哈哈</p>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-xs-4"><img class="img-responsive" src="images/pic.jpg" alt=""/></div>
+                                                        <div class="col-xs-8">
+                                                                <h4>h4哈哈</h4>
+                                                                <p>p哈哈</p>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-xs-4"><img class="img-responsive" src="images/pic.jpg" alt=""/></div>
+                                                        <div class="col-xs-8">
+                                                                <h4>h4哈哈</h4>
+                                                                <p>p哈哈</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-md-4">
+                                        <div class="container-fluid">
+                                                <blockquote>
+                                                        <h4>h4哈哈哈</h4>
+                                                </blockquote>
+                                                <div class="row">
+                                                        <div class="col-xs-4"><img class="img-responsive" src="images/pic.jpg" alt=""/></div>
+                                                        <div class="col-xs-8">
+                                                                <h4>h4哈哈</h4>
+                                                                <p>p哈哈</p>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-xs-4"><img class="img-responsive" src="images/pic.jpg" alt=""/></div>
+                                                        <div class="col-xs-8">
+                                                                <h4>h4哈哈</h4>
+                                                                <p>p哈哈</p>
+                                                        </div>
+                                                </div>
+                                                <div class="row">
+                                                        <div class="col-xs-4"><img class="img-responsive" src="images/pic.jpg" alt=""/></div>
+                                                        <div class="col-xs-8">
+                                                                <h4>h4哈哈</h4>
+                                                                <p>p哈哈</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--thumbnail-->
+                <div class="container">
+                        <div class="row">
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="thumbnail">
+                                                <img src="images/pic.jpg" alt=""/>
+                                                <div class="caption text-center">
+                                                        <h4>h4哈哈</h4>
+                                                        <p>p哈哈哈</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="thumbnail">
+                                                <img src="images/pic.jpg" alt=""/>
+                                                <div class="caption text-center">
+                                                        <h4>h4哈哈</h4>
+                                                        <p>p哈哈哈</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="thumbnail">
+                                                <img src="images/pic.jpg" alt=""/>
+                                                <div class="caption text-center">
+                                                        <h4>h4哈哈</h4>
+                                                        <p>p哈哈哈</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="thumbnail">
+                                                <img src="images/pic.jpg" alt=""/>
+                                                <div class="caption text-center">
+                                                        <h4>h4哈哈</h4>
+                                                        <p>p哈哈哈</p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--about-->
+                <div class="container about">
+                        <div class="row">
+                                <div class="col-md-3 hidden-sm hidden-xs">
+                                        <div class="list-group">
+                                                <a href="#about-one" class="list-group-item">list-group-item1</a>
+                                                <a href="#about-two" class="list-group-item">list-group-item2</a>
+                                                <a href="#about-thr" class="list-group-item">list-group-item3</a>
+                                        </div>
+                                </div>
+                                <div class="col-md-9">
+                                        <div>
+                                                <a name="about-one"></a>
+                                                <h4>h4哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈</h4>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                        </div>
+                                        <div>
+                                                <a name="#about-two"></a>
+                                                <h4>h4哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈</h4>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                        </div>
+                                        <div>
+                                                <a name="about-thr"></a>
+                                                <h4>h4哈哈哈哈啊哈哈哈哈哈哈哈啊哈哈哈哈哈哈</h4>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                                <p>p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈p哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--register-->
+                <div id="register" class="modal fade in">
+                        <div class="modal-dialog">
+                                <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                                <button class="close" data-dismiss="modal">&times;</button>
+                                                <div class="modal-title">注册信息</div>
+                                        </div>
+                                        <div class="modal-body">
+                                                <form id="register-form" action="">
+                                                        <div class="form-group">
+                                                                <div class="input-group">
+                                                                        <label class="input-group-addon" for="register-user">用户名：</label>
+                                                                        <input class="form-control" id="register-user" type="text" name="register-user" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <div class="input-group">
+                                                                        <label class="input-group-addon" for="register-password">密码：</label>
+                                                                        <input class="form-control" id="register-password" type="password" name="register-password" />
+                                                                </div>
+                                                        </div>
+                                                </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" form="register-form">提交</button>
+                                                <button type="reset" class="btn btn-primary" form="register-form">重置</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--login-->
+                <div id="login" class="modal fade in">
+                        <div class="modal-dialog">
+                                <div class="modal-content text-center">
+                                        <div class="modal-header">
+                                                <button class="close" data-dismiss="modal">&times;</button>
+                                                <div class="modal-title">登陆信息</div>
+                                        </div>
+                                        <div class="modal-body">
+                                                <form action="" id="login-form">
+                                                        <div class="form-group">
+                                                                <div class="input-group">
+                                                                        <label class="input-group-addon" for="login-user">用户名：</label>
+                                                                        <input class="form-control" id="login-user" type="text" name="login-user" />
+                                                                </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <div class="input-group">
+                                                                        <label class="input-group-addon" for="login-password">密码：</label>
+                                                                        <input class="form-control" id="login-password" type="password" name="login-password" />
+                                                                </div>
+                                                        </div>
+                                                </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" form="login-form">提交</button>
+                                                <button type="reset" class="btn btn-primary" form="login-form">重置</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!--footer-->
+                <footer class="footer">
+                        <div class="container">
+                                <p>哈哈 | 哈哈 | 哈哈</p>
+                                <p>版权版权信息版权信息版权信息信息</p>
+                        </div>
+                </footer>
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        </body>
+</html>

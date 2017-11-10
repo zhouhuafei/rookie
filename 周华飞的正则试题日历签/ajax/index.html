@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <script type="text/javascript" src="ajax.js"></script>
+        </head>
+        <body>
+                <h1>点击获取数据</h1>
+                <script>
+                        var oH=document.getElementsByTagName('h1')[0];
+                        oH.bTrue=true;
+                        oH.onclick=function(){
+                                if(oH.bTrue){
+                                        oH.bTrue=false;
+                                        oH.innerHTML='数据请求中...';
+                                        rookie.ajax({
+                                                url:'json',
+                                                data:{user:'zhou',sex:'man'},
+                                                success:function(data){
+                                                        console.log(data);
+                                                        var str='';
+                                                        for(var attr in data){
+                                                                str+=attr+':'+data[attr]+'<br>';
+                                                        }
+                                                        setTimeout(function(){
+                                                                oH.innerHTML=str+'我用定时器模拟了网络延迟3妙,所以加载有些慢';
+                                                                oH.bTrue=true;
+                                                        },3000);//3妙延迟模拟数据加载的网络延迟
+                                                },
+                                                fail:function(status){
+                                                        console.log(status);
+                                                }
+                                        })
+                                }else{
+                                        oH.innerHTML='数据请求中请勿重复点击.....';
+                                }
+                        };
+                </script>
+        </body>
+</html>

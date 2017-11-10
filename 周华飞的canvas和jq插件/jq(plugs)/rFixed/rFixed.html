@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="rookie" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>rFixed</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+body{ height:4000px;}
+div{ width:300px; height:1000px; margin:200px 0 0 900px; background:#ccc; position:relative; border:20px solid #C00;}
+div p{ width:200px; height:200px; background:#f00; position:absolute; top:200px; left:200px; border:20px solid #000;}
+h2{ width:100px; height:100px; background:#f00; position:absolute; left:100px; top:400px; border:20px solid #000;}
+h2.two{ left:400px; top:300px;}
+h2.thr{ left:550px; top:350px;}
+h2.fou{ left:700px; top:400px;}
+h2.fiv{ left:250px; top:50px;}
+</style>
+<script src="jq.js"></script>
+<script src="rFixed.js"></script>
+<script>
+$(function(){
+	$('p').rFixed('div');
+	$('h2').rFixed();
+})
+</script>
+</head>
+<body>
+<div><p class="one"></p></div>
+<div class="two"><p></p></div>
+<h2></h2>
+<h2 class="two"></h2>
+<h2 class="thr"></h2>
+<h2 class="fou"></h2>
+<h2 class="fiv"></h2>
+</body>
+</html>

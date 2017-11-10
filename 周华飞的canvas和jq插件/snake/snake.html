@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>无敌蛇</title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html, body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        #snake{
+                                margin:85px auto 0;
+                                position:relative;
+                                overflow:hidden;
+                        }
+                        .row{
+                                width:100%;
+                                height:1px;
+                                background:#000;
+                                position:absolute;
+                        }
+                        .col{
+                                width:1px;
+                                height:100%;
+                                background:#000;
+                                position:absolute;
+                        }
+                        .snake, .food{
+                                position:absolute;
+                                overflow:hidden;
+                                background:rgba(255, 0, 0, 0.8);
+                                color:#ffffff;
+                                text-align:center;
+                                font-size:14px;
+                        }
+                        .food{
+                                background:rgba(255, 127, 0, 1);
+                        }
+                        #mask{
+                                width:100%;
+                                height:100%;
+                                background:#000000;
+                                position:fixed;
+                                left:0;
+                                top:0;
+                                z-index:999;
+                        }
+                        #mask div{
+                                margin-top:20px;
+                        }
+                        #mask h2{
+                                margin-top:40px;
+                                cursor:pointer;
+                        }
+                        #mask :nth-child(n){
+                                height:0;
+                                line-height:150px;
+                                overflow:hidden;
+                                transition:0.4s;
+                                text-align:center;
+                                font-size:100px;
+                                color:#ff0000;
+                        }
+                        #mask.active :nth-child(n){
+                                height:150px;
+                        }
+                        #mask :nth-child(2){
+                                transition-delay:0.4s;
+                        }
+                        #mask :nth-child(3){
+                                transition-delay:0.8s;
+                        }
+                        #mask :nth-child(4){
+                                transition-delay:1.2s;
+                        }
+                </style>
+        </head>
+        <body>
+                <div id="snake"></div>
+                <div id="mask">
+                        <div>无</div>
+                        <div>敌</div>
+                        <div>蛇</div>
+                        <h2>开始游戏</h2>
+                </div>
+                <script>
+                        function Snake(json) {
+                                this.json = json || {};
+                                this.parentId = this.json.parentId || 'snake';//vessel id
+                                this.parent = document.getElementById(this.parentId);//access vessel
+                                this.maskId = this.json.maskId || 'mask';//mask id
+                                this.mask = document.getElementById(this.maskId);//access mask
+                                this.btnTag = this.json.btnTag || 'h2';//elements of the game
+                                this.btn = this.mask.getElementsByTagName(this.btnTag)[0];//get start button elements
+                                this.row = this.json.row || 30;//number of rows
+                                this.col = this.json.col || 60;//number of columns
+                                this.width = this.json.width || 20;//Column width and row width
+                                this.speed = this.json.speed || 100;//translational speed
+                                this.snake = [];//snake
+                                this.snakeLength = 3;//The initial length of a snake
+                                this.snakeCoordX = this.col / 2;//The initial coordinates of the snake x
+                                this.snakeCoordY = this.row / 2;// The initial coordinates of the snake y
+                                this.timer = null;//snake timer
+                                this.food = null;//food;
+                                this.meat = true;//meat or shit
+                                this.over = ['我不想吃屎！', '死了也罢,活着难道就是为了吃屎？', '尼玛,居然就只吃了一口肉,撞死我算了!', '是不是傻逼,这样撞你,你乐意么!', '撞的疼不疼？', '撞墙上了吧!', '这么笨还玩什么游戏!', '你是不是傻？', '回家再修炼三十年再来挑战我吧!', '还有谁要撞墙？', '我要撞十次!', '你是在练习铁头功么？', '再来啊！', '撞死我得了！', '你妹的,撞得不是你是吧！', '再撞我我就弄死你！', '你是不是手残！', '再撞一下试试,哼！', '你是第一个敢这么把我往墙上撞的！', '墙都撞烂了!', '头好晕！', '求放过!', '你到底行不行啊,我只是想占满全部的格子而已!', '我可是无敌蛇,居然被你玩儿成这样,还想不想混了!'];
+                                this.num = 0;//the number of food
+                                this.fnInitialGame();//call initialization game
+                        }
+                        Snake.prototype = {
+                                constructor: Snake,
+                                //Initialization game
+                                fnInitialGame: function () {
+                                        var self = this;
+                                        setTimeout(function () {
+                                                self.mask.classList.add('active');
+                                        }, 30);
+                                        this.btn.addEventListener('click', function () {
+                                                document.body.removeChild(self.mask);
+                                                self.fnCreateMap();//call create map
+                                        }, false);
+                                },
+                                //create map
+                                fnCreateMap: function () {
+                                        //parent vessel width and height
+                                        this.parent.style.width = this.col * this.width + 1 + 'px';
+                                        this.parent.style.height = this.row * this.width + 1 + 'px';
+                                        //create row
+                                        var row = '';
+                                        var col = '';
+                                        for (var i = 0; i <= this.row; i++) {
+                                                row += '<div class="row" style="left:0;top:' + i * this.width + 'px;"></div>';
+                                        }
+                                        //create col
+                                        for (var j = 0; j <= this.col; j++) {
+                                                col += '<div class="col" style="left:' + j * this.width + 'px;top:0;"></div>';
+                                        }
+                                        this.parent.innerHTML = row + col;
+                                        this.fnCreateSnake();
+                                },
+                                //create snake
+                                fnCreateSnake: function () {
+                                        for (var i = 0; i < this.snakeLength; i++) {
+                                                var oSnake = document.createElement('div');
+                                                oSnake.classList.add('snake');
+                                                oSnake.style.height = oSnake.style.width = this.width + 1 + 'px';
+                                                oSnake.style.lineHeight = this.width + 'px';
+                                                oSnake.innerHTML = i;
+                                                oSnake.style.left = this.snakeCoordX * this.width + 'px';
+                                                oSnake.style.top = (this.snakeCoordY + i) * this.width + 'px';
+                                                oSnake.x = this.snakeCoordX;
+                                                oSnake.y = this.snakeCoordY + i;
+                                                this.snake.push(oSnake);
+                                                this.parent.appendChild(oSnake);
+                                        }
+                                        this.snake[0].style.zIndex = 999;
+                                        this.snake[0].style.background = '#000';
+                                        this.fnCreateFood();//call create food
+                                        this.fnSnakeMove();//call snake move
+                                },
+                                //snakeMove
+                                fnSnakeMove: function () {
+                                        var self = this;
+                                        var dir = 'up';
+                                        document.addEventListener('keydown', function (ev) {
+                                                switch (ev.keyCode) {
+                                                        case 37://left
+                                                                //如果想让他不能垂直转向,只需要加一行下面的判定即可
+                                                                //if(dir!='right'){}
+                                                                dir = 'left';
+                                                                break;
+                                                        case 38://up
+                                                                //如果想让他不能垂直转向,只需要加一行下面的判定即可
+                                                                //if(dir!='down'){}
+                                                                dir = 'up';
+                                                                break;
+                                                        case 39://right
+                                                                //如果想让他不能垂直转向,只需要加一行下面的判定即可
+                                                                //if(dir!='left'){}
+                                                                dir = 'right';
+                                                                break;
+                                                        case 40://down
+                                                                //如果想让他不能垂直转向,只需要加一行下面的判定即可
+                                                                //if(dir!='up'){}
+                                                                dir = 'down';
+                                                                break;
+                                                }
+                                        }, false);
+                                        //define move
+                                        function move(dir) {
+                                                for (var i = self.snake.length - 1; i > 0; i--) {
+                                                        self.snake[i].style.left = self.snake[i - 1].x * self.width + 'px';
+                                                        self.snake[i].style.top = self.snake[i - 1].y * self.width + 'px';
+                                                }
+                                                for (var j = self.snake.length - 1; j > 0; j--) {
+                                                        self.snake[j].x = self.snake[j - 1].x;
+                                                        self.snake[j].y = self.snake[j - 1].y;
+                                                }
+                                                if (dir == 'left') {
+                                                        self.snake[0].style.left = (self.snake[0].x - 1) * self.width + 'px';
+                                                        self.snake[0].x--;
+                                                } else if (dir == 'right') {
+                                                        self.snake[0].style.left = (self.snake[0].x + 1) * self.width + 'px';
+                                                        self.snake[0].x++;
+                                                } else if (dir == 'up') {
+                                                        self.snake[0].style.top = (self.snake[0].y - 1) * self.width + 'px';
+                                                        self.snake[0].y--;
+                                                } else if (dir == 'down') {
+                                                        self.snake[0].style.top = (self.snake[0].y + 1) * self.width + 'px';
+                                                        self.snake[0].y++;
+                                                }
+                                        }
+                                        //snake move
+                                        this.timer = setInterval(function () {
+                                                move(dir);//call move
+                                                //eat food
+                                                if (self.snake[0].x == self.food.x && self.snake[0].y == self.food.y) {
+                                                        self.food.classList.remove('food');
+                                                        self.food.classList.add('snake');
+                                                        self.food.innerHTML = self.snake.length;
+                                                        self.food.x = self.snake[self.snake.length - 1].x;
+                                                        self.food.y = self.snake[self.snake.length - 1].y;
+                                                        self.food.style.left = self.food.x * self.width + 'px';
+                                                        self.food.style.top = self.food.y * self.width + 'px';
+                                                        self.snake.push(self.food);
+                                                        self.num++;
+                                                        self.fnCreateFood();
+                                                }
+                                                //game over
+                                                //有没有咬到自己只需要判定蛇身所有的坐标点是否重复即可,这里就不进行判定了,毕竟是无敌蛇
+                                                if (self.snake[0].x < 0 || self.snake[0].x >= self.col || self.snake[0].y < 0 || self.snake[0].y >= self.row) {
+                                                        clearInterval(self.timer);
+                                                        if (self.num) {
+                                                                alert(self.over[Math.floor(Math.random() * self.over.length)]);
+                                                        } else {
+                                                                alert('一口肉都没吃到,就撞死了?你是有多笨,说好的你要打十个呢');
+                                                        }
+                                                        window.location.reload();
+                                                }
+                                        }, this.speed);
+                                },
+                                //create food
+                                fnCreateFood: function () {
+                                        var self = this;
+                                        var positionX = Math.floor(Math.random() * self.col);
+                                        var positionY = Math.floor(Math.random() * self.row);
+                                        var arr = [];//存储蛇身的坐标点
+                                        var onOff = false;
+                                        for (var i = 0; i < self.snake.length; i++) {
+                                                arr[i] = [self.snake[i].x, self.snake[i].y];
+                                        }
+                                        //game success
+                                        if (arr.length >= this.col * this.row) {
+                                                alert('恭喜你尝遍天下间所有的屎');
+                                                window.location.reload();
+                                        }
+                                        for (var j = 0; j < arr.length; j++) {
+                                                if (positionX == arr[j][0] && positionY == arr[j][1]) {
+                                                        onOff = true;
+                                                }
+                                        }
+                                        //The location of food can not be the same as the location of a snake
+                                        while (onOff) {
+                                                onOff = false;
+                                                positionX = Math.floor(Math.random() * self.col);
+                                                positionY = Math.floor(Math.random() * self.row);
+                                                for (var k = 0; k < arr.length; k++) {
+                                                        if (positionX == arr[k][0] && positionY == arr[k][1]) {
+                                                                onOff = true;
+                                                        }
+                                                }
+                                        }
+                                        this.food = document.createElement('div');
+                                        this.food.classList.add('food');
+                                        this.food.style.height = this.food.style.width = this.width + 1 + 'px';
+                                        this.food.style.lineHeight = this.width + 'px';
+                                        this.food.style.left = positionX * this.width + 'px';
+                                        this.food.style.top = positionY * this.width + 'px';
+                                        this.food.x = positionX;
+                                        this.food.y = positionY;
+                                        this.food.innerHTML = this.meat ? '肉' : '屎';
+                                        this.parent.appendChild(this.food);
+                                        this.meat = false;
+                                }
+                        };
+                        new Snake();
+                </script>
+        </body>
+</html>

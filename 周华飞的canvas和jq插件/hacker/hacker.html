@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        * {
+                                margin: 0;
+                                padding: 0;
+                        }
+                        body, html {
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                        }
+                        canvas {
+                                background: #000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas id="canvas"></canvas>
+                <script>
+                        var oCanvas = document.getElementById('canvas');
+                        var iClientW = document.documentElement.clientWidth;
+                        var iClientH = document.documentElement.clientHeight;
+                        oCanvas.width = iClientW;
+                        oCanvas.height = iClientH;
+                        var oContext = oCanvas.getContext('2d');
+                        var arr = new Array(256).join('0').split('');//数组中存着255个0
+                        var type = 'number';//显示大写字母('upper')小写字母('lower')数字('number')
+                        function draw() {
+                                oContext.save();
+                                oContext.fillStyle = 'rgba(0,0,0,0.06)';
+                                oContext.fillRect(0, 0, iClientW, iClientH);
+                                oContext.fillStyle = '#0f0';
+                                oContext.font = '12px 微软雅黑';
+                                oContext.textAlign = 'left';
+                                oContext.textBaseline = 'top';
+                                oContext.beginPath();
+                                arr.map(function (value, index, arr) {
+                                        var text = null;
+                                        if (type == 'upper') {
+                                                text = String.fromCharCode(65 + Math.round(Math.random() * 25));//大写字母
+                                        } else if (type == 'lower') {
+                                                text = String.fromCharCode(97 + Math.round(Math.random() * 25));//小写字母
+                                        } else if (type == 'number') {
+                                                text = Math.round(Math.random());
+                                        }
+                                        oContext.fillText(text, index * 12, value);
+                                        if (value > iClientH + Math.random() * 1e4) {//iClientH+Math.random()*1e4 这是关键点
+                                                arr[index] = 0;
+                                        } else {
+                                                arr[index] = parseInt(value) + 12;
+                                        }
+                                });
+                                oContext.closePath();
+                                oContext.restore();
+                        }
+                        setInterval(draw, 30);
+                </script>
+        </body>
+</html>

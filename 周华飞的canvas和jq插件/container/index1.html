@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        div{
+                                width:200px;
+                                height:200px;
+                                position:relative;
+                                background:#000000;
+                                margin:50px auto;
+                        }
+                        p{
+                                width:50px;
+                                height:50px;
+                                position:absolute;
+                                left:50px;
+                                top:50px;
+                                background:#ff0000;
+                                display:none;
+                        }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <p></p>
+                </div>
+                <script>
+                        var oDiv = document.getElementsByTagName('div')[0];
+                        var oP = document.getElementsByTagName('p')[0];
+                        oDiv.onmouseover = function () {
+                                oP.style.display = 'block';
+                        };
+                        oDiv.onmouseout = function () {
+                                oP.style.display = 'none';
+                        };
+                        oDiv.onmousemove = function (e) {
+                                var ev = e || event;
+                                oP.style.left = ev.clientX - this.offsetLeft - oP.offsetWidth / 2 + 'px';
+                                oP.style.top = ev.clientY - this.offsetTop - oP.offsetHeight / 2 + 'px';
+                                //存在问题  IE下oP会一闪一闪的
+                        }
+                </script>
+        </body>
+</html>

@@ -1,0 +1,313 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*var*/
+@color: #001025;
+.clearFix {
+        clear: both;
+        overflow: hidden;
+}
+.clearFix:after {
+        content: "";
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+        font-size: 0;
+        visibility: hidden;
+        line-height: 0;
+}
+/*body*/
+body {
+        counter-reset: var;
+        background: url("../images/bg.jpg");
+        a {
+                color: inherit;
+        }
+}
+/*container*/
+.container {
+        img {
+                width: 100%;
+        }
+}
+/*banner*/
+.banner {
+        position: relative;
+        a {
+                position: absolute;
+                width: 50%;
+                height: 50%;
+                right: 0;
+                bottom: 0;
+        }
+}
+/*til*/
+.til {
+        color: @color;
+        margin: 6% 0 4%;
+        text-align: center;
+        h3 {
+                font-size: 14px;
+                line-height: 1.2;
+                margin-bottom: 1%;
+                text-transform: uppercase;
+        }
+        h2 {
+                font-size: 4rem;
+                line-height: 1.2;
+        }
+        span {
+                font-size: 2.4rem;
+                line-height: 1.6;
+                border: 1px solid @color;
+                padding: 0 8%;
+                border-radius: 100px;
+                margin-top: 1.6%;
+        }
+        &.reset {
+                color: #ffffff;
+        }
+}
+/*main*/
+.main {
+        padding: 0 1.5625%;
+        overflow: hidden;
+}
+/*bg*/
+.bg {
+        background: @color;
+}
+.bg2 {
+        background: #f6f6f6;
+}
+/*p.text*/
+p.text {
+        font-size: 2.4rem;
+        color: @color;
+        line-height: 1.6;
+}
+/*new*/
+#new {
+        p {
+                text-align: justify;
+                margin-bottom: 1.6%;
+        }
+}
+/*btn*/
+.btn {
+        .clearFix;
+        width: 75%;
+        margin: 4% auto 7%;
+        color: #FFFFFF;
+        font-size: 3.7rem;
+        line-height: 1.8;
+        p {
+                width: 48%;
+                float: left;
+                a {
+                        display: block;
+                        background: #f6b42c;
+                        border-radius: 100px;
+                        overflow: hidden;
+                        em {
+                                width: 27%;
+                                vertical-align: middle;
+                        }
+                        span {
+                                vertical-align: middle;
+                        }
+                }
+                &:last-child {
+                        float: right;
+                        a {
+                                background: @color;
+                        }
+                }
+        }
+        &.reset p:last-child a {
+                background: #fff;
+                color: @color;
+        }
+}
+/*power*/
+#power {
+        div.img {
+                width: 88%;
+                margin: 0 auto 4%;
+        }
+        div.txt p {
+                font-size: 2.4rem;
+                line-height: 1.4;
+                padding: 0 0 1.6% 1.6%;
+                margin-bottom: 1.6%;
+                border-bottom: 1px solid #1a283b;
+                color: #FFFFFF;
+                &:before {
+                        content: counter(var);
+                        counter-increment: var;
+                        display: inline-block;
+                        font-size: 12px;
+                        width: 14px;
+                        height: 14px;
+                        line-height: 14px;
+                        border-radius: 14px;
+                        text-align: center;
+                        color: @color;
+                        background: #ffffff;
+                        vertical-align: middle;
+                        margin-right: 1.6%;
+                }
+        }
+}
+/*appraisal*/
+#appraisal {
+        ul {
+                li {
+                        .clearFix;
+                        width: 100%;
+                        margin-bottom: 4%;
+                        div {
+                                float: left;
+                                width: 45%;
+                                &:nth-child(2) {
+                                        width: 10%;
+                                        text-align: center;
+                                        margin-top: 10%;
+                                        img {
+                                                width: 50%;
+                                        }
+                                }
+                                span {
+                                        font-size: 2.4rem;
+                                        color: #ffffff;
+                                        text-align: center;
+                                        width: 50%;
+                                        line-height: 1.6;
+                                        background: @color;
+                                        padding: 0 8%;
+                                        border-radius: 100px;
+                                        margin: 4% auto 2%;
+                                        display: block;
+                                }
+                                p:first-line {
+                                        text-align: center;
+                                }
+                        }
+                }
+        }
+}
+/*effect*/
+.effect {
+        overflow: hidden;
+        .effect-main .img {
+                width: 96.875%;
+                margin: 2% auto 6%;
+        }
+        .txt {
+                background: #FFFFFF;
+                position: relative;
+                img {
+                        width: 27%;
+                }
+                div {
+                        width: 72%;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                }
+        }
+}
+/*custom*/
+#custom {
+        dl {
+                .clearFix;
+                border: 2px solid @color;
+                box-sizing: border-box;
+                background: #53a3ef;
+                margin-bottom: 3%;
+                dt {
+                        width: 37%;
+                        float: left;
+                }
+                dd {
+                        float: right;
+                        width: 63%;
+                        color: #FFFFFF;
+                        box-sizing: border-box;
+                        padding: 0 2%;
+                        h2 {
+                                font-size: 3rem;
+                                line-height: 2;
+                                text-align: center;
+                        }
+                        p {
+
+                                color: #FFFFFF;
+                        }
+                }
+                &:nth-child(2) {
+                        background: #3dd6b1;
+                }
+                &:nth-child(3) {
+                        background: #fb81a5;
+                }
+                &:nth-child(4) {
+                        background: #a25ecb;
+                }
+        }
+        .custom-btn {
+                margin: 4% 0 6%;
+        }
+}
+/*show*/
+#show {
+        .show-main {
+                position: relative;
+                div.prev, div.next {
+                        width: 4%;
+                        position: absolute;
+                        top: 46%;
+                        z-index: 4;
+                }
+                div.next {
+                        right: 0;
+                }
+                .show-content {
+                        width: 61%;
+                        margin: 0 auto;
+                }
+        }
+}
+/*answer*/
+#answer {
+        dl {
+                width: 95%;
+                margin: 0 auto 4%;
+                dd {
+                        padding: 4%;
+                        background: #fc6a5b;
+                        color: #ffffff;
+                        h2 {
+                                font-size: 3rem;
+                                padding-bottom: 3%;
+                                border-bottom: 1px dashed #ffffff;
+                        }
+                        p {
+                                color: #ffffff;
+                        }
+                        h2:first-letter, p:first-letter {
+                                font-size: 3.8rem;
+                                font-weight: bold;
+                                margin-right: 1%;
+                        }
+                }
+                &:nth-last-of-type(1) dd {
+                        background: #45b2e1;
+                }
+        }
+}

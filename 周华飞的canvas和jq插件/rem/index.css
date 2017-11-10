@@ -1,0 +1,25 @@
+*{
+        margin:0;
+        padding:0;
+}
+html{
+        font-size:64px;
+}
+body{
+        font:14px/1 "Microsoft YaHei";
+}
+#container{
+        width:10rem;
+        margin:0 auto;
+        text-align:center;
+        background:#000000;
+}
+#container img{
+        width:5.84375rem;
+        height:2.203125rem;
+}
+#container p{
+        font-size:0.46875rem;
+        line-height:1.5;
+        color:#ff0000;
+}

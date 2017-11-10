@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <!--学习总结:可以创建很多数据库==>每个数据库里可以创建很多仓库==>每个仓库里可以创建很多索引-->
+                <script>
+                        //复合索引(先运行index7(main).html,确保已经创建了数据库)
+                        window.indexedDB=window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
+                        window.IDBTransaction=window.IDBTransaction||window.webkitIDBTransaction||window.msIDBTransaction;
+                        window.IDBKeyRange=window.IDBKeyRange||window.webkitIDBKeyRange||window.msIDBKeyRange;
+                        window.IDBCursor=window.IDBCursor||window.webkitIDBCursor||window.msIDBCursor;
+                        //创建复合索引
+                        console.log(indexedDB);
+                        var dbConnect=indexedDB.open('indexedDBTest','20160137');//链接数据库
+                        dbConnect.onsuccess=function(){
+                                var idb=this.result;
+                                console.log(idb);
+                                var tx=idb.transaction('user','readwrite');//开启读写事务
+                                var store=tx.objectStore('user');
+                                console.log(store);
+                                var index=store.index('compositeIndex');
+                                console.log(index);
+                                var req=index.get(['zhouhuafei','China']);
+                                req.onsuccess=function(ev){
+                                        console.log(ev.target.result);
+                                }
+                        };
+                        dbConnect.onupgradeneeded=function(){
+                                var tx=this.transaction;
+                                var store=tx.objectStore('user');
+                                var bTrue=true;
+                                for(var i=0;i<store.indexNames.length;i++){
+                                        if(store.indexNames[i]=='compositeIndex'){
+                                                bTrue=false;
+                                        }
+                                }
+                                if(bTrue){
+                                        store.createIndex('compositeIndex',['userName','address'],{unique:true,multiEntry:false});
+                                }
+
+                        };
+                        //indexedDB.deleteDatabase('user');删除某个数据库
+                </script>
+        </body>
+</html>

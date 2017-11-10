@@ -1,0 +1,107 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner {
+        height: 600px;
+        background: url(../images/banner.jpg) center no-repeat;
+        margin-bottom: 100px;
+}
+#banner div {
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+}
+#banner a {
+        width: 210px;
+        height: 60px;
+        position: absolute;
+        right: 340px;
+        bottom: 50px;
+}
+#main {
+        margin-bottom: 100px;
+}
+#main li {
+        height: 222px;
+        background: url("../images/1.jpg") center center no-repeat;
+        background-size: auto 100%;
+}
+#main li.l2 {
+        background-image: url("../images/2.jpg");
+}
+#main li.l3 {
+        background-image: url("../images/3.jpg");
+}
+#main li.l4 {
+        background-image: url("../images/4.jpg");
+}
+#main li.l5 {
+        background-image: url("../images/5.jpg");
+}
+#main li.l6 {
+        background-image: url("../images/6.jpg");
+}
+#main li.l7 {
+        background-image: url("../images/7.jpg");
+}
+#main li.l8 {
+        background-image: url("../images/8.jpg");
+}
+#main li.l9 {
+        background-image: url("../images/9.jpg");
+}
+#main li.l10 {
+        background-image: url("../images/10.jpg");
+}
+#main li.l11 {
+        background-image: url("../images/11.jpg");
+}
+#main li.l12 {
+        background-image: url("../images/12.jpg");
+}
+#main li.l13 {
+        background-image: url("../images/13.jpg");
+}
+#main li.l14 {
+        background-image: url("../images/14.jpg");
+}
+#main li.l15 {
+        background-image: url("../images/15.jpg");
+}
+#main li.l16 {
+        background-image: url("../images/16.jpg");
+}
+#main li.l17 {
+        background-image: url("../images/17.jpg");
+}
+#main li.l18 {
+        background-image: url("../images/18.jpg");
+}
+#main li.l19 {
+        background-image: url("../images/19.jpg");
+}
+#main li.l20 {
+        background-image: url("../images/20.jpg");
+}
+#main li.l21 {
+        background-image: url("../images/21.jpg");
+}
+#main li.l22 {
+        background-image: url("../images/22.jpg");
+}
+#main li.l23 {
+        background-image: url("../images/23.jpg");
+        height: 270px;
+}
+#main a {
+        display: block;
+        width: 100%;
+        height: 100%;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        html, body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        body{
+                                text-align:center;
+                        }
+                        div{
+                                width:200px;
+                                height:200px;
+                                border-radius:50%;
+                                border:1px solid #000;
+                                position:relative;
+                                margin:200px 10px;
+                                display:inline-block;
+                        }
+                        h2{
+                                width:10px;
+                                height:10px;
+                                border-radius:50%;
+                                background:#000;
+                                position:absolute;
+                                left:50%;
+                                margin-left:-5px;
+                                top:50%;
+                                margin-top:-5px;
+                        }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <h2 class="eye"></h2>
+                </div>
+                <!--
+                                -->
+                <div>
+                        <h2 class="eye"></h2>
+                </div>
+                <script>
+                        //反三角函数,求弧度
+                        var eyeOne = document.getElementsByClassName('eye')[0];
+                        var eyeTwo = document.getElementsByClassName('eye')[1];
+                        eyeOne.l = eyeOne.offsetLeft + eyeOne.offsetWidth / 2;
+                        eyeOne.t = eyeOne.offsetTop + eyeOne.offsetHeight / 2;
+                        eyeOne.x = eyeOne.offsetLeft + eyeOne.parentNode.offsetLeft + eyeOne.offsetWidth / 2;
+                        eyeOne.y = eyeOne.offsetTop + eyeOne.parentNode.offsetTop + eyeOne.offsetHeight / 2;
+                        eyeOne.r = 100;
+                        eyeTwo.l = eyeOne.offsetLeft + eyeTwo.offsetWidth / 2;
+                        eyeTwo.t = eyeOne.offsetTop + eyeTwo.offsetHeight / 2;
+                        eyeTwo.x = eyeTwo.offsetLeft + eyeTwo.parentNode.offsetLeft + eyeTwo.offsetWidth / 2;
+                        eyeTwo.y = eyeTwo.offsetTop + eyeTwo.parentNode.offsetTop + eyeTwo.offsetHeight / 2;
+                        eyeTwo.r = 100;
+                        function change(obj, clientX, clientY) {
+                                var a = Math.abs(clientY - obj.y);
+                                var b = Math.abs(clientX - obj.x);
+                                var changeX = 0;
+                                var changeY = 0;
+                                if (clientX > obj.x && clientY > obj.y) {//右下
+                                        changeX = Math.sin(Math.atan(b / a)) * obj.r;
+                                        changeY = Math.cos(Math.atan(b / a)) * obj.r;
+                                } else if (clientX > obj.x && clientY < obj.y) {//右上
+                                        changeX = Math.sin(Math.atan(b / a)) * obj.r;
+                                        changeY = Math.cos(Math.atan(b / a)) * -obj.r;
+                                } else if (clientX < obj.x && clientY < obj.y) {//左上
+                                        changeX = Math.sin(Math.atan(b / a)) * -obj.r;
+                                        changeY = Math.cos(Math.atan(b / a)) * -obj.r;
+                                } else if (clientX < obj.x && clientY > obj.y) {//左下
+                                        changeX = Math.sin(Math.atan(b / a)) * -obj.r;
+                                        changeY = Math.cos(Math.atan(b / a)) * obj.r;
+                                }
+                                obj.style.left = obj.l + changeX + 'px';
+                                obj.style.top = obj.t + changeY + 'px';
+                        }
+                        document.onmousemove = function (ev) {
+                                change(eyeOne, ev.clientX, ev.clientY);
+                                change(eyeTwo, ev.clientX, ev.clientY);
+                        }
+                </script>
+        </body>
+</html>

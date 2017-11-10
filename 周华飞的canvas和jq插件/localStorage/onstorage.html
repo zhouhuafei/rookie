@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                </style>
+        </head>
+        <body>
+                <!--
+                表格边框实现原理
+                1.单元格的间距设置为1
+                2.段远哥内部的间距设置为1(非必要)
+                3.table的背景和tr的背景不要一样即可
+                -->
+                <table border="0" cellspacing="1" cellpadding="1" bgcolor="red">
+                        <tr bgcolor="aqua">
+                                <th>key</th>
+                                <th>oldValue</th>
+                                <th>newValue</th>
+                                <th>url</th>
+                                <th>storageArea</th>
+                        </tr>
+                </table>
+                <script>
+                        //onstorage只有在其他文档可用,此处是在index里修改Storage对象里的值,反应到本页面
+                        //firefox does not support
+                        //if sesstionStorage want to use this event,must be in the iframe
+                        var oTable = document.getElementsByTagName('table')[0];
+                        window.onstorage = function (e) {
+                                oTable.innerHTML += "<tr bgcolor=aqua><td>" + e.key + "</td><td>" + e.oldValue + "</td><td>" + e.newValue + "</td><td>" + e.url + "</td><td>" + (e.storageArea == localStorage) + "</td></tr>";
+                        }
+                </script>
+        </body>
+</html>

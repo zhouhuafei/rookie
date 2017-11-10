@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var radian=Math.PI/180;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        canvas.width=w;
+                        canvas.height=h;
+                        canvas.x=w/2;
+                        canvas.y=h/2;
+                        canvas.r=16;
+                        var context=canvas.getContext('2d');
+                        var len=360;
+                        context.translate(canvas.x,canvas.y);
+                        var point=[];
+                        for(var i=0;i<len;i++){
+                                var angle=i*radian;
+                                var x=-canvas.r*(16*Math.pow(Math.sin(angle),3));
+                                var y=-canvas.r*(13*Math.cos(angle)-5*Math.cos(2*angle)-2*Math.cos(3*angle)-Math.cos(4*angle));
+                                point.push([x,y]);
+                        }
+                        var num=0;
+                        context.fillStyle='rgba(255,0,0,0.2)';
+                        context.strokeStyle='rgba(255,0,0,0.6)';
+                        var timer=null;
+                        timer=setInterval(function(){
+                                heart(point[num][0],point[num][1]);
+                                num++;
+                                if(num==len){
+                                        clearInterval(timer);
+                                }
+                        },10);
+                        function heart(x,y){
+                                r=0.4;
+                                context.save();
+                                context.beginPath();
+                                for(var i=0;i<len;i++){
+                                        var angle=i*radian;
+                                        xs=x-r*(16*Math.pow(Math.sin(angle),3));
+                                        ys=y-r*(13*Math.cos(angle)-5*Math.cos(2*angle)-2*Math.cos(3*angle)-Math.cos(4*angle));
+                                        context.lineTo(xs,ys);
+                                }
+                                context.closePath();
+                                context.fill();
+                                context.stroke();
+                                context.restore();
+                        }
+                </script>
+        </body>
+</html>

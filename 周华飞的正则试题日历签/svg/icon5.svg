@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,640,640">
+    <g transform="translate(320,320)" stroke-width="5" fill="transparent" stroke="red">
+        <circle r="320"/>
+        <circle r="300"/>
+        <circle r="280"/>
+        <circle r="260"/>
+        <circle r="240"/>
+        <circle r="220"/>
+        <circle r="200"/>
+        <circle r="180"/>
+        <circle r="160"/>
+    </g>
+</svg>

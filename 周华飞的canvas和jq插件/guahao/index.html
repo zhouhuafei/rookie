@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+                <meta name="author" content="rookie"/>
+                <meta name="qq" content="1123486116"/>
+                <meta name="keywords" content="rookie"/>
+                <meta name="description" content="1123486116"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+                <meta name="apple-mobile-web-app-capable" content="yes"/>
+                <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+                <meta name="format-detection" content="telephone=no"/>
+                <title>挂号系统</title>
+                <link rel="stylesheet" href="css/css.css"/>
+                <link rel="stylesheet" href="laydate/need/laydate.css"/>
+        </head>
+        <body>
+                <div id="guahao">
+                        <dl>
+                                <dt><img src="images/guahao-header.jpg" alt=""/></dt>
+                                <dd>
+                                        <form name="fm" method="post" action="/guahao/yuyue.php">
+                                                <div class="clearFix">
+                                                        <div class="fl">
+                                                                <div class="clearFix">
+                                                                        <div class="fl">
+                                                                                <h2><label><span>姓名：</span><input type="text" name="name" id="name" placeholder="请输入您的姓名"/></label></h2>
+                                                                                <h2><label><span>就诊时间：</span><input type="text" name="time" id="time" placeholder="请选择您的就诊时间"/></label></h2>
+                                                                        </div>
+                                                                        <div class="fl sex-age-tel">
+                                                                                <div class="clearFix">
+                                                                                        <h2 class="fl sex"><span>性别：</span><label><input type="radio" name="sex"/>男</label><label><input type="radio" name="sex"/>女</label></h2>
+                                                                                        <h2 class="fl age"><label><span>年龄：</span><input type="text" name="age" id="age" placeholder="年龄"/></label></h2>
+                                                                                </div>
+                                                                                <h2 class="tel"><label><span>联系电话：</span><input type="text" name="tel" id="tel" placeholder="请输入您的电话号码"/></label></h2>
+                                                                        </div>
+                                                                </div>
+                                                                <h2 class="description"><label><span>病情描述：</span><textarea cols="30" rows="10" name="description" id="description" placeholder="请输入不适症状和治疗经过、既往疾病、想获得什么样的帮助等，方便医生匹配精准对症的专家，如有意向医院或医生，请您补充（请输入10-200个字）"></textarea></label></h2>
+                                                        </div>
+                                                        <div class="fr">
+                                                                <input type="submit" name="send" value="提交预约"/>
+                                                                <em>预约成功患者，系统会将专家号和医院地址下发到您的手机，请注意查收</em>
+                                                        </div>
+                                                </div>
+                                        </form>
+                                </dd>
+                                <dd class="guahao-title">请填写上述资料进行挂号</dd>
+                        </dl>
+                </div>
+                <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+                <script type="text/javascript" src="laydate/laydate.js"></script>
+                <script type="text/javascript" src="js/js.js"></script>
+        </body>
+</html>

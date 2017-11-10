@@ -1,0 +1,213 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*location*/
+.location {
+  padding: 0 5%;
+}
+.location img {
+  width: 3.6%;
+  vertical-align: middle;
+  margin-right: 2%;
+}
+.location span {
+  font-size: 2.8rem;
+  line-height: 3.8;
+  color: #0078c8;
+  vertical-align: middle;
+}
+.location span a {
+  color: #000;
+}
+/*main*/
+.main img {
+  width: 100%;
+}
+.main section {
+  width: 93.75%;
+  margin: 0 auto;
+}
+.main section div.on {
+  height: 0;
+  overflow: hidden;
+}
+.main section dl {
+  padding: 4%;
+  margin-bottom: 4%;
+  border-top: 1px dashed #a2a1a1;
+}
+.main section > dl:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+.main section dt {
+  width: 38%;
+}
+.main section dd {
+  color: #676767;
+  width: 60%;
+  font-size: 2.4rem;
+}
+.main section dd a {
+  color: #f00;
+}
+.main article {
+  overflow: hidden;
+}
+.main mark {
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  background: transparent;
+  margin-top: -4%;
+}
+.main mark img {
+  width: 25%;
+}
+/*til*/
+.til {
+  font-size: 3rem;
+  line-height: 2;
+  background: url("../images/til_bg.jpg");
+  padding-left: 20%;
+  color: #fff;
+  position: relative;
+  margin: 4% 0;
+}
+.til em {
+  background: url("../images/til_num.jpg") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 9%;
+  left: 10%;
+  height: 100%;
+  line-height: 1;
+  color: #0078c8;
+  text-align: center;
+}
+.til:first-child {
+  margin-top: 0;
+}
+/*tils*/
+.tils {
+  margin: 5% auto;
+  text-align: center;
+}
+.tils span {
+  font-size: 4rem;
+  line-height: 1.6;
+  background: #f97400;
+  padding: 0 7%;
+  display: inline-block;
+  color: #fff;
+}
+/*team*/
+.team {
+  padding: 0 5%;
+}
+.team ul li {
+  width: 100%;
+  margin-top: 5%;
+  padding: 3% 0 5.6% 0;
+  border-bottom: 1px dashed #aeaeae;
+}
+.team ul li img {
+  width: 34%;
+  float: left;
+  margin-right: 8%;
+}
+.team_inner {
+  width: 58%;
+  float: left;
+}
+.team ul li h3 {
+  font-size: 3rem;
+  line-height: 1;
+  color: #0078c8;
+  display: inline;
+}
+.team ul li h3:after {
+  content: "";
+  margin-right: 4.6%;
+}
+.team ul li span {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  color: #000;
+}
+.team ul li p {
+  font-size: 2.4rem;
+  line-height: 1.58;
+  margin: 3.5% 0;
+  color: #666;
+}
+/*zixun*/
+.zixun {
+  text-align: center;
+}
+.zixun dl dt {
+  display: inline-block;
+  text-align: center;
+  width: 33%;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  background: #0078c8;
+}
+.zixun dl dt a {
+  color: #fff;
+}
+.zixun .zaixian {
+  background: #f97400;
+  margin-right: 10%;
+}
+/*registered*/
+.registered {
+  padding: 0 5%;
+}
+.registered_box {
+  width: 89%;
+  padding: 0 5% 5% 5%;
+  border: 2px solid #787878;
+}
+.registered_box h3 {
+  font-size: 2.8rem;
+  line-height: 3;
+  color: #0078c8;
+  text-align: center;
+}
+.registered_box ul li {
+  margin-bottom: 4%;
+}
+.registered_box ul li span {
+  font-size: 2.8rem;
+  line-height: 1.85;
+  color: #666;
+  margin-right: 2%;
+}
+.registered_box ul li input {
+  width: 68%;
+  font-size: 2.8rem;
+  line-height: 1.85;
+  border: 1px solid #787878;
+}
+/*tijiao*/
+.tijiao {
+  text-align: center;
+}
+form button {
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: 33%;
+  font-size: 2.8rem;
+  line-height: 2;
+  background: #0078c8;
+}
+.tijiao .tijiao_inner {
+  background: #f97400;
+  margin-right: 10%;
+}

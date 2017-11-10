@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                margin:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                                padding:0;
+                                margin:0;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var context=canvas.getContext('2d');
+                        var length=30;
+                        var radian=360/length;
+                        canvas.num=0;
+                        canvas.timer=null;
+                        canvas.width=w;
+                        canvas.height=h;
+                        canvas.x=w/2;
+                        canvas.y=h/2;
+                        canvas.r=h/2-50;
+                        canvas.radian=Math.PI/180;
+                        canvas.angle=90*canvas.radian;
+                        canvas.timer=setInterval(function(){
+                                context.save();
+                                context.fillStyle='rgba(255,0,0,0.8)';
+                                context.strokeStyle='rgba(255,0,0,0.8)';
+                                context.beginPath();
+                                context.lineTo(canvas.x+canvas.r*Math.cos(radian*canvas.num*canvas.radian),canvas.y+canvas.r*Math.sin(radian*canvas.num*canvas.radian));
+                                canvas.num++;
+                                context.lineTo(canvas.x+canvas.r*Math.cos(radian*canvas.num*canvas.radian),canvas.y+canvas.r*Math.sin(radian*canvas.num*canvas.radian));
+                                context.closePath();
+                                context.stroke();
+                                context.fill();//填充无效,因为两点构不成面
+                                if(canvas.num>=length){
+                                        clearInterval(canvas.timer);
+                                }
+                        },30);
+                        context.restore();
+                </script>
+        </body>
+</html>

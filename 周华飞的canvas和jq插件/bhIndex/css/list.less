@@ -1,0 +1,270 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+@import "base.less";
+/*type*/
+#type{
+        .w995;
+        margin-bottom:50px;
+        ol{
+                .clear-fix;
+                background:#006db8;
+                padding:7px 0;
+                li{
+                        .fl;
+                        border-left:1px solid #80b6dc;
+                        height:37px;
+                        line-height:37px;
+                        font-size:16px;
+                        color:#ffffff;
+                        width:141px;
+                        text-align:center;
+                        &.type-first-ol-li{
+                                width:143px;
+                                border-left:none;
+                        }
+                }
+        }
+        ul{
+                .clear-fix;
+                background:#eaeaea;
+                padding:10px 0;
+                li{
+                        .fl;
+                        border-left:1px solid #fbfbfb;
+                        font-size:14px;
+                        color:#646363;
+                        width:141px;
+                        &.type-first-ul-li{
+                                width:143px;
+                                border-left:none;
+                        }
+                        a{
+                                display:block;
+                                margin-bottom:10px;
+                                text-indent:30px;
+                                &:before{
+                                        content:"";
+                                        display:inline-block;
+                                        margin-right:6px;
+                                        width:2px;
+                                        height:2px;
+                                        background:#646363;
+                                        vertical-align:middle;
+                                }
+                        }
+                }
+        }
+        div{
+                margin-top:10px;
+                font-size:16px;
+                color:#646363;
+        }
+}
+/*list*/
+#list{
+        .clear-fix;
+        .w995;
+}
+#list-list{
+        .fl;
+        width:686px;
+        border:1px solid @c;
+        border-top-width:3px;
+        padding-bottom:100px;
+        .list-location{
+                font-size:14px;
+                padding-left:10px;
+                margin:0 10px;
+                height:47px;
+                line-height:47px;
+                border-bottom:1px dashed #dddddd;
+                color:@c;
+                a{
+                        margin:0 10px;
+                }
+        }
+        .list-main{
+                margin-top:13px;
+                dl{
+                        .clear-fix;
+                        padding:22px 8px;
+                        dt{
+                                .fl;
+                                width:240px;
+                                height:135px;
+                                img{
+                                        width:100%;
+                                        height:100%;
+                                }
+                        }
+                        dd{
+                                .fr;
+                                width:400px;
+                                font-size:14px;
+                                h2{
+                                        font-weight:bold;
+                                        position:relative;
+                                        padding:4px 0 10px;
+                                }
+                                p{
+                                        line-height:24px;
+                                        text-indent:30px;
+                                        a{
+                                                .no-ti;
+                                        }
+                                }
+                        }
+                        &.list-dl-grey{
+                                background:#f7f7f7;
+                        }
+                }
+        }
+}
+#side{
+        .fr;
+        width:300px;
+        .side-blog{
+                border:1px solid @c;
+                border-top-width:3px;
+                margin-bottom:10px;
+        }
+        .side-title{
+                margin:14px 0 6px;
+                font-size:20px;
+                color:@c;
+                font-weight:bold;
+        }
+        .side-expert{
+                position:relative;
+                .hd{
+                        position:absolute;
+                        text-align:center;
+                        right:15px;
+                        top:-18px;
+                        li{
+                                display:inline-block;
+                                margin-left:5px;
+                                width:10px;
+                                height:10px;
+                                border-radius:50%;
+                                background:#dcdcdc;
+                                &.on{
+                                        background:@c;
+                                }
+                        }
+                }
+                .bd{
+                        border:1px solid #dedede;
+                        width:298px;
+                        height:192px;
+                        overflow:hidden;
+                        li{
+                                padding:5px;
+                        }
+                }
+                dl{
+                        .clear-fix;
+                }
+                dt{
+                        .fl;
+                        width:136px;
+                        height:182px;
+                }
+                img{
+                        width:100%;
+                        height:100%;
+                }
+                dd{
+                        .fr;
+                        width:140px;
+                        height:182px;
+                        position:relative;
+                        a{
+                                width:88px;
+                                height:30px;
+                                line-height:30px;
+                                text-align:center;
+                                background:@c;
+                                color:#ffffff;
+                                font-size:16px;
+                                position:absolute;
+                                right:0;
+                                bottom:0;
+                        }
+                }
+                h2{
+                        font-size:20px;
+                        color:@c;
+                        font-weight:bold;
+                        padding-top:8px;
+                }
+                p{
+                        line-height:24px;
+                        font-size:14px;
+                        color:#646363;
+                }
+                strong{
+                        margin:6px 0 2px;
+                        width:77px;
+                        height:24px;
+                        line-height:24px;
+                        text-align:center;
+                        background:@c;
+                        color:#ffffff;
+                        font-size:16px;
+                        font-weight:bold;
+                }
+                div.side-expert-phone{
+                        margin:20px 0 14px;
+                        .clear-fix;
+                        a{
+                                display:block;
+                        }
+                        div{
+                                width:144px;
+                                span{
+                                        color:#646363;
+                                        font-size:12px;
+                                        vertical-align:middle;
+                                }
+                                em{
+                                        vertical-align:middle;
+                                }
+                                b{
+                                        font-weight:bold;
+                                        font-size:14px;
+                                }
+                        }
+                }
+                div.side-expert-address{
+                        a{
+                                display:block;
+                        }
+                        .clear-fix;
+                        em{
+                                margin:0 13px 0 15px;
+                        }
+                        div{
+                                width:144px;
+                                font-size:16px;
+                                color:#ffffff;
+                                background:@c;
+                                padding:6px 0;
+                        }
+
+                }
+        }
+        .side-recommend{
+                li{
+                        width:300px;
+                        height:108px;
+                        background:@c;
+                        margin-bottom:8px;
+                }
+        }
+}

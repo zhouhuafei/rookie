@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width user-scalable=no"/>
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        ul{
+                                overflow:hidden;
+                                width:300px;
+                                margin:50px auto 50px;
+                        }
+                        li{
+                                width:100px;
+                                height:100px;
+                                text-align:center;
+                                line-height:100px;
+                                background:#ff0000;
+                                color:#ffffff;
+                                float:left;
+                        }
+                        li.active{
+                                background:#000000;
+                        }
+                </style>
+        </head>
+        <body>
+                <ul>
+                        <li>0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>抽奖</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                </ul>
+                <script>
+                        (function(win,doc){
+                                var oUl=doc.getElementsByTagName('ul')[0];
+                                var aLi=oUl.getElementsByTagName('li');
+                                var iLen=aLi.length;
+                                var iCen=Math.floor(iLen/2);
+                                var oBtn=aLi[iCen];
+                                var aMap=[0,1,2,5,8,7,6,3];//路线
+                                var iMap=aMap.length;
+                                var rotate=2;//转几圈
+                                var iTimer1=null;//定时器1
+                                var bTrue=true;//开关
+                                var index=0;//清掉第几个元素的class
+                                var prefectSpeed=60;//旋转速度
+                                oBtn.addEventListener('click',function(){
+                                        if(!bTrue){
+                                                return false;
+                                        }
+                                        var iNum=Math.round(Math.random()*(iMap-1));//中了几等奖
+                                        var startNum=0;//开始数字
+                                        var endNum=rotate*(iLen-1)+iNum;//结束数字
+                                        aLi[index].classList.remove('active');
+                                        index=0;//清掉第几个元素的class
+                                        bTrue=false;
+                                        iTimer1=setInterval(function(){
+                                                aLi[index].classList.remove('active');
+                                                index=aMap[startNum%iMap];
+                                                aLi[index].classList.add('active');
+                                                if(startNum==endNum){
+                                                        clearInterval(iTimer1);
+                                                        console.log('中了'+iNum+'等奖,奖品是'+aMap[iNum]+'');
+                                                        bTrue=true;
+                                                }else{
+                                                        startNum++;
+                                                }
+                                        },prefectSpeed);
+                                },false);
+                        })(window,document);
+                </script>
+        </body>
+</html>

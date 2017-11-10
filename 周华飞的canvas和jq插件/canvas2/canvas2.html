@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                }
+                canvas {
+                        background: #000000;
+                        display: block;
+                        margin: 30px auto;
+                }
+        </style>
+</head>
+<body>
+<canvas width="1000" height="1000" id="canvas1">您的浏览器不支持canvas</canvas>
+<canvas width="1000" height="1000" id="canvas2">您的浏览器不支持canvas</canvas>
+<script>
+        var Game = null;
+        //构造函数创建
+        (function () {
+                Game = function (json) {
+                        this.json = json || {};
+                        this.oCanvas = this.json.oCanvas || 'canvas1';
+                        this.iRadian = Math.PI / 180;
+                };
+                Game.prototype = {
+                        //指向修正
+                        constructor: Game,
+                        //初始化
+                        fnInit: function () {
+                                this.fnEle();
+                                this.fnMove();
+                        },
+                        //获取元素
+                        fnEle: function () {
+                                this.oCanvas = document.getElementById(this.oCanvas);
+                                this.oContext = this.oCanvas.getContext('2d');
+                                this.iWidth = this.oCanvas.width;
+                                this.iHeight = this.oCanvas.height;
+                                this.iRadius = this.oCanvas.width/2;
+                        },
+                        //画布基础背景
+                        fnContext: function () {
+                                this.oContext.translate(this.iWidth / 2, this.iHeight / 2);
+                                var rgd = this.oContext.createRadialGradient(0, 0, 0, 0, 0, this.iRadius);
+                                rgd.addColorStop(0, 'rgba(255, 0, 0,0.5)');
+                                rgd.addColorStop(0.1, 'rgba(255, 165, 0,0.5)');
+                                rgd.addColorStop(0.2, 'rgba(255, 255, 0,0.5)');
+                                rgd.addColorStop(0.5, 'rgba(0, 255, 0,0.5)');
+                                rgd.addColorStop(0.7, 'rgba(0, 127, 255,0.5)');
+                                rgd.addColorStop(0.8, 'rgba(0, 0, 255,0.5)');
+                                rgd.addColorStop(0.9, 'rgba(139, 0, 255,0.5)');
+                                rgd.addColorStop(1, 'rgba(0, 127, 255,0.5)');
+                                this.oContext.strokeStyle = rgd;
+                        },
+                        //五角星分布规则
+                        fnMove: function () {
+                                var num = 0;
+                                var scale = 0.99;
+                                var step = 0.01;
+                                var self = this;
+                                this.fnContext();
+                                if (this.oCanvas.id == 'canvas2') {
+                                        setInterval(function () {
+                                                num++;
+                                                scale -= step;
+                                                self.oContext.save();
+                                                self.oContext.scale(scale, scale);
+                                                self.oContext.translate(num, num);
+                                                self.oContext.rotate(num * self.iRadian);
+                                                self.fnFive();
+                                                self.oContext.restore();
+                                                if (num == 300) {
+                                                        num = 0;
+                                                        step = 0.01;
+                                                        scale = 0.99;
+                                                        self.oContext.clearRect(-self.iWidth / 2, -self.iHeight / 2, self.iWidth, self.iHeight);
+                                                }
+                                        }, 30);
+                                } else if (this.oCanvas.id == 'canvas1') {
+                                        for (var i = 300; i > 0; i -= 20) {
+                                                this.fnFive(i);
+                                        }
+                                }
+                        },
+                        //创建五角星
+                        fnFive: function (r) {
+                                var x = 0;//五角星的圆心x轴坐标
+                                var y = 0;//五角星的圆心y轴坐标
+                                if (this.oCanvas.id == 'canvas2') {
+                                        r = 300;//五角星的外圆半径
+                                }
+                                var angle = 360 / 10;
+                                this.oContext.beginPath();
+                                this.oContext.moveTo(x, y - r);
+                                for (var i = 0; i < 10; i++) {
+                                        if (i % 2 == 0) {
+                                                this.oContext.lineTo(Math.sin(angle * i * this.iRadian) * r, -Math.cos(angle * i * this.iRadian) * r);
+                                        } else {
+                                                this.oContext.lineTo(Math.sin(angle * i * this.iRadian) * r / 2.6, -Math.cos(angle * i * this.iRadian) * r / 2.6);
+                                        }
+                                }
+                                this.oContext.closePath();
+                                this.oContext.stroke();
+                        }
+                }
+        })();
+        //构造函数调用
+        (function () {
+                var obj = new Game();
+                obj.fnInit();
+                obj.oCanvas = 'canvas2';
+                obj.fnInit();
+        })();
+</script>
+</body>
+</html>

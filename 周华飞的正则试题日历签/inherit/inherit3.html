@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <script>
+                        //原型继承＝》多用于没有new的对象
+                        var obj={
+                                name:'zhou',
+                                showName:function(){
+                                        alert(this.name);
+                                }
+                        };
+                        function inherit(obj){
+                                function F(){}
+                                F.prototype=obj;
+                                return new F();
+                        }
+                        var b= inherit(obj);
+                        b.name='hua';
+                        b.showName();
+                </script>
+        </body>
+</html>

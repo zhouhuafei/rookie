@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <script>
+                        //根据主键值检索多条数据之游标(先运行index7(main).html,确保已经创建了数据库)
+                        window.indexedDB=window.indexedDB||window.webkitIndexedDB||window.mozIndexedDB||window.msIndexedDB;
+                        window.IDBTransaction=window.IDBTransaction||window.webkitIDBTransaction||window.msIDBTransaction;
+                        window.IDBKeyRange=window.IDBKeyRange||window.webkitIDBKeyRange||window.msIDBKeyRange;
+                        window.IDBCursor=window.IDBCursor||window.webkitIDBCursor||window.msIDBCursor;
+                        function getData(){
+                                var IDBOpenDBRequest=indexedDB.open('indexedDBTest','20160127');
+                                IDBOpenDBRequest.onsuccess=function(ev){
+                                        var IDBDatabase=ev.target.result;
+                                        var IDBTransaction=IDBDatabase.transaction(['user'],'readwrite');
+                                        var IDBObjectStore=IDBTransaction.objectStore('user');
+                                        console.log(IDBObjectStore);
+                                        var range=IDBKeyRange.bound(1,101);
+                                        console.log(range);
+                                        var direction=IDBCursor.NEXT;
+                                        var req=IDBObjectStore.openCursor(range,direction);
+                                        req.onsuccess=function(ev){
+                                                var IDBCursorWithValue =ev.target.result;
+                                                if(IDBCursorWithValue){
+                                                        if(IDBCursorWithValue.key==101){
+                                                                //IDBCursorWithValue.delete();//删除数据
+                                                        }
+                                                        if(IDBCursorWithValue.key!=101){
+                                                                IDBObjectStore.put({userId:101,userName:'zhouqiang2hao',sex:'man'});//添加数据
+                                                        }
+                                                        IDBCursorWithValue.continue();
+                                                        console.log(IDBCursorWithValue);
+                                                }
+                                        };
+                                        req.onerror=function(){
+                                                console.log('检索数据失败');
+                                        };
+                                };
+                                IDBOpenDBRequest.onerror=function(){
+                                        console.log('读取数据库失败');
+                                }
+                        }
+                        getData();
+                        //indexedDB.deleteDatabase('user');删除某个数据库
+                </script>
+        </body>
+</html>

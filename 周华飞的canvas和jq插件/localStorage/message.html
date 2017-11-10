@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <input type="text" value="" placeholder="请输入留言内容"/>
+                <button>留言</button>
+                <ul id="message"></ul>
+                <script>
+                        var oTxt=document.getElementsByTagName('input')[0];
+                        var oBtn=document.getElementsByTagName('button')[0];
+                        var oMes=document.getElementsByTagName('ul')[0];
+                        oBtn.onclick=save;
+                        function save(){
+                                var myDate=new Date();
+                                var timer=myDate.getTime();
+                                var obj={};
+                                if(localStorage.message){
+                                        obj=JSON.parse(localStorage.message);
+                                }
+                                if(oTxt.value!=false){
+                                        obj[timer]=oTxt.value.replace(/^\s+|\s+$/g,'');
+                                        localStorage.message=JSON.stringify(obj);
+                                        oTxt.value='';
+                                }
+                                show();
+                        }
+                        show();
+                        function show(){
+                                var str='';
+                                var obj=JSON.parse(localStorage.message);
+                                if(obj){
+                                        var myDate=new Date();
+                                        var num=0;
+                                        for(var attr in obj){
+                                                if(obj.hasOwnProperty(attr)){
+                                                        myDate.setTime(Number(attr));
+                                                        num++;
+                                                        str='<li>第'+num+'条留言,留言内容:'+obj[attr]+',留言时间:'+myDate+'</li>'+str;
+                                                }
+                                        }
+                                        oMes.innerHTML=str;
+                                }
+                        }
+                </script>
+        </body>
+</html>

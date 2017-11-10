@@ -1,0 +1,300 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*var*/
+.clearFix {
+  clear: both;
+  overflow: hidden;
+}
+.clearFix:after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+  font-size: 0;
+  visibility: hidden;
+  line-height: 0;
+}
+/*body*/
+body {
+  counter-reset: var;
+  background: url("../images/bg.jpg");
+}
+body a {
+  color: inherit;
+}
+/*container*/
+.container img {
+  width: 100%;
+}
+/*banner*/
+.banner {
+  position: relative;
+}
+.banner a {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  right: 0;
+  bottom: 0;
+}
+/*til*/
+.til {
+  color: #001025;
+  margin: 6% 0 4%;
+  text-align: center;
+}
+.til h3 {
+  font-size: 14px;
+  line-height: 1.2;
+  margin-bottom: 1%;
+  text-transform: uppercase;
+}
+.til h2 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+.til span {
+  font-size: 2.4rem;
+  line-height: 1.6;
+  border: 1px solid #001025;
+  padding: 0 8%;
+  border-radius: 100px;
+  margin-top: 1.6%;
+}
+.til.reset {
+  color: #ffffff;
+}
+/*main*/
+.main {
+  padding: 0 1.5625%;
+  overflow: hidden;
+}
+/*bg*/
+.bg {
+  background: #001025;
+}
+.bg2 {
+  background: #f6f6f6;
+}
+/*p.text*/
+p.text {
+  font-size: 2.4rem;
+  color: #001025;
+  line-height: 1.6;
+}
+/*new*/
+#new p {
+  text-align: justify;
+  margin-bottom: 1.6%;
+}
+/*btn*/
+.btn {
+  clear: both;
+  overflow: hidden;
+  width: 75%;
+  margin: 4% auto 7%;
+  color: #FFFFFF;
+  font-size: 3.7rem;
+  line-height: 1.8;
+}
+.btn p {
+  width: 48%;
+  float: left;
+}
+.btn p a {
+  display: block;
+  background: #f6b42c;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.btn p a em {
+  width: 27%;
+  vertical-align: middle;
+}
+.btn p a span {
+  vertical-align: middle;
+}
+.btn p:last-child {
+  float: right;
+}
+.btn p:last-child a {
+  background: #001025;
+}
+.btn.reset p:last-child a {
+  background: #fff;
+  color: #001025;
+}
+/*power*/
+#power div.img {
+  width: 88%;
+  margin: 0 auto 4%;
+}
+#power div.txt p {
+  font-size: 2.4rem;
+  line-height: 1.4;
+  padding: 0 0 1.6% 1.6%;
+  margin-bottom: 1.6%;
+  border-bottom: 1px solid #1a283b;
+  color: #FFFFFF;
+}
+#power div.txt p:before {
+  content: counter(var);
+  counter-increment: var;
+  display: inline-block;
+  font-size: 12px;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  border-radius: 14px;
+  text-align: center;
+  color: #001025;
+  background: #ffffff;
+  vertical-align: middle;
+  margin-right: 1.6%;
+}
+/*appraisal*/
+#appraisal ul li {
+  clear: both;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 4%;
+}
+#appraisal ul li div {
+  float: left;
+  width: 45%;
+}
+#appraisal ul li div:nth-child(2) {
+  width: 10%;
+  text-align: center;
+  margin-top: 10%;
+}
+#appraisal ul li div:nth-child(2) img {
+  width: 50%;
+}
+#appraisal ul li div span {
+  font-size: 2.4rem;
+  color: #ffffff;
+  text-align: center;
+  width: 50%;
+  line-height: 1.6;
+  background: #001025;
+  padding: 0 8%;
+  border-radius: 100px;
+  margin: 4% auto 2%;
+  display: block;
+}
+#appraisal ul li div p:first-line {
+  text-align: center;
+}
+/*effect*/
+.effect {
+  overflow: hidden;
+}
+.effect .effect-main .img {
+  width: 96.875%;
+  margin: 2% auto 6%;
+}
+.effect .txt {
+  background: #FFFFFF;
+  position: relative;
+}
+.effect .txt img {
+  width: 27%;
+}
+.effect .txt div {
+  width: 72%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/*custom*/
+#custom dl {
+  clear: both;
+  overflow: hidden;
+  border: 2px solid #001025;
+  box-sizing: border-box;
+  background: #53a3ef;
+  margin-bottom: 3%;
+}
+#custom dl dt {
+  width: 37%;
+  float: left;
+}
+#custom dl dd {
+  float: right;
+  width: 63%;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  padding: 0 2%;
+}
+#custom dl dd h2 {
+  font-size: 3rem;
+  line-height: 2;
+  text-align: center;
+}
+#custom dl dd p {
+  color: #FFFFFF;
+}
+#custom dl:nth-child(2) {
+  background: #3dd6b1;
+}
+#custom dl:nth-child(3) {
+  background: #fb81a5;
+}
+#custom dl:nth-child(4) {
+  background: #a25ecb;
+}
+#custom .custom-btn {
+  margin: 4% 0 6%;
+}
+/*show*/
+#show .show-main {
+  position: relative;
+}
+#show .show-main div.prev,
+#show .show-main div.next {
+  width: 4%;
+  position: absolute;
+  top: 46%;
+  z-index: 4;
+}
+#show .show-main div.next {
+  right: 0;
+}
+#show .show-main .show-content {
+  width: 61%;
+  margin: 0 auto;
+}
+/*answer*/
+#answer dl {
+  width: 95%;
+  margin: 0 auto 4%;
+}
+#answer dl dd {
+  padding: 4%;
+  background: #fc6a5b;
+  color: #ffffff;
+}
+#answer dl dd h2 {
+  font-size: 3rem;
+  padding-bottom: 3%;
+  border-bottom: 1px dashed #ffffff;
+}
+#answer dl dd p {
+  color: #ffffff;
+}
+#answer dl dd h2:first-letter,
+#answer dl dd p:first-letter {
+  font-size: 3.8rem;
+  font-weight: bold;
+  margin-right: 1%;
+}
+#answer dl:nth-last-of-type(1) dd {
+  background: #45b2e1;
+}

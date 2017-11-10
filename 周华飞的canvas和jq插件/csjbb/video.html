@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="gb2312">
+                <title>视频集</title>
+        </head>
+        <body>
+                <script>
+                        window.addEventListener('message', function (e) {
+                                if (e.origin == 'http://localhost:63342') {
+                                        var json = JSON.parse(e.data);
+                                        var vid = json.vid;
+                                        var width = json.width;
+                                        var height = json.height;
+                                        document.writeln("<style>body{margin: 0;}</style>");
+                                        document.writeln("<script language=\'javascript\' src=\'http://www.5etv.com/video/v2_player_html5.jsp?vid=" + vid + "&s=www.5etv.com&width=" + width + "&height=" + height + "&soValue=100&playMode=0&toolzt=yes&startzt=yes\'><\/script>");
+                                }
+                        }, false);
+                </script>
+        </body>
+</html>

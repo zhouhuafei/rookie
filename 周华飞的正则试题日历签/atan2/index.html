@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        div{
+                                width:400px;
+                                height:400px;
+                                text-align:center;
+                                line-height:400px;
+                                color:#ffffff;
+                                background:#000000;
+                                margin:100px auto 0;
+                                position:relative;
+                        }
+                        div i{
+                                position:absolute;
+                                width:10px;
+                                height:10px;
+                                border-radius:50%;
+                                background:#ffffff;
+                                left:50%;
+                                margin-left:-5px;
+                                top:50%;
+                                margin-top:-5px;
+                                z-index:999;
+                        }
+                        div span{
+                                width:100%;
+                                height:100%;
+                                border-radius:50%;
+                                border:1px solid #f00;
+                                box-sizing:border-box;
+                                position:absolute;
+                                left:0;
+                                top:0;
+                        }
+                        div:after,div:before{
+                                position:absolute;
+                                content:"";
+                                background:#f00;
+                        }
+                        div:after{
+                                width:1px;
+                                height:100%;
+                                left:50%;
+                                top:0;
+                        }
+                        div:before{
+                                width:100%;
+                                height:1px;
+                                top:50%;
+                                left:0;
+                        }
+                        p{
+                                text-align:center;
+                        }
+                </style>
+        </head>
+        <body>
+                <p>鼠标移入移出时的变化状态</p>
+                <p>鼠标移动时的变化状态</p>
+                <div><i></i><span></span></div>
+                <script>
+                        var oP=document.getElementsByTagName('p')[0];
+                        var oP2=document.getElementsByTagName('p')[1];
+                        var oDiv=document.getElementsByTagName('div')[0];
+                        var oI=document.getElementsByTagName('i')[0];
+                        var scale=Math.atan(oDiv.offsetHeight/oDiv.offsetWidth)*180/Math.PI;
+                        oI.l=oI.offsetLeft+oI.offsetWidth/2;
+                        oI.t=oI.offsetTop+oI.offsetHeight/2;
+                        oI.r=oDiv.offsetWidth/2-10;
+                        function findDir(obj){
+                                var x=offset(obj).x+obj.offsetWidth/2;
+                                var y=offset(obj).y+obj.offsetHeight/2;
+                                //角度45应该通过计算得到,详情请观看index2.html;
+                                obj.onmouseout=obj.onmouseover=function(ev){
+                                        //atan2(y,x)方便的地方就是角度范围更广,那么下面两句就可以不用取绝对值了
+                                        var a=ev.clientX-x;
+                                        var b=ev.clientY-y;
+                                        //如果不在第一屏,那么b值需要减去滚动条的高度,滚动条的高度要先获取,再参与运算
+                                        oP.innerHTML=Math.atan2(b,a)*180/Math.PI+'根据角度即可得知上下左右,临界角度就是'+scale;
+                                        //下面只需要进行角度的判定就可以了,不用向atan那样还要判定鼠标移入时处于哪个夹角方向
+                                };
+                                //我写下眼睛的运动
+                                document.onmousemove=function(ev){
+                                        var a=ev.clientX-x;
+                                        var b=ev.clientY-y;
+                                        var radian=Math.atan2(b,a);
+                                        oP2.innerHTML=radian*180/Math.PI;
+                                        var changeX=Math.cos(radian)*oI.r;
+                                        var changeY=Math.sin(radian)*oI.r;
+                                        oI.style.left=oI.l+changeX+'px';
+                                        oI.style.top=oI.t+changeY+'px';
+                                }
+                        }
+                        findDir(oDiv);
+                        function offset(obj){
+                                var x=obj.offsetLeft;
+                                var y=obj.offsetTop;
+                                while(obj.offsetParent){
+                                        x+=obj.offsetParent.offsetLeft;
+                                        y+=obj.offsetParent.offsetTop;
+                                        obj=obj.offsetParent;
+                                }
+                                return {x:x,y:y}
+                        }
+                </script>
+        </body>
+</html>

@@ -1,0 +1,212 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+img {
+        width: 100%;
+}
+.bg {
+        background: #ebebeb;
+        padding: 5% 0;
+}
+/*section*/
+.section {
+        width: 95.3125%;
+        margin: 0 auto;
+}
+/*til*/
+.til {
+        font-size: 3rem;
+        line-height: 3;
+        color: #383838;
+        text-align: center;
+}
+/*why*/
+#why dl {
+        color: #FFFFFF;
+        margin-bottom: 5%;
+        background: #bf257b;
+        border: 6px solid #c76fa1;
+        padding: 2%;
+        box-shadow: 3px 3px 3px #666;
+}
+#why dl:nth-of-type(2) {
+        background-color: #b64a2a;
+        border-color: #eb9c84;
+}
+#why dl:nth-of-type(3) {
+        background-color: #a31f95;
+        border-color: #ec90e2;
+}
+#why dl dt {
+        font-size: 3.4rem;
+        line-height: 2;
+}
+#why dl dt strong {
+        font-size: 5.2rem;
+}
+#why dl dd {
+        font-size: 2.4rem;
+        line-height: 1.6;
+}
+/*btn*/
+.btn {
+        text-align: center;
+}
+.btn.mg {
+        margin: 5% 0;
+}
+.btn.mgt {
+        margin-top: 5%;
+}
+/*tils*/
+.tils {
+        font-size: 3.4rem;
+        color: #383838;
+        margin: 5% 0 7%;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+}
+.tils:before,
+.tils:after {
+        content: "";
+        position: absolute;
+        width: 9%;
+        height: 100%;
+        background: url("../images/tils-left.png") center no-repeat;
+        background-size: 100% 100%;
+        left: 0;
+        top: 0;
+}
+.tils:after {
+        background-image: url("../images/tils-right.png");
+        left: auto;
+        right: 0;
+}
+/*text*/
+.text {
+        position: relative;
+}
+.text a {
+        position: absolute;
+        left: 50%;
+        width: 28%;
+        margin-left: -14%;
+        height: 100%;
+}
+/*method*/
+#method dt {
+        width: 46%;
+}
+#method dd {
+        width: 50%;
+}
+#method dd h2,
+#method dd h3 {
+        font-size: 3rem;
+        color: #a40035;
+        line-height: 1.3;
+        font-weight: bold;
+}
+#method dd h3 {
+        text-align: right;
+}
+#method dd p {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        color: #383838;
+        text-indent: 30px;
+}
+/*type*/
+#type {
+        text-align: center;
+}
+#type img {
+        width: 97%;
+}
+/*effect*/
+#effect,
+#equipment,
+#recovery {
+        position: relative;
+}
+#effect .prev,
+#equipment .prev,
+#recovery .prev,
+#effect .next,
+#equipment .next,
+#recovery .next {
+        position: absolute;
+        left: 0;
+        top: 45%;
+        width: 20px;
+        z-index: 3;
+}
+#effect .next,
+#equipment .next,
+#recovery .next {
+        left: auto;
+        right: 0;
+}
+/*equipment*/
+#equipment dt {
+        width: 45%;
+}
+#equipment dd {
+        width: 55%;
+        font-size: 2.4rem;
+}
+#equipment dd h2 {
+        font-size: 3rem;
+        color: #990039;
+}
+#equipment dd h3 {
+        font-size: 12px;
+        color: #fff;
+        background: rgba(153, 0, 57, 0.4);
+        line-height: 20px;
+        margin: 4px 0;
+        display: inline-block;
+        padding: 0 5px;
+}
+#equipment dd p {
+        color: #3b3b3b;
+        line-height: 1.3;
+}
+#equipment dd strong {
+        color: #990039;
+        margin-top: 10%;
+}
+#equipment dd .btn {
+        text-align: left;
+        margin-top: 5%;
+}
+/*recovery*/
+#recovery .recovery-main {
+        width: 70%;
+        margin: 0 auto;
+}
+/*last*/
+.last {
+        margin-top: 5%;
+}
+/*media*/
+@media (min-width: 480px) and (max-width: 639px) {
+        #why dl {
+                border: 4px solid #c76fa1;
+        }
+}
+@media (min-width: 400px) and (max-width: 479px) {
+        #why dl {
+                border: 2px solid #c76fa1;
+        }
+}
+@media (min-width: 320px) and (max-width: 399px) {
+        #why dl {
+                border: 1px solid #c76fa1;
+        }
+}

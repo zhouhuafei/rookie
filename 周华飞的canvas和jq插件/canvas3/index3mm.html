@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                margin:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                                padding:0;
+                                margin:0;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var context=canvas.getContext('2d');
+                        canvas.width=w;
+                        canvas.height=h;
+                        canvas.x=w/2;
+                        canvas.y=h/2;
+                        canvas.r=h/2-50;
+                        canvas.radian=Math.PI/180;
+                        canvas.angle=90*canvas.radian;
+                        function text(i){
+                                context.save();
+                                context.fillStyle='#fff';
+                                context.font='12px 微软雅黑';
+                                context.textAlign='center';
+                                context.textBaseline='middle';
+                                context.fillText(i<10?'0'+i:i,canvas.x+canvas.r*Math.cos(i*Math.PI/15*11),canvas.y+canvas.r*Math.sin(i*Math.PI/15*11));
+                                context.restore();
+                        }
+                        function draw2(num){
+                                context.clearRect(-canvas.x,-canvas.y,w,h);
+                                context.save();
+                                context.fillStyle='rgba(255,0,0,0.2)';
+                                context.strokeStyle='rgba(255,0,0,0.8)';
+                                context.beginPath();
+                                for(var i=0;i<num;i++){
+                                        //i*Math.PI/15*11这个是关键
+                                        context.lineTo(canvas.r*Math.cos(i*Math.PI/15*11),canvas.r*Math.sin(i*Math.PI/15*11));
+                                        context.save();
+                                        context.fillStyle='#fff';
+                                        context.font='12px 微软雅黑';
+                                        context.textAlign='center';
+                                        context.textBaseline='middle';
+                                        context.fillText(i<10?'0'+i:i,canvas.r*Math.cos(i*Math.PI/15*11),canvas.r*Math.sin(i*Math.PI/15*11));
+                                        context.restore();
+                                }
+                                context.closePath();
+                                context.stroke();
+                                context.fill();
+                                context.restore();
+                        }
+                        function draw(){
+                                var i=0;
+                                context.save();
+                                context.fillStyle='rgba(255,0,0,0.2)';
+                                context.strokeStyle='rgba(255,0,0,0.8)';
+                                canvas.timer=setInterval(function(){
+                                        //i*Math.PI/15*11这个是关键
+                                        context.beginPath();
+                                        context.lineTo(canvas.x+canvas.r*Math.cos(i*Math.PI/15*11),canvas.y+canvas.r*Math.sin(i*Math.PI/15*11));
+                                        text(i);
+                                        i++;
+                                        context.lineTo(canvas.x+canvas.r*Math.cos(i*Math.PI/15*11),canvas.y+canvas.r*Math.sin(i*Math.PI/15*11));
+                                        context.stroke();
+                                        context.fill();//两点构不成面,所以此处无效
+                                        context.closePath();
+                                        if(i>=30){
+                                                clearInterval(canvas.timer);
+                                                context.restore();
+                                                i=0;
+                                                context.translate(canvas.x,canvas.y);
+                                                setInterval(function(){
+                                                        context.save();
+                                                        context.rotate(i*canvas.radian);
+                                                        i++;
+                                                        draw2(30);
+                                                        context.restore();
+                                                },30);
+                                        }
+                                },100);
+                        }
+                        draw();
+                </script>
+        </body>
+</html>

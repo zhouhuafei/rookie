@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 20</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M17.9,25.6 C21.76599,25.6 24.9,22.466 24.9,18.6 C24.9,14.734 21.76599,11.6 17.9,11.6 C14.03401,11.6 10.9,14.734 10.9,18.6 C10.9,22.466 14.03401,25.6 17.9,25.6 L17.9,25.6 Z M35.1,22.3 C35.4,20.7 35.6,19.1 35.5,17.4 C35,8.4 27.5,1.1 18.4,0.9 C8.2,0.7 -0.1,9.2 0.5,19.6 C1.1,28.3 8.1,35.3 16.8,35.9 C20.1,36.1 23.1,35.4 25.8,34.1 C27.6,33.2 27.9,30.8 26.4,29.5 C25.6,28.8 24.3,28.6 23.3,29.1 C21.4,30 19.3,30.5 17,30.3 C11.2,29.9 6.4,25.2 6,19.3 C5.5,12.1 11.6,6 19,6.6 C24.7,7.1 29.4,11.6 29.9,17.4 C30,18.7 29.9,20 29.7,21.2 C29.4,22.5 30.1,23.8 31.3,24.3 C32.8,24.9 34.7,24 35.1,22.3 L35.1,22.3 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="popup" transform="translate(-2623.000000, -20.000000)">
+            <g id="Group-20" transform="translate(2623.000000, 20.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-19"></g>
+                <polygon id="Fill-18" fill="#BB4645" mask="url(#mask-2)" points="-4.53061 -4.1035 40.52601 -4.1035 40.52601 40.9338 -4.53061 40.9338"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <h1>自己去控制台观看</h1>
+                <script>
+                        /*
+
+                                 *     0    1
+                                 ***    1    3
+                                 *****   2    5
+                                 *******  3    7
+
+                         */
+                        var str='';
+                        var row=20;
+                        var col=(row-1)*2+1;
+                        var cen=Math.floor(col/2);
+                        for(var i=0;i<row;i++){
+                                str+='\n';
+                                for(var j=0;j<col;j++){
+                                        if(j>=cen-i&&j<=cen+i){
+                                                str+='*';
+                                        }else{
+                                                str+=' ';
+                                        }
+                                }
+                                if(i==row-1){
+                                        str+='\n';
+                                }
+                        }
+                        console.log(str);
+                </script>
+        </body>
+</html>

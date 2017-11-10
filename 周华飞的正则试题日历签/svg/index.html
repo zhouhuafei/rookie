@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width user-scalable=no"/>
+                <title></title>
+                <link rel="stylesheet" href="svg.css"/>
+        </head>
+        <body>
+                <script>
+                        (function(win,doc){
+                                var oH=doc.getElementsByTagName('html')[0];
+                                var iW=null;
+                                var reset=function(){
+                                        iW=doc.documentElement.clientWidth;
+                                        oH.style.fontSize=iW/10+'px';
+                                };
+                                reset();
+                                window.addEventListener('resize',reset,false);
+                        })(window,document);
+                </script>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0,0,640,640">
+                                <g stroke-width="5" fill="transparent" stroke="red">
+                                        <image x="0" y="0" width="640" height="640" xlink:href="img.png"></image>
+                                </g>
+                        </svg>
+                </div>
+                <div></div>
+                <script>
+                        var z={
+                                win:window,
+                                doc:document
+                        };
+                        z.id=function(id){
+                                return this.doc.getElementById(id);
+                        };
+                        z.client=function(){
+                                var width=this.doc.documentElement.clientWidth;
+                                var height=this.doc.documentElement.clientHeight;
+                                return {
+                                        width:width,
+                                        height:height
+                                }
+                        };
+                </script>
+        </body>
+</html>

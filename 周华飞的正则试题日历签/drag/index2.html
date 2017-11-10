@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        ul{
+                                width:400px;
+                                margin:40px auto 0;
+                        }
+                        li{
+                                line-height:40px;
+                                background:#000000;
+                                border-bottom:1px solid #fff;
+                                text-align:center;
+                                color:#ffffff;
+                        }
+                </style>
+        </head>
+        <body>
+                <ul>
+                        <li>0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                </ul>
+                <script>
+                        var oUl=document.getElementsByTagName('ul')[0];
+                        var aLi=oUl.getElementsByTagName('li');
+                        var iLen=aLi.length;
+                        function resetIndex(){
+                                for(var i=0;i<iLen;i++){
+                                        aLi[i].index=i;
+                                }
+                        }
+                        for(var i=0;i<iLen;i++){
+                                aLi[i].index=i;
+                                aLi[i].draggable=true;
+                                aLi[i].addEventListener('dragstart',function(ev){
+                                        ev.dataTransfer.setData('index',this.index);
+                                },false);
+                                aLi[i].addEventListener('dragover',function(ev){
+                                        ev.preventDefault();
+                                        ev.stopPropagation();
+                                },false);
+                                aLi[i].addEventListener('drop',function(ev){
+                                        console.log(ev.dataTransfer.getData('index'),this.index);
+                                        var prev=ev.dataTransfer.getData('index');
+                                        var now=this.index;
+                                        if(prev>now){//从下往上
+                                                now=this.index;
+                                        }else{//从上往下
+                                                now=this.index+1;
+                                        }
+                                        var preLi=aLi[prev];
+                                        var nowLi=aLi[now];
+                                        oUl.insertBefore(preLi,nowLi);
+                                        resetIndex();
+                                },false);
+                        }
+                </script>
+        </body>
+</html>

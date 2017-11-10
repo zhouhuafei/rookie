@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="rookie" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>rScrollUpDown</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+body{ height:2000px;}
+h2{ width:100%; text-align:center; height:50px; line-height:50px; color:#fff; font-size:18px; margin-top:200px; position:relative;}
+div{ width:100%; background:#f00;}
+</style>
+<script src="jq.js"></script>
+<script src="rFixed.js"></script>
+<script src="rScrollUpDown.js"></script>
+<script>
+$(function(){
+	$('div').rFixed();
+	var oDiv=$('div');
+	var iScrollTop=$(window).scrollTop();
+	var iTop=oDiv.parent().offset().top;
+	var iH=oDiv.outerHeight()
+	$(window).rScrollUpDown({fnUp:function(){
+		oDiv.fadeIn();
+	},fnDown:function(){
+		iScrollTop=$(this).scrollTop();
+		if(iScrollTop>iTop+iH){oDiv.fadeOut();}
+	}});
+})
+</script>
+</head>
+<body>
+<h2>
+	<div>导航条向上滚动出现,导航条向下滚动超出界限时消失</div>
+</h2>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        a{
+                                color:#ffffff;
+                                width:100%;
+                                height:100%;
+                                text-align:center;
+                                text-decoration:none;
+                                display:block;
+                        }
+                        body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+
+                        }
+                        section{
+                                position:relative;
+                                width:200px;
+                                text-align:center;
+                                line-height:100px;
+                                color:#ffffff;
+                                background:#000000;
+                                margin:200px auto 0;
+                                transform-style:preserve-3d;
+                                transition:1s;
+                                transform-origin:center center -153px;/*数值的得到方法请看下面js的注释*/
+                                transform:rotateY(90deg);
+                        }
+                        aside{
+                                position:absolute;
+                                width:200px;
+                                border-bottom:1px solid #fff;
+                                text-align:center;
+                                height:99px;
+                                line-height:99px;
+                                font-size:20px;
+                                color:#ffffff;
+                                background:#ff0000;
+                                left:0;
+                                top:100px;
+                                transform-style:preserve-3d;
+                                transform-origin:top;
+                                transform:rotateX(-36deg);
+                        }
+                </style>
+        </head>
+        <body>
+                <section>
+                        <a href="#">#</a>
+                        <aside style="background:#ff00ff;">
+                                <a href="0">0</a>
+                                <aside style="background:#00ff00;">
+                                        <a href="1">1</a>
+                                        <aside style="background:#ff00ff;">
+                                                <a href="2">2</a>
+                                                <aside style="background:#00ff00;">
+                                                        <a href="3">3</a>
+                                                        <aside style="background:#ff00ff;">
+                                                                <a href="4">4</a>
+                                                                <aside style="background:#00ff00;">
+                                                                        <a href="5">5</a>
+                                                                        <aside style="background:#ff00ff;">
+                                                                                <a href="6">6</a>
+                                                                                <aside style="background:#00ff00;">
+                                                                                        <a href="7">7</a>
+                                                                                        <aside style="background:#ff00ff;">
+                                                                                                <a href="8">8</a>
+                                                                                                <aside style="background:#00ff00;">
+                                                                                                        <a href="9">9</a>
+                                                                                                </aside>
+                                                                                        </aside>
+                                                                                </aside>
+                                                                        </aside>
+                                                                </aside>
+                                                        </aside>
+                                                </aside>
+                                        </aside>
+                                </aside>
+                        </aside>
+                </section>
+                <script>
+                        //360/10(应该旋转多少度)
+                        //10总个数
+                        //100是高度
+                        //－Math.tan(Math.PI/180*72)*100／2     ==>-153
+                        //上面的公式可以得到Z轴的偏移(我自己根据四边形摸索的,这是错误的)
+                        var oS=document.getElementsByTagName('section')[0];
+                        var i=0;
+                        var angle=360/10;
+                        setInterval(function(){
+                                i++;
+                                oS.style.transform='rotateX('+i*angle+'deg)';
+                        },2000);
+                </script>
+        </body>
+</html>

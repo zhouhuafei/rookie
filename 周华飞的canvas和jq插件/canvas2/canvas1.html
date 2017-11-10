@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                }
+                canvas {
+                        background: #000000;
+                        display: block;
+                        margin: 100px auto;
+                }
+        </style>
+</head>
+<body>
+<canvas width="500" height="500" id="canvas1">您的浏览器不支持canvas</canvas>
+<canvas width="500" height="500" id="canvas2">您的浏览器不支持canvas</canvas>
+<script>
+        var Game = null;
+        //构造函数创建
+        (function () {
+                Game = function (json) {
+                        this.json = json || {};
+                        this.oCanvas = this.json.oCanvas || 'canvas1';
+                        this.iRadian = Math.PI / 180;
+                };
+                Game.prototype = {
+                        //指向修正
+                        constructor: Game,
+                        //初始化
+                        fnInit: function () {
+                                this.fnEle();
+                                this.fnRect();
+                        },
+                        //获取元素
+                        fnEle: function () {
+                                this.oCanvas = document.getElementById(this.oCanvas);
+                                this.oContext = this.oCanvas.getContext('2d');
+                        },
+                        //画出矩形
+                        fnRect: function () {
+                                var self = this;
+                                var num = 0;
+                                var timer = null;
+                                this.oContext.translate(200, 50);
+                                this.oContext.fillStyle = 'rgba(255,0,0,0.5)';
+                                if (this.oCanvas.id == 'canvas2') {
+                                        timer = setInterval(function () {
+                                                num++;
+                                                self.oContext.rotate(10 * self.iRadian);
+                                                self.oContext.scale(0.94, 0.94);
+                                                self.oContext.translate(50, 10);
+                                                self.oContext.fillRect(0, 0, 200, 100);
+                                                if (num == 100) {
+                                                        clearInterval(timer);
+                                                }
+                                        }, 30);
+                                } else if (this.oCanvas.id == 'canvas1') {
+                                        for (var i = 0; i < 100; i++) {
+                                                this.oContext.rotate(10 * this.iRadian);
+                                                this.oContext.scale(0.94, 0.94);
+                                                this.oContext.translate(50, 10);
+                                                this.oContext.fillRect(0, 0, 200, 100);
+                                        }
+                                }
+                        }
+                }
+        })();
+        //构造函数调用
+        (function () {
+                var obj = new Game();
+                obj.fnInit();
+                obj.oCanvas = 'canvas2';
+                obj.fnInit();
+        })();
+</script>
+</body>
+</html>

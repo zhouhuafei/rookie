@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                }
+                ul {
+                        width: 200px;
+                        height: 200px;
+                        margin: 0 auto;
+                        color: #FFFFFF;
+                }
+                li {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        transform-style: preserve-3d;
+                        perspective: 200px;
+                }
+                p {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: #0000ff;
+                        transform-origin: left center;
+                        transition: 0.4s;
+                }
+                p:nth-of-type(2) {
+                        background: #f00;
+                        z-index: -1;
+                }
+                li:hover p:nth-of-type(1) {
+                        transform: rotateY(90deg);
+                        opacity: 0;
+                }
+        </style>
+</head>
+<body>
+<ul>
+        <li>
+                <p>1</p>
+
+                <p>2</p>
+        </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var random=0;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        canvas.width=w;
+                        canvas.height=h;
+                        var context=canvas.getContext('2d');
+                        var image=new Image();
+                        image.src='canvas.png';
+                        image.onload=function(){
+                                context.drawImage(image,0,0);
+                                var imageData=context.getImageData(0,0,w,h);
+                                var data=imageData.data;
+                                document.onmousedown=function(){
+                                        document.onmousemove=function(ev){
+                                                var x=ev.clientX;
+                                                var y=ev.clientY;
+                                                var r=(w*y+x)*4;
+                                                random=Math.floor(Math.random()*256);
+                                                data[r]=random;
+                                                random=Math.floor(Math.random()*256);
+                                                data[r+1]=random;
+                                                random=Math.floor(Math.random()*256);
+                                                data[r+2]=random;
+                                                data[r+3]=255;
+                                                context.putImageData(imageData,0,0);
+                                        };
+                                        document.onmouseup=function(){
+                                                document.onmousemove=null;
+                                                document.onmouseup=null;
+                                        }
+                                }
+                        };
+                </script>
+        </body>
+</html>

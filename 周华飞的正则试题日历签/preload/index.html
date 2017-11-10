@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                                vertical-align:middle;
+                        }
+                        li{
+                                background:#000000;
+                                border-bottom:1px solid #fff;
+                        }
+                </style>
+        </head>
+        <body>
+                <ul>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://img.bizhi.sogou.com/images/2012/01/20/211836.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://tupian.enterdesk.com/2015/gha/0403/23/6.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://tupian.enterdesk.com/2015/gha/0403/35/1.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://img1.3lian.com/2015/a1/17/d/62.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://pic1.win4000.com/wallpaper/8/5704acbf551d0.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://tupian.enterdesk.com/2015/gha/0403/23/10.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://tupian.enterdesk.com/2015/gha/0403/23/2.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://img1.3lian.com/2015/a1/55/d/121.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://www.bz55.com/uploads/allimg/150106/139-150106095H5.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://www.bz55.com/uploads/allimg/150316/140-150316134611.jpg" src="" alt=""/></a></li>
+                        <li><a href=""><img class="data-img" width="100%" data-src="http://pic.6188.com/upload_6188s/flashAll/s800/20121126/1353916260vQra84.jpg" src="" alt=""/></a></li>
+                </ul>
+                <script>
+                        var zhouhuafei={};
+                        zhouhuafei.delayLoad=function(sClass){
+                                var aImg=document.getElementsByClassName(sClass);
+                                //延迟加载...
+                        };
+                        zhouhuafei.preload=function(sClass){
+                                window.addEventListener('load',function(){
+                                        setTimeout(function(){
+                                                var aImg=document.getElementsByClassName(sClass);
+                                                var aImgSrc=[];
+                                                for(var i=0;i<aImg.length;i++){
+                                                        aImgSrc.push(aImg[i].dataset.src);
+                                                }
+                                                for(var i=0;i<aImg.length;i++){
+                                                        aImg[i].src=aImgSrc[i];
+                                                }
+                                        },0);
+                                },false)
+                        };
+                        zhouhuafei.preload('data-img');
+                </script>
+        </body>
+</html>

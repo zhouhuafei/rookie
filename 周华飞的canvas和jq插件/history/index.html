@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        * {
+                                margin: 0;
+                                padding: 0;
+                                list-style-type: none;
+                        }
+                </style>
+                <script>
+                        window.onload = function () {
+                                var aInput = document.getElementsByTagName('input');
+                                var iLen = aInput.length;
+                                var oDiv = document.getElementsByTagName('div')[0];
+                                window.onhashchange = function () {//点击前进或者后退时,hash值改变时才会触发事件,hash值不变则不会触发事件
+                                        oDiv.innerHTML = window.location.hash.substring(1);
+                                };
+                                for (var i = 0; i < iLen; i++) {
+                                        aInput[i].onclick = function () {
+                                                oDiv.innerHTML = this.value;
+                                                window.history.pushState('', '', '#' + this.value);
+                                        }
+                                }
+                        }
+                </script>
+        </head>
+        <body>
+                <div></div>
+                <label for="btn1"><input id="btn1" name="btn1" type="button" value="btn1"/></label><br/>
+                <label for="btn2"><input id="btn2" name="btn2" type="button" value="btn2"/></label><br/>
+        </body>
+</html>

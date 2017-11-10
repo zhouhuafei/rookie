@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        div{
+                                width:200px;
+                                height:200px;
+                                position:relative;
+                                background:#000000;
+                                margin:50px auto;
+                        }
+                        div:after{
+                                content:"";
+                                position:absolute;
+                                width:100%;
+                                height:100%;
+                                z-index:5;
+                        }
+                        p{
+                                width:50px;
+                                height:50px;
+                                position:absolute;
+                                left:50px;
+                                top:50px;
+                                background:#ff0000;
+                                display:none;
+                        }
+                </style>
+        </head>
+        <body>
+                <div>
+                        <p></p>
+                </div>
+                <script>
+                        var oDiv = document.getElementsByTagName('div')[0];
+                        var oP = document.getElementsByTagName('p')[0];
+                        oDiv.onmouseover = function () {
+                                oP.style.display = 'block';
+                        };
+                        oDiv.onmouseout = function () {
+                                oP.style.display = 'none';
+                        };
+                        oDiv.onmousemove = function (e) {
+                                var ev = e || event;
+                                oP.style.left = ev.clientX - this.offsetLeft - oP.offsetWidth / 2 + 'px';
+                                oP.style.top = ev.clientY - this.offsetTop - oP.offsetHeight / 2 + 'px';
+                                //存在问题  IE下oP会一闪一闪的
+                                //解决方案2    给css添加一层头透明的遮罩   (会增加多余的标签,我觉挺好,用伪类不久可以喽)
+                        }
+                </script>
+        </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+                <title></title>
+                <!--bootstrap-->
+                <link rel="stylesheet" href="css/bootstrap.css">
+                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+                <!--[if lt IE 9]>
+                <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+                <![endif]-->
+                <style>
+                        a:focus,
+                        .btn:focus,
+                        .btn.focus,
+                        .btn:active:focus,
+                        .btn:active.focus,
+                        .btn.active:focus,
+                        .btn.active.focus{
+                                outline: none;
+                        }
+                </style>
+        </head>
+        <body>
+                <div class="container">
+                        <button class="btn btn-primary" data-toggle="collapse" data-target="#my-collapse">collapse</button>
+                        <div id="my-collapse" class="collapse in">
+                                <div class="well">collapse content</div>
+                        </div>
+                        <div class="panel-group" id="panel-one">
+                                <div class="panel panel-default">
+                                        <div class="panel-heading" data-target="#collapse-one" data-toggle="collapse" data-parent="#panel-one">
+                                                <h4 class="panel-title"><a>panel-headin1</a></h4>
+                                        </div>
+                                        <!--
+                                        <div class="panel-heading">
+                                                <h4 class="panel-title"><a href="#collapse-one" data-toggle="collapse">panel-heading</a></h4>
+                                        </div>
+                                        -->
+                                        <div id="collapse-one" class="panel-collapse collapse in">
+                                                <div class="panel-body">panel-body1</div>
+                                        </div>
+                                </div>
+                                <div class="panel panel-default">
+                                        <div class="panel-heading" data-target="#collapse-two" data-toggle="collapse" data-parent="#panel-one">
+                                                <h4 class="panel-title"><a>panel-heading2</a></h4>
+                                        </div>
+                                        <div id="collapse-two" class="panel-collapse collapse">
+                                                <div class="panel-body">panel-body2</div>
+                                        </div>
+                                </div>
+                                <div class="panel panel-default">
+                                        <div class="panel-heading" data-target="#collapse-thr" data-toggle="collapse" data-parent="#panel-one">
+                                                <h4 class="panel-title"><a>panel-heading3</a></h4>
+                                        </div>
+                                        <div id="collapse-thr" class="panel-collapse collapse">
+                                                <div class="panel-body">panel-body3</div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+                <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        </body>
+</html>

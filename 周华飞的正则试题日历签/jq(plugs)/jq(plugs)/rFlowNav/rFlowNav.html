@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="rookie" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>rFlowNav</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+body{ height:2000px;}
+h1{ text-align:center; line-height:200px; text-align:center;}
+h2{ line-height:800px; text-align:center; font-size:40px; color:#fff;}
+.flowBox{ position:relative; height:50px; line-height:50px; text-align:center; color:#000; font-size:18px;}
+.flowBox div.flowNav{ width:100%; background:#ccc;}
+.flowBox ol{ display:inline-block;}
+.flowBox ol:after{ content:""; display:block; clear:both; height:0; overflow:hidden;}
+.flowBox ol li{ width:200px; float:left; transition:0.4s; cursor:pointer;}
+.flowBox ol li.active{ background:#333; color:#fff;}
+.flowBox ol li:hover{ background:#333; color:#fff;}
+</style>
+<script src="jq.js"></script>
+<script src="rFixed.js"></script>
+<script src="rFlowNav.js"></script>
+<script>
+$(function(){
+	$('.flowNav').rFixed().rFlowNav();
+})
+</script>
+</head>
+<body>
+<h1>粘性导航</h1>
+<div class="flowBox">
+	<div class="flowNav">
+                <ol>
+                        <li class="active">0</li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                </ol>
+        </div>
+</div>
+<h2 class="target" style="background:#6CF">0</h2>
+<h2 class="target" style="background:#999">1</h2>
+<h2 class="target" style="background:#CCF">2</h2>
+<h2 class="target" style="background:#999">3</h2>
+<h2 class="target" style="background:#6CF">4</h2>
+<h2 class="target" style="background:#CCF">5</h2>
+</body>
+</html>

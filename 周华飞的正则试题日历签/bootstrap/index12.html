@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title></title>
+                <!-- 新 Bootstrap 核心 CSS 文件 -->
+                <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+                <!--[if lt IE 9]>
+                <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+                <![endif]-->
+                <style>
+                        body{
+                                height:2000px;
+                        }
+                        a,a:focus{
+                                outline:none;
+                        }
+                </style>
+        </head>
+        <body>
+                <!--
+                        1200    lg
+                        992     md
+                        768     sm
+                        <768    xs
+                        data-   js触发器
+                        aria－  针对特殊人群(可删)
+                        role－  针对特殊人群(可删)
+                -->
+
+                <nav class="navbar navbar-default navbar-inverse">
+                        <div class="navbar-header">
+                                <button class="navbar-toggle" data-toggle="collapse" data-target="#my-collapse">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                </button>
+                                <a href="" class="navbar-brand">navbar-brand</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="my-collapse">
+                                <ul class="nav navbar-nav">
+                                        <li><a href="">登录</a></li>
+                                        <li class="dropdown">
+                                                <a href="" data-toggle="dropdown">注册<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                        <li><a href="">1</a></li>
+                                                        <li><a href="">2</a></li>
+                                                        <li><a href="">3</a></li>
+                                                        <li><a href="">4</a></li>
+                                                </ul>
+                                        </li>
+                                </ul>
+                        </div>
+                </nav>
+                <h1 class="text-center">菜单变小会折叠</h1>
+                <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+                <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+                <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+                <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        </body>
+</html>

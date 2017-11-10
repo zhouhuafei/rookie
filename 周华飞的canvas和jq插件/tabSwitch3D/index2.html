@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        ul,li{
+                                width:600px;
+                                height:450px;
+                        }
+                        ul{
+                                margin:100px auto 0;
+                                position:relative;
+                                perspective:2000px;
+                                transform-style:preserve-3d;
+                        }
+                        li{
+                                position:absolute;
+                                transform-style:preserve-3d;
+                                transition:2s cubic-bezier(0.02,0.98,0.47,1.37);
+                        }
+                        li a{
+                                display:block;
+                                border:2px solid rgba(0,0,0,0);
+                                float:left;
+                                background-origin:border-box;
+                                text-align:center;
+                                color:rgba(255,0,0,0.4);
+                        }
+                        li.active{
+                                transform:translate(-100px,-100px);
+                        }
+                        li.active a{
+                                border-color:rgba(0,0,0,0.6);
+                                transform:translate(-100px,-100px);
+                                opacity:0;
+                        }
+                        li:nth-of-type(1)  a{
+                                background-image:url("1.jpg");
+                        }
+                        li:nth-of-type(2)  a{
+                                background-image:url("2.jpg");
+                        }
+                        li:nth-of-type(3)  a{
+                                background-image:url("3.jpg");
+                        }
+                        li:nth-of-type(4)  a{
+                                background-image:url("4.jpg");
+                        }
+                        section{
+                                width:100%;
+                                height:40px;
+                                text-align:center;
+                                margin-top:100px;
+                                position:relative;
+                                -moz-user-select:none;
+                        }
+                        div{
+                                width:40px;
+                                height:40px;
+                                text-align:center;
+                                line-height:40px;
+                                background:#000;
+                                color:#ffffff;
+                                display:inline-block;
+                                font-size:30px;
+                                border-radius:50%;
+                                cursor:pointer;
+                        }
+                        div.grey{
+                                background:#ccc;
+                        }
+                        p{
+                                position:absolute;
+                                width:100%;
+                                height:20px;
+                                line-height:20px;
+                                text-align:center;
+                                font-size:12px;
+                                left:0;
+                                top:-40px;
+                                color:#f00;
+                        }
+                </style>
+        </head>
+        <body>
+                <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                </ul>
+                <section>
+                        <p>点击下面的按钮进行切换(仅支持高版本浏览器)</p>
+                        <div class="grey">&#60;</div>
+                        <div>&#62;</div>
+                </section>
+                <script>
+                        var oUl=document.getElementsByTagName('ul')[0];
+                        var aBtn=document.getElementsByTagName('div');
+                        var oSection=document.getElementsByTagName('section')[0];
+                        var aCut=document.getElementsByTagName('li');
+                        var borderW=4;
+                        var rows=10;//列数cols必须<=行数rows
+                        var cols=10;//列数cols必须<=行数rows
+                        var iW=(oUl.clientWidth-cols*borderW)/cols;
+                        var iH=(oUl.clientHeight-rows*borderW)/rows;
+                        var now=0;
+                        for(var i=0;i<aCut.length;i++){
+                                var html='';
+                                for(var j=0;j<cols*rows;j++){
+                                        html+='<a href="" style="width:'+iW+'px;height:'+iH+'px;line-height:'+iH+'px;background-position:-'+j%cols*(iW+borderW)+'px -'+Math.floor(j/cols)*(iH+borderW)+'px">x:'+Math.floor(j/cols)+',y:'+j%cols+'</a>';
+                                }
+                                aCut[i].innerHTML=html;
+                                aCut[i].style.zIndex=aCut.length-i;
+                        }
+                        aBtn[0].onclick=function(){
+                                now--;
+                                this.className='';
+                                aBtn[1].className='';
+                                if(now<=0){
+                                        now=0;
+                                        this.className='grey';
+                                }
+                                operation('prev');
+                                aCut[now].className='';
+                        };
+                        aBtn[1].onclick=function(){
+                                this.className='';
+                                aBtn[0].className='';
+                                if(now>=aCut.length-2){
+                                        now=aCut.length-2;
+                                        this.className='grey';
+                                }
+                                operation('next');
+                                aCut[now].className='active';
+                                now++;
+                        };
+                        function operation(dir){
+                                var aA=aCut[now].getElementsByTagName('a');
+                                for(var j=0;j<cols+rows;j++){//多少条斜线
+                                        if(j<=cols){
+                                                for(var i=0;i<j;i++){//每条斜线多少个方块
+                                                        //console.log(i,j-1-i);
+                                                        if(dir=='next'){
+                                                                getXY(aA,i,j-1-i).style.transition='1s '+0.1*j+'s,border 0s '+0.05*j+'s';
+                                                        }else if(dir=='prev'){
+                                                                getXY(aA,i,j-1-i).style.transition='1s '+0.1*(cols*2-1-j)+'s,border 0s '+0.05*(cols*2-1-j)+'s';
+                                                        }
+                                                }
+                                        }else if(j>cols){//当超过中间的那条线
+                                                for(var k=j;k<cols+rows;k++){//每条斜线多少个方块
+                                                        //console.log(k-cols,j-(k-cols)-1);
+                                                        if(dir=='next'){
+                                                                getXY(aA,k-cols,j-(k-cols)-1).style.transition='1s '+0.1*j+'s,border 0s '+0.05*j+'s';
+                                                        }else if(dir=='prev'){
+                                                                getXY(aA,k-cols,j-(k-cols)-1).style.transition='1s '+0.1*(cols*2-1-j)+'s,border 0s '+0.05*(cols*2-1-j)+'s';
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                        function getXY(aA,x,y){
+                                return aA[x*cols+y];
+                        }
+                        oSection.onselectstart=function(){
+                                return false;
+                        };
+                </script>
+        </body>
+</html>

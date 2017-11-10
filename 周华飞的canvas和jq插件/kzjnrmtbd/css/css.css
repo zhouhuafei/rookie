@@ -1,0 +1,114 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*main*/
+.main {
+        width: 96.875%;
+        margin: 0 auto;
+        overflow: hidden;
+}
+/*til*/
+.til {
+        font-size: 4.4rem;
+        color: #1364b6;
+        font-weight: bold;
+        margin: 6% 0;
+        text-align: center;
+}
+.til h2 {
+        margin-bottom: 6px;
+}
+.til h3 {
+        background: url("../images/til.jpg") repeat-x;
+}
+.til span {
+        font-size: 12px;
+        color: #afafaf;
+        padding: 0 4px;
+        text-transform: uppercase;
+        background: #FFFFFF;
+}
+/*care*/
+#care dl:nth-of-type(1) {
+        border-bottom: 1px solid #acacac;
+        margin-bottom: 6%;
+}
+/*main*/
+.main dd {
+        font-size: 2.4rem;
+        color: #303030;
+        line-height: 1.5;
+        text-indent: 30px;
+        padding: 6% 0;
+}
+/*tils*/
+.tils {
+        margin-bottom: 4%;
+}
+.tils em {
+        width: 13%;
+        margin-right: 10px;
+}
+.tils {
+        font-size: 2.4rem;
+        color: #1364b6;
+}
+/*btn*/
+.btn {
+        text-align: center;
+}
+.btn div {
+        display: inline-block;
+}
+.btn a {
+        width: 140px;
+}
+.btn a:nth-of-type(1) {
+        margin-right: 10px;
+}
+/*locale*/
+#locale h2 {
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+        color: #1364b6;
+}
+/*story*/
+#story div dl {
+        padding: 1.6%;
+        background: #f1f1f1;
+        margin-bottom: 6%;
+}
+#story div dt {
+        width: 48%;
+}
+#story div dd {
+        width: 46%;
+        padding: 0;
+        text-indent: 0;
+        line-height: 1.4;
+}
+#story div h2 {
+        margin-bottom: 1%;
+        font-size: 3rem;
+        color: #0070bd;
+}
+/*atlas*/
+#atlas .btn {
+        margin-top: 6%;
+}
+#atlas .atlas {
+        position: relative;
+}
+#atlas .prev, #atlas .next {
+        width: 4%;
+        position: absolute;
+        top: 46%;
+        z-index: 4;
+}
+#atlas .next {
+        right: 0;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                * {
+                        margin: 0;
+                        padding: 0;
+                }
+                canvas {
+                        background: #000000;
+                        display: block;
+                }
+        </style>
+</head>
+<body>
+<canvas id="canvas1">您的浏览器不支持canvas</canvas>
+<script>
+        var Game = null;
+        //构造函数创建
+        (function () {
+                Game = function (json) {
+                        this.json = json || {};
+                        this.oCanvas = this.json.oCanvas || 'canvas1';
+                        this.iRadian = Math.PI / 180;
+                        this.fnInit();
+                };
+                Game.prototype = {
+                        //指向修正
+                        constructor: Game,
+                        //初始化
+                        fnInit: function () {
+                                this.fnEle();
+                                this.fnContext();
+                                this.fnMove();
+                        },
+                        //获取元素
+                        fnEle: function () {
+                                this.oCanvas = document.getElementById(this.oCanvas);
+                                this.oContext = this.oCanvas.getContext('2d');
+                                this.iClientW = document.documentElement.clientWidth;
+                                this.iClientH = document.documentElement.clientHeight;
+                                this.oCanvas.width = this.iClientW;
+                                this.oCanvas.height = this.iClientH;
+                                this.iWidth = this.oCanvas.width;
+                                this.iHeight = this.oCanvas.height;
+                                this.iRadius = this.oCanvas.height / 2;
+                        },
+                        //画布基础背景
+                        fnContext: function () {
+                                this.oContext.translate(this.iWidth / 2, this.iHeight / 2);
+                                var rgd = this.oContext.createRadialGradient(0, 0, 0, 0, 0, this.iRadius);
+                                rgd.addColorStop(0, 'rgba(255, 0, 0,0.5)');
+                                rgd.addColorStop(0.1, 'rgba(255, 165, 0,0.5)');
+                                rgd.addColorStop(0.2, 'rgba(255, 255, 0,0.5)');
+                                rgd.addColorStop(0.5, 'rgba(0, 255, 0,0.5)');
+                                rgd.addColorStop(0.7, 'rgba(0, 127, 255,0.5)');
+                                rgd.addColorStop(0.8, 'rgba(0, 0, 255,0.5)');
+                                rgd.addColorStop(0.9, 'rgba(139, 0, 255,0.5)');
+                                rgd.addColorStop(1, 'rgba(0, 127, 255,0.5)');
+                                this.oContext.strokeStyle = rgd;
+                        },
+                        //画心
+                        fnHeart: function (radius) {
+                                var self = this;
+                                var r = radius;
+                                self.oContext.beginPath();
+                                self.oContext.moveTo(0, -r);
+                                self.oContext.bezierCurveTo(r + r / 2, -2 * r, r + r / 2, 0, 0, r);
+                                self.oContext.stroke();
+                                self.oContext.closePath();
+                                self.oContext.beginPath();
+                                self.oContext.moveTo(0, -r);
+                                self.oContext.bezierCurveTo(-r - r / 2, -2 * r, -r - r / 2, 0, 0, r);
+                                self.oContext.stroke();
+                                self.oContext.closePath();
+                        },
+                        fnMove: function () {
+                                var self = this;
+                                var num = 0;
+                                var step = 1;
+                                setInterval(function () {
+                                        num += step;
+                                        if (Math.abs(num) >= 30) {
+                                                step *= -1;
+                                        } else {
+                                                self.fnHeart(Math.abs(num));
+                                                self.oContext.rotate(30*self.iRadian);
+                                                self.oContext.translate(3*num,3*num);
+                                        }
+                                }, 10);
+                        }
+                }
+        })();
+        //构造函数调用
+        (function () {
+                new Game();
+        })();
+</script>
+</body>
+</html>

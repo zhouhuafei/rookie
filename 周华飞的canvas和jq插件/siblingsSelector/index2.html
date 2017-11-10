@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        /*h1~h2 => 选择 <h1> 元素之后的每个 <h2> 元素。*/
+                        *{
+                                margin:0;
+                                padding:0;
+                        }
+                        h1, h2, h3{
+                                background:#000000;
+                                color:#ffffff;
+                                height:50px;
+                                text-align:center;
+                                line-height:50px;
+                                margin-bottom:20px;
+                        }
+                        h1:hover ~ h2{
+                                background:#ff0000;
+                        }
+                        h1:hover ~ h3{
+                                background:#ff0000;
+                        }
+                </style>
+        </head>
+        <body>
+                <h1>h1(h1~h2 => 选择 &#60;h1&#62; 元素之后的每个 &#60;h2&#62; 元素。)</h1>
+                <h2>h2(h1:hover~h2)</h2>
+                <h2>h2(h1:hover~h2)</h2>
+                <h3>h3(h1:hover~h3)</h3>
+                <h3>h3(h1:hover~h3)</h3>
+        </body>
+</html>

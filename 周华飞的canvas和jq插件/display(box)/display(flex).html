@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<style>
+        * {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+                font-size: 100%;
+        }
+        header {
+                width: 500px;
+                height: 500px;
+                margin: 0 auto;
+                display: block;
+                background: #f00;
+        }
+        nav {
+                display: block;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                display: -moz-box;
+                /*子级垂直对齐*/
+                /*-moz-box-orient: vertical;*/
+                /*子级水平对齐(默认)*/
+                /*-moz-box-orient: horizontal;*/
+                -moz-box-align: center; /*子级垂直对齐方式*/
+        }
+        nav div {
+                -moz-box-flex: 1;
+                -moz-box-pack: center; /*子级水平对齐方式*/
+                text-align: center;
+        }
+</style>
+<body>
+<header>
+        <nav>
+                <div style="background: #000;"><a>1</a></div>
+                <div style="background: #00f;">2</div>
+                <div style="background: #0f0;">3</div>
+        </nav>
+</header>
+</body>
+</html>

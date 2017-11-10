@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title></title>
+                <!-- 新 Bootstrap 核心 CSS 文件 -->
+                <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+                <!--[if lt IE 9]>
+                <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+                <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+                <![endif]-->
+                <style>
+                        body{
+                                height:2000px;
+                        }
+                        .tipls1{
+                                height:500px;
+                                width:200px;
+                                background:#000000;
+                                right:0;
+                        }
+                        .tipls2{
+                                height:100px;
+                                width:40px;
+                                background:#ff0000;
+                                right:0;
+                        }
+                </style>
+        </head>
+        <body>
+                <!--
+                        1200    lg
+                        992     md
+                        768     sm
+                        <768    xs
+                -->
+                <div class="container-full">
+                        <div class="tipls1 affix hidden-xs"></div>
+                        <div class="tipls2 affix visible-xs"></div>
+                </div>
+
+                <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+                <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+                <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+                <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        </body>
+</html>

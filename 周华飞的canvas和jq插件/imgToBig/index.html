@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                /*page*/
+                #page img {
+                        width: 200px;
+                        display: block;
+                        margin: 0 auto;
+                }
+                /*shadow*/
+                #shadow {
+                        width: 100%;
+                        height: 100%;
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        background: #000;
+                        opacity: 0.7;
+                        filter: alpha(opacity=70);
+                        display: none;
+                }
+                #shadow.active {
+                        display: block;
+                }
+                /*big*/
+                #big {
+                        width: 100%;
+                        max-width: 640px;
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        display: none;
+                        transition: 0.4s;
+                }
+                #big.active {
+                        display: block;
+                }
+                #big img {
+                        width: 100%;
+                }
+        </style>
+</head>
+<body>
+<!--page-->
+<div id="page">
+        <img src="img1.png">
+        <img src="img2.png">
+        <img src="img3.png">
+        <img src="img1.png">
+        <img src="img2.png">
+        <img src="img3.png">
+</div>
+<!--mask-->
+<div id="shadow"></div>
+<!--big-->
+<div id="big">
+        <img src="" alt=""/>
+</div>
+<!--效果实现-->
+<script>
+        /*构造函数局部封装*/
+        var Game = null;
+        (function () {
+                //构造函数Game
+                Game = function (json) {
+                        this.json = json || {};//json存储所需数据,没有数据也行
+                        this.oParent = this.json.oParent || 'page';//图片容器的id(默认为page)
+                        this.oShadow = this.json.oShadow || 'shadow';//遮罩层容器的id(默认为shadow)
+                        this.oBig = this.json.oBig || 'big';//大图容器的id(默认为big)
+                };
+                //构造函数prototype
+                Game.prototype = {
+                        //指回默认指向
+                        constructor: Game,
+                        //初始化
+                        fnInit: function () {
+                                this.fnElem();//获取元素和基础数值
+                                this.fnImgClick();//调用给一组图片添加点击事件
+                                this.fnShadowClick();//调用给遮罩添加点击事件
+                        },
+                        //获取元素和基础数值
+                        fnElem: function () {
+                                this.oParent = document.getElementById(this.oParent);//图片容器的
+                                this.aImg = this.oParent.getElementsByTagName('img');//图片容器的图片
+                                this.oShadow = document.getElementById(this.oShadow);//遮罩层容器
+                                this.oBig = document.getElementById(this.oBig);//大图容器
+                                this.oImg = this.oBig.getElementsByTagName('img')[0];//大图
+                                this.iClientH = document.documentElement.clientHeight;//可视区高度
+                                this.iClientW = document.documentElement.clientWidth;//可视区宽度
+                        },
+                        //给一组图片添加点击事件
+                        fnImgClick: function () {
+                                var self = this;
+                                for (var i = 0; i < this.aImg.length; i++) {
+                                        this.aImg[i].onclick = function () {
+                                                self.fnShow(this);//调用显示
+                                        }
+                                }
+                        },
+                        //给遮罩添加点击事件
+                        fnShadowClick: function () {
+                                var self = this;
+                                this.oImg.onclick = this.oShadow.onclick = function () {
+                                        self.fnHide();//调用隐藏
+                                }
+                        },
+                        //显示
+                        fnShow: function (obj) {
+                                this.oShadow.className = 'active';
+                                this.oBig.className = 'active';
+                                this.oImg.src = obj.src;
+                                this.fnPosition();//调用重新设定大图片的位置
+                                this.fnResize();//调用窗口缩放时进行位置重置
+                        },
+                        //隐藏
+                        fnHide: function () {
+                                this.oShadow.className = '';
+                                this.oBig.className = '';
+                                this.oImg.src = '';
+                                this.fnPositionReset();//调用大图片的位置重置
+                        },
+                        //重新设定大图片的位置
+                        fnPosition: function () {
+                                this.oBig.style.left = (this.iClientW - this.oImg.offsetWidth) / 2 + 'px';
+                                this.oBig.style.top = (this.iClientH - this.oImg.offsetHeight) / 2 + 'px';
+                        },
+                        //大图片的位置重置
+                        fnPositionReset: function () {
+                                this.oBig.style.left = 0;
+                                this.oBig.style.top = 0;
+                        },
+                        //窗口缩放时进行位置重置
+                        fnResize: function () {
+                                var self=this;
+                                window.onresize = function () {
+                                        self.iClientH = document.documentElement.clientHeight;//可视区高度
+                                        self.iClientW = document.documentElement.clientWidth;//可视区宽度
+                                        if (self.oShadow.className == 'active') {
+                                                self.fnPosition();
+                                        }
+                                }
+                        }
+                }
+        })();
+        /*构造函数局部调用*/
+        (function () {
+                var obj = new Game();
+                obj.oParent = 'page';//图片容器的id
+                obj.oShadow = 'shadow';//遮罩层容器的id
+                obj.oBig = 'big';//大图容器的id
+                obj.fnInit();//初始化
+        })();
+</script>
+</body>
+</html>

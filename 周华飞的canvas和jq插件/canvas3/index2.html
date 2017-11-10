@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        body{
+                                margin:0;
+                        }
+                        html,body{
+                                width:100%;
+                                height:100%;
+                                overflow:hidden;
+                        }
+                        canvas{
+                                background:#000;
+                                padding:0;
+                                margin:0;
+                        }
+                </style>
+        </head>
+        <body>
+                <canvas>your browser does not support canvas elements</canvas>
+                <script>
+                        var w=document.documentElement.clientWidth;
+                        var h=document.documentElement.clientHeight;
+                        var canvas=document.getElementsByTagName('canvas')[0];
+                        var context=canvas.getContext('2d');
+                        var length=30;
+                        var radian=360/length;
+                        canvas.width=w;
+                        canvas.height=h;
+                        canvas.x=w/2;
+                        canvas.y=h/2;
+                        canvas.r=h/2-50;
+                        canvas.radian=Math.PI/180;
+                        canvas.angle=90*canvas.radian;
+                        context.save();
+                        context.fillStyle='rgba(255,0,0,0.2)';
+                        context.strokeStyle='rgba(255,0,0,0.8)';
+                        context.beginPath();
+                        for(var i=0;i<length;i++){
+                                context.lineTo(canvas.x+canvas.r*Math.cos(radian*i*canvas.radian),canvas.y+canvas.r*Math.sin(radian*i*canvas.radian));
+                        }
+                        context.closePath();
+                        context.stroke();
+                        context.fill();
+                        context.restore();
+                </script>
+        </body>
+</html>

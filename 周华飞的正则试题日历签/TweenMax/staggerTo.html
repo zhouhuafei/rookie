@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+                <style>
+                        *{
+                                margin:0;
+                                padding:0;
+                                list-style-type:none;
+                        }
+                        div{
+                                width:200px;
+                                height:200px;
+                                background:#000000;
+                                margin:50px auto;
+                        }
+                </style>
+                <script type="text/javascript" src="js/TweenMax.min.js"></script>
+        </head>
+        <body>
+                <div class="div1"></div>
+                <div class="div2"></div>
+                <script>
+                        var t=new TimelineMax();
+                        t.staggerTo('div',4,{rotation:3600},1);
+                        //t.staggerTo('.div1',4,{rotation:3600},1);
+                        //t.staggerTo('.div2',2,{width:1200,ease:'Bounce.easeOut'},1);
+                </script>
+        </body>
+</html>

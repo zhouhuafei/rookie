@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title></title>
+        </head>
+        <body>
+                <h1></h1>
+                <div></div>
+                <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+                <script>
+                        //方法创建一：
+                        (function($){
+                                var defaults = {
+                                        btn:'',
+                                        cut:''
+                                };
+                                var settings={};
+                                $.fn.plugssss=function(opts){
+                                        settings=$.extend({},defaults,opts);
+                                        //this表示获取到的DOM元素(但是本质是jq对象),在这里就相当下面的$('h1');
+                                        console.log(this);//this表示jq对象,返回this.each可以进行链式操作
+                                        return this.each(function(){
+                                                console.log(this);//this表示获取到的原生js对象,这里表示h1对象
+                                        });
+                                }
+                        })(jQuery);
+                        //调用调用一
+                        $('h1').plugssss();
+
+
+
+
+                        //方法创建二
+                        (function($){
+                                var defaults = {
+                                        btn:'',
+                                        cut:''
+                                };
+                                var settings={};
+                                $.fn.extend({
+                                        plugbbbb:function(opts){
+                                                settings=$.extend({},defaults,opts);
+                                                console.log(this);//this表示获取到的DOM元素(但是本质是jq对象),在这里就相当下面的$('div');
+                                                return this.each(function(){
+                                                        console.log(this);//this表示获取到的原生js对象,这里表示div对象
+                                                });
+                                        }
+                                });
+                        })(jQuery);
+                        //调用调用二
+                        $('div').plugbbbb();
+                </script>
+        </body>
+</html>

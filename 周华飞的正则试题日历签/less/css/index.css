@@ -1,0 +1,43 @@
+body,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+ul,
+ol,
+menu,
+li {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+menu {
+  list-style-type: none;
+}
+.clearFix {
+  clear: both;
+}
+.clearFix:after {
+  content: '';
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+}
+div {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+  color: #fff;
+  background: #000;
+}
