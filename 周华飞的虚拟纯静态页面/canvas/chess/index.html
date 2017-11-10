@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <title>治愈强迫症</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                list-style-type:none;
+            }
+            html,body{
+                width:100%;
+                height:100%;
+                overflow:hidden;
+            }
+            canvas{
+                background:rgba(0,0,0,1);
+                display:block;
+                position:fixed;
+                left:50%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+        <script>
+            "use strict";
+            {
+                class Game {
+                    constructor(){
+                        this.init();
+                    }
+                    init(){
+                        this.getEle();
+                        this.getData();
+                        this.setWH();
+                        this.setColor();
+                        this.drawChess();
+                        this.drawChessMove();
+                    }
+                    getEle(){
+                        this.canvas=document.querySelector('canvas');
+                        this.content=this.canvas.getContext('2d');
+                    }
+                    getData(){
+                        this.width=document.documentElement.clientWidth;
+                        this.height=document.documentElement.clientHeight;
+                        this.centerX=this.width/2;
+                        this.centerY=this.height/2;
+                        this.radian=Math.PI/180;
+                        this.chess={
+                            cols:Math.floor(this.width/50),
+                            rows:Math.floor(this.height/50),
+                            gaps:50,
+                            coords:{
+                                cols:[],
+                                rows:[],
+                            },
+                            txt:'治愈强迫症',
+                        };
+                        for(let i=0;i<this.chess.rows;i++){//行
+                            for(let j=0;j<this.chess.cols;j++){
+                                this.chess.coords.rows.push([(this.centerY-(this.chess.rows-1)*this.chess.gaps/2)+i*this.chess.gaps,(this.centerX-(this.chess.cols-1)*this.chess.gaps/2)+j*this.chess.gaps]);
+                            }
+                        }
+                        for(let i=0;i<this.chess.cols;i++){//列
+                            for(let j=0;j<this.chess.rows;j++){
+                                this.chess.coords.cols.push([(this.centerX-(this.chess.cols-1)*this.chess.gaps/2)+i*this.chess.gaps,(this.centerY-(this.chess.rows-1)*this.chess.gaps/2)+j*this.chess.gaps]);
+                            }
+                        }
+                    }
+                    setWH(){
+                        this.canvas.width=this.width;
+                        this.canvas.height=this.height;
+                    }
+                    setColor(){
+                        this.content.fillStyle='rgba(255,255,255,1)';
+                        this.content.strokeStyle='rgba(255,255,255,1)';
+                    }
+                    drawChess(){
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.strokeStyle='rgba(255,0,0,0.4)';
+                        this.chess.coords.rows.forEach((v,i)=>{//行
+                            if(i%this.chess.cols==0){
+                                this.content.moveTo(v[1],v[0]);
+                            }
+                            this.content.lineTo(v[1],v[0]);
+                        });
+                        this.chess.coords.cols.forEach((v,i)=>{//列
+                            if(i%this.chess.rows==0){
+                                this.content.moveTo(v[0],v[1]);
+                            }
+                            this.content.lineTo(v[0],v[1]);
+                        });
+                        this.content.stroke();
+                        this.content.closePath();
+                        this.content.restore();
+                    }
+                    drawChessMove(){
+                        this.drawColsMove(()=>{
+                            this.drawRowsMove(()=>{
+                                this.moveArc(()=>{
+                                    this.mouse();
+                                })
+                            })
+                        });
+                    }
+                    drawColsMove(fn){//列
+                        this.content.save();
+                        this.content.beginPath();
+                        let j=0;
+                        let timer=setInterval(()=>{
+                            let v=this.chess.coords.cols[j];
+                            if(j%this.chess.rows==0){
+                                this.content.moveTo(v[0],v[1]);
+                            }
+                            this.content.lineTo(v[0],v[1]);
+                            this.content.stroke();
+                            this.content.closePath();
+                            this.content.restore();
+                            j++;
+                            if(j>=this.chess.coords.cols.length){
+                                clearInterval(timer);
+                                fn&&fn();
+                            }
+                        },1000/60);
+                    }
+                    drawRowsMove(fn){//行
+                        this.content.save();
+                        this.content.beginPath();
+                        let j=0;
+                        let timer=setInterval(()=>{
+                            let v=this.chess.coords.rows[j];
+                            if(j%this.chess.cols==0){
+                                this.content.moveTo(v[1],v[0]);
+                            }
+                            this.content.lineTo(v[1],v[0]);
+                            this.content.stroke();
+                            this.content.closePath();
+                            this.content.restore();
+                            j++;
+                            if(j>=this.chess.coords.cols.length){
+                                clearInterval(timer);
+                                fn&&fn();
+                            }
+                        },1000/60);
+                    }
+                    drawTxt(x,y,j){
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.moveTo(x,y);
+                        this.content.font='12px 微软雅黑';
+                        this.content.textAlign='center';
+                        this.content.textBaseline='middle';
+                        this.content.fillStyle='rgba(0,0,0,0.8)';
+                        this.content.fillText(this.chess.txt[j%this.chess.txt.length],x,y);
+                        this.content.fill();
+                        this.content.closePath();
+                        this.content.restore();
+                    }
+                    drawArc(x,y){
+                        this.content.save();
+                        this.content.beginPath();
+                        let color=this.content.createLinearGradient(0,0,this.width,this.height);
+                        color.addColorStop(0,'rgba(255, 0, 0,0.9)');
+                        color.addColorStop(0.16,'rgba(255, 165, 0,0.9)');
+                        color.addColorStop(0.32,'rgba(255, 255, 0,0.9)');
+                        color.addColorStop(0.48,'rgba(0, 255, 0,0.9)');
+                        color.addColorStop(0.64,'rgba(0, 127, 255,0.9)');
+                        color.addColorStop(0.80,'rgba(0, 0, 255,0.9)');
+                        color.addColorStop(1,'rgba(139, 0, 255,0.9)');
+                        this.content.fillStyle=color;
+                        this.content.moveTo(x,y);
+                        this.content.arc(x,y,this.chess.gaps/3,0,360*this.radian,false);
+                        this.content.fill();
+                        this.content.closePath();
+                        this.content.restore();
+                    }
+                    moveArc(fn){
+                        let j=0;
+                        let timer=setInterval(()=>{
+                            let v=this.chess.coords.rows[j];//行
+                            this.drawArc(v[1],v[0]);
+                            this.drawTxt(v[1],v[0],j);
+                            j++;
+                            if(j>=this.chess.coords.cols.length){
+                                clearInterval(timer);
+                                fn&&fn();
+                            }
+                        },1000/60);
+                    }
+                    mouse(){
+                        this.canvas.onmousedown=()=>{
+                            document.onmousemove=ev=>{
+                                this.drawArc(ev.offsetX,ev.offsetY);
+                            };
+                            document.onmouseup=()=>{
+                                document.onmousemove=null;
+                                document.onmouseup=null;
+                            }
+                        };
+                    }
+                }
+                new Game();
+            }
+        </script>
+    </body>
+</html>

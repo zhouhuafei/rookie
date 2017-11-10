@@ -1,0 +1,348 @@
+/*数字系列(margin)*/
+.m0{
+    margin:0;
+}
+.mt0{
+    margin-top:0 !important;
+}
+.mr0{
+    margin-right:0 !important;
+}
+.mb0{
+    margin-bottom:0 !important;
+}
+.ml0{
+    margin-left:0 !important;
+}
+.mg0auto{
+    margin:0 auto;
+}
+/*数字系列(padding)*/
+.p0{
+    padding:0;
+}
+.pt0{
+    padding-top:0 !important;
+}
+.pr0{
+    padding-right:0 !important;
+}
+.pb0{
+    padding-bottom:0 !important;
+}
+.pl0{
+    padding-left:0 !important;
+}
+/*数字系列(width)*/
+.w0{
+    width:0;
+}
+.maw100p{
+    max-width:100%;
+}
+.mah100p{
+    max-height:100%;
+}
+.w100p{
+    width:100%;
+}
+.w50p{
+    width:50%;
+}
+/*数字系列(height)*/
+.h0{
+    height:0;
+}
+.h100p{
+    height:100%;
+}
+/*数字系列(opacity)*/
+.o0{
+    opacity:0;
+}
+.o1{
+    opacity:1;
+}
+/*数字系列(其他)*/
+.ti0{
+    text-indent:0;
+}
+.transition{
+    transition:0.4s;
+}
+.border-circle{
+    border-radius:5000px;
+}
+/*none系列(border)*/
+.bord-n{
+    border:none;
+}
+.bt-n{
+    border-top:none !important;
+}
+.br-n{
+    border-right:none !important;
+}
+.bb-n{
+    border-bottom:none !important;
+}
+.bl-n{
+    border-left:none !important;
+}
+/*none系列(其他)*/
+.oun{
+    outline:none;
+}
+.bgn{
+    background:none;
+}
+.rn{
+    resize:none;
+}
+.tdn{
+    text-decoration:none;
+}
+.lstn{
+    list-style-type:none;
+}
+/*定位系列(方式)*/
+.por{
+    position:relative;
+}
+.poa{
+    position:absolute;
+}
+.pof{
+    position:fixed;
+}
+/*定位系列(位置)*/
+.t0{
+    top:0;
+}
+.r0{
+    right:0;
+}
+.b0{
+    bottom:0;
+}
+.l0{
+    left:0;
+}
+.l50p{
+    left:50%;
+}
+.t50p{
+    top:50%;
+}
+/*定位系列(层级)*/
+.zi-min{
+    z-index:100;
+}
+.zi-mid{
+    z-index:500;
+}
+.zi-max{
+    z-index:900;
+}
+/*垂直居中系列(垂直)*/
+.vt{
+    vertical-align:top;
+}
+.vm{
+    vertical-align:middle;
+}
+.vb{
+    vertical-align:bottom;
+}
+/*水平居中系列(水平)*/
+.tac{
+    text-align:center;
+}
+.tal{
+    text-align:left;
+}
+.tar{
+    text-align:right;
+}
+.taj{
+    text-align:justify;
+}
+/*字体大小系列(基础)*/
+.f-siz100p{
+    font-size:100%;
+}
+.f-siz14{
+    font-size:14px;
+}
+.f-siz16{
+    font-size:16px;
+}
+.f-siz18{
+    font-size:18px;
+}
+.f-siz20{
+    font-size:20px;
+}
+/*字体样式系列(基础)*/
+.fwn{
+    font-weight:normal;
+}
+.fwb{
+    font-weight:bold;
+}
+.fsi{
+    font-style:italic;
+}
+.fsn{
+    font-style:normal;
+}
+.font{
+    font:12px/1 "Microsoft Yahei", Arial, Helvetica, "sans-serif";
+}
+/*基础浮动系列(基础)*/
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.cb{
+    clear:both;
+}
+/*基础颜色系列(基础)*/
+.c-inherit{
+    color:inherit;
+}
+.c-black{
+    color:#000000;
+}
+.bgc-black{
+    background-color:#000000;
+}
+.c-white{
+    color:#ffffff;
+}
+.bgc-white{
+    background-color:#ffffff;
+}
+/*显示隐藏系列(display)*/
+.dn{
+    display:none;
+}
+.db{
+    display:block;
+}
+.dib{
+    display:inline-block;
+}
+/*其他系列(其他)*/
+.oh{
+    overflow:hidden;
+}
+.box-si{
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+.wsnw{
+    white-space:nowrap;
+}
+.toe{
+    text-overflow:ellipsis;
+}
+.cup{
+    cursor:pointer;
+}
+.con{
+    content:'';
+}
+/*清除浮动(clear-fix)*/
+@mixin clear-fix(){
+    @extend .cb;
+    &:after{
+        @extend .con;
+        @extend .cb;
+        @extend .db;
+        @extend .h0;
+        @extend .oh;
+    }
+}
+/*垂直居中(sham)*/
+@mixin sham(){
+    @extend .con;
+    @extend .dib;
+    @extend .h100p;
+    @extend .vm;
+}
+/*三角剪头(angle)*/
+@mixin angle($dir,$px,$color,$default:3px){
+    @extend .w0;
+    @extend .h0;
+    @extend .con;
+    @extend .dib;
+    border:$default solid transparent;
+    #{$dir}:$px solid $color;
+}
+/*省略号(ellipsis)*/
+@mixin ellipsis(){
+    @extend .oh;
+    @extend .wsnw;
+    @extend .toe;
+}
+/*多行省略号(more-line-ellipsis)*/
+@mixin more-line-ellipsis($lineNum){
+    @extend .oh;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lineNum;
+}
+/*px转rem(pxToRem)*/
+@function pxToRem($px,$psd:375px){
+    @return $px / $psd * 24rem;
+}
+/*清零样式(zero)*/
+body, div, menu, ol, ul, li, dl, dd, dt, h1, h2, h3, h4, h5, h6, input, p, form, header, nav, article, section, aside, footer, video, audio, figure, textarea{
+    @extend .p0;
+    @extend .m0;
+}
+input, select, textarea, img, area{
+    @extend .oun;
+    @extend .bord-n;
+    @extend .c-inherit;
+}
+input, select, textarea{
+    @extend .bgc-white;
+    @extend .f-siz100p;
+}
+mark{
+    @extend .bgn;
+}
+img{
+    @extend .vm;
+    @extend .maw100p;
+    @extend .mah100p;
+}
+textarea{
+    @extend .rn;
+}
+li{
+    @extend .lstn;
+}
+body{
+    @extend .font;
+}
+em, i, strong, b, small, h1, h2, h3, h4, h5, h6, address{
+    @extend .fsn;
+    @extend .fwn;
+    @extend .f-siz100p;
+}
+span, b, em, i, strong, small, label, a, mark{
+    @extend .dib;
+}
+a{
+    @extend .tdn;
+    @extend .oun;
+    @extend .c-inherit;
+    @extend .w100p;
+    @extend .h100p;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}

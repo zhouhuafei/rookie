@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                list-style-type:none;
+            }
+            html,body{
+                width:100%;
+                height:100%;
+                overflow:hidden;
+            }
+            canvas{
+                background:#000;
+                display:block;
+                position:fixed;
+                left:50%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+        <script>
+            "use strict";
+            {
+                class Game {
+                    constructor(){
+                        this.init();
+                    }
+                    init(){
+                        this.getEle();
+                        this.getData();
+                        this.setWH();
+                        this.setColor();
+                        this.drawCircle();
+                    }
+                    getEle(){
+                        this.canvas=document.querySelector('canvas');
+                        this.content=this.canvas.getContext('2d');
+                    }
+                    getData(){
+                        this.width=document.documentElement.clientWidth;
+                        this.height=document.documentElement.clientHeight;
+                        this.centerX=this.width/2;
+                        this.centerY=this.height/2;
+                        this.radian=Math.PI/180;
+                        this.data=[];
+                    }
+                    setWH(){
+                        this.canvas.width=this.width;
+                        this.canvas.height=this.height;
+                    }
+                    setColor(){
+                        this.content.fillStyle='rgba(255,255,255,1)';
+                        this.content.strokeStyle='rgba(255,255,255,1)';
+                    }
+                    drawCircle(){
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.moveTo(this.centerX,this.centerY);
+                        this.content.arc(this.centerX,this.centerY,100,0,30*this.radian,false);
+                        this.content.fill();
+                        this.content.closePath();
+                        this.content.restore();
+                    }
+                }
+                new Game();
+            }
+        </script>
+    </body>
+</html>

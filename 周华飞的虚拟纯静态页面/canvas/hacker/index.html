@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                list-style-type:none;
+            }
+            html,body{
+                width:100%;
+                height:100%;
+                overflow:hidden;
+            }
+            canvas{
+                background:#000;
+                display:block;
+                position:fixed;
+                left:50%;
+                top:50%;
+                transform:translate(-50%,-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+        <script>
+            "use strict";
+            {
+                class Game {
+                    constructor(){
+                        this.init();
+                    }
+                    init(){
+                        this.getEle();
+                        this.getData();
+                        this.setWH();
+                        this.setColor();
+                        this.drawData();
+                        this.move();
+                    }
+                    getEle(){
+                        this.canvas=document.querySelector('canvas');
+                        this.content=this.canvas.getContext('2d');
+                    }
+                    getData(){
+                        this.width=document.documentElement.clientWidth;
+                        this.height=document.documentElement.clientHeight;
+                        this.centerX=this.width/2;
+                        this.centerY=this.height/2;
+                        this.radian=Math.PI/180;
+                        this.data=[];
+                        this.text='祝福猩猩和小红早生贵子';
+                        this.length=this.text.length;
+                    }
+                    setWH(){
+                        this.canvas.width=this.width;
+                        this.canvas.height=this.height;
+                    }
+                    setColor(){
+                        this.content.fillStyle='rgba(255,255,255,1)';
+                        this.content.strokeStyle='rgba(255,255,255,1)';
+                    }
+                    drawData(){
+                        for(let i=0;i<255;i++){
+                            this.data.push(0);
+                        }
+                    }
+                    drawCircle(){
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.fillStyle='rgba(0,0,0,0.06)';
+                        this.content.fillRect(0,0,this.width,this.height);
+                        this.content.fillStyle=`rgba(${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.round(Math.random()*255)},${Math.random()})`;
+                        this.content.font='20px 微软雅黑';
+                        this.content.textAlign='left';
+                        this.content.textBaseline='top';
+                        this.data.forEach((v,i,a)=>{
+                            this.content.fillText(this.text[i%this.length],i*20,v);
+                            if(v>=this.height+Math.random()*1e4){
+                                a[i]=0;
+                            }else{
+                                a[i]=v+20;
+                            }
+                        });
+                        this.content.fill();
+                        this.content.closePath();
+                        this.content.restore();
+                    }
+                    move(){
+                        setInterval(()=>{this.drawCircle();},30);
+                    }
+                }
+                new Game();
+            }
+        </script>
+    </body>
+</html>

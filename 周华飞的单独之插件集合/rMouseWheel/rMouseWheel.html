@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="rookie" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>rMouseWheel</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+body{ height:2000px;}
+div{ width:800px; text-align:center; height:400px; background:#f00; color:#fff; margin:0 auto; background:#f00; position:relative;}
+div p{ position:absolute; left:0; top:0; bottom:0; right:0; margin:auto; width:100%; line-height:20px; height:20px;}
+h2{ text-align:center;}
+</style>
+<script src="jq.js"></script>
+<script src="rMouseWheel.js"></script>
+<script>
+$(function(){
+	$('div').rMouseWheel({fnUp:function(ev){
+		$(this).stop().animate({height:200});
+		$('h2').get(0).innerHTML=this+'正在向上滚,鼠标悬停的可视区域是'+ev.clientX;
+	},fnDown:function(ev){
+		$(this).stop().animate({height:600});
+		$('h2').get(0).innerHTML=this+'正在向下滚,鼠标悬停的可视区域是'+ev.clientX;
+	}});
+})
+</script>
+</head>
+<body>
+<div><p>首先把鼠标放在我的区域,然后使用鼠标滚轮触发滚轮事件,对我进行滚轮事件,不会触发滚动条事件,请放心滚</p></div>
+<h2>红色区域具备鼠标滚轮事件,把鼠标放入红色区域,对鼠标滚轮进行滚动,即可触发滚轮事件</h2>
+</body>
+</html>
