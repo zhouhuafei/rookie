@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#div1{width:200px; height:300px; background:#F00; position:absolute;left:-200px; top:200px;}
+#span1{ width:30px; height:48px; background:#0F0; position:absolute; left:200px; top:120px; font-size:12px; padding-top:12px;}
+</style>
+<script>
+/*
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	oDiv.onmouseover=function()
+	{
+		starMove();
+	}
+	oDiv.onmouseout=function()
+	{
+		starMove2();
+	}
+} 
+var timer=null;
+function starMove()
+{
+	var oDiv=document.getElementById('div1');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		if(oDiv.offsetLeft==0)
+		{
+			clearInterval(timer);
+		}
+		else
+		{
+			oDiv.style.left=oDiv.offsetLeft+10+'px';
+		}
+	},30);
+}
+function starMove2()
+{
+	var oDiv=document.getElementById('div1');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		if(oDiv.offsetLeft==-200)
+		{
+			clearInterval(timer);
+		}
+		else
+		{
+			oDiv.style.left=oDiv.offsetLeft-10+'px';
+		}
+	},30);
+}
+*/
+/*简化一*//*
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	oDiv.onmouseover=function()
+	{
+		starMove(10,0);
+	}
+	oDiv.onmouseout=function()
+	{
+		starMove(-10,-200);
+	}
+} 
+var timer=null;
+function starMove(speed,iTarget)
+{
+	var oDiv=document.getElementById('div1');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		if(oDiv.offsetLeft==iTarget)
+		{
+			clearInterval(timer);
+		}
+		else
+		{
+			oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		}
+	},30);
+}
+*/
+/*简化二*/
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	oDiv.onmouseover=function()
+	{
+		starMove(0);
+	}
+	oDiv.onmouseout=function()
+	{
+		starMove(-200);
+	}
+} 
+var timer=null;
+function starMove(iTarget)
+{
+	var oDiv=document.getElementById('div1');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		var speed=0;
+		if(oDiv.offsetLeft>iTarget){speed=-10;}
+		else{speed=10;}
+		if(oDiv.offsetLeft==iTarget)
+		{
+			clearInterval(timer);
+		}
+		else
+		{
+			oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		}
+	},30);
+}
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<span id="span1">鼠标刷过</span>
+</div>
+</body>
+</html>

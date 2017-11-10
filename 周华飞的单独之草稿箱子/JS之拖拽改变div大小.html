@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS之拖拽改变div大小</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+#div{ width:200px; height:200px; position:relative; background:#F00;}
+#drag{ width:20px; height:20px; position:absolute; right:0; bottom:0; background:#FF0;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementById('div');
+	var oDrag=document.getElementById('drag');
+	oDrag.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		var CX=oEvent.clientX;
+		var CY=oEvent.clientY;
+		var W=oDiv.offsetWidth;
+		var H=oDiv.offsetHeight;
+		document.onmousemove=function(ev)
+		{			
+			var oEvent=ev||event;	
+			var WT=oEvent.clientX-CX+W;
+			var HT=oEvent.clientY-CY+H;
+			if(WT<100){WT=100;}
+			if(HT<100){HT=100;}
+			oDiv.style.width=WT+'px';
+			oDiv.style.height=HT+'px';
+		}
+		document.onmouseup=function()
+		{
+			document.onmousemove=null;
+			document.onmouseup=null;	
+		}
+		return false;
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="div">
+	<div id="drag"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*main*/
+#main{ width:320px; background:#000; margin:200px auto; position:relative; color:#fff; font-size:12px; overflow:hidden;}
+#main ul{ width:3000px; position:relative; left:0; top:0; background:#F00;}
+#main ul li{ width:320px; text-align:center; height:200px; line-height:200px; background:#030; float:left;}
+#main ol{ position:absolute; right:0; bottom:5px;}
+#main ol li{ width:20px; text-align:center; height:20px; line-height:20px; border-radius:50%; margin:0 5px; cursor:pointer; background:#666; float:left; transition:0.4s;}
+#main ol li.active{ background:#900; transform:rotate(360deg);}
+#main .prev,#main .next{ width:40px; text-align:center; height:40px; line-height:40px; cursor:pointer; background:rgba(0,0,0,0.5); position:absolute; top:80px;}
+#main .prev{ border-radius:0 50% 50% 0; left:0;}
+#main .next{ border-radius:50% 0 0 50%; right:0;}

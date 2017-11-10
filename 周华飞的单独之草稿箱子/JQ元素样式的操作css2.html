@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQcss操作</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ height:2000px;}
+.div1{ position:relative; left:11px; top:11px;}
+.div1 em{ position:absolute; left:10px; top:10px;}
+.div2{ margin:300px;}
+.blue{ color:#00F}
+.red{ color:#F00;}
+.bg{ background:#999;}
+.f_t{ font-size:30px;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	$(function()
+	{
+		 //alert($('.div1').css('width'));
+		 //alert(typeof $('.div1').css('width'));
+		 //alert($('.div1').width());
+		 //alert(typeof $('.div1').width());
+		 //alert($(window).width());
+		 //alert($(document).width());
+		 //alert($('body').width());
+		 $('.div1').css({'background':'red','width':'200px','height':'200px'});
+		 //$('.div1').width(500);
+		 //$('.div1').width('500px');
+		 //$('.div1').width('500pt');
+		 //$('.div1').width('500em');
+		 /*
+		 $('.div1').width(function(index,value)
+		 {
+				 return parseInt(value)-100+'px'; 
+				 //虽然可以不加px，会只能添加，但是还是建议加上px，这样会更加清晰
+		 });
+		 */
+		 
+		 //height()和witch()用法一样	     但是height()和width()不包含内边距
+		 //innerWidth()和innerHeight()       包含内边距
+		 //outerWidth()和outerHeight()       包含边框和内边距  
+		 //outerWidth(true)和outerHeight(true)       包含边框和内边距   加上true会包含内外边距和边框
+		
+		//offset() 相对于视口     position()相对于父元素	
+		/*
+		alert($('.div1').offset().left);
+		alert($('em').offset().left);
+		alert($('.div1').position().left);
+		alert($('em').position().left);
+		*/
+		
+		//scrollTop   scrollLeft
+		//alert($(window).scrollTop());
+		//$(window).scrollTop(500);
+	})
+</script>
+</head>
+
+<body>
+	<div class="div1"><em>111</em></div>
+	<div class="div2">222</div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</body>
+</html>

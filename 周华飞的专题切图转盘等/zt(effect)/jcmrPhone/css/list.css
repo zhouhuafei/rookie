@@ -1,0 +1,68 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ position:relative; margin-bottom:10px; overflow:hidden;}
+#banner .prev,#banner .next{ width:45px; height:80px; position:absolute; top:50%; margin-top:-40px; z-index:2;}
+#banner .prev{ left:0;}
+#banner .next{ right:0;}
+#banner ul{ width:9000px;}
+#banner li{ float:left;}
+#banner a{ display:block;}
+#banner img{ width:100%;}
+
+/*expert*/
+#expert{ padding-bottom:17px; margin-bottom:14px; border-bottom:1px dashed #666666;}
+#expert .expert-til{ font-size:3.5rem; line-height:2.2; text-align:center; color:#fff; background:#47aab6;}
+#expert li{ background:#efefef; margin-top:10px;}
+#expert dt,#expert dd{ width:50%; float:left;}
+#expert img{ width:100%;}
+#expert h2{ font-size:4.8rem; line-height:1.8; color:#000; margin-left:5%;}
+#expert small{ font-size:2.8rem; margin-left:3%;}
+#expert p{ font-size:2.5rem; line-height:2; color:#666666; margin-left:5%;}
+#expert h3{ font-size:2.4rem; line-height:1.2; color:#666666; margin-left:5%;}
+#expert a{ display:block; width:70%; font-size:2.4rem; line-height:2.5; background:#0a8e9e; text-align:center; color:#fff; margin:10px auto 0; border-radius:10px;}
+
+/*equipment*/
+#equipment{ margin-bottom:20px; border-bottom:1px dashed #777777;}
+#equipment ul li{ position:relative;}
+#equipment div.txt{ color:#282828; padding:0 10px 7%; background:rgba(255,255,255,0.5); width:56%; position:absolute; right:0; top:7%;}
+#equipment h2{ font-size:3.2rem; text-align:center; line-height:2.8;}
+#equipment p{ font-size:2.4rem; word-break:break-all; line-height:1.25;}
+#equipment img{ width:100%;}
+#equipment .equipment-btn{ margin-top:20px; padding:5% 0; border-top:1px dashed #e0e0e0;}
+#equipment .equipment-btn div{ position:relative;}
+#equipment .equipment-btn a{ display:block; width:50%; height:100%; position:absolute; top:0;}
+#equipment .equipment-btn a:nth-of-type(1){ left:0;}
+#equipment .equipment-btn a:nth-of-type(2){ right:0;}
+
+/*common*/
+.til-box{ position:relative;}
+.til{ font-size:4rem; line-height:2; color:#656565; padding-left:10px;}
+ol.btn{ position:absolute; right:0; top:50%; margin-top:-15px;}
+ol.btn li{ width:30px; height:30px; margin:0 5px; background:#dcdcdc; border-radius:50%; float:left; cursor:pointer;}
+ol.btn li.on{ background:#0aa0b4;}
+
+
+
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	/*banner*/	
+	#banner .prev,#banner .next{ width:32px; margin-top:-30px;}
+	/*common*/
+	ol.btn{ margin-top:-10px;}
+	ol.btn li{ width:20px; height:20px;}
+	
+}
+@media (min-width: 320px) and (max-width: 479px){
+	/*banner*/	
+	#banner .prev,#banner .next{ width:22px; margin-top:-20px;}
+	/*common*/
+	ol.btn{ margin-top:-5px;}
+	ol.btn li{ width:10px; height:10px;}
+	
+}

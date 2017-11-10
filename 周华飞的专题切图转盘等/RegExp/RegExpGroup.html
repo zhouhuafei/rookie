@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>RegExpGroup</title>
+<script>
+/*
+var pattern=/(\w+)\s(\w+)/;
+var str='zhou hua fei';
+console.log(str.replace(pattern,'$2 $1'));//==>'hua zhou fei'
+*/
+/*
+var pattern=/(.*)\s(.*)/;
+var str='zhou hua fei';
+console.log(str.replace(pattern,'$2 $1')); //==>'fei zhou hua'
+*/
+/*
+var pattern=/(.*)\s(.*)\s(.*)/;
+var str='zhou hua fei';
+console.log(str.replace(pattern,'$3 $2 $1')); //==>'fei hua zhou'
+*/
+/*
+var str='abc';
+var re=/(a?(b?(c?)))/;
+alert(re.exec(str));//==>['abc','abc','bc','c']
+alert(str.match(re));//==>['abc','abc','bc','c']
+*/
+/*
+var str='zhouhuafei 1993';
+var re=/(\w+)\s(\d+)/;
+alert('捕获性分组:'+re.exec(str));
+alert('捕获性分组:'+str.match(re));
+*/
+
+var str='zhouhuafei 1993';
+var re=/(\w+)\s(?:\d+)/;
+alert('非捕获性分组:'+re.exec(str));
+alert('非捕获性分组:'+str.match(re));
+
+/*
+var str='zhouqiang';
+var re=/zhou(?=huafei)/;
+alert('前瞻性捕获:'+re.exec(str));//==>[null]
+alert('前瞻性捕获:'+str.match(re));//==>[null]
+*/
+/*
+var str='zhouhuafei';
+var re=/zhou(?=huafei)/;
+alert('前瞻性捕获:'+re.exec(str));//==>['zhou']	
+alert('前瞻性捕获:'+str.match(re));//==>['zhou']	
+*/
+/*
+var str='1.zhou\n2.hua\n3.fei';
+var re=/\d+/g;
+alert(str.replace(re,'#'));
+*/
+/*
+var str='1.zhou\n2.hua\n3.fei';
+var re=/^\d+/gm;
+alert(str.replace(re,'#'));
+*/
+</script>
+</head>
+<body>
+</body>
+</html>

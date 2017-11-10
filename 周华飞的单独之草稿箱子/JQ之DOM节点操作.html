@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQDOM接点操作</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ height:2000px;}
+
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	
+	var box=$('<p id="p1">append插入指定节点div内部的后面</p>');   //JQ创建节点(元素)
+	$('div').append(box);			 //插入节点(插入指定元素内部的后面)	
+	$('div').append(function(index,html)
+	{
+		return ' <em>我是em</em> '+'index是:'+index+' html是我本来就拥有的元素: '+html;		//index是索引   html是div里面本来就具有的节点
+	})
+	
+	//$('h2')	.appendTo('p');			//appendTo 把指定的元素移入到指定元素的内部的后面    把h2标签移入到p标签内部的后面
+	
+	//prepend    					//插入节点(插入指定元素内部的前面)
+	//prepend(function(index,html){})
+	//perpendTo					//把指定的元素移入到指定元素的内部的前面
+	
+	
+	//$('div').after('<h3>我是h3</h3>')			//插入节点(插入指定元素外部的后面)
+	/*
+	$('div').after(function(index,html)
+	{
+		return ' <h3>我是h3h3</h3> '+index+html;	
+	})
+	*/
+	//$('div').before('<h5>我是h5</h5>')			//插入节点(插入指定元素外部的前面)
+	/*
+	$('div').before(function(index,html)
+	{
+		return ' <h3>我是h3h3</h3> '+index+html;	
+	})
+	*/
+	//$('h2').insertBefore('div')			//insertBefore 把指定的元素移入到指定元素外部的前面    把h2标签移入到div标签外部的前面
+	//$('h2').insertAfter('div')			//insertAfore  把指定的元素移入到指定元素外部的后面    把h2标签移入到div标签外部的后面
+	
+})
+</script>
+</head>
+
+<body>
+	<div>
+        	<p>我是div里面的标签p</p>
+                <h2>我是div里面的h2</h2>
+        </div> 
+        
+        
+        
+        
+        
+        
+        
+</body>
+</html>

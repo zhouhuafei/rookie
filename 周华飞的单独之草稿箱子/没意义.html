@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+
+/*
+
+alert('0/0的结果返回：'+0/0);			//没意义			 	   
+alert('Math.pow(100,10000)的结果返回：'+Math.pow(100,10000));	// 无穷大infinity    无穷小-infinity   
+alert('Math.pow(100,-10000)的结果返回：'+Math.pow(100,-10000));	// 无限接近0则返回0
+var zero=0;
+var negz=-0;
+alert(zero===negz);  //true正零和负零的值相等
+alert(1/zero===1/negz);   //false  正无穷大和负无穷大不相等
+
+//数字不能精确的表示
+var x=.3-.2;	
+var y=.2-.1;
+alert(x==y);	//false
+alert(x==.1);	//false
+alert(y==.1);	//true
+
+*/
+/*
+
+var s='0123456789a'
+alert(s.slice(0,5));   		//从第0个开始选取5个
+alert(s.substring(0,5));	//从第0个开始选取5个
+alert(s.toUpperCase());		//转换成大写
+alert(s.charAt(0));
+//字符串可以看作是《只读》数组
+alert(s[1]);
+alert(s[s.length-1])
+*/
+
+/*
+var s='0123456789a'
+var re=/\d+/g
+alert(re.test(s));
+alert(s.match(re));	//所有匹配组成的数组
+alert(s.search(re));	//返回首次匹配成功的位置
+alert(s.replace(re,'b'));
+alert(s.split(re));	
+*/
+
+/*
+var v='04546124'
+var a=null;	//null
+var b;		//undefine
+alert(a==b);
+alert(a===b);
+alert(v.indexOf('2'))
+*/
+
+var a=[],b=[],c={x:0},d={x:0};		//两个单独的数组/对象用不相等
+alert(a==b);
+alert(c==d);
+
+</script>
+</body>
+</html>

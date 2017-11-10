@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>split(join)查找</title>
+<style>
+div{ width:500px; margin:0 auto;}
+span{ background:#FF0; color:#F00;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=getId('div');
+	var oBtn=getId('btn');
+	var oTxt=getId('txt');
+	var str=oDiv.innerHTML;
+	oBtn.onclick=function()
+	{
+		if(oTxt.value!='')
+		{
+			oDiv.innerHTML=str.split(oTxt.value).join('<span>'+oTxt.value+'</span>');		
+		}
+		
+	}	
+}
+function getId(id){return document.getElementById(id);}
+</script>
+</head>
+
+<body>
+<input type="text" id="txt" /><input type="button" id="btn"  value="查找"/>
+<div id="div">
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+</div>
+</body>
+</html>

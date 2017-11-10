@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>getArgs</title>
+<script>
+//http://127.0.0.1/getArgs/getArgs.html?user=zhouhuafei&age=22&pass=shuaige
+//window.location.search	//==>"?user=zhouhuafei&age=22&pass=shuaige"
+function getArgs(){
+	var str=window.location.search;
+	str=str.length>0?str.substring(1):'';
+	var arr=str.split('&');	
+	var args={};
+	var attr=null;
+	var value=null;
+	for(var i=0;i<arr.length;i++){	
+		var arrAgain=arr[i].split('=');
+		attr=arrAgain[0];
+		value=arrAgain[1];
+		args[attr]=value;
+	}
+	console.log(args);
+	return args;
+}
+alert(getArgs().user);
+</script>
+</head>
+<body>
+</body>
+</html>

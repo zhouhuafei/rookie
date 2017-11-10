@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ事件初级</title>
+<style>
+*{ margin:0; padding:0;}
+body{ margin:50px 100px;}
+.div1{ width:300px; height:200px; background:#F00;}
+.div1 input{ width:298px;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	/*
+	$(':button').bind({
+		mouseover:function(){alert('mouseover');},
+		mouseout:function(){alert('mouseout');},
+		click:function(){alert('click');},
+		})
+	*/
+	//$(':button').unbind();		//删除全部事件
+	//$(':button').unbind('click');		//只删除点击事件
+	
+	/*
+	function fn1(){alert('fn1');}
+	function fn2(){alert('fn2');}
+	$(':button').bind('click',fn1);
+	$(':button').bind('click',fn2);
+	$(':button').unbind('click',fn2)			//删除绑定事件的fn2函数
+	*/
+	
+	/*	
+	$(':input[type=text]').bind('change',function()
+	{
+		alert('456')	
+	})
+	*/
+	/*
+	$(':input[type=text]').bind('select',function()
+	{
+		$(this).val('**********');	
+	})
+	*/
+	/*
+	$(':button').bind('dblclick',function()
+	{
+		$(this).html('**********');	
+	})
+	*/
+	
+	//mousedown		鼠标按下
+	//mouseup		鼠标按下抬起
+	//unload		页面被卸载(刷新)	一般用于清理工作   变量清理   内存清理
+	//load			$(document).ready(function(){})         $(function(){})
+	//resize		窗口改变大小
+	//scroll		滚动条改变时触发
+	//select		文本选定的时候触发
+	//change		文本改变的时候触发
+	
+	//submit		提交表单时触发    要加<form></form>不然表单没发提交   而且事件要作用于form表单上
+	//$('form').bind('submit',function(){alert('点击提交按钮时作用于form表单上的submit事件被触发');})
+
+
+	/*
+	$('div').mouseover(function()
+	{
+		$(this).css('background','red')	
+	}).mouseout(function()
+	{
+		$(this).css('background','green')
+	})
+	*/
+	/*
+	$('em').mouseenter(function()
+	{
+		$(this).css('background','purple')	
+	}).mouseleave(function()
+	{
+		$(this).css('background','black')
+	})
+	*/
+	//mouseover		鼠标移入	会触发子元素
+	//mouseenter		鼠标穿入	不会触发子元素	
+	//mouseout		鼠标移出	会触发子元素
+	//mouseleave		鼠标穿出	不会触发子元素
+	/*
+	$('div').mouseover(function()		//会触发子节点
+	{
+		$('i').html(function(index,value)
+		{
+			return value+'1';	
+		})	
+	})
+	*/
+	/*
+	$('div').mouseenter(function()		//不会触发子节点
+	{
+		$('i').html(function(index,value)
+		{
+			return value+'1';	
+		})	
+	})
+	*/
+	/*
+	$('div').mouseout(function()		//会触发子节点
+	{
+		$('i').html(function(index,value)
+		{
+			return value+'1';	
+		})	
+	})
+	*/
+	/*
+	$('div').mouseleave(function()		//不会触发子节点
+	{
+		$('i').html(function(index,value)
+		{
+			return value+'1';	
+		})	
+	})
+	*/
+	/*
+	$(':input').keydown(function()
+	{
+		alert('keydown');	
+	})
+	*/
+	/*
+	$(':input').keyup(function()
+	{
+		alert('keydown');	
+	})
+	*/
+	/*
+	$(':input').keypress(function()
+	{
+		alert('keydown');	
+	})
+	*/
+	
+	
+	//keydown(键盘按下)和keyup采用的是keyCode键盘编码(键码)
+	//keypress(键盘按下)采用的charCode字符编码
+	
+	/*
+	$(':input').keypress(function(e)
+	{
+		alert(e.charCode);	
+	})
+	*/
+	/*
+	$(':input').keydown(function(ev)
+	{
+		alert(ev.keyCode);	
+	})
+	*/
+	
+	//blur				失去焦点	当前元素触发
+	//focus				获取焦点	当前元素触发
+	//focusin			获取焦点	可以是子元素触发
+	//focusout			失去焦点	可以是子元素触发
+	/*
+	$('.div1').focusin(function()			//获取不到焦点，触发不了事件，因为不是当前元素
+	{
+		$('.input1').val('123')	
+	})
+	*/
+	/*
+	$('.div1').focusin(function()			//对然不是当前元素，但是可以通过子元素获取得到焦点，并且可以触发了事件
+	{
+		$('.input1').val('123')	
+	})
+	*/
+	
+	//hover([fn1],fn2)			//鼠标移入时触发fn1,鼠标移出时触发fn2
+	//hover  复合事件  他连接的是mouseenter和mouseleave
+	/*
+	$('.div1').hover(function()
+	{
+		$(this).css('background','black')	
+	},function()
+	{
+		$(this).css('background','blue')	
+	})
+	*/
+		
+})
+</script>
+</head>
+
+<body>
+<form>
+        <button>我是按钮</button>
+        <input type="text" placeholder="我是菜鸟" />
+        <input type="submit" value="提交表单" />
+</form>
+<div style="width:200px; height:200px; background:#990">
+	<em style=" display:block; background:#999; height:100px; width:100px;"></em>
+        <i>1</i>
+</div>
+
+<div class="div1">
+<input class="input1" type="text" placeholder="用div能否获取焦点，能不能激活事件" />
+</div>
+</body>
+</html>

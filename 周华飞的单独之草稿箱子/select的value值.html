@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>select的value值</title>
+<script>
+window.onload=function()
+{
+	var oSelect=document.getElementsByTagName('select')[0];
+	var aOption=oSelect.getElementsByTagName('option');	
+	oSelect.onblur=function()
+	{
+		alert('select的value是当前被选中的option的value：'+oSelect.value);	
+		alert('option4的value是：'+aOption[3].value);
+		alert('option4的innerHTML是：'+aOption[3].innerHTML);
+	}
+}
+</script>
+</head>
+<body>
+<select>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+</select>
+</body>
+</html>

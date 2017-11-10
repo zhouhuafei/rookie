@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>serialize</title>
+</head>
+<body>
+<form>
+	<input type="text" name="user" value="zhouhuafei" /><br />
+	<input type="password" name="pass" value="123456" /><br />
+        <input type="radio" name="sex" value="男" checked='checked'>男<br />
+        <input type="radio" name="sex" value="女">女<br />
+        <input type="checkbox" name="meat" value="红烧肉" checked='checked'>红烧肉<br />
+        <input type="checkbox" name="drink" value="营养快线" checked='checked'>营养快线<br />
+        <select name="sel0">
+        	<option value="0">this is value0</option>
+        	<option value="1">this is value1</option>
+        	<option value="2">this is value2</option>
+        </select><br />
+        <select name="sel1" multiple='multiple'>
+        	<option selected='selected'>this no value0</option>
+        	<option selected='selected'>this no value1</option>
+        	<option>this no value2</option>
+        </select><br />
+        <input type="submit" name="submit" value="submit"></form>
+</form>
+<script>
+//用于ajax多个表单的数据提交
+//参数是一个表单对象
+function serialize(form){
+	var iLen=form.elements.length;
+	var obj={}
+	for(var i=0;i<iLen;i++){
+		var element=form.elements[i];
+		switch(element.type){
+			case 'button':
+			case 'submit':
+			case 'reset':
+			case 'file':
+			break;//以上类型的跳过
+			case 'radio':
+			case 'checkbox':
+			if(!element.checked){//如果没被选中.则跳过
+				break;
+			}else{//如果被选中.则执行下述
+				obj[element.name]=element.value;
+				break;
+			}
+			//如果你给所有的option标签都添加上了value那么就可以省去下面的一段case代码
+			//如果option有value则默认返回value的值,如果没有value则返回option的text值
+			case 'select-one':
+			case 'select-multiple':
+				var iLens=element.options.length;
+				//element.index=0;//下拉选择框多选进行命名,然而没有这一步的必要,因为option自带索引
+				//select也自带selectedIndex索引,如果多选则索引值为最小的那个
+				for(var j=0;j<iLens;j++){
+					var option=element.options[j];
+					if(element.multiple){
+						if(option.selected){
+							obj[element.name+'-'+option.index]=option.value;
+						}					
+					}else{
+						if(option.selected){
+							obj[element.name]=option.value;
+						}						
+					}
+				}
+			break;
+			default:
+			obj[element.name]=element.value;
+		}
+	}
+	return obj;
+}
+console.log(serialize(document.forms[0]));
+</script>
+</body>
+</html>

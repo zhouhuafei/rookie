@@ -1,0 +1,44 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ text-align:center; margin-top:10px;}
+#banner a{ display:inline-block;}
+
+/*type*/
+.type li{ float:left; font-size:16px; color:#2e8aca; width:33%; margin:0 0.5% 0.5% 0; border:1px solid #d7d7d7; box-sizing:border-box;}
+.type li:nth-child(3n){ margin-right:0;}
+.type a{ width:100%; padding:20px 0;}
+.type em{ width:38px; height:38px; text-align:center; margin:0 5px; float:left;}
+
+/*expert*/
+.expert div.main{ width:93.75%; margin:0 auto; box-sizing:border-box; font-size:12px; color:#666666;}
+.expert div.main-box{ border:1px solid #d7d7d7; padding-top:5px;}
+.expert dd{ width:50%; margin-left:10px;}
+.expert h2{ margin-bottom:8px;}
+.expert p{ margin-bottom:6px; line-height:15px;}
+.expert strong{ font-size:24px; color:#0072c0; margin-right:4px;}
+.expert a{ width:66px; height:24px; text-align:center; line-height:24px; color:#fff; font-size:12px; background:#0072c0; border-radius:5px;}
+.expert a:last-child{ background:#ff8400; margin-left:8px;}
+.expert ol{ text-align:center; margin-top:10px;}
+.expert ol li{ width:10px; height:10px; background:#cecece; border-radius:50%; float:left; margin:0 5px; cursor:pointer;}
+.expert ol li.on{ background:#0070bc;}
+
+/*case*/
+.case div.main{ width:93.75%; margin:0 auto;}
+.case div.main-box{ text-align:center; border:1px solid #d7d7d7;}
+.case ol{ text-align:center; margin-top:10px;}
+.case ol li{ width:10px; height:10px; background:#cecece; border-radius:50%; float:left; margin:0 5px;}
+.case ol li.on{ background:#0070bc;}
+.case div.btn{ text-align:center; width:78%; margin:10px auto 0;}
+.case div.btn a{ border-radius:5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; width:49%;}
+.case div.btn a:last-child{ background:#f96300;}
+.case div.btn em{ vertical-align:middle; margin-right:10px;}
+
+/*common*/
+.til{ margin:20px 0 10px; text-align:center; line-height:40px; background:#2e8aca; color:#fff; font-size:20px;}
+.til:nth-of-type(1){ margin-top:10px;}

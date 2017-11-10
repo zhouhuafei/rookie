@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ动画效果</title>
+<style>
+span{ padding:5; display:inline-block; background:#F90;}
+div{ width:200px; height:200px; background:#F00; text-align:center; color:#FFF; font-size:30px;}
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+$(function()
+{	
+	/*
+	$('input').click(function()
+	{
+		$('div').animate({
+			width:'300px',
+			height:'400px',
+			fontSize:'30px',
+			lineHeight:'400px',		
+			},5000).animate({
+				width:'200px',
+				height:'200px',
+				fontSize:'18px',
+				lineHeight:'200px',				
+				},'fast');	
+	})
+	*/
+	/*
+	$('input').click(function()
+	{
+		$('div').slideUp('slow')
+			.slideDown('slow')
+			.fadeOut('slow')
+			.fadeIn('slow')
+			.fadeTo('slow',0.3)
+			.fadeTo('slow',1)
+			.css('background','green')		/css先执行了，这不是我想要的效果
+	})
+	*/
+	/*
+	$('input').click(function()
+	{
+		$('div').slideUp('slow')
+			.slideDown('slow')
+			.fadeOut('slow')
+			.fadeIn('slow')
+			.fadeTo('slow',0.3)
+			.fadeTo('slow',1)
+			.animate({lineHeight:'200px'},'slow')
+			.queue(function(next)			//queue()方法模拟动画方法跟随动画,类似回调函数
+			{
+				$(this).css('background','green');
+				next();	
+			}).hide('slow').show('slow');					
+			//queue()方法模拟动画方法跟随动画之后，再追加一个动画会失效,需要加一个参数next(这个参数是next函数),并在结尾处调用next()函数,本例如果不加next则hide()和show()都会失效
+			//next是1.4版本以后才出现的，而以前的解决方法是：1.不需要传参;2.把next();换成$(this).dequeue();也能实现效果
+	})
+	*/
+	
+	//queue()还可以得到得到当前动画列队的长度  用的比较少
+	//alearQueue()   清理列队 只执行到第四个,后面的都被清理掉了
+	/*
+	$('input').click(function()
+	{
+		$('div').slideUp('slow',function(){alert(count());})
+			.slideDown('slow',function(){alert(count());})
+			.fadeOut('slow')
+			.fadeIn('slow',function(){clearQueue();})
+			.fadeTo('slow',0.3)
+			.fadeTo('slow',1)
+			.animate({lineHeight:'200px'},'slow')
+			.queue(function(next)			//queue()方法模拟动画方法跟随动画,类似回调函数
+			{
+				$(this).css('background','green');
+				next();	
+			}).hide('slow').show('slow');					
+			//queue()方法模拟动画方法跟随动画之后，再追加一个动画会失效,需要加一个参数next(这个参数是next函数),并在结尾处调用next()函数,本例如果不加next则hide()和show()都会失效
+			//next是1.4版本以后才出现的，而以前的解决方法是：1.不需要传参;2.把next();换成$(this).dequeue();也能实现效果
+	})
+	function count()
+	{
+		return $('div').queue('fx').length;	
+	}
+	*/
+	
+	
+})
+
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" />
+<div>自定义动画</div>
+
+</body>
+</html>

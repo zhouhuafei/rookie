@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>callee(caller)</title>
+</head>
+<body>
+<script>
+function a(){
+	alert(arguments.callee)		//函数自身
+	function b(){
+		alert(b.caller)		//在哪个函数内调用的
+	}
+	b();	
+}
+a()
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<script>
+window.onload=function()
+{
+	var oTxt=document.getElementById('phone');
+	var oHint=document.getElementById('hint');
+	oTxt.onblur=function()
+	{
+		var re=/(0\d{2,3}-)?[1-9]\d{7}(-\d{1,5})?/i;
+		if(re.test(oTxt.value))
+		{
+			oHint.style.color="red";
+			oHint.innerHTML="合法号码"
+		}
+		else
+		{
+			oHint.style.color="red";
+			oHint.innerHTML="非法号码"
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="phone" id="phone" placeholder="请输入手机号码" /><span id="hint"></span>
+</body>
+</html>

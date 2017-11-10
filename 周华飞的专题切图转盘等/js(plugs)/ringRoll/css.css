@@ -1,0 +1,8 @@
+@charset "gb2312";
+/* CSS Document */
+/*wrap*/
+.wrap{ width:520px; height:280px; margin:0 auto; background:#f00; position:relative;}
+
+/*div1*/
+#div1{ position:absolute; z-index:1000000; left:260px; top:140px;}
+#div1 a{ position:absolute; color:#444444; font-weight:bold; width:260px; transition:0s; color:#fff; background:#000;}

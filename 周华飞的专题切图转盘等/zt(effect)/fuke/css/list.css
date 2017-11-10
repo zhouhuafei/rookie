@@ -1,0 +1,46 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*location*/
+.location{padding:0 5%;}
+.location img{width:3.6%;vertical-align:middle;margin-right:2%;}
+.location span{font-size:2.8rem;line-height:3.8;color:#be0069; vertical-align:middle;}
+.location span a{color:#000;}
+
+/*list*/
+.list{padding:0 5%;}
+.list ul:last-child{ display:none;}
+.list ul li{width:100%;padding-bottom:8%;margin-bottom:8%;border-bottom:1px dashed #787878;}
+.list ul li img{width:28%;float:left;margin-right:3%;}
+.list ul li:last-child{ margin-bottom:0; border:none;}
+.list ul li.re{ margin-bottom:8%; border-bottom:1px dashed #787878;}
+.list_inner{width:69%;float:left;}
+.list_inner h3{font-size:2.8rem;line-height:1;color:#be0069;}
+.list_inner p{font-size:2.4rem;line-height:1.4;color:#666;margin-top:2.5%;}
+.list_inner a{color:#f97400;}
+.list_show{text-align:center;}
+.list_show img{width:7%;}
+.list_show p{font-size:2.4rem;line-height:2;color:#f97400;}
+
+/*expert*/
+.expert{ font-size:2.4rem; color:#010101;}
+.expert img{ width:100%;}
+.expert dl{ margin-bottom:8%; padding-bottom:8%; border-bottom:1px dashed #787878;}
+.expert dt{ width:36%;}
+.expert dd{ width:60%;}
+.expert h2{ font-size:3rem; color:#be0069;}
+.expert small{ color:#010101; margin-left:10px;}
+.expert p{ line-height:1.6; margin:5% auto 10%;}
+.expert mark{ display:block;}
+.expert a{ color:#fff; background:#00a454; font-size:3.2rem; line-height:1.7; border-radius:10px; width:43%; text-align:center;}
+.expert a:nth-of-type(2){ background:#be0069;}
+.expert dl:last-child{ padding-bottom:0; border-bottom:none;}
+.expert dl.re{ padding-bottom:8%; border-bottom:1px dashed #787878;}
+.expert-box section:last-child{ display:none;}
+
+
+

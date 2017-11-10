@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#div1{ width:100px; height:100px; background:red; position:relative; left:0; top:0;}
+#div1 p{ line-height:25px; color:#FFF; text-align:center;}
+</style>
+<script>
+timer=null;
+function startMove(iTarget)
+{
+	var oDiv=document.getElementById('div1');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		var oDiv=document.getElementById('div1');
+		var speed=0;
+		if(oDiv.offsetLeft<iTarget)
+		{
+			speed=7;
+		}
+		else
+		{
+			speed=-7;
+		}
+		if(Math.abs(iTarget-oDiv.offsetLeft)<=7)
+		{
+			clearInterval(timer);
+			oDiv.style.left=iTarget+'px';
+		}
+		else
+		{
+			oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		}
+		document.title=oDiv.offsetLeft;
+	},30);	
+}
+window.onload=function()
+{
+	var oBtn5=document.getElementById('btn5');
+	var oBtn7=document.getElementById('btn7');
+	oBtn5.onclick=function(){startMove(500);}
+	oBtn7.onclick=function(){startMove(700);}
+}
+</script>
+</head>
+
+<body>
+<input id="btn5" type="button" value="500" /><input type="button" id="btn7" value="700" />
+<div id="div1">
+<p>单击500到500px;</p>
+<p>单击700到700px;</p>
+</div>
+</body>
+</html>

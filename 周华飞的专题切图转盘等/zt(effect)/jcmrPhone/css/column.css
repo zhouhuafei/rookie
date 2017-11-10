@@ -1,0 +1,31 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*column*/
+#column{ margin-bottom:10px;}
+#column #aside{ width:30%; background:#e7e7e7; position:relative;}
+#column #aside ol{ width:100%;} 
+#column #aside li{ font-size:3.1rem; line-height:3.1; color:#666666; text-align:center;}
+#column #aside li.on{ background:#fff; color:#0aa0b4;}
+#column #section{ width:69%; position:relative;}
+#column #section a{ width:49.8%; display:block; color:#fff; background:#bdbbbb; margin-bottom:2px; font-size:3rem; line-height:3.6; text-align:center;}
+#column #section a.first{ width:100%; margin-bottom:12px;}
+#column #section li :nth-child(even){ float:left;}
+#column #section li :nth-child(odd){ float:right;}
+#column #section img{ width:100%;}
+
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	/*column*/
+	#column #section a.first{ margin-bottom:8px;}
+		
+}
+@media (min-width: 320px) and (max-width: 479px){
+	/*column*/
+	#column #section a{ margin-bottom:1px;}
+	#column #section a.first{ margin-bottom:3px;}
+}

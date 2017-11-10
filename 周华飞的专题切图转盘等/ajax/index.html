@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>ajax</title>
+<script>
+window.onload=function(){
+	ajax('data.json',function(str){
+		var data=JSON.parse(str);
+		for(var attr in data){
+			document.body.innerHTML+=attr+':'+data[attr]+'</br>';
+		}
+	},function(str){
+		document.body.innerHTML='错误代码:'+str;
+	})	
+}
+function ajax(url,fnSucc,fnFail){
+	var oAjax=new XMLHttpRequest();
+	oAjax.open('GET',url+'?t='+new Date().getTime(),true);
+	oAjax.send(null);
+	oAjax.onreadystatechange=function(){
+		if(oAjax.readyState==4){
+			if(oAjax.status==200){
+				fnSucc(oAjax.responseText)	
+			}else{
+				fnFail&&fnFail(oAjax.status);	
+			}
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>

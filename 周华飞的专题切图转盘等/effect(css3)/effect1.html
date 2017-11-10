@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>effect1</title>
+<style>
+*{ margin:0; padding:0;}
+body{ perspective:200px; transform-style:preserve-3d;}
+div{ transform:rotatex(-10deg); transform-origin:50% 0%; width:853px; height:640px; margin:100px auto 0; background:#000;}
+div.active{ transform:rotatex(0); transition:1s cubic-bezier(.02,.98,.47,1.37);}
+</style>
+<script>
+window.onload=function(){
+	document.onclick=function(){
+		document.getElementsByTagName('div')[0].className='active';	
+	}	
+}
+</script>
+</head>
+
+<body>
+<div><img src="1.jpg" width="853" height="640"></div>
+</body>
+</html>

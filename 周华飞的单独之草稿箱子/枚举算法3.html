@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>枚举算法3</title>
+<style>
+*{ margin:0; padding:0;}
+a{ margin-right:10px;}
+ul{ margin-top:10px;}
+</style>
+<script>
+window.onload=function()
+{
+	var aA=document.getElementsByTagName('a');
+	var oUl=document.getElementsByTagName('ul')[0];
+	var aLi=oUl.getElementsByTagName('li');
+	for(var i=0;i<aA.length;i++)
+	{
+		aA[i].onclick=function()
+		{
+			if(enumeration(this.innerHTML))
+			{
+				var oLi=document.createElement('li');
+				oLi.innerHTML=this.innerHTML;
+				if(!aLi[0])
+				{	
+					oUl.appendChild(oLi);
+				}
+				else
+				{
+					oUl.insertBefore(oLi,aLi[0]);	
+				}
+			}
+			else
+			{
+				enumeration2(this.innerHTML);	
+			}			
+		}	
+	}
+	function enumeration(txt)
+	{
+		var onOff=true;
+		for(var i=0;i<aLi.length;i++)
+		{
+			if(aLi[i].innerHTML==txt)
+			{
+				onOff=false;	
+			}				
+		}
+		return onOff;
+	}
+	function enumeration2(txt)
+	{
+		for(var i=0;i<aLi.length;i++)
+		{
+			if(aLi[i].innerHTML==txt)
+			{
+				oUl.insertBefore(aLi[i],aLi[0]);	
+			}	
+		}	
+	}
+	
+}
+
+</script>
+
+
+</head>
+<body>
+<a href="#">北京</a><a href="#">广东</a><a href="#">西藏</a><a href="#">青海</a><a href="#">湖北</a><a href="#">安徽</a><a href="#">上海</a>
+<ul></ul>
+</body>
+</html>

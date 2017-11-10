@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>bee</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; line-height:1;}
+html,body{ width:100%; height:100%;}
+#parent{ width:100%; height:100%; background:#000; margin:0 auto; position:relative; text-align:center; color:#fff; font-size:20px; overflow:hidden;}
+#parent .start{ width:200px; height:40px; text-align:center; line-height:40px; border:1px solid #fff; position:absolute; left:50%; top:50%; margin:-20px 0 0 -100px;}
+#parent .score{ position:absolute; left:0; top:0; z-index:2;}
+#parent .plane{ position:absolute; width:46px; height:60px; background:url(plane.png);}
+#parent .bullet{ width:1px; height:14px; background:#fff; position:absolute;}
+#parent ul{ display:inline-block; position:absolute;}
+#parent ul li{ display:inline-block; width:40px; height:20px;}
+#parent ul li.bee1{ background:url(bee1.png);}
+#parent ul li.bee2{ background:url(bee2.png);}
+#parent ul li.bee3{ background:url(bee3.png);}
+</style>
+<script>
+window.onload=function(){
+	var game={
+		//开始按钮
+		oStart:document.querySelectorAll('.start')[0],
+		//父级容器
+		oParent:document.querySelector('#parent'),
+		//蜜蜂的数据
+		beeData:{
+			bee1:{class:'bee1',blood:1,speed:5,score:1},
+			bee2:{class:'bee2',blood:2,speed:7,score:2},
+			bee3:{class:'bee3',blood:3,speed:9,score:3}	
+		},
+		//第几关
+		pass:0,
+		//关卡的数据
+		passData:[
+			{
+				map:[
+					'bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1',
+					'bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1',
+					'bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1',
+					'bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1',
+					'bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1',
+					'bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1','bee1',
+				],
+				cols:10,//多少列
+				speedX:10,//X轴的速度
+				speedY:10,//Y轴的速度
+				interval:5000//掉落间隔时间
+			},
+			{
+				map:[
+					'bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2',
+					'bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2',
+					'bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2',
+					'bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2',
+					'bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2',
+					'bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2','bee2',
+				],
+				cols:10,//多少列
+				speedX:10,//X轴的速度
+				speedY:10,//Y轴的速度
+				interval:5000//掉落间隔时间
+			},
+			{
+				map:[
+					'bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3',
+					'bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3',
+					'bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3',
+					'bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3',
+					'bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3',
+					'bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3','bee3',
+				],
+				cols:10,//多少列
+				speedX:10,//X轴的速度
+				speedY:10,//Y轴的速度
+				interval:5000//掉落间隔时间
+			}
+		],
+		//初始化
+		fnInit:function(){
+			var self=this;
+			//点击开始
+			this.oStart.onclick=function(){
+				this.style.display='none';
+				self.fnScore();//调用创建积分
+				self.fnBee(self.pass);//调用创建蜜蜂
+				self.fnPlane();//调用创建飞机
+			}
+		},
+		//创建积分
+		fnScore:function(){
+			var oScore=document.createElement('div');
+			oScore.className='score';
+			oScore.innerHTML='积分：<span>0</span>';
+			this.oParent.appendChild(oScore);
+			this.oSpan=oScore.querySelector('span');
+		},
+		//创建蜜蜂
+		fnBee:function(iNow){
+			if(this.oUl){
+				clearInterval(this.oUl.timer);
+				this.oParent.removeChild(this.oUl);
+			}
+			var passNow=this.passData[iNow];
+			var oUl=document.createElement('ul');
+			this.oUl=oUl;
+			for(var i=0;i<this.passData[iNow].map.length;i++){
+				var oLi=document.createElement('li');
+				oLi.className=this.beeData[passNow.map[i]].class;
+				oLi.blood=this.beeData[passNow.map[i]].blood;
+				oLi.score=this.beeData[passNow.map[i]].score;
+				oLi.speed=this.beeData[passNow.map[i]].speed;
+				oUl.appendChild(oLi);	
+			}
+			this.oParent.appendChild(oUl);			
+			oUl.style.width=oLi.offsetWidth*passNow.cols+'px';
+			oUl.style.left=(this.oParent.offsetWidth-oUl.offsetWidth)/2+'px';
+			this.aLi=oUl.getElementsByTagName('li');
+			this.fnLayout();//调用布局转换
+			this.fnBeeMove(passNow);//调用让蜜蜂动起来
+		},
+		//布局转换
+		fnLayout:function(){
+			var arr=[];
+			for(var i=0;i<this.aLi.length;i++){
+				arr.push([this.aLi[i].offsetLeft,this.aLi[i].offsetTop]);
+			}
+			for(var i=0;i<this.aLi.length;i++){
+				this.aLi[i].style.position='absolute';
+				this.aLi[i].style.left=arr[i][0]+'px';
+				this.aLi[i].style.top=arr[i][1]+'px';
+			}	
+		},		
+		//让蜜蜂动起来
+		fnBeeMove:function(passNow){
+			var self=this;
+			var l=0;
+			var r=this.oParent.offsetWidth-this.oUl.offsetWidth;
+			this.oUl.timer=setInterval(function(){			
+				if(self.oUl.offsetLeft<=l||self.oUl.offsetLeft>=r){
+					passNow.speedX*=-1;
+					self.oUl.style.top=self.oUl.offsetTop+passNow.speedY+'px';
+				}
+				self.oUl.style.left=self.oUl.offsetLeft+passNow.speedX+'px';
+			},200);	
+			//调用单兵作战
+			self.timer3=setInterval(function(){
+				self.fnOne();	
+			},passNow.interval)
+		},
+		//创建飞机
+		fnPlane:function(){
+			var oPlane=document.createElement('div');
+			this.oPlane=oPlane;
+			oPlane.className='plane';
+			this.oParent.appendChild(oPlane);
+			oPlane.style.left=(this.oParent.offsetWidth-oPlane.offsetWidth)/2+'px';
+			oPlane.style.bottom=0;
+			this.fnPlaneMove();//调用让飞机动起来		
+		},
+		//让飞机动起来
+		fnPlaneMove:function(){
+			var self=this;
+			var timer=null;//飞机移动控制器			
+			this.timer=null;//子弹连发控制器
+			document.onkeydown=function(ev){
+				var ev=ev||event;
+				//飞机往左移动
+				if(ev.keyCode==37&&!timer){
+					timer=setInterval(function(){
+						self.oPlane.style.left=self.oPlane.offsetLeft-10+'px';
+					},30)
+				}
+				//飞机往右移动
+				if(ev.keyCode==39&&!timer){
+					timer=setInterval(function(){
+						self.oPlane.style.left=self.oPlane.offsetLeft+10+'px';
+					},30)
+				}
+				//飞机发射子弹
+				if(ev.keyCode==32){
+					if(!self.timer){
+						self.fnBullet();
+						self.timer=setInterval(function(){
+							self.fnBullet();	
+						},200);
+					}
+				}	
+			}
+			document.onkeyup=function(ev){
+				var ev=ev||event;
+				//飞机停止移动
+				if(ev.keyCode==37||ev.keyCode==39){
+					clearInterval(timer);
+					timer=null;
+				}
+				//飞机停止发射子弹
+				if(ev.keyCode==32){
+					clearInterval(self.timer);
+					self.timer=null;					
+				}	
+			}	
+		},
+		//创建子弹
+		fnBullet:function(){
+			var oBullet=document.createElement('div');
+			oBullet.className='bullet';	
+			this.oParent.appendChild(oBullet);
+			var w=Math.ceil(oBullet.offsetWidth/2);
+			oBullet.style.left=this.oPlane.offsetLeft+this.oPlane.offsetWidth/2-w+'px';
+			oBullet.style.top=this.oPlane.offsetTop-oBullet.offsetHeight+'px';
+			this.fnBulletMove(oBullet);//调用让子弹飞	
+		},
+		//让子弹飞
+		fnBulletMove:function(oBullet){
+			var self=this;
+			var timer=null;
+			timer=setInterval(function(){
+				//子弹超界限销毁
+				if(oBullet.offsetTop+oBullet.offsetHeight<=0){
+					clearInterval(timer);
+					oBullet&&self.oParent.removeChild(oBullet);
+				}else{
+					oBullet.style.top=oBullet.offsetTop-oBullet.offsetHeight-1+'px';					
+					//碰撞销毁子弹和蜜蜂			
+					for(var i=0;i<self.aLi.length;i++){
+						self.fnImpact(oBullet,self.aLi[i],function(){	
+							if(self.aLi[i].blood==1){
+								clearInterval(self.aLi[i].timer);
+								self.oSpan.innerHTML=parseInt(self.oSpan.innerHTML)+self.aLi[i].score;		
+								self.oUl.removeChild(self.aLi[i]);
+							}else{
+								self.aLi[i].blood--;		
+							}
+							clearInterval(timer);		
+							self.oParent.removeChild(oBullet);
+						});
+					}							
+					//进入下一关以及通关判定		
+					if(self.aLi.length==0){	
+						var aBulet=document.querySelectorAll('.bullet');
+						if(aBulet){
+							for(var i=0;i<aBulet.length;i++){						
+								clearInterval(timer);
+								self.oParent.removeChild(aBulet[i]);							
+							}
+						}
+						if(self.pass==2){
+							clearInterval(self.timer3);
+							alert('恭喜全部通关');
+							window.location.reload();
+						}else{
+							self.fnBee(++self.pass);//调用创建蜜蜂
+						}
+					}					
+				}
+			},30)
+		},
+		//封装取值函数
+		fnOffset:function(obj){
+			var top=0;
+			var left=0;
+			while(obj){
+				top+=obj.offsetTop;
+				left+=obj.offsetLeft;
+				obj=obj.offsetParent;
+			}
+			return{top:top,left:left}
+		},
+		//封装检测碰撞函数
+		fnImpact:function(obj1,obj2,fnCallBack){
+			var t1=this.fnOffset(obj1).top;
+			var l1=this.fnOffset(obj1).left;
+			var w1=obj1.offsetWidth;
+			var h1=obj1.offsetHeight;
+			var t2=this.fnOffset(obj2).top;
+			var l2=this.fnOffset(obj2).left;
+			var w2=obj2.offsetWidth;
+			var h2=obj2.offsetHeight;
+			if(l1+w1<l2||t1+h1<t2||t1>t2+h2||l1>l2+w2){
+				return;
+			}else{
+				fnCallBack();
+			}
+		},
+		//单兵作战
+		fnOne:function(){
+			var self=this;
+			var oLi=this.aLi[Math.round(Math.random()*(self.aLi.length-1))];
+			oLi.timer=null;
+			oLi.timer=setInterval(function(){
+				var a=self.oPlane.offsetLeft-self.fnOffset(oLi).left;
+				var b=self.oPlane.offsetTop-self.fnOffset(oLi).top;
+				//console.log(a,b)
+				var c=Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+				var sx=oLi.speed*a/c;
+				var sy=oLi.speed*b/c;
+				oLi.style.top=oLi.offsetTop+sy+'px';
+				oLi.style.left=oLi.offsetLeft+sx+'px';
+				//游戏结束,我认为应该放在蜜蜂移动函数里进行判断比较好
+				self.fnImpact(self.oPlane,oLi,function(){
+					clearInterval(oLi.timer);
+					alert('游戏结束');
+					window.location.reload();
+				})
+			},30)
+		},
+	}
+	game.fnInit();//调用
+}
+</script>
+</head>
+<body>
+<div id="parent">
+	<div class="start">开始游戏</div>
+</div>
+</body>
+</html>

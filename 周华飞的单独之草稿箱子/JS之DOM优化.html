@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+var oBody=document.getElementsByTagName('body')[0];	
+	//如果把DOM比作一个岛，那么JS就是另一个岛，而两个岛屿之间建立联系就需要通过桥，过桥就要收取过桥费，优化的原则就是尽量减少过桥的次数
+	/*
+	for(var i=2000;i>0; i--)			//未优化  每次通过JS执行DOM都会收取'过桥费'降低浏览器性能
+	{
+		oBody.innerHTML+=i+'<br />';		//过了2000次桥
+	}
+	*/	
+	/*
+	var str='';					
+	for(var i=2000;i>0; i--)			//优化  
+	{
+		str+=i+'<br />';			//通过JS自身的变量把值都存储起来，最后再赋值给DOM，只过了1次桥
+	}
+	oBody.innerHTML=str;
+	*/
+	/*
+	setInterval(function()
+	{
+		//oBody.removeChild(oBody.children[0]);	//只删除元素节点
+		oBody.removeChild(oBody.firstChild);	//删除全部节点(文本节点和元素节点)
+	},30);
+	*/
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>drawRing</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#fff;}
+canvas{ display:block; background:#fff; margin:150px auto;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	var oCanvas=document.querySelectorAll('canvas')[0];
+	drawRing(oCanvas);
+	function drawRing(oCanvas){
+		var x=200;
+		var y=200;
+		var r=199;
+		var oContext=oCanvas.getContext('2d');
+		oContext.save();
+		oContext.strokeStyle=gradient(oCanvas);
+		oContext.beginPath();
+		oContext.clearRect(0,0,oCanvas.width,oCanvas.height);
+		oContext.lineWidth=2;
+		oContext.arc(x,y,r,0,360*Math.PI/180,false);
+		oContext.stroke();
+		oContext.closePath();
+		oContext.restore();
+	}
+	function gradient(oCanvas){
+		var oContext=oCanvas.getContext('2d');
+		var oGradient=oContext.createLinearGradient(0,0,oCanvas.width,oCanvas.height);
+		oGradient.addColorStop(0,'rgb(255,0,0)');
+		oGradient.addColorStop(0.1,'rgb(255,165,0)');
+		oGradient.addColorStop(0.3,'rgb(255,255,0)');
+		oGradient.addColorStop(0.5,'rgb(0,255,0)');
+		oGradient.addColorStop(0.7,'rgb(0,127,255)');
+		oGradient.addColorStop(0.9,'rgb(0,0,255)');
+		oGradient.addColorStop(1,'rgb(139,0,255)');
+		return oGradient;
+	}
+},false)
+</script>
+</head>
+<body>
+<canvas width="400" height="400">您的浏览器不支持canvas</canvas>
+</body>
+</html>

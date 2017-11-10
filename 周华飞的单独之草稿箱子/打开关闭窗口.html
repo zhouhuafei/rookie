@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style></style>
+<script>
+window.onload=function()
+{
+	var oClose=document.getElementById('close');
+	var oOpen=document.getElementById('open');
+	alert(window.navigator.userAgent);
+	alert(window.location);	
+	oOpen.onclick=function()
+	{
+		window.open('about:blank','_blank');
+		//open有返回值
+		//oNewWin=window.open('about:blank','_blank');
+		//oNewWin.document.write();	
+	}
+	oClose.onclick=function()
+	{
+		if(confirm('你TM不是和我开玩笑？你确定真的要关闭窗口？')){window.close();};	
+	}
+}
+</script>
+</head>
+
+<body>
+<input type="button" id="open"  value="打开窗口"/>
+<input type="button" id="close"  value="关闭窗口"/>
+</body>
+</html>

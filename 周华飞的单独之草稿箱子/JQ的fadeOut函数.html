@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+span{width:200px; display:block; margin:0 auto; }
+div{ width:100px; height:100px; border-radius:50px;}
+#div1{ background:#F00;}
+#div2{ background:#0F0;}
+#div3{ background:#F0F;}
+#btn{ width:200px; background:#000; text-align:center; line-height:30px; height:30px; color:#FFF; outline:none; border:none;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('#btn').click(function()
+	{
+		$("#div1").fadeOut();
+		$("#div2").fadeOut("show");
+		$("#div3").fadeOut(3000);	
+	});	
+});
+</script>
+</head>
+
+<body>
+<span>
+    <button id="btn">淡出视线</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</span>
+</body>
+</html>

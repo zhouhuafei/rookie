@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>touchMove2</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; color:#000; text-decoration:none; outline:none;}
+nav{ width:640px; margin:0 auto; position:relative; overflow:hidden;}
+nav ul{ width:250%; background:#000; position:relative; left:0; top:0;}
+nav ul:after{ content:""; display:block; height:0; overflow:hidden; clear:both;}
+nav li{ width:10%; text-align:center; height:100%; font-size:20px; line-height:2; background:#FF0; float:left;}
+nav a{ display:block; color:#00F;}
+@media (min-width: 480px) and (max-width: 639px){
+	nav{ width:100%;}	
+}
+@media (min-width: 320px) and (max-width: 479px){
+	nav{ width:100%;}		
+}
+</style>
+</head>
+<body>
+<nav>
+	<ul>
+        	<li><a>1</a></li>
+        	<li><a>2</a></li>
+        	<li><a>3</a></li>
+        	<li><a>4</a></li>
+        	<li><a>5</a></li>
+        	<li><a>6</a></li>
+        	<li><a>7</a></li>
+        	<li><a>8</a></li>
+        	<li><a>9</a></li>
+        	<li><a>10</a></li>
+        </ul>
+</nav>
+<script>
+var oNav=document.getElementsByTagName('nav')[0];
+var oUl=document.getElementsByTagName('ul')[0];
+var aLi=document.getElementsByTagName('li');
+var iLen=aLi.length;
+var iLiWidth=aLi[0].offsetWidth;
+var iNavWidth=oNav.offsetWidth;
+oUl.addEventListener('touchstart',start,false);
+function start(event){
+	var touch=event.touches[0];
+	var disx=touch.clientX-oUl.offsetLeft;
+	document.addEventListener('touchmove',move,false);
+	document.addEventListener('touchend',end,false);
+	//event.stopPropagation();//(阻止冒泡,这句加不加都没关系)
+	//event.preventDefault();//(阻止默认事件,这句UC必须加,但是加了之后连接就无效了)			
+	function move(event){
+		var touch=event.touches[0];
+		var l=touch.clientX-disx
+		l>0&&(l=0);
+		l<=iNavWidth-iLen*iLiWidth&&(l=iNavWidth-iLen*iLiWidth);
+		oUl.style.left=l+'px';
+	}
+	function end(){
+		document.removeEventListener('touchmove',move,false);
+		document.removeEventListener('touchend',end,false);				
+	}
+}
+window.addEventListener('resize',resize,false);
+function resize(){
+	iLiWidth=aLi[0].offsetWidth;
+	iNavWidth=oNav.offsetWidth;
+	oUl.style.left=0;	
+}
+</script>
+</body>
+</html>

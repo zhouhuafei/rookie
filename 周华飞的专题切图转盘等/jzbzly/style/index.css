@@ -1,0 +1,461 @@
+﻿body, h1, h2, h3, h4, h5, h6, hr, div,p,blockquote,dl, dt, dd, ul, ol, li,pre, form, fieldset, legend, button, input, textarea,th, td,img
+{
+	border:none;
+	margin:0;
+	padding:0;
+	font-family:Microsoft Yahei,Georgia,Arial, sans-serif;
+}
+body{margin:0 auto;height:auto;color:#000;font-size:12px;background:#fff; color:#4b4b4b;}
+ul{list-style-type:none;}
+a{color:#333;text-decoration:none;transition: all 0.2s linear 0s;}
+div.clear{clear:both;}
+#banner{width:100%;height:564px;overflow:hidden;text-align:center;margin:0 auto;position:relative;}
+#banner .bannershow ul{width:100%;height:565px;text-align:center;}
+#banner .bannershow li div{width:1000px;height:565px;margin:0 auto;position:relative;}
+/*#banner .bannershow li.ban1{width:100%;height:565px;background:url(../images/banner1.jpg) no-repeat center center;}*/
+#banner .bannershow li.ban2{width:100%;height:565px;background:url(../images/banner.jpg) no-repeat center center;}
+#banner .bannershow li a{display:block;width:179px;height:46px;line-height:46px;text-align:center;color:#fff;font-size:24px;border-radius:3px;background:#008077;position:absolute;}
+#banner .bannershow li a:hover{background:#f80;}
+#banner .bannershow li.ban1 a{top:350px;left:200px;}
+#banner .bannershow li.ban2 a{top:350px;left:260px;}
+#banner .bannernum{display:none;bottom:15px;height:10px;left: 0;position: absolute;text-align: center;width: 100%;z-index: 3;}
+#banner .bannernum li {background:#fff;cursor: pointer; display:inline-block;width: 15px;height: 15px;border-radius:50px;margin-right: 10px;text-align: center;}
+#banner .bannernum li.inline{*display:inline;}
+#banner .bannernum li.on{background:#008077;}
+#banner .prev,#banner .next {display:none;background: url(../images/btn.png) no-repeat;height: 100px;position:absolute;top:44%;width: 40px;}
+#banner .prev {left:5px;}
+#banner .next {background-position: right center;right:5px;}
+#nav{width:100%;height:50px;background:#008077;position:absolute;top:759px;z-index:80;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);}
+#nav div{width:1000px;height:50px;margin:0px auto;}
+#nav span{display:block;width:220px;height:50px;line-height:50px;float:left;text-align:center;color:#fff;font-size:22px;}
+#nav ul{height:50px;float:left;}
+#nav ul li{width:120px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:18px;float:left;cursor:pointer;transition: all 0.3s linear 0s;}
+#nav ul li:hover{background:#00554f;}
+#nav ul li.select{background:#00554f;}
+#main{width:100%;padding:51px 0px;}
+#main div.til{width:1001px;height:30px;line-height:30px;margin:0 auto;padding:35px 0;overflow:hidden;color:#fa7404;font-size:30px;text-indent:50px;background:url(../images/mainTilBg.png) no-repeat left center;}
+#main div.content{width:1001px;margin:0 auto;}
+#Item1{width:100%;background:#fff;overflow:hidden;}
+#Item1 .content{width:100%;overflow:hidden;position:relative;}
+
+#Item2{width:100%;background:#f5f5f5;overflow:hidden;}
+#Item2 .content{width:100%;overflow:hidden;position:relative;}
+
+#Item3{width:100%;background:#fff;overflow:hidden;}
+
+#Item4{width:100%;background:#f5f5f5;overflow:hidden;}
+#Item4 .content{position:relative;}
+#Item4 .Item4Show{width:997px;height:382px;margin:0 auto;overflow:hidden;}
+#Item4 .Item4Show ul{width:997px;height:382px;}
+#Item4 .Item4Show ul li{width:997px;height:382px;}
+#Item4 .Item4Show ul li img{display:block;width:997px;height:347px;}
+#Item4 .Item4Show ul li p{width:100%;height:25px;text-align:center;font-size:18px;padding:5px 0px;color:#666;}
+#Item4 .Item4LeftBtn{width:39px;height:54px;background:url(../images/Item4LeftBtn.png) no-repeat;position:absolute;left:1px;top:155px;cursor:pointer;z-index:70;}
+#Item4 .Item4RightBtn{width:39px;height:54px;background:url(../images/Item4RightBtn.png) no-repeat;position:absolute;right:0px;top:155px;cursor:pointer;z-index:70;}
+#Item5{width:100%;background:#fff;overflow:hidden;}
+#Item5 div.til{padding:29px 0 0 0;background-position:left bottom;}
+#Item5 dl{width:100%;height:320px;margin:33px 0 0 0;padding:0 0 33px 0;border-bottom:1px dashed #4b4b4b;}
+#Item5 dl dt{width:457px;height:298px;border:2px solid #dcdcdc;float:left;}
+#Item5 dl dd{width:450px;height:298px;float:right;position:relative; overflow:hidden;}
+#Item5 dl dt img{ width:457px; height:298px;}
+#Item5 dl dd ul li{width:100%;height:25px;line-height:22px;font-size:20px;color:#646464;padding:0 0 0 30px;margin-bottom:10px;}
+#Item5 dl dd ul li.icon1{background:url(../images/Item5_icon4.jpg) no-repeat left center;color:#fa7404;}
+#Item5 dl dd ul li.icon2{background:url(../images/Item5_icon2.jpg) no-repeat left center;}
+#Item5 dl dd ul li.icon3{background:url(../images/Item5_icon3.jpg) no-repeat left center;}
+#Item5 dl dd p{padding:5px;text-indent:26px;font-size:16px;line-height:160%;}
+#Item5 dl dd a{display:block;width:216px;height:25px;line-height:25px;position:absolute;left:20%;bottom:0px;font-size:16px;margin-top:8px;}
+#Item5 dl dd a:hover{background:#f60;}
+#Item5 dl.left dt{float:right;}
+#Item5 dl.left dd{float:left;}
+#Item5 dl.last{padding:0px;border:0px;}
+#Item5 dl.d2 li.icon1{background:url(../images/Item5_icon5.jpg) no-repeat left center;}
+#Item5 dl.d3 li.icon1{background:url(../images/Item5_icon6.jpg) no-repeat left center;}
+#Item5 dl.d4 li.icon1{background:url(../images/Item5_icon7.jpg) no-repeat left center;}
+#Item5 dl.d5 li.icon1{background:url(../images/Item5_icon8.jpg) no-repeat left center;}
+#Item6{width:100%; padding-bottom:100px; background:#f5f5f5;overflow:hidden;}
+
+#Item7{width:100%;height:635px;background:#f5f5f5;overflow:hidden;}
+/*#Item7 .content{position:relative;}*/
+#Item8{width:100%;overflow:hidden;}
+#Item9{width:100%;height:542px;background:#fff;overflow:hidden;}
+#Item10{width:100%;height:355px;background:#f5f5f5;overflow:hidden;}
+#Item10 ul{width:100%;height:193px;text-align:center;margin-top:20px;}
+#Item10 ul li{width:243px;height:191px;border:1px solid #008077;float:left;margin-right:5px;}
+#Item11{width:100%;background:#fff;overflow:hidden;}
+
+/*/*通用*/
+.lv{
+	color:#008077 !important;
+	font-size:24px;
+	}
+a.an{
+	display:block;
+	font-size:16px;
+	text-align:center;
+	color:#fff;
+	background:#008077;
+	padding:5px;
+	}
+a.an:hover{background:#f60;}
+
+
+
+/*以下*/
+
+.box1{
+	border-bottom:1px solid #ccc;
+	overflow:hidden;
+	}
+.box1 ul li{
+	float:left;
+	height:42px;
+	line-height:42px;
+	padding:0 10px;
+	cursor:pointer;
+	background:#d2d2d2;
+	color:#4b4b4b;
+	margin-left:60px;
+	font-size:20px;
+	}
+.box1 ul li:hover{
+	background:#008077;
+	color:#fff;
+	}
+.box1 ul li.click {
+	background:#008077;
+	color:#fff;
+	}
+.box1_con{
+	overflow:hidden;
+	clear:both;
+	}
+
+.box1_con .nan_tit{
+	text-align:center;
+	margin-top:50px;
+	margin-bottom:30px;
+	}
+.nan_con1{
+	overflow:hidden;
+	}
+.nan_con1 a{
+	display:block;
+	padding:2px;
+	width:307px;
+	height:270px;
+	float:left;
+	border:1px solid #d6d6d6;
+	margin-right:30px;
+	position:relative;
+	text-decoration:none;
+}
+.nan_con1 a span{
+   display:block;
+   width:307px;
+   height:42px;
+   line-height:42px;
+   text-decoration:none;
+   background:#d2d2d2;
+   font-size:20px;
+   color:#555;
+   position:absolute;
+   bottom:10px;
+   text-align:center;
+   transition: all 0.2s linear 0s;
+}
+.nan_con1 a span.select{
+   background:#018077;
+   color:#fff;
+}
+.nan_con1 a:hover{
+	border:1px solid #018077;
+	}
+.nan_con1 a img{
+	width:307px;
+	height:270px;
+	}
+.box1_con_p{
+	width:216px;
+	margin:0 auto;
+	margin-top:50px;
+	margin-bottom:40px;
+	}
+
+/*=================img1 end=================*/
+.box2{
+	border-bottom:1px solid #ccc;
+	overflow:hidden;
+	}
+.box2 ul li{
+	float:left;
+	height:42px;
+	line-height:42px;
+	padding:0 34px;
+	cursor:pointer;
+	background:#d2d2d2;
+	color:#4b4b4b;
+	margin-right:15px;
+	font-size:20px;
+	}
+.box2 ul li:hover{
+	background:#008077;
+	color:#fff;
+	}
+.box2 ul li.click {
+	background:#008077;
+	color:#fff;
+	}
+
+.box2_con{
+	margin:40px 0;
+	clear:both;
+	overflow:hidden;
+	}
+.box2_con li div{
+	overflow:hidden;
+	}
+.box2_img{
+	float:left;
+	}
+.box2_img img{
+	border:2px solid #d1d3d2;
+	width:342px;
+	height:262px;
+	}
+.box2_content{
+	float:right;
+	width:580px;
+	}
+.box2_content p{
+	font-size:18px;
+	line-height:30px;
+	}
+.box2_cen{
+	text-indent:2em;
+	}
+.box2_content .box2_tit{
+	margin-bottom:36px;
+	font-size:30px;
+	}
+.box2_an{
+	}
+.box2_an a{
+	width:216px; 
+	height:36px; 
+	line-height:36px;
+	margin:0 auto;
+	}
+.box3_an{
+	width:250px;
+	margin:0 auto;
+	}
+.box3_an a{
+	float:left;
+	margin-left:2px;
+	font-size:15px;
+	}
+
+
+/*=================img2 end=================*/
+.box4{
+	
+	overflow:hidden;
+	}
+.box4 div{
+	overflow:hidden;
+	padding:13px 0 12px 13px;
+	margin-top:50px;
+	margin-bottom:50px;
+	background:#d2d2d2;
+	}
+.box4 div a{
+	padding:3px;
+	width:300px;
+	height:280px;
+	border:2px solid #c8c8c8;
+	overflow:hidden;
+	display:block;
+	float:left;
+	background:#fff;
+	}
+.box4 div a:hover{
+	border:2px solid #008077;
+	}
+.box4 div a img{
+	width:300px;
+	height:221px;
+	}
+.box4 div a p{
+	text-align:center;
+	margin-top:18px;
+	font-size:16px;
+	font-family:'微软雅黑';
+	}
+.box4 div span{
+	float:left;
+	margin-top:50px;
+	}
+.box4 p{
+	width:216px; 
+	margin:0 auto;
+	margin-bottom:50px;
+	}
+
+
+
+
+/*=================img3 end=================*/
+
+
+.img8{
+	margin-bottom:50px;
+	overflow:hidden;
+	height:268px;
+}
+.img8 dl dd{
+	width:49px;
+	float:left;
+	position:relative;
+}
+.img8 dl dd a{display:block;width:48px;overflow:hidden;float:left;}
+.img8 dl dd p{
+   width:300px;
+	height:268px;
+	float:left;
+	overflow:hidden;
+	z-index:9;
+	background:#CCC;
+	display:none;
+}
+
+/* videobox */
+.videobox{
+	padding:5px;
+	margin:0 auto;
+	width:1000px;
+	herit:405px;
+	overflow:hidden;
+	}
+.video-img{
+	width:455px;
+	height:410px;
+	overflow:hidden; 
+	float:left;
+	background:#4b4b4b;
+	}
+.video-img div{
+	overflow:hidden;
+	width:440px;
+	height:320px;
+	margin:6px 0 0 5px;
+	z-index:2;
+}
+.video-img div span{
+   display:block;
+   width:440px;
+   height:320px;
+   line-height:320px;
+   text-align:center;
+   color:#fff;
+   font-size:24px;
+   background:#ccc;
+}
+.video-list{
+	float:left;
+	overflow:hidden;
+	}
+.video-list li{
+	width:532px;
+	height:71px;
+	overflow:hidden;
+	position:relative;
+	padding:5px 0 5px 8px;
+	cursor:pointer;
+	background:#d2d2d2;
+	outline-style:none;
+	border-bottom:1px dashed #eee;
+	}
+.video-list li img{
+	width:120px;
+	height:69px;
+	border:1px solid #fff;
+	}
+.video-list li .icon-video{
+	position:absolute;
+	left:45px;
+	top:20px;
+	width:33px;
+	height:33px;
+	z-index:2;
+	border:0px;
+	}
+.video-list li.now{
+	background:#888;
+	}
+.video-list li.now .icon-video{
+	display:none;
+	
+	}
+
+.video_con{
+	color:#4b4b4b;
+	font-size:12px;
+	float:left; 
+	width:395px;
+	overflow:hidden;
+	margin-left:10px;
+	line-height:20px;
+	line-height:150%;
+	}
+.video_tit{
+	color: #008077;
+	font-size: 16px;
+	font-weight: bold;
+	}
+.video-list li.now .video_tit{
+	color:#fa7404;
+	}
+.video-list li.now .video_con{
+	color:#fff;
+	}
+.video-list li.now img{
+	border:1px solid #fa7404;
+	}
+
+
+#DoctorContent{width:1000px;margin:0 auto;position:relative;}
+#DoctorShow{width:838px;height:502px;overflow:hidden;margin:0 auto;}
+#DoctorShow dl{width:838px;height:502px;position:relative;}
+#DoctorShow dl dt{width:503px;height:268px;float:left;position:relative;}
+#DoctorShow dl dt a{display:block;width:130px;height:30px;line-height:30px;text-align:center;color:#fff;font-size:16px;border:1px solid #b1b3b8;background:#008077;position:absolute;bottom:0px;left:200px;}
+#DoctorShow dl dt a:hover{background:#f60;border-color:#f60;}
+#DoctorShow dl dd{width:335px;height:260px;float:right;}
+#DoctorShow dl dd div.DoctorInfo{font-size:35px;color:#fa7404;text-align:center;font-weight:normal;text-indent:0px;background:none;}
+#DoctorShow dl dd div.DoctorName{font-size:110px;color:#008077;text-align:center;font-weight:normal;text-indent:0px;background:none;}
+#DoctorShow dl dd p{font-size:15px;text-indent:26px;line-height:170%;color:#646464;padding:5px 0 0 0;}
+#DoctorShow dl dd div.btn{width:100%;height:65px;background:#f2f2f2;padding:6px 0 0 0;position:absolute;bottom:0px;}
+#DoctorShow dl dd div.btn div{width:73px;height:57px;background:#fff;border:1px solid #ccc;margin-left:7px;float:left;text-align:center;color:#008077;font-size:14px;}
+#DoctorLeftBtn{width:65px;height:119px;background:url(../images/DoctorLeftBtn.png) no-repeat;position:absolute;left:1px;top:160px;cursor:pointer;z-index:100;}
+#DoctorRightBtn{width:65px;height:119px;background:url(../images/DoctorRightBtn.png) no-repeat;position:absolute;right:0px;top:160px;cursor:pointer;z-index:100;}
+
+
+#Item7 .content{width:100%;height:268px;position:relative;}
+#Item7 .doctorShow{width:838px;height:260px;overflow:hidden;margin:0 auto;}
+#Item7 dl{width:838px;height:502px;position:relative;}
+#Item7 dl dt{width:450px;height:502px;float:left;position:relative;text-align:center;}
+#Item7 dl dt a{display:block;width:125px;height:26px;line-height:26px;text-align:center;color:#fff;font-size:16px;border:1px solid #b1b3b8;background:#008077;position:absolute;bottom:0px;left:150px;}
+#Item7 dl dt a:hover{background:#f60;border-color:#f60;}
+#Item7 dl dd{width:370px;height:502px;float:right;}
+#Item7 dl dd h2{font-size:35px;color:#fa7404;font-weight:normal;}
+#Item7 dl dd h1{font-size:85px;color:#008077;font-weight:normal;}
+#Item7 dl dd h1 span{font-size:40px;color:#fa7404;padding:0 0 0 10px;}
+#Item7 dl dd div.info{padding:20px 0px;}
+#Item7 dl dd div.info p{height:25px;font-size:18px;color:#4b4b4b;padding-left:30px;background:url(../images/doctorShow_icon.jpg) no-repeat left 70%;margin-bottom:15px;}
+#Item7 dl dd p.sc{width:95%;font-size:18px;color:#4b4b4b;line-height:200%;}
+#Item7 dl dd p.sc span{color:#008077;}
+#Item7 dl dd div.btn{width:335px;height:65px;background:#f2f2f2;padding:6px 0 0 0;position:absolute;bottom:0px;}
+#Item7 dl dd div.btn div{width:73px;height:57px;background:#fff;border:1px solid #ccc;margin-left:7px;float:left;text-align:center;color:#008077;font-size:14px;}
+#Item7 .doctorLeftBtn{width:65px;height:119px;background:url(../images/DoctorLeftBtn.png) no-repeat;position:absolute;left:1px;top:160px;cursor:pointer;z-index:100;}
+#Item7 .doctorRightBtn{width:65px;height:119px;background:url(../images/DoctorRightBtn.png) no-repeat;position:absolute;right:0px;top:160px;cursor:pointer;z-index:100;}
+
+*/

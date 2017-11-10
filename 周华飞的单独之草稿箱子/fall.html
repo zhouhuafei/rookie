@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>fall</title>
+<style>
+body{ background:#000;}
+div{ width:100px; height:20px; position:absolute; animation:circle 0.2s linear infinite; color:#0F0; text-align:center; line-height:20px;}
+@keyframes circle{
+	form	{ transform:rotate(0deg);}
+	to	{ transform:rotate(360deg);}	
+}
+</style>
+<script>
+window.onload=function(){
+	box();	
+	setInterval(box,1000);		
+}
+function box(){
+	var obj=document.createElement('div');
+	var iClientWidth=document.documentElement.clientWidth;
+	var iBoxWidth=200;
+	var left=Math.round((iClientWidth-iBoxWidth)*Math.random())+'px';	
+	obj.innerHTML=Math.round(Math.random()*100).toString(2);
+	obj.style.color='#f'+parseInt(Math.random()*89+10);
+	obj.style.top=0;
+	obj.style.left=left;
+	moveTop(obj);
+	document.body.appendChild(obj);
+}
+function moveTop(obj){
+	obj.timer=setInterval(function(){
+		if(obj.offsetTop>=700){
+			clearInterval(obj.timer);
+			document.body.removeChild(obj);				
+		}else{
+			obj.style.top=obj.offsetTop+1+'px';
+		}
+	},30)
+}
+</script>
+</head>
+<body>
+</body>
+</html>

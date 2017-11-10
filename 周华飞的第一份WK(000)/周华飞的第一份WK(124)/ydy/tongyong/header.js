@@ -1,0 +1,27 @@
+// JavaScript Document
+document.writeln("<style>");
+document.writeln(".bgGrey_grey{ background:#f0f0f0;}");
+document.writeln("#toptips{ font-size:1.4rem;}");
+document.writeln("/*header*/");
+document.writeln("header{ padding:11px 0 10px; text-align:center;}");
+document.writeln("/*nav*/");
+document.writeln("nav img{ width:20px; height:20px; border:1px solid #fff; border-radius:50%; margin-right:5px;}");
+document.writeln("nav li{ float:left; border:1px solid #cfcfcf; margin:0 4px 5px 0;}");
+document.writeln("nav li a{ display:block; font-size:1.4rem; color:#333333; width:102px; height:38px; text-align:center; line-height:38px;}");
+document.writeln("nav li a:hover{ color:#f00;}");
+document.writeln("</style>");
+document.writeln("<header class=\"w320 bgGrey_grey noPt\">");
+document.writeln("<!--header-->");
+document.writeln("<header class=\"w320\"><img src=\"tongyong/images/header.png\" /></header>");
+document.writeln("<!--nav-->");
+document.writeln("<nav class=\"w320\">");
+document.writeln("	<ul class=\"clearFix\">");
+document.writeln("        	<li><a href=\"/html/about/96252038.html\"><img src=\"tongyong/images/nav1.jpg\" />医院简介</a></li>");
+document.writeln("        	<li><a href=\"/html/zhuanjia/\"><img src=\"tongyong/images/nav2.jpg\" />专家团队</a></li>");
+document.writeln("        	<li class=\"noMr\"><a href=\"/html/shebei/\"><img src=\"tongyong/images/nav3.jpg\" />医院设备</a></li>");
+document.writeln("        	<li class=\"noMb\"><a href=\"/html/anli/\"><img src=\"tongyong/images/nav4.jpg\" />康复案例</a></li>");
+document.writeln("        	<li class=\"noMb\"><a href=\"javascript:void(0);return false;\" onclick=\"openZoosUrl();return false;\"><img src=\"tongyong/images/nav5.jpg\" />预约挂号</a></li>");
+document.writeln("        	<li class=\"noMr noMb\"><a href=\"/html/about/96330965.html\"><img src=\"tongyong/images/nav6.jpg\" />来院路线</a></li>");
+document.writeln("        </ul>");
+document.writeln("</nav>");
+document.writeln("</header>");

@@ -1,0 +1,53 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+.case{ padding-bottom:20px;}
+.case .til{ font-size:36px; width:160px; font-weight:bold; text-align:center; line-height:70px; height:70px; border-bottom:2px solid #0aa0b4; margin-top:40px;}
+.case ol{ margin:34px 0 46px;}
+.case ol li{ height:45px; line-height:45px; width:93px; padding-left:50px; font-size:16px; background:url(../images/case.png) left top no-repeat #0aa0b4; color:#fff; margin-right:8px;}
+.case ol li.active{ background-color:#e74c33;}
+.case ol li.l1{ background-position:left -17px;}
+.case ol li.l2{ background-position:left -83px;}
+.case ol li.l3{ background-position:left -160px;}
+.case ol li.l4{ background-position:left -233px;}
+.case ol li.l5{ background-position:left -310px;}
+.case ol li.l6{ background-position:left -386px;}
+.case ol li.l7{ background-position:left -455px;}
+.case ol li.l8{ background-position:left -525px;}
+.case ul{ overflow:hidden; width:1200px; height:600px;}
+.case ul li{ overflow:hidden; width:1200px; height:600px;}
+.case ul li div{ width:326px; float:left; margin:0 37px 40px;}
+.case ul img{ width:326px; height:216px;}
+.case ul p{ transition:0.4s; font-size:14px; color:#666666; margin-top:30px; text-align:center;}
+.case ul a:hover p{ color:#f00;}
+
+.beaute{ padding-bottom:100px;}
+.beaute,.beaute a{ color:#444444;}
+.beaute .til{ font-size:24px; padding-left:16px; border-left:2px solid #0aa0b4; height:28px; line-height:28px; margin-bottom:30px;}
+.beaute .side{ width:406px;}
+.beaute .side .img{ margin-bottom:30px; cursor:pointer;}
+.beaute .side .vedio{ background:url(../images/text-bg.jpg) center center no-repeat #000;}
+.beaute .side dl{ margin-bottom:20px;}
+.beaute .side dt{ width:41px; height:41px; margin-right:16px; background:url(../images/case.png) left top no-repeat; margin-top:4px;}
+.beaute .side dt.d1{ background-position:left -864px;}
+.beaute .side dt.d2{ background-position:left -972px;}
+.beaute .side dt.d3{ background-position:left -1066px;}
+.beaute .side h4{ font-size:14px; margin-bottom:10px;}
+.beaute .side h5{ font-size:24px;}
+.beaute .section{ width:728px;}
+.beaute .section dl{ margin-bottom:90px;}
+.beaute .section dt{ width:115px;}
+.beaute .section h4{ margin:0 auto; width:92px; height:92px; text-align:center; line-height:92px; background:#0aa0b4; font-size:20px; color:#fff; border-radius:50%;}
+.beaute .section h5{ margin-top:14px; font-size:16px; text-align:center;}
+.beaute .section dd{ width:594px;}
+.beaute .section h2{ padding-bottom:16px; font-size:14px; border-bottom:1px dashed #444444; position:relative;}
+.beaute .section h2 div{ position:absolute; right:0; top:0; width:50px; height:20px;}
+.beaute .section h2 a{ width:20px; height:20px; background:url(../images/case.png) left top no-repeat;}
+.beaute .section h2 a.fl{ background-position:-16px -612px;}
+.beaute .section h2 a.fr{ background-position:-16px -720px;}
+.beaute .section h3{ font-size:18px; margin:15px 0 10px;}
+.beaute .section p{ font-size:14px; line-height:20px; height:20px;}

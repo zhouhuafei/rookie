@@ -1,0 +1,59 @@
+@charset "gb2312";
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"Î¢ÈíÑÅºÚ";}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w300{ width:300px; margin:0 auto; overflow:hidden;}
+.w320{ width:320px; margin:0 auto; overflow:hidden;}
+.til{ width:320px; text-align:center; height:36px; line-height:36px; font-size:18px; background:#a2151e; color:#fff; margin:20px auto;}
+.tils{ height:26px; background:#a2151e; margin-bottom:10px; position:relative;}
+.tils span{ width:110px; height:20px; line-height:20px; font-size:12px; color:#a2151e; background:#fff; position:absolute; bottom:0; left:7px;}
+.tils span.width{ width:auto;}
+.tils a.phone{ background:none; font-size:12px; color:#fff; height:12px; line-height:12px; position:absolute; right:4px; top:7px;}
+.tils em{ vertical-align:middle; margin-right:4px;}
+.tils span em{ width:23px; margin:0 0 0 4px;}
+.dash_line{ width:320px; height:0px; margin:20px auto; border-top:1px dashed #cccccc;}
+
+/*bdMap*/
+#bdMap{ width:298px; height:248px; border:1px solid #dbdbdb; margin:0 auto;}
+#bdMapTxt{ width:300px; margin:0 auto; padding-top:10px;}
+#bdMapTxt p{ font-size:12px; color:#666666;}
+#bdMapTxt strong{ color:#444444; font-weight:bold;}
+#bdMapTxt a{ color:#a2151e;}
+#bdMapTxt a.grey{ font-size:12px; color:#666666;}
+
+/*method*/
+.method{ color:#66666; font-size:12px;}
+.method p{ line-height:24px; padding-left:22px; margin-bottom:7px;}
+.method p.noMb{ margin-bottom:0;}
+.method p.mb_2{ margin-bottom:2px;}
+.method p.mb_4{ margin-bottom:4px;}
+.method p.mb_12{ margin-bottom:12px;}
+.method p.red{ color:#e30000;}
+.method strong{ font-weight:bold;}
+.method a{ color:#a2151e;}
+.method a.btn{ display:block; width:264px; text-align:center; height:36px; line-height:36px; color:#fff; font-size:16px; background:#ff6c00; border-radius:10px; margin:10px auto 2px; box-shadow:1px 1px 1px #000,-1px 1px 1px #000;}
+.method1 .content{ background:url(../images/tils1_bg.jpg) 5px top no-repeat;}
+.method2 .content{ background:url(../images/tils2_bg.jpg) 5px top no-repeat;}
+.method3 .content{ background:url(../images/tils3_bg.jpg) 5px top no-repeat;}
+.method4 .content{ background:url(../images/tils4_bg.jpg) 5px top no-repeat;}
+.method5 .content{ background:url(../images/tils5_bg.jpg) 5px top no-repeat;}
+.method6 .content{ background:url(../images/tils6_bg.jpg) 5px top no-repeat;}
+.method7 .content{ background:url(../images/tils7_bg.jpg) 5px top no-repeat;}
+.method8 .content{ background:url(../images/tils8_bg.jpg) 5px top no-repeat;}
+
+/*flow*/
+.flow .img{ width:277px; margin:0 auto;}

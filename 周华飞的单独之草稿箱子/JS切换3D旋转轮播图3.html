@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS切换3D旋转轮播图3</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+ul{ width:500px; height:500px; background:#000; position:relative; margin:200px auto; border-radius:50%;}
+ul li{ width:100px; text-align:center; height:100px; line-height:100px; background:#fff; border-radius:50%; background:#CCC; position:absolute; font-size:24px; color:#f00; transition:1s;}
+ul li.pos1{ left:100px; top:200px; width:300px; height:300px; line-height:300px;}
+ul li.pos2{ left:0; top:200px;}
+ul li.pos3{ left:100px; top:0;}
+ul li.pos4{ left:300px; top:0;}
+ul li.pos5{ left:400px; top:200px;}
+#prev,#next{ width:40px; height:40px; text-align:center; line-height:40px; color:#fff; font-size:16px; background:#000; border-radius:50%; position:absolute; top:230px; cursor:pointer;}
+#prev{ right:-80px;}
+#next{ left:-80px;}
+</style>
+<script>
+window.onload=function(){
+	var oUl=document.getElementsByTagName('ul')[0];
+	var aLi=document.getElementsByTagName('li');
+	var oPrev=document.getElementById('prev');
+	var oNext=document.getElementById('next');
+	var arr=[];
+	var timer=null;
+	//获取每一个元素的样式并添加到数组中
+	for(var i=0; i<aLi.length;i++){
+		arr.push([getStyle(aLi[i],'width'),getStyle(aLi[i],'height'),getStyle(aLi[i],'left'),getStyle(aLi[i],'top'),getStyle(aLi[i],'lineHeight')]);
+		//console.log(arr);
+	}
+	//从数组中获取数据并设置每一个元素的样式
+	//我用的css3的transition属性,你可以使用JQ的animate函数来设置
+	function set(){		
+		for(var i=0; i<aLi.length;i++){
+			aLi[i].style.width=arr[i][0];
+			aLi[i].style.height=arr[i][1];
+			aLi[i].style.left=arr[i][2];
+			aLi[i].style.top=arr[i][3];
+			aLi[i].style.lineHeight=arr[i][4];	
+		}	
+	}
+	/*next*/
+	function next(){
+		arr.unshift(arr[arr.length-1]);
+		arr.pop(arr[arr.length-1]);
+		//从数组中获取数据并设置每一个元素的样式
+		//我用的css3的transition属性,你可以使用JQ的animate函数来设置
+		set();
+	}
+	/*prev*/
+	function prev(){
+		arr.push(arr[0]);
+		arr.shift(arr[0]);
+		set();
+	}
+	//点击执行
+	oNext.onclick=next;
+	oPrev.onclick=prev;
+	//自动执行
+	timer=setInterval(prev,5000);	
+	//优化体验
+	oUl.onmouseover=function(){clearInterval(timer);}
+	oUl.onmouseout=function(){timer=setInterval(prev,5000);}
+}
+//我这里是用来获取元素的样式的,你可以使用JQ的css函数来获取
+function getStyle(obj,attr){return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];}
+</script>
+</head>
+<body>
+<ul>
+	<span id="prev">顺</span>
+	<span id="next">逆</span>
+	<li class="pos1">5</li>
+	<li class="pos2">4</li>
+	<li class="pos3">3</li>
+	<li class="pos4">2</li>
+	<li class="pos5">1</li>
+</ul>	
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>百叶窗效果</title>
+<style>
+*{ margin:0; padding:0;}
+ul{ width:400px; overflow:hidden; float:left; margin:200px 100px; border-top:1px solid #000;}
+li{ height:30px; width:100%; position:relative; overflow:hidden; border-bottom:1px dashed #000;}
+div{ position:absolute; top:-30px; width:400px;}
+p{ height:30px; line-height:30px; text-align:center;}
+</style>
+<script src="move.js"></script>
+<script>
+function eventBind(obj,ev,fn)
+{
+	if(obj.attachEvent)
+	{
+		obj.attachEvent('on'+ev,fn);	
+	}	
+	else
+	{
+		obj.addEventListener(ev,fn,false); 	
+	}
+}
+eventBind(window,'load',function()
+{
+	var oUl_1=document.getElementsByTagName('ul')[0];
+	var oUl_2=document.getElementsByTagName('ul')[1];	
+	downAndUp(oUl_1);
+	setTimeout(function()
+	{		
+		downAndUp(oUl_2);
+	},2000)
+	function downAndUp(obj)
+	{
+		var aUl_div=obj.getElementsByTagName('div');
+		var timer=null;
+		var now=0;
+		var onOff=true;
+		setInterval(function()
+		{
+			toChange();		
+		},4000)		
+		function toChange()
+		{
+			timer=setInterval(function()
+			{
+				if(now==aUl_div.length)
+				{
+					clearInterval(timer);
+					now=0;
+					onOff=!onOff;
+				}
+				else if(onOff)
+				{	
+					startMove(aUl_div[now],{top:0});
+					now++;
+				}
+				else
+				{
+					startMove(aUl_div[now],{top:-30});
+					now++;
+				}
+			},30)	
+		}	
+	}
+})
+</script>
+</head>
+
+<body>
+<ul>
+	<li>
+                <div>
+                        <p>RRRRRRRRRRRRRR</p>
+                        <p>UUUUUUUUUUUUUU</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>RRRRRRRRRRRRRR</p>
+                        <p>UUUUUUUUUUUUUU</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>RRRRRRRRRRRRRR</p>
+                        <p>UUUUUUUUUUUUUU</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>RRRRRRRRRRRRRR</p>
+                        <p>UUUUUUUUUUUUUU</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>RRRRRRRRRRRRRR</p>
+                        <p>UUUUUUUUUUUUUU</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>RRRRRRRRRRRRRR</p>
+                        <p>UUUUUUUUUUUUUU</p>
+                </div>
+        </li>
+</ul>
+<ul>
+	<li>
+                <div>
+                        <p>BBBBBBBBBBBBBB</p>
+                        <p>SSSSSSSSSSSSSS</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>BBBBBBBBBBBBBB</p>
+                        <p>SSSSSSSSSSSSSS</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>BBBBBBBBBBBBBB</p>
+                        <p>SSSSSSSSSSSSSS</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>BBBBBBBBBBBBBB</p>
+                        <p>SSSSSSSSSSSSSS</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>BBBBBBBBBBBBBB</p>
+                        <p>SSSSSSSSSSSSSS</p>
+                </div>
+        </li>
+	<li>
+                <div>
+                        <p>BBBBBBBBBBBBBB</p>
+                        <p>SSSSSSSSSSSSSS</p>
+                </div>
+        </li>
+</ul>
+</body>
+</html>

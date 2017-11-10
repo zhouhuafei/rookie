@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+<style>
+body,div,ul,li{ margin:0; padding:0;}
+#persons{ width:1000px; margin:0 auto; overflow:hidden;}
+#persons li{ display:inline-block; width:68px; padding:5px; list-style-type:none;}
+</style>
+</head>
+<body>
+<div id="persons">
+	<ul>
+        	<li><input type="checkbox" value="穆小军">穆小军</li>
+                <li><input type="checkbox" value="陈鑫">陈鑫</li>
+                <li><input type="checkbox" value="李焱达">李焱达</li>
+                <li><input type="checkbox" value="袁辉">袁辉</li>
+                <li><input type="checkbox" value="尹全明">尹全明</li>
+                <li><input type="checkbox" value="高杨">高杨</li>
+                <li><input type="checkbox" value="何康">何康</li>
+                <li><input type="checkbox" value="郑煜华">郑煜华</li>
+                <li><input type="checkbox" value="童万彬">童万彬</li>
+                <li><input type="checkbox" value="任红岩">任红岩</li> 
+                <li><input type="checkbox" value="黄澜钗">黄澜钗</li>
+                <li><input type="checkbox" value="范春侠">范春侠</li>
+                <li><input type="checkbox" value="吕兴朋">吕兴朋</li>
+                <li><input type="checkbox" value="翁绍斌">翁绍斌</li>
+                <li><input type="checkbox" value="陈忠文">陈忠文</li>
+                <li><input type="checkbox" value="李振帮">李振帮</li>
+                <li><input type="checkbox" value="周栋波">周栋波</li>
+                <li><input type="checkbox" value="陆彬">陆彬</li>
+                <li><input type="checkbox" value="谭龙">谭龙</li>
+                <li><input type="checkbox" value="唐杰">唐杰</li>
+                <li><input type="checkbox" value="曹磊">曹磊</li>
+                <li><input type="checkbox" value="张清波">张清波</li>
+                <li><input type="checkbox" value="姚慕龙">姚慕龙</li>
+                <li><input type="checkbox" value="林少通">林少通</li>
+                <li><input type="checkbox" value="许弘历">许弘历</li>
+                <li><input type="checkbox" value="程强">程强</li>
+                <li><input type="checkbox" value="陈清荣">陈清荣</li>
+                <li><input type="checkbox" value="李策">李策</li>
+                <li><input type="checkbox" value="李瑞鹏">李瑞鹏</li>
+                <li><input type="checkbox" value="张军林">张军林</li>
+                <li><input type="checkbox" value="任友超">任友超</li>
+                <li><input type="checkbox" value="郭明">郭明</li>
+                <li><input type="checkbox" value="杜伟民">杜伟民</li>
+                <li><input type="checkbox" value="戴翔">戴翔</li>
+                <li><input type="checkbox" value="刘思佳">刘思佳</li>
+                <li><input type="checkbox" value="樊萍凤">樊萍凤</li>
+                <li><input type="checkbox" value="吴军">吴军</li>
+                <li><input type="checkbox" value="莫素婧">莫素婧</li>
+                <li><input type="checkbox" value="苏今朝">苏今朝</li>
+                <li><input type="checkbox" value="王灿">王灿</li>
+                <li><input type="checkbox" value="付维">付维</li><br />
+                <li>操作:</li>
+                <li><input type="button" value="全选" id="all"></li>
+                <li><input type="button" value="反选" id="none"></li>
+                <li><input type="button" value="不选" id="clear"></li>
+                <li><input type="button" value="转盘" id="save"></li>
+        </ul>
+</div>	
+<div style="width:500px;margin:30px auto 0 auto;text-align:center;display:none;" id="content">
+	<canvas id="canvas" width="500px" height="500px"></canvas>
+	<button id="btn" style="margin-top:20px;">邀请发言人</button>
+</div>	 
+</body>
+</html>
+<script type="text/javascript">
+var info = null;
+var color=[];
+var step = 2*Math.PI/2;
+var outerR = 250; //轮盘的大小
+var interR = 50;//内存空白圆的大小
+var beginAngle=50;//旋转起来时默认开始旋转的度数，度数愈大旋转的初始速度愈大
+var radio = 0.65;//旋转速度衰减系数，影响旋转时间
+var t = null;
+var aInput=document.getElementsByTagName('input');
+var arr=[];
+var arr2=[];
+for(var i=0;i<aInput.length;i++){
+	if(aInput[i].type=='checkbox'){
+		arr.push(aInput[i].value);	
+	}
+}
+var iLen=arr.length;
+var oSelect=document.getElementById('all');
+var oReverse=document.getElementById('none');
+var oClear=document.getElementById('clear');
+oSelect.onclick=function(){
+	for(var i=0;i<iLen;i++){
+		aInput[i].checked=true;	
+	}	
+}
+oClear.onclick=function(){
+	for(var i=0;i<iLen;i++){
+		aInput[i].checked=false;	
+	}	
+}
+oReverse.onclick=function(){
+	for(var i=0;i<iLen;i++){
+		if(aInput[i].checked==true){
+			aInput[i].checked=false;	
+		}else{
+			aInput[i].checked=true;	
+		}
+	}	
+}
+//调用
+bindSaveClick();
+// 绑定点击事件
+function bindSaveClick(){
+	document.getElementById('save').onclick = function(){
+		arr2=[];
+		for(var i=0;i<iLen;i++){
+			if(aInput[i].checked==true){
+				arr2.push(aInput[i].value);	
+			}
+		}
+		var person =arr2;
+		if (!person.length){
+			alert('请输入人员名单');
+			document.getElementById('person').focus();
+			return false;
+		}
+		
+		if (person.length == 1){
+			alert('一个人就自己开吧~~');
+			document.getElementById('person').focus();
+			return false;
+		}
+		
+		main(person);
+	};
+};
+// 显示转盘
+function main(person){	
+	document.getElementById('content').style.display = 'block';
+	info = person;
+	step = 2*Math.PI/person.length;	
+	color=[];
+	for ( var i = 0; i < person.length; i++) {
+		if(person.length%2==1){
+			color.push(getColor());
+		}else{
+			color.push(i%2==0?'#ccc':'#eee');			
+		}		
+	}	
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+	context.clearRect(0,0,canvas.width,canvas.height);
+	context.save();
+	context.translate(250,250);
+	createArrow(context);
+	init(context);
+	context.restore();
+	document.getElementById("btn").onclick=function(){
+		if(t){
+			return false;
+		}
+		var step = beginAngle +Math.random()*100;
+		console.log(step);
+			var angle = 0;
+			t = setInterval(function(){
+				context.save();
+				context.translate(250,250);
+				step *=radio;
+				if(step <= 0.1){
+					clearInterval(t);
+					t =null;
+					var pos = Math.ceil(angle / (360/person.length));
+					var res = info[person.length-pos];
+					context.save();
+					context.beginPath();
+					context.font="23px 微软雅黑";
+					context.fillStyle="#f00";
+					context.textAlign="center";
+					context.textBaseline="middle";
+					context.fillText(res,0,0);
+					context.restore();	
+					
+					
+					/*
+					
+					转完删除一个
+					arr2.splice(person.length-pos,1)
+					
+					
+					
+					*/
+							
+				}else{
+					context.clearRect(-250,-250,500,500);
+					angle+=step;
+					if(angle > 360){
+					angle -=360;
+				}
+					context.save();
+					context.beginPath();
+					context.rotate(angle * Math.PI/180);
+					init(context);
+					context.restore();
+					createArrow(context);
+				}
+				context.restore();
+			},60);
+	};
+};
+//创建箭头
+function createArrow(context){
+	  context.save();
+	  context.beginPath();
+	  context.lineWidth = 5;
+	  context.moveTo(170,0);
+	  context.lineTo(180,15);
+	  context.lineTo(180,5);
+	  context.lineTo(250,5);
+	  context.lineTo(250,-5);
+	  context.lineTo(180,-5);
+	  context.lineTo(180,-15);
+	  context.closePath();
+	  context.fill();
+	  context.restore();
+}
+//初始化
+function init(context){
+	  for ( var i = 0; i < info.length; i++) {
+		 context.save();
+		 context.beginPath();
+		 context.moveTo(0,0);
+		 context.fillStyle=color[i];
+		 context.arc(0,0,outerR,i*step,(i+1)*step);
+		 context.fill();
+		 context.restore();
+	  }	 
+	  context.save();
+	  context.beginPath();
+	  context.fillStyle="#fff";
+	  context.arc(0,0,interR,0,2*Math.PI);
+	  context.fill();
+	  context.restore();
+	  for ( var i = 0; i < info.length; i++) {
+		 context.save();
+		 context.beginPath();
+		 context.fillStyle="#000";
+		 context.font="15px 微软雅黑";
+		 context.textAlign="center";
+		 context.textBaseline="middle";
+		 context.rotate(i*step+step/2);
+		 context.fillText(info[i],(outerR + interR)/2,0);
+		 context.restore();
+	  }
+}
+//转盘颜色
+function getColor(){
+	  var random = function(){
+		 return Math.floor(Math.random()*255);
+	  }
+	  return "rgb("+random()+","+random()+","+random()+")";
+}
+</script>

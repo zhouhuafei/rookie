@@ -1,0 +1,153 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie qq:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"Î¢ÈíÑÅºÚ";}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat #000; margin-bottom:50px;}
+.banner div{ position:relative; height:465px;}
+.banner a{ width:170px; height:50px; position:absolute; right:440px; bottom:60px;}
+
+/*nav*/
+#nav{ width:100%; background:#006db8; height:50px; position:absolute; left:0; top:645px; z-index:2;}
+#nav dl{ height:100%; line-height:50px; color:#fff;}
+#nav dt{ float:left; width:289px; border-right:1px solid #fff; text-align:center; font-size:24px;}
+#nav dd{ float:left; width:142px; text-align:center; font-size:19px; cursor:pointer;}
+#nav dd.active{ background:#00549b;}
+
+/*common*/
+.til{ font-size:36px; color:#0064b4; text-align:center; padding-bottom:28px; border-bottom:1px solid #c8c8c8; position:relative; margin:100px 0 40px;}
+.til span{ text-transform:uppercase; color:#c8c8c8; font-size:12px; padding:0 10px; height:20px; line-height:20px; position:absolute; left:0; bottom:-10px; background:#fff; transition:1s;}
+div.btn{ text-align:center; margin-top:40px;}
+div.btn a{ padding:0 20px; height:37px; line-height:37px; background:#ff9000; font-size:20px; color:#fff; border-radius:6px;}
+div.btn em{ margin-left:14px; width:23px; height:23px; background:url(../images/btn.png) center center no-repeat; float:right; margin-top:9px;}
+div.btn a:hover{ background:#F60;}
+/*type*/
+#type{ width:1000px; margin:0 auto;}
+#type li{ float:left; width:272px; height:390px; border:1px solid #d3d3d3; border-top:5px solid #d3d3d3;}
+#type li h2{ text-align:center; height:50px; line-height:50px; font-size:24px; color:#636363;}
+#type li h3{ font-size:16px; color:#1e1e1e; text-align:center; line-height:26px; margin-top:14px;}
+#type li p{ color:#1e1e1e; font-size:14px; padding:0 5px; line-height:30px;}
+#type li.mg{ margin:0 89px;}
+#type li.active{ border:1px solid #006db8; border-top:5px solid #006db8; box-shadow:0px 0px 10px #000;}
+#type li.active h2{ color:#006db8;}
+#type li.active h3{ color:#006db8;}
+
+/*contrast*/
+#contrast dd em,#contrast li em{ width:0px; height:0px; border:6px solid transparent; position:absolute; opacity:0; filter:alpha(opacity:0);}
+#contrast dl{ width:860px; margin:0 auto 30px;}
+#contrast dd{ float:left; width:260px; text-align:center; height:38px; line-height:38px; background:#dddddd; color:#343434; font-size:24px; border-bottom:2px solid #fff; position:relative; transition:0.4s;}
+#contrast dd em{ border-top:6px solid #006db8; left:50%; margin-left:-6px; bottom:-14px;}
+#contrast dd.mg{ margin:0 40px;}
+#contrast dd.active{ border-bottom:2px solid #0872ba;}
+#contrast ul{ margin-left:40px; padding:9px 0;}
+#contrast ul li{ width:722px; height:323px; display:none;}
+#contrast ul li.active{ display:block;}
+#contrast ol{ margin-right:40px;}
+#contrast ol li{ border:2px solid #fff; position:relative;}
+#contrast ol li em{ border-right:6px solid #006db8; top:50%; margin-top:-6px; left:-14px;}
+#contrast ol li.mg{ margin:4px 0;}
+#contrast ol li.active{ border:2px solid #006db8;}
+#contrast ol li.active em,#contrast dd.active em{ opacity:1; filter:alpha(opacity:100);}
+
+/*treatment*/
+#treatment h2{ font-size:26px; color:#006db8; text-align:center; margin-bottom:8px;}
+#treatment h2.reStyle{ padding-top:56px; margin-top:44px; border-top:1px dashed #858585;}
+#treatment p{ font-size:16px; color:#1b1b1b; line-height:36px; margin-bottom:10px;}
+#treatment div.img{ text-align:center;}
+
+/*case*/
+#case dl{ padding:0 35px 48px; margin-bottom:48px; border-bottom:1px dashed #858585;}
+#case dd{ width:435px; height:275px; position:relative;}
+#case h2{ margin:0 auto; width:435px; text-align:center; height:30px; line-height:30px; font-size:20px; color:#fff; background:#006db8; margin-bottom:25px; border-radius:30px;}
+#case h2.reStyle{ height:40px; line-height:40px;}
+#case h3{ font-size:16px; color:#f47900; line-height:30px;}
+#case p{ line-height:30px;}
+#case div.btn{ width:100%; margin:0; position:absolute; left:0; bottom:0; text-align:right;}
+#case div.img{ text-align:center;}
+
+/*expert*/
+#expert .expertMain{ position:relative;}
+#expert .prev,#expert .next{ width:23px; height:59px; position:absolute; top:50%; margin-top:-24px; cursor:pointer;}
+#expert .prev{ left:0; background:url(../images/prev.jpg) center center no-repeat;}
+#expert .next{ right:0; background:url(../images/next.jpg) center center no-repeat;}
+#expert dl{ display:none;}
+#expert dl.active{ display:block;}
+#expert dt{ height:517px; margin-left:60px;}
+#expert dd{ width:530px; height:517px; position:relative; margin-right:20px;}
+#expert dd h2{ color:#006db8;}
+#expert dd strong{ font-size:40px; margin-right:20px;}
+#expert dd i{ font-size:14px;}
+#expert dd b{ font-size:24px; display:block;}
+#expert dd h3{ margin:50px 0 20px; height:32px; line-height:32px; padding-left:30px; background:url(../images/expert_bg.jpg) left center no-repeat; font-size:24px; color:#000;}
+#expert dd p{ line-height:30px; font-size:16px; color:#666;}
+#expert dd em{ color:#ff0000; margin-right:4px;}
+#expert dd img{ position:absolute; left:0; bottom:100px;}
+
+/*about*/
+#about h2{ margin:0 auto 30px; width:230px; text-align:center; height:35px; line-height:35px; font-size:24px; color:#fff; background:#006db8; border-radius:30px;}
+#about li{ color:#fff; float:left; border:1px solid #fff; border-radius:50%; margin-bottom:30px;}
+#about li.about_li1{ border:1px solid #9ac5e4;}
+#about li.about_li2{ border:1px solid #f1a14f;}
+#about li.about_li3{ border:1px solid #666699;}
+#about li.about_li4{ border:1px solid #f97e74;}
+#about li.about_li5{ border:1px solid #8c8c8c;}
+#about li.about_li6{ border:1px solid #3da0a6;}
+#about li.mg{ margin:0 32px 30px;}
+#about li div{ width:200px; height:200px; padding:50px; border:5px solid #fff; border-radius:50%;}
+#about li div.about_div1{ background:#569fd2;}
+#about li div.about_div2{ background:#f1a14f;}
+#about li div.about_div3{ background:#666699;}
+#about li div.about_div4{ background:#f97e74;}
+#about li div.about_div5{ background:#8c8c8c;}
+#about li div.about_div6{ background:#3da0a6;}
+#about li h3{ font-size:22px; margin-bottom:30px; text-align:center;}
+#about li p{ line-height:30px;}
+#about dt{ padding-top:30px;}
+#about dt div.btn{ margin:0;}
+#about dt div.btn a{ padding:0; width:80%; float:right;}
+#about dt div.btn em{ float:none; vertical-align:top;}
+#about dd{ margin-bottom:10px;}
+#about dd div.clearFix{ width:640px; height:140px; padding:20px 20px 0; background:#f3f3f3;}
+#about dd div.txt{ width:520px; margin-left:10px;}
+#about dd h4{ font-size:24px; color:#4f4f4f; padding-bottom:10px; margin-bottom:10px; border-bottom:1px solid #d2d2d2;}
+#about dd em{ font-size:30px; color:#006db8; margin-right:10px;}
+#about dd p{ text-indent:20px; color:#4f4f4f;}
+
+/*library*/
+#library dt{ width:519px; border:5px solid #d3d3d3; position:relative;}
+#library ul li{ display:none;}
+#library ul li.active{ display:block;}
+#library ol{ position:absolute; right:0; bottom:0;}
+#library ol li{ width:15px; height:15px; border-radius:50%; background:#333; float:left; margin:5px;}
+#library ol li.active{ background:#fff;}
+#library dd{ width:415px; height:381px; position:relative;}
+#library h2{ font-size:24px; line-height:38px; color:#fb6400;}
+#library h2.blue{ color:#006db8;}
+#library p{ font-size:16px; color:#646464; line-height:30px; text-indent:30px; margin-top:14px;}
+#library .dbBtn{ position:absolute; right:0; bottom:0;}
+#library .dbBtn a{ float:left; width:38px; height:38px; background:url(../images/Hospital_info.png) left top no-repeat;}
+#library .dbBtn a:hover{ background-position:0 -43px;}
+#library .dbBtn a+a{ margin-left:10px; background-position:-46px 0;}
+#library .dbBtn a+a:hover{ background-position:-46px -43px;}

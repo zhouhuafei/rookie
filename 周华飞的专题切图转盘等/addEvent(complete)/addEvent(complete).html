@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>addEvent(complete)</title>
+</head>
+
+<body>
+<script>
+window.onload=function(){
+	addEvent(document,'click',fn);
+	//removeEvent(document,'click',fn);	
+}
+function fn(ev){
+	alert(ev.clientX);//事件绑定默认绑定了事件对象,IE也没问题,可以放心用==>var ev=ev||event;
+}
+function addEvent(obj,ev,fn){
+	if(obj.addEventListener){
+		obj.addEventListener(ev,fn,false);
+	}else{
+		obj.attachEvent('on'+ev,function(){
+			//fn.call(obj)
+			//解决问题:IE8的this传递;<==>触发问题:1.事件对象无法标准化;2.无法删除事件绑定;
+			
+			fn.call(obj,window.event);
+			//解决问题:1.IE8的this传递;2.事件对象的标准化;<==>遗留问题:1.无法删除事件绑定;2.IE执行顺序的问题;3.重复绑定不会自动过滤
+		});
+	}
+}
+function removeEvent(obj,ev,fn){
+	if(obj.removeEventListener){
+		obj.removeEventListener(ev,fn,false);	
+	}else{
+		obj.detachEvent('on'+ev,fn);
+	}
+}
+</script>
+</body>
+</html>

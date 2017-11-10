@@ -1,0 +1,122 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*nav*/
+#nav{ width:100%; position:relative;}
+#nav #navMain{ background:#0064b4; width:100%; height:50px; z-index:3; position:absolute; top:0;}
+#nav ul{ width:994px; height:100%; margin:0 auto;}
+#nav li{ text-align:center; line-height:50px; color:#fff; cursor:pointer;}
+#nav li{ float:left; font-size:18px; width:142px;}
+#nav li.active{ background:#003b6b;}
+
+/*type*/
+#type li{ width:216px; background:#f4f4f4; color:#525252; padding:17px 0 11px; margin-bottom:5px; position:relative;}
+#type li.active{ background:#0064b4; color:#fff;}
+#type li span{ vertical-align:middle;}
+#type li h2{ font-size:20px; margin-bottom:7px;}
+#type li h3{ font-size:12px;}
+#type li:before,#type li:after{ content:""; display:inline-block;}
+#type li:before{ width:43px; height:37px; vertical-align:middle; background:url(../images/icon.png) left 1px no-repeat; margin:0 13px 0 19px; transition:0.4s;}
+#type li.active:before{ background-position:left -72px;}
+#type li.thr:before{ background-position:left -144px;}
+#type li.fou:before{ background-position:left -288px;}
+#type li.active.thr:before{ background-position:left -215px;}
+#type li.active.fou:before{ background-position:left -359px;}
+#type li:after{ width:0; height:0; border:6px solid transparent; border-left:12px solid #0064b4; position:absolute; right:-18px; top:50%; margin-top:-6px; display:none;}
+#type li.active:after{ display:block;}
+#type div.fl{ width:742px; height:282px; overflow:hidden; margin-left:42px;}
+#type div.dlMain{ height:100%; width:3000px; position:relative; left:0;}
+#type dl{ height:100%;}
+#type dt{ width:459px; height:100%;}
+#type dd{ width:243px; height:100%; padding:0 20px; background:#f4f4f4; font-size:14px; color:#414141; position:relative;}
+#type strong{ color:#414141; font-weight:bold;}
+#type p{ margin-top:40px; line-height:34px;}
+#type .btns{ position:absolute; right:20px; bottom:30px;}
+
+/*want*/
+#want ol li{ width:28px; text-align:center; height:102px; padding:23px 10px 0; font-size:20px; border:1px solid #eeeeee; border-top:none; background:#fff; color:#0064b4; position:relative;}
+#want ol li.active{ background:#0064b4; color:#fff; border:1px solid #0064b4;}
+#want ol li:after{ content:""; display:block; width:0; height:0; border:6px solid transparent; border-left:12px solid #0064b4; position:absolute; right:-18px; top:50%; margin-top:-6px; display:none; z-index:2;}
+#want ol li.active:after{ display:block;}
+#want .txt{ width:950px; height:253px; overflow:hidden;}
+#want ul{ position:relative; left:0; height:100%; width:3000px;}
+#want ul li{ width:950px; height:100%; background:#f4f4f4; float:left;}
+#want dl{ height:100%; width:100%;}
+#want dt{ width:456px; height:100%; padding:0 50px; position:relative;}
+#want dt h2{ font-size:24px; color:#0064b4; margin:43px 0 18px;}
+#want dt p{ font-size:14px; color:#525252; line-height:24px;}
+#want dt .btnss{position:absolute; right:50px; bottom:30px;}
+#want dd{ width:386px; height:100%; border:4px solid #eeeeee;}
+
+/*pit*/
+.pit.reStyle{ padding-bottom:59px; margin-bottom:52px; border-bottom:1px solid #dcdcdc;}
+.pit dt{ width:550px; height:217px; position:relative;}
+.pit dd{ width:397px; height:217px;}
+.pit h2{ font-size:24px; color:#0064b4; margin-bottom:20px;}
+.pit p{ line-height:26px; text-indent:30px; font-size:14px; color:#525252;}
+.pit .btnss{ position:absolute; right:0; bottom:0;}
+.pit p a{ text-indent:0; color:#f00;}
+
+/*effect*/
+#effect ol{ padding:0 2px;}
+#effect ol li{ width:155px; height:111px; border:3px solid #d2d2d2; float:left; margin-right:6px; position:relative;}
+#effect ol li em{ width:0px; height:0px; border:10px solid transparent; border-top:14px solid #fa7404; opacity:0; filter:alpha(opacity:0); position:absolute; left:50%; margin-left:-10px; bottom:-27px;}
+#effect ol li img{ opacity:0.8; filter:alpha(opacity:80);}
+#effect ol li.active{ border:3px solid #fa7404;}
+#effect ol li.active img{ opacity:1; filter:alpha(opacity:100);}
+#effect ol li.active em{ opacity:1; filter:alpha(opacity:100);}
+#effect ol li.noMr{ margin-right:0;}
+#effect div{ overflow:hidden; height:383px; margin-top:20px;}
+#effect ul{ width:9000px; height:100%; position:relative; left:0;}
+#effect ul li{ float:left;}
+#effect ul li p{ margin-top:16px; font-size:18px; height:20px; line-height:20px; color:#646464; text-align:center;}
+
+/*case*/
+.case dd{ width:458px; height:246px;}
+.case dl.vedio dd{ width:320px; height:240px; background:#000; border:10px solid #f5f5f5;}
+.case dl.vedio dt{ height:260px;}
+.case dt{ width:500px; height:246px;}
+.case h2{ color:#000000;}
+.case strong{ color:#000;}
+
+/*expert*/
+#expert{ width:1000px; margin:0 auto; position:relative;}
+#expert span.prev,#expert span.next{ content:""; display:block; width:64px; height:119px; position:absolute; top:50%; margin-top:-60px; cursor:pointer; z-index:2;}
+#expert span.prev{ left:-74px; background:url(../images/prev.jpg) no-repeat;}
+#expert span.next{ right:-64px; background:url(../images/next.jpg) no-repeat;}
+#expert ul{ width:6000px; position:relative; left:0;}
+#expert li{ width:1000px; float:left;}
+#expert dd{ width:550px;}
+#expert h2{ color:#006db8; font-size:44px; text-transform:uppercase; margin-bottom:33px;}
+#expert h2 small{ color:#d0d0d0; font-size:44px;}
+#expert h3{ color:#000000; font-size:48px; text-transform:uppercase; margin-bottom:20px;}
+#expert h3 small{ font-size:24px; margin-left:18px;}
+#expert p{ font-size:14px; line-height:26px; color:#646464; text-indent:30px; padding-bottom:20px; margin-bottom:20px; border-bottom:1px dashed #8d8d8d;}
+#expert h4{ font-size:14px; line-height:28px; color:#646464; word-spacing:14px;}
+
+/*experts*/
+.experts{ text-align:center;}
+
+/*media*/
+.media dt{ width:570px; height:240px;}
+.media dd{ width:320px; height:240px; background:#000;}
+
+/*other*/
+#other li{ width:327px; height:177px; border:2px solid #dcdcdc; float:left; margin:0 3px 6px 0; transition:0.4s;}
+#other li:hover{ border:2px solid #006db8;}
+
+/*common*/
+.til{ width:1000px; margin:120px auto 70px; height:1px; background:#787878; position:relative;}
+.til .tils{ border:4px solid #fa6400; height:50px; position:absolute; left:0; top:-25px; padding:0 6px; background:#fff; transition:1s;}
+.til dl{ background:#ffffff; height:58px; padding:0 20px; text-align:center; margin-top:-4px;}
+.til dt{ height:34px; line-height:35px; font-size:28px; color:#0064b4;} 
+.til dd{ height:16px; line-height:16px; font-size:16px; color:#4b4b4b;}
+.btns{ width:116px; height:33px; text-align:center; line-height:33px; background:#fa7404; color:#fff; font-size:16px;}
+.btns:after{ content:""; display:inline-block; width:21px; height:19px; background:url(../images/icon.png) left -432px no-repeat; vertical-align:middle; margin-left:8px;}
+.btnss{ padding-left:27px; background:url(../images/icon.png) left -504px no-repeat; padding-top:6px;}
+.btnss small{ margin-top:15px; float:left; vertical-align:bottom; font-size:18px; color:#fa7404;}
+.btnss a.btns{ float:right; margin-left:10px;}

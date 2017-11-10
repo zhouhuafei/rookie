@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>jsonp</title>
+</head>
+<body>
+<script>
+//本地操作
+function callBack(data){
+	document.body.innerHTML=data.name;
+}
+</script>
+<script>
+//jsonp返回的数据
+callBack({name:'zhou',height:'182',sex:'man'})
+</script>
+</body>
+</html>

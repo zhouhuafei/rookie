@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS之蛋蛋的忧伤(匀速)</title>
+<style>
+*{ margin:0; padding:0; list-style:none; overflow:hidden;}
+body{ background:#000; font-size:18px; font-family:"楷体"; transition:1s;}
+span{ display:block; width:200px; height:60px; line-height:60px; border-radius:100px; text-align:center; margin:400px auto; background:#fff; color:#00F; text-shadow:1px 1px 1px #FFF,-1px -1px 1px #FFF; box-shadow:1px 1px 100px #00F,-1px -1px 100px #00F,-1px -1px 50px #00F inset,10px 10px 50px #00F inset;}
+div{ width:200px; height:200px; overflow:hidden; position:absolute; background:#F60; border-radius:100px; text-align:center; line-height:200px; color:#fff; text-shadow:1px 1px 1px #f00,-1px -1px 1px #f00; box-shadow:1px 1px 100px #f00,-1px -1px 100px #f00,-1px -1px 50px #f00 inset,10px 10px 50px #f00 inset;}
+.box{ width:10px; height:10px; background:#f00; position:absolute; display:block; border-radius:10px;} 
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementsByTagName('div')[0];
+	var oSpan=document.getElementsByTagName('span')[0];
+	var speed=10;	
+	var timer=null;
+	var clientWidth=document.documentElement.clientWidth;
+	var clientHeight=document.documentElement.clientHeight;
+	var speedX=0;
+	var speedY=0;
+	oDiv.style.width=0;
+	oDiv.style.height=0;
+	oSpan.onclick=function()
+	{
+		oSpan.style.display='none';
+		document.body.style.backgroundColor='#00F';
+		timer2=setInterval(function()
+		{
+			var DW=oDiv.offsetWidth+speed;
+			var DH=oDiv.offsetHeight+speed;
+			if(DW>200)
+			{
+				DW=200;
+			}
+			if(DH>200)
+			{
+				DH=200;
+				clearInterval(timer2);
+				startMove();
+			}
+			oDiv.style.left=(clientWidth-DW)/2+'px'
+			oDiv.style.top=(clientHeight-DH)/2+'px'				
+			oDiv.style.width=DW+'px';
+			oDiv.style.height=DH+'px';		
+		},30)
+	}	
+	oDiv.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		var disX=oEvent.clientX-oDiv.offsetLeft;
+		var disY=oEvent.clientY-oDiv.offsetTop;
+		var prevX=oEvent.clientX;
+		var prevY=oEvent.clientY;
+		clearInterval(timer);
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			var L=oEvent.clientX-disX;
+			var T=oEvent.clientY-disY;
+			if(L<=0){L=0;}
+			else if(L>=clientWidth-oDiv.offsetWidth){L=clientWidth-oDiv.offsetWidth}
+			if(T<=0){T=0;}
+			else if(T>=clientHeight-oDiv.offsetHeight){T=clientHeight-oDiv.offsetHeight}
+			oDiv.style.left=L+'px';
+			oDiv.style.top=T+'px';
+			speedX=oEvent.clientX-prevX;	//出手时的速度
+			speedY=oEvent.clientY-prevY;	//出手时的速度
+			prevX=oEvent.clientX;
+			prevY=oEvent.clientY;
+			
+		}
+		document.onmouseup=function()
+		{
+			startMove();
+			document.onmousemove=null;
+			document.onmouseup=null;
+			if(oDiv.releaseCapture){oDiv.releaseCapture();}	
+		}
+		if(oDiv.setCapture){oDiv.setCapture();}
+		return false;	
+	}
+	function startMove()
+	{
+		clearInterval(timer);
+		timer=setInterval(function()
+		{	
+			var sl=oDiv.offsetLeft+speedX;
+			var st=oDiv.offsetTop+speedY;
+			if(sl<0)
+			{
+				sl=0;
+				speedX*=-1;
+			}
+			else if(sl>clientWidth-oDiv.offsetWidth)
+			{
+				sl=clientWidth-oDiv.offsetWidth;
+				speedX*=-1;
+			}
+			if(st<0)
+			{
+				st=0
+				speedY*=-1;
+			}
+			else if(st>clientHeight-oDiv.offsetHeight)
+			{
+				st=clientHeight-oDiv.offsetHeight;
+				speedY*=-1;
+			}
+			oDiv.style.left=sl+'px';	
+			oDiv.style.top=st+'px';		
+		},30)
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<span>点击召唤神蛋</span>
+<div>我是一颗羞涩的蛋蛋</div>
+</body>
+</html>

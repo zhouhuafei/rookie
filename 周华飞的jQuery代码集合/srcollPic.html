@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>图片无缝左右滑动</title>
+<script src="srcollPic.js"></script>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+.slide{ width:500px; height:200px; margin:200px auto; position:relative;}
+.slide li{ width:500px; height:200px; font-size:30px; line-height:200px; text-align:center; background:#F93; color:#F0F; float:left;}
+.slide a{ display:block; width:30px; height:70px; font-size:20px; text-align:center; line-height:70px; background:#F00; color:#000; z-index:999; position:absolute; top:65px;}
+.prev{ left:-30px;}
+.next{ right:-30px;}
+</style>
+</head>
+
+<body>
+<div class="slide">
+        <a href="javascript:;" class="prev" id="prev">左</a>
+        <a href="javascript:;" class="next" id="next">右</a>
+        <ul id="ul">
+                <li style="background:#9C3">1</li>
+                <li style="background:#3F9">2</li>
+                <li style="background:#0FC">3</li>
+                <li style="background:#FCC">4</li>
+                <li style="background:#CCF">5</li>
+                <li style="background:#36F">6</li>
+        </ul>    
+</div>   
+<script type="text/javascript">
+	var scrollPic_02 = new ScrollPic();
+	scrollPic_02.scrollContId   = "ul"; //内容容器ID
+	scrollPic_02.arrLeftId      = "prev";//左箭头ID
+	scrollPic_02.arrRightId     = "next"; //右箭头ID
+	
+	scrollPic_02.frameWidth     = 500;//显示框宽度
+	scrollPic_02.pageWidth      = 500; //翻页宽度   (翻页宽度 = 显示框宽度)
+	scrollPic_02.sclContWidth   = 6000; //内容容器总宽度   (内容容器总宽度=显示框宽度*图片个数*2)       
+	
+	scrollPic_02.speed          = 20; //移动速度(单位毫秒，越小越快)
+	scrollPic_02.space          = 20; //每次移动像素(单位px，越大越快)
+	scrollPic_02.autoPlay       = true; //自动播放
+	scrollPic_02.autoPlayTime   = 3; //自动播放间隔时间(秒)
+	scrollPic_02.initialize(); //初始化
+</script> 
+</body>
+</html>

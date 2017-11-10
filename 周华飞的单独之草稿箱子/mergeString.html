@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>mergeString</title>
+</head>
+
+<body>
+<script>
+var str1='abcdefghijklmn';
+var str2='123456789';
+console.log(mergeString(str1,str2));
+function mergeString(str1,str2){
+	var mergeResult='';
+	var iLenStr1=str1.length;
+	var iLenStr2=str2.length;
+	if(iLenStr1>iLenStr2){
+		for(var i=0; i<iLenStr2;i++){
+			mergeResult+=str1.charAt(i)+str2.charAt(i);	
+		}
+		return 	mergeResult+str1.substring(i);
+	}else{
+		for(var i=0; i<iLenStr1;i++){
+			mergeResult+=str1.charAt(i)+str2.charAt(i);	
+		}
+		return 	mergeResult+=str2.substring(i);	
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat; margin-bottom:20px;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:100%; height:100%; /*width:170px; height:50px; position:absolute; right:238px; bottom:148px;*/}
+
+/*expert*/
+.expert li{ box-shadow:1px 1px 10px #fff; height:239px; width:468px; margin:0 64px 70px 0; float:left;}
+.expert li:hover{ box-shadow:1px 1px 10px #000,1px 1px 10px #000;}
+.expert_img{ width:177px; height:235px; border:2px solid #fff;}
+.expert_word{ width:242px; padding:0 15px 0 30px; background:#fbfbfb; height:100%; position:relative; color:#282828;}
+.expert_word h2{ font-size:30px; line-height:70px;}
+.expert_word h3{ font-size:16px; font-weight:bold; padding-top:10px;}
+.expert_btn{ height:37px; width:84px; position:absolute; right:10px; bottom:10px;}
+.expert_btn a{ margin-right:5px; width:37px; height:37px; background:url(../images/icon.png);}
+.expert_btn a:hover{ background-position:0 -57px;}
+.expert_btn .consult{ margin-right:0px; background-position:0 -127px;}
+.expert_btn .consult:hover{ background-position:0 -201px;}
+
+/*recovery*/
+#recovery{ width:1000px; margin:0 auto;}
+#recovery li{ width:224px; height:374px; padding:4px; position:relative; float:left; background:#e6e6e6; margin:0 24px 24px 0;}
+#recovery li img{ margin-bottom:10px; vertical-align:middle;}
+#recovery li p{ height:20px; line-height:20px; font-size:16px; color:#4b4b4b; margin-bottom:10px;}
+#recovery li em{ width:20px; height:20px; vertical-align:middle; margin-right:5px;}
+#recovery li p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#recovery li a{ height:30px; line-height:30px; width:128px; text-align:center; border:1px solid #969696; color:#4b4b4b; font-size:16px; position:absolute; bottom:20px; left:50%; margin-left:-65px;}
+#recovery .active{ box-shadow:1px 1px 10px #0064b4;}
+#recovery .active a{ background:#0064b4; color:#fff; border:1px solid #0064b4; }
+#recovery .recovery_btn{ margin:0 auto 24px; width:420px; height:36px; line-height:36px;}
+#recovery .recovery_btn span{ height:36px; width:210px; text-align:center; font-size:20px; color:#4b4b4b; background:#fff;}
+#recovery .recovery_btn em{ vertical-align:middle; margin-right:5px;}
+#recovery .recovery_btn a{ width:210px; text-align:center; font-size:18px; color:#fff; background:#0064b4;}
+
+/*wall*/
+.wall{ padding-bottom:45px;}
+
+/*hospital*/
+#hospital{ padding-bottom:45px;}
+
+
+/*common*/
+.bg_blue{ background:#4796cc; overflow:hidden;}
+.common_til{ width:1000px; margin:45px auto; font-size:48px; color:#006db8; text-align:center; height:50px; line-height:50px; padding-bottom:20px; position:relative; border-bottom:1px solid #006db8;}
+.common_i{ text-transform:uppercase; transition:1s; font-size:12px; position:absolute; bottom:-9px; left:0; height:18px; line-height:18px; background:#FFF; padding:0 20px;}
+.bg_blue .common_til{ color:#fff; border-bottom:1px solid #fff;}
+.bg_blue .common_i{ background:#4796cc;}

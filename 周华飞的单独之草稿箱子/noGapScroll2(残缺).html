@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>noGapScroll2(残缺)</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+#main{ width:320px; height:200px; overflow:hidden; background:#000; margin:200px auto; position:relative; color:#fff; font-size:12px;}
+#main ul{ width:2000px; position:absolute; left:0; top:0; background:#F00;}
+#main ul li{ width:320px; text-align:center; height:200px; line-height:200px; background:#030; float:left;}
+#main ol{ position:absolute; right:0; bottom:5px;}
+#main ol li{ width:20px; text-align:center; height:20px; line-height:20px; border-radius:50%; margin:0 5px; cursor:pointer; background:#666; float:left; transition:0.4s;}
+#main ol li.active{ background:#900; transform:rotate(360deg);}
+</style>
+<script>
+window.addEventListener('load',function(){
+	var oCut=document.querySelector('#main ul');
+	var aCut=document.querySelectorAll('#main ul li');
+	var aBtn=document.querySelectorAll('#main ol li');
+	var aBtnNow=0;
+	var aCutNow=0;
+	var iLen=aBtn.length;
+	for(var i=0; i<iLen;i++){
+		aBtn[i].index=i;
+		aBtn[i].onclick=function(){
+			aBtnNow=this.index;
+			aCutNow=this.index;	
+			tab();			
+		}	
+	}
+	function tab(){	
+		for(var i=0; i<iLen;i++){
+			aBtn[i].classList.remove('active');
+		}
+		aBtn[aBtnNow].classList.add('active');
+		startMove(oCut,{left:-aCut[0].offsetWidth*aCutNow});
+	}
+	function next(){			
+		if(aBtnNow==0){			
+			aCut[0].style.position='static';
+			oCut.style.left=0;
+			aCutNow=0;	
+		}
+		if(aBtnNow==iLen-1){
+			aCut[0].style.position='relative';
+			aCut[0].style.left=aCut[0].offsetWidth*iLen+'px';
+			aBtnNow=0;
+		}else{
+			aBtnNow++;
+		}
+		aCutNow++;
+		tab();
+	}
+	//这种方式写的无缝滚动,prev和next不能共存,因此不能有左右按钮,否则会有BUG,我解决不了的大BUG
+	/*
+	function prev(){
+		if(aBtnNow==iLen-1){
+			aCut[iLen-1].style.position='static';
+			oCut.style.left=-aCut[0].offsetWidth*iLen+'px';
+			aCutNow=iLen-1;	
+		}
+		if(aBtnNow==0){
+			aCut[iLen-1].style.position='relative';
+			aCut[iLen-1].style.left=-aCut[0].offsetWidth*iLen+'px';		
+			aBtnNow=iLen-1;
+		}else{
+			aBtnNow--;
+		}
+		aCutNow--;
+		tab();			
+	}
+	*/
+	setInterval(next,1000)
+},false)
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*getStyle*/
+function getStyle(obj,name){return obj.currentStyle?obj.currentStyle[name]:getComputedStyle(obj,false)[name];}
+/*startMove*/
+function startMove(obj,json,fnEnd){
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		var bStop=true;
+		for(var attr in json){
+			var cur=0;
+			attr=='opacity'?cur=Math.round(parseFloat(getStyle(obj,attr)*100)):cur=parseInt(getStyle(obj,attr));
+			var speed=(json[attr]-cur)/4;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			(cur!=json[attr])&&(bStop=false);					
+			if(attr=='opacity'){
+				obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+				obj.style.opacity=(cur+speed)/100;
+			}else{
+				obj.style[attr]=cur+speed+'px';
+			}			
+		}
+		if(bStop){
+			clearInterval(obj.timer);
+			fnEnd&&fnEnd();
+		}
+	},30);
+}
+</script>
+</head>
+<body>
+<div id="main">
+        <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+        </ul>
+	<ol>
+        	<li class="active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>removeBeforeAfterSpace</title>
+<script>
+var str='     abc      abc    ';
+//var re=/^\s+(.+)\s+$/;	//==>(.+)贪婪模式会匹配到'abc      abc    ';
+var re=/^\s+(.+?)\s+$/;		//==>(.+?)惰性模式会匹配到'abc      abc';
+alert('|'+str.replace(re,re.exec(str)[1])+'|');	//惰性数组模式
+alert('|'+str.replace(re,'$1')+'|');			//惰性分组模式
+</script>
+</head>
+
+<body>
+</body>
+</html>

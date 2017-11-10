@@ -1,0 +1,118 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+body{ font-size:14px; font-family:"微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%;   margin:0 auto; overflow:hidden; border-bottom:4px solid #ebebeb;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:771px;}
+
+/*common*/
+.commonTil{ width:190px; color:#fff;}
+.commonTil a{ width:110px; text-align:center; height:30px; line-height:30px; background:#fff; font-size:16px; display:block; margin:110px auto 180px; border-radius:15px;}
+.commonTil a:hover{ background:#F90; color:#fff;}
+.commonTil .txt_s{ font-size:38px; margin:40px 0 0 40px; line-height:48px;}
+.commonTil .txt_b{ font-size:50px; margin:110px 0 0 20px; line-height:60px;}
+.commonTil .txt_b2{ font-size:50px; margin:88px 0 0 20px; line-height:60px;}
+.bg_blue{ background:#006db8;}
+.bg_blue a{ color:#006db8;}
+.bg_black{ background:#363636;}
+.bg_black a{ color:#363636;}
+.commonMain{ width:790px; margin-left:20px;}
+.commonMain .common_tils{ margin-top:50px; font-size:20px; height:30px; padding-bottom:4px;}
+.commonMain .common_tils em{ height:30px; vertical-align:middle; margin-right:14px;}
+.commonMain .txt_blue{ color:#006db8; border-bottom:double #006db8;}
+.commonMain .txt_black{ color:#010101; border-bottom:double #010101;}
+
+/*careful*/
+.careful{ color:#494949;}
+.careful h2{ font-size:16px; line-height:36px; margin:10px 0;}
+.careful p{ height:36px;}
+.careful p em{ height:36px; width:30px; text-align:center; vertical-align:sub;}
+.careful ol{ width:364px;}
+.careful li{ color:#cbcbcb; padding:20px 0 14px; border-bottom:1px dashed #cbcbcb;}
+.careful .li_active{ color:#006db8;}
+.careful li em{ width:75px; height:75px; vertical-align:middle; margin-right:10px;}
+.careful li span{ width:274px; vertical-align:middle;}
+.careful li strong{ line-height:30px; font-size:24px;}
+.careful li small{ line-height:30px; font-size:12px;}
+.careful .img{ width:404px; height:290px; margin-top:20px; position:relative;}
+.careful .img b{ width:404px; height:70px; position:absolute; left:0; bottom:0; background:#000; opacity:0.5; filter:alpha(opacity:50);}
+.careful .img h3{ position:absolute; left:0; bottom:0; font-size:18px; color:#fff; line-height:25px; padding:10px 20px;}
+
+/*patience*/
+.patience .patienceMain{ background:url(../images/patience.jpg) 70px center no-repeat; height:649px; margin:50px 0; position:relative;}
+.patience .patienceMain div{ position:absolute;}
+.patience .patienceMain .pm1{ width:200px; left:0; top:40px;}
+.patience .patienceMain .pm2{ width:260px; right:0; top:-30px;}
+.patience .patienceMain .pm3{ width:250px; left:80px; bottom:20px;}
+.patience .patienceMain div h2{ font-size:25px; color:#000; line-height:40px;}
+.patience .patienceMain div p{ font-size:14px; color:#494949; line-height:24px; text-indent:30px;}
+.patience .commonTil{ height:836px;}
+
+/*duty*/
+.duty .img{ width:390px;}
+.duty .txt{ width:364px;}
+.duty h2{ line-height:60px; font-size:32px; color:#006db8;}
+.duty p{ line-height:30px; font-size:16px; color:#494949;}
+.duty .dutyMain{ padding:25px 0; border-bottom:1px dashed #006db8;}
+.duty .dutyMain2{ padding:25px 0 60px;}
+.duty .commonTil{ height:755px;}
+
+/*friut*/
+.friut ol{ border-bottom:2px solid #d7d7d7; height:34px; padding-top:56px; position:relative; margin-bottom:40px;}
+.friut ol li{ width:96px; height:20px; line-height:20px; padding-bottom:14px; text-align:center; float:left; font-size:18px; color:#7e7e7e;}
+.friut ol .li_active{ color:#000;}
+.friut .line{ width:96px; height:4px; background:#000; position:absolute; left:0; bottom:-3px; transition:0.5s;}
+.friut ol a{ width:106px; text-align:center; line-height:18px; background:#0071be; color:#fff; font-size:12px; border-radius:9px; position:absolute; right:0; bottom:14px;}
+.friut ol a:hover{ background:#F90;}
+.friut ul{ width:750px; padding:0 44px 20px; display:none;}
+.friut .ul_active{ display:block;}
+.friut ul li{ margin-bottom:30px;}
+.friut ul li img{ margin-right:48px; vertical-align:middle;}
+.friut .noMr{ margin-right:0;}
+.friut .commonTil{ height:806px;}
+
+/*problem*/
+.problem ul{ padding:60px 0 10px 30px;}
+.problem li{ margin-bottom:20px;}
+.problem li span{ background:#e0e0e0; height:20px; line-height:20px; font-size:16px; color:#0b0b0b; padding:25px 40px; margin:10px 0 0 30px; border-radius:20px; position:relative;}
+.problem li span em{ position:absolute; left:-15px; top:20px;}
+.problem li div{ width:588px; line-height:22px; font-size:14px; color:#fff; background:#006db8; padding:12px; margin-right:30px; border-radius:20px; position:relative;}
+.problem li div em{ position:absolute; right:-17px; top:20px;}
+.problem .reLH{ line-height:60px;}
+.problem .commonTil{ height:2072px;}
+
+/*other*/
+.other{ padding-bottom:80px;}
+.other .other_til{ font-size:34px; color:#006db8; height:44px; margin:70px 0 40px;}
+.other em{ height:44px; margin-right:16px; vertical-align:top;}
+.box111{ position:relative;width:995px;height:330px;}
+.box111 li{ z-index:0;position:absolute; width:0px;height:0px;top:146px;cursor:pointer;left:377px;}
+.box111 li img{ width:100%;height:100%;vertical-align:top;}
+.box111 li p span{ display:inline-block;width:70%;height:40px;overflow:hidden;}
+.box111 .prev,.box111 .next{ display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:47px;height:61px;top:131px;}
+.box111 .prev{ background:url(/special/about/images/moreLeftBtn.png) no-repeat;left:195px;}
+.box111 .next{ background:url(/special/about/images/moreRightBtn.png) no-repeat;right:175px;} 

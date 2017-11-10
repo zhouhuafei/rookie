@@ -1,0 +1,110 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:25px;}
+em,i,strong,b,small{font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{display:inline-block;}
+em{transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_1100{ width:1100px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%;   margin:0 auto; overflow:hidden; background:url(../images/grey_bg_03.png);}
+
+/*---------------------------------banner---------------------------------------*/
+.banner{ background:url(../images/banner_02.jpg) center center no-repeat; height:500px;}
+
+/*archives*/
+.archives{ margin:70px auto 65px;}
+.archives_word{ width:460px; height:690px; position:relative;}
+.small_archives{ border-left:4px solid #006db8; padding-left:10px;}
+.small_archives h2{ font-size:48px; color:#006db8; height:50px; line-height:50px;}
+.small_archives h3{ font-size:23px; color:#b9b9b9; height:25px; line-height:25px; margin-bottom:30px;}
+.archives_word h4{ font-size:18px; line-height:35px;}
+.archives_word .h4_4{ font-size:18px; line-height:35px;}
+.archives_word .h5_5{ font-size:18px; line-height:35px;}
+.archives_word em{ vertical-align:middle; width:25px; height:25px; margin-right:10px;}
+.archives_em1{ background:url(../images/the_hospital.png) -36px -690px no-repeat}
+.archives_em2{ background:url(../images/the_hospital.png) -36px -763px no-repeat}
+.archives_em3{ background:url(../images/the_hospital.png) -36px -836px no-repeat}
+.archives_em4{ background:url(../images/the_hospital.png) -36px -908px no-repeat}
+.archives_em5{ background:url(../images/the_hospital.png) -36px -981px no-repeat}
+.archives_word h4:hover .archives_em1{ background:url(../images/the_hospital.png) -36px -727px no-repeat}
+.archives_word h4:hover .archives_em2{ background:url(../images/the_hospital.png) -36px -799px no-repeat}
+.archives_word h4:hover .archives_em3{ background:url(../images/the_hospital.png) -36px -872px no-repeat}
+.archives_word h4:hover .archives_em4{ background:url(../images/the_hospital.png) -36px -945px no-repeat}
+.archives_word h4:hover .archives_em5{ background:url(../images/the_hospital.png) -36px -1017px no-repeat}
+.archives_word p{ font-size:16px; text-indent:30px; margin:5px 0;}
+.archives_word .btn{ position:absolute; left:125px; bottom:0; margin:0;}
+
+/*common_main*/
+.till{ margin-bottom:40px;}
+.til{ font-size:36px; text-align:center; color:#006db8; margin-top:50px;}
+.tils{ font-size:18px; text-align:center; color:#b9b9b9; margin-bottom:40px;}
+.btn{ text-align:center; margin:50px auto 60px;}
+.btn a{ height:46px; line-height:46px; padding:0 25px; text-align:center; color:#fff; font-size:20px; background:#006db8; border-radius:10px;}
+
+/*doctor ethics*/
+.p_small{ font-size:12px; color:#333333; text-indent:30px; margin-bottom:40px;}
+.doctor img,.ethics img{ display:block; margin:0 auto;}
+.ethics{ padding-top:75px;}
+
+/*kind*/
+.kind{ padding-top:75px; width:980px; margin:0 auto;}
+.kind dl{ width:430px; margin-left:35px;}
+.kind dd{ float:left; margin:0 20px 20px 0; width:203px; height:128px; border:1px solid #016eb8; box-shadow:1px 1px 10px #000;}
+.kind_vedio{ width:440px; height:280px; background:#000; margin-right:35px;}
+
+/*medicine*/
+.medicine{ padding-top:70px;}
+.medicine p{ text-indent:30px; font-size:12px; color:#333; margin-bottom:20px;}
+.medicine span{ background:#fff; width:211px; margin-right:45px; float:left;}
+.medicine h2{ font-size:14px; color:#333; text-align:center; line-height:30px;}
+
+/*holiday*/
+.holiday{ padding-top:80px;}
+.holiday .word{ width:570px;}
+.holiday .word p{ text-indent:30px; font-size:12px; color:#333;}
+.holiday .word img{ margin-top:10px;}
+.holiday .vedio{ background:#efefef; width:320px; margin-top:5px;}
+.holiday .vedio p{ font-size:14px; color:#333; text-align:center; line-height:35px;}
+
+/*talk*/
+.talk .talk_ul1{ float:left; overflow:hidden; width:499px; padding:40px 0; border-right:1px solid #d5d5d5;}
+.talk .talk_ul2{ float:right; overflow:hidden; width:500px; padding:40px 0;}
+.talk .talk_ul2 li{ margin-left:60px;}
+.talk .talk_li1{ margin-bottom:40px; width:340px; padding-left:100px; height:90px; line-height:90px; color:#2e2e2e; border-radius:90px; position:relative; background:#d5d5d5;}
+.talk .talk_li2{ margin-bottom:40px; width:300px; padding:4px 100px 0 40px; height:87px; line-height:14px; color:#fff; border-radius:90px; position:relative; background:#066bbd; font-size:12px;}
+.talk .talk_img1{ position:absolute; left:0px; top:1px;}
+.talk .talk_img2{ position:absolute; right:0px; top:1px;}
+.talk .talk_p1{ position:absolute; bottom:-20px; left:0px; width:90px; text-align:center; line-height:20px; font-size:16px;}
+.talk .talk_p2{ position:absolute; bottom:-20px; right:0px; width:90px; text-align:center; line-height:20px; font-size:16px; color:#2e2e2e;}
+.talk .technology_btn{ margin-top:0px;}	
+.talk .talk_img1,.talk .talk_img2{ transition:1s;}
+.talk .talk_li1,.talk .talk_li2{ transition:1s;}
+.talk .talk_li1:hover img{ left:10px;}
+.talk .talk_li2:hover img{ right:10px;}
+
+/*media*/
+.media{ padding-top:70px;}
+.media .vedio{ width:320px; height:270px; background:#000; margin-left:55px;}
+.media .vedio p{ line-height:30px; background:#f1f1f1; text-align:center; font-size:12px; color:#333;}
+.media .word{ width:525px; height:250px; margin-right:40px; padding-top:20px;}
+.media .p_small{ margin-bottom:5px;}
+.media .tv{ text-align:center; margin:50px 0;}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>RegExpGreedy</title>
+<script>
+/*
+var re=/[a-z]+/;
+var str='adfsdfsdfdsf';
+console.log(str.replace(re,1));//==>1
+*/
+/*
+var re=/[a-z]+/g;
+var str='adfsdfsdfdsf';
+console.log(str.replace(re,1));//==>1
+*/
+/*
+var re=/[a-z]+?/;
+var str='adfsdfsdfdsf';
+console.log(str.replace(re,1));//==>1dfsdfsdfdsf
+*/
+/*
+var re=/[a-z]+?/g;
+var str='adfsdfsdfdsf';
+console.log(str.replace(re,1));//==>111111111111
+*/
+/*
+var re=/[a-z]/g;
+var str='adfsdfsdfdsf';
+console.log(str.replace(re,1));//==>111111111111
+*/
+/*
+var re=/8(.*)8/g;
+var str='8asdas8 8asdas8 8asdas8';
+console.log(str.replace(re,1));//==>1
+*/
+/*
+var re=/8(.*?)8/g;
+var str='8a8 8a8 8a8';
+document.writeln(str.replace(re,'<h1>$1</h1>'));//==>三个超大字体的a
+*/
+var re=/8[^8]+8/g;
+var str='8asdas8 8asdas8 8asdas8';
+console.log(str.replace(re,1));//==>1 1 1
+</script>
+</head>
+
+<body>
+</body>
+</html>

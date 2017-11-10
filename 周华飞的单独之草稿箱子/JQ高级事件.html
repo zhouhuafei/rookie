@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ高级事件</title>
+<style>
+*{ margin:0; padding:0;}
+body{ margin:50px 100px; height:2000px;}
+.div1{ width:300px; height:200px; background:#F00;}
+.div1 input{ width:298px;}
+.div1 span{ display:block; width:100px; height:100px; background:#0FF;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	//triggle		浏览器模拟用户操作
+	/*
+	$('input').click(function(){alert('我的第一次点击来自模拟');});
+	$('input').trigger('click');
+	*/
+	/*
+	$('input').click(function(e,data1,data2)			//trigger里的额外事件
+	{
+		alert(data1+'|'+data2);
+	}).trigger('click',['123','abc']);
+	*/	
+	/*
+	$('input').click(function(e,data1,data2,data3,data4)
+	{
+		alert(data1+'|'+data2+'|'+data3[2]+'|'+data4.year);
+	}).trigger('click',['123','abc',['aaa','bbb','ccc'],{year:'2014',moonth:'09'}]);
+	*/	
+									//bind里的额外事件和trigger里的额外事件
+	/*
+	$('input').bind('click',{name:'zhouhuafei'},function(e,data1,data2,data3,data4)
+	{
+		alert(data1+'|'+data2+'|'+data3[2]+'|'+data4.year+'|'+e.data.name);
+	}).trigger('click',['123','abc',['aaa','bbb','ccc'],{year:'2014',moonth:'09'}]);
+	*/
+	/*
+	$('input').bind('myEvent',function()		//trigger的自定义事件
+	{
+			alert('自定义事件');
+	}).trigger('myEvent');
+	*/
+	/*
+	$('input').click(function()		//trigger的简写方案
+	{
+			alert('trigger的简写方案');
+	}).click();
+	*/
+	
+	//triggerHandler()    用法和trigger一样     但是triggerHandler()拥有四个不同点	
+	//1.triggerHandler()不会触发事件的默认行为						trigger()会触发事件的默认行为
+	//2.triggerHandler()方法只会影响第一个匹配到的元素					trigger()会匹配所有元素
+	//3.triggerHandler()有返回值则返回返回值的值无返回值则返回undefined无法实现连缀 	trigger()返回JQ对象可以连缀
+	//4.triggerHandler()不会冒泡								trigger()会冒泡
+	
+	//.bind 无法动态绑定事件
+	/*
+	$('input').bind('click.abc',function()		//事件命名空间'click.abc'
+	{
+		$(this).clone().appendTo('body');	
+	})
+	*/
+	/*
+	$('input').bind('click.abc',function()		//事件命名空间'click.abc'
+	{
+		$(this).clone(true).appendTo('body');	//clone(true)可以把事件也克隆
+	})
+	*/
+	
+	//delegate(绑定什么,绑定事件,fn) 事件委托(不用记,新版本有更好的方法)
+	//上述克隆多少次，就绑定多少次事件，而用事件委托delegate(绑定什么,绑定事件,fn)只帮定一次事件。绑定在父元素上
+	/*
+	$('body').delegate('input','click',function(){		
+	
+		$(this).clone().appendTo('body');	
+	})
+	*/
+	//undelegate(取消绑定的什么,取消绑定的事件)
+	/*
+	$('body').undelegate('input','click')
+	*/
+	
+	//事件委托和事件绑定  新版本 
+	//on绑定取代bind   off解绑取代unbind 	
+	//on取代事件委托delegate   父元素.on('绑定事件','绑定什么',fn) 			事件委托绑定在父元素上 
+	//off取代取消事件委托undelegate		父元素.off('取消绑定的事件','取消绑定的什么') 
+	
+	//one  普通的事件绑定仅一次事件触发
+	//$('input').one('click',function(){alert('普通的事件绑定,只执行一次');})
+	//one  普通的事件委托，仅委托一次
+	//$('body').one('click','input',function(){$(this).clone().appendTo('body');})
+	//$('body').one('click','input',function(){$(this).clone(true).appendTo('body');})
+	
+	
+})
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" />
+
+</body>
+</html>

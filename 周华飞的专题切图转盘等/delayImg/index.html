@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>delayImg</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+#container{ overflow:hidden;}
+ol{ width:1250px; margin:0 auto;}
+ol:after{ content:""; display:block; height:0; overflow:hidden; clear:both;}
+li{ width:600px; height:451px; margin-bottom:50px;}
+li:nth-of-type(odd){ float:left;}
+li:nth-of-type(even){ float:right;}
+li:nth-of-type(odd) img{ float:left; transform:translatex(-500px); -webkit-transform:translatex(-500px);}
+li:nth-of-type(even) img{ float:right; transform:translatex(500px); -webkit-transform:translatex(500px);}
+li img{ transition:1s; opacity:0; width:100%; vertical-align:middle;}
+li img.active{ opacity:1; transform:translatex(0); -webkit-transform:translatex(0);}
+</style>
+<script>
+window.onload=function(){
+	var aImg=document.getElementsByTagName('img');
+	var iLen=aImg.length;
+	var iClinetH=document.documentElement.clientHeight;
+	imgLoad();
+	window.onscroll=function(){
+		setTimeout(imgLoad,100);
+	}
+	function imgLoad(){
+		var iScrollT=document.documentElement.scrollTop||document.body.scrollTop;
+		for(var i=0;i<iLen;i++){
+			if(iScrollT+iClinetH>aImg[i].offsetTop&&aImg[i].src==''){
+				aImg[i].className='active';
+				aImg[i].src=aImg[i].getAttribute('_src');
+			}
+		}	
+	}
+}
+</script>
+</head>
+<body>
+<div id="container">
+        <ol>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+                <li><img _src="images/1.jpg"></li>
+                <li><img _src="images/2.jpg"></li>
+                <li><img _src="images/3.jpg"></li>
+                <li><img _src="images/4.jpg"></li>
+                <li><img _src="images/5.jpg"></li>
+                <li><img _src="images/6.jpg"></li>
+        </ol>
+</div>
+</body>
+</html>

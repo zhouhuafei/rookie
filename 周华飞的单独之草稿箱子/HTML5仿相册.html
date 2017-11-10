@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<script>
+document.createElement('header')
+document.createElement('nav')
+document.createElement('aside')
+document.createElement('section')
+document.createElement('footer')
+</script>
+<style>
+*{ margin:0; padding:0; text-decoration:none; list-style:none; border:none; outline:none;}
+.images_box{width:120px; height:120px;position:relative;margin:auto; margin-top:50px;}
+.images1,.images2,.images3{width:100px; height:100px; border:10px #FFF solid;position:absolute;box-shadow:3px 3px 3px #999,-3px -3px 3px #999;}
+.images1{background:#F00; left:0;     top:0;    z-index:2;  -moz-transition:all 0.5s;}
+.images2{background:#0F0; left:-5px;  top:-1px; z-index:3;  -moz-transition:all 0.5s;}
+.images3{background:#F60; left:-10px; top:-2px; z-index:4;  -moz-transition:all 0.5s;}
+.images_box:hover .images1{left:30px;  -moz-transform:rotate(10deg);}
+.images_box:hover .images3{left:-40px; -moz-transform:rotate(-20deg);}
+</style>
+</head>
+<body>
+<section>
+	<div class="images_box">
+    	<div class="images1"></div>
+        <div class="images2"></div>
+        <div class="images3"></div>
+    </div>
+</section>
+</body>
+</html>

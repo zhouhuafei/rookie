@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>try catch</title>
+</head>
+<body>
+<script>
+window.onload=function()
+{	
+	function message()
+	{
+		try
+		{
+			alertss('没有错误');	
+		}
+		catch(err)
+		{
+			/*
+			txt='本也有一个错误。\n';
+			txt+='错误描述:'+err.message+'\n';
+			txt+='点击确定继续。';	
+			alert(txt);
+			*/
+			alert(err.message);
+		}
+	}
+	/*
+	var txt='';
+	message();
+	*/
+	
+	function factorial(x)
+	{
+		if(x<0)throw new Error('x不能小于零');
+		//for(var f=1;x>1;x--){f*=x};
+		for(var f=1;x>1;f*=x,x--);
+		return f;
+	}
+	//factorial(-1);	
+	
+	try
+	{
+		var n=Number(prompt('请输入一个正整数',''));
+		if(n=='')throw '不能为空';
+		var f=factorial(n);
+		alert(f);	
+	}	
+	catch(err)
+	{
+		alert(err)
+	}
+}
+function myFunction()
+{
+	try
+	{
+		var x=document.getElementById("demo").value;
+		if(x=="")    throw "empty";
+		if(isNaN(x)) throw "not a number";
+		if(x>10)     throw "too high";
+		if(x<5)      throw "too low";
+	 }
+	catch(err)
+	{
+		var y=document.getElementById("mess");
+		y.innerHTML="Error: " + err + ".";
+	}
+}
+</script>
+<h1>My First JavaScript</h1>
+<p>Please input a number between 5 and 10:</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">Test Input</button>
+<p id="mess"></p>
+</body>
+</html>

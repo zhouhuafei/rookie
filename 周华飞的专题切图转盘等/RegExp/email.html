@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>email</title>
+</head>
+
+<body>
+<script>
+var str='1123486116@qq.com';
+//一串英文数字下划线	@      一串英文数字	点	2-4位英文(国际域名,不考虑.com.cn的情况)
+//	[\w]+		@	[a-z0-9]+	\.	     [a-z]{2,4}
+var re=/^[\w]+@[a-z0-9]+\.[a-z]{2,4}$/i;
+alert(re.exec(str));
+</script>
+</body>
+</html>

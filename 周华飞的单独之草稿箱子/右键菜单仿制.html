@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<style>
+*{ margin:0; padding:0;}
+.div1{ height:100px; width:100px; background:#0F0; position:absolute;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	var oTxt=document.getElementById('txt');
+	//oDiv.ondblclick=function(){alert('a');}
+	document.oncontextmenu=function(ev)
+	{		
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			var scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;
+			oTxt.value=event.clientX+','+event.clientY;
+			oDiv.style.left=event.clientX+scrollLeft+'px';
+			oDiv.style.top=event.clientY+scrollTop+'px';
+			return false;
+	}
+}
+</script>
+</head>
+
+<body style="width:2000px; height:2000px;">
+<input type="text" id="txt"  value=""/>
+<div class="div1" id="div1"></div>
+</body>
+</html>

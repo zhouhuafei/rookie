@@ -1,0 +1,87 @@
+@charset "gb2312";
+/* CSS Document */
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px!important; font-family:"Î¢ÈíÑÅºÚ"!important;}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat;}
+.banner div{ position:relative; height:500px;}
+.banner a{ width:300px; height:100px; position:absolute; left:350px; bottom:50px;}
+
+
+.box1{ margin-bottom:37px; height:268px; background:url(../images/box1.jpg) center center no-repeat;}
+
+.img{ text-align:center; padding:45px 0; width:1062px; margin:0 auto;}
+.img_bgred{ background:#fff1ee; padding:5px 0;}
+.img_bgred div{ text-align:center; width:1062px; margin:0 auto;}
+.img img,.img_bgred img{ vertical-align:middle; display:block;}
+
+.g_box{ margin-top:50px; position:relative;}
+.g_box div{ text-align:center; width:1000px; margin:0 auto;}
+.g_box img{ vertical-align:middle; display:block;}
+.g_box:before,.g_box:after{ content:""; width:50%; height:100%; background:url(../images/g_bg.jpg) repeat-x; position:absolute; top:0; z-index:-1;}
+.g_box:before{ left:0;}
+.g_box:after{ right:0;}
+
+.img a,.img_bgred a,.g_box a{ display:block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.box7{ margin:50px 0 40px; position:relative;}
+.box7 ol{ position:absolute; right:0; bottom:0;}
+.box7 li{ width:110px; float:left; margin:0 18px;}
+.box7 li p{ text-align:center; line-height:40px; font-size:16px;}
+.box7 dd{ width:520px; color:#151515;}
+.box7 dl{ display:none;}
+.box7 dl.on{ display:block;}
+.box7 dd h4{ font-size:15px; margin-top:10px; text-transform:uppercase;}
+.box7 dd h3{ font-size:26px; margin-top:4px;}
+.box7 dd h2{ font-size:58px; margin:4px 0 10px;}
+.box7 dd p{ line-height:30px; font-size:16px;}
+.box7 dd h5{ font-size:14px; margin-top:10px; line-height:33px;}
+
+.bg8{ padding:40px 0; border-top:1px solid #cecece; border-bottom:1px solid #cecece;}
+.box8 h2.til,.box7 h2.til{ font-size:50px; text-align:center; margin-bottom:20px;}
+
+.box9{ padding:40px 0 100px;}

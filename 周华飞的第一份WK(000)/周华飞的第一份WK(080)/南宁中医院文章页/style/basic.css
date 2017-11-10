@@ -1,0 +1,214 @@
+body, h1, h2, h3, h4, h5, h6, hr, div,p,blockquote,dl, dt, dd, ul, ol, li,pre, form, fieldset, legend, button, input, textarea,th, td,img
+{
+	border:none;
+	margin:0;
+	padding:0;
+}
+body{margin:0 auto;height:auto;color:#000;font-size:12px;background:#f6f6f6;font-family:"Microsoft Yahei",Arial, sans-serif;}
+ul,ol,li{list-style-type:none;}
+a{text-decoration:none;outline:none;transition: all 0.3s linear 0s;}
+.clear{clear:both;}
+.bg_white{ background:#fff; overflow:hidden;}
+
+#top{width:100%;height:auto;}
+#top .topLogo{text-align:center;background:#f6f6f6;}
+#top .topNav{width:100%;height:46px;background:#d33c60;font-size:16px;}
+#top .topNav ul{width:985px;height:46px;margin:0px auto;overflow:hidden;}
+#top .topNav ul li{width:122px;height:46px;line-height:46px;position:relative;text-align:center;float:left;border-right:1px solid #c62c49;}
+#top .topNav ul li.first{border-left:1px solid #c62c49;}
+#top .topNav ul li a{display:block;width:100%;height:46px;color:#fff;text-align:center;}
+#top .topNav .move_bg {margin-left: -2px;padding-left: 1px;padding-right: 1px;background: #c92f4e;position: absolute;width: 122px;height: 46px;top: 0; left:-20px}
+
+
+#banner{width: 100%;height:350px;text-align:center; position:relative;}
+#banner div{ display:none;}
+#banner .div_select{ display:block;}
+#banner #banner1{width:100%;height:350px;margin:0 auto;overflow:hidden;position: relative;background:url(../images/ban1.jpg) no-repeat;}
+#banner #banner2{width:100%;height:350px;margin:0 auto;overflow:hidden;position: relative;background:url(../images/ban2.jpg) no-repeat;}
+#banner #banner3{width:100%;height:350px;margin:0 auto;overflow:hidden;position: relative;background:url(../images/ban3.jpg) no-repeat;}
+#banner ol{ position: absolute; left:50%; bottom:10px; margin-left:-31px; z-index:2;}
+#banner li{ float:left; width:12px; height:12px; background:#999; margin-right:12px; border-radius:50%;}
+#banner .li_active{ background:#e45380;}
+
+#top .NavList{width:990px;height:240px;margin:14px auto 10px;overflow:hidden;}
+.info {color: #646464;font-size: 14px;}
+.info span {background: none repeat scroll 0 0 #626262;border-radius: 3px;color: #fff;display: inline;margin-right: 15px;padding: 2px 8px;text-align: center;}
+.info a {color:#EF9301;}
+.info a:hover {color: #666;text-decoration: none;}
+
+#top .NavList a.logo{display:block;height:40px; line-height:40px; font-size:18px; color:#D53B61; background:url(../images/fkyy_line.jpg) no-repeat left bottom;}
+#top .NavList .item{height:30px;padding:3px 0px;margin-left:0px;float:left;background:#fff; width:320px;}
+#top .NavList .item ul li{ float:left;padding-right:6px; height:30px; line-height:30px;}
+#top .NavList .item ul li a{ font-size:14px; color:#626262; line-height:20px;}
+#top .NavList .item ul li span{ padding-left:6px; color:#626262;}
+#top .NavList .item ul li a:hover{ color:#F36;}
+#top .NavList .NavList_l{ float:left;width:320px; height:120px;}
+#top .NavList .NavList_m{ float:left;width:320px; height:120px; margin-left:15px; margin-right:15px;}
+#top .NavList .NavList_r{ float:left;width:320px; height:120px;}
+
+#top .NavList .item p{padding:1px 0px;font-size:13px;}
+#top .NavList .item p a{padding:0px 12px;color:#333;}
+#top .NavList .item p a:hover{color:#E4007F;}
+#top .NavList .jhsy{width:221px;height:46px;overflow:hidden;float:left;}
+#top .NavList .jhsy .item{width:169px;}
+#top .NavList .fkyz{width:286px;height:46px;overflow:hidden;float:left;}
+#top .NavList .fkyz .item{width:234px;}
+#top .NavList .gjjb{width:303px;height:46px;overflow:hidden;float:left;}
+#top .NavList .gjjb .item{width:251px;}
+#top .NavList .lfmst{width:180px;height:46px;overflow:hidden;float:left;}
+#top .NavList .lfmst a.logo{width:58px;}
+#top .NavList .lfmst .item{width:122px;}
+#top .NavList .lfmst .item p a{padding:0px 10px;}
+#top .topSearch{width:990px;height:32px;background:#f0f0f0;margin:0px auto;position:relative;}
+#top .topSearch p{height:32px;line-height:32px;padding-left:20px;font-size:13px;}
+#top .topSearch p span{color:#333;font-weight:700;}
+#top .topSearch p a{color:#333;padding:0 3px;}
+#top .topSearch p a:hover{color:#E4007F;}
+#top .topSearch p.clp{background:url(../images/home_btn.png) no-repeat 3px 11px;}
+#top .topSearch .search{height:24px;position:absolute;right:10px;top:4px;}
+#top .topSearch .search .ipt{width:197px;height:24px;float:left;}
+#top .topSearch .search .ipt input{text-indent:2px;width:196px;height:22px;line-height:22px;border:1px solid #ccc;border-right:none;transition: all 0.2s linear 0s;}
+#top .topSearch .search .ipt input:focus{border-color:#e45380;}
+#top .topSearch .search .btn{width:53px;height:24px;background:#e45380;float:left;}
+#top .topSearch .search .btn input{width:53px;height:24px;background:#e45380;color:#fff;}
+
+
+#footer{width:975px; margin:0 auto; overflow:hidden; padding-left:15px; height:auto;background:#fff; padding-top:20px;}
+#footer .returnTopBotton{display:none;width:25px;height:52px;position:fixed;bottom:0px;right:26px;}
+#footer .returnTopBotton a{display:block;width:25px;height:25px;line-height:25px;text-align:center;font-size:24px;color:#fff;background:#e45380;margin-bottom:1px;}
+#footer .HospitalShow{width:990px;height:194px;border-bottom:1px solid #e2e2e2;margin:0 auto;}
+#footer .HospitalShow ul.nav{width:100%;height:36px;margin-bottom:16px; border-bottom:2px solid #DCDCDC;}
+#footer .HospitalShow ul.nav li{ margin-bottom:-2px; width:90px;height:36px;line-height:34px;float:left;cursor:pointer;text-indent:10px;font-size:18px;color:#4a4a4a;}
+#footer .HospitalShow ul.nav li.select{ border-bottom:2px solid #e45380; color:#e45380; line-height:34px; height:36px;}
+#footer .HospitalShow .content{width:100%;height:140px;}
+#footer .HospitalShow .content .list{width:100%;height:100%;}
+#footer .HospitalShow .content .list ul{width:100%;height:100%;}
+#footer .HospitalShow .content .list ul li{width:198px;height:100%;float:left;text-align:center;}
+#footer .HospitalShow .content .list ul li img{display:block;width:148px;height:102px;border: 1px solid #E2E2E2;padding:2px;margin:0 auto;}
+#footer .HospitalShow .content .list ul li span{display:block;width:148px;margin:0 auto;font-size:14px;padding:12px 0px 0px;}
+#footer .HospitalShow .content .list p{padding-bottom:3px;}
+#footer .HospitalShow .content .list p.partner{width:990px;height:115px;padding:25px 0 0 0;text-align:center;}
+#footer .line{width:990px;height:156px;margin:26px auto;}
+#footer .line dl{width:211px;height:156px;border-right:1px dashed #e2e2e2;padding-right:10px;float:left;margin-right:23px;}
+#footer .line dl.last{border:none;margin:0px;}
+#footer .line dl dt{width:179px;height:32px;padding-left:32px;background:url(../images/footer/address_icon.png) no-repeat;}
+#footer .line dl.consult dt{background-position:0px 0px;}
+#footer .line dl.call dt{background-position:0px -66px;}
+#footer .line dl.ress dt{background-position:0px -132px;}
+#footer .line dl dt p{padding-left:10px;width:auto;height:16px;line-height:15px;}
+#footer .line dl dt p.cn{font-size:16px;}
+#footer .line dl dt p.en{font-size:10px;}
+#footer .line dl dd.info{padding:10px 0px;height:72px;font-size:14px;color:#959595;line-height:170%;}
+#footer .line dl dd.btn{width:102px;height:30px;line-height:30px;border-radius:1px;text-align:center;border:1px solid #e45380;font-size:15px;}
+#footer .line dl dd.btn a{display:block;color:#e45380;}
+#footer .line dl dd.btn a:hover{background:#e45380;color:#fff;}
+#footer .line .map{width:238px;height:154px;border:1px solid #e2e2e2;float:left;background:#eee;}
+.contact{width:100%;height:87px;background:#e45380;text-align:center;}
+#address{width:100%;height:150px;background:#f2f2f2;}
+#address .content{width:990px;height:100px;padding:25px 0px;margin:0 auto;}
+#address .content .logo{width:196px;height:100px;float:left;}
+#address .content .list{width:685px;height:100px;margin-left:38px;padding-left:38px;border-left:1px solid #e2e2e2;float:left;}
+#address .content .list p{height:22px;line-height:22px;color:#666;font-size:14px;}
+#address .content .list .btnlist{width:100%;height:27px;padding-top:5px;}
+#address .content .list .btnlist a{display:block;width:27px;height:27px;float:left;margin-right:5px;text-indent:-9999px;background:url(../images/footer/footer_icon.png) no-repeat;}
+#address .content .list .btnlist a.WeChat{background-position:0px 0px;}
+#address .content .list .btnlist a.WeChat:hover{background-position:0px -28px;}
+#address .content .list .btnlist a.WeiBo{background-position:0px -56px;}
+#address .content .list .btnlist a.WeiBo:hover{background-position:0px -84px;}
+#address .content .list .btnlist a.Baidu{background-position:0px -112px;}
+#address .content .list .btnlist a.Baidu:hover{background-position:0px -140px;}
+#address .content .list .btnlist a.QQ{background-position:0px -168px;}
+#address .content .list .btnlist a.QQ:hover{background-position:0px -196px;}
+#address .content .list .btnlist a.Phone{background-position:0px -224px;}
+#address .content .list .btnlist a.Phone:hover{background-position:0px -252px;}
+
+/*CSS right and index.html*/
+#right{width:272px;height:1459px;float:left;margin-left:15px;overflow:hidden;}
+.IHN_right{width:272px;height:395px;float:left;}
+.IHN_right .top{width:270px;height:186px;overflow:hidden;border:1px solid #e1e1e1;}
+.IHN_right .top dl{width:100%;height:70px;border-bottom:1px solid #e1e1e1;}
+.IHN_right .top dl dt{width:129px;height:70px;border-right:1px solid #e1e1e1;float:left;}
+.IHN_right .top dl dd{float:left;font-size:16px;padding:7px 15px 0px;line-height:180%;color:#999;}
+.IHN_right .top p{width:100%;height:40px;line-height:40px;text-indent:10px;font-size:14px;}
+.IHN_right .top a{display:block;height:100%;color:#999;}
+.IHN_right .top a:hover{color:#e6205d;background:#f4c0d0;}
+.IHN_right .top .p1{border-bottom:1px solid #e1e1e1;}
+.IHN_right .top .p2{border-bottom:1px solid #e1e1e1;}
+.IHN_right .top .p2 a{float:left;}
+.IHN_right .top .p2 a.a1{width:110px;border-right:1px solid #e1e1e1;}
+.IHN_right .top .p2 a.a2{width:148px;}
+.IHN_right .top .p3{border-bottom:1px solid #e1e1e1;}
+.IHN_right .top .p3 a{float:left;}
+.IHN_right .top .p3 a.a1{width:158px;border-right:1px solid #e1e1e1;font-weight:bold;}
+.IHN_right .top .p3 a.a2{width:100px;}
+.IHN_right .top .p4{height:37px;border-bottom:1px solid #e1e1e1;}
+.IHN_right .top .p5{height:38px;}
+.IHN_right .top .p5 a{float:left;}
+.IHN_right .top .p5 a.a1{width:129px;border-right:1px solid #e1e1e1;}
+.IHN_right .top .p5 a.a2{width:129px;}
+.IHN_right .bottom{width:272px;height:203px;margin-top:6px;}
+.IHN_right .bottom a{display:block;width:72px;height:27px;color:#666;float:left;}
+.IHN_right .bottom a p.cn{font-size:14px;}
+.IHN_right .bottom a p.en{font-size:8px;font-family:Arial;text-indent:5px;}
+.IHN_right .bottom a:hover{color:#e45380;}
+.IHN_right .bottom a.zx{margin:0px 13px 13px 0px;background-position:0px 0px;}
+.IHN_right .bottom a.zx:hover{background-position:0px -48px;}
+.IHN_right .bottom a.dy{margin:0px 0px 13px 0px;background-position:0px -96px;}
+.IHN_right .bottom a.dy:hover{background-position:0px -144px;}
+.IHN_right .bottom a.qq{margin:0px 13px 0px 0px;background-position:0px -192px;}
+.IHN_right .bottom a.qq:hover{background-position:0px -240px;}
+.IHN_right .bottom a.gh{margin:0px 0px 0px 0px;background-position:0px -288px;}
+.IHN_right .bottom a.gh:hover{background-position:0px -336px;}
+.hospitalAbout{width:229px;height:288px;padding:18px 15px;border:1px solid #e1e1e1;margin:15px 0px;}
+.hospitalAbout .til{width:100%;height:25px;position:relative;margin-bottom:20px;}
+.hospitalAbout .til span{font-size:18px;color:#e45380;line-height:25px;font-weight:bold;}
+.hospitalAbout .til a{display:block;width:23px;height:23px;line-height:18px;text-align:center;border:1px solid #e2e2e2;background:#fff;font-size:26px;position:absolute;right:0px;top:0px;color:#999;}
+.hospitalAbout .til a:hover{background:#e45380;color:#fff;}
+.hospitalAbout dl{width:100%;height:192px;border-bottom:1px dashed #e2e2e2;}
+.hospitalAbout dl dt{width:100%;height:100px;}
+.hospitalAbout dl dd{text-indent:26px;line-height:180%;color:#666;font-size:14px;padding-top:8px;}
+.hospitalAbout dl dd a{color:#e45380;}
+.hospitalAbout dl dd a:hover{color:#e45380;text-decoration:underline;}
+.hospitalAbout ul{width:100%;padding-top:15px;font-size:14px;padding-top:5px;}
+.hospitalAbout ul li{width:86px;height:15px;line-height:14px;padding:0px 0 0 23px;margin-top:8px;float:left;background:url(../images/R_hospitalAbout_pic2.jpg) no-repeat left center;}
+.hospitalAbout ul li a{color:#474747;}
+.doctorShow{width:229px;height:309px;padding:18px 15px;border:1px solid #e1e1e1;}
+.doctorShow .til{width:100%;height:25px;position:relative;}
+.doctorShow .til span{font-size:18px;color:#e45380;line-height:25px;font-weight:bold;}
+.doctorShow .til a{display:block;width:23px;height:23px;line-height:18px;text-align:center;border:1px solid #e2e2e2;background:#fff;font-size:26px;position:absolute;right:0px;top:0px;color:#999;}
+.doctorShow .til a:hover{background:#e45380;color:#fff;}
+.doctorShow dl{width:229px;height:118px;padding:15px 0px;border-bottom:1px dashed #e2e2e2;}
+.doctorShow dl.last{padding-bottom:0px;border:none;}
+.doctorShow dl dt{width:98px;height:118px;float:left;margin-right:10px;}
+.doctorShow dl dd{width:121px;float:left;}
+.doctorShow dl dd.name{font-size:14px;color:#444;}
+.doctorShow dl dd.name span{font-size:16px;padding-right:5px;}
+.doctorShow dl dd.name span a{color:#e45380;}
+.doctorShow dl dd.info{letter-spacing:1px;line-height:180%;color:#666;padding-top:4px;}
+.doctorShow dl dd.info a{color:#666;}
+.doctorShow dl dd.info a:hover{color:#e45380;text-decoration:underline;}
+.doctorShow dl dd.btn{width:70px;height:20px;line-height:20px;text-align:center;border:1px solid #e45380;margin-top:5px;}
+.doctorShow dl dd.btn a{display:block;width:100%;height:100%;color:#e45380;}
+.doctorShow dl dd.btn a:hover{background:#e45380;color:#fff;}
+.case{width:229px;height:309px;padding:18px 15px;border:1px solid #e1e1e1;margin-top:14px;}
+.case .til{width:100%;height:25px;position:relative;margin-bottom:20px;}
+.case .til span{font-size:18px;color:#e45380;line-height:25px;font-weight:bold;}
+.case .til a{display:block;width:23px;height:23px;line-height:18px;text-align:center;border:1px solid #e2e2e2;background:#fff;font-size:26px;position:absolute;right:0px;top:0px;color:#999;}
+.case .til a:hover{background:#e45380;color:#fff;}
+.case dl{width:100%;height:149px;}
+.case dl dt{width:229;height:105px;}
+.case dl dd{text-align:center;font-size:14px;padding:10px 0px;border-bottom:1px dashed #e2e2e2;}
+.case dl dd a{color:#666;}
+.case dl dd a:hover{color:#e45380;}
+.case ul{padding-top:2px;}
+.case ul li{font-size:13px;padding:5px 0px;padding-left:10px;background:url(../images/I_li_bg.jpg) no-repeat left center;}
+.case ul li a{color:#666;}
+.case ul li a:hover{color:#e45380;}
+
+
+
+
+
+
+
+

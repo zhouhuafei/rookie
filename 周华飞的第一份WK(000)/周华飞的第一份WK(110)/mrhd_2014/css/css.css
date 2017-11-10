@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*header*/
+header{ height:44px; line-height:44px; background:url(../images/header.jpg);}
+header a{ float:left; width:22%; font-size:1.4rem; text-align:center; color:#0098a0;}
+header a:nth-of-type(3){ color:#442e23;}
+header a:last-child{ width:34%; color:#fe0519; text-align:left;}
+
+/*nav*/
+nav{ background:url(../images/banner.jpg) center center no-repeat; height:180px;}
+nav a{ width:100%; height:100%;}
+
+/*box1*/
+.box1{ height:344px; background:url(../images/box1.jpg) center center no-repeat; margin-top:20px; position:relative;}
+.box1 .btn{ right:13px; bottom:20px;}
+
+/*box2*/
+.box2{ height:368px; background:url(../images/box2.jpg) center bottom no-repeat #dee5ff; padding-top:20px; position:relative;}
+.box2 .p_red{ left:13px; top:110px;}
+.box2 .btn{ left:13px; bottom:80px;}
+
+/*box3*/
+.box3{ height:331px; background:url(../images/box3.jpg) center bottom no-repeat; margin-top:20px; position:relative;}
+.box3 .p_red{ right:6px; top:50px;}
+.box3 .ul_txt{ right:6px; top:150px;}
+.box3 .btn{ right:6px; bottom:50px;}
+
+/*box4*/
+.box4{ height:366px; background:url(../images/box4.jpg) center bottom no-repeat #fff4ed; padding:20px 0; position:relative;}
+.box4 .p_red{ left:6px; top:95px;}
+.box4 .ul_txt{ left:26px; top:200px;}
+.box4 .btn{ left:6px; bottom:50px;}
+
+/*box5*/
+.box5{ height:357px; background:url(../images/box5.jpg) center bottom no-repeat; margin-top:20px; position:relative;}
+.box5 .p_red{ right:6px; top:55px;}
+.box5 .ul_txt{ right:6px; top:155px;}
+.box5 .btn{ right:6px; bottom:80px;}
+
+/*box6*/
+.box6{ height:236px; background:url(../images/box6.jpg) center bottom no-repeat;}
+.box6 a{ width:100%; height:100%;}
+
+/*major*/
+#major{ width:298px; margin:0 auto;}
+#major ol{ width:240px; margin:0 auto 10px; background:#f6f6f6; padding:10px 29px 0;}
+#major ol li{ width:64px; float:left;}
+#major ol li:nth-of-type(2){ margin:0 24px;}
+#major ol li img{ border-radius:50%;}
+#major ol li.on img{ animation:cicle 6s infinite linear; -webkit-animation:cicle 6s infinite linear;}
+@keyframes cicle{
+	0%	{ transform:rotate(0deg);}
+	100%	{ transform:rotate(360deg);}	
+}
+@-webkit-keyframes cicle{
+	0%	{ -webkit-transform:rotate(0deg);}
+	100%	{ -webkit-transform:rotate(360deg);}	
+}
+#major ol p{ height:30px; line-height:30px; text-align:center; color:#3b3b3b; font-size:1.2rem;}
+#major ul li{ display:none;}
+#major ul li.on{ display:block;}
+#major ul div{ height:44px; line-height:44px; margin:10px 0;}
+#major ul span{ font-size:2.4rem; padding:0 10px; word-spacing:4px; color:#00a4b4;}
+#major ul em{ font-size:1.4rem; color:#fb7843;}
+#major ul strong{ line-height:100%; margin:6px 0 4px;}
+#major ul small{ line-height:100%; font-size:12px;}
+#major ul p{ color:#666666; font-size:1.2rem; line-height:200%; padding-left:10px;}
+#major ul p:nth-of-type(7){ margin-top:10px;}
+
+/*safe*/
+#safe{ width:300px; margin:0 auto; font-size:1.2rem; position:relative; color:#646464;}
+#safe ol{ position:absolute; right:0; top:0; z-index:2;}
+#safe ol li{ margin:0 5px; width:10px; height:10px; background:#999; border-radius:50%; float:left;}
+#safe ol li.on{ background:#008f9d;}
+#safe ul li{ display:none;}
+#safe ul li.on{ display:block;}
+#safe h2{ font-size:1.2rem; line-height:160%; margin-top:10px;}
+#safe strong{ height:20px; line-height:20px; width:72px; text-align:center; color:#fff; background:#008f9c; margin:14px 0 10px;}
+#safe p{ line-height:140%;}
+
+/*others*/
+#others{ width:302px; margin:0 auto; padding-top:20px; position:relative;}
+#others ol{ position:absolute; right:0; top:0; z-index:2;}
+#others ol li{ margin:0 5px; width:10px; height:10px; background:#999; border-radius:50%; float:left;}
+#others ol li.on{ background:#008f9d;}
+#others ul li{ display:none;}
+#others ul li.on{ display:block;}
+
+/*common*/
+.btn{ width:130px; text-align:center; height:24px; border-radius:5px; line-height:24px; color:#fff; font-size:1.2rem; background:#f45968; position:absolute;}
+.p_red{ color:#f45968; font-size:13px; position:absolute;}
+.ul_txt{ position:absolute;}
+.ul_txt li{ color:#fff; font-size:1.2rem; width:102px; text-align:center; height:21px; line-height:21px; background:#444346; margin-bottom:2px;}
+.ul_txt li:last-child{ margin-bottom:0px;}
+.til{ width:320px; background:#00a4b4; color:#fff; font-size:1.8rem; text-align:center; height:38px; line-height:38px; margin:20px auto 10px;}
+
+/*CommentItem*/
+#CommentItem{ display:none}
+
+/*main*/
+.main{ background:#fff !important;}

@@ -1,0 +1,284 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑"; color:#4b4b4b;}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:25px;}
+em,i,strong,b,small{font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{display:inline-block;}
+em{transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr{ height:0; border-top:1px dashed #999;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+/*--------------------------上面是独立公用样式-------------------------------------*/
+/*--------------------------上面是独立公用样式-------------------------------------*/
+
+
+/*--------------------------------header-------------------------------------------*/
+.header_top_box{ background:#f3f3f3;}
+.header_top span{ color:#999;}
+.header_top a:hover{ color:#000;}
+.header_top ul{ height:35px;}
+.header_top li{ float:left; line-height:35px; height:35px;}
+.header_top li a{ height:35px; color:#999; padding:0 15px; font-size:12px;}
+.header_top li em{ vertical-align:middle; margin-right:3px; margin-top:-2px;}
+.header_top form{ height:35px;}
+.header_top form div{ color:#999; font-size:12px; float:left; height:25px;  line-height:25px; border:1px solid #999; border-right:none; margin:4px -242px 4px 20px;; width:190px; padding-left:30px; background:#FFF;}
+.header_top form #search{ z-index:2; height:25px;  line-height:25px; border:1px solid #999; border-right:none; margin:4px 0 4px 20px;; width:190px; padding-left:30px;background:url(../images/icon2.jpg) 5px center no-repeat;}
+.header_top form #search:focus{ border:1px solid #09F; border-right:none;}
+.header_top form #button{ height:31px; width:50px; background:#3a9dd6; color:#fff; cursor:pointer;}
+.header_top form #button:hover{ text-shadow:1px 1px 1px #000;}
+.header_top dl{ height:35px;}
+.header_top dl dd{ height:35px; float:left;}
+.header_top dl dd a{ height:35px; line-height:35px; color:#999; padding:0 10px; font-size:12px;}
+.header_down{ background:url(../images/header.jpg) center center no-repeat; height:99px;}
+
+/*-------------------------------top_nav------------------------------------------*/
+.top_nav{ height:42px; line-height:42px; background:#006db8; width:100%;}
+.top_nav ul{ width:1000px; height:42px; margin:0 auto;}
+.top_nav li{ float:left; background:url(../images/nav_line.jpg) right center no-repeat;}
+.top_nav li a{ width:90px; height:42px; text-align:center; line-height:42px; font-size:18px; color:#fff;}
+.top_nav li a:hover{ text-shadow:1px 1px 1px #000;}
+
+/*--------------------------------banner-----------------------------------------*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:458px; position:relative;}
+.banner a{ height:40px; width:100%; position:absolute; bottom:65px; right:0;}
+
+/*-------------------------------style_nav---------------------------------------*/
+.style_nav{ padding-top:35px; margin-top:20px; background:url(../images/style_nav_til.jpg) center top no-repeat;}
+.style_nav li{ float:left; width:179px; height:89px; overflow:hidden; margin-right:21px;}
+/*----------------------------上面是公用的样式-----------------------------------*/
+/*----------------------------上面是公用的样式-----------------------------------*/
+
+
+
+
+
+/*----------------------------下面是主页的样式-----------------------------------*/
+/*----------------------------下面是主页的样式-----------------------------------*/
+/*important*/
+.important{ padding-top:30px;}
+.important .im_left{ width:290px; overflow:hidden;}
+.vedio_case{ width:290px; height:360px; background:#000; color:#FFF; text-align:center; line-height:360px; margin-top:20px;}
+.phone_qq{ height:50px; margin-top:20px;}
+.phone_qq em{ vertical-align:middle; margin-right:1px;}
+.phone_qq a{ height:50px; color:#fff; background:#969696; line-height:50px; font-size:18px; padding:0 9px;}
+.phone_qq a:hover{ background:#0064b4;}
+.phone_qq a:hover em{ transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+.important .im_center{ overflow:hidden; width:370px; margin:0 15px;}
+.important .im_up{ overflow:hidden;}
+.important .im_up dt{ margin-top:20px; font-size:18px; color:#4b4b4b; text-align:center; height:30px; line-height:30px;}
+.important .im_up dd{ color:#4b4b4b; line-height:25px;}
+.important .im_down{ overflow:hidden; margin-top:40px;}
+.important .im_down ul{ overflow:hidden; margin-top:20px;}
+.important .im_down li span{ width:70px; color:#4b4b4b; text-align:right;}
+.important .im_down li a{ width:300px; height:30px; color:#4b4b4b;}
+.important .im_down li a:hover{ color:#f00;}
+.important .im_right{ width:290px; overflow:hidden;}
+.important .im_right .story{ margin-top:20px; display:block;}
+.important .im_right p{ color:#4b4b4b; margin-top:15px; padding-bottom:10px; border-bottom:1px dashed #999; line-height:22px;}
+.important .im_right p a{ color:#4b4b4b;}
+.important .im_right p a:hover{ color:#f00;}
+
+/*vitiligo_case*/
+.vitiligo_case{  margin-top:40px;}
+.content_til{ background:#f2f2f2; border-top:2px solid #006db8; height:40px; padding-left:10px; margin-bottom:20px;}
+.content_til span{ font-size:22px; color:#006db8; line-height:40px;}
+.content_til i{ font-size:14px; line-height:40px; margin-left:5px; color:#7a7a7a;}
+.vitiligo_case ul{ overflow:hidden; display:none;}
+.vitiligo_case .ul_active{ display:block;}
+.vitiligo_case ul li{ margin-bottom:35px; color:#4b4b4b; width:294px; float:left; margin-right:49px;}
+.vitiligo_case ul li p{ font-size:16px; line-height:25px; padding-left:5px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+.vitiligo_case ul li em{ vertical-align:middle; margin-right:5px;}
+.vitiligo_case ul li p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+.vitiligo_case ul li .li_dba{ text-align:center;}
+.vitiligo_case ul li a{ margin:20px 20px 0 0; color:#4b4b4b; font-size:16px; width:93px; height:28px; line-height:28px; border:1px solid #969696; text-align:center;}
+.vitiligo_case ul li a:hover{ background:#0064b4; color:#fff;}
+.vitiligo_case ol{ overflow:hidden; width:90px; margin:0 auto; margin-bottom:40px;}
+.vitiligo_case ol li{ transition:0.3s; cursor:pointer; float:left; margin-right:10px; width:20px; height:20px; text-align:center; line-height:20px; color:#fff; background:#c1c1c1; border-radius:3px;}
+.vitiligo_case ol li:hover{ border-radius:15px; transform:rotate(360deg); -webkit-transform:rotate(360deg); text-shadow:1px 1px 1px #000;}
+.vitiligo_case ol .li_active{ background:#0064b4;}
+
+/*treatment_method*/
+.treatment_method ol{ width:700px; border-bottom:1px solid #d8d8d8; overflow:hidden; margin:0 auto 40px; padding:0 110px;}
+.treatment_method ol li{ cursor:pointer; margin-right:50px; float:left; font-size:18px; background:#d8d8d8; width:200px; height:30px; line-height:30px; text-align:center; color:#727272;}
+.treatment_method ol .li_active{ background:#0076c6; color:#fff;}
+.treatment_method ul{ overflow:hidden;}
+.treatment_method ul li{ height:322px; display:none;}
+.treatment_method ul .li_active{ display:block;}
+.treatment_method ul li img{ margin-left:30px;}
+.treatment_method .treatment_word{ width:460px; margin-right:30px; position:relative; height:322px;}
+.treatment_method .treatment_word h2{ color:#0076c6; font-size:22px; margin-bottom:30px;}
+.treatment_method .treatment_word strong{ color:#0076c6; font-size:16px;}
+.treatment_method .treatment_word h3{ font-size:16px; margin-top:20px;}
+.treatment_method .treatment_word p{ font-size:16px; text-indent:30px;}
+.treatment_method .treatment_word a{ width:232px; height:55px; background:url(../images/content_btn.jpg); position:absolute; right:0; bottom:10px;}
+.treatment_method .treatment_method_til{ background:url(../images/treatment_method_til.jpg) center center no-repeat; height:30px; margin:40px 0 20px;}
+.treatment_method .treatment_ol_addAttr{ width:850px; padding:0 35px;}
+.treatment_method .treatment_ol_addAttr li{ width:250px;}
+
+/*what_vitiligo*/
+.what_vitiligo{ margin-top:40px;}
+.what_vitiligo ul{ overflow:hidden;}
+.what_vitiligo li{ position:relative; height:450px; width:285px; padding:5px; background:#f0f0f0; float:left; margin:30px 47px 0 0; font-size:14px;}
+.what_vitiligo li strong{ font-size:16px; color:#006db8; font-weight:bold;}
+.what_vitiligo li p{ padding:0 10px;}
+.what_vitiligo li div{ padding:0 10px; margin-top:20px;}
+.what_vitiligo li i{ margin-right:15px;}
+.what_vitiligo li a{ position:absolute; left:67px; bottom:30px; text-align:center; height:30px; line-height:30px; font-size:18px; color:#fff; width:150px; background:#0076c6; border-radius:30px;}
+.what_vitiligo li a:hover{ text-shadow:1px 1px 1px #000;}
+
+/*expert*/
+.expert{ margin-top:40px;}
+.expert .expert_photo{ margin-top:40px; overflow:hidden;}
+.expert .expert_word{ width:524px; height:430px;}
+.expert .expert_word p{ text-indent:30px; margin-top:10px;}
+.expert .expert_word strong{ color:#0076c6; font-size:18px; margin:20px 0 15px;}
+.expert .expert_word span{ width:247px; background:url(../images/five_stars.png) left center no-repeat; padding-left:15px; margin-bottom:10px;}
+
+/*contrast*/
+.contrast{ margin-top:50px;}
+.contrast ul{ overflow:hidden;}
+.contrast div{ clear:both; *zoom:1;}
+.contrast li{ float:left; margin:10px 56px 20px;}
+
+/*the_hospital*/
+.the_hospital{ margin-top:30px;}
+.the_hospital ul{ width:800px; height:385px;}
+.the_hospital ul li{ width:800px; height:100%; display:none;}
+.the_hospital ul .li_active{ display:block;}
+.the_hospital ul .the_word{ height:100%; width:335px; padding:0 20px; position:relative; color:#444444; background:#f4f4f4;}
+.the_hospital ul img{ width:425px; height:385px; background:#ccc;}
+.the_hospital ul h2{ margin:35px 0; font-size:26px;}
+.the_hospital ul p{ text-indent:30px;}
+.the_hospital ul .hospital_dbbtn{ position:absolute; right:20px; bottom:20px;}
+.the_hospital ul .hospital_dbbtn a{ width:38px; height:38px; margin-right:10px;}
+.the_hospital ul .hospital_dbbtn .hospital_left_a{ background:url(../images/the_hospital.png) -36px -455px no-repeat;}
+.the_hospital ul .hospital_dbbtn .hospital_left_a:hover{ background:url(../images/the_hospital.png) -36px -508px no-repeat;}
+.the_hospital ul .hospital_dbbtn .hospital_right_a{ background:url(../images/the_hospital.png) -36px -562px no-repeat; margin-right:0px;}
+.the_hospital ul .hospital_dbbtn .hospital_right_a:hover{ background:url(../images/the_hospital.png) -36px -617px no-repeat;}
+.the_hospital ol{ width:155px;}
+.the_hospital ol li{ height:60px; line-height:60px; background:#ebebeb; font-size:18px; color:#6a6a6a; position:relative; margin-bottom:5px;}
+.the_hospital ol .li_active{ background:#006db8; color:#fff;}
+.the_hospital ol em{ vertical-align:middle; width:35px; height:35px; margin:0 10px; transition:0.3s;}
+.the_hospital ol div{ width:0px; height:0px; border:10px solid; border-color:#fff #006db8 #fff #fff; position:absolute; left:-20px; top:20px; display:none;}
+.the_hospital ol .div_active{ display:block;}
+.the_hospital .the_hospital_icon1{ background:url(../images/the_hospital.png) -36px 0px no-repeat;}
+.the_hospital .the_hospital_icon11{ background:url(../images/the_hospital.png) -36px -36px no-repeat;}
+.the_hospital .the_hospital_icon2{ background:url(../images/the_hospital.png) -36px -72px no-repeat;}
+.the_hospital .the_hospital_icon21{ background:url(../images/the_hospital.png) -36px -108px no-repeat;}
+.the_hospital .the_hospital_icon3{ background:url(../images/the_hospital.png) -36px -145px no-repeat;}
+.the_hospital .the_hospital_icon31{ background:url(../images/the_hospital.png) -36px -181px no-repeat;}
+.the_hospital .the_hospital_icon4{ background:url(../images/the_hospital.png) -36px -217px no-repeat;}
+.the_hospital .the_hospital_icon41{ background:url(../images/the_hospital.png) -36px -254px no-repeat;}
+.the_hospital .the_hospital_icon5{ background:url(../images/the_hospital.png) -36px -290px no-repeat;}
+.the_hospital .the_hospital_icon51{ background:url(../images/the_hospital.png) -36px -326px no-repeat;}
+.the_hospital .the_hospital_icon6{ background:url(../images/the_hospital.png) -36px -363px no-repeat;}
+.the_hospital .the_hospital_icon61{ background:url(../images/the_hospital.png) -36px -399px no-repeat;}
+
+
+
+
+
+/*------------------------下面是列表页和主页公用的内容的样式-----------------------------*/
+/*------------------------下面是列表页和主页公用的内容的样式-----------------------------*/
+.bbtttnn{ width:290px; text-align:center;}
+.bbtttnn em{ width:25px; height:25px; vertical-align:middle; margin:0 5px;}
+.bbtttnn a{ margin:10px 20px 0 0; width:123px; height:44px; line-height:44px; font-size:18px; background:#969696; color:#fff;}
+.bbtttnn a:hover{ background:#0064b4; color:#969696;}
+.bbtttnn a:hover em{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+.common_til{ border-left:3px solid #006db8; padding-left:10px;}
+.common_til span{ height:25px; line-height:25px; font-size:18px; color:#0064b4; position:relative;}
+.common_til i{ font-size:12px; color:#7a7a7a;}
+.common_til a{ font-size:12px; color:#ba4949; margin-left:110px;}
+.common_til a:hover{ color:#F00;}
+/*------------------------上面是列表页和主页公用的内容的样式-----------------------------*/
+/*------------------------上面是列表页和主页公用的内容的样式-----------------------------*/
+
+
+
+
+
+/*-------------------------------下面是列表页的样式-------------------------------------*/
+/*-------------------------------下面是列表页的样式-------------------------------------*/
+/*list*/
+.list{ margin-top:30px;}
+.list_left{ overflow:hidden; width:668px;}
+.list_left .list_til{ height:30px; line-height:30px; background:#f2f2f2; border-top:2px solid #0064b4; padding-left:15px; color:#323232; margin-bottom:20px;}
+.list_left .list_word{ width:666px; border:1px solid #c5c5c5; overflow:hidden; margin-top:15px;}
+.list_left .list_word h2{ text-align:center; font-size:18px; color:#006db8; height:55px; line-height:55px;}
+.list_left .list_date{ border-bottom:1px dashed #999; border-top:1px dashed #999; height:30px; line-height:30px; font-size:12px;}
+.list_left .list_date span{ width:303px; text-align:right; padding-right:30px;}
+.list_left .list_date em{ width:333px;}
+.list_left .list_date em a{ vertical-align:middle; margin-right:10px;}
+.list_left .list_date em a:hover{ transform:rotate(360deg) scale(1.2,1.2); -webkit-transform:rotate(360deg) scale(1.2,1.2);}
+.list_left dl{ overflow:hidden;}
+.list_left dd{ line-height:30px; text-indent:30px; margin:30px 25px;}
+.list_left dt{ text-align:center;}
+.list_left .about_article{ overflow:hidden; padding:0 20px; width:646px}
+.list_left .about_til{ width:80px; height:25px; text-align:center; line-height:25px; background:#006db8; color:#fff; font-size:16px;}
+.list_left .about_article ul{ overflow:hidden; margin-bottom:80px;}
+.list_left .about_article li{ float:left; margin-right:40px; width:278px; height:44px; line-height:44px; border-bottom:1px dashed #999; background:url(../images/about_article.jpg) left center no-repeat; padding-left:15px;}
+.list_right{ width:290px;}
+.list_right .right_p{ margin-top:5px; border-bottom:1px dashed #999; padding-bottom:10px;}
+.list_right .right_p a{ color:#4b4b4b;}
+.list_right .right_p a:hover{ color:#f00;}
+.vedio_case{ width:290px; height:360px; background:#000; color:#FFF; text-align:center; line-height:360px; margin-top:20px;}
+.phone_qq{ height:50px; margin-top:20px;}
+.phone_qq em{ vertical-align:middle; margin-right:1px;}
+.phone_qq a{ height:50px; color:#fff; background:#969696; line-height:50px; font-size:18px; padding:0 9px;}
+.phone_qq a:hover{ background:#0064b4;}
+.phone_qq a:hover em{ transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+.list_right .right_expert{ margin-top:20px; overflow:hidden; border-bottom:1px dashed #999;}
+.list_right .right_expert_word{ height:115px; position:relative; width:180px; padding:0 0 15px 10px;}
+.list_right .right_expert_til strong{ font-weight:bold; font-size:14px;}
+.list_right .right_expert_til i{ font-size:12px; color:#F00;}
+.list_right .right_expert_word p{ text-indent:15px; font-size:12px; line-height:20px; margin-top:5px;}
+.list_right .right_expert_word p a{ font-size:12px; color:#F00;}
+.list_right .right_expert_word p a:hover{ text-shadow:1px 1px 1px #000;}
+.list_right .right_btn{ position:absolute; right:2px; bottom:15px; width:60px; height:20px; line-height:20px; font-size:12px; text-align:center; color:#fff; background:#0064b4;}
+.list_right .right_btn:hover{ text-shadow:1px 1px 1px #000;}
+
+
+
+
+
+/*-------------------------------下面是公用的样式-------------------------------------*/
+/*-------------------------------下面是公用的样式-------------------------------------*/
+/*-------------------------------supervision---------------------------------------*/
+.supervision{ margin-top:80px;}
+.supervision .common_til span{ padding:0 10px;}
+.supervision .common_til em{ height:33px; font-size:18px; color:#4b4b4b; border-bottom:2px solid #e1e1e1; margin-bottom:-2px; margin-left:40px;}
+.supervision img{ margin:40px auto 90px;}
+.supervision .common_til{ border-bottom:2px solid #e1e1e1; border-left:none; padding-left:0;}
+.supervision .common_til span{ height:33px; font-size:18px; color:#0064b4; border-bottom:2px solid #0064b4; margin-bottom:-2px; position:relative;}
+.supervision .common_til .triangle{ width:0px; height:0px; border:5px solid; border-color:#fff #fff #0064b4 #fff; position:absolute; bottom:0px; left:43%;}
+
+/*---------------------------------footer-----------------------------------------*/
+.footer{ background:#646464;}
+.footer .footer_content{ width:1000px; margin:0 auto;}
+.footer ul{ background:#4b4b4b; height:55px;}
+.footer li{ float:left;}
+.footer li a{ cursor:pointer; height:100%; width:200px; text-align:center; line-height:55px; color:#dcdcdc; font-size:20px;}
+.footer .a_active{ background:#0064b4; box-shadow:1px -1px 10px #fff;}
+.footer .address{ margin:50px auto 60px; overflow:hidden;}
+.footer .address_left{ width:250px;}
+.footer .address_center{ width:468px; border-left:1px solid #505050; border-right:1px solid #505050; padding:10px 35px;}
+.footer .address_center p{ font-size:16px; color:#dcdcdc; line-height:33px;}
+.footer .address_center em{ width:80px; line-height:33px;}
+.footer .address_right{ width:210px;}
+.footer .copyright{ background:#4b4b4b; padding:20px 0 15px;}
+.footer .copyright p{ text-align:center; line-height:25px; color:#dcdcdc; font-size:16px;}

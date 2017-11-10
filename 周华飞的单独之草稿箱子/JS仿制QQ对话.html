@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS仿制QQ对话</title>
+
+<style>
+*{ margin:0; padding:0;}
+#dialog{ width:300px; height:400px; border:1px solid #F00; margin:200px auto 0; word-wrap:break-word; overflow:auto;}
+#box{ width:300px; height:40px; border:1px solid #0F0; margin:5px auto 0;}
+em{ display:inline-block; width:40px; height:40px; text-align:center; line-height:40px; background:#9F6; vertical-align:middle; cursor:pointer; }
+#txt{ width:180px; height:30px; line-height:30px; vertical-align:middle; text-indent:5px;}
+#btn{ width:60px; height:40px;  vertical-align:middle;}
+.divv{ display:block; line-height:30px; background:#0CF; margin:5px 0; text-align:right;}
+.divn{ display:block; line-height:30px; background:#9F6; margin:5px 0; text-align:left;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDialog=document.getElementById('dialog');
+	var oBox=document.getElementById('box');
+	var oEmm=document.getElementById('emm');
+	var oTxt=document.getElementById('txt');
+	var oBtn=document.getElementById('btn');
+	var onOff=true;
+	oEmm.onclick=function()
+	{	
+		if(onOff){oEmm.innerHTML='2';onOff=false;oEmm.style.background='#0CF';oBox.style.border='#0CF 1px solid';}else{oEmm.innerHTML='1';onOff=true;oEmm.style.background='#9F6';oBox.style.border='#9F6 1px solid';}
+	}
+	oBtn.onclick=function()
+	{	
+		if(oTxt.value==''){alert('大煞笔，不写点什么，是不可以发消息的');}
+		else if(oEmm.innerHTML=='2'){oDialog.innerHTML='<span class="divv">'+oTxt.value+':'+oEmm.innerHTML+'</span>'+oDialog.innerHTML;oTxt.value='';}
+		else if(oEmm.innerHTML=='1'){oDialog.innerHTML='<span class="divn">'+oEmm.innerHTML+':'+oTxt.value+'</span>'+oDialog.innerHTML;oTxt.value='';}
+	}
+	document.onkeydown=function(e)
+	{
+		if(e.keyCode==13&&oTxt.value==''){alert('大煞笔，不写点什么，是不可以发消息的');}
+		else if(e.keyCode==13&&oEmm.innerHTML=='2'){oDialog.innerHTML='<span class="divv">'+oTxt.value+':'+oEmm.innerHTML+'</span>'+oDialog.innerHTML;oTxt.value='';}
+		else if(e.keyCode==13&&oEmm.innerHTML=='1'){oDialog.innerHTML='<span class="divn">'+oEmm.innerHTML+':'+oTxt.value+'</span>'+oDialog.innerHTML;oTxt.value='';}	
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="dialog"></div>
+<div id="box">
+        <em id="emm">1</em>
+        <input id="txt"  type="text" />
+        <input id="btn" type="button" value="button" />
+</div>
+</body>
+</html>

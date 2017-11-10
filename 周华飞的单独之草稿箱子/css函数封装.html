@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css函数封装</title>
+<script>
+//只能获取行间样式  需要再封装一个getStyle函数配合使用才可以获取非行间样式
+function css(obj,name,value)
+{
+	if(arguments.length==2)
+	{
+		return obj.style[name];
+	}
+	else
+	{
+		obj.style[name]=value;
+	}
+}
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	alert(css(oDiv,'backgroundColor'));
+	css(oDiv,'background','green')
+}
+
+</script>
+</head>
+
+<body>
+<div id="div1" style="height:100px; width:100px; border:1px solid #000; background:black;"></div>
+</body>
+</html>

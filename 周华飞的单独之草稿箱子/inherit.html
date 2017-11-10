@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>inherit</title>
+</head>
+
+<body>
+<script>
+/*
+var obj={"name":"zhouhuafei","sex":"man","age":"21"};
+var info=Object.create(obj);
+info.height='182';
+alert(info.name);
+*/
+
+
+function inherit(obj){
+	if(Object.create){
+		return Object.create(obj);
+	}else{
+		function Fn(){};
+		Fn.prototype=obj;
+		return new Fn();	
+	}	
+}
+var obj={"name":"zhouhuafei","sex":"man","age":"21"};
+var info=inherit(obj);
+info.height='182';
+alert(info.name);
+
+
+/*
+var obj={"name":"zhouhuafei","sex":"man","age":"21"};
+var info=obj;
+info.height='182';
+alert(obj.height);
+*/
+
+/*
+var obj={"name":"zhouhuafei","sex":"man","age":"21"};
+var info={};
+for(var attr in obj){
+	info[attr]=obj[attr];	
+}
+info.height='182';
+alert(obj.height);
+*/
+
+</script>
+</body>
+</html>

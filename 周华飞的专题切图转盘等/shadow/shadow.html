@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>shadow</title>
+<style>
+body{ height:2000px;}
+#shadow{ width:100%; height:100%; background:#000; opacity:0.5; filter:alpha(opacity:50); position:absolute; left:0; top:0; display:none; z-index:100;}
+#alert{ width:200px; height:200px; background:#F00; position:fixed; left:40%; top:30%; display:none; z-index:101;}
+</style>
+<script>
+window.onload=function()
+{
+	var oBtn=document.getElementById('btn');
+	var oBtn2=document.getElementById('btn2');
+	var oShadow=document.getElementById('shadow');
+	var oAlert=document.getElementById('alert');
+	oBtn.onclick=function()
+	{
+		document.body.style.overflow='hidden';
+		document.documentElement.style.overflow='hidden';
+		oShadow.style.display='block';
+		
+		//手机端禁止浏览器滚动
+		document.ontouchmove=function(ev){
+			var ev=ev||event;
+			ev.preventDefault?ev.preventDefault():ev.returnValue=false;			
+		}
+		//手机端禁止浏览器滚动
+		
+		oAlert.style.display='block';
+	}
+	oBtn2.onclick=function()
+	{
+		document.body.style.overflow='auto';
+		document.documentElement.style.overflow='auto';
+		oShadow.style.display='none';
+		
+		//手机端开启浏览器滚动
+		document.ontouchmove=null;
+		//手机端开启浏览器滚动
+		
+		oAlert.style.display='none';	
+	}
+	document.onkeydown=function(ev){
+		var ev=ev||event;
+		if(ev.keyCode==38||ev.keyCode==40){
+			if(oShadow.style.display=='block'){
+				ev.preventDefault?ev.preventDefault():ev.returnValue=false;
+				//return false;
+			}
+		}	
+	}	
+}
+</script>
+</head>
+
+<body>
+<input id="btn" type="button" value="button" />
+<div id="shadow"></div>
+<div id="alert">
+<input id="btn2" type="button" value="OK" />
+</div>
+</body>
+</html>

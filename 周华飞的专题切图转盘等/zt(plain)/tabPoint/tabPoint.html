@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>tabPoint</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+span,a{ display:inline-block;}
+img{ vertical-align:middle;}
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+#newCar{ width:1060px; position:relative; height:180px; margin:80px auto 0;}
+#Carousel{ width:1000px; height:180px; margin:0 auto; overflow:hidden;}
+#Carousel ul{ padding:0;}
+#Carousel li{ width:327px; height:177px; border:1px solid #CCC; margin:0 2px; float:left;}
+</style>
+</head>
+<body>
+<!--newcar-->
+<style>
+#newCar{ width:1000px; height:210px;}
+#newCar #Carousel{ height:210px; position:relative;}
+#newCar ul{ height:180px; position:absolute; left:0; top:0; width:3000px;}
+#newCar ul li{ border:none; margin:0; padding:0 3px;}
+#newCar ul img{ border:1px solid #CCC;}
+#newCar ol{ position:absolute; bottom:0; left:0; text-align:center; width:100%;}
+#newCar ol li{ width:15px; height:15px; border-radius:50%; background:#ccc; margin:0 5px;}
+#newCar ol li.active{ background:#0064b2;}
+</style>
+<div id="newCar">
+        <div id="Carousel">
+                <ul>
+                        <li><a href="/zt/jkys/" target="_blank"><img src="images/newcar1.jpg"></a></li>
+                        <li><a href="/zt/cfyxb/" target="_blank"><img src="images/newcar2.jpg"></a></li>
+                        <li><a href="/zt/zlyq/" target="_blank"><img src="images/newcar3.jpg"></a></li>
+                        <li><a href="/zt/Team/" target="_blank"><img src="images/newcar4.jpg"></a></li>
+                        <li><a href="/zt/308/" target="_blank"><img src="images/newcar5.jpg"></a></li>
+                </ul>
+                <ol>
+                	<span class="clearFix">
+                                <li class="active"></li>
+                                <li></li>
+                                <li></li>
+                        </span>
+                </ol> 
+        </div>  
+</div> 
+<script type="text/javascript">
+	(function(){
+		function moveLeft(obj,iTarget){
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function(){
+				var cur=obj.offsetLeft;
+				var speed=(iTarget-cur)/10;
+				speed=speed>0?Math.ceil(speed):Math.floor(speed);
+				if(obj.offsetLeft==iTarget){
+					clearInterval(obj.timer);
+				}else{
+					obj.style.left=speed+cur+'px';	
+				}
+			},30)	
+		}
+		var oUl=document.getElementById('Carousel').getElementsByTagName('ul')[0];
+		var aUlLi=oUl.getElementsByTagName('li');	
+		var oOl=document.getElementById('Carousel').getElementsByTagName('ol')[0];
+		var aLi=oOl.getElementsByTagName('li');
+		var iLen=aLi.length;
+		var iWidth=aUlLi[0].offsetWidth;
+		var now=0;
+		for(var i=0;i<iLen;i++){
+			aLi[i].index=i;
+			aLi[i].onmouseover=function(){
+				now=this.index;
+				tab();
+			}	
+		}
+		function tab(){
+			for(var i=0;i<iLen;i++){
+				aLi[i].className='';
+			}
+			aLi[now].className='active';
+			moveLeft(oUl,-iWidth*now);			
+		}
+		function next(){
+			now++;
+			now%=iLen;
+			tab();	
+		}	
+		setInterval(next,5000);
+	})();
+</script> 
+</body>
+</html>

@@ -1,0 +1,117 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*header*/
+#header { margin: 0 auto; width: 1000px; overflow: hidden; }
+#nav { height: 46px; background-color: #0158be; }
+#header .logo { float: left; width: 427px; }
+#header .logo_a { float: left; width: 239px; padding-left: 60px; }
+#header .rxdh { float: right; width: 209px; padding-top: 10px; }
+#nav .nav_box { margin: 0 auto; width: 1000px; }
+.nav_box li { line-height: 46px; float: left; }
+.nav_box a { padding: 0 28px; font-size: 18px; color: #FFFFFF; display: block; }
+.hover a { background-color: #0292ee; }
+.nav_box a:hover { background-color: #0292ee; }
+.banner { background-image: url(../images/banner.jpg); background-repeat: no-repeat; background-position: center; height:488px; }
+.nav_a { background-color: #0158be; height: 46px; }
+.nav_abox { margin: 0 auto; width: 1000px; }
+.nav_abox li { line-height: 46px; float: left; }
+.nav_abox a { padding: 0 30px; font-size: 18px; color: #FFFFFF; display: block; float: left; }
+.inbox { margin: 0 auto; width: 1000px; }
+.inbox .xbfl { overflow: hidden; padding-top: 17px; }
+.xbfl .xbfl_left { border: 1px solid #d3d3d3; float: left; width: 493px; overflow: hidden; }
+.xbfl_left .xbfl_title { font-family: "微软雅黑"; font-size: 25px; font-weight: bold; color: #0158be; float: left; width: 200px; line-height: 76px; padding-left: 15px; }
+.xbfl_title img { vertical-align: middle; padding-right: 15px; }
+.xbfl_left .xbfl_right { float: right; width: 260px; padding-right: 15px; }
+.xbfl_right li { float: left; width: 130px; line-height: 24px; }
+.xbfl_right a { font-size: 14px; color: #2b2b2b; }
+.xbfl_right ul { overflow: hidden; padding-top: 13px; }
+/*qyry*/
+.qyry { margin: 15px auto 0 auto; border: 1px solid #cdcdcd; padding: 0 20px; width: 958px; }
+.qyry .qyry_title { border-bottom: 3px solid #0158be; height: 33px; }
+.notice { width: 948px; overflow: hidden; }
+.notice .tab-hd { height: 33px; border-bottom: 3px solid #0158be; }
+.notice .tab-hd ul { }
+.notice .tab-hd li { float: left; height: 28px; line-height: 28px; }
+.notice .tab-hd li a { display: block; padding: 0 14px; font-size: 14px; color: #000000; font-family: "微软雅黑"; }
+.notice .tab-hd li a:hover { color: #f60; }
+.notice .tab-hd li.on a { background-color: #0158be; position: relative; color: #fff; }
+.notice .tab-bd { border-top: 1px solid #e8e8e8; padding: 5px; }
+.notice .tab-bd ul { overflow: hidden; zoom: 1; }
+.notice .tab-bd li { height: 22px; line-height: 22px; padding: 0 10px 0 5px; overflow: hidden; width: 125px; float: left; }
+/*footer*/
+#footer { background-color: #0158be; margin-top: 33px; padding-top: 15px; }
+#footer .foot_box { width: 1000px; overflow: hidden; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; padding-bottom: 20px; }
+.foot_box .foot_a { text-align: center; float: left; width: 250px; }
+.foot_a h2 { font-family: "微软雅黑"; font-size: 18px; line-height: 42px; font-weight: normal; color: #FFFFFF; }
+.foot_a p { font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #FFFFFF; font-weight: bold; }
+.foot_a img { vertical-align: middle; padding-right: 10px; }
+.foot_box .foot_b { width: 400px; padding-left: 30px; float: left; }
+.foot_b p { font-family: "微软雅黑"; font-size: 15px; line-height: 36px; color: #FFFFFF; }
+.foot_box .foot_c { float: right; width: 235px; }
+.dha p { font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #FFFFFF; }
+.dha span { font-family: "微软雅黑"; font-size: 14px; color: #FFFFFF; display: block; font-weight: normal; }
+.dha img { float: left; padding-top: 10px; padding-right: 15px; }
+.foot_c .dha { padding-top: 15px; }
+
+
+.expert{ border:1px solid #d2d2d2; position:relative; padding-bottom:30px; margin-top:30px;}
+.expert ol{ position:absolute; left:50px; top:10px;}
+.expert ol li{ margin-bottom:10px; border:1px solid #d2d2d2; box-shadow:2px 2px 0 #d2d2d2; }
+.expert ol li.active{ box-shadow:2px 2px 0 #6c90d1;}
+.expert ul{ width:625px; height:551px; overflow:hidden; float:right; margin:0 40px 30px 0;}
+.expert ul li{ height:551px; overflow:hidden;}
+.expert h2{ margin:30px 0 20px; text-align:center; font-size:24px; color:#0158be;}
+.expert p{ width:580px; margin:0 auto 20px;  text-indent:30px; line-height:24px; color:#000; font-size:14px;}
+.expert img{ margin-top:23px;}
+
+
+.box1 h2{ margin-bottom:20px; height:38px; line-height:38px; background:url(../images/bg.jpg) center center no-repeat #f1f1f1; text-align:center; font-size:16px; color:#000;}
+.box1 li{ width:214px; float:left; margin-left:10px; margin-bottom:40px;}
+.box1 li img{ margin-bottom:10px;}
+.box1 li p{ line-height:24px; font-size:14px;}
+.box1 dt,.box1 dd{ width:460px;}
+.box1 dt{ margin-left:30px;}
+.box1 dd{ margin-right:30px;}
+.box1 dd.clearFix li{ margin:0 10px;}
+
+.box2 li{ margin-bottom:20px; padding:0 30px;}
+.box2 dl{ border:1px solid #d2d2d2;}
+.box2 dt{ width:40px; text-align:center; font-size:24px; color:#fff; background:#8b8b8b; padding:50px 0;}
+.box2 dd{ width:375px; margin-left:22px; padding-top:15px; margin-right:22px;}
+.box2 .txt{ padding-bottom:20px; margin-bottom:10px; border-bottom:1px dashed #d2d2d2;}
+.box2 p{ width:220px; font-size:14px; color:#000; line-height:24px; text-indent:30px;}
+.box2 p a{ color:#f00; text-indent:0;}
+.box2 .img{ padding-left:30px;}
+.box2 .img img{ box-shadow:0 0 10px #d2d2d2;}
+
+.box3 dl{ padding:0 50px; margin-bottom:30px;}
+.box3 dt{ border:4px solid #d2d2d2;}
+.box3 dd{ width:310px;}
+.box3 h2{ font-size:36px; color:#0158be; margin:20px 0 20px; line-height:40px; text-align:center;}
+.box3 h3{ line-height:24px; margin-bottom:5px; font-size:18px; padding-left:30px;}
+.box3 h3.last{ margin-bottom:20px;}
+.box3 p{ line-height:28px; text-indent:30px; font-size:14px;}
+
+/*common*/
+.btnss{ text-align:center;}
+.tilss{ height:50px; line-height:50px; color:#fff; font-size:30px; background:#0158be; margin:36px 0; position:relative;}
+.tilss strong{ color:#ffed02; margin:0 10px 0 18px;}
+.tilss a{ position:absolute; right:22px; top:11px;}
+
+
+/*resTyle*/
+.xbfl{ margin-top:20px;}
+
+
+
+
+
+
+
+
+

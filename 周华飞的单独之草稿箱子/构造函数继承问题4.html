@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>构造函数继承问题4</title>
+</head>
+
+<body>
+<script>
+function A(){
+	this.name='aaa';
+	this.color=['1','2']	
+}
+function B(){	
+}
+B.prototype=new A();			//重点在这一句话		B的原型等于A的实例
+var b=new B();
+var b2=new B();
+b.color.push('ccc');			//原型链继承时 引用类型会被共享  用借用构造函数解决
+alert(b.color)
+alert(b2.color)
+</script>
+</body>
+</html>

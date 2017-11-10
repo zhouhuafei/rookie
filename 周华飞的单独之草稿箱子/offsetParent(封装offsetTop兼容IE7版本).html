@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>offsetParent(封装offsetTop兼容IE7版本)</title>
+</head>
+<style>
+*{ margin:0; padding:0;}
+div{ width:200px; height:200px;}
+span,em{ width:100px; height:100px; background:#000; display:inline-block;}
+</style>
+<script>
+window.onload=function(){
+	var oSpan=document.getElementsByTagName('span')[0];
+	alert(oSpan.offsetTop);				//IE7显示为0,不兼容
+	alert(oSpan.offsetParent.nodeName);		//IE7显示为EM(EM必须为非内联元素,否则显示为DIV),其他显示为BODY,不兼容
+	alert(offsetTop(oSpan));			//兼容IE7版本
+										
+										//定位状态下EM又有所不同
+}	
+//兼容IE7的offsetTop;
+function offsetTop(obj){
+	var iTop=obj.offsetTop;
+	var oParent=obj.offsetParent;
+	while(oParent){//oParent存在即oParent!=null;
+		iTop+=oParent.offsetTop;
+		oParent=oParent.offsetParent;
+	}
+	return iTop;
+}
+</script>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>        
+	<div></div>
+	<div>
+        	<em>
+        		<span></span>
+        	</em>
+        </div>
+</body>
+</html>

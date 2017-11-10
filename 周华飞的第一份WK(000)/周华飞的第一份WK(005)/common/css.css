@@ -1,0 +1,77 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:12px; font-family:Verdana,Arial,"宋体";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none; color:#000;}
+p{ line-height:25px;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*能公用的小东西*/
+.right_40{right:40px;}
+.left_40{left:40px;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_80{ height:80px;}
+.hr_90{ height:90px;}
+.hr_100{ height:100px;}
+.hr_210{ height:210px;}
+.hr_110{ height:110px;}
+.hr_135{ height:135px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto; background:#ececec;}
+.commonWidth_930{ width:930px; margin:0 auto;}
+.commonWidth_900{ width:900px; margin:0 auto;}
+.commonWidth_800{ width:800px; margin:0 auto;}
+.commonWidth_1000{ width:1000px; margin:0 auto; background:#FFF;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+/*banner*/
+.banner{ width:1348px; height:500px; margin:0 auto; position:relative;}
+.banner a{ display:block; width:200px; height:40px; background:#006db8; color:#FFF; font-size:24px; text-align:center; line-height:40px; position:absolute; right:384px; bottom:80px; z-index:3; border-radius:50px;}
+/*main_box*/
+.main_box{ overflow:hidden;}
+/*til*/
+.til{ padding:40px 0; font-size:30px;}
+.til span{ display:inline-block; margin-left:-8px;}
+.til img{ vertical-align:middle;}
+
+
+
+/*能重用的图左文字右*/
+.img_word{ overflow:hidden;}
+.img_word img{ height:315px; width:425px; overflow:hidden;}
+.word{ width:465px;overflow:hidden; height:315px;position:relative;}
+.word h2{ font-size:26px; padding:10px 0;}
+.word p{ font-size:14px;}
+.word p span{ color:#006db8;}
+.word p a{ color:#F00;}
+.word p a:hover{ text-decoration:underline;}
+.btn{ width:150px; height:60px; display:inline-block; overflow:hidden; position:absolute; right:0; bottom:0;}
+.btn img{ width:150px; height:60px;}
+
+/*能重用的带三角的文字*/
+.down_word{position:relative;}
+.down_word p{ text-indent:20px; background:#e1e1e1; padding:5px 20px; border-radius:10px;}
+.sanjiao{ position:absolute;top:-50px; width:0px; height:0px; overflow:hidden; border:20px solid; border-color:#fff #fff #e1e1e1 #fff; border-width:20px 20px 30px 20px;}
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>scroll滚动条停止判定</title>
+<style>
+body{ height:2000px;}
+.gradient{ -ms-filter:"progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=red,endColorStr=yellow)"/*IE8,IE9,gradientType=0/1(垂直渐变/水平渐变)*/; background:-moz-linear-gradient(top,red,yellow)/*从顶部开始渐变*/; background:-webkit-linear-gradient(top,red,yellow)/*(top left,red,yellow)这样写是从左上角开始渐变*/; background:-ms-linear-gradient(top,red,yellow); background:linear-gradient(top,red,yellow); +background:#ff7a00/*IE6,IE7取中间色*/;}
+.gradient2{ -ms-filter:"progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=black,endColorStr=white)"/*IE8,IE9,gradientType=0/1(垂直渐变/水平渐变)*/; background:-moz-linear-gradient(top,black,white)/*从顶部开始渐变*/; background:-webkit-linear-gradient(top,black,white)/*(top left,red,yellow)这样写是从左上角开始渐变*/; background:-ms-linear-gradient(top,black,white); background:linear-gradient(top,black,white); +background:#ff7a00/*IE6,IE7取中间色*/;}
+#div1{ width:500px; height:200px; position:fixed; top:0; border-radius:50%; box-shadow:1px 1px 100px blue;}
+</style>
+<script>
+window.onresize=window.onload=function(){
+	(function(){
+		var oDiv=document.getElementById('div1');
+		css(oDiv,'display','none');
+		var l=Math.floor((document.documentElement.clientWidth-parseInt(getStyle(oDiv,'width')))/2)+'px';
+		css(oDiv,'left',l);
+		var initTop=0;
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		var timer=null;
+		window.onscroll=function(){		
+			if(timer==null){
+				css(oDiv,'display','block');
+				timer=setTimeout(test,1000);
+				initTop=scrollTop;
+			}
+		}
+		function test(){
+			if(scrollTop==initTop){
+				css(oDiv,'display','none');
+				clearInterval(timer);
+				timer=null;
+			}
+		}
+		oDiv.onmouseover=function(){
+			clearInterval(timer);			
+			css(oDiv,'display','block');	
+		}
+		oDiv.onmouseout=function(){			
+			timer=setTimeout(test,1000);
+		}
+	})();
+}
+function getStyle(obj,attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];	
+	}else{
+		return getComputedStyle(obj,false)[attr];	
+	}
+}
+function css(obj,attr,value){
+	if(arguments.length==2){
+		return getStyle(obj,attr);
+	}else{
+		return obj.style[attr]=value;
+	}
+}
+</script>
+</head>
+<body class="gradient">
+<div id="div1" class="gradient2"></div>
+</body>
+</html>

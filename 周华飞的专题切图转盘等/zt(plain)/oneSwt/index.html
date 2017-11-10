@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>oneSwt</title>
+<script src="jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+
+
+<style>
+#one-swt{ position:fixed; left:50%; margin-left:-130px; top:50%; margin-top:-80px; display:none; box-shadow:0 0 5px #000;}
+#one-swt a#one-close{ display:block; width:30px; height:30px; position:absolute; right:0; top:0;}
+#one-swt a#one-zixun{ display:block; height:40px; width:100%; position:absolute; bottom:0; left:0;}
+</style>
+<div id="one-swt">
+	<a id="one-close"></a>
+	<img src="swt/swt2.gif">
+	<a id="one-zixun" onClick="openZoosUrl();return false;" href="javascript:void(0)"></a>
+</div>
+<script>
+function closeSwtOne(){$('#one-swt').fadeOut();}
+function showSwtOne(){$('#one-swt').fadeIn();}
+setTimeout(showSwtOne,1000);
+$('#one-close').click(function(){
+	closeSwtOne();
+	setTimeout(showSwtOne,1000);	
+});
+
+</script>
+
+
+</body>
+</html>

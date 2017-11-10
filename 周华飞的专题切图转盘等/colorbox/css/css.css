@@ -1,0 +1,11 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+body{ text-align:center;}
+ul{ display:inline-block; margin-top:200px;}
+ul li{ width:150px; height:150px; float:left; margin:0 20px;}
+ul li img{ width:150px; height:150px;}

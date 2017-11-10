@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>getElementNode</title>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementsByTagName('div')[0];
+	alert('第一个子元素节点是SPAN:'+getElementNode(oDiv).firstElementChild().tagName+'\n最后一个子元素节点是I:'+getElementNode(oDiv).lastElementChild().tagName+'\n下一个兄弟元素节点是STRONG:'+getElementNode(oDiv).nextElementSibling().tagName+'\n上一个子元素节点是SMALL:'+getElementNode(oDiv).previousElementSibling().tagName+'\n总共有四个子元素节点:'+getElementNode(oDiv).childElementCount()+'\n总共有七个兄弟元素节点:'+getElementNode(oDiv).siblingElementCount()+'\n第二个子元素节点是EM:'+getElementNode(oDiv).allElementChild()[1].tagName+'\n第四个兄弟节点是H1:'+getElementNode(oDiv).allElementSibling()[3].tagName);
+	/*getElementNode*/
+	function getElementNode(obj){
+		return {
+			firstElementChild:function(){return obj.firstElementChild?obj.firstElementChild:obj.firstChild;},
+			lastElementChild:function(){return obj.lastElementChild?obj.lastElementChild:obj.lastChild;}	,
+			nextElementSibling:function(){return obj.nextElementSibling?obj.nextElementSibling:obj.nextSibling;},
+			previousElementSibling:function(){return obj.previousElementSibling?obj.previousElementSibling:obj.previousSibling;},
+			childElementCount:function(){return obj.childElementCount?obj.childElementCount:obj.childNodes.length;},
+			siblingElementCount:function(){return getElementNode(obj.parentNode).childElementCount()-1;},
+			allElementChild:function(){return obj.children;},
+			allElementSibling:function(){
+				var aResult=[];
+				var aSiblings=obj.parentNode.children;
+				for(var i=0,iLen=aSiblings.length;i<iLen;i++){aSiblings[i]!=obj&&aResult.push(aSiblings[i]);}
+				return aResult;
+			}
+		}
+	}	
+}
+</script>
+</head>
+<body>
+<small></small>
+<div>
+	<span></span>
+	<em></em>
+        <b></b>
+        <i></i>
+</div>
+<div>
+	<span></span>
+	<em></em>
+        <b></b>
+        <i></i>
+</div>
+<strong></strong>
+<h1></h1>
+<h2></h2>
+<h3></h3>
+<h4></h4>
+</body>
+</html>

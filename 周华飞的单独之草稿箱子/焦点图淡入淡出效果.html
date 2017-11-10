@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ background:#000;}
+.box{ margin:200px auto; height:420px; width:900px;}
+ul{ overflow:hidden; position:relative; left:0; top:0; height:420px; width:700px; float:left;}
+ul li{ position:absolute; left:0; top:0; display:none; height:420px; width:700px; line-height:420px; text-align:center; font-size:50px; color:#F00; background:#FC9;}
+ul .uli_active{ display:block;}
+ol{ float:left;}
+ol li{ cursor:pointer; height:69px; width:200px; line-height:69px; text-align:center; font-size:24px; color:#0F0; background:#999; border-bottom:1px solid #FFF;}
+ol .oli_active{ color:#F00;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function()
+{
+	var	oUl=document.getElementById('ul');
+	var	oUl_li=oUl.getElementsByTagName('li');
+	var	oOl=document.getElementById('ol');
+	var	oOl_li=oOl.getElementsByTagName('li');
+	for(var i=0;i<oOl_li.length;i++)
+	{
+		oOl_li[i].index=i;
+		oOl_li[i].onmouseover=function()
+		{
+			for(var i=0;i<oOl_li.length;i++)
+			{
+				oOl_li[i].className='';
+				startMove(oUl_li[i],{opacity:0},function(){oUl_li[i].className='';});
+			}
+			this.className='oli_active';
+			startMove(oUl_li[this.index],{opacity:100});
+			oUl_li[this.index].className='uli_active';
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="box">
+        <ul id="ul">
+                <li class="uli_active">一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>六</li>
+   	</ul>
+        <ol id="ol">
+                <li class="oli_active">一</li>
+                <li>二</li>
+                <li>三</li>
+                <li>四</li>
+                <li>五</li>
+                <li>六</li>
+        </ol>
+</div>        
+</body>
+</html>

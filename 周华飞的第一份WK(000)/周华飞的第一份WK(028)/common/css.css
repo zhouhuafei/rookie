@@ -1,0 +1,131 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:33px;}
+em,i,strong,b,small{font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{display:inline-block;}
+em{transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.pt_60{ padding-top:60px;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_80{ height:80px;}
+.hr_90{ height:90px;}
+.hr_100{ height:100px;}
+.hr_210{ height:210px;}
+.hr_270{ height:270px;}
+.hr_110{ height:110px;}
+.hr_150{ height:150px;}
+.hr_135{ height:135px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto;}
+.commonWidth_500{ width:500px; margin:0 auto;}
+.commonWidth_800{ width:800px; margin:0 auto;}
+.commonWidth_900{ width:900px; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}
+.commonWidth_1440{ width:1440px; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_1100{ width:1100px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%;   margin:0 auto; overflow:hidden; background:#f5fafa;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+/*---------------------------------head-----------------------------------------*/
+
+
+
+/*---------------------------------banner---------------------------------------*/
+.banner{ position:relative; height:689px; background:url(../images/banner.jpg) center center no-repeat; width:100%; margin:0 auto; overflow:hidden;}
+.banner .love_me{ position:relative; height:689px;}
+.banner a{ width:125px; height:40px; padding-left:25px; background:#ec1c24; color:#fff; line-height:40px; font-size:19px; position:absolute; border-radius:50px; right:10px; bottom:245px;}
+.banner a:hover{ background:#f08300;}
+.banner em{ background:url(../images/btn_03.png) center center no-repeat; width:29px; height:29px; position:absolute; left:110px;  top:5px;}
+.bg_box{ background:#f5efdd; height:407px;}
+.bg{ background:url(../images/bg.jpg) center center no-repeat; height:407px;}
+.love{ height:100%; position:relative;}
+.love .bg_a{ position:absolute; left:100px; bottom:13px; width:230px; height:60px;}
+.word{ width:320px;}
+.word p{ text-indent:30px; font-size:12px; line-height:15px;}
+.imgs{ height:366px; width:630px; position:relative;}
+.imgs p{ position:absolute; bottom:10px; left:1px; height:60px; line-height:60px; font-size:17px; color:#fff; padding-left:40px; width:590px;  background:url(../images/p_bg_03.png) center center no-repeat; }
+.imgs ol{ width:100px; overflow:hidden; position:absolute; right:30px; bottom:32px; z-index:5;}
+.imgs li{ margin-right:5px; width:15px; height:15px; border-radius:15px; float:left; background:#fff;}
+.imgs .li_active{ background:#e73c31;}
+
+
+.main{ background:#f5efdd; overflow:hidden; margin:0 auto;}
+
+/*box1*/
+.box1{ padding:0 60px; width:860px; overflow:hidden; margin:0 auto;}
+.til{ font-weight:bold; background:url(../images/til_07.png) center center no-repeat; font-size:32px; color:#fff; text-align:center; line-height:115px; height:115px; overflow:hidden;}
+.vedio_box{ display:block; width:595px; height:334px; background:#000; display:none;}
+.box1 ol{ overflow:hidden;}
+.box1 li{ height:78px; overflow:hidden; margin-bottom:7px; cursor:pointer;}
+.box1 p{ font-size:14px; color:#333333; text-indent:30px; line-height:20px; padding:20px 0 30px;}
+.btn{ width:460px; overflow:hidden; margin:40px auto;}
+.btn a{ width:125px; height:40px; padding-left:25px; background:#ec1c24; color:#fff; line-height:40px; font-size:19px; position:relative; border-radius:50px;}
+.btn img{ vertical-align:middle;}
+.btn em{ background:url(../images/btn_03.png) center center no-repeat; width:29px; height:29px; position:absolute; left:110px;  top:5px;}
+.btn a:hover{ background:#f08300;}
+/*box2*/
+.box2{ position:relative; width:980px; margin:0 auto;}
+.box2 ul{ overflow:hidden; margin-bottom:5px;}
+.tils{ color:#403d3c; font-size:21px; text-align:center; margin-bottom:40px;}
+.box2 li{ float:left; width:240px; height:123px; margin-right:6px;}
+#change{ position:absolute; display:none; transition:1s; width:979px; overflow:hidden; z-index:10;}
+
+/*box3*/
+.box3 dl{ overflow:hidden;}
+.box3 dd{ border-bottom:1px dashed #666; height:45px; font-size:18px;}
+.box3 i{ width:100px; height:100%; line-height:45px; padding:0 50px; float:left; border-right:1px dashed #666;}
+.box3 span{ height:100%; line-height:37px; padding-left:37px; float:left;}
+.alert{ text-align:center;}
+
+/*box4*/
+.box4{ margin-bottom:20px;}
+.words_box{ position:relative; height:210px;}
+.words1,.words2,.words3,.words4{ width:190px; position:absolute; top:106px; line-height:18px; font-size:14px;}
+.words1{ left:13px;}
+.words2{ left:266px;}
+.words3{ left:516px;}
+.words4{ left:771px;}
+.dean{ overflow:hidden;}
+.dean_word{ width:640px; height:210px; margin-top:70px;}
+.dean_word .dean_line{ border-bottom:1px dashed #666;}
+.dean_word h2{ height:50px; line-height:50px; width:180px; text-align:center; font-size:24px; background:#ec1c24; margin-bottom:-1px;}
+.dean_word p{ line-height:20px; margin-top:26px;}
+.dean_word .btn{ margin:30px auto 0;}
+
+
+/*box5*/
+.till{ color:#ec1c24; text-align:center; font-size:32px;}
+.news{ background:url(../images/news_03.jpg) center center no-repeat; height:655px; margin:-20px 0 20px;}
+.long{ width:237px; height:1455px;}
+.box5 dl{ overflow:hidden;}
+.box5 dd a{ display:block; height:59px; border-bottom:1px dashed #666; line-height:59px; font-size:18px;}
+
+
+/*box6*/
+.rotation{ width:960px; margin:0 auto;}
+.box6 .til{ margin-top:40px;}
+
+

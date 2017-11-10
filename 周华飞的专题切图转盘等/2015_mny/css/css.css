@@ -1,0 +1,229 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+html{ font-size:62.5%;}
+body,div,menu,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,header,nav,article,section,aside,footer,video,audio,figure,textarea{ padding:0; margin:0;}
+input,select,textarea,img,area{ outline:none; border:none;}
+input,select,textarea{ background:#FFF;}
+mark{ background:none;}
+img{ vertical-align:middle;}
+textarea{ resize:none;}
+menu,ul,ol{ list-style-type:none;}
+body{ font-family:"Î¢ÈíÑÅºÚ"; line-height:1;}
+em,i,strong,b,small,h1,h2,h3,h4,h5,h6,address{ font-style:normal; font-weight:normal; font-size:100%;}
+span,b,em,i,strong,small,label,a,mark{ display:inline-block;}
+em,i,strong,b,small,span,li,a,mark{ transition:all 0.4s;}
+ul li{ transition:0s;}
+ol li{ float:left;}
+ol:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+a{ text-decoration:none; outline:none; color:inherit;}
+/*clear*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w320{ width:320px; margin:0 auto; overflow:hidden;}
+.w640{ width:640px; margin:0 auto; overflow:hidden;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.w1200{ width:1200px; margin:0 auto; overflow:hidden;}
+/*noSpacing*/
+.noMt{ margin-top:0 !important;}
+.noMr{ margin-right:0 !important;}
+.noMb{ margin-bottom:0 !important;}
+.noMl{ margin-left:0 !important;}
+.noPt{ padding-top:0 !important;}
+.noPr{ padding-right:0 !important;}
+.noPb{ padding-bottom:0 !important;}
+.noPl{ padding-left:0 !important;}
+.noBt{ border-top:none !important;}
+.noBr{ border-right:none !important;}
+.noBb{ border-bottom:none !important;}
+.noBl{ border-left:none !important;}
+a.ti{ text-indent:0; color:#f00;}
+
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:500px; position:relative;}
+.banner a{ width:100%; height:60px; position:absolute; left:0; bottom:40px;}
+
+.kind li{ width:296px; padding:2px; border:1px solid #7fceff; margin-right:47px; float:left; margin-bottom:20px;}
+.kind li.noMr{ margin-right:0;}
+.kind li h2{ font-size:22px; color:#1180cc; text-align:center; margin:20px 0 10px;}
+.kind li p{ font-size:16px; color:#666666; text-align:center; margin-bottom:10px;}
+.kind li a{ display:block; width:195px; height:42px; margin:0 auto 10px; background:url(../images/type_a.jpg) center center no-repeat;}
+.kind li a:hover{ background:url(../images/type_as.jpg) center center no-repeat;}
+
+.case .case-btn{ transition:0.4s; text-align:center; margin:55px 0;}
+.case .case-btn a{ width:338px; height:66px; background:url(../images/case-btns.jpg) center center no-repeat;}
+.case .case-btn a:hover{ background:url(../images/case-btn.jpg) center center no-repeat;}
+
+#harm ul{ height:377px; background:url(../images/harm.jpg) center center no-repeat; position:relative; line-height:1.5;}
+#harm li{ width:290px; height:140px; position:absolute;}
+#harm li h2{ font-size:18px; color:#1180cc; margin-bottom:6px;}
+#harm li p{ font-size:14px; color:#646464;}
+#harm li a{ width:140px; height:28px; position:absolute;  right:0; bottom:0; background:url(../images/harm-btns.jpg) center center no-repeat;}
+#harm li a:hover{ background:url(../images/harm-btn.jpg) center center no-repeat;}
+#harm li.harm_li1{ left:160px; top:0;}
+#harm li.harm_li2{ right:160px; top:0;}
+#harm li.harm_li3{ left:160px; bottom:0;}
+#harm li.harm_li4{ right:160px; bottom:0;}
+
+
+.therapy dl{ margin-bottom:40px; padding-bottom:40px; border-bottom:1px dashed #c7c7c7;}
+.therapy dl.last{ border:none;}
+.therapy dd{ width:590px; height:260px; position:relative;}
+.therapy dd a{ width:220px; height:44px; position:absolute; right:0; bottom:0; background:url(../images/therapy-btns.jpg) center center no-repeat;}
+.therapy dd a:hover{ background:url(../images/therapy-btn.jpg) center center no-repeat;}
+.therapy p{ margin-bottom:12px; font-size:16px; color:#666666; line-height:25px;}
+.therapy em{ width:25px; height:25px; background:url(../images/therapy.png) left top no-repeat; margin-right:5px; vertical-align:middle;}
+.therapy em.two{ background-position:left -35px;}
+.therapy em.thr{ background-position:left -70px;}
+
+
+
+.why .why-btn{ text-align:center; margin:55px 0;}
+.why .why-btn a{ width:338px; height:66px; background:url(../images/why-btns.jpg) center center no-repeat;}
+.why .why-btn a:hover{ background:url(../images/why-btn.jpg) center center no-repeat;}
+.why ul{ position:relative; padding-bottom:100px;}
+.why li{ width:250px; position:absolute;}
+.why li.l1{ left:20px; top:40px;}
+.why li.l2{ left:0; top:240px;}
+.why li.l3{ left:50%; bottom:-20px; margin-left:-80px;}
+.why li.l4{ right:50px; top:0;}
+.why li.l5{ right:0; top:220px;}
+.why li h2{ font-size:22px; color:#f78c02; margin-bottom:10px;}
+.why li p{ font-size:16px; color:#666666; line-height:24px;}
+
+.share dl.mr{ margin:40px 0; padding:40px 0; border-top:1px dashed #c7c7c7; border-bottom:1px dashed #c7c7c7;}
+.share dd{ height:321px; width:520px; position:relative;}
+.share h2{ font-size:22px; color:#007bc3; line-height:44px; margin-bottom:5px;}
+.share p{ font-size:16px; color:#666; line-height:30px; margin-bottom:5px;}
+.share p a{ width:auto; height:auto; background:none; color:#d10000; position:static;}
+.share a{ width:330px; height:44px; position:absolute; right:0; bottom:0; background:url(../images/share-btns.jpg) center center no-repeat;}
+.share a:hover{ background:url(../images/share-btn.jpg) center center no-repeat;}
+.share p a:hover{ background:none;}
+.share span{ color:#ff6800;}
+.share .img{ margin:50px auto;}
+.share .img a{ width:auto; height:auto; background:none;}
+
+.note ul{ width:832px; height:399px; margin:0 auto; background:url(../images/care.jpg) center center no-repeat; position:relative;}
+.note ul li{ width:174px; height:164px; position:absolute; bottom:16px;}
+.note ul p{ font-size:14px; color:#fff; line-height:1.5;}
+.note ul a{ width:130px; height:36px; position:absolute; bottom:0; left:20px;}
+.note li.care_li1{ left:16px;}
+.note li.care_li2{ left:226px;}
+.note li.care_li3{ left:436px;}
+.note li.care_li4{ left:644px;}
+
+.expert-main{ position:relative;}
+.expert .prev,.expert .next{ position:absolute; left:0; top:50%; margin-top:-61px; cursor:pointer; z-index:8;}
+.expert .next{ left:auto; right:0;}
+.expert li{ padding:0 70px;}
+.expert .btn{ position:absolute; width:100%; left:0; bottom:40px;}
+.expert .img,.expert .btn{ text-align:center;}
+.expert .btn a{ width:220px; height:44px; background:url(../images/expert-btns.jpg) center center no-repeat;}
+.expert .btn a:hover{ background:url(../images/expert-btn.jpg) center center no-repeat;}
+.expert dd{ width:490px; height:560px; position:relative;}
+.expert-main h2{ font-size:70px; color:#1180cc;}
+.expert-main h3{ font-size:20px; text-align:center; background:#ffa902; line-height:30px; margin:10px 0 20px; color:#fff;}
+.expert-main p{ font-size:16px; line-height:30px; color:#666666; text-indent:30px;}
+.expert-main .img{ margin:30px 0 40px;}
+
+.more{ padding-bottom:50px;}
+.box111 { position: relative; width: 995px; height: 330px; margin: 0 auto; }
+.box111 li a { transition: 0s; }
+.box111 li { z-index: 0; position: absolute; width: 0px; height: 0px; top: 146px; cursor: pointer; left: 377px; transition: 0s; }
+.box111 li img { width: 100%; height: 100%; vertical-align: top; }
+.box111 li p span { display: inline-block; width: 70%; height: 40px; overflow: hidden; }
+.box111 .prev,.box111 .next { display: block; z-index: 100; overflow: hidden; cursor: pointer; position: absolute; width: 47px; height: 61px; top: 134px; }
+.box111 .prev { background: url(../images/csj_10.png) no-repeat; left: 195px; }
+.box111 .next { background: url(../images/csj_11.png) no-repeat; right: 185px; }
+
+
+
+.HospitalAll { width: 970px; margin: 0 auto; }
+.HospitalCon { width: 770px; float: left; overflow: hidden; }
+.HospitalCon dl { width: 767px; background: #ebebeb; }
+.HospitalCon dl dt { width: 260px; padding: 25px 15px; float: left; position: relative; }
+.HospitalCon dl dt b,
+.HospitalCon dl dt span { font-size: 20px; color: #fb6400; line-height: 35px; display: block; }
+.HospitalCon dl dt b { font-size: 24px; }
+.HospitalCon dl dt span i { font-style: normal; font-size: 18px; color: #f90; display: none; }
+.HospitalCon dl dt strong { color: #f00; text-indent: 0; }
+.HospitalCon dl dt p { font-size: 15px; color: #555; line-height: 190%; text-indent: 26px; padding: 10px 0px 20px; }
+.HospitalCon .a_btn { width: 90px; height: 38px; overflow: hidden; position: absolute; bottom: 10px; left: 16px; }
+.HospitalCon .a_btn a { display: block; width: 38px; height: 38px; background: url(../images/Hospital_info.png) no-repeat; overflow: hidden; float: left; margin-left: 5px; transition: all 0.3s linear 0s; }
+.HospitalCon .a_btn a.xx { background-position: 0px 0px; }
+.HospitalCon .a_btn a.zx { background-position: -46px 0px; }
+.HospitalCon .a_btn a.xx:hover { background-position: 0px -42px; }
+.HospitalCon .a_btn a.zx:hover { background-position: -46px -42px; }
+.HospitalCon dl dd { width: 459px; float: right; transition: all 0.6s linear 0s; opacity: 0; margin: 4px; }
+.HospitalCon dl dd.active { opacity: 1; }
+.HospitalNav,
+.HospitalNav ul { width: 193px; height: 397px; float: right; }
+.HospitalNav ul li { width: 193px; height: 49px; cursor: pointer; position: relative; background: url(../images/Hospital_nav_bg.png) no-repeat; color: #111; margin-bottom: 9px; font-size: 17px; }
+.HospitalNav ul li.last { margin: 0px; }
+.HospitalNav ul li.select { background: url(../images/Hospital_nav_hover.png) no-repeat; color: #fff; }
+.HospitalNav ul li div { text-indent: 75px; padding: 5px 0 0 0; }
+.HospitalNav ul li p { font-size: 12px; text-indent: 75px; }
+.HospitalNav ul li i { display: block; width: 30px; height: 30px; overflow: hidden; float: left; background: url(../images/Hospital_icon.png) no-repeat; transition: all 0.3s linear 0s; position: absolute; top: 10px; left: 35px; }
+.HospitalNav ul li i.i1 { background-position: 0px 0px; }
+.HospitalNav ul li i.i2 { background-position: 0px -62px; }
+.HospitalNav ul li i.i3 { background-position: 0px -124px; }
+.HospitalNav ul li i.i4 { background-position: 0px -186px; }
+.HospitalNav ul li i.i5 { background-position: 0px -248px; }
+.HospitalNav ul li i.i6 { background-position: 0px -310px; }
+.HospitalNav ul li i.i7 { background-position: 0px -372px; }
+.HospitalNav ul li i.i8 { background-position: 0px -434px; }
+.HospitalNav ul li i.i9 { background-position: 0px -497px; }
+.HospitalNav ul li i.i10 { background-position: 0px -559px; }
+.HospitalNav ul li i.i11 { background-position: 0px -620px; }
+.HospitalNav ul li i.i12 { background-position: 0px -684px; }
+.HospitalNav ul li i.i13 { background-position: 0px -748px; }
+.HospitalNav ul li i.i14 { background-position: 0px -811px; }
+.HospitalNav ul li.select i.i1 { background-position: 0px -31px; }
+.HospitalNav ul li.select i.i2 { background-position: 0px -93px; }
+.HospitalNav ul li.select i.i3 { background-position: 0px -155px; }
+.HospitalNav ul li.select i.i4 { background-position: 0px -217px; }
+.HospitalNav ul li.select i.i5 { background-position: 0px -279px; }
+.HospitalNav ul li.select i.i6 { background-position: 0px -341px; }
+.HospitalNav ul li.select i.i7 { background-position: 0px -403px; }
+.HospitalNav ul li.select i.i8 { background-position: 0px -465px; }
+.HospitalNav ul li.select i.i9 { background-position: 0px -528px; }
+.HospitalNav ul li.select i.i10 { background-position: 0px -589px; }
+.HospitalNav ul li.select i.i11 { background-position: 0px -651px; }
+.HospitalNav ul li.select i.i12 { background-position: 0px -716px; }
+.HospitalNav ul li.select i.i13 { background-position: 0px -780px; }
+.HospitalNav ul li.select i.i14 { background-position: 0px -842px; }
+.box1_1 { height: 397px; }
+.box1_1 dl { height: 397px; }
+.box1_1 dl dt { height: 337px; }
+.box1_1 dl dd { height: 389px; }
+
+
+
+.til{ text-align:center; margin:70px 0 40px;}
+.til h2{ font-size:42px; color:#1180cc; font-weight:bold;}
+.til h3{ font-size:16px; color:#bfbfbf; text-transform:uppercase; margin-top:8px;}
+.bg{ background:#f4f4f4; margin-top:50px; overflow:hidden;}
+.color{ color:#1180cc;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

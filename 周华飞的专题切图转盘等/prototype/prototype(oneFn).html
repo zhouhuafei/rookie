@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>prototype(oneFn)</title>
+<script>
+//构造函数中的this表示new出来之后的那个实例对象
+
+
+
+
+
+
+
+
+
+
+
+
+/*Cur1动态原型模式1--------想把函数封装成一个整体,可以使用这种方法*/
+/*
+function Cur1(names,value){
+	names&&(this.names=names);
+	value&&(this.value=value);
+	if(typeof this.addFn!='function'){
+		alert('函数被初始化了');
+		Cur1.prototype.addFn=function(){}
+	}	
+}
+var f1=new Cur1();//只初始化一次
+var f2=new Cur1();
+*/
+
+
+
+
+
+
+
+/*cur2动态原型模式2-------------------想把函数封装成一个整体,可以使用这种方法(不通过字面量的方式续写,所以Cur2.prototype={}要删除)*/
+function Cur2(names,value){
+	names&&(this.names=names);
+	value&&(this.value=value);
+	if(typeof this.addFn=='function'){return;}	
+	alert('函数被初始化了');
+	Cur2.prototype.addFn=function(){alert('addFn');}
+	Cur2.prototype.addCs=function(){alert('addCs');}
+}
+//可以续写方法,但不可以重写以前的方法
+Cur2.prototype={
+	//使用了动态原型模式,可以续写,但不可以重写以前的方法,否则会切断实例与原型之间的联系;
+	addSy:function(){alert('adds');},//续写函数
+	//addFn:function(){}//重写函数,这是错误的,这样写,会导致 以前的函数全部失效;
+}
+var f1=new Cur2();//只初始化一次
+alert(f1.addSy);
+var f2=new Cur2();
+alert(f2.addFn);
+
+
+
+
+
+
+
+
+
+
+
+/*cur3正确写法---------------------------最常用写法,建议使用*/
+/*
+function Cur3(names,value){
+	names&&(this.names=names);
+	value&&(this.value=value);
+}
+Cur3.prototype={
+	constructor:Cur3,
+	addFn:function(){alert('addFn');},
+	addCs:function(){alert('addCs');}	
+}
+*/
+
+
+
+
+
+
+
+
+/*
+function C(){
+	this.fn=function(){};
+}
+var r=new C();
+var r1=new C();
+alert(r1.fn==r.fn)//false	浪费内存
+
+function D(){
+}
+D.prototype.fn=function(){};
+var r=new D();
+var r1=new D();
+alert(r1.fn==r.fn)//true
+*/
+</script>
+</head>
+<body>
+</body>
+</html>

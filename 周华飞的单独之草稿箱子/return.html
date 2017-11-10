@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+/*
+function show(a,b)
+{
+	alert(a+b);
+}
+show(5,5);
+*/
+/*
+function show(a,b)
+{
+	return a+b;
+}
+alert(show(3,5));
+*/
+
+function show()
+{
+	return arguments[0]+arguments[1];
+}
+alert(show());
+alert(typeof(show()));
+alert(show(3,5));
+alert(typeof(show(3,5)));
+alert(show('a','b'));
+alert(typeof(show('a','b')));
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

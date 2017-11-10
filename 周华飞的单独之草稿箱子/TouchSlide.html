@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>TouchSlide</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+/*main*/
+#main,#main2{ width:320px; height:200px; overflow:hidden; background:#000; margin:100px auto; position:relative; color:#fff; font-size:12px;}
+#main ul,#main2 ul{ width:3000px; position:absolute; left:0; top:0; background:#F00;}
+#main ul li,#main2 ul li{ width:320px; text-align:center; height:200px; line-height:200px; background:#030; float:left;}
+#main ol,#main2 ol{ position:absolute; right:0; bottom:5px;}
+#main ol li,#main2 ol li{ width:20px; text-align:center; height:20px; line-height:20px; border-radius:50%; margin:0 5px; cursor:pointer; background:#666; float:left; transition:0.4s;}
+#main ol li.on,#main2 ol li.on{ background:#900; transform:rotatey(360deg);}
+#main .prev,#main .next,#main2 .prev,#main2 .next{ width:40px; text-align:center; height:40px; line-height:40px; cursor:pointer; background:rgba(0,0,0,0.5); position:absolute; top:80px;}
+#main .prev,#main2 .prev{ border-radius:0 50% 50% 0; left:0;}
+#main .next,#main2 .next{ border-radius:50% 0 0 50%; right:0;}
+</style>
+<script src="TouchSlide.1.1.source.js"></script>
+<script>
+window.addEventListener('load',function(){
+	TouchSlide({ slideCell:"#main",titCell:"ol li",mainCell:"ul",autoPlay:true,interTime:6000,effect:'leftLoop'});
+	TouchSlide({ slideCell:"#main2",titCell:"ol li",mainCell:"ul",autoPlay:true,interTime:6000,effect:'leftLoop'});
+},false)
+</script>
+</head>
+<body>
+<!--main-->
+<div id="main">
+        <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+        </ul>
+	<ol>
+        	<li class="on">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ol>
+        <div class="prev">左</div>
+        <div class="next">右</div>
+</div>
+<!--main2-->
+<div id="main2">
+        <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+        </ul>
+	<ol>
+        	<li class="on">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ol>
+        <div class="prev">左</div>
+        <div class="next">右</div>
+</div>
+</body>
+</html>

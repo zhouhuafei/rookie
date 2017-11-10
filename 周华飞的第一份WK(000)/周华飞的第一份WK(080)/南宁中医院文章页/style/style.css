@@ -1,0 +1,146 @@
+@charset "gb2312";
+body, h1, h2, h3, h4, h5, h6, hr, div,p,blockquote,dl, dt, dd, ul, ol, li,pre, form, fieldset, legend, button, input, textarea,th, td,img
+{border:none;margin:0;padding:0;}
+.Item_line{ width:960px; overflow:hidden; height:2px; margin-bottom:20px; padding-left:15px;}
+#Item1{width:990px; margin:0 auto;background:#fff; height:608px;}
+#Item1 .til{height:34px;text-align:left; font:22px/1.5 Î¢ÈíÑÅºÚ,ËÎÌå,tahoma,arial,Hiragino Sans GB,sans-serif; color:#D33B61; width:990px; margin:0 auto;}
+#Item1 .con{width:980px;margin:0 auto; height:534px;}
+.container { padding-bottom:18px; }
+.p1 { padding-top:26px; }
+.share .hd { position:relative; width:100%; text-align:center; border-bottom:1px solid #646464; margin-bottom:36px; }
+.share .hd ul { text-align:center; width:100%; height:100%; }
+.share .hd li { display:inline-block; height:100%; padding:0 12px; font:normal 20px/39px "Î¢ÈíÑÅºÚ"; color:#fff; cursor:pointer; background:#9e9e9e; margin:0 8px; }
+.share .hd li.on { background:#E55380; }
+.share .hd a.more { position:absolute; right:16px; top:4px; width:160px; height:30px; font:normal 16px/30px "Î¢ÈíÑÅºÚ"; color:#fff; background:#f08115;-moz-border-radius: 5px;-webkit-border-radius: 5px; border-radius: 30px;}
+.share .bd li { float:left; width:314px; margin:0 6px; display:inline; background:#dbdcde; padding-bottom:16px; font-family:"Î¢ÈíÑÅºÚ"; }
+.share .bd li h2 { height:30px;color:#E55380; font:normal 18px/30px "Î¢ÈíÑÅºÚ"; text-align:center; }
+.share .bd li .txt { font:normal 14px/24px "Î¢ÈíÑÅºÚ"; color:#434444; padding:2px 17px 10px; height:160px; text-indent:2em; overflow: hidden; }
+.share .bd li a.more { color:#f00; }
+.share .bd li a.click { display:block; width:138px; height:32px; background:#E55380; text-align:center; font:normal 18px/32px "Î¢ÈíÑÅºÚ"; color:#fff; margin:0 auto;border-radius: 15px; }
+.share .bd li .pic{padding:4px;}
+.share .bd li .pic img{ border:1px solid #FFF; width:304px;}
+.share .p2 { margin-top:45px; height:394px; overflow:hidden; font-family:"Î¢ÈíÑÅºÚ"; padding:0 8px; }
+.share .p2 .pic { float:left; width:548px; padding-right:12px; }
+.share .p2 .intro { float:left; width:390px; height:100%; }
+
+/*ÎÄÕÂÒ³Ö÷ÌåÑùÊ½*/
+#I_Main{width:1028px; overflow:hidden; margin:20px auto; color:#474747;}
+#I_Main .fl{ float:left;}
+#I_Main .fr{ float:right;}
+
+/*listLeft*/
+.listLeft{ width:708px; height:100%; border:1px solid #e2e2e2; background:#fff;}
+.listLeft .lTil{ height:55px; line-height:55px; background:url(../images/l1.jpg) 20px center no-repeat; color:#9d9d9d; padding-left:50px; border-bottom:1px solid #dcdcdc;}
+.listLeft .lTil a{ font-size:14px; color:#9d9d9d;}
+.listLeft .leftMain{ padding:26px 20px 0;}
+.listLeft .img_word{ padding-bottom:30px; overflow:hidden; border-bottom:1px dashed #e2e2e2;}
+.listLeft .word{ width:410px; height:276px; position:relative;}
+.listLeft .word .h2Til{ border-bottom:1px solid #e2e2e2;}
+.listLeft .word span{ display:inline-block; color:#e45380; font-size:18px; padding-bottom:12px; margin-bottom:-1px; border-bottom:1px solid #e45380;}
+.listLeft .word p{ width:205px; float:left; color:#474747; font-size:14px; height:20px; line-height:20px; margin-top:20px;}
+.listLeft .word em{ background:#e45380; margin-right:5px; color:#fff; display:inline-block; text-align:center; width:20px; height:20px; line-height:20px; font-size:12px; font-style:normal;}
+.listLeft .word a{ position:absolute; bottom:0; left:0; width:360px; height:40px; display:block; text-align:center; line-height:40px; font-size:16px; color:#474747; border:1px solid #e45380;}
+.listLeft .word small{ font-size:16px; margin-left:5px; font-style:normal; color:#e45380;}
+.listLeft dl{ border-bottom:1px dashed #e2e2e2; padding-bottom:30px;}
+.listLeft dl dt{ margin:20px 0 15px; font-size:16px;}
+.listLeft dl span{ font-size:12px;}
+.listLeft dl dd{ line-height:20px; font-size:12px; text-indent:30px;}
+.listLeft dl a{ color:#e45380;}
+
+/*four*/
+.listLeft .four{ overflow:hidden; width:100%; margin-top:60px; padding-bottom:60px; border-bottom:1px dashed #c1c1c1;}
+.listLeft .four .list{width:672;height:76px;padding-bottom:42px;border-bottom:1px dashed #e2e2e2;}
+.listLeft .four .btnList{width:418px;height:76px;text-align:center;margin:0 auto;}
+.listLeft .four .btnList li{width:76px;height:76px;margin-right:38px;float:left;}
+.listLeft .four .btnList li.last{margin:0px;}
+.listLeft .four .btnList li a{display:block;width:76px;height:76px;background:#e45380;}
+.listLeft .four .btnList li a:hover{background:#ce3061;}
+
+/*listRight*/
+.listRight{ width:300px; height:100%;}
+.listRight .hot{ background:#fff; width:298px; border:1px solid #e2e2e2; color:#8d8d8d; line-height:55px; font-size:15px;}
+.listRight .hot span{ width:149px; float:left; text-align:center; border-bottom:1px solid #e2e2e2;}
+.listRight .hot span a{ display:block;}
+.listRight .hot span a:hover{ background:#e45380; color:#fff;}
+.listRight .hot_span{ font-size:20px; color:#fff; background:#9d9d9d;}
+.listRight .hot em{ vertical-align:middle;}
+.listRight .hot p{ font-size:14px; border-bottom:1px solid #e2e2e2; text-align:center;}
+.listRight .hot a{ display:block; color:#8d8d8d; font-size:15px;}
+.listRight .hot p a:hover{ background:#e45380; color:#fff;}
+.listRight .hot .img{ text-align:center; margin:20px 0 30px;}
+.listRight .hos{ background:#fff; padding:10px 10px 0 10px; margin-top:10px; border:1px solid #e2e2e2}
+.listRight .hos_til{ border-bottom:2px solid #e2e2e2; line-height:30px; margin-bottom:10px;}
+.listRight .hos_til span{ display:inline-block; color:#d33c60; border-bottom:2px solid #d33c60; font-size:16px; margin-bottom:-2px;}
+.listRight .hos p{ font-size:14px; color:#232323; line-height:30px; border-bottom:1px dashed #e2e2e2; margin-top:10px; padding-bottom:10px;}
+.listRight .hos p a{ color:#d33c60;}
+.listRight .hos .em_b{ width:210px; margin:15px auto 5px; overflow:hidden;}
+.listRight .hos em{ margin-bottom:10px; display:inline-block; width:90px; font-style:normal;}
+.listRight .hos em a{ color:#232323; font-size:14px; display:block;}
+.listRight .hos em img{ vertical-align:middle; margin-right:10px;}
+.listRight .exp{ background:#fff; overflow:hidden; padding:10px 10px 20px 10px; margin-top:10px; border:1px solid #e2e2e2}
+.listRight .exp .word{ width:160px; height:119px; position:relative;}
+.listRight .exp .word h2{ margin-bottom:5px;}
+.listRight .exp .word h2 a{ color:#444;} 
+.listRight .exp .word h2 small{ font-style:normal; font-size:12px; color:#f1a442; margin-left:5px;}
+.listRight .exp .word p{ font-size:12px; color:#8c8c8c; line-height:18px;}
+.listRight .exp .word p small{ margin-right:5px; color:#f1a442;}
+.listRight .exp .word .btn{ position:absolute; bottom:0px; left:0px; width:80px; text-align:center; height:24px; line-height:24px; border:1px solid #f1a442; color:#f1a442; display:block;}
+.listRight .ills{ background:#fff; overflow:hidden; padding:10px 10px 20px 10px; margin-top:10px; border:1px solid #e2e2e2}
+.listRight .ills a{ padding:0 10px; margin-right:20px; margin-top:10px; text-align:center; font-size:12px; color:#8d8d8d; display:inline-block; border:1px solid #e2e2e2; line-height:34px; text-align:center; box-shadow:1px 1px 5px #ccc;}
+.listRight .ills a:hover{ background:#e45380; color:#fff;}
+.listRight .ills .btn{ font-size:18px; color:#fff; background:#ef9301; width:250px; margin:20px auto 0; display:block; line-height:40px; height:40px;}
+
+
+/*ÆÀÂÛ²¿·Ö*/
+.listLeft .comment_top{clear:both;width:606px;background:url(../images/page_pic1.jpg) repeat-x;padding:0px 15px; margin:60px auto 0;}
+.listLeft .comment_top .til{width:100%;height:64px;line-height:64px;}
+.listLeft .comment_top .til p{float:left;font-size:24px;color:#e45380;}
+.listLeft .comment_top .til p span{color:#ee5f00;}
+.listLeft .comment_top .til a{float:right;display:inline-block;width:85px;height:25px;line-height:25px;text-align:center;position:relative;top:20px;color:#fff;background:#EF9301;border-radius:3px;}
+.listLeft .comment_top .til a:hover{background:#dc5700;}
+.listLeft .comment_top .con{width:604px;height:107px;border:1px solid #efefef;padding:40px 0px;}
+.listLeft .comment_top .con .left{width:161px;height:82px;text-align: center;padding:25px 0 0 0;float:left;}
+.listLeft .comment_top .con .left span{color: #ee5f00;font-size: 18px;line-height: 30px;}
+.listLeft .comment_top .con .center{width:280px;height:107px;float:left;padding:0px 20px;border-right:1px dashed #ccc;border-left:1px dashed #ccc;}
+.listLeft .comment_top .con .center .l{height:20px;margin-top:15px;}
+.listLeft .comment_top .con .center .l span{font-size:14px;color:#333;float:left;}
+.listLeft .comment_top .con .center .l div{background:#e4e4e4;height:20px;line-height:20px;color:#fff;text-indent:10px;overflow: hidden;width: 164px;float:right;}
+.listLeft .comment_top .con .right{width:118px;height:82px;text-align: center;padding:25px 0 0 0;float:left;}
+.listLeft .comment_top .con .right span{color: #ee5f00;font-size: 18px;line-height: 30px;}
+.listLeft .comment_center{width:636px;padding:15px 0;margin:0 auto;}
+.listLeft .comment_center div.til{height:30px;line-height:30px;font-size:15px;color:#666;border-bottom:1px solid #eee;padding:0 0 15px 0;}
+.listLeft .comment_center div.til span{float:left;}
+.listLeft .comment_center div.til p{display:inline-block;float:right;}
+.listLeft .comment_center div.til p a{color:#666;padding:0 5px;}
+.listLeft .comment_center div.til p a.select{color:#e45380;}
+.listLeft .comment_center dl{width:100%;padding:15px 0;border-bottom:1px solid #eee;float:left;}
+.listLeft .comment_center dl dt{width:98px;float:left;}
+.listLeft .comment_center dl dt img{display:block;}
+.listLeft .comment_center dl dt p{text-align:center;padding:10px 0px 0px; font-size:14px;}
+.listLeft .comment_center dl dd{width:530px;float:right;}
+.listLeft .comment_center dl dd .p1{line-height:35px;font-size:14px;color:#999;}
+.listLeft .comment_center dl dd .p1 span{padding:0 0 0 10px;}
+.listLeft .comment_center dl dd .p1 span i{font-style:normal;color:#f80;}
+.listLeft .comment_center dl dd .des{height:54px;text-indent:26px;line-height:150%;color:#999;padding:10px 0px 15px;border-bottom:1px dashed #ccc;margin-bottom:15px;}
+.listLeft .comment_center dl dd .left{display:inline-block;height:22px;line-height:22px;float:left;color:#999;}
+.listLeft .comment_center dl dd .left em{font-style:normal;padding:0 0 0 50px;}
+.listLeft .comment_center dl dd .right{display: block;height:22px;line-height:22px;text-indent: 25px;width: 91px;float:right;background: url(../images/list_dp7.jpg) no-repeat left center;}
+.listLeft .comment_center button.all{display:none;height:30px;width:100%;text-align:center;line-height:30px;font-size:18px;color:#fff;background:#9ed1f5;outline:none;margin:20px 0px;cursor:pointer;}
+.listLeft .myComment{width:100%;height:230px;background:#fff;margin:0px auto;font-size:15px;color:#666;}
+.listLeft .myComment p.till{font-size:18px;color:#666;padding:0 0 15px 0;border-bottom:1px dashed #eee;margin-bottom:15px;}
+.listLeft #page{clear:both;text-align:center;padding:15px 0;}
+.listLeft #page a{display:inline-block;padding:8px 15px;border:1px solid #f2f2f2;margin:0px;font-size:14px; color:#333;}
+.listLeft #page a:hover{background:#fa7404;color:#fff;}
+.listLeft #page a.select{background:#fa7404;color:#fff;font-weight:bold;}
+.listLeft .myComment form ul{width:100%;height:25px;line-height:25px;margin:10px 0;}
+.listLeft .myComment form ul li{display:block;width:170px;float:left;}
+.listLeft .myComment form ul li div{float:left;}
+.listLeft .myComment form ul li div.default img{position:relative;top:4px;height: 18px;}
+.listLeft .myComment form div.btn button{width:170px;height:30px;line-height:30px;background:#EF9301;color:#fff;font-size:16px;border-radius: 3px;float:right;margin:10px 4px 0 0;cursor:pointer;}
+.listLeft .myComment form div.btn button:hover{width:170px;height:30px;line-height:30px;background:#fa7404;color:#fff;font-size:16px;border-radius: 3px;}
+.listLeft .myComment form input{width:240px;height:25px;border:1px solid #ccc;border-radius: 2px;transition: all 0.1s linear 0s;}
+.listLeft .myComment form input:focus{-moz-outline-radius: 8px;border-color: #f5b653;box-shadow: 0 0 5px rgba(244, 165, 40, 0.6);}
+.listLeft .myComment form textarea{width:585px;border:1px solid #ccc;resize:none;height:100px;position:relative;top:-1px;transition: all 0.1s linear 0s;border-radius: 3px;}
+.listLeft .myComment form textarea:focus{-moz-outline-radius: 8px;border-color: #f5b653;box-shadow: 0 0 5px rgba(244, 165, 40, 0.6);}
+.listLeft .myComment form .conn{clear:both;}
+.listLeft .myComment form .conn span{vertical-align: top; float:left;}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>progress</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; font-weight:normal;}
+div{ position:fixed; left:0; top:0; background:#000; width:100%; height:100%;}
+h2{ width:300px; height:40px; position:absolute; left:50%; top:50%; margin-left:-150px; margin-top:-20px; background:#fff;}
+h2 i{ display:block; position:absolute; left:0; top:0; width:0; height:100%; background:#F90;}
+h2 b{ position:absolute; left:0; top:0; width:100%; height:100%; color:#f00; text-align:center; line-height:40px; font-size:20px;}
+img{ display:block; border-radius:50%;}
+</style>
+</head>
+<body>
+<div>
+	<h2>
+        	<i></i>
+        	<b>0%</b>
+        </h2>
+</div>
+<img src="http://g.hiphotos.baidu.com/image/pic/item/bd315c6034a85edf2308262a4b540923dd547537.jpg" />
+<img src="http://b.hiphotos.baidu.com/image/pic/item/42a98226cffc1e17fbd737394890f603738de94a.jpg" />
+<img src="http://c.hiphotos.baidu.com/image/pic/item/a044ad345982b2b7bad80fc933adcbef76099b73.jpg" />
+<img src="http://e.hiphotos.baidu.com/image/pic/item/1f178a82b9014a90a24addb4ab773912b31bee47.jpg" />
+<img src="http://e.hiphotos.baidu.com/image/pic/item/024f78f0f736afc31daf987ab119ebc4b7451209.jpg" />
+<img src="http://c.hiphotos.baidu.com/image/pic/item/c75c10385343fbf2c0a37c2ab27eca8065388f28.jpg" />
+<img src="http://a.hiphotos.baidu.com/image/pic/item/e824b899a9014c08067fa9bb087b02087bf4f46c.jpg" />
+<img src="http://h.hiphotos.baidu.com/image/pic/item/d53f8794a4c27d1e2dbedc7c1ad5ad6edcc438ea.jpg" />
+</body>
+</html>
+<script>
+//进度条,以图片的加载进度做为页面的加载进度,不可以在window.onload函数里调用,否则会失效,因为onload函数是在图片加载完才开始调用的
+;(function(){
+	var oDiv=document.querySelector('div');
+	var oH=document.querySelector('h2');
+	var oI=document.querySelector('i');
+	var oB=document.querySelector('b');
+	var aImg=document.querySelectorAll('img');
+	var iLen=aImg.length;
+	var iW=oH.offsetWidth;
+	var timer=null;
+	var num=0;
+	var scale=iW/iLen;
+	document.body.style.overflow='hidden';
+	document.documentElement.style.overflow='hidden';
+	for(var i=0;i<iLen;i++){
+		aImg[i].onload=function(){
+			num++;
+			oI.style.width=num*scale+'px';
+			oB.innerHTML=num*scale/3+'%';							
+			if(num==iLen){
+				oDiv.style.display='none';
+				document.body.style.overflow='auto';
+				document.documentElement.style.overflow='auto';
+			};					
+		}
+	}
+})();
+</script>
+
+

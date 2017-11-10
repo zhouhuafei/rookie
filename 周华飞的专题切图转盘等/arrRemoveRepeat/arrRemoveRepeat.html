@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>数组去重</title>
+</head>
+
+<body>
+<script>
+var arr=[1,2,3,4,4,4,4,4,5,3,3,3]
+var arr2=[];
+var ilen=arr.length;
+//方法一
+/*
+for(var i=0;i<ilen;i++){
+	if(arr2.indexOf(arr[i])==-1){
+		arr2.push(arr[i])	
+	}	
+}
+console.log(arr);
+*/
+//方法二
+/*
+for(var i=0;i<ilen;i++){
+	if(arr.indexOf(arr[i])==i){
+		arr2.push(arr[i])	
+	}	
+}
+console.log(arr);
+*/
+//方法三
+/*
+for(var i=0;i<arr.length;i++){
+	for(var j=i+1;j<arr.length;j++){
+		if(arr[i]==arr[j]){
+			arr.splice(j,1);
+			j--;	
+		}	
+	}	
+}
+console.log(arr);
+*/
+//方法四(速度最快)
+/*
+console.time('str');//计时开始(必须有计时器标题)
+arr.sort();
+arr2.push(arr[0]);
+for(var i=1;i<arr.length;i++){
+	if(arr[i]!=arr2[arr2.length-1]){
+		arr2.push(arr[i]);
+	}	
+}
+console.log(arr2);
+console.timeEnd('str');//计时结束(必须有计时器标题)
+*/
+</script>
+</body>
+</html>
+
+
+

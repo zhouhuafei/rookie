@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+div{ padding:10px; background:#9C9;}
+</style>
+<script src="../zhouHuaFeidejQuery/jquery-1.11.1.min.js"></script>
+<!--
+<script>
+$(document).ready(function()
+{
+	$('button').click(function()
+	{
+		$(this).parents('div').hide('slow');
+	});	
+});
+</script>
+</head>
+
+<body>
+<h2>中国办事处</h2>
+<div>
+	<button type="button">隐藏</button>
+	<p>联系人：张先生</p>
+    <p>北三环中路100号</p>
+    <p>北京</p>
+</div>
+<h2>美国办事处</h2>
+<div>
+	<button type="button">隐藏</button>
+	<p>联系人:David</p>
+    <p>第五大街200号</p>
+    <p>纽约</p>
+</div>
+-->
+<script type="text/javascript">
+$(document).ready(function()
+{
+  	$(".ex .hide").click(function()
+	{
+    	$(this).parents(".ex").hide("slow");
+  	});
+});
+</script>
+
+</head>
+ 
+<body>
+
+<h3>中国办事处</h3>
+<div class="ex">
+<button class="hide" type="button">隐藏</button>
+<p>联系人：张先生<br /> 
+北三环中路 100 号<br />
+北京</p>
+</div>
+
+<h3>美国办事处</h3>
+<div class="ex">
+<button class="hide" type="button">隐藏</button>
+<p>联系人：David<br /> 
+第五大街 200 号<br />
+纽约</p>
+</div>
+
+</body>
+</html>

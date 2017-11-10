@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>obj面向对象的选项卡(一)</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+body{ background:#000;}
+div{ width:800px; margin:200px auto; background:#FFF; color:#FFF; font-size:30px;}
+ol{ height:50px; background:#F60;}
+ol li{ width:200px; text-align:center; height:100%; line-height:50px; overflow:hidden; float:left;}
+ol .li_active{ background:#F30;}
+ul{ overflow:hidden; height:300px; background:#900;}
+ul li{ width:800px; text-align:center; height:100%; line-height:300px; display:none;}
+ul .li_active{ display:block;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementById('div');
+	new TabSwitch(oDiv);
+	var oDiv2=document.getElementById('div2');
+	new TabSwitch(oDiv2);
+	var oDiv3=document.getElementById('div3');
+	new TabSwitch(oDiv3);
+}
+function TabSwitch(oParent){
+	var _this=this;
+	this.aBtn=oParent.getElementsByTagName('ol')[0].getElementsByTagName('li');
+	this.aCut=oParent.getElementsByTagName('ul')[0].getElementsByTagName('li');
+	for(var i=0;i<this.aBtn.length;i++){
+			this.aBtn[i].index=i;
+			this.aBtn[i].onmouseover=function(){
+				_this.tab(this);	
+			}
+	}	
+}	
+TabSwitch.prototype.tab=function(_this){
+	for(var i=0;i<this.aBtn.length;i++){
+		this.aBtn[i].className='';
+		this.aCut[i].className='';	
+	}
+	_this.className='li_active';
+	this.aCut[_this.index].className='li_active';
+}
+</script>
+</head>
+<body>
+<div id="div">
+	<ol>
+        	<li class="li_active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ol>
+        <ul>
+        	<li class="li_active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ul>
+</div>
+<div id="div2">
+	<ol>
+        	<li class="li_active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ol>
+        <ul>
+        	<li class="li_active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ul>
+</div
+><div id="div3">
+	<ol>
+        	<li class="li_active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ol>
+        <ul>
+        	<li class="li_active">1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ul>
+</div>
+</body>
+</html>

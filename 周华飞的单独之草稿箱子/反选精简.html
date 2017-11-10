@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>反选精简版</title>
+</head>
+<script>
+window.onload=function()
+{	
+	var oBtn=document.getElementsByTagName('input')[0];
+	var aInput=document.getElementsByTagName('div')[0].getElementsByTagName('input');
+	oBtn.onclick=function()
+	{
+		for(var i=0;i<aInput.length;i++)
+		{
+			
+			aInput[i].checked=!aInput[i].checked;  //这一句话可以代替下述全部  这就是'!'的魅力			
+			/*
+			if(aInput[i].checked==false)
+			{
+				aInput[i].checked=true;
+			}
+			else
+			{				
+				aInput[i].checked=false;	
+			}
+			*/	
+		}	
+	}	
+}
+</script>
+<body>
+<input type="button" value="反选" /><br />
+<div>
+
+        <input type="checkbox" /><br />
+        <input type="checkbox"  checked="checked"/><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" checked="checked"/><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+        <input type="checkbox" /><br />
+</div>        
+</body>
+</html>

@@ -1,0 +1,107 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%; margin:0 auto; overflow:hidden; background:#f0f0f0;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:565px;}
+.banner div{ position:relative; height:100%;}
+.banner a{ position:absolute; width:100%; left:0;  bottom:120px; height:50px;}
+
+/*nav*/
+#nav{ width:100%; height:50px; position:absolute; left:0; top:565px; background:#008077; color:#fff; z-index:99;}
+#nav ul{ width:750pxpx; height:50px; margin:0 auto; font-size:24px;}
+#nav ul li{ height:50px; width:150px; text-align:center; line-height:50px; float:left;}
+#nav ul .select{ background:#00554f;}
+#nav .navTil{ width:249px; height:50px; font-size:22px; text-align:center; line-height:50px; border-right:1px solid #fff;}
+
+/*style*/
+.commonTil{ height:28px; line-height:28px; padding-left:40px; color:#f16e00; font-size:26px; background:url(../images/til.png) left top no-repeat; margin:50px 0;}
+.styleMain{ background:url(../images/style.jpg) center top no-repeat; padding-top:192px; position:relative;}
+.styleMain div{ width:300px; float:left; margin-right:50px;}
+.styleMain h2{ color:#363636; font-size:30px; text-align:center; font-weight:bold; margin:40px 0 50px;}
+.styleMain strong{ width:70px; text-align:center; line-height:20px; background:#008077; color:#fff; font-size:14px; margin-bottom:5px;}
+.styleMain p{ color:#4b4b4b; line-height:30px; padding-bottom:40px;}
+.styleMain small{ font-size:14px; color:#008077;}
+.styleMain .noMr{ margin-right:0;}
+
+/*four*/
+.fourMain{ padding:40px 0; border-bottom:1px dashed #cccccc;}
+.fourMain .img{ width:326px; height:226px; border:2px solid #fff;}
+.fourMain .word{ height:226px; position:relative; width:626px;}
+.fourMain h2{ font-size:24px; color:#008077; margin:10px 0 40px; word-spacing:20px;}
+.fourMain p{ text-indent:30px; color:#444444; line-height:30px;}
+.fourMain .btn{ height:40px; width:410px; padding-left:30px; background:url(../images/phone.png) left center no-repeat; color:#646464; position:absolute; right:10px; bottom:0;}
+.fourMain .btn small{ height:100%; font-size:20px;}
+.fourMain .btn b{ height:100%; vertical-align:middle; font-size:24px;}
+.fourMain .btn a{ width:120px; padding-left:20px; height:100%; line-height:40px; font-size:18px; color:#fff; background:url(../images/btn.png) 100px center no-repeat #008077; border-radius:10px; margin-left:4px;}
+.fourMain .btn a:hover{ background:url(../images/btn.png) 100px center no-repeat #fa7404;}
+.four .noBr{ border:none;}
+.four .noPd{ padding-top:0;}
+
+/*contrast*/
+.contrast .contrastTil{ width:354px; height:39px; background:url(../images/contrastTil_03.png); text-align:center; line-height:39px; color:#fff; font-size:22px; margin:0 auto 20px;}
+.contrast ul li{ width:415px; float:left; margin-right:170px;}
+.contrast ul li img{ vertical-align:middle;}
+.contrast ul span{ display:block; height:86px; padding-left:100px; margin:15px 0 25px; background:url(../images/contrastIcon1.png) left top no-repeat #f0f0f0; color:#666666;}
+.contrast ul .spanBg{ background:url(../images/contrastIcon2.png) left top no-repeat #eaf6f5;}
+.contrast ul p{ padding-top:7px;}
+.contrast ul .noMr{ margin-right:0;}
+.contrast ol{ width:829px; margin:0 auto; position:relative; margin-bottom:20px;}
+.contrast ol li{ width:155px; height:111px; position:relative; border:3px solid #d2d2d2; float:left; margin-right:6px; transition:1s;}
+.contrast ol em{ width:0; height:0; border:10px solid transparent; border-top:10px solid #fa7404; position:absolute; left:70px; bottom:-20px;}
+.contrast ol .li_active{ border:3px solid #fa7404;}
+.contrast .imgShow{ width:990px; margin:0 auto 60px;}
+
+/*expert*/
+.expertMain{ padding-bottom:60px;}
+.expertMain .img{ width:260px; margin:0 130px;}
+.expertMain .img a{ width:130px; line-height:30px; font-size:15px; text-align:center; color:#fff; background:#008077; display:block; margin:0 auto;}
+.expertMain .img a:hover{ background:#fa7404;}
+.expertMain .word{ width:400px; height:480px; color:#666666;}
+.expertMain h2{ font-size:36px; color:#fa7404;}
+.expertMain h1{ font-size:120px; color:#008077;}
+.expertMain p{ padding-left:40px; line-height:30px; background:url(../images/expertIcon.png) left center no-repeat; font-size:16px;}
+.expertMain h3{ font-size:14px; margin:30px 0 20px;}
+.expertMain strong{ color:#008077;}
+
+/*fact*/
+.factMain{ padding:40px 0 50px;}
+.factMain div{ width:446px; height:179px; background:#ececec; position:relative;}
+.factMain .mr38{ margin-top:38px;}
+.factMain em{ position:absolute; left:-108px; top:-38px;}
+.factMain h2{ height:60px; position:absolute ; left:10px; top:-40px;}
+.factMain strong{ height:100%; line-height:60px; color:#008077; font-size:72px; vertical-align:top;}
+.factMain small{ height:100%; color:#4b4b4b; font-size:30px;}
+.factMain p{ padding:60px 30px 0; color:#4b4b4b;}
+
+/*about*/
+.aboutMain{ padding:0 1px;}
+.aboutMain div{ float:left; border:1px solid #008077; width:243px; margin-right:6px;}
+.aboutMain .noMr{ margin-right:0;}
+
+/*hospital*/
+.hospital{ padding-bottom:60px;}

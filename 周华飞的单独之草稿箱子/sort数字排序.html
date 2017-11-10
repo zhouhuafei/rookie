@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>sort数字排序</title>
+</head>
+
+<body>
+<script>
+var arr=[1,6,11,12,65,63,44];			//sort内部是按照字符串大小进行排序的
+arr.sort(function(n1,n2){return n1-n2;});	//n1-n2(从小到大) //n2-n1(从大到小)==>或者先从小到大排序然后再使用arr.reverse()进行逆序也能达到从大到小的排序
+//arr.sort(function(){return -1;});
+//arr.sort(function(){return 1;});
+alert(arr);
+</script>
+</body>
+</html>

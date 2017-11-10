@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+                html, body {
+                        width: 100%;
+                        height: 100%;
+                }
+                body {
+                        margin: 0;
+                        padding: 0;
+                        background: #000000;
+                        color: #fff;
+                        text-align: center;
+                        font-size: 28px;
+                        line-height: 20;
+                }
+        </style>
+</head>
+<body>
+点击变红,面向对象的写法,so easy
+<script>
+        function Bodys(obj) {
+                this.obj = obj || {};
+                this.id = this.obj.id;
+        }
+        Bodys.prototype = {
+                constructor: Bodys,
+                init: function () {
+                        this.change();
+                },
+                change: function () {
+                        var self=this;
+                        document.onclick=function(){
+                                self.id.style.backgroundColor = '#f00';
+                        }
+                }
+        };
+        var obj = new Bodys();
+        obj.id = document.body;
+        obj.init();
+</script>
+</body>
+</html>

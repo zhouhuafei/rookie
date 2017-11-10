@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ基础DOM</title>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+$(function()
+{
+	//alert($('body').html());
+	//alert($('div').html());
+	//$('div').html('<b>123456</b>');
+	//alert($('div').text());
+	//$('div').text('<b>123456</b>');
+	//alert($('input').val());
+	//$('input').val('very cool')
+	//alert($('#input2').val());
+	//$('#input2').val('ddddddd');     	   //已改，审核元素可以看到
+	//$('input').val(['人妖','男']);	  //数组里面的是表单元素的value值，谁的value值与数组里面的一样，则谁被默认选中，主要用于下拉列表，单选和复选框
+	//alert($('#input5').attr('id'));		 //attr(key)  获取标签元素的属性值
+	//$('#input5').attr('title','我被添加了一个属性值');		    //attr(key,value)  设置标签元素的属性值
+	/*
+	$('#input5').attr({
+		'title':'我被添加了一个属性值',
+		'class':'input555',					//id不建议使用attr设置，后面有更强大的设置方式
+		'name':'input5555',				       //attr({key1:value1,key2:value2,......,key:value})
+		});
+	*/
+	
+	
+	//html()和text()以及val()都具备以下相同使用方法
+	/*
+	$('input').attr('title',function(index,value){	//index添加索引 value获取原来的属性值
+			return 'Now title is: I am '+ 'indexNum: ' +(index+1) +' cool ' + '\nBefore title is: ' + value ;
+		});
+	*/
+	/*
+	$('p').html(function(index,value){
+		return '<i>我是本来就存在的html：</i>'+value+'<i>我是新添加的html：</i>'+'<strong>'+(index+1)+'号html'+'</strong>';
+		})
+	*/
+	//$('#input1').removeAttr('title');  		//removeAttr没有function方法								
+})
+</script>
+</head>
+
+<body>
+<div>
+	<strong>基础DOM</strong>
+</div>
+<input id="input1" type="text" value="基础DOM2" title="我是原来的title" /><br />
+<input id="input2" type="radio" value="基础DOM3" />基础DOM3<br />
+<input id="input3" type="radio" value="男" />男<br />
+<input id="input4" type="radio" value="女" />女<br />
+<input id="input5" type="checkbox" value="人妖" />人妖<br />
+
+<p>123</p>
+<p>123</p>
+</body>
+</html>

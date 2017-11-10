@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+div{ width:200px; height:200px; padding:0; margin-right:10px; background:#F00; float:left; color:#FFF; text-align:center; line-height:200px; border:10px solid #000;}
+#div5{opacity:0.3;filter:alpha(opacity=30);}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv1=document.getElementById('div1');	
+	oDiv1.onmouseover=function(){startMove(this,'height',400);}
+	oDiv1.onmouseout=function(){startMove(this,'height',200);}
+	var oDiv2=document.getElementById('div2');	
+	oDiv2.onmouseover=function(){startMove(this,'width',600);}
+	oDiv2.onmouseout=function(){startMove(this,'width',200);}
+	var oDiv3=document.getElementById('div3');	
+	oDiv3.onmouseover=function(){startMove(this,'fontSize',50);}
+	oDiv3.onmouseout=function(){startMove(this,'fontSize',18);}
+	var oDiv4=document.getElementById('div4');	
+	oDiv4.onmouseover=function(){startMove(this,'borderLeftWidth',100);}
+	oDiv4.onmouseout=function(){startMove(this,'borderLeftWidth',10);}
+	var oDiv5=document.getElementById('div5');	
+	oDiv5.onmouseover=function(){startMove(this,'opacity',100);}
+	oDiv5.onmouseout=function(){startMove(this,'opacity',30);}
+}
+function getStyle(obj,name)
+{
+	if(obj.currentStyle)
+	{
+		return obj.currentStyle[name];
+	}
+	else
+	{
+		return getComputedStyle(obj,false)[name];
+	}
+}
+function startMove(obj,attr,iTarget)
+{
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function()
+	{
+		var cur=0;
+		if(attr=='opacity'){cur=Math.round(parseFloat(getStyle(obj,attr)*100));}
+		else{cur=parseInt(getStyle(obj,attr));}
+		var speed=(iTarget-cur)/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(cur==iTarget){clearInterval(obj.timer);}
+		else
+		{			
+			if(attr=='opacity')
+			{
+				obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+				obj.style.opacity=(cur+speed)/100;	
+			}
+			else
+			{
+				obj.style[attr]=cur+speed+'px';
+			}
+		}
+		document.title=obj.offsetHeight+','+cur;
+	},30)
+}
+</script>
+</head>
+
+<body>
+<div id="div1">变高</div>
+<div id="div2">变宽</div>
+<div id="div3">变大</div>
+<div id="div4">变框</div>
+<div id="div5">变清</div>
+</body>
+</html>

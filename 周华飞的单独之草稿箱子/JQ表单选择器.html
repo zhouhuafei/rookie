@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ表单选择器</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ height:2000px;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	//alert($('input').size());
+	//alert($('input').val());	//只显示第一个input的val
+	//alert($('input').eq(1).val());
+	//alert($('input[type=password]').val());   //语义清晰了一点
+	//alert($('input[name=pass]').val());
+	
+	
+	//alert($(':input').size())			//:input  选取所有input select textarea button 
+	//alert($(':input[name=user]').val())		
+	//alert($(':text').size())			//:text   选取所有单行文本
+	//alert($(':password').size())			//：password 选取所有密码框
+	
+	//:radio		选取所有单选框		
+	//:checkbox		选取所有复选框
+	//:submit		选取所有提交按钮
+	//:reset		选取所有重置按钮
+	//:image		选取所有图像按钮
+	//:button		选取所有普通按钮
+	//:file			选取所有文件按钮
+	//:hidden		选取所有不可见字段	   
+	//alert($(':radio[value=女]').size());
+	//alert($('form :hidden').size());	//结果为2  因为把<br />也算成隐藏的了 
+
+})
+
+</script>
+</head>
+
+<body>
+<form>
+	<input type="hidden" name="user" value="123" />	
+	<input type="text" name="user" value="123" />	
+	<input type="password" name="pass" value="456" />
+        <textarea></textarea>
+        <select>
+        	<option>1</option>
+        	<option>2</option>
+        	<option>3</option>
+        	<option>4</option>
+        </select><br />
+        <input type="radio" name="sex" value="男" />男
+        <input type="radio" name="sex" value="女" />女
+        
+</form>
+        
+        
+        
+        
+        
+</body>
+</html>

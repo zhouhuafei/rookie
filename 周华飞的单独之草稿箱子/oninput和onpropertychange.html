@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>oninput和onpropertychange</title>
+<script>
+eventBind(window,'load',function()
+{
+	var oDiv=getId('div');
+	var oTxt=getId('txt');
+	oncontinue(oTxt,function(){oDiv.innerHTML=oTxt.value;})
+})
+function getId(id){return document.getElementById(id);}
+function eventBind(obj,ev,fn){	return obj.attachEvent?	obj.attachEvent('on'+ev,fn):obj.addEventListener(ev,fn,false);}
+function oncontinue(obj,fn){var ie=!-[1,];return ie?obj.onpropertychange=fn:obj.oninput=fn;}
+</script>
+</head>
+<body>
+<input id="txt" type="text" />
+<div id="div"></div>
+</body>
+</html>

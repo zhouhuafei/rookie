@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+
+var now=0;
+function fn()
+{
+	alert(now);		//now  局部   undefine
+	var now=2;
+}
+fn();
+alert(now);			//now  全局      0
+
+
+
+//如果函数内部没有var的时候，则情况又有所改变
+/*
+var now=0;
+function fn()			//详情请关注妙味课堂的全局与局部作用域解析
+{
+	alert(now);		//now     1 
+	now=2;	
+}
+fn();
+alert(now);			//now     2
+*/
+
+
+
+/*
+var now=0;			//详情请关注妙味课堂的全局与局部作用域解析
+function fn(now)			//参数a相当于  var now;(没传参)	var now=传入的参数(有传参)
+{
+	alert(now);		//now     undefine 
+	now=2;	
+}
+fn();
+alert(now);			//now     0
+*/
+
+
+
+/*
+var now=0;			//详情请关注妙味课堂的全局与局部作用域解析
+function fn(now)		// 这里的参数相当于  var now=1;
+{
+	alert(now);		//now     0	这里的now是局部里的now
+	now=2;	
+}
+fn(now);			//这里的参数now  是全局里的now
+alert(now);			//now     0
+*/
+
+</script>
+</body>
+</html>

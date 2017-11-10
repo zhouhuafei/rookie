@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>shake</title>
+<style>
+div{ position:fixed; right:0; bottom:0; width:300px; height:150px; background:#f00; text-align:center; line-height:150px; font-size:20px; color:#fff; box-shadow:0 0 10px #000; text-shadow:0 0 5px #00F;}
+</style>
+<script>
+window.onload=function(){
+	new Shake('div');
+}
+function Shake(obj){
+	this.obj=document.querySelector(obj);
+	this.timer1=null;
+	this.num=0;
+	this.init();
+}
+Shake.prototype={
+	constructor:Shake,
+	self:this,
+	init:function(){
+		var self=this;
+		this.shake();
+		setInterval(function(){
+			self.shake();
+		},5000);
+	},
+	shake:function(){
+		var self=this;
+		this.timer1=setInterval(function(){
+			self.move();
+		},30);
+	},
+	move:function(){
+		switch(this.num%4){
+			case 0:	
+				this.obj.style.bottom='3px';
+				break;
+			case 1:	
+				this.obj.style.right='3px';
+				break;
+			case 2:	
+				this.obj.style.bottom='0';
+				break;
+			case 3:	
+				this.obj.style.right='0';
+				break;
+		}
+		if(this.num==19){
+			this.num=0;
+			clearInterval(this.timer1);
+		}else{
+			this.num++;
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div>我要抖动,谁都别拦我</div>
+</body>
+</html>

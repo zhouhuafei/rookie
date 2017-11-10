@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>splice数组去重</title>
+</head>
+
+<body>
+<script>
+var arr=[1,2,2,2,3,4,5,6,7,5,8,9];
+for(var i=0; i<arr.length; i++)
+{
+	for(var j=i+1;j<arr.length;j++)
+	{
+		if(arr[i]==arr[j])
+		{
+			arr.splice(j,1);	//数组的length会改变
+			j--;   			//length变少,进行下次比较时,会少比较一个,所以通过j--;让arr[j]从那个重复的数组被删除的位置再次进行比较
+		}	
+	}	
+}
+alert(arr);
+</script>
+</body>
+</html>

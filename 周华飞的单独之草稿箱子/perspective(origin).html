@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>perspective(origin)</title>
+<style>
+/*
+body,div{ margin:0; padding:0;}
+div{ margin:150px auto;}
+div,span{ width:200px; height:200px;}
+div span{ display:block; background:#f00; transform-origin:left; transition:0.3s;}
+div:hover span{ transform:perspective(400px) rotatey(30deg);}
+*/
+body,div{ margin:0; padding:0;}
+div{ width:400px; height:400px; background:#000; margin:100px auto 0; overflow:hidden; transform-style:preserve-3d;/*3d环境*/ perspective:200px;/*景深*/}
+span{ display:block; width:200px; height:200px; background:#f00; margin:100px auto 0; transition:1s; transform-origin:0 0 0;/*x y z*/}
+div:hover span{ transform:rotatex(30deg) translatey(-200px);}
+</style>
+</head>
+<body>
+<div>
+	<span></span>
+</div>
+</body>
+</html>

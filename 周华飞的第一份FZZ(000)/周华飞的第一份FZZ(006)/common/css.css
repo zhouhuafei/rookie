@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*清零*/
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none; font-size:12px; font-family:"微软雅黑"; border:none; outline:none;}
+header,nav,section,article,aside,footer{ display:block;}
+
+
+/*header*/
+header{ height:47px; background-color:#333; padding-top:5px; }
+header .logo{ background-image:url(../images/001.jpg); background-repeat:no-repeat; margin-left:30px; padding-left:50px; width:410px;}
+header .logo h3{ font-size:18px; color:#FFF; text-shadow:1px 1px 1px red;}
+header .logo p{font-size:14px; color:#FFF; text-shadow:1px 1px 1px red;}
+header label{ color:#FFF; margin-right:10px;}
+header .searchbox{ margin-top:10px;}
+header #info{ width:150px; height:20px; border:1px solid black; line-height:20x\9; padding:0 5px;}
+header .btn{height:20px; width:65px; line-height:18px; color:#CCC; margin-left:20px; color:#000;}
+header .language{ margin:25px 37px 0 0;}
+header .language a{ color:#666;}
+header .language a:hover{ color:red;}
+header .language span{ padding:0 5px;}
+
+/*nav*/
+nav{background-color:#FFC; height:40px;}
+nav ul{ padding-top:10px; margin-left:65px; float:left;}
+nav ul li{ float:left; position:relative;}
+nav ul li a{ display:block; line-height:30px; padding:0px 15px; color:#000; -moz-transition:all 1s;-webkit-transition:all 1s;-ms-transition:all 1s;-o-transition:all 1s;transition:all 1s; font-size:16px; }
+nav ul li a:hover{ background-color:#000; color:#fff; border-radius:50px;-moz-transform:rotatey(360deg);-ms-transform:rotatey(360deg);-o-transform:rotatey(360deg);-webkit-transform:rotatey(360deg);transform:rotatey(360deg);}
+nav ul li ul{margin-left:15px; padding:0; position:absolute; left:0px; top:30px; z-index:5; display:none;}
+nav ul li ul li{clear:both;}
+nav ul li ul li a{margin:0; padding:0;}
+nav ul li:hover ul{ display:block;}
+
+
+/*section*/
+section{background-color:#FFC; padding-top:20px; position:relative;}
+section .bg{margin:0px 70px 0px 70px; width:850px; height:200px; background-image:url(../images/002.jpg); border:10px solid #FC9;}
+section .flower img{ width:258px; height:249px; position:absolute;right:79px; top:-19px; z-index:1;}
+section h3{ font-size:14px;text-align:center; margin-top:60px;margin-left:-150px; text-shadow: 1px 1px 1px #FFF;}
+section h1{ font-size:20px;text-align:center;margin-left:-150px; text-shadow: 1px 1px 1px #FFF;}
+
+
+
+
+/*aside*/
+article{background-color:#FFC; overflow:hidden;}
+side{width:205px;}
+aside{ width:203px; border:#690 1px solid; margin-left:70px; margin-bottom:10px;}
+aside h5{ background-color:#690; line-height:25px; font-size:16px; color:#FFF; font-weight:bold; padding-left:15px;}
+aside h5 span{ margin-left:70px; color:#FFF; font-weight:normal;}
+aside p{ padding-left:15px; line-height:25px; width:55px; border-right:133px  solid #FC3; color:#F00; font-weight:bold; background:#FF0;}
+aside ul li{ line-height:20px; padding-left:15px;}
+
+
+
+/*side_right*/
+.side_rightbox{ margin-left:15px; width:650px;}
+.side_right{ border:#690 1px solid; margin-bottom:12px;}
+.side_right h3{ padding-left:11px;line-height:25px; background-image:url(../images/title3.jpg); color:#fff; font-size:16px; font-weight:bold;}
+.side_right h3 span{ float:right; color:#000; margin-right:30px;}
+.side_right .flowername1{ padding:20px 0 20px 20px; margin-bottom:10px;}
+.side_right .flowername1 a{ background-image:url(../images/buttom2.jpg); display:inline-block; width:65px; line-height:25px; text-align:center; margin-left:10px; margin-top:2px;}
+.side_right .flowername1 a:hover{ color:#666;}
+.side_right p{ margin-top:10px; line-height:19px; font-weight:normal;}
+.side_right .flowername2{ margin-left:10px;}
+.side_right .flowername2 a{ line-height:20px;}
+.side_right .flowername2 span{ padding:0 5px;}
+
+
+
+
+/*footer*/
+footer{background-color:#333; overflow:hidden;}
+footer .imgbox{ padding-left:90px; height:120px;}
+footer .imgbox .img_txt{ padding-top:20px;width:105px; height:100px; float:left; margin-right:15px;}
+footer .imgbox .img_txt img{width:105px; height:70px; border:2px solid #FFF; display:block;-moz-transition:all 1s;-webkit-transition:all 1s;-ms-transition:all 1s;-o-transition:all 1s;transition:all 1s;}
+footer .imgbox .img_txt img:hover{-moz-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);-webkit-transform:rotate(360deg);transform:rotate(360deg); border-radius:50px;}
+footer .imgbox .img_txt p{line-height:20px; color:#FFF; text-align:center;}
+.copyright{line-height:30px; color:#FFF; text-align:center;}
+
+
+
+/*通用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.clearfix{clear:both;}
+.commonWidth{ width:1009px; margin:0 auto;}
+a{ color:#000;}
+a:hover{ color:#F00;}
+.pb{padding-bottom:20px;}
+hr{ border:#000 5px solid; width:90%; margin:0 auto;}

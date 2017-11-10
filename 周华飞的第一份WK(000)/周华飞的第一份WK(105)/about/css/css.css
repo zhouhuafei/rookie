@@ -1,0 +1,238 @@
+@charset "gb2312";
+/* CSS Document */
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"Î¢ÈíÑÅºÚ";}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,i,strong,b,small,span,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*banner*/
+#banner{ height:471px; position:relative;}
+#banner ul{ height:100%;}
+#banner ul li{ height:100%; background:url(../images/banner1.jpg) center center no-repeat; display:none;}
+#banner ul li+li{ background:url(../images/banner2.jpg) center center no-repeat;}
+#banner ul li.active{ display:block;}
+#banner ul li div{ height:100%; width:1000px; margin:0 auto; position:relative;}
+#banner ul li a{ width:130px; height:40px; position:absolute; right:120px; bottom:90px;}
+#banner .prev,#banner .next{ width:44px; height:44px; background:url(../images/dir.png) no-repeat; position:absolute; top:50%; margin-top:-22px; cursor:pointer; z-index:2;}
+#banner .prev{ background-position:left bottom; left:6%;}
+#banner .next{ background-position:right bottom; right:6%;}
+#banner ol{ position:absolute; left:50%; bottom:0; margin-left:-25px;}
+#banner ol li{ width:15px; height:15px; margin:5px; border-radius:50%; background:#333; float:left;}
+#banner ol li.active{ background:#fff;}
+
+/*common*/
+.til{ width:1000px; margin:40px auto 20px; border-bottom:2px solid #e1e1e1;}
+.til strong{ font-size:22px; color:#005eac; padding-bottom:6px; border-bottom:2px solid #005eac; margin:0 6px -2px 0; position:relative;}
+.til small{ font-size:12px; color:#848484; text-transform:uppercase;}
+.til em{ width:0px; height:0px; border:4px solid transparent; border-bottom:4px solid #005eac; position:absolute; left:50%; margin-left:-4px; bottom:0;}
+
+/*dynamic*/
+#dynamic div.switch{ width:750px; height:281px; color:#444444; position:relative;}
+#dynamic div.switch .btn{ width:160px; position:absolute; left:50%; margin-left:-80px; bottom:0;}
+#dynamic dl{ width:198px; padding:0 10px; border:1px solid #C1C1C1; border-radius:5px; background:#fcfcfc;}
+#dynamic dd{ height:55px; line-height:55px; border-bottom:1px dashed #C1C1C1; padding-left:20px;}
+#dynamic dd a{ font-size:14px; color:#666666; font-weight:bold; display:block;}
+#dynamic dd img{ vertical-align:middle; margin-right:20px;}
+#dynamic dd.noBb{ border-bottom:none;}
+#dynamic ol{ margin-bottom:20px; font-size:16px;}
+#dynamic ol li{ height:40px; line-height:40px; text-align:center; background:#eaeaea; border-bottom:2px solid #eaeaea; width:240px; float:left; margin-right:15px; position:relative;}
+#dynamic ol li em{ width:0px; height:0px; overflow:hidden; border:8px solid transparent; border-top:8px solid #005eac; position:absolute; left:50%; margin-left:-8px; bottom:-18px; opacity:0; filter:alpha(opacity:0);}
+#dynamic ol li.noMr{ margin-right:0;}
+#dynamic ol li.active{ border-bottom:2px solid #005eac;}
+#dynamic ol li.active em{ opacity:1; filter:alpha(opacity:100);}
+#dynamic ul{ padding:0 20px;}
+#dynamic ul li{ display:none;}
+#dynamic ul li.active{ display:block;}
+#dynamic ul li p{ font-size:15px; color:#4e4e4e; line-height:30px;}
+#dynamic ul li i{ color:#ff0000;}
+
+/*hospital*/
+.HospitalAll{width:970px;margin:0 auto;}
+.HospitalCon{width:770px;float:left;overflow:hidden;}
+.HospitalCon dl{width:767px;background:#ebebeb;}
+.HospitalCon dl dt{width:260px;padding:25px 15px;float:left;position:relative;}
+.HospitalCon dl dt b,.HospitalCon dl dt span{font-size:20px;color:#fb6400; line-height:35px; display:block;}
+.HospitalCon dl dt b{ font-size:24px;}
+.HospitalCon dl dt span i{font-style:normal;font-size:18px;color:#f90;display:none;}
+.HospitalCon dl dt strong{ color:#f00; text-indent:0;}
+.HospitalCon dl dt p{font-size:15px;color:#555;line-height:190%;text-indent:26px;padding:10px 0px 20px;}
+.HospitalCon .a_btn{width:90px;height:38px;overflow:hidden;position:absolute;bottom:10px;left:16px;}
+.HospitalCon .a_btn a{display:block;width:38px;height:38px;background:url(../images/Hospital_info.png) no-repeat;overflow:hidden;float:left;margin-left:5px;transition: all 0.3s linear 0s;}
+.HospitalCon .a_btn a.xx{background-position:0px 0px;}
+.HospitalCon .a_btn a.zx{background-position:-46px 0px;}
+.HospitalCon .a_btn a.xx:hover{background-position:0px -42px;}
+.HospitalCon .a_btn a.zx:hover{background-position:-46px -42px;}
+.HospitalCon dl dd{width:459px;float:right;transition: all 0.6s linear 0s;opacity:0; margin:4px;}
+.HospitalCon dl dd.active{opacity: 1;}
+.HospitalNav,.HospitalNav ul{width:193px;height:397px;float:right;}
+.HospitalNav ul li{width:193px;height:49px;cursor:pointer;position:relative;background:url(../images/Hospital_nav_bg.png) no-repeat;color:#111;margin-bottom:9px;font-size:17px;}
+.HospitalNav ul li.last{margin:0px;}
+.HospitalNav ul li.select{background:url(../images/Hospital_nav_hover.png) no-repeat;color:#fff;}
+.HospitalNav ul li div{text-indent:75px;padding:5px 0 0 0 ;}
+.HospitalNav ul li p{font-size:12px;text-indent:75px;}
+.HospitalNav ul li i{display:block;width:30px;height:30px;overflow:hidden;float:left;background:url(../images/Hospital_icon.png) no-repeat;transition: all 0.3s linear 0s;position:absolute;top:10px;left:35px;}
+.HospitalNav ul li i.i1{background-position:0px 0px;}
+.HospitalNav ul li i.i2{background-position:0px -62px;}
+.HospitalNav ul li i.i3{background-position:0px -124px;}
+.HospitalNav ul li i.i4{background-position:0px -186px;}
+.HospitalNav ul li i.i5{background-position:0px -248px;}
+.HospitalNav ul li i.i6{background-position:0px -310px;}
+.HospitalNav ul li i.i7{background-position:0px -372px;}
+.HospitalNav ul li i.i8{background-position:0px -434px;}
+.HospitalNav ul li i.i9{background-position:0px -497px;}
+.HospitalNav ul li i.i10{background-position:0px -559px;}
+.HospitalNav ul li i.i11{background-position:0px -620px;}
+.HospitalNav ul li i.i12{background-position:0px -684px;}
+.HospitalNav ul li i.i13{background-position:0px -748px;}
+.HospitalNav ul li i.i14{background-position:0px -811px;}
+.HospitalNav ul li.select i.i1{background-position:0px -31px;}
+.HospitalNav ul li.select i.i2{background-position:0px -93px;}
+.HospitalNav ul li.select i.i3{background-position:0px -155px;}
+.HospitalNav ul li.select i.i4{background-position:0px -217px;}
+.HospitalNav ul li.select i.i5{background-position:0px -279px;}
+.HospitalNav ul li.select i.i6{background-position:0px -341px;}
+.HospitalNav ul li.select i.i7{background-position:0px -403px;}
+.HospitalNav ul li.select i.i8{background-position:0px -465px;}
+.HospitalNav ul li.select i.i9{background-position:0px -528px;}
+.HospitalNav ul li.select i.i10{background-position:0px -589px;}
+.HospitalNav ul li.select i.i11{background-position:0px -651px;}
+.HospitalNav ul li.select i.i12{background-position:0px -716px;}
+.HospitalNav ul li.select i.i13{background-position:0px -780px;}
+.HospitalNav ul li.select i.i14{background-position:0px -842px;}
+.box1_1{ height:397px;}
+.box1_1 dl{ height:397px;}
+.box1_1 dl dt{ height:337px; }
+.box1_1 dl dd{height:389px;}
+
+/*expert*/
+#expert li{ width:230px; height:330px; float:left; border:2px solid #dbdbdb; margin:0 21px 22px 0;}
+#expert li.noMr{ margin-right:0;}
+#expert li img{ width:230px; border-bottom:1px solid #dbdbdb; margin-bottom:10px;}
+#expert li p{ font-size:14px; line-height:24px; color:#2e2e2e; padding:0 3px;}
+#expert li em{ color:#ff0000;}
+#expert a{ display:block; width:312px; margin:10px auto 0;}
+
+/*hospital2*/
+.box3_1{ height:456px;}
+.box3_1 dl{ height:456px;}
+.box3_1 dl dt{height:399px;}
+.box3_1 dl dt p a{ color:#f00; text-indent:0;}
+.box3_1 dl dt p a:hover{ text-decoration:underline;}
+.box3_1 dl dd{height:445px; margin:5px 4px;}
+.box3_2 ul li{ font-size:16px;}
+.box3_2 ul li i{ left:28px;}
+.box3_2 ul li p{ font-size:12px; text-indent:65px;}
+.box3_2 ul li div{ text-indent:68px;}
+
+/*case*/
+#case ol{ padding:0 2px 22px;}
+#case ol li{ width:120px; margin-right:5px; text-align:center; height:30px; line-height:30px; font-size:18px; color:#000000; background:#eaeaea; border-bottom:2px solid #eaeaea; float:left; position:relative;}
+#case ol li em{ width:0px; height:0px; overflow:hidden; border:8px solid transparent; border-top:8px solid #005eac; position:absolute; left:50%; margin-left:-8px; bottom:-18px; opacity:0; filter:alpha(opacity:0);}
+#case ol li.noMr{ margin-right:0;}
+#case ol li.active{ border-bottom:2px solid #005eac;}
+#case ol li.active em{ opacity:1; filter:alpha(opacity:100);}
+#case ul li{ display:none;}
+#case ul li.active{ display:block;}
+#case ul dl{ float:left; width:300px; height:300px;}
+#case ul dl.reStyle{ padding:0 24px; margin:0 25px; border-left:1px dashed #b2b2b2; border-right:1px dashed #b2b2b2;}
+#case ul dt{ margin-bottom:6px;}
+#case ul img{ float:left;}
+#case ul p{ line-height:20px; float:left; width:20px; padding-left:7px; text-align:center; height:190px; padding-top:10px; background:#005eac; font-size:16px; color:#fff;}
+#case ul p+p{ width:24px; padding-left:0; text-align:left;}
+#case ul dd{ text-indent:30px; color:#2a2a2a;}
+#case ul a{ text-indent:0; color:#ff0000;}
+#case ul a:hover{ text-decoration:underline;}
+
+/*vedio*/
+#vedio dt{ width:410px;}
+#vedio dt span{ width:410px; height:300px; background:#000; text-align:center; line-height:300px; color:#fff; vertical-align:middle;}
+#vedio dt p{ height:40px; line-height:40px; text-align:center; background:#d3d3d3; color:#005eac; font-size:20px;}
+#vedio dd{ width:560px;}
+#vedio li{ float:left; width:172px; margin:0 22px 10px 0;}
+#vedio li img{ cursor:pointer;}
+#vedio li.noMr{ margin-right:0;}
+#vedio li.noMb{ margin-bottom:0;}
+#vedio li p{ height:30px; color:#3f3f3f; text-align:center;}
+#vedio a{ display:block; width:427px; margin:46px auto 0;}
+#vedios{ display:none;}
+
+/*approval*/
+#approval{ text-align:center;}
+
+/*library*/
+#library dt{ width:519px; border:5px solid #d3d3d3; position:relative;}
+#library ul li{ display:none;}
+#library ul li.active{ display:block;}
+#library ol{ position:absolute; right:0; bottom:0;}
+#library ol li{ width:15px; height:15px; border-radius:50%; background:#333; float:left; margin:5px;}
+#library ol li.active{ background:#fff;}
+#library dd{ width:415px; height:381px; position:relative;}
+#library h2{ font-size:24px; line-height:38px; color:#fb6400;}
+#library h2.blue{ color:#006db8;}
+#library p{ font-size:16px; color:#646464; line-height:30px; text-indent:30px; margin-top:14px;}
+#library .dbBtn{ position:absolute; right:0; bottom:0;}
+#library .dbBtn a{ float:left; width:38px; height:38px; background:url(../images/Hospital_info.png) left top no-repeat;}
+#library .dbBtn a:hover{ background-position:0 -43px;}
+#library .dbBtn a+a{ margin-left:10px; background-position:-46px 0;}
+#library .dbBtn a+a:hover{ background-position:-46px -43px;}
+
+/*box7*/
+.pubW{ width:970px; margin:0 auto;}
+.box7{height:319px;  position:relative; overflow:hidden;}
+.box7 a{ position:absolute; display:inline-block; z-index:3; top:124px; width:40px; height:70px;}
+.box7 a.left{ left:7px;}
+.box7 a.right{ right:7px;}
+.box7_1{ width:968px; height:319px; overflow:hidden;}
+.box7_1 ul{ position:absolute; width:968px; margin:0 auto; height:319px; overflow:hidden;}
+.box7_1 li{ float:left; width:240px; height:319px; display:inlien; margin:0 15px;}
+
+/*box9 box8*/
+.clr{ clear:both; margin:0 auto; height:0px; overflow:hidden;}
+.box9{padding:30px 0 0 0;text-align:left; background:#f9f9f9;}
+.box9 dl{float:left;margin:0 25px; display:inline;}
+.box9 dl dt{width:256px;height:151px;padding:5px;border-radius:1px;background:#fff; border:solid 1px #d6d8d5; background:#fff;}
+.box9 dl dd{width:266px;text-align:center;font-size:13px;color:#006db8; padding:3px 0 0;}
+.box9 .line{width:970px;height:38px;margin:30px 0px;background:#f9f9f9 url(../images/box9_7.jpg) no-repeat;}
+.box9 .line a{display:block;width:175px;height:38px;margin:0 auto;}
+.box8{ padding-top:56px; margin:0 auto; width:922px;}
+.box8 dl.d1{width:319px;height:331px;float:left;background:url(../images/box8_1.jpg) no-repeat;}
+.box8 dl.d2{width:319px;height:331px;float:left;background:url(../images/box8_2.jpg) no-repeat;}
+.box8 dl.d3{width:284px;float:left; display:inline;}
+.box8 dl.d3 ul li{font-size:15px;line-height:160%;padding:0px 0px 5px;border-bottom:1px dashed #eee;}
+.box8 dl.d3 ul li span{color:#2798d2;}
+.box8 dl.d3 a:hover{color:red;text-decoration:underline;}
+.box8 dl dd{width:270px;text-indent:26px;line-height:190%;padding-top:210px;font-size:14px;color:#696969;}
+.box8 dl dd a{color:red;}
+.box8 dl dd a:hover{text-decoration:underline;}
+
+/*box111*/
+.box111{ position:relative;width:995px;height:330px; margin:0 auto;}
+.box111 li a{ transition:0s;}
+.box111 li{ z-index:0;position:absolute; width:0px;height:0px;top:146px;cursor:pointer;left:377px; transition:0s;}
+.box111 li img{ width:100%;height:100%;vertical-align:top;}
+.box111 li p span{ display:inline-block;width:70%;height:40px;overflow:hidden;}
+.box111 .prev,.box111 .next{ display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:47px;height:61px;top:134px;}
+.box111 .prev{ background:url(../images/csj_10.png) no-repeat;left:195px;}
+.box111 .next{ background:url(../images/csj_11.png) no-repeat;right:185px;}
+
+/*box10*/
+.box10{width:968px;height:597px;border:1px solid #eee;overflow:hidden;margin-top:30px; margin-bottom:30px;}
+.box10 .list{width:669px;float:left;padding:10px 0px 0px 10px;}
+.box10 .info{width:289px;height:100%;float:right;background:#eee;}
+.box10 .info p{text-align:center;font-size:16px;color:#666;padding:10px 0px 0px;}
+.box10 .info p em{font-style:normal;color:#f60;}
+.box10 .info .clickBtn{display:block;width:160px;height:39px;line-height:39px;background:#0098bf;color:#fff;font-size:16px;text-align:center;margin:10px auto 0px;}

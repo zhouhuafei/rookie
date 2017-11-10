@@ -1,0 +1,63 @@
+@charset "gb2312";
+/*banner*/
+#banner{height:260px;text-align:center;background:url(../images/banner-column.jpg) center center no-repeat; position:relative; margin-bottom:20px;}
+#banner .location{position:absolute; left:18%; bottom:0;z-index:3;}
+#banner .location p{color:#7f7f7f;font-size:14px;line-height:30px;}
+#banner .location i{ margin:0 15px;}
+
+/*栏目页*/
+#in_mains{ margin-bottom:20px; font-size:12px;}
+.in_mains {width:988px;border-top:1px solid #e4e4e4;border-left:1px solid #e4e4e4;border-right:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4; padding-bottom:40px; overflow:hidden;}
+.in_main_le{ background:#f7f7f7;}
+.in_main_le, .list_ri {width:232px;overflow:hidden;}
+.in_main_le_top {color:#fff;padding:16px;font-size:22px;background:#006db8;}
+.in_main_le_top span {font-size:10px; margin-top:5px;}
+.in_main_le_a a {display:block;line-height:39px;text-indent:18px;margin-left:1px;border-bottom:1px solid #e4e4e4;border-right:1px solid #e4e4e4;}
+.in_main_le_bottom{border-right:1px solid #e4e4e4;}
+.in_main_le_a a span {font-size:12px;margin-left:8px;color:#c9c9c9;}
+.in_main_le_a a:hover {color:#006db8;background:#fff;}
+.in_main_le_a a:hover span {color:#006db8;}
+.in_main_le_pic {height:99px;margin:0 15px;border-bottom:1px dashed #e4e4e4;}
+.in_main_le_pic p {width:230px;}
+.in_main_le_pic p span div {height:56px;overflow:hidden;}
+.in_main_le_pic span {display:block;width:56px;float:left;text-align:center;margin-right:15px;}
+.in_main_le_pic span i {display:block;height:56px;overflow:hidden;}
+.in_main_le_pic span a {font-size:14px;line-height:35px;}
+.in_main_le_img {padding-left:15px;border-bottom:1px solid #e4e4e4;}
+.in_main_le_img img {margin-bottom:20px;}
+.in_main_ri {width:696px;overflow:hidden;padding-right:30px;}
+.in_main_ri h1{color:#006db8;font-size:23px;line-height:72px;text-align:center;font-weight:normal;border-bottom:3px double #e4e4e4;}
+.yydt_ul{ width:690px; margin:0 auto;}
+.yydt_ul li{ border-bottom:1px solid #e6e6e6; padding:30px 0;}
+.report_ul li{ padding:30px 0;}
+.yydt_ul li.last{ border-bottom:none;}
+.yydt_ul li h4{color:#006db8; font-size:18px; font-weight:normal; margin-bottom:12px;}
+.yydt_ul li p{ text-indent:2em; width:690px; margin:0 auto; color:#4b4b4b; line-height:20px;}
+.yydt_ul li p a{ color:#f00;}
+.yydt_ul li span{ margin-top:20px;}
+.yydt_ul li span a{ color:#fff; background:#006db8; border-radius:5px; line-height:24px; text-align:center; width:124px; margin-right:15px;}
+.yydt_ul li span a.reset{ background:#ff8a00;}
+.column-page{ text-align:center;}
+
+/*监督单位和医院环境*/
+#iBox4{ margin-bottom:20px;}
+.iBox4{ border:1px #e1e1e1 solid;}
+.iBox4_1 {height:38px; background:#efefef;}
+.iBox4_1 ul {background:url(../images/iBox4_1_bg1.gif) repeat-x #fff;}
+.iBox4_1 li{ float:left; border-right:1px #ddd solid; height:40px; font:16px/40px Microsoft Yahei; width:100px; text-align:center; position:relative; top:-1px;}
+.iBox4_1 li.on{ background:url(../images/iBox4_1_bg.gif) repeat-x; height:40px; color:#4a99e6; cursor:pointer; width:100px;}
+.iBox4_1 li.on a,.iBox4_1 li.on a:hover {color:#4a99e6;}
+.iBox4_2{width:960px; margin:7px auto; overflow:hidden;}
+.iBox4_2 .item{width:960px;height:117px;overflow:hidden; display:none;}
+.iBox4_2 .item li{width:160px;height:117px;text-align:center;float:left;overflow:hidden;}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>js写阶乘2</title>
+</head>
+
+<body>
+<script>
+function factorial(x)
+{
+	if(x<0)
+	{
+		throw new Error('x不能小于零');	
+	}
+	for(var f=1;x>1;f*=x,x--);	//这是一个完整的语句;	等同于for(var f=1;x>0;x--){f*=x;}
+	return f;		
+}
+alert(factorial(5));
+</script>
+</body>
+</html>

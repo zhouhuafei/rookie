@@ -1,0 +1,9 @@
+@charset "gb2312";
+/* CSS Document */
+/*body*/
+body{ font-size:20px; line-height:3;}
+/*module1*/
+.module1{ text-align:center;}
+/*module2*/
+.module2{ text-align:center;}
+.module2 input{ width:80%; border:1px solid #dcdcdc; line-height:40px; padding:0 20px;}

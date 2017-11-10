@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>取模平铺颜色</title>
+<style>
+*{ margin:0; padding:0;}
+</style>
+<script>
+window.onload=function()
+{
+	var arr=['red','yellow','blue','green','orange']
+	var aLi=document.getElementsByTagName('li');
+	//颜色还原一：   通过建立索引,在鼠标移开时把颜色还原
+	/*
+	for(var i=0; i<aLi.length;i++)
+	{
+		aLi[i].style.backgroundColor=arr[i%arr.length];	
+		aLi[i].index=i;
+		aLi[i].onmouseover=function()
+		{
+			this.style.backgroundColor='black';				
+		}
+		aLi[i].onmouseout=function()
+		{
+			this.style.backgroundColor=arr[this.index%arr.length];				
+		}
+	}
+	*/
+	
+	//颜色还原一：   先通过变量把原来的颜色存储起来,在鼠标移开时再把颜色还原	
+	for(var i=0; i<aLi.length;i++)
+	{
+		aLi[i].style.backgroundColor=arr[i%arr.length];	
+		var str='';
+		aLi[i].onmouseover=function()
+		{
+			str=this.style.backgroundColor;			//获取行间样式
+			this.style.backgroundColor='black';			
+		}
+		aLi[i].onmouseout=function()
+		{
+			this.style.backgroundColor=str;		
+		}
+	}		
+}
+
+</script>
+</head>
+
+<body>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</body>
+</html>

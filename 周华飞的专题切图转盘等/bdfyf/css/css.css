@@ -1,0 +1,49 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+.banner{ position:relative; width:320px; height:180px; margin:0 auto; overflow:hidden;}
+.banner .hd{ text-align:center; position:absolute; right:0; bottom:0; z-index:5;}
+.banner .hd a{ width:10px; height:10px; float:left; border-radius:50%; background:#ccc; margin:5px;}
+.banner .hd a.on{ background:#ff6600;}
+
+.prevention{ font-size:12px; line-height:1.6;}
+.prevention dl{ padding-bottom:30px; margin-bottom:30px; border-bottom:1px dashed #c6c6c6;}
+.prevention dl.reset{ padding-bottom:0; margin-bottom:0; border-bottom:none;}
+.prevention h1{ font-size:16px; font-weight:bold; color:#f09400; text-align:center; margin-bottom:20px;}
+.prevention dd{ margin-top:8px;}
+.prevention h2{ font-size:14px; line-height:20px; font-weight:bold;}
+.prevention h2 img{ margin-right:10px;}
+.prevention i{ color:#006db8;}
+
+
+.nursing{ font-size:12px; line-height:1.6;}
+.nursing dd{ margin-top:8px;}
+.nursing i{ color:#006db8;}
+
+.com06{width:320px;margin:0 auto;}
+.com06 ul li{width:314px;height:48px;border:1px solid #dadada;margin:2px auto;}
+
+.com05{padding:0 10px;margin-top:20px;}
+.com05 ul li{width:144px;height:240px;border:1px solid #dbdbdb;margin:10px 2px;float:left;}
+.com05 ul li dl{padding:10px 5px 0 5px;}
+.com05 ul li dl dt{margin-bottom:6px;}
+.com05 ul li dl dt img{ vertical-align:middle;margin-right:6px;float:left;}
+.com05 ul li dl dt p{font-size:12px;line-height:16px;color:#666;width:113px;float:left; vertical-align:middle;}
+
+/*common*/
+.btn{ text-align:center; width:84%; margin:30px auto 0;}
+.btn a{ border-radius:5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; width:46%;}
+.btn a:last-child{ background:#f96300;}
+.btn em{ vertical-align:middle; margin-right:10px;}
+.til{ width:320px; margin:40px auto; position:relative;}
+.til h2{ padding-left:10px; margin-left:61px; color:#006db8; font-size:22px; font-weight:bold; padding-bottom:4px; border-bottom:1px solid #006db8;}
+.til em{ position:absolute; left:0; bottom:-23px;}
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+

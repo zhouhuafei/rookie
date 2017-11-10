@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS之侧边栏滑动版初试</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+body{ height:4000px; padding-top:500px;}
+ul{ overflow:hidden; position:absolute; left:20px; top:200px;}
+li{ width:80px; height:80px; background:#000; margin-bottom:10px; color:#fff;}
+.li_active{ background:#F00;}
+div{ width:1000px; height:500px; background:#000; margin:0px auto 50px; color:#fff;}
+</style>
+<script>
+window.onload=window.onscroll=function()
+{
+	var oUl=document.getElementsByTagName('ul')[0];
+	//如果li内部是图片,切换的时候是另一张图片,那么则需要分别把切换前和切换之后的图片放入数组中,方片使用,更多复杂,请观看周华飞的第一份WK(032)和周华飞的第一份WK(033)
+	var aLi=document.getElementsByTagName('li');
+	//这里是特殊情况,在布局的时候,获取大盒子,一般都是用id,然后通过id获取大盒子的offsetTop,然后存放在数组里,方便使用(大盒子在这里指的就是div)
+	var aDiv=document.getElementsByTagName('div');
+	var oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+	if(oScrollTop>=200)
+	{
+		oUl.style.cssText='position:fixed;left:20px;top:0px;'
+	}
+	else
+	{
+		oUl.style.cssText='';
+	}
+	for(var i=0;i<aLi.length;i++)
+	{
+		aLi[i].index=i;
+		aLi[i].onclick=function()
+		{
+			//在周华飞的第一份WK(032)和周华飞的第一份WK(033)案例中,这里有一个循环是用来控制点击时切换图片的(本处已经省略),其实不写也可以,因为下述的if语句内部已经包含了图片的切换效果
+			bufferMove(aDiv[this.index].offsetTop);
+			//上面这句代码,一般很难如此简单实现,因为大盒子没办法一次性获取完,只能通过id一个一个的获取每个大盒子的offsetTop然后再把获得的值存到数组里，方便使用
+		}
+		if(oScrollTop>=aDiv[i].offsetTop)
+		{
+			for(var j=0;j<aLi.length;j++)
+			{
+				aLi[j].className='';		//图片切换,样式切换				
+			}
+			aLi[i].className='li_active';		//图片切换,样式切换
+		}
+		//如果去除下述else以及else囊括的代码,那么当oScrollTop<oNumArr[0]时会默认选中第一个
+		else
+		{
+			aLi[i].className='';		
+		}	
+	}
+}
+function bufferMove(iTarget)
+{
+	var timer=null;	
+	var oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		var speed=(iTarget-oScrollTop)/10;
+		var speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(oScrollTop==iTarget)
+		{
+			clearInterval(timer);
+		}
+		else
+		{
+			oScrollTop+=speed;
+			window.scroll(0,oScrollTop);
+		}
+	},30)
+}
+</script>
+</head>
+
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+</ul>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<div>5</div>
+<div>6</div>
+</body>
+</html>

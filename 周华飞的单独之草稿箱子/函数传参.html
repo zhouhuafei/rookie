@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!--
+<style>
+#div1{ height:200px; width:200px; background:#000;}
+</style>
+<script>
+function show(color,width,height)
+{
+ 	var oDiv=document.getElementById('div1');
+ 	oDiv.style.background=color;
+	oDiv.style.width=width;
+	oDiv.style.height=height;
+}
+</script>
+</head>
+
+<body>
+<input type="button" onclick="show('green','300px','')"  value="变绿变宽" />
+<input type="button" onclick="show('yellow','','300px')"  value="变黄变高" />
+<input type="button" onclick="show('red','300px','300px')"  value="变红变宽变高" />
+<div id="div1"></div>
+-->
+<style>
+#div1{ height:200px; width:200px; background:#000;}
+</style>
+<script>
+function show(name,value)
+{
+ 	var oDiv=document.getElementById('div1');
+ 	oDiv.style[name]=value;
+}
+</script>
+</head>
+
+<body>
+<input type="button" onclick="show('background','green')"  value="变绿" />
+<input type="button" onclick="show('height','300px')"  value="变高" />
+<input type="button" onclick="show('width','300px')"  value="变宽" />
+<div id="div1">
+</div>
+</body>
+</html>

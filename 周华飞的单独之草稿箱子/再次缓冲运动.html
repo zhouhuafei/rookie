@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#btn{ display:block; width:100px; height:30px; background:#999; color:#F00;}
+#move{ width:100px; height:100px; background:#F00; position:relative;}
+#time{ height:20px; line-height:20px; position:absolute; left:0; bottom:-20px; background:red; white-space:nowrap;}
+</style>
+<script>
+var timer=null;
+function startMove(iTarget)
+{
+	var oMove=document.getElementById('move');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		var speed=(iTarget-oMove.offsetLeft)/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(oMove.offsetLeft==iTarget){clearInterval();}//我认为这句话没必要,因为到达目标点之后,速度speed就变成0了,既然变成0了,那么即使再次触发事件,oMove也不会运动.
+		else{oMove.style.left=oMove.offsetLeft+speed+'px';}
+		document.title=oMove.offsetLeft+','+oMove.offsetTop;
+	},30);
+} 
+window.onload=function()
+{
+	var oBtn=document.getElementById('btn');
+	oBtn.onclick=function()
+	{
+		startMove(1000);	
+	}
+	var oTime=document.getElementById('time');
+	myDate=new Date();
+	oTime.innerHTML=myDate;
+} 
+</script>
+</head>
+
+<body>
+<input type="button"  id="btn" value="缓冲运动" />
+<div id="move"><div id="time"></div></div>
+</body>
+</html>

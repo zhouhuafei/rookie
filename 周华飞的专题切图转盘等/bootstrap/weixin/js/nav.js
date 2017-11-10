@@ -1,0 +1,11 @@
+//nav
+define(function(require,exports,module){
+        require('jquery-2.1.3.min.js');
+        require('bootstrap.min.js');
+        exports.nav=function(obj){
+                $(obj).click(function(e){
+                        e.preventDefault();
+                        $(this).tab('show');
+                });
+        }
+})

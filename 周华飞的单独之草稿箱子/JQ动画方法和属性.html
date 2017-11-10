@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ动画的方法和属性</title>
+<style>
+span{ padding:5; display:inline-block; background:#F90;}
+.div1,.div2{ width:200px; height:200px; background:#F00; text-align:center; color:#FFF; font-size:30px; position:absolute; top:50px;}
+.div2{ top:300px; background:#00F;}
+
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+$(function()
+{	
+	//.stop()		停止正在执行的动画
+	//.stop(clearQueue,gotoEnd)	clearQueue传递一个布尔值，代表是否清空未执行完的动画列队;gotoEnd代表是否直接将正在执行的动画跳转到末状态
+	/*
+	$(':button').eq(0).click(function()
+	{
+		$('div').animate({
+			left:'800px',
+			},2000)
+			.animate({
+			top:'500px'			
+			},2000)
+			.animate({
+			left:'10px',
+			},2000)	
+			.animate({
+			top:'50px'			
+			},2000);
+	})
+	$(':button').eq(1).click(function()
+	{
+		$('div').stop();	
+	})
+	$(':button').eq(2).click(function()
+	{
+		$('div').stop(false,true);	
+	})
+	*/
+	
+	//delay()	时间延迟
+	/*
+	$(':button').eq(0).click(function()
+	{
+		$('div').delay(2000)
+			.animate({
+			left:'800px',
+			},2000).delay(5000)
+			.animate({
+			top:'500px'			
+			},2000)
+			.animate({
+			left:'10px',
+			},2000)	
+			.animate({
+			top:'50px'			
+			},2000);
+	})
+	$(':button').eq(1).click(function()
+	{
+		$('div').stop();	
+	})
+	$(':button').eq(2).click(function()
+	{
+		$('div').stop(false,true);	
+	})
+	*/
+	
+	//调用自己
+	/*
+	$(':button').eq(0).click(function always()
+	{
+		$('div').slideToggle('slow',function()
+		{
+				always();
+		});	
+	})
+	*/
+	
+	
+	/*
+	//调用自己
+	$('div').slideToggle('slow',function()
+	{
+		$(this).slideToggle('slow',arguments.callee);	//arguments.callee 匿名函数自我引用(自我调用)
+	})
+	//查找动画
+	$(':input').eq(3).click(function()
+	{
+		$(':animated').stop().css('background','blue')		//:animated    查找正在执行的动画
+	})
+	*/
+	
+	
+	//JQ动画全局属性
+	//1.$.fx.interval	设置每秒运行的帧数	默认为13毫秒
+	//2.$.fx.off		关闭页面上所有的动画
+	//$.fx.interval=1000;				//默认为13
+	//$.fx.off=true;
+	$(':input').eq(0).click(function()
+	{
+		$('.div1').animate({left:'800px'},3000,'swing');				//'swing'默认的   缓动	慢快慢
+		$('.div2').animate({left:'800px'},3000,'linear');				//'linear'   	  匀速
+	})
+	
+})
+
+</script>
+</head>
+
+<body>
+<input type="button" value="开始" />
+<input type="button" value="停止" />
+<input type="button" value="停止并且结束动画" />
+<input type="button" value="查找正在执行的动画" />
+<div class="div1">自定义动画</div>
+<div class="div2">div1</div>
+</body>
+</html>

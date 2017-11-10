@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ动画效果</title>
+<style>
+span{ padding:5; display:inline-block; background:#F90;}
+div{ width:200px; height:200px; background:#F00;}
+</style>
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+$(function()
+{	
+	//hide()隐藏
+	/*
+	$('input').click(function()
+	{
+		$('div').hide('slow'); 
+	})
+	*/
+	
+	//show()显示
+	/*
+	$('div').css('display','none')
+	$('input').click(function()
+	{
+		$('div').show('slow'); 
+	})
+	*/
+	
+	//toggle()显示隐藏切换
+	/*
+	$('input').click(function()
+	{
+		$('div').toggle('slow');			//参数有毫秒以及'slow'和'fast'和'normal'(normal默认是400毫秒，如果参数错误，则按照默认)
+	})
+	*/
+	
+	//回调函数
+	/*
+	$('input').click(function()
+	{
+		$('div').hide('slow',function()
+		{
+			$('div').show('slow'); 
+		}); 
+	})
+	*/
+	
+	//逐个显示   递归自调用
+	/*
+	$('span').css('display','none')
+	$('input').click(function()
+	{
+		$('span').first().show('fast',function testShow()		//first()选取span集合中的第一个元素
+		{
+			$(this).next().show('fast',testShow);		//next()选取同辈元素的下一个元素
+		})	
+	})
+	*/
+	//逐个隐藏   递归自调用
+	/*
+	$('input').click(function()
+	{
+		$('span').last().hide('fast',function testShow()		//last()选取span集合中的最后一个元素
+		{
+			$(this).prev().hide('fast',testShow);		//prev()选取同辈元素的上一个元素
+		})	
+	})
+	*/
+	//逐个显示隐藏   递归自调用
+	/*
+	$('span').css('display','none')
+	$('input').click(function()
+	{
+		$('span').first().toggle('fast',function testShow()		//first()选取span集合中的第一个元素
+		{
+			$(this).next().toggle('fast',testShow);		//next()选取同辈元素的下一个元素
+		})	
+	})
+	*/
+	
+	//slideUp()		卷动
+	//slideDown()		滑动
+	//slideToggle()		卷动滑动
+	/*
+	$('input').click(function()
+	{
+		$('div').slideToggle('slow');	
+	})
+	*/
+	
+	//fadeIn   	淡入
+	//fadeOut	淡出
+	//fadeToggle	淡入淡出
+	//fadeTo	淡入/淡出到
+	/*
+	$('input').click(function()
+	{
+		$('div').fadeToggle('slow');	
+	})
+	*/
+	/*
+	$('input').click(function()
+	{
+		$('div').fadeTo('slow',0.3);	
+	})
+	*/
+		
+})
+
+</script>
+</head>
+
+<body>
+<i>
+<span class="txt">你</span>
+<span class="txt">好</span>
+<span class="txt">么</span>
+<span class="txt">？</span>
+</i>
+<input type="button" value="按钮" />
+<div></div>
+
+</body>
+</html>

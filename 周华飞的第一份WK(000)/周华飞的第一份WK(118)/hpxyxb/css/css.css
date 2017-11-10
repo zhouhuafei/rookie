@@ -1,0 +1,43 @@
+@charset "gb2312";
+/* CSS Document */
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat; margin-bottom:20px;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:238px; bottom:50px;}
+
+/*nav*/
+#nav{ width:100%; height:50px; position:absolute; left:0; top:678px; z-index:999;}
+#nav em{ display:block; font-style:normal; height:50px; line-height:50px; width:1000px; margin:0 auto; text-align:center; color:#fff; background:#0063b4;}
+#nav span{ width:201px; border-right:1px solid #fff; font-size:22px;}
+#nav ul{ width:798px; height:50px; line-height:50px; background:#0063b4; font-size:18px;}
+#nav ul li{ height:50px; width:114px; text-align:center; line-height:50px; float:left;}
+#nav ul .select{ background:#013b6b;}
+
+p.what{ text-indent:30px; line-height:34px; font-size:18px; color:#333333; padding:30px; background:url(../images/what_bg.jpg); border-radius:10px;}
+
+ul.harm{ background:url(../images/harm_bg.jpg) center center no-repeat; height:392px; margin:40px 0; position:relative;}
+ul.harm li{ width:270px; position:absolute;}
+ul.harm li.li1{ left:40px; top:36px;}
+ul.harm li.li2{ left:0; top:160px;}
+ul.harm li.li3{ left:40px; top:280px;}
+ul.harm li.li4{ right:40px; top:0px;}
+ul.harm li.li5{ right:0; top:130px;}
+ul.harm li.li6{ right:40px; top:280px;}
+ul.harm h2{ font-size:22px; color:#006db8; text-align:left;}
+ul.harm p{ color:#424242; font-size:14px; line-height:24px;}
+ul.harm li.li1 h2,ul.harm li.li2 h2,ul.harm li.li3 h2,ul.harm li.li1 p,ul.harm li.li2 p,ul.harm li.li3 p{ text-align:right;}
+a.harm{ display:block; width:321px; margin:0 auto;}
+
+ul.contrast{ padding:0 1px;}
+ul.contrast li{ float:left; margin:0 17px 34px;}
+
+/*common*/
+.til{ width:1000px; margin:40px auto 30px; text-align:center; color:#0063b4; padding-bottom:8px; border-bottom:1px solid #dedede; position:relative;}
+.til h2{ font-size:43px;}
+.til h3{ font-size:12px; color:#8e8b8b; text-transform:uppercase;}
+.til:after{ content:""; width:90px; height:3px; background:#0063b4;  position:absolute; left:50%; margin-left:-45px; bottom:-2px;}
+.noMr{ margin-right:0 !important;}
+.noMb{ margin-bottom:0 !important;}
+.noPt{ padding-top:0 !important;}
+.noPb{ padding-bottom:0 !important;}
+.noBb{ border-bottom:none !important;}

@@ -1,0 +1,222 @@
+<style>
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑"; color:#4b4b4b;}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:25px;}
+em,i,strong,b,small{font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{display:inline-block;}
+em{transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr{ height:0; border-top:1px dashed #999;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+/*---------------------------------supervision---------------------------------------*/
+.supervision_box{ text-align:center;}
+.supervision{ margin-top:80px;}
+.supervision ol{ height:40px; border-bottom:2px solid #e1e1e1; text-align:left;}
+.supervision ol li{ cursor:pointer; width:100px; height:100%; float:left; text-align:center; font-size:18px;}
+.supervision ol .li_active{ color:#0064b4;}
+.supervision ul{ overflow:hidden; margin:40px 0; display:none;}
+.supervision .ul_active{ display:block;}
+.supervision ul li{ width:95px; height:95px; float:left; margin-right:55px;}
+.supervision #line_threeeee{ transition:0.3s; width:100px; height:0px; position:relative; left:0px; top:40px; border-bottom:2px solid #0064b4;}
+.supervision .threeeee{ position:absolute; left:45px; bottom:0px; width:0px; height:0px; border:5px solid transparent; border-bottom:5px solid #0064b4;}
+/*--------------------------上面是独立公用样式-------------------------------------*/
+/*---------------------------------footer-----------------------------------------*/
+.footer{ background:#646464; text-align:center;}
+.footer .footer_content{ width:1000px; margin:0 auto;}
+.footer ul{ background:#4b4b4b; height:55px;}
+.footer li{ float:left;}
+.footer li a{ cursor:pointer; height:100%; width:200px; text-align:center; line-height:55px; color:#dcdcdc; font-size:20px;}
+.footer .a_active{ background:#0064b4; box-shadow:1px -1px 10px #fff;}
+.footer .address{ margin:50px auto 60px; overflow:hidden;}
+.footer .address_left{ width:320px;}
+.footer .address_center{ width:468px; border-left:1px solid #505050; border-right:1px solid #505050; padding:10px 35px;}
+.footer .address_center p{ font-size:16px; color:#dcdcdc; line-height:33px;}
+.footer .address_center em{ width:80px; line-height:33px;}
+.footer .address_right{ width:140px;}
+.footer .copyright{ background:#4b4b4b; padding:20px 0 15px;}
+.footer .copyright p{ text-align:center; line-height:25px; color:#dcdcdc; font-size:16px;}
+</style>
+<script>
+// JavaScript Document
+eventBind(window,'load',function()
+{
+	function show_hide(obj_btn,btn_class,obj_cut,cut_class)
+	{
+		for(var i=0;i<obj_btn.length;i++)
+		{
+			obj_btn[i].index=i;
+			obj_btn[i].onmouseover=function()
+			{
+				for(var i=0;i<obj_btn.length;i++)
+				{
+					if(!obj_cut)
+					{
+					}
+					else
+					{
+						
+						obj_cut[i].className='';
+					}
+					obj_btn[i].className='';
+				}	
+				this.className=btn_class;
+				if(!obj_cut)
+				{
+				}
+				else
+				{
+					obj_cut[this.index].className=cut_class;
+				}
+			}	
+		}
+	}
+		/*supervision*/
+	
+	var oSupervision=document.getElementById('supervision');
+	var oSupervision_ol=oSupervision.getElementsByTagName('ol')[0];
+	var aSupervision_ol_li=oSupervision_ol.getElementsByTagName('li');
+	var oLine_threeeee=document.getElementById('line_threeeee');
+	var aSupervision_one_ul=oSupervision.getElementsByTagName('ul');
+	var oSupervision_one_ul=oSupervision.getElementsByTagName('ul')[0];
+	var aSupervision_one_ul_img=oSupervision_one_ul.getElementsByTagName('img');
+	var oSupervision_two_ul=oSupervision.getElementsByTagName('ul')[1];
+	var aSupervision_two_ul_img=oSupervision_two_ul.getElementsByTagName('img');
+	/*监督单位图片*/
+	var one_OldArr=['/images/supervision1.png','/images/supervision2.png','/images/supervision3.png','/images/supervision4.png','/images/supervision5.png','/images/supervision6.png','/images/supervision7.png'];
+	var one_NewArr=['/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png'];
+	/*合作伙伴图片*/
+	var two_OldArr=['/images/supervision1.png','/images/supervision2.png','/images/supervision3.png','/images/supervision4.png','/images/supervision5.png','/images/supervision6.png','/images/supervision7.png'];;
+	var two_NewArr=['/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png','/images/supervision1_1.png'];
+	/*监督单位以及合作伙伴滑块切换*/
+	for(var i=0; i<aSupervision_ol_li.length;i++)
+	{
+		aSupervision_ol_li[i].index=i;
+		aSupervision_ol_li[i].onmouseover=function()
+		{
+			for(var i=0; i<aSupervision_ol_li.length;i++)
+			{
+				aSupervision_one_ul[i].className='';
+			}
+			aSupervision_one_ul[this.index].className='ul_active';
+			oLine_threeeee.style.left=aSupervision_ol_li[0].offsetWidth*this.index+'px'	
+		}	
+	}
+	/*监督单位*/
+	for(var i=0; i<aSupervision_one_ul_img.length;i++)
+	{
+		aSupervision_one_ul_img[i].index=i;
+		aSupervision_one_ul_img[i].onmouseover=function()
+		{
+			for(var i=0; i<aSupervision_one_ul_img.length;i++)
+			{
+				aSupervision_one_ul_img[i].src=one_OldArr[i];
+			}
+			this.src=one_NewArr[this.index];
+		}	
+	}
+	/*合作伙伴*/
+	for(var i=0; i<aSupervision_two_ul_img.length;i++)
+	{
+		aSupervision_two_ul_img[i].index=i;
+		aSupervision_two_ul_img[i].onmouseover=function()
+		{
+			for(var i=0; i<aSupervision_two_ul_img.length;i++)
+			{
+				aSupervision_two_ul_img[i].src=two_OldArr[i];
+			}
+			this.src=two_NewArr[this.index];
+		}	
+	}
+	/*footer_nav*/
+	var oFooter_nav=document.getElementById('footer_nav');
+	var aFooter_a=oFooter_nav.getElementsByTagName('a');
+	show_hide(aFooter_a,'a_active');
+})
+function eventBind(obj,ev,fn)
+{
+	if(obj.attachEvent)
+	{
+		obj.attachEvent('on'+ev,fn);
+	}
+	else
+	{
+		obj.addEventListener(ev,fn,false);
+	}	
+}
+
+</script>
+<!----------------------------------supervision--------------------------------------->
+<div class="supervision_box">
+        <div class="supervision commonWidth_1000" id="supervision">
+                <ol>
+                   <div id="line_threeeee"><div class="threeeee"></div></div>
+                        <li>监督单位</li>
+                        <li>合作机构</li>
+                </ol>
+                <ul class="ul_active">
+                        <li><a href="#" target="_blank"><img src="/images/supervision1_1.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision2.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision3.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision4.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision5.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision6.png" /></a></li>
+                        <li style="margin-right:0;"><a href="#" target="_blank"><img src="/images/supervision7.png" /></a></li>
+                </ul>
+                <ul>
+                        <li><a href="#" target="_blank"><img src="/images/supervision1_1.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision2.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision3.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision4.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision5.png" /></a></li>
+                        <li><a href="#" target="_blank"><img src="/images/supervision6.png" /></a></li>
+                        <li style="margin-right:0;"><a href="#" target="_blank"><img src="/images/supervision7.png" /></a></li>
+                </ul>
+        </div>
+</div>
+<!--------------------------------footer----------------------------------->
+
+<div class="footer commonWidth">
+        <div class="footer_content">
+                <ul id="footer_nav">
+                        <li><a target="_blank" href="/zt/xcx" class="a_active">局限型白癜风</a></li>
+                        <li><a target="_blank" href="/zt/xcx" class="">散发型白癜风</a></li>
+                        <li><a target="_blank" href="/zt/xcx" class="">泛发型白癜风</a></li>
+                        <li><a target="_blank" href="/zt/xcx" class="">肢端型白癜风</a></li>
+                        <li><a target="_blank" href="/zt/jdx" class="">节段型白癜风</a></li>                        
+                </ul>
+                <div class="address">
+                	<div class="address_left fl">
+                        	<img src="/images/footer.png">                        	
+                        </div>
+                	<div class="address_center fl">
+                        	<p><em>医院地址：</em>上海市杨浦区黄兴路286号</p>
+                        	<p><em>植发电话：</em>021-6519  1999</p>
+                        	<p><em>温馨提示：</em>任何建议都不能替代执业医师当面诊断，所有门诊时间</p>
+                        	<p><em></em>仅供参考，最终以医院当日公布为准。</p>
+                        	<p>网友 、医生言论仅代表其个人观点，不代表本站同意其说法。</p>
+                        </div>
+                	<div class="address_right fr">
+                        	<img src="/images/footer_twoCode.png">
+                        </div>
+                </div>                                            
+        </div>
+	<div class="copyright">
+        	<p>沪卫（中医）网复审[2014]第10125号 沪ICP备13034821号</p>
+        	<p>Copyright (C) 2009 Jiangcheng Dermatology Hospital shanghai.</p>
+        </div>
+</div>

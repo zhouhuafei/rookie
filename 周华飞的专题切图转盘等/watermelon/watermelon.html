@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>watermelon</title>
+</head>
+<body>
+<script>
+//任务:12个西瓜分两堆,每堆六个且重量一致
+var allWight=0;//总重量
+var arr=[5,6,7,8,9,10,10,9,8,7,6,5];//每个西瓜的重量,每个西瓜的的序号为1-12进行编号
+for(var i=0;i<12;i++){	
+	allWight+=arr[i];//总重量
+}
+var average=allWight/2;
+/*
+for(var j=0;j<12;j++){
+	for(var k=0;k<12&&k!=j;k++){
+		for(var l=0;l<12&&l!=j&&l!=k;l++){
+			for(var n=0;n<12&&n!=j&&n!=k&&n!=l;n++){
+				for(var m=0;m<12&&m!=j&&m!=k&&m!=l&&m!=n;m++){
+					for(var z=0;z<12&&z!=j&&z!=k&&z!=l&&z!=n&&z!=m;z++){						
+						if((arr[j]+arr[k]+arr[l]+arr[m]+arr[n]+arr[z])==average){
+							document.write(j+'-'+k+'-'+l+'-'+m+'-'+n+'-'+z+'<br/>');//输出西瓜的编号
+						}
+					}						
+				}					
+			}				
+		}
+	}	
+}
+*/
+for(var j=0;j<6;j++){
+	for(var k=j+1;k<12;k++){
+		for(var l=k+1;l<12;l++){
+			for(var n=l+1;n<12;n++){
+				for(var m=n+1;m<12;m++){
+					for(var z=m+1;z<12;z++){						
+						if((arr[j]+arr[k]+arr[l]+arr[m]+arr[n]+arr[z])==average){
+							document.write(j+'-'+k+'-'+l+'-'+m+'-'+n+'-'+z+'<br/>');//输出西瓜的编号
+						}
+					}						
+				}					
+			}				
+		}
+	}	
+}	
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px!important; font-family:"微软雅黑"!important;}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1076{ width:1076px; margin:0 auto; overflow:hidden;}
+
+/*main*/
+#main{ background:#7b0100; overflow:hidden; padding-bottom:40px;}
+#main div{ height:300px;}
+#main a{ display:block; width:100%; height:100%;}
+#main div.main1{ background:url(../images/main1.jpg) center center no-repeat;}
+#main div.main2{ background:url(../images/main2.jpg) center center no-repeat;}
+#main div.main3{ background:url(../images/main3.jpg) center center no-repeat;}
+#main div.main4{ background:url(../images/main4.jpg) center center no-repeat;}
+#main div.main5{ background:url(../images/main5.jpg) center center no-repeat;}
+#main div.main6{ background:url(../images/main6.jpg) center center no-repeat;}
+#main span{ display:block; margin:0 auto; width:1076px;}
+#main div.main7{ background:url(../images/main7.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main8{ background:url(../images/main8.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main9{ background:url(../images/main9.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main10{ background:url(../images/main10.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main11{ background:url(../images/main11.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main12{ background:url(../images/main12.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main13{ background:url(../images/main13.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main14{ background:url(../images/main14.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main15{ background:url(../images/main15.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main16{ background:url(../images/main16.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main17{ background:url(../images/main17.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main18{ background:url(../images/main18.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main19{ background:url(../images/main19.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main20{ background:url(../images/main20.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main21{ background:url(../images/main21.jpg) center center no-repeat; margin-left:-5px;}
+#main div.main22{ background:url(../images/main22.jpg) center center no-repeat; height:138px; margin-left:-5px;}
+
+
+
+
+
+

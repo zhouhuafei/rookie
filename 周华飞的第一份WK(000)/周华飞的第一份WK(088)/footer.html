@@ -1,0 +1,196 @@
+<style>
+/*footerSlide*/
+#footerSlide,#footerTab{ margin-top:70px;}
+#footerSlide ol,#footerTab ol{ border-bottom:2px solid #e1e1e1;}
+#footerSlide ol li,#footerTab ol li{ float:left; margin:0 40px -2px 0; font-size:22px; color:#4b4b4b; border-bottom:2px solid #e1e1e1; padding-bottom:14px; margin-bottom:-2px; position:relative;}
+#footerSlide ol em,#footerTab ol em{ opacity:0; filter:alpha(opacity:0); width:0px; height:0px; border:6px solid transparent; border-bottom:6px solid #0064b4;  position:absolute; bottom:0; left:50%; margin-left:-6px;}
+#footerSlide ol .active,#footerTab ol .active{ border-bottom:2px solid #0064b4;}
+#footerSlide ol .active em,#footerTab ol .active em{ opacity:1; filter:alpha(opacity:100);}
+#footerSlide div{ display:none; margin-top:32px; height:190px; overflow:hidden; position:relative;}
+#footerSlide div ul{ height:190px; position:absolute; left:0; top:0; width:3000px;}
+#footerSlide div.active{ display:block;}
+#footerSlide div li{ float:left; padding:7px; background:#e6e6e6; width:230px; height:176px; margin-right:8px;}
+#footerSlide div a{ display:block;}
+/*footerTab*/
+#footerTab div{ overflow:hidden; height:94px; margin-top:34px;}
+#footerTab ul{ display:none; height:94px;}
+#footerTab ul.active{ display:block;}
+#footerTab ul li{ float:left; margin-right:57px;}
+#footerTab ul em{ width:94px; height:94px; background:url(images/footerEm.png) left top no-repeat;}
+#footerTab ul .footerEm1_1{ background-position: left top;}
+#footerTab ul .footerEm1_2{ background-position: left -216px;}
+#footerTab ul .footerEm1_3{ background-position: left -432px;}
+#footerTab ul .footerEm1_4{ background-position: left -648px;}
+#footerTab ul .footerEm1_5{ background-position: left -864px;}
+#footerTab ul .footerEm1_6{ background-position: left -1080px;}
+#footerTab ul .footerEm1_7{ background-position: left -1296px;}
+#footerTab ul .active .footerEm1_1{ background-position: left -108px;}
+#footerTab ul .active .footerEm1_2{ background-position: left -324px;}
+#footerTab ul .active .footerEm1_3{ background-position: left -540px;}
+#footerTab ul .active .footerEm1_4{ background-position: left -756px;}
+#footerTab ul .active .footerEm1_5{ background-position: left -972px;}
+#footerTab ul .active .footerEm1_6{ background-position: left -1188px;}
+#footerTab ul .active .footerEm1_7{ background-position: left -1404px;}
+#footerTab ul .footerEm2_1{ background-position: left top;}
+#footerTab ul .footerEm2_2{ background-position: left -216px;}
+#footerTab ul .footerEm2_3{ background-position: left -432px;}
+#footerTab ul .footerEm2_4{ background-position: left -648px;}
+#footerTab ul .footerEm2_5{ background-position: left -864px;}
+#footerTab ul .footerEm2_6{ background-position: left -1080px;}
+#footerTab ul .footerEm2_7{ background-position: left -1296px;}
+#footerTab ul .active .footerEm2_1{ background-position: left -108px;}
+#footerTab ul .active .footerEm2_2{ background-position: left -324px;}
+#footerTab ul .active .footerEm2_3{ background-position: left -540px;}
+#footerTab ul .active .footerEm2_4{ background-position: left -756px;}
+#footerTab ul .active .footerEm2_5{ background-position: left -972px;}
+#footerTab ul .active .footerEm2_6{ background-position: left -1188px;}
+#footerTab ul .active .footerEm2_7{ background-position: left -1404px;}
+/*footerNav*/
+#footerNav{ background:#646464; margin-top:70px;}
+#footerNav ul{ background:#4b4b4b; width:1000px; margin:0 auto;}
+#footerNav li{ float:left;}
+#footerNav a{ display:block; width:200px; text-align:center; height:54px; line-height:54px; font-size:20px; color:#dcdcdc;}
+#footerNav .active{ background:#0064b4; box-shadow:1px 1px 20px #fff;}
+/*footer*/
+#footer{ background:#646464; overflow:hidden;}
+/*footerMain*/
+#footerMain{ width:1000px; margin:50px auto;}
+#footerMain:hover .img{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#footerMain #footerLogo{ width:350px; text-align:center; color:#dcdcdc;}
+#footerMain #footerLogo .img{ margin-bottom:18px; transition:0.4s;}
+#footerMain #footerLogo h2{ font-size:34px;}
+#footerMain #footerLogo p{ font-size:12px;}
+#footerMain #footerCont{ width:468px; border-left:1px solid #505050; border-right:1px solid #505050; padding:10px 20px;}
+#footerMain #footerCont p{ font-size:16px; color:#dcdcdc; line-height:33px;}
+#footerMain #footerCont em{ width:80px; line-height:33px;}
+#footerMain #footerCode{ width:140px; text-align:center; color:#dcdcdc;}
+#footerMain #footerCode .img{ margin-bottom:18px; transition:0.4s;}
+#footerMain #footerCode p{ font-size:16px;}
+/*footerCopy*/
+#footerCopy{ background:#4b4b4b; padding:10px;}
+#footerCopy p{ font-size:16px; color:#dcdcdc; text-align:center; line-height:24px;}
+</style>
+<!--footerSlide-->
+<div id="footerSlide" class="w1000">
+	<ol class="clearFix">
+        	<li class="active">康复案例<em></em></li>
+        	<li>先进设备<em></em></li>
+        	<li>就医环境<em></em></li>
+        </ol>
+        <div class="active">
+                <ul>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide1_1.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide1_2.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide1_3.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide1_4.jpg" /></a></li>
+                </ul>
+        </div>
+        <div>
+                <ul>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide2_1.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide2_2.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide2_3.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide2_4.jpg" /></a></li>
+                </ul>
+        </div>
+        <div>    
+                <ul>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide3_1.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide3_2.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide3_3.jpg" /></a></li>
+                        <li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank"><img src="images/footerSlide3_4.jpg" /></a></li>
+                </ul>
+        </div>
+</div>
+<!--footerTab-->
+<div id="footerTab" class="w1000">	
+	<ol class="clearFix">
+        	<li class="active">监督单位<em></em></li>
+        	<li>合作机构<em></em></li>
+        </ol>
+        <div>
+                <ul class="active">
+                        <li class="active"><em class="footerEm1_1"></em></li>
+                        <li><em class="footerEm1_2"></em></li>
+                        <li><em class="footerEm1_3"></em></li>
+                        <li><em class="footerEm1_4"></em></li>
+                        <li><em class="footerEm1_5"></em></li>
+                        <li><em class="footerEm1_6"></em></li>
+                        <li style="margin-right:0;"><em class="footerEm1_7"></em></li>
+                </ul>
+                <ul>
+                        <li class="active"><em class="footerEm2_1"></em></li>
+                        <li><em class="footerEm2_2"></em></li>
+                        <li><em class="footerEm2_3"></em></li>
+                        <li><em class="footerEm2_4"></em></li>
+                        <li><em class="footerEm2_5"></em></li>
+                        <li><em class="footerEm2_6"></em></li>
+                        <li style="margin-right:0;"><em class="footerEm2_7"></em></li>
+                </ul>
+        </div>
+</div>
+<!--footerNav-->
+<div id="footerNav">
+	<ul class="clearFix">
+        	<li class="active"><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">寻常型银屑病</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">关节型银屑病</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">脓疱型银屑病</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">红皮型银屑病</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">掌趾银屑病</a></li>
+        </ul>
+</div>
+<!--footer-->
+<div id="footer">
+	<div id="footerMain" class="clearFix">
+                <div id="footerLogo" class="fl">
+                        <div class="img"><img src="images/footer_logo.png"></div>
+                        <h2>上海江城皮肤病医院</h2>
+                        <p>Shanghai Jiangcheng Dermatology Hospital</p>                       	
+                </div>
+                <div id="footerCont" class="fl">
+                        <p><em>医院地址：</em>上海市杨浦区黄兴路286号</p>
+                        <p><em>植发电话：</em>021-6519  1999</p>
+                        <p><em>温馨提示：</em>任何建议都不能替代执业医师当面诊断，所有门诊时间</p>
+                        <p><em></em>仅供参考，最终以医院当日公布为准。</p>
+                        <p>网友 、医生言论仅代表其个人观点，不代表本站同意其说法。</p>
+                </div>
+                <div id="footerCode" class="fr">
+                        <div class="img"><img src="images/footer_twoCode.png"></div>
+                        <p>扫描最新优惠</p>
+                        <p>手机随时咨询</p>
+                </div>
+        </div>
+        <div id="footerCopy">
+        	<p>沪卫（中医）网复审[2014]第10125号 沪ICP备13034821号</p>
+        	<p>Copyright (C) 2009 Jiangcheng Dermatology Hospital shanghai.</p>
+        </div>
+</div>
+<script>
+/*footerSlide*/
+$(function(){
+	var aBtn=$('#footerSlide ol li');
+	var aCut=$('#footerSlide div');
+	tabSwitch(aBtn,aCut);	
+})
+/*footerTab ol li*/
+$(function(){
+	var aBtn=$('#footerTab ol li');
+	var aCut=$('#footerTab ul');
+	tabSwitch(aBtn,aCut);	
+})
+/*footerTab ul[0] li*/
+$(function(){
+	var aBtn=$('#footerTab ul')[0].getElementsByTagName('li');
+	tabSwitch(aBtn);	
+})
+/*footerTab ul[1] li*/
+$(function(){
+	var aBtn=$('#footerTab ul')[1].getElementsByTagName('li');
+	tabSwitch(aBtn);	
+})
+/*footerNav*/
+$(function(){
+	var aBtn=$('#footerNav li');
+	tabSwitch(aBtn);	
+})
+</script>

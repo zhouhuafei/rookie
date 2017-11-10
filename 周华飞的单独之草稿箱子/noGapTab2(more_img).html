@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>noGapTab2(more_img)</title>
+<style>
+body,ul,div{ margin:0; padding:0;}
+div{ width:800px; height:400px; margin:0 auto; position:relative; overflow:hidden;}
+ul{ height:100%; list-style:none; position:absolute; left:0; top:0;}
+li{ width:200px; height:100%; color:#fff; float:left; background:#000}
+span{ width:50px; text-align:center; height:50px; line-height:50px; background:#f00; color:#fff; position:absolute; top:175px; border-radius:50%; cursor:pointer; z-index:2;}
+span:nth-of-type(1){ left:0;}
+span:nth-of-type(2){ right:0;}
+</style>
+<script>
+onload=function(){
+	var oUl=document.getElementsByTagName('ul')[0];
+	var aLi=oUl.getElementsByTagName('li');
+	var oPrev=document.getElementsByTagName('span')[0];	
+	var oNext=document.getElementsByTagName('span')[1];
+	var moveNum=4;
+	//改变上述数值,可以改变移动的间距;
+	var oneSize=aLi[0].offsetWidth;
+	var bStop=true;
+	function ulWidth(){
+		oUl.style.width=oneSize*aLi.length+'px';
+	}
+	ulWidth();
+	oNext.onclick=function(){
+		if(bStop){
+			bStop=false;
+			for(var i=0;i<moveNum;i++){
+				oLi=aLi[i].cloneNode(true);
+				oUl.appendChild(oLi);				
+			}
+			ulWidth();
+			startMove(oUl,{left:-oneSize*moveNum},function(){			
+				for(var i=0;i<moveNum;i++){
+					oUl.removeChild(aLi[0]);
+					oUl.style.left=0;					
+				}
+				bStop=true;
+			});
+		}		
+	}
+	oPrev.onclick=function(){
+		if(bStop){
+			bStop=false;
+			var iLen=aLi.length-1;
+			for(var i=0;i<moveNum;i++){
+				oLi=aLi[iLen].cloneNode(true);
+				//上述iLen必须是定值,上面一句的iLen不能换成aLi.length-1,否则会产生BUG,因为aLi.length-1会动态获取新的数值;
+				oUl.insertBefore(oLi,aLi[0]);
+			}
+			oUl.style.left=-oneSize*moveNum+'px';	
+			ulWidth();
+			startMove(oUl,{left:0},function(){			
+				for(var i=0;i<moveNum;i++){
+					oUl.removeChild(aLi[aLi.length-1]);				
+				}
+				bStop=true;
+			});
+		}
+	}
+}
+function startMove(obj,json,fnEnd){
+	function getStyle(obj,attr){
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];	
+		}else{
+			return getComputedStyle(obj,false)[attr];
+		}	
+	}
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		var bStop=true;
+		for(var attr in json){
+			var cur=0;
+			if(attr=='opacity'){
+				cur=Math.round(parseFloat(getStyle(obj,attr)*100));	
+			}else{
+				cur=parseInt(getStyle(obj,attr));	
+			}
+			var speed=(json[attr]-cur)/10;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(cur!=json[attr]){
+				bStop=false;	
+			}
+			if(attr=='opacity'){
+				obj.style.filter='alpha(opacity:'+cur+speed+')';
+				obj.style.opacity=(cur+speed)/100;	
+			}else{
+				obj.style[attr]=cur+speed+'px';	
+			}
+		}
+		if(bStop){
+			clearInterval(obj.timer);
+			if(fnEnd){
+				fnEnd();	
+			}	
+		}	
+	},30)
+}
+</script>
+</head>
+<body>
+<div>
+	<span>←</span>
+	<span>→</span>
+        <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+        </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat; margin-bottom:20px;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:238px; bottom:148px;}
+
+/*til*/
+.til{ font-size:30px; color:#0064b4; text-align:center; padding-bottom:28px; border-bottom:1px solid #c8c8c8; position:relative; margin:100px 0 40px;}
+.til span{ color:#c8c8c8; font-size:16px; padding:0 10px; height:20px; line-height:20px; position:absolute; left:0; bottom:-10px; background:#fff; transition:1s;}
+
+/*main*/
+#main{ width:1000px; margin:36px auto 0;}
+#main .tils{ border-bottom:2px solid #e1e1e1;}
+#main .tils span{ height:20px; font-size:20px; color:#0064b4; padding-bottom:14px; border-bottom:2px solid #0064b4; margin-bottom:-2px; position:relative;}
+#main .tils em{ width:0px; height:0px; border:6px solid transparent; border-bottom:6px solid #0064b4;  position:absolute; bottom:0; left:50%; margin-left:-6px;}
+/*mainVedio*/
+#mainVedio{ width:290px; float:left;}
+#mainVedio #mainVe{ margin-top:12px; height:214px; position:relative;}
+#mainVedio ul li{ width:290px; height:214px; display:none;}
+#mainVedio ul .active{ display:block;}
+#mainVedio ul a{ display:block;}
+#mainVedio ol{ position:absolute; right:0; bottom:5px;}
+#mainVedio ol li{ width:16px; height:16px; border-radius:50%; float:left; margin:0 5px; background:#4b4b4b;}
+#mainVedio ol .active{ background:#0064b2;}
+#mainVedio #data_dl{ height:182px; background:#d2d2d2; margin-top:20px; position:relative; overflow:hidden;}
+#mainVedio dl{ width:246px; border-right:2px solid #cbcbcb; padding-right:15px; position:absolute; left:12px; top:0;}
+#mainVedio dl dd{ padding-left:16px; height:30px; line-height:30px; border-bottom:1px dashed #fff; font-size:14px; color:#4b4b4b; background:url(../images/mainVedio_three.png) left center no-repeat;}
+#mainVedio dl dd.noBb{ border-bottom:none;}
+#mainVedio #data_drag{ width:9px; height:46px; background:url(../images/mainVedio_drag.png) center center no-repeat; position:absolute; top:0; right:11px; z-index:2;}
+/*mainTab*/
+#mainTab{ width:370px; margin:0 25px; position:relative; padding-top:34px; float:left;}
+#mainTab ul li{ width:370px; height:430px; display:none;}
+#mainTab ul .active{ display:block;}
+#mainTab ul a{ display:block;}
+#mainTab ol{ position:absolute; right:0; bottom:5px;}
+#mainTab ol li{ width:22px; text-align:center; height:22px; line-height:22px; margin:0 5px; font-size:14px; color:#fff; float:left; background:#c2c3c4; border-radius:50%;}
+#mainTab ol .active{ background:#004473; transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+/*mainExpert*/
+#mainExpert{ width:290px; float:left;}
+#mainExpert #mainEx{ margin-top:12px; height:214px; position:relative;}
+#mainExpert ul li{ width:290px; height:214px; display:none;}
+#mainExpert ul .active{ display:block;}
+#mainExpert ul a{ display:block;}
+#mainExpert ol{ position:absolute; right:0; bottom:5px;}
+#mainExpert ol li{ width:16px; height:16px; border-radius:50%; float:left; margin:0 5px; background:#4b4b4b;}
+#mainExpert ol .active{ background:#0064b2;}
+#mainExpert dl{ height:182px; border:1px solid #d9d9d9; border-bottom:none; border-right:none; margin-top:20px;}
+#mainExpert dl dd{ border-bottom:1px solid #d9d9d9;}
+#mainExpert dl dd strong{ width:64px; text-align:center; height:30px; line-height:30px; float:left; font-size:14px; border-right:1px solid #d9d9d9; display:block;}
+#mainExpert dl dd span{ width:31px; text-align:center; height:30px; line-height:30px; float:left; font-size:14px; border-right:1px solid #d9d9d9; display:block;}
+#mainExpert dl dd a{ display:block;}
+#mainExpert dl dd a:hover{ color:#fff; text-shadow:1px 1px 1px #f00,1px 1px 1px #f00,1px 1px 1px #f00;}
+#mainExpert dl dt{ border-bottom:1px solid #d9d9d9; text-align:center; border-right:1px solid #d9d9d9;}
+#mainExpert dl dt a{ width:120px; text-align:center; height:36px; line-height:36px; background:#969696; color:#fff; font-size:18px; margin:10px 7px;}
+#mainExpert dl dt .active{ background:#0064b4;}
+#mainExpert dl dt em{ vertical-align:middle; margin-right:5px;}
+#mainExpert dl dt .active em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+
+/*therapy*/
+#therapyMain ol li{ margin-bottom:1px; padding-left:30px; width:300px; height:64px; background:#969696; color:#fff; position:relative;}
+#therapyMain ol .active{ background:#0064b4;}
+#therapyMain ol em{ float:left; width:41px; height:41px; margin:11px 16px 0 0; overflow:hidden;}
+#therapyMain ol .active em{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#therapyMain ol span{ float:left; height:60px;}
+#therapyMain ol strong{ font-size:20px; height:20px; line-height:20px; margin-top:10px;}
+#therapyMain ol small{ font-size:14px; height:14px; line-height:14px; margin-top:6px;}
+#therapyMain ol b{ background:url(../images/three.png); width:6px; height:9px; position:absolute; right:-6px; top:25px; opacity:0; filter:alpha(opacity:0); transition:0.4s;}
+#therapyMain ol .active b{ opacity:100; filter:alpha(opacity:100);}
+#therapyMain ul{ margin-top:1px;}
+#therapyMain ul li{ width:652px; height:452px; overflow:hidden; display:none; position:relative;}
+#therapyMain ul .active{ display:block;}
+#therapyMain ul div{ height:196px; padding-top:4px; width:100%; background:url(../images/grey_bg.png); position:absolute; left:0; bottom:0; color:#fff; transition:0.4s;}
+#therapyMain ul h2{ font-size:22px; color:#e97621; margin:10px 0; text-align:center; padding:0 10px;}
+#therapyMain ul p{ font-size:16px; color:#fff; line-height:30px; padding:0 20px;}
+#therapyMain ul a{ width:180px; text-align:center; height:40px; line-height:40px; color:#fff; background:#0064b4; font-size:18px; position:absolute; left:50%; margin-left:-90px; bottom:10px;}
+
+/*team*/
+#teamMain ul li{ height:510px; overflow:hidden; display:none;}
+#teamMain ul .active{ display:block;}
+#teamMain ul .img{ width:314px; height:510px; overflow:hidden; position:relative; text-align:center;}
+#teamMain ul .img a{ width:170px; text-align:center; height:40px; line-height:40px; font-size:16px; color:#fff; background:#0064b4; position:absolute; left:50%; bottom:0; margin-left:-85px;}
+#teamMain ul .img em{ vertical-align:middle; margin-right:5px; border:1px solid #0064b4;}
+#teamMain ul .img a:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#teamMain ul .word{ width:390px; color:#4b4b4b; margin-left:10px;}
+#teamMain ul .word h2{ color:#0064b4; font-size:48px; margin-bottom:24px;}
+#teamMain ul .word small{ font-size:22px; color:#4b4b4b;}
+#teamMain ul .word p{ font-size:18px; height:34px; line-height:34px;}
+#teamMain ul .word p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#teamMain ul .word em{ width:23px; height:22px; background:url(../images/team_icon.png) center center no-repeat; vertical-align:middle; margin-right:10px;}
+#teamMain ul .word strong{ font-size:20px; color:#0064b4; margin:40px 0 10px;}
+#teamMain ul .word h4{ font-size:16px; line-height:30px;}
+#teamMain ol li{ width:246px; height:146px; padding:2px; border:1px solid #aaaaaa; margin-bottom:8px;}
+#teamMain ol .active{ border:1px solid #0064b4;}
+
+/*recovery*/
+#recovery{ width:1000px; margin:0 auto;}
+#recovery li{ width:224px; height:374px; padding:4px; position:relative; float:left; background:#e6e6e6; margin:0 24px 24px 0;}
+#recovery li img{ margin-bottom:10px; vertical-align:middle;}
+#recovery li p{ height:20px; line-height:20px; font-size:16px; color:#4b4b4b; margin-bottom:10px;}
+#recovery li em{ width:20px; height:20px; vertical-align:middle; margin-right:5px;}
+#recovery li p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#recovery li a{ height:30px; line-height:30px; width:128px; text-align:center; border:1px solid #969696; color:#4b4b4b; font-size:16px; position:absolute; bottom:20px; left:50%; margin-left:-65px;}
+#recovery .active{ box-shadow:1px 1px 10px #0064b4;}
+#recovery .active a{ background:#0064b4; color:#fff; border:1px solid #0064b4; }
+#recovery .recovery_btn{ margin:0 auto; width:420px; height:36px; line-height:36px;}
+#recovery .recovery_btn span{ width:210px; text-align:center; font-size:20px; color:#4b4b4b; background:#b4b4b4;}
+#recovery .recovery_btn em{ vertical-align:middle; margin-right:5px;}
+#recovery .recovery_btn a{ width:210px; text-align:center; font-size:18px; color:#fff; background:#0064b4;}
+
+/*nous*/
+#nous ul{ position:relative; height:406px; overflow:hidden;}
+#nous li{ height:406px; width:790px; overflow:hidden; position:absolute; transition:1s;}
+#nous .nousTil{ font-size:22px; width:29px; text-align:center; height:286px; color:#fff; background:#0064b4; border-right:1px solid #fff; padding:120px 20px 0;}
+#nous .nousMain{ width:699px; height:386px; padding:10px; border-right:1px solid #fff; background:#e6e6e6;}
+#nous .img{ width:326px; height:386px; overflow:hidden; margin-right:30px;} 
+#nous .word{ width:330px; color:#4b4b4b;}
+#nous .word h2{ font-size:24px; color:#0064b4; margin:10px 0;}
+#nous .word h3{ font-size:18px; text-indent:30px; line-height:28px; margin-bottom:34px;}
+#nous .word p{ font-size:16px; margin-bottom:15px; height:22px; line-height:22px;}
+#nous .word em{ margin-right:5px; vertical-align:middle;}
+#nous .word p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#nous .word a{ font-size:16px; color:#0064b4;}

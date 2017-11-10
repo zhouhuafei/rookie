@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS控制滚动条位置滑动版本初试</title>
+<script>
+window.onload=function()
+{
+	document.getElementById('btn').onclick=function()
+	{
+		
+		bufferMove(2000);
+		//window.scrollTo(0,2000);	
+	}
+	function bufferMove(iTarget)
+	{
+		var oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		clearInterval();
+		timer=setInterval(function()
+		{
+			var speed=(iTarget-oScrollTop)/10;
+			var speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(oScrollTop==iTarget)
+			{
+				clearInterval(timer);	
+			}
+			else
+			{
+				oScrollTop=oScrollTop+speed;
+				window.scroll(0,oScrollTop);
+				
+			}	
+		},30)
+	}
+}
+</script>
+</head>
+
+<body style="height:2000px;">
+	<input type="button" id="btn" value="btn" />
+	
+</body>
+</html>

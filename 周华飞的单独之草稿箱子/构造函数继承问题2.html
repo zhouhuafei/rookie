@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>构造函数继承问题2</title>
+</head>
+
+<body>
+<script>
+function A(){
+	this.name='aaa';	
+}
+A.prototype.showA=function(){
+	alert('123');	
+}
+function B(){
+	this.sex='bbbb';	
+}
+B.prototype=A.prototype		//重点在这一句话		A的指针和B的指针指向同一个地方(我猜的)
+B.prototype.showB=function(){
+	alert('456');	
+}
+var b=new B();
+var a=new A();
+B.prototype.showA=function(){				
+	alert('bbbbb')	
+}
+b.showA();
+a.showB();			//能访问到
+</script>
+</body>
+</html>

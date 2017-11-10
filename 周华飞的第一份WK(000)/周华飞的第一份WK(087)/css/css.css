@@ -1,0 +1,285 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+/****************************************************************************************************************************************/
+/*header*/
+#header{ height:122px; background:url(../images/header.jpg) center center no-repeat;}
+/****************************************************************************************************************************************/
+/*headerNav*/
+#headerNav{ background:#0063b4;}
+#headerNav ul{ width:1008px; margin:0 auto;}
+#headerNav li{ float:left;}
+#headerNav a{ width:112px; text-align:center; height:56px; line-height:56px; font-size:18px; color:#fff; display:block;}
+#headerNav .navHot{ background:url(../images/nav_hot.gif) 98% 6% no-repeat;}
+#headerNav .active{ background:#013b6b;}
+/****************************************************************************************************************************************/
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:238px; bottom:148px;}
+/****************************************************************************************************************************************/
+/*styleNav*/
+#styleNav{ width:1000px; margin:16px auto 0;}
+#styleNav li{ float:left; background:#969696; margin-right:10px;}
+#styleNav a{ width:192px; height:82px; display:block; font-size:18px; color:#fff; line-height:41px;}
+#styleNav .active{ background:#0064b4;}
+#styleNav em{ width:64px; height:64px; display:block; float:left; margin:10px 18px 0 16px; border-radius:50%; transition:all 0.4s;}
+#styleNav p{ width:80px; padding-top:6px; line-height:34px; float:left; word-spacing:14px;}
+#styleNav .styleEm1{ background:url(../images/style_icon1.jpg) left top no-repeat;}
+#styleNav .styleEm2{ background:url(../images/style_icon2.jpg) left top no-repeat;}
+#styleNav .styleEm3{ background:url(../images/style_icon3.jpg) left top no-repeat;}
+#styleNav .styleEm4{ background:url(../images/style_icon4.jpg) left top no-repeat;}
+#styleNav .styleEm5{ background:url(../images/style_icon5.jpg) left top no-repeat;}
+#styleNav .active em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#styleNav .active .styleEm1{ background:url(../images/style_icon1b.jpg) left top no-repeat;}
+#styleNav .active .styleEm2{ background:url(../images/style_icon2b.jpg) left top no-repeat;}
+#styleNav .active .styleEm3{ background:url(../images/style_icon3b.jpg) left top no-repeat;}
+#styleNav .active .styleEm4{ background:url(../images/style_icon4b.jpg) left top no-repeat;}
+#styleNav .active .styleEm5{ background:url(../images/style_icon5b.jpg) left top no-repeat;}
+/****************************************************************************************************************************************/
+/*til*/
+.til{ font-size:30px; color:#0064b4; text-align:center; padding-bottom:28px; border-bottom:1px solid #c8c8c8; position:relative; margin:100px 0 40px;}
+.til span{ color:#c8c8c8; font-size:16px; padding:0 10px; height:20px; line-height:20px; position:absolute; left:0; bottom:-10px; background:#fff; transition:1s;}
+/****************************************************************************************************************************************/
+/*main*/
+#main{ width:1000px; margin:36px auto 0;}
+#main .tils{ border-bottom:2px solid #e1e1e1;}
+#main .tils span{ height:20px; font-size:20px; color:#0064b4; padding-bottom:14px; border-bottom:2px solid #0064b4; margin-bottom:-2px; position:relative;}
+#main .tils em{ width:0px; height:0px; border:6px solid transparent; border-bottom:6px solid #0064b4;  position:absolute; bottom:0; left:50%; margin-left:-6px;}
+/*mainVedio*/
+#mainVedio{ width:290px; float:left;}
+#mainVedio #mainVe{ margin-top:12px; height:214px; position:relative;}
+#mainVedio ul li{ width:290px; height:214px; display:none;}
+#mainVedio ul .active{ display:block;}
+#mainVedio ul a{ display:block;}
+#mainVedio ol{ position:absolute; right:0; bottom:5px;}
+#mainVedio ol li{ width:16px; height:16px; border-radius:50%; float:left; margin:0 5px; background:#4b4b4b;}
+#mainVedio ol .active{ background:#0064b2;}
+#mainVedio #data_dl{ height:182px; background:#d2d2d2; margin-top:20px; position:relative; overflow:hidden;}
+#mainVedio dl{ width:246px; border-right:2px solid #cbcbcb; padding-right:15px; position:absolute; left:12px; top:0;}
+#mainVedio dl dd{ padding-left:16px; height:30px; line-height:30px; border-bottom:1px dashed #fff; font-size:14px; color:#4b4b4b; background:url(../images/mainVedio_three.png) left center no-repeat;}
+#mainVedio dl dd.noBb{ border-bottom:none;}
+#mainVedio #data_drag{ width:9px; height:46px; background:url(../images/mainVedio_drag.png) center center no-repeat; position:absolute; top:0; right:11px; z-index:2;}
+/*mainTab*/
+#mainTab{ width:370px; margin:0 25px; position:relative; padding-top:34px; float:left;}
+#mainTab ul li{ width:370px; height:430px; display:none;}
+#mainTab ul .active{ display:block;}
+#mainTab ul a{ display:block;}
+#mainTab ol{ position:absolute; right:0; bottom:5px;}
+#mainTab ol li{ width:22px; text-align:center; height:22px; line-height:22px; margin:0 5px; font-size:14px; color:#fff; float:left; background:#c2c3c4; border-radius:50%;}
+#mainTab ol .active{ background:#004473; transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+/*mainExpert*/
+#mainExpert{ width:290px; float:left;}
+#mainExpert #mainEx{ margin-top:12px; height:214px; position:relative;}
+#mainExpert ul li{ width:290px; height:214px; display:none;}
+#mainExpert ul .active{ display:block;}
+#mainExpert ul a{ display:block;}
+#mainExpert ol{ position:absolute; right:0; bottom:5px;}
+#mainExpert ol li{ width:16px; height:16px; border-radius:50%; float:left; margin:0 5px; background:#4b4b4b;}
+#mainExpert ol .active{ background:#0064b2;}
+#mainExpert dl{ height:182px; border:1px solid #d9d9d9; border-bottom:none; border-right:none; margin-top:20px;}
+#mainExpert dl dd{ border-bottom:1px solid #d9d9d9;}
+#mainExpert dl dd strong{ width:64px; text-align:center; height:30px; line-height:30px; float:left; font-size:14px; border-right:1px solid #d9d9d9; display:block;}
+#mainExpert dl dd span{ width:31px; text-align:center; height:30px; line-height:30px; float:left; font-size:14px; border-right:1px solid #d9d9d9; display:block;}
+#mainExpert dl dd a{ display:block;}
+#mainExpert dl dd a:hover{ color:#fff; text-shadow:1px 1px 1px #f00,1px 1px 1px #f00,1px 1px 1px #f00;}
+#mainExpert dl dt{ border-bottom:1px solid #d9d9d9; text-align:center; border-right:1px solid #d9d9d9;}
+#mainExpert dl dt a{ width:120px; text-align:center; height:36px; line-height:36px; background:#969696; color:#fff; font-size:18px; margin:10px 7px;}
+#mainExpert dl dt .active{ background:#0064b4;}
+#mainExpert dl dt em{ vertical-align:middle; margin-right:5px;}
+#mainExpert dl dt .active em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+/****************************************************************************************************************************************/
+/*therapy*/
+#therapyMain ol li{ margin-bottom:1px; padding-left:30px; width:300px; height:64px; background:#969696; color:#fff; position:relative;}
+#therapyMain ol .active{ background:#0064b4;}
+#therapyMain ol em{ float:left; width:41px; height:41px; margin:11px 16px 0 0; overflow:hidden;}
+#therapyMain ol .active em{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#therapyMain ol span{ float:left; height:60px;}
+#therapyMain ol strong{ font-size:20px; height:20px; line-height:20px; margin-top:10px;}
+#therapyMain ol small{ font-size:14px; height:14px; line-height:14px; margin-top:6px;}
+#therapyMain ol b{ background:url(../images/three.png); width:6px; height:9px; position:absolute; right:-6px; top:25px; opacity:0; filter:alpha(opacity:0); transition:0.4s;}
+#therapyMain ol .active b{ opacity:100; filter:alpha(opacity:100);}
+#therapyMain ul{ margin-top:1px;}
+#therapyMain ul li{ width:652px; height:452px; overflow:hidden; display:none; position:relative;}
+#therapyMain ul .active{ display:block;}
+#therapyMain ul div{ height:196px; padding-top:4px; width:100%; background:url(../images/grey_bg.png); position:absolute; left:0; bottom:0; color:#fff; transition:0.4s;}
+#therapyMain ul h2{ font-size:22px; color:#e97621; margin:10px 0; text-align:center; padding:0 10px;}
+#therapyMain ul p{ font-size:16px; color:#fff; line-height:30px; padding:0 20px;}
+#therapyMain ul a{ width:180px; text-align:center; height:40px; line-height:40px; color:#fff; background:#0064b4; font-size:18px; position:absolute; left:50%; margin-left:-90px; bottom:10px;}
+/****************************************************************************************************************************************/
+/*team*/
+#teamMain ul li{ height:510px; overflow:hidden; display:none;}
+#teamMain ul .active{ display:block;}
+#teamMain ul .img{ width:314px; height:510px; overflow:hidden; position:relative; text-align:center;}
+#teamMain ul .img a{ width:170px; text-align:center; height:40px; line-height:40px; font-size:16px; color:#fff; background:#0064b4; position:absolute; left:50%; bottom:0; margin-left:-85px;}
+#teamMain ul .img em{ vertical-align:middle; margin-right:5px; border:1px solid #0064b4;}
+#teamMain ul .img a:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#teamMain ul .word{ width:390px; color:#4b4b4b; margin-left:10px;}
+#teamMain ul .word h2{ color:#0064b4; font-size:48px; margin-bottom:24px;}
+#teamMain ul .word small{ font-size:22px; color:#4b4b4b;}
+#teamMain ul .word p{ font-size:18px; height:34px; line-height:34px;}
+#teamMain ul .word p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#teamMain ul .word em{ width:23px; height:22px; background:url(../images/team_icon.png) center center no-repeat; vertical-align:middle; margin-right:10px;}
+#teamMain ul .word strong{ font-size:20px; color:#0064b4; margin:40px 0 10px;}
+#teamMain ul .word h4{ font-size:16px; line-height:30px;}
+#teamMain ol li{ width:246px; height:146px; padding:2px; border:1px solid #aaaaaa; margin-bottom:8px;}
+#teamMain ol .active{ border:1px solid #0064b4;}
+/****************************************************************************************************************************************/
+/*recovery*/
+#recovery{ width:1000px; margin:0 auto;}
+#recovery li{ width:224px; height:374px; padding:4px; position:relative; float:left; background:#e6e6e6; margin:0 24px 24px 0;}
+#recovery li img{ margin-bottom:10px; vertical-align:middle;}
+#recovery li p{ height:20px; line-height:20px; font-size:16px; color:#4b4b4b; margin-bottom:10px;}
+#recovery li em{ width:20px; height:20px; vertical-align:middle; margin-right:5px;}
+#recovery li p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#recovery li a{ height:30px; line-height:30px; width:128px; text-align:center; border:1px solid #969696; color:#4b4b4b; font-size:16px; position:absolute; bottom:20px; left:50%; margin-left:-65px;}
+#recovery .active{ box-shadow:1px 1px 10px #0064b4;}
+#recovery .active a{ background:#0064b4; color:#fff; border:1px solid #0064b4; }
+#recovery .recovery_btn{ margin:0 auto; width:420px; height:36px; line-height:36px;}
+#recovery .recovery_btn span{ width:210px; text-align:center; font-size:20px; color:#4b4b4b; background:#b4b4b4;}
+#recovery .recovery_btn em{ vertical-align:middle; margin-right:5px;}
+#recovery .recovery_btn a{ width:210px; text-align:center; font-size:18px; color:#fff; background:#0064b4;}
+/****************************************************************************************************************************************/
+/*nous*/
+#nous ul{ position:relative; height:406px; overflow:hidden;}
+#nous li{ height:406px; width:790px; overflow:hidden; position:absolute; transition:1s;}
+#nous .nousTil{ font-size:22px; width:29px; text-align:center; height:286px; color:#fff; background:#0064b4; border-right:1px solid #fff; padding:120px 20px 0;}
+#nous .nousMain{ width:699px; height:386px; padding:10px; border-right:1px solid #fff; background:#e6e6e6;}
+#nous .img{ width:326px; height:386px; overflow:hidden; margin-right:30px;} 
+#nous .word{ width:330px; color:#4b4b4b;}
+#nous .word h2{ font-size:24px; color:#0064b4; margin:10px 0;}
+#nous .word h3{ font-size:18px; text-indent:30px; line-height:28px; margin-bottom:34px;}
+#nous .word p{ font-size:16px; margin-bottom:15px; height:22px; line-height:22px;}
+#nous .word em{ margin-right:5px; vertical-align:middle;}
+#nous .word p:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#nous .word a{ font-size:16px; color:#0064b4;}
+/****************************************************************************************************************************************/
+/*hospital*/
+#hospitalMain ul{ width:810px; height:385px;}
+#hospitalMain ul li{ width:810px; height:100%; display:none;}
+#hospitalMain ul .active{ display:block;}
+#hospitalMain ul .word{ height:100%; width:345px; padding:0 20px; position:relative; color:#444444; background:#f4f4f4;}
+#hospitalMain ul .img{ width:425px; height:385px; overflow:hidden; background:#ccc;}
+#hospitalMain ul h2{ margin:35px 0; font-size:26px;}
+#hospitalMain ul p{ text-indent:30px; font-size:14px;}
+#hospitalMain ul .hospitalBtn{ position:absolute; right:20px; bottom:20px;}
+#hospitalMain ul .hospitalBtn a{ display:inline-block; width:38px; height:38px; margin-right:10px;}
+#hospitalMain ul .hospitalBtn .detail{ background:url(../images/hospitalIcon.png) -36px -455px no-repeat;}
+#hospitalMain ul .hospitalBtn .detail:hover{ background:url(../images/hospitalIcon.png) -36px -508px no-repeat;}
+#hospitalMain ul .hospitalBtn .consult{ background:url(../images/hospitalIcon.png) -36px -562px no-repeat; margin-right:0px;}
+#hospitalMain ul .hospitalBtn .consult:hover{ background:url(../images/hospitalIcon.png) -36px -617px no-repeat;}
+#hospitalMain ol{ width:170px;}
+#hospitalMain ol li{ text-align:center; height:60px; line-height:60px; background:#ebebeb; font-size:18px; color:#6a6a6a; position:relative; margin-bottom:5px; cursor:pointer;}
+#hospitalMain ol .active{ background:#006db8; color:#fff;}
+#hospitalMain ol em{ display:inline-block; vertical-align:middle; width:35px; height:35px; margin-right:10px; background:url(../images/hospitalIcon.png) -36px -36px no-repeat; transition:0.4s;}
+#hospitalMain ol div{ width:10px; height:20px; background:url(../images/three.png); opacity:0; filter:alpha(opacity:0); position:absolute; left:-10px; top:20px; transition:0.4s;}
+#hospitalMain ol .active div{ opacity:1; filter:alpha(opacity:100);}
+#hospitalMain ol .hospitalEm1{ background-position: -36px 0px;}
+#hospitalMain ol .hospitalEm2{ background-position: -36px -72px;}
+#hospitalMain ol .hospitalEm3{ background-position: -36px -145px;}
+#hospitalMain ol .hospitalEm4{ background-position: -36px -217px;}
+#hospitalMain ol .hospitalEm5{ background-position: -36px -290px;}
+#hospitalMain ol .hospitalEm6{ background-position: -36px -363px;}
+#hospitalMain ol .active .hospitalEm1{ background-position: -36px -36px;}
+#hospitalMain ol .active .hospitalEm2{ background-position: -36px -108px;}
+#hospitalMain ol .active .hospitalEm3{ background-position: -36px -181px;}
+#hospitalMain ol .active .hospitalEm4{ background-position: -36px -254px;}
+#hospitalMain ol .active .hospitalEm5{ background-position: -36px -326px;}
+#hospitalMain ol .active .hospitalEm6{ background-position: -36px -399px;}
+/****************************************************************************************************************************************/
+/*footerSlide*/
+#footerSlide,#footerTab{ margin-top:70px;}
+#footerSlide ol,#footerTab ol{ border-bottom:2px solid #e1e1e1;}
+#footerSlide ol li,#footerTab ol li{ float:left; margin:0 40px -2px 0; font-size:22px; color:#4b4b4b; border-bottom:2px solid #e1e1e1; padding-bottom:14px; margin-bottom:-2px; position:relative;}
+#footerSlide ol em,#footerTab ol em{ opacity:0; filter:alpha(opacity:0); width:0px; height:0px; border:6px solid transparent; border-bottom:6px solid #0064b4;  position:absolute; bottom:0; left:50%; margin-left:-6px;}
+#footerSlide ol .active,#footerTab ol .active{ border-bottom:2px solid #0064b4;}
+#footerSlide ol .active em,#footerTab ol .active em{ opacity:1; filter:alpha(opacity:100);}
+#footerSlide div{ display:none; margin-top:32px; height:190px; overflow:hidden; position:relative;}
+#footerSlide div ul{ height:190px; position:absolute; left:0; top:0; width:3000px;}
+#footerSlide div.active{ display:block;}
+#footerSlide div li{ float:left; padding:7px; background:#e6e6e6; width:230px; height:176px; margin-right:8px;}
+#footerSlide div a{ display:block;}
+/****************************************************************************************************************************************/
+/*footerTab*/
+#footerTab div{ overflow:hidden; height:94px; margin-top:34px;}
+#footerTab ul{ display:none; height:94px;}
+#footerTab ul.active{ display:block;}
+#footerTab ul li{ float:left; margin-right:57px;}
+#footerTab ul em{ width:94px; height:94px; background:url(../images/footerEm.png) left top no-repeat;}
+#footerTab ul .footerEm1_1{ background-position: left top;}
+#footerTab ul .footerEm1_2{ background-position: left -216px;}
+#footerTab ul .footerEm1_3{ background-position: left -432px;}
+#footerTab ul .footerEm1_4{ background-position: left -648px;}
+#footerTab ul .footerEm1_5{ background-position: left -864px;}
+#footerTab ul .footerEm1_6{ background-position: left -1080px;}
+#footerTab ul .footerEm1_7{ background-position: left -1296px;}
+#footerTab ul .active .footerEm1_1{ background-position: left -108px;}
+#footerTab ul .active .footerEm1_2{ background-position: left -324px;}
+#footerTab ul .active .footerEm1_3{ background-position: left -540px;}
+#footerTab ul .active .footerEm1_4{ background-position: left -756px;}
+#footerTab ul .active .footerEm1_5{ background-position: left -972px;}
+#footerTab ul .active .footerEm1_6{ background-position: left -1188px;}
+#footerTab ul .active .footerEm1_7{ background-position: left -1404px;}
+#footerTab ul .footerEm2_1{ background-position: left top;}
+#footerTab ul .footerEm2_2{ background-position: left -216px;}
+#footerTab ul .footerEm2_3{ background-position: left -432px;}
+#footerTab ul .footerEm2_4{ background-position: left -648px;}
+#footerTab ul .footerEm2_5{ background-position: left -864px;}
+#footerTab ul .footerEm2_6{ background-position: left -1080px;}
+#footerTab ul .footerEm2_7{ background-position: left -1296px;}
+#footerTab ul .active .footerEm2_1{ background-position: left -108px;}
+#footerTab ul .active .footerEm2_2{ background-position: left -324px;}
+#footerTab ul .active .footerEm2_3{ background-position: left -540px;}
+#footerTab ul .active .footerEm2_4{ background-position: left -756px;}
+#footerTab ul .active .footerEm2_5{ background-position: left -972px;}
+#footerTab ul .active .footerEm2_6{ background-position: left -1188px;}
+#footerTab ul .active .footerEm2_7{ background-position: left -1404px;}
+/****************************************************************************************************************************************/
+/*footerNav*/
+#footerNav{ background:#646464; margin-top:70px;}
+#footerNav ul{ background:#4b4b4b; width:1000px; margin:0 auto;}
+#footerNav li{ float:left;}
+#footerNav a{ display:block; width:200px; text-align:center; height:54px; line-height:54px; font-size:20px; color:#dcdcdc;}
+#footerNav .active{ background:#0064b4; box-shadow:1px 1px 20px #fff;}
+/****************************************************************************************************************************************/
+/*footer*/
+#footer{ background:#646464; overflow:hidden;}
+/*footerMain*/
+#footerMain{ width:1000px; margin:50px auto;}
+#footerMain:hover .img{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#footerMain #footerLogo{ width:350px; text-align:center; color:#dcdcdc;}
+#footerMain #footerLogo .img{ margin-bottom:18px; transition:0.4s;}
+#footerMain #footerLogo h2{ font-size:34px;}
+#footerMain #footerLogo p{ font-size:12px;}
+#footerMain #footerCont{ width:468px; border-left:1px solid #505050; border-right:1px solid #505050; padding:10px 20px;}
+#footerMain #footerCont p{ font-size:16px; color:#dcdcdc; line-height:33px;}
+#footerMain #footerCont em{ width:80px; line-height:33px;}
+#footerMain #footerCode{ width:140px; text-align:center; color:#dcdcdc;}
+#footerMain #footerCode .img{ margin-bottom:18px; transition:0.4s;}
+#footerMain #footerCode p{ font-size:16px;}
+/*footerCopy*/
+#footerCopy{ background:#4b4b4b; padding:10px;}
+#footerCopy p{ font-size:16px; color:#dcdcdc; text-align:center; line-height:24px;}

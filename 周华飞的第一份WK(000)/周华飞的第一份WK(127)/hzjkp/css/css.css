@@ -1,0 +1,75 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banners*/
+.banners_til{ border-bottom:1px solid #999; width:300px; padding-bottom:5px; margin:20px auto; font-size:1.4rem;}
+.banners_til em{ width:12px; height:12px; border-radius:20px; border:2px solid #1364b6; vertical-align:middle; margin-right:5px;}
+.banners_til a{ line-height:20px; font-size:16px;}
+.banners{ height:172px; margin:15px auto 0; width:320px; text-align:center;}
+.banners img{ width:300px;}
+.banners a{ width:100%; height:100%; display:block;}
+.bannerss{ width:280px; margin:10px auto 0; font-size:1.4rem; line-height:24px; text-indent:30px; background:url(../images/banner_bg.jpg) center center no-repeat; height:77px; padding:5px 20px;}
+
+/*type*/
+.type dl{ width:145px; margin-right:10px;}
+.type dl:nth-child(even){ margin-right:0;}
+.type dt{ border:1px solid #dbdbdb; position:relative;}
+.type p{ position:absolute; left:0; bottom:0; width:100%; font-size:1.6rem; line-height:30px; text-align:center; color:#fff; background:rgba(74,137,181,0.5);}
+.type dd{ font-size:1.2rem; color:#666666; margin:6px 0 17px; line-height:16px;}
+
+/*only*/
+.only dd{ font-size:1.4rem; text-align:center;}
+
+/*wrong*/
+.wrong dl{ margin-bottom:15px;}
+.wrong dt{ height:130px; width:129px;}
+.wrong dd{ height:128px; width:160px; padding:0 3px 0 7px; background:#f6f6f6; border:1px solid #d7d7d7; border-left:none;}
+.wrong dd h2{ font-size:1.4rem; line-height:30px; color:#fa7300;}
+.wrong dd h2.noLh{ line-height:normal;}
+.wrong dd p{ line-height:20px; font-size:1.3rem; color:#454545;}
+
+/*seep*/
+.seep ol{ margin:20px 0;}
+.seep ol li{ font-size:14px; color:#006db8; text-align:center; width:90px; height:30px; line-height:30px; background:#f2f2f2; float:left; margin:0 5px;}
+.seep ul li{ font-size:14px; color:#ff6600; text-align:center; float:left; width:77px; margin:0 11px;}
+.seep ul li img{ display:block;}
+
+/*contrast*/
+.contrast dl.mr{ margin-bottom:10px;}
+.contrast img{ display:block; vertical-align:middle;}
+.contrast p{ height:30px; line-height:30px; color:#fff; background:#1264b6; font-size:15px; text-align:center;}
+.contrast .common_btn{ margin-top:17px;}
+
+/*therapy*/
+.therapy{ text-align:center;}
+
+/*common*/
+.tils{ font-size:18px; color:#005cb9; width:302px; padding-left:18px; margin:36px auto 30px; border-top:1px solid #e8e8e8; line-height:24px; position:relative;}
+.tils:before{ content:""; width:3px; height:34px; background:#fb4949; position:absolute; left:11px; top:-12px;}
+.common_btn{ text-align:center;}
+.common_btn a{ border-radius:5px 0 0 5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; padding:0 10px; margin-right:10px;}
+.common_btn .last_a{ margin-right:0; border-radius:0 5px 5px 0; background:#f96300;}
+.common_btn em{ vertical-align:middle; margin-right:10px;}
+.btn{ display:block; width:220px; margin:30px auto 0; text-align:center; height:32px; line-height:32px; background:#ff7800; color:#fff; font-size:16px; border-radius:6px;}
+.ti_p{ font-size:12px; color:#444444; text-indent:30px; line-height:24px;}
+
+/*ad*/
+.ad{ margin:20px auto;}
+.ad img{ width:300px;}
+
+/*about*/
+.about { padding-bottom:10px; border:#1364b6 1px solid; width:300px; margin:0 auto;}
+.about h2 { padding-left:15px; height:37px; margin-bottom:10px; background:#1364b6; font-size:16px; font-weight:100; font-family:'Microsoft Yahei'; line-height:37px; color:#fff; }
+.about dl{ width:300px; margin:0 auto; overflow:hidden;}
+.about dd{ width:100%; height:33px; margin-top:6px; font-size:14px; font-weight:700; line-height:33px;}
+.about dd a{ display:inline; text-align:center; color:#FFF;}
+.about dd a.a01{ float:left; background:#91c1e9; width:170px; margin-right:4px; }
+.about dd a.a02{ float:right; background:#db7077; width:126px; }
+.about dd a.a03{ float:left; background:#d0454e; width:134px; margin-right:4px;  }
+.about dd a.a04{ float:right; background:#e1822a; width:162px; }
+.about dd a.a05{ float:left; background:#13b9ad; width:170px; margin-right:4px;  }
+.about dd a.a06{ float:right; background:#f3b174; width:126px; }

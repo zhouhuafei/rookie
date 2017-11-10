@@ -1,0 +1,40 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ text-align:center;}
+#banner a{ display:inline-block;}
+
+/*about*/
+#about li{ padding-top:10px; width:50%; height:268px; border:1px solid #d4d4d4; box-sizing:border-box; float:left; text-align:center; position:relative;}
+#about li:nth-of-type(2n){ border-left:none;}
+#about li:nth-of-type(n+3){ border-top:none;}
+#about h2{ font-size:14px; font-weight:bold; color:#0064b4; line-height:36px;}
+#about p{ font-size:12px; text-align:left; padding:0 5px; line-height:20px;}
+#about a{ display:inline-block; width:80px; height:24px; text-align:center; line-height:24px; color:#fff; font-size:12px; background:#0064b4; position:absolute; left:50%; margin-left:-40px; bottom:5px;}
+
+/*case*/
+#case dl{ margin-bottom:20px;}
+#case dd{ width:176px; height:128px; padding-top:14px; box-sizing:border-box; position:relative;}
+#case p{ padding-left:18px; height:13px; line-height:13px; margin-bottom:6px; background:url(../images/case.png) left 0 no-repeat;}
+#case p:nth-of-type(2){ background-position: left -19px;}
+#case p:nth-of-type(3){ background-position: left -38px;}
+#case p:nth-of-type(4){ background-position: left -58px;}
+#case div{ position:absolute; left:50%; margin-left:-80px; bottom:0; width:160px;}
+#case a{ width:68px; height:22px; text-align:center; line-height:22px; border:1px solid #e6e6e6; background:#fff; color:#0064b4; font-size:12px;}
+
+/*common*/
+.btn{ text-align:center; width:84%; margin:10px auto 0;}
+.btn a{ border-radius:5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; width:46%;}
+.btn a:last-child{ background:#f96300;}
+.btn em{ vertical-align:middle; margin-right:10px;}
+.til{ margin:20px 0 10px; text-align:center; line-height:40px; color:#0064b4; border-bottom:1px solid #0064b4; font-size:16px; position:relative;}
+.til:nth-of-type(1){ margin-top:10px;}
+.til:after{ content:""; display:block; width:10px; height:10px; position:absolute; left:50%; margin-left:-5px; bottom:-5px; background:url(../images/title.jpg);}
+
+
+

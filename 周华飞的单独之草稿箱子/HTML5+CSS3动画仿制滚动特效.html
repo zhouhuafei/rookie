@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+*{ margin:0; padding:0; list-style-type:none;}
+body{ background:#000;}
+div{width:200px; height:200px;overflow:hidden; margin:100px auto;}
+ul{ position:relative; left:0; top:0; height:200px; width:600px;animation:zhouhuafei infinite 12s;}
+ul li{float:left;box-sizing:border-box;width:200px;height:200px;font-size:18px;text-align:center;line-height:200px;border:1px dashed red;border-radius:10px;background:#fff; background:#000;}
+
+@keyframes zhouhuafei
+{
+	0%   {color:red;    left:0; top:0;}
+	25%  {color:purple; left:-200px; top:0px;}
+	50%  {color:purple; left:-200px; top:0px;}
+	75% {color:yellow;  left:-400px; top:0px;}
+	100% {color:yellow;  left:-400px; top:0px;}
+}
+</style>
+
+</head>
+<body>
+<div>
+	<ul>
+	    <li>rookie making1</li>
+        <li>rookie making2</li>
+        <li>rookie making3</li>
+	</ul>
+</div>    
+</body>
+</html>

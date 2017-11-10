@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>index1</title>
+<link rel="stylesheet" href="../base.css"/>
+<link rel="stylesheet" href="../jquery.mobile-1.4.5.css"/>
+<script src="../jquery-2.1.3.min.js"></script>
+<script src="../jquery.mobile-1.4.5.js"></script>
+</head>
+<body style="height:2000px;">
+<div data-role="page" id="pageone">
+	<div data-role="header" data-position="fixed">
+        	<a href="#" data-role="button" data-icon="home">首页</a>
+        	<h1>欢迎访问我的主页</h1>
+        	<a href="#" data-role="button" data-icon="search">搜索</a>
+        </div>
+	<div data-role="header">
+        	<h1>欢迎访问我的主页</h1>
+        	<a href="#" data-role="button" data-icon="search" class="ui-btn-right">搜索</a>
+        </div>
+	<div data-role="collapsible" data-collapsed="false">
+        	<h1>可折叠内容</h1>
+        	<ul>
+                	<li>1</li>
+                	<li>2</li>
+                	<li>3</li>
+                	<li>4</li>
+                </ul>
+        </div>
+        <p>可折叠集合（Collapsible sets）指的是被组合在一起的可折叠块（常被称为手风琴）。当新块被打开时，所有其他块会关闭。</p>
+	<div data-role="collapsible-set">
+        	<div data-role="collapsible">
+                        <h1>可折叠内容</h1>
+                        <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                        </ul>
+        	</div>
+        	<div data-role="collapsible">
+                        <h1>可折叠内容</h1>
+                        <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                        </ul>
+        	</div>
+        	<div data-role="collapsible">
+                        <h1>可折叠内容</h1>
+                        <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                        </ul>
+        	</div>
+        	<div data-role="collapsible">
+                        <h1>可折叠内容</h1>
+                        <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                        </ul>
+        	</div>
+        </div>
+        <div data-role="header">
+                <div data-role="navbar">
+                        <ul>
+                                <li><a href="#anylink" class="ui-btn-active ui-state-persist">首页</a></li>
+                                <li><a href="#anylink">页面二</a></li>
+                                <li><a href="#anylink">搜索</a></li>
+                        </ul>
+                </div>
+        </div>
+	<div data-role="content">
+        	<p>我是一名移动开发者！</p>
+                <div data-role="controlgroup" data-type="horizontal">
+                	<a href="#pagetwo" data-transition="flow" data-direction="reverse" data-role="button" data-inline="true" data-icon="arrow-l">去页面二</a>
+        		<a href="#pagetwo" data-transition="flow" data-direction="reverse" data-role="button" data-inline="true" data-icon="arrow-r">去页面二</a>
+        		<a data-rel="back" data-transition="flip" data-direction="reverse" data-role="button" data-inline="true" data-icon="delete">去页面二</a>
+                </div>
+                <a href="#pagetwo" data-transition="flow" data-direction="reverse" data-role="button" data-inline="true" data-corners="false" data-icon="info">去页面二</a>
+        	<a href="#pagetwo" data-transition="flow" data-direction="reverse" data-role="button" data-inline="true" data-mini="true" data-icon="search">去页面二</a>
+        	<a data-rel="back" data-transition="flip" data-direction="reverse" data-role="button" data-inline="true" data-shadow="false" data-icon="home" data-iconpos="right">去页面二</a>
+                <a href="#pagetwo" data-transition="flow" data-direction="reverse" data-role="button" data-inline="true" data-corners="false" data-icon="back" data-iconpos="notext">去页面二</a>
+        	<a href="#pagetwo" data-transition="flow" data-direction="reverse" data-role="button" data-inline="true" data-mini="true" data-icon="grid">去页面二</a>
+        </div>
+	<div data-role="footer" class="ui-btn" data-position="fixed">
+        	<a href="#" data-role="button" data-icon="home">首页</a>
+        	<a href="#" data-role="button" data-icon="search">搜索</a>
+        </div>
+</div>
+<div data-role="page" id="pagetwo">
+	<div data-role="header">
+        	<h1>欢迎访问我的主页2</h1>
+        </div>
+	<div data-role="content">
+        	<p>我是一名移动开发者2！</p>
+        	<a href="#pageone" data-transition="flow" data-role="button" class="ui-btn-active ui-state-persist">去页面一</a>
+        </div>
+	<div data-role="footer">
+        	<h1>页脚文本2</h1>
+        </div>
+</div>
+</body>
+</html>

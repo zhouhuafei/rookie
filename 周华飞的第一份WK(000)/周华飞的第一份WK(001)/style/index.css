@@ -1,0 +1,174 @@
+﻿/*清零*/
+body, h1, h2, h3, h4, h5, h6, hr, div,p,blockquote,dl, dt, dd, ul, ol, li,pre, form, fieldset, legend, button, input, textarea,th, td,img
+{
+	border:none;
+	margin:0;
+	padding:0;
+	font-family:Microsoft Yahei,Georgia,Arial, sans-serif;
+}
+
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr_100{ height:100px;}
+.hr_80{ height:80px;}
+.hr_50{ height:50px;}
+.hr_90{ height:90px;}
+.hr_120{ height:120px;}
+.clearFix{ clear:both;*zoom:1;}
+.commonWidth_1000{ width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto; background:#f5f5f5;}
+
+/*清零*/
+body{margin:0 auto;height:auto;color:#000;font-size:18px;background:#fff; font-family:"微软雅黑";}
+ul{list-style-type:none;}
+a{color:#333;text-decoration:none;transition: all 0.2s linear 0s;}
+div.clear{clear:both;}
+
+/*banner*/
+#banner{width:100%;height:565px;overflow:hidden;position:relative;}
+#banner li{width:100%; height:565px;background:url(../images/icon_1.gif) no-repeat center center;}
+#banner li div{width:1000px; height:565px;margin:0 auto;position:relative;}
+#banner li div a{display:block;width:200px;height:45px;line-height:45px;text-align:center;background:#008077;position:absolute;bottom:110px;left:290px;border-radius:5px;font-size:24px;color:#fff;}
+#banner li div a:hover{background:#fa7404;}
+
+
+/*导航*/
+.nav{width:100%;height:50px;background:#008077;position:absolute;top:760px;z-index:101;box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);}
+.nav_show{ position:fixed; left:0; top:0;}
+#nav div{width:1000px;height:50px;margin:0px auto;}
+#nav span{display:inline-block;width:100px;height:50px;line-height:50px;float:left;text-align:center;color:#fff;font-size:17px;}
+#nav span em{ padding:0 5px; font-style:normal;}
+#nav ul{float:right;height:50px; overflow:hidden;}
+#nav ul li{ width:120px; height:50px;line-height:50px;text-align:center;color:#fff;font-size:17px;float:left;cursor:pointer;transition: all 0.3s linear 0s;}
+#nav ul li:hover{background:#00554f;}
+#nav ul li.select{background:#00554f;}
+
+/*主盒子*/
+#main{width:100%;padding:51px 0px;}
+
+/*自体细胞净化治疗体系简介*/
+.jishu{width:100%;overflow:hidden;}
+#main .til{width:1000px;height:40px;line-height:40px;margin:0 auto;padding:50px 0;overflow:hidden;color:#fa7404;font-size:30px;}
+#main .til span{ width:36px; height:33px; display:inline-block; overflow:hidden;background:url(../images/icon_imgs.png) 0 -137px no-repeat; vertical-align:middle; margin-right:25px;}
+#main .til .span1{ background:url(../images/icon_imgs.png) 0 -170px no-repeat;}
+.content{width:1000px;margin:0 auto; position:relative; overflow:hidden;}
+.content_img{ width:355px; height:250px; overflow:hidden;}
+.content_word{ width:605px; padding-left:40px;  overflow:hidden;}
+.content_word p{ line-height:35px;text-indent:40px;}
+.content_word h2{font-size:24px; padding-bottom:20px; color:#419f99;}
+.content_a{ position:absolute; right:0; bottom:0;}
+.content_a a{ width:35px; height:35px; display:inline-block;}
+.content_a .content_a1{ background:url(../images/icon_imgs.png) 0 -32px no-repeat; margin-bottom:-1px;}
+.content_a span{ padding:0 0px;}
+.content_a .content_a2{ background:url(../images/icon_imgs.png) 0 -69px no-repeat;}
+
+/*三个纵列*/
+.sanlie_box{ overflow:hidden; background:#ededed; margin-top:50px; margin-bottom:50px;}
+.sanlie{ width:324px; height:199px; background:url(../images/sanlie_03.gif) left top no-repeat; position:relative;}
+.sanlie2{ margin:0 14px; display:inline;}
+.sanlie .sanjiao{ width:21px; height:33px; position:absolute; right:-21px; top:44%;background:url(../images/icon_imgs.png) -73px 0 no-repeat; z-index:2;}
+.sanlie .p_word{ padding:0 20px 0px 20px; text-indent:40px; color:#68aca7; line-height:30px;}
+.sanlie .p_a{ text-align:center;}
+.sanlie .p_a .p_a_1{ background:url(../images/icon_imgs.png) -244px -237px no-repeat;}
+.sanlie .p_a .p_a_2{ background:url(../images/icon_imgs.png) -190px -237px no-repeat;}
+.sanlie .p_a .p_a_3{ background:url(../images/icon_imgs.png) -134px -237px no-repeat;}
+.sanlie a{ width:54px; height:63px; display:inline-block; background:#F00; margin:20px 0;}
+
+
+/*适用疾病*/
+.nav_box{ overflow:hidden; border-bottom:1px solid #d4d4d4; height:40px; overflow:hidden;margin-bottom:50px;}
+.nav_box ul li{ float:left; padding-left:15px; height:40px; overflow:hidden;}
+.nav_box ul li a{ width:150px; height:40px; line-height:40px; color:#4b4b4b; background:#d2d2d2; font-size:20px; display:inline-block; text-align:center;}
+.nav_box ul li .active{ background:#008077; color:#FFF;}
+.sail_box{ width:1000px; height:250px; margin:0 auto; overflow:hidden; padding-bottom:50px;}
+.sail_box .content_phone{bottom:50px;}
+.sail_box .sail{ display:block; height:250px; display:none;}
+.sail_box .sail_show{ display:block;}
+.sail_box .content_word{padding-left:80px; width:565px;}
+.content_phone{ position:absolute; right:100px; bottom:0px;}
+.content_phone span{display:inline-block; padding:0 20px; color:#4b4b4b; font-size:19px; height:30px; line-height:30px; overflow:hidden; margin-left:20px;}
+.content_phone span .em_gray,.content_phone span .em_white{ width:25px; margin-right:5px; height:25px; overflow:hidden; display:inline-block; margin-bottom:-5px;}
+.content_phone span .em_gray{background:url(../images/icon_imgs.png) 0 -275px no-repeat;}
+.content_phone span .em_white{background:url(../images/icon_imgs.png) -24px -277px no-repeat;}
+.content_phone a{ display:inline-block; padding:0 35px; font-size:16px; color:#FFF; background:#008077; height:30px; line-height:30px; overflow:hidden;}
+.content_phone a:hover{ background:#fa7404;}
+
+
+/*自体细胞净化治疗优势大*/
+.run_box{ overflow:hidden;}
+.run_box .run_up_word{ width:950px; background:#d2d2d2; border-radius:10px; margin-left:50px; position:relative;}
+.run_box .run_up_word p{ color:#666666; font-size:18px; line-height:30px; padding:20px; display:none; height:80px;}
+.run_box .run_up_word .p_show{ display:block;}
+.run_box .run_up_word span{width:27px; height:26px; position:absolute; left:75px; bottom:-26px; display:inline-block; background:url(../images/icon_imgs.png) -107px 0px no-repeat;}
+.run_box ul{overflow:hidden; position:relative;padding-left:50px; margin-top:50px;}
+.run_box ul .dash{ height:1px; width:100%;position:absolute; left:0; top:50%; z-index:-1; border-bottom:1px dashed #a8a8a8;}
+.run_box ul li{ float:left; position:relative;}
+.run_box ul li a{ width:150px; height:150px; display:inline-block; text-align:center; line-height:150px; overflow:hidden; color:#FFF; font-weight:bold; font-size:22px;}
+.run_box ul li span{ width:34px; height:33px; overflow:hidden; display:inline-block; background:url(../images/icon_imgs.png) 0 -104px no-repeat;margin:0 30px 53px 30px;}
+.run_box ul li .a1{ background:url(../images/icon_28_03.gif) left top no-repeat;}
+.run_box ul li .a2{ background:url(../images/icon_28_05.gif) left top no-repeat;}
+.run_box ul li .a3{ background:url(../images/icon_28_07.gif) left top no-repeat;}
+.run_box ul li .a4{ background:url(../images/icon_28_09.gif) left top no-repeat;}
+.run_box ul li .a1_active{ background:url(../images/icon_27_03.gif) left top no-repeat;}
+.run_box ul li .a2:hover{ background:url(../images/icon_27_05.gif) left top no-repeat;}
+.run_box ul li .a3:hover{ background:url(../images/icon_27_07.gif) left top no-repeat;}
+.run_box ul li .a4:hover{ background:url(../images/icon_27_09.gif) left top no-repeat;}
+.run_box .content_phone{ right:30%;}
+
+/*我院性病诊疗设施*/
+.bg_2_box{ overflow:hidden; height:608px; overflow:hidden; position:relative;}
+.bg_2_box img{ width:466px; height:608px; float:left; display:block; overflow:hidden;}
+.word_right{ width:392px; height:608px; float:left; overflow:hidden;}
+.word_right h2{ font-size:32px; height:40px; line-height:40px; color:#fa7404;}
+.word_right h1{ font-size:100px; color:#008077; height:142px; line-height:142px;}
+.word_right p{ height:33px; line-height:33px; color:#848484; background:url(../images/icon_imgs.png) -279px 8px no-repeat; padding-left:41px; font-size:18px;}
+.word_right span{ display:block; font-size:16px; color:#6d6d6d; line-height:33px; text-indent:35px;}
+.word_right div{ color:#565656; font-size:16px;}
+.word_right div span{display:inline-block; color:#419f99;}
+.bg_2_box a{display:inline-block; line-height:38px; height:38px; width:172px; color:#FFF; font-size:16px; background:#008077; text-align:center; position:absolute; left:84px; bottom:49px; overflow:hidden;}
+.bg_2_box a:hover{ background:#F93;}
+
+
+/*艾拉光动力治疗仪*/
+.content_2 .content_img{ width:428px; height:309px; overflow:hidden;}
+.content_2 .content_word{width:532px;}
+.content_3,.content_4{padding-top:60px; border-top:1px dashed #b8b8b8; margin-top:60px;}
+.content_3 .content_phone{ left:0; bottom:0px;}
+.content_3 .content_img{ width:430px; height:309px; overflow:hidden;}
+.content_3 .content_word{width:530px; padding-left:0px; padding-right:40px;}
+
+/*常见性病症状*/
+.sm_word{ font-weight:normal; font-size:18px; padding-left:20px;}
+.div_box{ overflow:hidden;}
+.div_box .div_span span{ width:185px; height:43px; text-align:center; line-height:43px; color:#FFF; font-size:24px; background:#fa7404; display:inline-block;}
+.div_box .content_phone{ right:30%; bottom:40px;}
+.div_box .div1{height:329px; width:625px; background:url(../images/icon_12_03.gif) left top no-repeat; position:relative;}
+.div_box .div2{height:329px; width:180px; background:url(../images/icon_12_05.gif) left top no-repeat; margin:0 7px;}
+.div_box .div3{height:329px; width:180px; background:url(../images/icon_12_08.gif) left top no-repeat;}
+.div_box .div4{height:296px; width:272px; background:url(../images/icon_16_03.gif) left top no-repeat;position:relative;}
+.div_box .div5{height:296px; width:316px; background:url(../images/icon_16_08.gif) left top no-repeat; margin:0 8px;}
+.div_box .div6{height:296px; width:177px; background:url(../images/icon_16_10.gif) left top no-repeat; margin-right:8px;}
+.div_box .div7{height:296px; width:210px; background:url(../images/icon_16_05.gif) left top no-repeat; border-left:1px solid #c3beb3;}
+.div_box .div8{height:294px; width:277px; background:url(../images/icon_16_20.gif) left top no-repeat;position:relative;}
+.div_box .div9{height:294px; width:353px; background:url(../images/icon_16_17.gif) left top no-repeat; margin:0 11px;}
+.div_box .div10{height:291px; width:347px; background:url(../images/icon_16_22.gif) left top no-repeat;border-left:1px solid #c3beb3;}
+.div_box .div1:hover{ background:url(../images/icon_14_03.gif) left top no-repeat;}
+.div_box .div2:hover{ background:url(../images/icon_14_05.gif) left top no-repeat;}
+.div_box .div3:hover{ background:url(../images/icon_14_07.gif) left top no-repeat;}
+.div_box .div4:hover{ background:url(../images/icon_18_03.gif) left top no-repeat;}
+.div_box .div5:hover{ background:url(../images/icon_18_08.gif) left top no-repeat;}
+.div_box .div6:hover{ background:url(../images/icon_18_10.gif) left top no-repeat;}
+.div_box .div7:hover{ background:url(../images/icon_18_05.gif) left top no-repeat;}
+.div_box .div8:hover{ background:url(../images/icon_18_20.gif) left top no-repeat;}
+.div_box .div9:hover{ background:url(../images/icon_18_17.gif) left top no-repeat;}
+.div_box .div10:hover{ background:url(../images/icon_18_22.gif) left top no-repeat;}
+
+/*性病传播途径*/
+.div_box .div11{ width:230px; padding:5px; background:#b4b4b4; margin-right:13px;}
+.div_box .cls_mar_10{ margin-right:0px;}
+.div_box .div11 img{ width:230px; height:257px; display:block;}
+.div_box .div11 p{ font-size:24px; height:50px; line-height:50px; color:#FFF; text-align:center;}
+.div_box .div11:hover{background:#fa7404;}
+.div_box .div11_show{background:#fa7404;}

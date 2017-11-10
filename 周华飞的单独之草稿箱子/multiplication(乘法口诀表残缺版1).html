@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>multiplication(乘法口诀表残缺版1)</title>
+<style>
+*{ margin:0; padding:0; font-style:normal; list-style:none; border:none; outline:none;}
+em{ display:inline-block; text-shadow:1px 1px 1px #FF0;}
+</style>
+</head>
+
+<body>
+<script>
+var result='';
+for(var i=1;i<=9;i++)
+{
+	for(var j=1;j<=9;j++)
+	{
+		if(i<=j)
+		{
+			result+='<em>'+i+'*'+j+'='+i*j+'</em>';
+		}
+		if(j==9)
+		{
+			result+='<br />';
+		}
+	}	
+}
+var oSpan=document.createElement('span');
+document.body.appendChild(oSpan);
+oSpan.innerHTML=result;
+var aEm=oSpan.getElementsByTagName('em');
+for(var i=0;i<aEm.length;i++)
+{
+	aEm[i].style.cssText='width:70px;height:20px;color:#F00;';
+}
+</script>
+</body>
+</html>

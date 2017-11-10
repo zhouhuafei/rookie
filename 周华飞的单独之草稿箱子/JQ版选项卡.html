@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#div1{overflow:hidden; height:220px;}
+#div1 input{width:30px; height:20px; line-height:20px; color:#FFF; text-align:center; background:#000; border:none; overflow:hidden;}
+#div1 .active{ background:#F00;}
+#div1 div{ height:200px; width:240px; background:#CCC; color:#F00; text-align:center; line-height:200px;}
+#div1 .show{ display:block;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$(function(){
+                	var aBtn = $('#div1').find('input')
+                	var aDiv = $('#div1').find('div')
+               		 aBtn.mouseover(function()
+			{
+                    	aBtn.css('background-color','#000');
+                    	//aDiv.css('display','none');
+                    	aDiv.hide('slow');
+			//aDiv.fadeOut('slow');
+			$(this).css('background-color','red');
+                    	//aDiv.eq($(this).index()).css('display','block');
+			aDiv.eq($(this).index()).show('slow');
+			//aDiv.eq($(this).index()).fadeIn('slow');
+                	
+			})	
+            	})
+})
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<input class="active" type="button" value="一" /><input type="button" value="二"/><input type="button" value="三"/><input type="button" value="四"/><input type="button" value="五"/><input type="button" value="六"/><input type="button" value="七"/><input type="button" value="八"/>
+	<div class="show">111</div>
+    <div>222</div>
+    <div>333</div>
+    <div>444</div>
+    <div>555</div>
+    <div>666</div>
+    <div>777</div>
+    <div>888</div>
+</div>
+</body>
+</html>

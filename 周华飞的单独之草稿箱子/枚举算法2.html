@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>枚举算法2</title>
+<style>
+*{ margin:0; padding:0;}
+span,em{ display:inline-block; width:30px; height:20px; font-size:14px; text-align:center; line-height:20px; margin-right:10px; font-style:normal;}
+p{ width:300px; margin:0 auto;}
+</style>
+<script>
+window.onload=function()
+{	
+
+
+	//枚举算法：先用for循环来找到诸多的候选答案,然后再通过if语句筛选出正确的解
+	
+	
+	var aP=document.getElementsByTagName('p');
+	var aSpan0=aP[0].getElementsByTagName('span');	
+	var aSpan1=aP[1].getElementsByTagName('span');	
+	var aSpan2=aP[2].getElementsByTagName('span');
+	for(var i=1;i<10;i++)
+	{
+		for(var j=0;j<10;j++)
+		{
+			for(var k=0;k<10;k++)
+			{
+				for(var l=0;l<10;l++)
+				{
+					for(var n=0;n<10;n++)
+					{
+						var five=i*10000+j*1000+k*100+l*10+n;
+						var one=i;
+						var result=n*111111
+						if(five*one==result)
+						{
+							//alert(five+'*'+one+'='+result);
+							aSpan0[0].innerHTML=i;
+							aSpan0[1].innerHTML=j;
+							aSpan0[2].innerHTML=k;
+							aSpan0[3].innerHTML=l;
+							aSpan0[4].innerHTML=n;
+							aSpan1[5].innerHTML=n;
+							/*
+							aSpan2[0].innerHTML=n;
+							aSpan2[1].innerHTML=n;
+							aSpan2[2].innerHTML=n;
+							aSpan2[3].innerHTML=n;
+							aSpan2[4].innerHTML=n;
+							aSpan2[5].innerHTML=n;
+							*/
+							for(var m=0;m<aSpan2.length;m++)
+							{
+								aSpan2[m].innerHTML=n;
+							}
+						}
+					}	
+				}
+			}	
+		}	
+	}
+}
+</script>
+</head>
+<body>
+<p style=" margin-top:200px;"><span>枚</span><span>举</span><span>算</span><span>法</span><span>题</span></p>
+<p><span style="margin-left:-40px;">*</span><span></span><span></span><span></span><span></span><span>题</span></p>
+<hr style=" border:1px solid #000; width:500px; margin:10px auto;" />
+<p><span style="margin-left:-40px;">题</span><span>题</span><span>题</span><span>题</span><span>题</span><span>题</span></p>
+</body>
+</html>

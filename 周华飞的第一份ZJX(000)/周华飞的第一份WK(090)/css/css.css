@@ -1,0 +1,174 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px!important; font-family:"微软雅黑"!important;}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.til{ height:1px; background:#b1b1b1; position:relative; margin:70px 0 90px;} 
+.tils{ width:38px; height:22px; background:url(../images/icon.png) left top no-repeat; position:absolute; left:0; bottom:-22px; transition:all 1s;}
+.tilTxt{ font-size:30px; color:#b99155; text-align:center; margin-bottom:40px;}
+.tilTxts{ font-size:18px; color:#999999; text-align:center; margin-bottom:30px;}
+div.btn{ width:450px; font-size:24px; margin:60px auto 0;}
+div.btn span{ height:40px; color:#4b4b4b;}
+div.btn span em{ width:28px; height:28px; background:url(../images/icon.png) left -36px no-repeat; float:left; margin:6px 8px 0 0;}
+div.btn a{ height:40px; color:#fff; background:#b99155; padding:0 18px 0 4px; border-radius:20px;}
+div.btn a em{ width:30px; height:30px; background:url(../images/icon.png) left -72px no-repeat; float:left; margin:5px 10px 0 0;}
+div.btn:hover em{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+a.btn{ height:40px; color:#fff; font-size:24px; background:#b99155; padding:0 18px 0 4px; border-radius:20px;}
+a.btn em{ width:30px; height:30px; background:url(../images/icon.png) left -72px no-repeat; float:left; margin:5px 10px 0 0;}
+a.btn:hover em{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:270px; bottom:130px;}
+
+/*nav*/
+#nav{ width:100%; height:50px; background:#96641e; position:absolute; left:0; top:676px; z-index:3;}
+#nav span,#nav li{ text-align:center; line-height:50px; color:#fff;}
+#nav span{ float:left; font-size:22px; width:219px; border-right:1px solid #fff;}
+#nav li{ float:left; font-size:18px; width:130px;}
+#nav li.active{ background:#b99155;}
+
+/*face*/
+#face{ padding-top:70px;}
+#face ol li{ width:232px; height:152px; border:3px solid #ebebeb; float:left; margin-right:16px; position:relative;}
+#face ol em{ width:0px; height:0px; border:8px solid transparent; border-top:8px solid #b99155; opacity:0; filter:alpha(opacity:0); position:absolute; left:50%; margin-left:-8px; bottom:-19px;}
+#face ol li.active{ border:3px solid #b99155;}
+#face ol li.active em{ opacity:1; filter:alpha(opacity:100);}
+#face ol li.noMr{ margin-right:0;}
+#face ul{ margin-top:20px;}
+#face ul li{ width:1000px; height:414px; display:none;}
+#face ul li.active{ display:block;}
+
+/*step*/
+#step dl{ width:470px; height:246px; padding:10px; background:#969696; float:left; margin:0 20px 20px 0;}
+#step dl.active{ background:#96641e;}
+#step dl.noMr{ margin-right:0;}
+#step dl.noMb{ margin-bottom:0;}
+#step dt{ width:207px; height:246px; float:left;}
+#step dd{ width:230px; float:right;}
+#step dd h2{ height:60px; line-height:60px; font-size:22px; text-align:center; color:#fff; margin-bottom:26px;}
+#step dd strong{ width:35px; height:60px; line-height:60px; font-size:58px; float:left; margin-right:10px; transition:0.4s;}
+#step dl.active dd strong{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#step dd b{ width:185px; height:30px; line-height:30px; font-size:22px; float:left;}
+#step dd small{ width:185px; height:30px; line-height:30px; font-size:18px; float:left;}
+#step dd p{ font-size:16px; color:#fff;}
+#step dd .mb2{ margin-bottom:2px;}
+
+/*effect*/
+#effect li{ width:470px; height:218px; border:8px solid #cccccc; margin:0 28px 28px 0; float:left;}
+#effect li.active{ border:8px solid #b99155;}
+#effect li.noMr{ margin-right:0;}
+#effect li.noMb{ margin-bottom:0;}
+
+/*classify*/
+#classify h2{ width:500px; text-align:center; font-size:26px; color:#b99155; margin-bottom:16px; float:left;}
+#classify dl{ width:970px; height:118px; margin:0 auto 40px; background:url(../images/classify.png) center center no-repeat;}
+#classify dl.noMb{ margin-bottom:0;}
+#classify dd{ float:left; width:485px; color:#fff;}
+#classify dd span{ display:block; width:114px; text-align:center; line-height:118px; font-size:20px;}
+#classify dd span.reStyle{ line-height:30px; padding-top:29px;}
+#classify dd p{ width:260px; font-size:16px; line-height:26px; padding:16px 14px 0;}
+#classify dd p.reStyle{ padding-top:8px;}
+
+/*expert*/
+#expert{ width:1000px; margin:0 auto; overflow:hidden;}
+#expert .tilTxt{ margin-bottom:0; word-spacing:20px;}
+#expert .tilTxt.mtb_40{ margin:40px 0;}
+#expert #expertMain{ height:528px; background:#e2e1de; position:relative;}
+#expert .prev,#expert .next{ width:64px; height:120px; position:absolute; top:204px; z-index:2; cursor:pointer;}
+#expert .prev{ background:url(../images/expert_prev.png) center center no-repeat; left:0;}
+#expert .next{ background:url(../images/expert_next.png) center center no-repeat; right:0;}
+#expert ul li{ display:none;}
+#expert ul li.active{ display:block;}
+#expert ul .img{ width:368px; margin:10px 20px 0 100px;}
+#expert ul .word{ width:394px; height:332px; padding-top:30px; position:relative;}
+#expert ul h2{ font-size:50px; color:#b99155; margin-bottom:20px;}
+#expert ul small{ font-size:22px; color:#505050; margin-left:16px;}
+#expert ul p{ line-height:24px; margin-bottom:14px;}
+#expert ul p.noMb{ margin-bottom:0;}
+#expert ul p.mt_40{ margin-top:40px;}
+#expert ul strong{ color:#b99155;}
+#expert ul a.btn{ position:absolute; left:0; bottom:0;}
+#expert ol{ position:absolute; right:190px; bottom:20px; z-index:2;}
+#expert ol li{ width:118px; height:118px; border:3px solid #e5e5e5; border-radius:50%; float:left; margin-right:30px;}
+#expert ol li.active{ border:3px solid #b99155; transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#expert ol li.noMr{ margin-right:0;}
+#expert dd{ color:#969696; width:182px; height:330px; border:1px solid #b1b1b1; border-top:6px solid #b1b1b1; margin-right:20px; float:left; transition:0.4s;}
+#expert dd.active{ color:#b99155; border:1px solid #b99155; border-top:6px solid #b99155; box-shadow:1px 1px 10px #b99155;}
+#expert dd.noMr{ margin-right:0;}
+#expert dd h2{ font-size:16px; text-align:center; margin-bottom:20px; margin:6px 0;}
+#expert dd small{ font-size:12px; margin-left:4px;}
+#expert dd img{ margin-bottom:10px;}
+#expert dd p{ line-height:24px; padding-left:10px;}
+
+/*laser*/
+#laser dl{ border-bottom:1px dashed #d1d1d1; padding-bottom:90px; margin-top:60px;}
+#laser dl.noBb{ border-bottom:none;}
+#laser dl.noMt{ margin-top:0;}
+#laser dl.noPb{ padding-bottom:0;}
+#laser dt{ width:400px; height:342px;}
+#laser dd{ width:510px; height:342px; position:relative;}
+#laser dd .laser_til{ height:44px; color:#fff; font-size:28px; margin:12px 0 24px;}
+#laser dd small{ height:44px; width:136px; text-align:center; font-size:28px; background:url(../images/laser_bg.png) left top no-repeat; float:left;}
+#laser dd strong{ height:44px; padding:0 10px; background:url(../images/laser_bg2.png) left top repeat-x; float:left;}
+#laser dd b{ height:44px; width:6px; background:url(../images/laser_bg.png) left -88px no-repeat; float:left;}
+#laser dd p{ font-size:18px; color:#4b4b4b; height:30px; line-height:30px;}
+#laser dd p.mt_10{ margin-top:10px;}
+#laser dd i{ width:94px; height:30px; color:#b99155; float:left;}
+#laser dd .btn{ margin:0; position:absolute; left:0; bottom:0;}
+
+/*wrong*/
+#wrong li{ width:310px; height:388px; float:left; margin-right:35px; overflow:hidden; position:relative;}
+#wrong li.noMr{ margin-right:0;}
+#wrong li.wrong_bg1{ background:url(../images/wrong1.jpg) center center no-repeat;}
+#wrong li.wrong_bg2{ background:url(../images/wrong2.jpg) center center no-repeat;}
+#wrong li.wrong_bg3{ background:url(../images/wrong3.jpg) center center no-repeat;}
+#wrong li div{ width:310px; height:388px; position:absolute; left:0; top:-388px; color:#fff; background:#000; opacity:0; filter:alpha(opacity:0); transition:0.4s;}
+#wrong li.active div{ opacity:0.8; filter:alpha(opacity:80); top:0; transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+#wrong li h2{ color:#b99155; font-size:20px; text-align:center; margin:40px 0 30px;}
+#wrong li p{ padding:0 36px; font-size:16px; line-height:30px;}
+#wrong li a.btn{ position:absolute; left:50%; bottom:34px; margin-left:-79px;}
+
+/*answer*/
+#answer dl{ height:144px; color:#ffffff; position:relative;}
+#answer dl.mb_20{ margin-bottom:20px;}
+#answer dt{ width:114px; height:114px; transition:0.4s; position:absolute; top:0;}
+#answer dt.left{ left:0;}
+#answer dt.right{ right:0;}
+#answer dl:hover dt.left{ left:20px;}
+#answer dl:hover dt.right{ right:20px;}
+#answer dt p{ font-size:18px; color:#626262; width:100%; text-align:center; height:30px; line-height:30px; position:absolute; left:0; bottom:-30px;}
+#answer dd.grey{ padding:0 20px; height:88px; line-height:88px; font-size:18px; background:#626262; border-radius:20px; position:absolute; left:164px; top:13px;}
+#answer dd.yellow{ padding:10px 20px; width:490px; height:74px; line-height:24px; font-size:16px; background:#be9860; border-radius:20px; position:absolute; right:164px; top:13px;}
+#answer em.triangle{ width:16px; height:19px; background:url(../images/triangle.png) left top no-repeat; position:absolute; top:34px;}
+#answer dd.grey em.triangle{ left:-16px;}
+#answer dd.yellow em.triangle{ right:-15px; background-position: -16px top;}
+#answer dd.reStyle1{ height:96px; top:-1px;}
+#answer dd.reStyle1 em.triangle{ top:38px;}
+#answer dd.reStyle2{ height:120px; top:-3px;}
+#answer dd.reStyle2 em.triangle{ top:50px;}
+
+/*discuss*/
+#discuss .tilTxt{ margin-bottom:0; word-spacing:20px;}

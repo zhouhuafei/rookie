@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>倒计时1</title>
+<style>
+*{ margin:0 auto;}
+#div1{ background:#000; width:500px; height:60x; margin:0 auto; line-height:60px; text-align:center; color:#f00; font-size:20px;}
+#div2{ width:500px; margin:0 auto; margin-top:200px; color:#00F;}
+</style>
+<script>
+window.onload=function()
+{
+	var timer=null;
+	var iFutureTime=new Date(2014,09,26,11,00,00);			//以数字形式获取未来时间 年月日时分秒 月数是从0开始的	
+	timer=setInterval(countDown,1000);
+	function countDown()
+	{
+		var iNowTime=new Date();					//获取现在时间
+		//var iSurplusTime=iFutureTime-iNowTime;			//获取时间差返回的是毫秒数
+		//var iSurplusTime=(iFutureTime-iNowTime)/1000;			//获取时间差返回的是秒数(有小数点,下面一行是去除小数点)
+		//下述为获取时间差	返回的是秒数
+		var iSurplusTime=Math.floor((iFutureTime-iNowTime)/1000);		
+		//下述为剩余时间转化为天数
+		var iSurplusDays=Math.floor(iSurplusTime/86400);
+		//下述为剩余时间转化为时数
+		var iSurplusHour=Math.floor(iSurplusTime%86400/3600);
+		//下述为剩余时间转化为分数
+		var iSurplusMinu=Math.floor(iSurplusTime%86400%3600/60);
+		//下述为剩余时间转化为秒数
+		//var iSurplusSeco=iSurplusTime%60;
+		var iSurplusSeco=Math.floor(iSurplusTime%86400%3600%60);
+		//下述为剩余时间综合
+		var iSurplusAlls=fillZero(iSurplusDays)+'天'+fillZero(iSurplusHour)+'时'+fillZero(iSurplusMinu)+'分'+fillZero(iSurplusSeco)+'秒';	
+		var oDiv1=document.getElementById('div1');
+		if(iSurplusTime>=0)
+		{
+			oDiv1.innerHTML=iSurplusAlls;
+		}
+		else
+		{
+			clearInterval(timer);
+			oDiv1.innerHTML='工资已发';
+		}
+	}	
+	countDown();	
+}
+function fillZero(n)
+{
+	if(n<10)
+	{
+		return '0'+n;	
+	}
+	else
+	{
+		return ''+n;	
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div2">距离发工资还剩余：</div>
+<div id="div1"></div>
+</body>
+</html>

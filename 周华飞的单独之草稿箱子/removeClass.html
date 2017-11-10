@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>removeClass</title>
+<style>
+div{ width:200px; height:200px;}
+.div2{ background:#F00;}
+.div3{ background:#000;}
+</style>
+<script>
+window.onload=function(){
+	function hasClass(obj,sClass){
+		var re=new RegExp('\\b'+sClass+'\\b','ig');
+		return obj.className.match(re);
+	}
+	function addClass(obj,sClass){
+		if(!hasClass(obj,sClass)){
+			if(obj.className){
+				obj.className+=' '+sClass;
+			}else{
+				obj.className=sClass;	
+			}	
+		}	
+	}
+	function removeClass(obj,sClass){
+		var re=new RegExp('\\b'+sClass+'\\b','i');
+		if(hasClass(obj,sClass)){
+			obj.className=obj.className.replace(re,'');
+		}
+	}
+	var oDiv=document.getElementsByTagName('div')[0];
+	addClass(oDiv,'div3');
+	removeClass(oDiv,'div3');
+}
+</script>
+</head>
+
+<body>
+<div class="div1 div2"></div>
+</body>
+</html>

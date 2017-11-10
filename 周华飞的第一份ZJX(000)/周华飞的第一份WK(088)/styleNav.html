@@ -1,0 +1,62 @@
+<style>
+/*styleNav*/
+#styleNav{ width:1000px; margin:0 auto;}
+#styleNav li{ float:left; background:#969696; margin-right:10px;}
+#styleNav a{ width:192px; height:82px; display:block; font-size:18px; color:#fff; line-height:41px;}
+#styleNav .active{ background:#0064b4;}
+#styleNav em{ width:64px; height:64px; display:block; float:left; margin:10px 18px 0 16px; border-radius:50%; transition:all 0.4s;}
+#styleNav p{ width:80px; padding-top:6px; line-height:34px; float:left; word-spacing:14px;}
+#styleNav .styleEm1{ background:url(images/style_icon1.jpg) left top no-repeat;}
+#styleNav .styleEm2{ background:url(images/style_icon2.jpg) left top no-repeat;}
+#styleNav .styleEm3{ background:url(images/style_icon3.jpg) left top no-repeat;}
+#styleNav .styleEm4{ background:url(images/style_icon4.jpg) left top no-repeat;}
+#styleNav .styleEm5{ background:url(images/style_icon5.jpg) left top no-repeat;}
+#styleNav .active em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#styleNav .active .styleEm1{ background:url(images/style_icon1b.jpg) left top no-repeat;}
+#styleNav .active .styleEm2{ background:url(images/style_icon2b.jpg) left top no-repeat;}
+#styleNav .active .styleEm3{ background:url(images/style_icon3b.jpg) left top no-repeat;}
+#styleNav .active .styleEm4{ background:url(images/style_icon4b.jpg) left top no-repeat;}
+#styleNav .active .styleEm5{ background:url(images/style_icon5b.jpg) left top no-repeat;}
+</style>
+<!--styleNav-->
+<div id="styleNav">
+	<ul class="clearFix">
+        	<li class="active">
+                	<a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">
+                        	<em class="styleEm1"></em>
+                                <p>寻常型<br />银屑病</p>                            
+                        </a>
+                </li>
+        	<li>
+                	<a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">
+                        	<em class="styleEm2"></em>
+                                <p>关节型<br />银屑病</p>
+                	</a>
+                </li>  
+        	<li>
+                	<a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">
+                        	<em class="styleEm3"></em>
+                                <p>脓包型<br />银屑病</p>
+                	</a>
+                </li> 
+        	<li>
+                	<a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">
+                        	<em class="styleEm4"></em>
+                                <p>红皮型<br />银屑病</p>
+                	</a>
+                </li>       
+        	<li style="margin-right:0;">
+                	<a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">
+                        	<em class="styleEm5"></em>
+                                <p>掌 趾<br />银屑病</p>      
+                        </a>
+                </li>     	
+        </ul>
+</div>
+<script>
+/*styleNav*/
+$(function(){
+	var aBtn=$('#styleNav li');
+	tabSwitch(aBtn);	
+})
+</script>

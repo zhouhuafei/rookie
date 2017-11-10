@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<base target="_blank"/>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="rookie" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>栏目页</title>
+<link rel="stylesheet" href="css/column.css" /><!--栏目页的样式-->
+<script src="js/jq.js"></script><!--栏目页特效jq库-->
+<script src="js/super.js"></script><!--栏目页特效super插件-->
+<script src="js/column.js"></script><!--栏目页特效实现-->
+</head>
+<body>
+<!--header-->
+<link rel="stylesheet" href="css/base.css" /><!--头部和尾部的公共样式-->
+<div id="top">
+	<dl>
+        	<dt>
+                	<ul>
+                        	<li>欢迎进入南宁中山皮肤病医院官方网站！</li>
+                        	<li>电话咨询：<b>0771-3115 888</b></li>
+                        </ul>
+                </dt>
+                <dd>
+                	<ul>
+                        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;">预约专家</a></li>
+                        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;">在线咨询</a></li>
+                        	<li><a href="/lylx/">来院路线</a></li>
+                        	<li class="noBr"><a href="http://wap.nanningyiyuan.com/">手机网站</a></li>
+                        </ul>
+                </dd>
+        </dl>
+</div>
+<div id="logo"><img src="images/logo.jpg" /></div>
+<div id="nav">
+	<ol>
+        	<li><a href="/">网站首页</a></li>
+                <li><a href="/special/about/">医院介绍</a></li>
+                <li class="hot">
+                	<a>诊疗项目</a>
+                        <dl>
+                                <dd>
+                                	<h2 class="one">我要看病</h2>
+                                        <p>
+                                        	<a href="/zt/2014_bdf/">白癜风</a>
+                                        	<a href="/zt/npx0415/">牛皮癣</a>
+                                        	<a href="/zt/py/">皮炎</a>
+                                        	<a href="/zt/szzt0324/">湿疹</a>
+                                        	<a href="/special/xmz/">荨麻疹</a>
+                                        	<a href="/zt/2014_ylb/">鱼鳞病</a>
+                                        	<a href="/zt/hzj/">灰指甲</a>
+                                        	<a href="/zt/2014_mny/">毛囊炎</a>
+                                        	<a href="/zt/bpy/">扁平疣</a>
+                                        	<a href="/zt/pfx/">股癣</a>
+                                        	<a href="/zt/pfx/">体癣</a>
+                                        	<a href="/zt/pfx/">手足癣</a>
+                                        	<a href="/jiechuang/">疥疮</a>
+                                        	<a href="/jiaoqi/">脚气</a>
+                                        	<a href="/pifuxuan/20130702_7165.html">汗斑</a>
+                                        	<a href="/zt/mzjh/">毛周角化</a>
+                                        </p>
+                                </dd>
+                                <dd>
+                                	<h2 class="two">我要美容</h2>
+                                        <p>
+                                        	<a href="/zt/qcd0304/">青春痘</a>
+                                        	<a href="/zt/qcd0304/">痤疮</a>
+                                        	<a href="/zt/dy0311/">祛痘印</a>
+                                        	<a href="/zt/seban/">黄褐斑</a>
+                                        	<a href="/zt/seban/">雀斑</a>
+                                        	<a href="/zt/jzb0325/">酒糟鼻</a>
+                                        	<a href="/zt/tf0418/">脱发</a>
+                                        	<a href="/zt/tf0418/">斑秃</a>
+                                        	<a href="/zt/2014_bhxf/">疤痕</a>
+                                        </p>
+                                </dd>
+                                <dd class="reset">
+                                	<h2 class="thr">我有症状</h2>
+                                        <p>
+                                        	<a href="/teseliaofa/20120224_5567.html">皮肤瘙痒</a>
+                                        	<a href="/zt/gm/">皮肤过敏</a>
+                                        	<a href="/zt/tf0418/">头发很油</a>
+                                        	<a href="/zt/2014_tf/">头发稀少</a>
+                                        	<a href="/zt/2014_bdf/">皮肤起白点</a>
+                                                <a href="/zt/2014_ylb/">皮肤开裂</a>
+                                        	<a href="/zt/hzj/">指甲变形</a>
+                                        	<a href="/zt/mzjh/">鸡皮肤</a>
+                                        </p>
+                                </dd>
+                        </dl>
+                </li>
+                <li><a href="/zt/2014_doctorSpecial/">专家推荐</a></li>
+                <li><a href="/teseliaofa/">特色疗法</a></li>
+                <li><a href="/zt/equipment">诊疗设备</a></li>
+                <li class="hot"><a href="/pbl/">典型病例</a></li>
+                <li><a href="/guahao/">免费挂号</a></li>
+                <li class="noBr"><a href="/lylx/">来院路线</a></li>
+        </ol>
+</div>
+
+<!--banner-->
+<div id="banner">
+        <div class="location clear">
+        	<p class="fl">当前位置：<a href="http://pfk.nanningyiyuan.com">主页</a><i>&gt;</i><a href="/baidianfeng/">白癜风</a><i>&gt;</i></p>
+        </div>
+</div>
+
+<!--栏目页主体区域-->
+<div class="in_mains pubW" id="in_mains">
+        <div class="in_main_le fl">
+                <p class="in_main_le_top">
+                	就医指南<br />
+                        <span>Treatment guidelines</span>
+                </p>
+                <p class="in_main_le_a" id="pub_left">
+                	<a href="/yyjs/"  >医院简介<span>Hospital Introduction</span></a>
+                        <a href="/yiyuanxinwen/" >医院动态<span>Hospital News</span></a>
+                        <a href="/yiyuanrongyu/"  >荣誉资质<span>Honor</span></a>
+                        <a href="/meitibaodao/"  >媒体报道<span>Media reports</span></a>
+                        <a href="/mingyizhuanjia/"  >专家团队<span>Expert team</span></a>
+                        <a href="/teseliaofa/" >特色疗法<span>Signature Therapies</span></a>
+                        <a href="/xianjinshebei/"  >尖端设备<span>Equipment</span></a>
+                        <a href="/kangfubingli/"  >康复案例<span>Rehabilitation Case</span></a>
+                        <a href="/yyhj/"  >医院环境<span>Environment</span></a>
+                        <a href="/lylx/"  >来院路线<span>Route?to?hospital</span></a> 
+                </p>
+                <div class="in_main_le_bottom">
+                        <div class="cl"></div>
+                        <div class="in_main_le_pic">
+                                <p>
+                                        <span><i><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" ><img src="images/lylx_1.jpg" class="in_main_le_pic_a"/></a></i><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" >在线咨询</a></span>
+                                        <span><i><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" ><img src="images/lylx_2.jpg" class="in_main_le_pic_a"/></a></i><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" >专家答疑</a></span>
+                                        <span><i><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" ><img src="images/lylx_3.jpg" class="in_main_le_pic_a"/></a></i><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" >网上挂号</a></span>
+                                </p>
+                        </div>
+                        <div class="cl"></div>
+                        <div class="in_main_le_img"><img src="images/lylx_4.jpg" /><img src="images/lylx_5.jpg" /><img src="images/lylx_6.jpg" /> </div>
+       		</div>
+        </div>
+        <div class="in_main_ri fr">
+                <h1>白癜风</h1>
+                <ul class="yydt_ul">
+                        <li class="clear">
+                                <h4>黑色素细胞种植疗法 整合顶尖技术科学阻击白癜风</h4>
+                                <p>【核心提示】 白癜风是世界级的医学难题， 但并非是不治之症，白癜风患者必须树立科学的治疗观，相信科学，反对迷信，拒绝各种偏方、秘方，依靠切实有效的特色诊疗技术，用积极的心态来面对这一皮肤顽疾，癜风是可以...</p>
+                                <span class="fr"><a href="/baidianfeng/20130723_7193.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear">
+                                <h4>手臂上有白斑怎么办 会扩散吗?</h4>
+                                <p>来源：南宁中山白癜风医院 编辑：南宁中山白癜风医院 发布时间：2013-05-27 15:41 手臂上有白斑怎么办?手臂上的白斑我们首先要确认它是否为白癜风，这就要从白癜风症状开始说起了，如果是白癜风的话，白斑是没有任何...</p>
+                                <span class="fr"><a href="/baidianfeng/20130625_7154.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear">
+                                <h4>手部白癜风怎么治疗</h4>
+                                <p>来源：南宁中山白癜风医院 编辑：南宁中山白癜风医院 发布时间：2013-05-27 15:40 手部是人类从事一切劳动的主要器官，由于长期暴露在外面，很容易受到外部的一些刺激，比如紫外线的辐射，创伤性外伤，机械性刺激或...</p>
+                                <span class="fr"><a href="/baidianfeng/20130625_7153.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear">
+                                <h4>双脚白癜风怎么治疗</h4>
+                                <p>来源：南宁中山白癜风医院 编辑：南宁中山白癜风医院 发布时间：2013-05-27 15:38 双脚白癜风怎么治疗?南宁中山白癜风医院专家介绍说，白癜风可以发生在人体的任何的部位，不同部位的白癜风治疗和护理上方法是不同的...</p>
+                                <span class="fr"><a href="/baidianfeng/20130625_7152.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear">
+                                <h4>胸部白癜风怎样治疗才有效?</h4>
+                                <p>来源：南宁中山白癜风医院 编辑：南宁中山白癜风医院 发布时间：2013-05-27 15:27 胸部白癜风怎样治疗才有效?目前，随着白癜风的发病率增高，胸部得白癜风的情况越来越多，这对患者造成了很大的困扰，所以需要及时到...</p>
+                                <span class="fr"><a href="/baidianfeng/20130624_7150.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear">
+                                <h4>背部出现白癜风有什么症状表现?</h4>
+                                <p>背部出现白癜风是我们生活中不易察觉的一件事情。由于白斑出现并没有什么感觉，所以很多时候患者背部出现白斑后都没有察觉，直到病情恶化才发现自己患上了白癜风。所以在平时的生活中，我们一定要注意观察自己身上的...</p>
+                                <span class="fr"><a href="/baidianfeng/20110610_1576.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear">
+                                <h4>颈部的白癜风怎么治疗才好</h4>
+                                <p>来源：南宁中山白癜风医院 编辑：南宁中山白癜风医院 发布时间：2013-05-27 15:20 颈部的白癜风怎么治疗才好?临床上发现一些白癜风患者发生颈椎疼痛的表现。专家分析这主要是因为一些白癜风患者由于皮损难看不愿出门...</p>
+                                <span class="fr"><a href="/baidianfeng/20130624_7148.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                        <li class="clear last">
+                                <h4>治疗面部白斑的方法</h4>
+                                <p>来源：南宁中山白癜风医院 编辑：南宁中山白癜风医院 发布时间：2013-05-27 15:17 治疗面部白癜风的方法有很多，选择一种对自己有效的治疗方法至关重要。我们一定要对白癜风有一定的了解，白癜风发病于身体任何部位...</p>
+                                <span class="fr"><a href="/baidianfeng/20130624_7146.html" >点击了解详情</a><a  href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" class="reset">专家在线咨询</a></span> </li>
+                	<div class="column-page"><img src="images/page.jpg" /></div>
+                </ul>
+        </div>
+</div>
+
+
+
+
+
+
+<!--监督单位和医院环境-->
+<div class="iBox4 pubW" id="iBox4">
+        <div class="iBox4_1">
+                <ul class="clear">
+                        <li class="on"><a>监管单位</a></li>
+                        <li><a>医院环境</a></li>
+                        <li><a>医院设备</a></li>
+                        <li><a>医院荣誉</a></li>
+                </ul>
+        </div>
+        <div class="iBox4_2 pfshow" id="pfshow">
+                <ul style="display:block;"><li><img src="images/iBox4_1.jpg" width="960" height="117" /></li></ul>
+                <ul class="item" id="a1">
+                	<div>
+                                <li><img src="images/environment1.jpg"/></li>
+                                <li><img src="images/environment2.jpg"/></li>
+                                <li><img src="images/environment3.jpg"/></li>
+                                <li><img src="images/environment4.jpg"/></li>
+                                <li><img src="images/environment5.jpg"/></li>
+                                <li><img src="images/environment6.jpg"/></li>
+                                <li><img src="images/environment7.jpg"/></li>
+                                <li><img src="images/environment8.jpg"/></li>
+                                <li><img src="images/environment9.jpg"/></li>
+                        </div>
+                </ul>
+                <ul class="item" id="a2">
+                	<div>
+                                <li><img src="images/equipment1.jpg"/></li>
+                                <li><img src="images/equipment2.jpg"/></li>
+                                <li><img src="images/equipment3.jpg"/></li>
+                                <li><img src="images/equipment4.jpg"/></li>
+                                <li><img src="images/equipment5.jpg"/></li>
+                                <li><img src="images/equipment6.jpg"/></li>
+                                <li><img src="images/equipment7.jpg"/></li>
+                                <li><img src="images/equipment8.jpg"/></li>
+                                <li><img src="images/equipment9.jpg"/></li>
+                        </div>
+                </ul>
+                <ul class="item" id="a3">
+                	<div>
+                                <li><img src="images/honor1.jpg"/></li>
+                                <li><img src="images/honor2.jpg"/></li>
+                                <li><img src="images/honor3.jpg"/></li>
+                                <li><img src="images/honor4.jpg"/></li>
+                                <li><img src="images/honor5.jpg"/></li>
+                                <li><img src="images/honor6.jpg"/></li>
+                                <li><img src="images/honor7.jpg"/></li>
+                                <li><img src="images/honor8.jpg"/></li>
+                                <li><img src="images/honor9.jpg"/></li>
+                        </div>
+                </ul>
+        </div>
+</div>
+
+<!--footer-->
+<div class="nnpfb_footer">
+        <div class="w990">
+                <div class="nnpfd_fl"><img src="images/nnpdf_ftlogo.jpg"></div>
+                <div class="nnpfd_center">
+                        <dl>
+                                <dt>易复发皮肤病</dt>
+                                <dd><a href="/zt/qcd1122/" title="青春痘">青春痘</a></dd>
+                                <dd><a href="/special/xmz/" title="荨麻疹">荨麻疹</a></dd>
+                                <dd><a href="/zt/2014_szzt/" title="湿疹">湿疹</a></dd>
+                                <dd><a href="/zt/npx0415/" title="牛皮癣">牛皮癣</a></dd>
+                        </dl>
+                        <dl>
+                                <dt>常见皮肤病</dt>
+                                <dd><a href="/zt/py/" title="皮炎">皮炎</a></dd>
+                                <dd><a href="/zt/2014_mny/" title="毛囊炎">毛囊炎</a></dd>
+                                <dd><a href="/zt/gm/" title="皮肤过敏">皮肤过敏</a></dd>
+                                <dd><a href="/teseliaofa/20120224_5567.html" title="皮肤瘙痒">皮肤瘙痒</a></dd>
+                                <dd><a href="/zt/tf0418/" title="脱发">脱发</a></dd>
+                                <dd><a href="/zt/2014_tf/" title="掉头发">掉头发</a></dd>
+                        </dl>
+                        <dl>
+                                <dt>传染性皮肤病</dt>
+                                <dd><a href="/zt/pfx/" title="手足癣">手足癣</a></dd>
+                                <dd><a href="/zt/pfx/" title="皮肤癣">皮肤癣</a></dd>
+                                <dd><a href="/zt/hzj/" title="灰指甲">灰指甲</a></dd>
+                                <dd><a href="/jiaoqi/" title="脚气">脚气</a></dd>
+                                <dd><a href="/zt/bpy/" title="扁平疣">扁平疣</a></dd>
+                                <dd><a href="/jiechuang/" title="疥疮">疥疮</a></dd>
+                        </dl>
+                        <dl>
+                                <dt>顽固性皮肤病</dt>
+                                <dd><a href="/zt/npx0415/" title="银屑病">银屑病</a></dd>
+                                <dd><a href="/zt/2014_bdf/" title="白癜风">白癜风</a></dd>
+                                <dd><a href="/zt/2014_ylb/" title="鱼鳞病">鱼鳞病</a></dd>
+                                <dd><a href="/zt/mzjh/" title="鸡皮肤">鸡皮肤</a></dd>
+                        </dl>
+                        <dl>
+                                <dt>皮肤美颜类</dt>
+                                <dd><a href="/zt/qcd0304/" title="痤疮">痤疮</a></dd>
+                                <dd><a href="/zt/dy0311/" title="痘印痘坑">痘印痘坑</a></dd>
+                                <dd><a href="/zt/2014_bhxf/" title="疤痕修复">疤痕修复</a></dd>
+                                <dd><a href="/zt/seban/" title="黄褐斑">黄褐斑</a></dd>
+                                <dd><a href="/zt/qb36/" title="雀斑">雀斑</a></dd>
+                                <dd><a href="/zt/jzb0325/" title="酒糟鼻">酒糟鼻</a></dd>
+                        </dl>
+                </div>
+                <div class="nnpfd_fr">
+                        <dl>
+                                <dt><img src="images/nnpdf_weixin.jpg"></dt>
+                                <dd>微信扫一扫<br>中山医院官方微信<br>皮肤健康随时问</dd>
+                        </dl>
+                        <p>医院地址：南宁市安吉大道28号<br> 咨询电话：0771-3115888<br>咨询QQ：2742410700</p>
+                </div>
+        </div>
+</div>
+<div class="nnpfb_copy">copyright: 2012-2018 南宁中山医院 版权所有 桂卫网变审【2013】第26号、<br>任何网络建议都不能替代执业医师当面诊断，门诊时间请以医院当日公布为准。网友 、医生言论仅代表其个人观点，不代表本站同意其说法。</div>
+<script src="swt/swt.js" language="javascript"></script><!--中间商务通和右下角抖动以及左侧二维码和右侧导航-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

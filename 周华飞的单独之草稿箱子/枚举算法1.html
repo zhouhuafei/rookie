@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>枚举算法1</title>
+</head>
+
+<body>
+<script>
+					
+					
+//枚举算法：先用for循环来找到诸多的候选答案,然后再通过if语句筛选出正确的解
+					
+					
+//求1-1000之间能被3整除的数
+/*
+var result='';
+for(var i=1; i<=1000;i++)
+{
+	if(i%3==0)
+	{
+		result+=i+'<br />';	
+	}	
+	document.body.innerHTML=result;
+}
+*/
+
+//求1-1000之间能被3整除且能被7整除的数
+/*
+var result='';
+for(var i=1; i<=1000;i++)
+{
+	if(i%3==0&&i%7==0)
+	{
+		result+=i+'<br />';	
+	}	
+	document.body.innerHTML=result;
+}
+*/
+
+//求五位数147??之中能被57和67整除的数
+/*
+var str='';
+var result=null;
+for(var i=0;i<10;i++)
+{
+	for(var j=0;j<10;j++)
+	{
+		result=14700+i*10+j;
+		if(result%57==0||result%67==0)
+		{
+			str+=result+'<br/>';		//得到所有满足条件的五位数    得到的结果全是字符串
+		}
+	}	
+}
+document.body.innerHTML+=str;
+*/
+
+//求五位数14?7?之中能被57和67整除的数
+/*
+var str='';
+var result=null;
+for(var i=0;i<10;i++)
+{
+	for(var j=0;j<10;j++)
+	{
+		result=14000+i*100+70+j;		
+		if(result%57==0||result%67==0)
+		{
+			str+=result+'<br>';		//得到所有满足条件的五位数    得到的结果全是字符串
+		}
+	}	
+}
+document.body.innerHTML+=str;
+*/
+
+//找水仙花数（若三位数x=100a+10b+c，满足a3+b3+c3=x，则x为水仙花数);		
+/*
+var str='';
+for(var a=1; a<10;a++)
+{
+	for(var b=0; b<10;b++)
+	{
+		for(var c=0; c<10;c++)
+		{
+			x=100*a+10*b+c;
+			if((Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3))==x)	//等价if(a*a*a+b*b*b+c*c*c==x)  	Math.pow(l,n)求l的n次幂
+			{
+				str+=x+'<br/>';
+			}
+		}	
+	}
+}
+document.body.innerHTML=str;
+*/
+
+//百鸡百钱问题（公鸡5元，母鸡3元，1元3只小鸡，花100元钱，买100只鸡，怎么买？）
+/*百鸡百钱问题的解题思路：假设买了x只公鸡，y只母鸡，z只小鸡，则：1)x<=20;	还需要满足条件1)x+y+z==100;
+								 2)y<=33;		      2)x*5+y*3+z/3==100;	//这个条件已经包括了下面的条件3）
+								 3)z<=99;		      3)z%3==0;			//这个条件多余了,因为x,y,z全是整数,z必然是3的倍数,否则满足不了条件x*5+y*3+z/3==100
+*/
+var result='';
+for(var x=0;x<=20;x++)
+{
+	for(var y=0;y<=33;y++)
+	{
+		for(var z=0;z<=99;z++)		
+		{
+			if(x+y+z==100&&x*5+y*3+z/3==100)
+			{
+				result+='购买公鸡:'+x+'只;母鸡:'+y+'只;小鸡:'+z+'只;<br/>';
+			}
+		}	
+	}	
+}
+document.body.innerHTML=result;
+</script>
+</body>
+</html>

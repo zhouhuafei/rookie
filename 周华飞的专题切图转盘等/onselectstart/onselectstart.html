@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>onselectstart</title>
+<style>
+body{ text-align:center;}
+ul{ width:200px; height:200px; position:relative; margin:0 auto;}
+li{ transition:0.4s; position:absolute; left:0; top:0; width:100%; height:100%; text-align:center; line-height:200px; font-size:18px; color:#fff;}
+span{-moz-user-select:none;}/*火狐禁止选中文字*/
+</style>
+<script>
+window.addEventListener('load',function(){
+	var oPrev=document.getElementsByTagName('span')[0];
+	var oNext=document.getElementsByTagName('span')[1];
+	var aLi=document.getElementsByTagName('li');
+	var iLen=aLi.length;
+	var now=0;
+	var iW=aLi[0].offsetWidth;
+	for(var i=0;i<iLen;i++){
+		aLi[i].style.zIndex=iLen-i;
+		aLi[i].style.backgroundColor='#'+Math.round(Math.random()*(999999-111111)+111111);
+	}
+	oNext.onclick=function(){
+		doMove(1);
+	}
+	oPrev.onclick=function(){
+		doMove(-1);
+	}
+	/*非火狐禁止选中文字*/
+	oNext.onselectstart=oPrev.onselectstart=function(){
+		return false;
+	}
+	function doMove(num){
+		aLi[now].style.left=iW*num+'px';
+		aLi[now].style.opacity=0;
+		now++;
+		if(now==iLen){			
+			now=0;
+			for(var i=0;i<iLen;i++){	
+				aLi[i].style.left=0;
+				aLi[i].style.opacity=1;
+			}
+		}			
+	}
+},false)
+</script>
+</head>
+<body>
+<span>prev</span>
+<span>next</span>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	<li>10</li>
+	<li>11</li>
+	<li>12</li>
+</ul>
+</body>
+</html>

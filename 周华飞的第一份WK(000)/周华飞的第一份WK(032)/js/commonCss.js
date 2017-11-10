@@ -1,0 +1,28 @@
+// JavaScript Document
+document.writeln("<!--周华飞制作 QQ:1123486116-->");
+document.writeln("<style>");
+document.writeln("/*清零*/");
+document.writeln("body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}");
+document.writeln("body{ font-size:14px; font-family:\"微软雅黑\",Verdana,Arial,\"宋体\",\"微软雅黑\";}");
+document.writeln("img{ border:none; outline:none;}");
+document.writeln("input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}");
+document.writeln("ul,ol{ list-style-type:none;}");
+document.writeln("a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}");
+document.writeln("p{ line-height:33px;}");
+document.writeln("em,i,strong,b,small{font-style:normal; font-weight:normal;}");
+document.writeln("a,span,b,em,i,strong,small,label,img{display:inline-block;}");
+document.writeln("em{transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}");
+document.writeln("");
+document.writeln("/*清楚浮动*/");
+document.writeln(".clearFix{ clear:both;*zoom:1;}");
+document.writeln("");
+document.writeln("/*公用的样式*/");
+document.writeln(".fl{ float:left;}");
+document.writeln(".fr{ float:right;}");
+document.writeln(".commonWidth{ width:100%; margin:0 auto; overflow:hidden;}");
+document.writeln(".commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}");
+document.writeln(".commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}");
+document.writeln(".commonWidth_1100{ width:1100px; margin:0 auto; overflow:hidden;}");
+document.writeln(".commonWidth_grey{ width:100%;   margin:0 auto; overflow:hidden; background:#f5fafa;}");
+document.writeln("</style>");
+document.writeln("<!--周华飞制作 QQ:1123486116-->");

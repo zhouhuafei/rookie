@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>canvas8</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#ccc;}
+canvas{ display:block; margin:100px auto; background:#fff;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	/*obj*/
+	oCanvas=document.querySelectorAll('canvas')[0];
+	oContext=oCanvas.getContext('2d');
+	
+	/*createRadialGradient*/
+	oGradient=oContext.createRadialGradient(200,200,0,200,200,200);
+	oGradient.addColorStop(0,'rgb(255,0,0)');
+	oGradient.addColorStop(0.1,'rgb(255,165,0)');
+	oGradient.addColorStop(0.3,'rgb(255,255,0)');
+	oGradient.addColorStop(0.5,'rgb(0,255,0)');
+	oGradient.addColorStop(0.7,'rgb(0,127,255)');
+	oGradient.addColorStop(0.9,'rgb(0,0,255)');
+	oGradient.addColorStop(1,'rgb(139,0,255)');
+	oContext.fillStyle=oGradient;
+	//oContext.strokeStyle=oGradient;
+	
+	/*实例*/
+	oContext.beginPath();
+	/*translate rotate scale*/
+	/*translate rotate scale*/
+	//oContext.translate(100,100);
+	//translate会改变顶点位置
+	//oContext.rotate(45*Math.PI/180);
+	//rotate根据顶点位置进行旋转
+	//oContext.scale(1,1);
+	//oContext.fillRect(0,0,100,100);
+	
+	/*移动的方块*/
+	/*
+	setInterval(function(){
+		oContext.clearRect(0,0,oCanvas.width,oCanvas.height);
+		oContext.translate(1,1);
+		oContext.fillRect(0,0,100,100);		
+	},30)
+	*/
+	
+	/*旋转的方块教程版*/
+	/*
+	var num=0;
+	oContext.translate(200,200);
+	setInterval(function(){
+		oContext.save();
+		num++;
+		oContext.clearRect(-200,-200,oCanvas.width,oCanvas.height);
+		oContext.rotate(num*Math.PI/180);
+		oContext.translate(-50,-50);
+		oContext.fillRect(0,0,100,100);	
+		oContext.restore();
+	},30)
+	*/
+	
+	/*旋转的方块BUG版本*/
+	/*
+	oContext.translate(200,200);//会改变顶点坐标位置!
+	setInterval(function(){
+		oContext.clearRect(0,0,oCanvas.width,oCanvas.height);//顶点坐标位置改变,(0,0)其实是(200,200)应改为(-200,-200);
+		oContext.rotate(1*Math.PI/180);
+		oContext.fillRect(0,0,100,100);	
+	},30)
+	*/
+	
+	/*旋转的方块自己修复版*/
+	var radian=0;
+	setInterval(function(){
+		oContext.clearRect(0,0,oCanvas.width,oCanvas.height);//顶点坐标位置改变,(0,0)其实是(200,200)应改为(-200,-200);
+		oContext.save();//保存路径,进行操作
+		radian++;
+		oContext.translate(200,200);//改变顶点坐标位置(200,200)
+		oContext.rotate(radian*Math.PI/180);
+		//根据顶点位置(200,200)进行旋转
+		oContext.translate(-50,-50);
+		//改变顶点坐标位置(150,150)
+		oContext.fillRect(0,0,100,100);
+		//(0,0)表示(150,150)
+		oContext.restore();//释放路径,顶点归零,translate归零,rotate归零,scale归零,变量(radian)不归零
+		//save()和restore()的存在就是为了解决translate,rotate,scale,fillStyle,strokeStyle的归零(我自己取得名字)问题,相当于一个局部变环境,外部无法访问
+	},30)
+	
+	/*放大缩小的方块*/
+	/*
+	var num=0;
+	var now=0;
+	var value=1;
+	oContext.translate(200,200);
+	setInterval(function(){
+		oContext.save();
+		if(now==100){
+			value=-1;	
+		}else if(now==0){
+			value=1;	
+		}
+		now+=value;
+		num++;
+		oContext.clearRect(-200,-200,oCanvas.width,oCanvas.height);		
+		oContext.scale(now*1/50,now*1/50);
+		oContext.rotate(num*Math.PI/180);
+		oContext.translate(-50,-50);
+		oContext.fillRect(0,0,100,100);
+		oContext.restore();
+	},30)
+	*/
+	oContext.closePath();	
+},false)
+</script>
+</head>
+
+<body>
+<canvas width="400" height="400">您的浏览器不支持canvas</canvas>
+</body>
+</html>

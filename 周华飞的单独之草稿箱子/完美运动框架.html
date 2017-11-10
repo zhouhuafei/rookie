@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+div{ width:100%; height:500px; background:#000; position:relative; margin:100px auto; overflow:hidden;}
+ul{ height:200px; position:absolute; left:0; top:0; width:100%;}
+ul li{ width:100%; height:500px; color:#FFF; font-size:60px; text-align:center; line-height:500px; float:left;}
+ol{ position:absolute; left:48%; bottom:20px;}
+ol li{ width:20px; height:20px; background:#999; border-radius:10px; float:left; margin-right:10px;}
+ol .li_active{ background:#F60;}
+</style>
+</head>
+
+<body>
+<div id="div1">
+	<ul id="ul">
+    		<li style="background:#F00;">1</li>
+    		<li style="background:#0F0;">2</li>
+	</ul>
+   	<ol id="ol">
+    		<li class="li_active"></li>
+    		<li></li>
+    	</ol>
+	<script>
+        function getStyle(obj,name)
+        {
+                if(obj.currentStyle)
+                {
+                        return obj.currentStyle[name];
+                }
+                else
+                {
+                        return getComputedStyle(obj,false)[name];
+                }
+        }
+        function startMove(obj,json,fnEnd)
+        {
+                clearInterval(obj.timer);
+                obj.timer=setInterval(function()
+                {
+                        var bStop=true;   //假设所有的值都已经到了
+                        for(var attr in json)
+                        {
+                                var cur=0;
+                                if(attr=='opacity')
+                                {
+                                        cur=Math.round(parseFloat(getStyle(obj,attr)*100));
+                                }
+                                else
+                                {
+                                        cur=parseInt(getStyle(obj,attr));
+                                }
+                                var speed=(json[attr]-cur)/10;
+                                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                                if(cur!=json[attr])bStop=false;					
+                                if(attr=='opacity')
+                                {
+                                        obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+                                        obj.style.opacity=(cur+speed)/100;
+                                }
+                                else
+                                {
+                                        obj.style[attr]=cur+speed+'px';
+                                }			
+                        }
+                        document.title=obj.offsetHeight+','+cur;
+                        if(bStop)
+                        {
+                                clearInterval(obj.timer);
+                                if(fnEnd)fnEnd();
+                        }
+                },30);
+        }
+        
+        
+                var oUl=document.getElementById('ul');
+                var oOl=document.getElementById('ol');
+                var aLi_point=oOl.getElementsByTagName('li');
+                var aLi_img=oUl.getElementsByTagName('li');
+                var now=0;
+                for(var i=0; i<aLi_point.length; i++)
+                {
+                        aLi_point[i].index=i;
+                        aLi_point[i].onmouseover=function()
+                        {
+                                now=this.index;
+                                tab();
+                        }
+                }
+                function tab()
+                {
+                        for(var j=0; j<aLi_point.length; j++)
+                                                {
+                                                                aLi_point[j].className='';
+                                                                aLi_img[j].style.display='none';
+                                                                aLi_img[j].style.opacity='0';
+                                                }	
+                                                aLi_point[now].className='li_active';
+                                                aLi_img[now].style.display='block';
+                                                startMove(aLi_img[now],{opacity:100});
+                                                //startMove(oUl,{top:-aLi_img[0].offsetHeight*now});		
+                }
+                function next()
+                {
+                        now++;
+                        if(now==aLi_point.length)
+                        {
+                                now=0;	
+                        }
+                        tab();
+                }
+                setInterval(next,7000)
+        </script>
+</div>
+</body>
+</html>

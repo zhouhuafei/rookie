@@ -1,0 +1,96 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*container*/
+#container{ color:#656565; width:1200px; margin:0 auto 98px;}
+
+/*list*/
+#list{ width:875px; border-top:1px solid #dcdcdc; padding:25px 25px 0 0;}
+#list dl{ margin-bottom:45px;}
+#list dt{ width:253px; height:201px; background:#0aa0b4;}
+#list dd{ width:596px; height:201px; position:relative;}
+#list dd h2{ font-size:18px; color:#000; margin:30px 0 12px 0; padding-bottom:10px; border-bottom:1px solid #dcdcdc;}
+#list dd p{ font-size:14px; margin-bottom:12px;}
+#list dd p:before{ content:""; display:inline-block; width:11px; height:11px; background:url(../images/list.png) left top no-repeat; margin-right:9px;}
+#list dd .btnss{ position:absolute; left:0; bottom:0;}
+#list .listcut{ border:1px solid #dcdcdc; border-top:2px solid #6f6f6f; position:relative;}
+#list ol{ height:45px; line-height:45px; background:#f2f2f2; position:absolute; top:0;}
+#list ol li{ float:left; width:123px; height:100%; text-align:center; border-right:1px solid #dcdcdc; font-size:16px; color:#1e1e1e; cursor:pointer;}
+#list ol li.last{ border-right:none; width:129px;}
+#list ol li.active{ background:#fff; color:#0aa0b4;}
+#list ol li:hover{ background:#fff; color:#0aa0b4;}
+#list ul{ margin-top:75px;}
+#list ul li div{ padding:24px 0 46px 24px; border-top:1px solid #dcdcdc; position:relative;}
+#list ul li h2{ height:22px; line-height:22px; font-size:16px; color:#2c2c2c; background:#fff; padding-right:6px; position:absolute; left:0; top:-11px;}
+#list ul li h2 em{ display:inline-block; width:22px; text-align:center; height:22px; color:#fff; background:#0aa0b4; margin-right:7px;}
+#list ul li p{ text-indent:32px; font-size:14px; line-height:24px;}
+#list ul li.last{ width:100%; font-size:14px; margin-bottom:50px; display:none;}
+#list ul li.last span{ width:835px; display:block; margin:0 auto; border-bottom:1px dashed #dcdcdc; padding-top:21px;}
+#list ul li.last span.first{ padding-top:0;}
+#list ul li.last h3{ color:#2c2c2c; margin-bottom:10px;}
+#list ul li.last h3:before{ content:""; display:inline-block; width:2px; height:2px; background:#2c2c2c; margin:0 6px 0 4px; vertical-align:middle;}
+#list ul li.last h4{ color:#7a7a7a; text-indent:34px; line-height:24px; margin-bottom:5px;}
+#list ul li.last a{ text-indent:0; color:#f00;}
+#list ul li.last h5{ color:#adadad; font-size:12px; margin-bottom:20px;}
+
+/*article*/
+#article{ width:875px; border-top:1px solid #dcdcdc; padding:25px 25px 0 0;}
+#article .acut{ height:108px; background:#0aa0b4; margin-bottom:44px;}
+#article dl{ margin-bottom:100px;}
+#article dt{ border-bottom:1px dashed #dcdcdc; margin-bottom:45px;}
+#article dt h2{ font-size:18px; color:#656565; margin-bottom:14px; text-align:center;}
+#article dt div{ text-align:center; margin-bottom:10px; font-size:12px; color:#666666;}
+#article dt span{ float:left;}
+#article dt span.first{ margin-right:30px;}
+#article dt a{ color:#e10000;}
+#article dd{ margin-bottom:45px; text-indent:30px; line-height:24px; color:#656565; font-size:14px;}
+#article h3{ font-size:14px; color:#000; margin-bottom:8px;}
+#article ul{ margin-bottom:26px;}
+#article ul li a{ font-size:14px; color:#656565;}
+#article ol{ background:#f0f0f0; padding:20px 0 20px 70px;}
+#article ol li.two{ margin-left:20px; padding-top:22px;}
+#article ol p{ font-size:14px; color:#000; margin-bottom:12px;}
+#article ol li.thr{ padding-top:22px;}
+#article ol li.thr .btnss{ width:180px; margin-left:107px;}
+#article ol li.thr .btnss a{ float:inherit;}
+#article ol li.thr .btnss a.last{ margin-left:0; margin-top:12px;}
+#article ol li.thr .btnss a.last:before{ margin-right:5px;}
+
+/*column*/
+#column{ width:875px; border-top:1px solid #dcdcdc; padding:25px 25px 0 0;}
+#column dl{ margin-bottom:25px;}
+#column dt{ width:296px; height:250px; background:#0aa0b4;}
+#column dd{ margin:52px 0 0 27px; color:#656565; width:552px;}
+#column dd h2{ font-size:18px; margin-bottom:10px;}
+#column dd p{ font-size:14px; text-indent:30px; line-height:24px;}
+#column .acut{ height:108px; background:#0aa0b4; margin-bottom:28px;}
+#column ul li{ width:210px; height:423px; border:1px solid #dcdcdc; float:left; margin-right:9px; box-shadow:0 0 4px #dcdcdc;}
+#column ul li:hover{ box-shadow:0 0 4px #0aa0b4;}
+#column ul li span{ height:174px; width:100%; background:#0aa0b4; margin-bottom:1px;}
+#column ul li h2{ height:36px; line-height:36px; background:#f2f2f2; padding-left:10px; margin-bottom:22px; position:relative;}
+#column ul li h2 a{ width:50px; height:16px; text-align:center; line-height:16px; border-radius:4px; font-size:12px; color:#fff; background:#0aa0b4; position:absolute; right:10px; top:10px;}
+#column ul li div.txt{ padding:0 12px 0 10px; font-size:14px; color:#000;}
+#column ul li h3{ margin-bottom:5px;}
+#column ul li h4{ line-height:24px; text-indent:25px; margin-bottom:12px;}
+#column ul li h4 a{ color:#f00; text-indent:0;}
+#column ul li h4 a:hover{ text-decoration:underline;}
+#column ul li p{ margin-bottom:13px;}
+#column ul li p a{ font-size:12px; color:#979797; display:block;}
+#column ul li p a:hover{ color:#0aa0b4;}
+#column ul li p a:before{ content:""; display:inline-block; vertical-align:middle; margin-right:4px; width:2px; height:2px; background:#979797;}
+
+/*common*/
+.tilss{ font-size:14px; padding-left:15px; margin-bottom:8px;}
+.tilss a{ color:#656565; margin:0 7px 0 6px;}
+.tilss a.first{ margin-left:0;}
+.tilss a:hover{ color:#0aa0b4;}
+.btnss{ text-align:center;}
+.btnss a{ float:left; width:180px; text-align:center; height:36px; line-height:36px; background:#0aa0b4; font-size:14px; color:#fff; border-radius:10px;}
+.btnss a.last{ margin-left:22px;}
+.btnss a:before{ content:""; width:13px; height:24px; margin-right:20px; display:inline-block; vertical-align:middle; background:url(../images/list.png) left -36px no-repeat; transition:0.4s;}
+.btnss a.last:before{ width:28px; height:19px; background:url(../images/list.png) left -72px no-repeat;}
+.btnss a:hover:before{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS数组快速排序</title>
+</head>
+
+<body>
+<script>
+window.onload=function()
+{
+	
+	function quickSort(arr)
+	{
+		if(arr.length<=0)
+		{
+			return arr;	
+		}
+		var centerNum=Math.floor(arr.length/2);
+		var centerNumValue=arr.splice(centerNum,1);	//返回一个数组(被删掉的原数组里的值)
+		var leftNum=[];
+		var rightNum=[];
+		for(var i=0; i<arr.length;i++)
+		{
+			if(arr[i]<centerNumValue)
+			{
+				leftNum.push(arr[i]);	
+			}
+			else
+			{
+				rightNum.push(arr[i]);	
+			}
+		}
+		//return quickSort(smallThanNum).concat(centerNumValue,quickSort(bigThanNum));
+		return arguments.callee(leftNum).concat(centerNumValue,arguments.callee(rightNum));	//从小到大排序
+		//return arguments.callee(rightNum).concat(centerNumValue,arguments.callee(leftNum));	//从大到小排序
+		
+	}
+	alert(quickSort([1,11,8,7,6,99,55,5,88]));
+	//alert(quickSort(['a','d','b','e','g','h','c','zz','ff']));
+	
+	
+	
+	/*
+	var arr1=[1,2,3];
+	var arr2=[4,5,6];
+	alert(typeof (arr1+arr2))				//数组相加变成字符串(无聊,谁不知道+号进行隐式类型转换的时候会偏向字符串啊)
+	*/	
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>shake2(bug之定时器清除问题)</title>
+<style>
+div{ position:absolute; top:100px; background:#F00; width:90px; height:590px; border-radius:50%; border:10px solid #000;}
+</style>
+<script>
+window.onload=function(){
+	var aDiv=document.getElementsByTagName('div');
+	for(var i=0; i<aDiv.length;i++){
+		aDiv[i].style.left=200+i*100+'px';
+		aDiv[i].onmouseover=function(){
+			shake(this);		
+		}
+	}
+}
+function shake(obj,fn){
+	var arr=[];
+	var num=0;
+	var timer=null;
+	var pos=obj.offsetTop;
+	for(var i=20;i>0;i-=2){
+		arr.push(i,-i);	
+	}
+	arr.push(0);
+	clearInterval(timer);
+	timer=setInterval(function(){
+		obj.style.top=pos+arr[num]+'px';
+		num++;
+		if(num==arr.length){			
+			clearInterval(timer);
+			fn&&fn();
+		}
+	},30);	
+}
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

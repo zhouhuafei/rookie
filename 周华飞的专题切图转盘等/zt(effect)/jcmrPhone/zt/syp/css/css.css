@@ -1,0 +1,96 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner a{ display:block;}
+#banner img{ width:100%;}
+
+/*text*/
+#text .text-til{ font-size:3.4rem; line-height:2.3; padding-left:3%; border-bottom:1px solid #e0e0e0; margin-bottom:3%;}
+#text p{ padding-left:3%; font-size:2.7rem; line-height:1.6; color:#656565;}
+#text p img{ width:22px; margin-right:2%;}
+#text .text-btn{ display:block; margin:5% 0 6%; position:relative;}
+#text .text-btn img{ width:100%;}
+#text .text-btn a{ display:block; width:50%; height:100%; position:absolute; top:0;}
+#text .text-btn a:nth-of-type(1){ left:0;}
+#text .text-btn a:nth-of-type(2){ right:0;}
+#text dt{ width:96%; padding:0 2%; font-size:3rem; line-height:1.3; background:#fff; position:relative;}
+#text dt i{ height:1px; width:60%; position:absolute; right:0; top:50%; background:#e0e0e0;}
+#text em{ width:6%; text-align:center; color:#fff; background:#0aa0b4; margin-right:10px;}
+#text dd{ padding:4% 2%; word-break:break-all; font-size:2.8rem; line-height:1.6; color:#656565; text-indent:30px;}
+
+/*recommend*/
+#recommend{ margin-bottom:7%;}
+#recommend .til-box a{ font-size:2.8rem; background:#0aa0b4; line-height:1.6; color:#fff; width:26%; text-align:center; border-radius:10px; position:absolute; right:1%; top:25%;}
+#recommend li{ width:49.8%; margin-bottom:2px;}
+#recommend li:nth-child(odd){ float:left;}
+#recommend li:nth-child(even){ float:right;}
+#recommend li a{ display:block;}
+#recommend li img{ width:100%;}
+
+/*active*/
+#active img{ margin-bottom:4%;}
+#active ul img{ width:100%;}
+#active p{ font-size:3.2rem; line-height:1.7; color:#656565; padding-left:10px;}
+#active .active-btn{ width:50%; margin:2% 0 6% 10px;}
+#active .active-btn a{ width:46%; text-align:center; font-size:3.2rem; line-height:1.6; color:#d80000; border:1px solid #d80000; border-radius:10px;}
+
+/*expert*/
+#expert #ul-box{ overflow:hidden; border:1px solid #d0d0d0; margin-bottom:15px;}
+#expert ul li{ background:#efefef;}
+#expert dt,#expert dd{ width:50%; float:left;}
+#expert img{ width:100%;}
+#expert h2{ font-size:4.8rem; line-height:1.8; color:#000; margin-left:5%;}
+#expert small{ font-size:2.8rem; margin-left:3%;}
+#expert p{ font-size:2.5rem; line-height:2; color:#666666; margin-left:5%;}
+#expert h3{ font-size:2.4rem; line-height:1.2; color:#666666; margin-left:5%;}
+#expert li a{ display:block; width:70%; font-size:2.4rem; line-height:2.5; background:#0a8e9e; text-align:center; color:#fff; margin:10px auto 0; border-radius:10px;}
+#expert .expert-phone,#expert .expert-btn{ display:block;}
+#expert .expert-phone{ border-top:1px dashed #e0e0e0; border-bottom:1px dashed #e0e0e0;}
+#expert .expert-phone img,#expert .expert-btn img{ width:100%;}
+#expert .expert-btn{ margin:5% 0; position:relative;}
+#expert .expert-btn a{ display:block; width:50%; height:100%; position:absolute; top:0;}
+#expert .expert-btn a:nth-of-type(1){ left:0;}
+#expert .expert-btn a:nth-of-type(2){ right:0;}
+
+/*equipment*/
+#equipment{ margin-bottom:20px; border-bottom:1px dashed #777777;}
+#equipment ul li{ position:relative;}
+#equipment div.txt{ color:#282828; padding:0 10px 7%; background:rgba(255,255,255,0.5); width:56%; position:absolute; right:0; top:7%;}
+#equipment h2{ font-size:3.2rem; text-align:center; line-height:2.8;}
+#equipment p{ font-size:2.4rem; word-break:break-all; line-height:1.25;}
+#equipment img{ width:100%;}
+#equipment .equipment-btn{ margin-top:20px; padding:5% 0; border-top:1px dashed #e0e0e0;}
+#equipment .equipment-btn div{ position:relative;}
+#equipment .equipment-btn a{ display:block; width:50%; height:100%; position:absolute; top:0;}
+#equipment .equipment-btn a:nth-of-type(1){ left:0;}
+#equipment .equipment-btn a:nth-of-type(2){ right:0;}
+
+/*common*/
+.til-box{ position:relative;}
+.til{ border-top:1px dashed #777777; font-size:4rem; line-height:2; color:#656565; padding-left:10px;}
+ol.btn{ position:absolute; right:0; top:50%; margin-top:-15px;}
+ol.btn li{ width:30px; height:30px; margin:0 5px; background:#dcdcdc; border-radius:50%; float:left; cursor:pointer;}
+ol.btn li.on{ background:#0aa0b4;}
+
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	/*common*/
+	ol.btn{ margin-top:-10px;}
+	ol.btn li{ width:20px; height:20px;}
+	/*text*/
+	#text p img{ width:18px;}
+	
+}
+@media (min-width: 320px) and (max-width: 479px){
+	/*common*/
+	ol.btn{ margin-top:-5px;}
+	ol.btn li{ width:10px; height:10px;}
+	/*text*/
+	#text p img{ width:14px;}
+	
+}

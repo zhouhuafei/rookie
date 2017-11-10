@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>css3动画残影2</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+ul{ overflow:hidden; width:1200px; margin:200px auto;}
+ul li{ float:left; border:1px solid #c1c1c1; margin:10px; width:98px; height:98px;}
+ul a{ display:block; width:100%; height:100%; background:#000; opacity:0; animation:fadeOut 0.4s;}
+ul li:hover a{ animation:fadeIn 0.4s; opacity:1;}
+ul li a.active{ opacity:1;}
+@keyframes fadeIn{  
+	0%   { transform:scale(0.8); opacity:0;}
+	100% { transform:scale(1); opacity:1;}
+}
+@keyframes fadeOut{
+	0%   { transform:scale(1); opacity:1;}
+	100% { transform:scale(0.8); opacity:0;}
+}
+</style>
+<script>
+window.onload=function(){
+	var aBtn=document.getElementsByTagName('a');
+	tab(aBtn);	
+}
+function tab(aBtn,aCut){
+	for(var i=0,len=aBtn.length; i<len;i++){
+		aBtn[i].index=i;
+		aBtn[i].onmouseover=function(){
+			for(var i=0,len=aBtn.length; i<len;i++){
+				aBtn[i].className='';
+				aCut&&(aCut[i].className='');	
+			}
+			this.className='active';
+			aCut&&(aCut[this.index].className='active');
+		}			
+	}
+}
+</script>
+</head>
+<body>
+<ul>
+	<li><a class="active" href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+	<li><a href="javascript:;"></a></li>
+</ul>
+</body>
+</html>

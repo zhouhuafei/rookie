@@ -1,0 +1,48 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+#container{ padding:70px 0 170px; overflow:hidden;}
+
+#content{ width:1200px; margin:0 auto;}
+
+#aside{ width:302px; height:779px; margin-left:20px; position:relative;}
+#aside #wrap{ padding:20px 0; background:#2d2d2d; width:302px; position:absolute; left:0; top:0;}
+#aside ol{ margin-bottom:22px;}
+#aside li{ position:relative; width:98%; margin-bottom:14px; box-shadow:0 0 5px #000; height:40px; line-height:40px; background:#fff; font-size:20px; margin-left:-20px;}
+#aside li:before{ transition:0.4s; content:""; display:block; width:0; height:100%; background:#0aa0b4; position:absolute; left:0; top:0;}
+#aside li:after{ transition:0.4s; content:""; display:block; width:11px; height:23px; position:absolute; right:2px; top:50%; margin-top:-11px; background:url(/zt/lylx/images/arrow.png) -11px top no-repeat;}
+#aside small{ font-size:12px; color:#b4b4b4; margin-left:4px;}
+#aside li a{ color:#7b7b7b; position:absolute; left:8px; top:0;}
+#aside li.active{ margin-left:-10px;}
+#aside li.active:before{ width:100%;}
+#aside li.active:after{ transition:0.4s 0.3s; background:url(/zt/lylx/images/arrow.png) left top no-repeat;}
+#aside li.active a{ color:#fff;}
+#aside li.active small{ color:#fff;}
+#aside li:hover{ margin-left:-10px;}
+#aside li:hover:before{ width:100%;}
+#aside li:hover:after{ transition:0.4s 0.3s; background:url(/zt/lylx/images/arrow.png) left top no-repeat;}
+#aside li:hover a{ color:#fff;}
+#aside li:hover small{ color:#fff;}
+#aside h2{ height:24px; line-height:24px; font-size:22px; color:#fff; margin-left:13px; padding-left:11px; border-left:2px solid #0aa0b4;}
+#aside h3{ margin-top:18px; padding-left:15px;}
+#aside em{ margin-right:5px; vertical-align:middle;}
+#aside span{ vertical-align:middle; color:#fff;}
+#aside i{ display:block; font-size:12px; margin-bottom:10px;}
+#aside strong{ font-size:18px;}
+#aside .img{ text-align:center; margin-top:20px;}
+
+#section .til{ margin-bottom:40px; border-bottom:1px solid #e6e6e6;}
+#section .til span{ padding-bottom:15px; font-size:30px; border-bottom:2px solid #0aa0b4; margin-bottom:-1px;}
+#section .tils{ font-size:18px; margin-bottom:50px; padding-left:10px; border-left:2px solid #0aa0b4; margin-left:28px;}
+
+#section .sec{ padding-left:20px;}
+#section{ width:840px; color:#444444;}
+#section .img{ margin-bottom:50px;}
+#section .box1{ margin-bottom:50px;}
+#section .box1 p{ margin-bottom:60px; line-height:30px; text-indent:28px; font-size:14px;}
+#section .box1 div.fl{ width:424px;}
+#section .box2 p{ margin-bottom:50px; line-height:30px; text-indent:28px; font-size:14px;}

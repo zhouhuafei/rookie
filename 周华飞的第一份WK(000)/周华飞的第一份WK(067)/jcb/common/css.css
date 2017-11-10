@@ -1,0 +1,104 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,p,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_320{ width:320px; margin:0 auto; overflow:hidden;}
+
+/*main*/
+.main2{ width:320px; margin:0 auto; overflow:hidden; background:#f4f4f4;}
+
+/*banners*/
+.banners_til{ border-bottom:1px solid #999; width:300px; padding-bottom:5px; margin:20px auto;}
+.banners_til em{ width:12px; height:12px; border-radius:20px; border:2px solid #1364b6; vertical-align:middle; margin-right:5px;}
+.banners_til a{ line-height:20px; font-size:16px;}
+.banners{ height:172px; margin:15px auto 0; width:320px; text-align:center;}
+.banners a{ width:100%; height:100%; display:block;}
+
+/*common*/
+.common_til{ font-size:18px; color:#006db8; line-height:26px; margin:15px 0;}
+.common_til em{ vertical-align:baseline; width:26px; height:26px; line-height:13px; font-size:11px; color:#fff; background:url(../images/til_bg.png) no-repeat; text-align:center; margin-right:7px;}
+.common_tils{ color:#006fb5; font-size:16px; margin-bottom:8px;}
+.common_btn{ text-align:center; margin:30px 0;}
+.common_btn a{ border-radius:5px 0 0 5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; padding:0 10px; margin-right:10px;}
+.common_btn .last_a{ margin-right:0; border-radius:0 5px 5px 0;}
+.common_btn em{ vertical-align:middle; margin-right:10px;}
+.dashed_line{ width:300px; height:0px; border-top:1px dashed #808080;}
+.cure,.therapy,.contrast,.expert,.recovery,.type,.ad{ width:300px; margin:0 auto;}
+
+/*cure*/
+.cure{ font-size:12px; color:#444444;}
+.cure .dashed_line{ margin:20px 0;}
+.cure h3{ color:#fb7000; font-size:14px; margin-bottom:15px;}
+.cure li{ width:85px; float:left; margin-right:22px;}
+.cure li p{ line-height:18px; margin-top:10px;}
+.cure img{ vertical-align:middle; border:1px solid #1264b6;}
+.cure dd{ float:left; width:130px; margin-right:40px;}
+.cure dd p{ line-height:30px;}
+
+/*therapy*/
+.therapy li{ height:104px; margin-bottom:15px; background:#f4f4f4;}
+.therapy li div{ width:124px; height:102px; border:1px solid #d6d6d6; border-left:none; padding:0 10px 0 15px;}
+.therapy li h2{ font-size:14px; color:#1264b6; margin:10px 0 5px;}
+.therapy li p{ font-size:12px; color:#666666; line-height:20px;}
+
+/*contrast*/
+.contrast li{ width:143px; float:left; margin:0 6px 16px 0; border:1px solid #006fb5;}
+.contrast .no_mr{ margin-right:0;}
+.contrast img{ vertical-align:middle;}
+.contrast p{ text-align:center; color:#fff; background:#006db8;}
+.contrast .common_btn{ margin-top:17px;}
+
+/*expert*/
+.expert .expert_btn{ display:block; width:200px; margin:0 auto 30px; line-height:30px; font-size:16px; color:#fff; background:#006db8; border-radius:15px;}
+.expert .expert_btn em{ vertical-align:middle; margin:0 5px 0 15px;}
+.expert .experts{ text-align:center;}
+
+/*recovery type*/
+.recovery .recoverys{ text-align:center; margin-bottom:5px;}
+.recovery .recoverys img{ border:1px solid #1364b6;}
+.recovery  strong{ color:#006db8;}
+.recovery p{ color:#646464; word-spacing:8px;}
+.recovery li{ width:139px; height:120px; float:left; margin:10px 22px 0 0;}
+.recovery li img{ width:137px; height:93px; border:1px solid #1364b6; vertical-align:middle;}
+.recovery li p{ color:#fff; line-height:23px; background:rgba(19,100,182,1); font-size:12px; text-align:center; width:100%;}
+.recovery .no_mr,.type .no_mr{ margin-right:0;}
+.recovery .dashed_line{ margin:30px 0;}
+.type li{ width:144px; float:left; margin-right:12px;}
+.type li img{ vertical-align:middle; border:1px solid #1364b6;}
+.type li p{ color:#646464; text-align:center; line-height:46px;}
+.type li h3{ color:#1364b6; text-align:center; line-height:46px; font-size:14px;}
+.type .common_btn{ margin-top:10px;}
+
+/*ad*/
+.ad{ margin-bottom:20px;}
+
+/*about*/
+.about { padding-bottom:10px; border:#1364b6 1px solid; width:300px; margin:0 auto;}
+.about h2 { padding-left:15px; height:37px; margin-bottom:10px; background:#1364b6; font-size:16px; font-weight:100; font-family:'Microsoft Yahei'; line-height:37px; color:#fff; }
+.about dl{ width:300px; margin:0 auto; overflow:hidden;}
+.about dd{ width:100%; height:33px; margin-top:6px; font-size:14px; font-weight:700; line-height:33px;}
+.about dd a{ display:inline; text-align:center; color:#FFF;}
+.about dd a.a01{ float:left; background:#91c1e9; width:170px; margin-right:4px; }
+.about dd a.a02{ float:right; background:#db7077; width:126px; }
+.about dd a.a03{ float:left; background:#d0454e; width:134px; margin-right:4px;  }
+.about dd a.a04{ float:right; background:#e1822a; width:162px; }
+.about dd a.a05{ float:left; background:#13b9ad; width:170px; margin-right:4px;  }
+.about dd a.a06{ float:right; background:#f3b174; width:126px; }

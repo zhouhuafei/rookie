@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>target(css3)</title>
+<style>
+body{ text-align:center;}
+#maodian1,#maodian2{ display:inline-block; width:200px; line-height:200px; background:#f00; text-align:center; transition:1s; font-size:20px; color:#fff; margin-bottom:10px;}
+#maodian1:target{ width:300px; line-height:300px; background:#000; border-radius:50%;}
+#maodian2:target{ width:300px; line-height:300px; background:#F60; border-radius:50%;}
+p,a{ color:#f00;}
+</style>
+</head>
+<body>
+<a href="#maodian1">点击我,我的锚点1会给你惊喜</a><br>
+<a href="#maodian2">点击我,我的锚点2会给你惊喜</a><br>
+<div id="maodian1">我是他的锚点1</div><br>
+<div id="maodian2">我是他的锚点2</div>
+<p>根据这个原理可以实现css3版本选项卡</p>
+</body>
+</html>

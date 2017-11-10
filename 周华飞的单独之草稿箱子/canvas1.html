@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>canvas1</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#000;}
+canvas{ display:block; margin:100px auto; background:#fff;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	/*obj*/
+	//oCanvas=document.querySelector('canvas');
+	oCanvas=document.querySelectorAll('canvas')[0];
+	oContext=oCanvas.getContext('2d');
+	
+	/*attr*/
+	oContext.fillStyle='violet';//purple(紫色);violet(紫罗兰) 
+	oContext.strokeStyle='red';
+	oContext.lineWidth='10';
+	//oContext.lineJoin='round';
+	oContext.lineJoin='bevel';
+	oContext.fillRect(10,10,100,100);
+	oContext.strokeRect(10,10,100,100);
+	//如果边框宽为1px(oContext.lineWidth='1';),则会变成2px,
+	//1px误差原因==>像素是从某个点向两边开始填充的,如果边框宽度为1px,则边框从某点向两边各填充0.5px,然而像素的最小单位为1px,所以网页就自动把0.5px变为1px,于是就多出了1px;
+	//1px误差解决办法==>oContext.strokeRect(10.5,10.5,100,100);
+},false)
+</script>
+</head>
+
+<body>
+<canvas width="400" height="400">您的浏览器不支持canvas</canvas>
+</body>
+</html>

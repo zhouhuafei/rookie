@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>jsonp原理</title>
+<script>
+//所谓jsonp,所谓跨域
+window.addEventListener('load',function(){
+	//在本地执行别的网站上的数据
+	function jsonp(json){
+		var str=json.lastname+json.firstname;
+		document.write(str);
+	}
+	//这是别的网站上的数据
+	jsonp({firstname:'huafei',lastname:'zhou',sex:'man',height:'182cm'})
+},false)
+</script>
+</head>
+<body>
+</body>
+</html>

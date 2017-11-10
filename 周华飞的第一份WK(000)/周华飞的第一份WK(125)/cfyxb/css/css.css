@@ -1,0 +1,63 @@
+@charset "gb2312";
+/* CSS Document */
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat; margin-bottom:20px;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:270px; height:50px; position:absolute; right:110px; bottom:150px; -background:#000;}
+
+/*nav*/
+#nav{ width:100%; height:50px; position:absolute; left:0; top:678px; z-index:999; background:#0063b4;}
+#nav em{ display:block; font-style:normal; height:50px; line-height:50px; width:1000px; margin:0 auto; text-align:center; color:#fff; background:#0063b4;}
+#nav span{ width:299px; border-right:1px solid #fff; font-size:22px;}
+#nav ul{ width:700px; height:50px; line-height:50px; background:#0063b4; font-size:18px;}
+#nav ul li{ height:50px; width:140px; text-align:center; line-height:50px; float:left;}
+#nav ul .select{ background:#013b6b;}
+
+/*lead*/
+.lead{ padding:30px 20px 36px 190px; margin:48px 0 44px; font-size:16px; border-top:1px solid #0064b4; border-bottom:1px solid #0064b4; text-indent:30px; position:relative;}
+.lead:after{ content:""; width:129px; height:108px; position:absolute; left:22px; top:-18px; display:block; background:url(../images/lead.jpg);}
+
+/*more*/
+.more dd{ width:570px;}
+.more dd p{ font-size:14px; color:#464646; line-height:28px; position:relative;}
+.more dd .p1{ text-indent:30px;}
+.more dd .p2{ padding-left:70px; margin-top:30px;}
+.more dd .p2:after,.more dd .p3:after{ width:49px; height:45px; background:url(../images/more2.jpg); font-size:16px; text-align:center; line-height:24px; display:block; position:absolute; left:0; top:6px; color:#fff; font-weight:bold;}
+.more dd .p2:after{ content:"’Ô∂œ";}
+.more dd .p3:after{ content:"¡∆–ß";}
+.more dd .p3{ padding-left:70px; margin-top:30px;}
+.more ul{ text-align:center; position:relative;}
+.more li{ width:260px; font-size:12px; text-align:left; position:absolute;}
+.more .l1{ left:360px; top:100px;}
+.more .l2{ left:662px; top:146px;}
+.more .l3{ left:90px; top:230px;}
+.more .l4{ left:400px; top:270px;}
+.more .l5{ left:700px; top:290px;}
+
+/*treatment*/
+.treatment dt{ text-align:center; margin-bottom:160px;}
+.treatment dd{ text-align:right; position:relative;}
+.treatment dd:after{ content:""; width:204px; height:296px; background:url(../images/treatment2.jpg); display:block; position:absolute; left:0; top:-90px;}
+ 
+/*disease*/
+.disease dl{ padding-bottom:30px; margin-bottom:30px; border-bottom:1px dashed #b0b0b0;}
+.disease dl.reStyle{ border-bottom:none; margin-bottom:0; padding-bottom:0;}
+.disease dd{ width:490px;} 
+.disease h2{ width:181px; text-align:center; height:55px; line-height:40px; background:url(../images/disease.jpg); margin-bottom:30px;} 
+.disease p{ text-indent:30px; font-size:14px; line-height:26px;}
+.disease .hint{ padding:30px 40px 30px 160px; text-indent:30px; font-size:16px; color:#0064b4; position:relative; margin-top:60px; background:#f0f8ff;}
+.disease .hint:before{ content:"Œ¬‹∞Ã· æ"; text-indent:0; width:106px; text-align:center; height:80px; line-height:40px; background:url(../images/hint.jpg); display:block; position:absolute; left:20px; top:36px; color:#fff; font-size:20px; font-weight:bold;}
+
+/*common*/
+.til{ margin:80px 0 60px; position:relative; border-bottom:2px solid #0064b4; text-align:center; text-transform:uppercase;}
+.til h2{ display:inline-block; font-size:28px; color:#fff; background:#0064b4; height:44px; line-height:44px; padding:0 20px;}
+.til:after{ content:""; width:0px; height:0px; border:8px solid transparent; border-top:12px solid #0064b4; position:absolute; left:50%; margin-left:-8px; bottom:-22px;}
+.noMr{ margin-right:0 !important;}
+.noMb{ margin-bottom:0 !important;}
+.noPt{ padding-top:0 !important;}
+.noPb{ padding-bottom:0 !important;}
+.noBb{ border-bottom:none !important;}
+.recovery_btn{ margin:40px auto 0; width:420px; height:36px; line-height:36px;}
+.recovery_btn span{ height:36px; width:210px; text-align:center; font-size:20px; color:#4b4b4b; background:#b4b4b4;}
+.recovery_btn em{ vertical-align:middle; margin-right:5px;}
+.recovery_btn a{ width:210px; text-align:center; font-size:18px; color:#fff; background:#0064b4;}

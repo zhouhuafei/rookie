@@ -1,0 +1,81 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%;   margin:0 auto; overflow:hidden; background:#4796cc;}
+
+/*common*/
+.common_til{ margin:45px 0; font-size:48px; color:#4796cc; text-align:center; height:50px; line-height:50px; padding-bottom:20px; position:relative; border-bottom:1px solid #006db8;}
+.common_i{ transition:1s; font-size:12px; position:absolute; bottom:-9px; left:0; height:18px; line-height:18px; background:#FFF; padding:0 20px;}
+.commonWidth_grey .common_til{ color:#fff; border-bottom:1px solid #fff;}
+.commonWidth_grey .common_i{ background:#4796cc;}
+
+/*banner*/
+.banner{ height:500px; background:url(../images/banner.jpg) no-repeat center center;}
+
+/*good*/
+.good{ padding-bottom:70px;}
+.good_main{ padding:40px; background:url(../images/good_main_bg.jpg);}
+.good p{ text-indent:30px; font-size:16px; color:#797979; line-height:30px;}
+
+/*expert*/
+.expert{ width:1000px; margin:0 auto;}
+.expert li{ box-shadow:1px 1px 10px #fff; height:239px; width:468px; margin:0 64px 70px 0; float:left;}
+.expert_img{ width:177px; height:235px; border:2px solid #fff;}
+.expert_word{ width:242px; padding:0 15px 0 30px; background:#fbfbfb; height:100%; position:relative; color:#282828;}
+.expert_word h2{ font-size:30px; line-height:70px;}
+.expert_word h3{ font-size:16px; font-weight:bold; padding-top:10px;}
+.expert_btn{ height:37px; width:84px; position:absolute; right:10px; bottom:10px;}
+.expert_btn a{ margin-right:5px; width:37px; height:37px;}
+.expert_btn a:hover{ transform:rotate(360deg);}
+
+/*case*/
+.case{ padding-bottom:70px;}
+.case .common_til{ margin:45px 0 35px;}
+
+/*wall*/
+.wall{ padding-bottom:70px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

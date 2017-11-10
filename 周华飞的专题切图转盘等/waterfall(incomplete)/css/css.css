@@ -1,0 +1,11 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+h1{ font-size:10rem; text-align:center; line-height:5; color:#00F;}
+#waterfall{ width:100%; height:auto; margin:10px auto 0; position:relative;}
+#waterfall li{ width:24%; position:absolute; left:0.8%; top:0;}
+#waterfall img{ width:100%;}

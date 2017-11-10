@@ -1,0 +1,73 @@
+<!--******************************
+**********************************
+******rookie QQ:1123486116********
+******rookie making***************
+******rookie Copyright************
+**********************************
+*******************************-->
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>坦克大战1</title>
+<style>
+canvas#tanke{ border:1px solid #000; margin:100px auto 0; display:block;}
+</style>
+<script>
+window.onload=function(){
+	var oCanvas=document.getElementById('tanke');
+	var oC=oCanvas.getContext('2d');
+	var iW=oCanvas.width;
+	var iH=oCanvas.height;
+	var iX=iW/2;
+	var iY=iH/2;
+	var iR=iY;
+	var iCoordx=30.5;
+	var iCoordy=30.5;
+	function me(){
+		oC.beginPath();
+		oC.save();
+		var oGradient=oC.createRadialGradient(iX,iY,0,iX,iY,iR);
+		oGradient.addColorStop(0,'red');
+		oGradient.addColorStop(0.1,'yellow');
+		oGradient.addColorStop(0.2,'blue');
+		oGradient.addColorStop(0.3,'green');
+		oGradient.addColorStop(0.4,'cyan');
+		oGradient.addColorStop(0.5,'orange');
+		oGradient.addColorStop(0.6,'purple');
+		oGradient.addColorStop(0.7,'grey');
+		oGradient.addColorStop(0.8,'black');
+		oGradient.addColorStop(0.9,'pink');
+		oGradient.addColorStop(1,'violet');
+		oC.strokeStyle=oGradient;
+		oC.fillStyle=oGradient;
+		oC.strokeRect(iCoordx,iCoordy,5,30);
+		oC.strokeRect(iCoordx+15,iCoordy,5,30);
+		oC.strokeRect(iCoordx+15,iCoordy,5,30);
+		oC.strokeRect(iCoordx+5,iCoordy+5,10,20);
+		oC.arc(iCoordx+10,iCoordy+15,5,0,Math.PI*2,false);
+		oC.moveTo(iCoordx+10,iCoordy+15);
+		oC.lineTo(iCoordx+10,iCoordy);
+		oC.stroke();
+		oC.restore();
+		oC.closePath();
+	}
+	me();
+	setInterval(function(){
+		//oC.clearRect(0,0,iW,iH);
+		var iNum1=Math.round(Math.random()*(1000-20));
+		var iNum2=Math.round(Math.random()*(500-20));
+		iCoordx=iNum1;
+		iCoordy=iNum2;
+		me();
+	},30)
+}
+</script>
+</head> 
+<body>
+<canvas id="tanke" width="1000px" height="500px">你浏览器不支持canvas,既然不支持canvas,就不要玩canvas游戏了</canvas>
+</body>
+</html>
+
+
+

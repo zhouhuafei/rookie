@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ事件对象</title>
+<style>
+*{ margin:0; padding:0;}
+body{ margin:50px 100px; height:2000px;}
+.div1{ width:300px; height:200px; background:#F00;}
+.div1 input{ width:298px;}
+.div1 span{ display:block; width:100px; height:100px; background:#0FF;}
+.div5{ width:200px; height:200px; position:absolute; left:700px; top:700px; background:#C60;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	//alert($(':button').eq(0).html());
+	//alert($(':button').html());
+	/*
+	$(':button').click(function(e)
+	{
+		alert(e);			
+	})
+	*/
+	/*
+	$(':button').click(function(e)
+	{
+		alert(e.type);				//e.type获取这个事件的事件类型的字符串
+		alert(typeof e.type);			
+	})
+	*/
+	/*
+	$(':button').click(function(e)
+	{
+		alert(e.target);			//e.target获取绑定事件的DOM元素
+	})
+	*/
+	/*
+	$(':button').click(function(e)
+	{
+		alert(e.relatedTarget);			//e.relatedTarget获取移入移出目标点离开或进入的那个DOM元素(临近元素)
+	})
+	*/
+	/*	
+	$(':button').click(function(e)
+	{
+		alert(e.currentTarget);			//e.currentTarget获取冒泡触发的DOM元素，等同于this
+	})	
+	*/
+	//target获取的是触发元素的DOM,触发元素就是你点了哪个就是哪个
+	//currentTarget得到的是监听元素的DOM,监听元素就是你绑定的哪个就是哪个
+	/*
+	$('div').bind('click',function(e)
+	{
+		alert('触发元素是：'+e.target.tagName);
+		alert('监听元素是：'+e.currentTarget.tagName);	
+		alert(e.currentTarget==this);	  //e.currentTarget==this
+	})
+	*/
+	/*
+	$('div').bind('mouseover',function(e)
+	{
+		alert('触发元素是：'+e.target.tagName);
+		alert('监听元素是：'+e.currentTarget.tagName);	
+		alert('从'+e.relatedTarget.tagName+'移入'+this.tagName+'元素');
+	})
+	*/
+	/*
+	$('div').bind('click',[1,2,3,'a','b','c'],function(e)	
+	//第二个参数可有可无，可以为数字123,可以为字符串'abc',可以为数组[1,2,'a'],可以为对象{a:1,b:2,c:3,d:4}
+	{
+		alert(e.data[3]);			//e.data  获取额外的数据
+	})
+	*/
+	/*
+	$('div').bind('click',{a:1,b:2,c:3,d:4},function(e)	
+	//第二个参数可有可无，可以为数字123,可以为字符串'abc',可以为数组[1,2,'a'],可以为对象(键值对/json){a:1,b:2,c:3,d:4}
+	{
+		alert(e.data.a);			//e.data  获取额外的数据
+	})
+	*/
+	/*
+	$('.div5').click(function(e)			//这里有点二了，其实用$(document).click(function(){})就可以了
+	{
+		alert('pageX:'+e.pageX+','+'pageY:'+e.pageY);		//获取相对于页面原点的水平/垂直坐标
+		alert('screenX:'+e.screenX+','+'screenY:'+e.screenY);		//获取相对于显示器屏幕位置的的水平/垂直坐标(非JQ封装)
+		alert('clientX:'+e.clientX+','+'clientY:'+e.clientY);		//获取相对于页面视口的水平/垂直坐标(非JQ封装)
+	})
+	*/
+	/*
+	$('.div5').click(function(e){return 123;})
+	$('.div5').click(function(e){alert(e.result);})		//e.result 获取上一个相同事件的返回值
+	*/
+	//$(document).mousedown(function(e){alert(e.which)})		
+	//e.which 返回1(鼠标左键)2(鼠标滚轮)3(鼠标右键)
+	//$(document).keydown(function(e){alert(e.which)})		
+	//e.which 如果是键盘则返回按键   keydown返回键码keyCode
+	//$(document).keypress(function(e){alert(e.which)})		
+	//e.which 如果是键盘则返回按键	 keypress返回字符编码charCode
+	
+	//e.altKey	是否同时按了alt
+	//e.ctrlKey	是否同时按了ctrl
+	//e.shiftKey	是否同时按了shift
+	$('.div5').click(function(e)
+	{
+		alert('点击时是否按了alt:'+e.altKey+'\n点击时是否按了ctrl:'+e.ctrlKey+'\n点击时是否按了shift:'+e.shiftKey);	
+	})
+		
+})
+</script>
+</head>
+
+<body>
+<form>
+        <button>我是按钮</button>
+        <input type="text" placeholder="我是菜鸟" />
+        <input type="submit" value="提交表单" />
+</form>
+<div style="width:200px; height:200px; background:#990">
+	<em style=" display:block; background:#999; height:100px; width:100px;"></em>
+        <i>1</i>
+</div>
+
+<div class="div1">
+<input class="input1" type="text" placeholder="用div能否获取焦点，能不能激活事件" />
+<span></span>
+</div>
+
+<div class="div5"></div>
+</body>
+</html>

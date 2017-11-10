@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var oBtn=document.getElementById('btn');
+	var oTxt=document.getElementById('txt');
+	var oUl=document.getElementById('ul');
+	var aLi=oUl.getElementsByTagName('li');
+	oBtn.onclick=function()
+	{
+		//oUl.appendChild(document.createElement('li'));
+		var oLi=document.createElement('li');	
+		oLi.innerHTML=oTxt.value;
+		//添加到末尾
+		//oUl.appendChild(oLi);
+		//添加到ali[0]之前
+		if(aLi.length>0){oUl.insertBefore(oLi,aLi[0]);}
+		else{oUl.appendChild(oLi);}
+		 
+	}		
+}
+</script>
+</head>
+
+<body>
+<input id="txt" type="text" />
+<input id="btn" type="button"  value="创建li"/>
+<ul id="ul">
+</ul>
+</body>
+</html>

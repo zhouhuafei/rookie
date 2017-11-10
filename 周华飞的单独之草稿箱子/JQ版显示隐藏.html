@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div{ width:80px; height:200px; background:#000;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('input').click(function()
+	{
+		//$('div').slideToggle('slow');
+		$('div').toggle('slow');	
+	});	
+});
+</script>
+</head>
+
+<body>
+<input type="button" value="显示/隐藏" />
+<div></div>
+</body>
+</html>

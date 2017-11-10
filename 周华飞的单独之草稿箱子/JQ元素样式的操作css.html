@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQcss操作</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+.blue{ color:#00F}
+.red{ color:#F00;}
+.bg{ background:#999;}
+.f_t{ font-size:30px;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+	$(function()
+	{
+		 //alert($('div').css('color'));			//获取css样式	
+		//$('div').css('color','red');				//设置css样式
+		
+			        
+		//var box = $('div').css(['width','height','color']);		//获取一组css样式	
+		/*
+		for(var i in box)
+		{
+			alert(i+':'+box[i]);	
+		}
+		*/
+		/*
+		$.each(box,function(attr,value)
+		{
+			alert(attr+":"+value);
+		})
+		*/
+		
+		
+		/*
+		$('div').css({
+			'background-color':'red',
+			'color':'white',
+			'font-size':'30px',
+			'height':'200px',
+			'line-height':'200px',
+			'text-align':'center'
+			})
+		*/
+		/*
+		$('div').css('height',function(index,value)
+		{
+			return 	parseInt(value)+500+'px';
+		}).css('background','red');
+		*/
+		//$('div').addClass('blue bg');
+		//$('div').removeClass('f_t');
+		/*
+		$('div').css('cursor','pointer');
+		$('div').click(function()
+		{
+			$(this).removeClass('f_t')
+			$(this).toggleClass('blue bg')		//togglee 两个样式之间的切换
+		})
+		*/	
+		
+		//					div有默认样式class='blue'使用toggle时教程发现bug 而我尝试发现一切正常
+		/*
+		$('div').click(function()
+		{	
+			$('div').toggleClass('red');
+			if($(this).hasClass('red'))
+			{
+				$(this).removeClass('blue');	
+			}
+			else
+			{
+				$(this).addClass('blue');	
+			}
+		})
+		*/		
+		/*
+		$('div').click(function()
+		{
+			$(this).toggleClass(function()
+			{
+				if($(this).hasClass('red'))
+				{
+					$(this).removeClass('red');
+					return 'blue';
+				}
+				else	
+				{
+					$(this).removeClass('blue');
+					return 'red';	
+				}
+			})	
+		})
+		*/
+		/*
+		$(document).click(function()
+		{
+			$('div').toggleClass(function(index,className,switchBool)
+			{
+				alert(index+':'+className+':'+switchBool);
+				//局部
+				if($(this).hasClass('red'))
+				{
+					$(this).removeClass('red');
+					return 'blue';
+				}
+				else	
+				{
+					$(this).removeClass('blue');
+					return 'red';	
+				}
+			})	
+		})
+		*/
+		
+	})
+</script>
+</head>
+
+<body>
+	<div class="f_t blue">123</div>
+	<div>456</div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</body>
+</html>

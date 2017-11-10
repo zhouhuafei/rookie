@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#share_box{ width:200px; height:300px; background:#666; position:fixed; right:-200px; top:30%;}
+#share{ width:30px; height:60px; position:absolute; left:-30px; top:120px; background:#F93; line-height:30px; text-align:center; color:#00F;}
+</style>
+<script>
+window.onload=function()
+{
+	var oShare_box=document.getElementById('share_box');	
+	oShare_box.onmouseover=function()
+	{
+		startMove(document.documentElement.clientWidth-oShare_box.offsetWidth);	
+	}
+	oShare_box.onmouseout=function()
+	{
+		startMove(document.documentElement.clientWidth);	
+	}
+};
+var timer=null;
+function startMove(iTarget)
+{
+	var oShare_box=document.getElementById('share_box');
+	clearInterval(timer);
+	timer=setInterval(function()
+		{
+			var speed=0;
+			if(oShare_box.offsetLeft>iTarget)
+			{
+				speed=-10;
+			}
+			else
+			{
+				speed=10;	
+			}
+			if(oShare_box.offsetLeft==iTarget)
+			{
+				clearInterval(timer);
+			}
+			else
+			{
+				oShare_box.style.left=oShare_box.offsetLeft+speed+'px';
+			}
+		},30);
+}
+</script>
+</head>
+
+<body>
+<div id="share_box">
+<span id="share">分享</span>
+</div>
+</body>
+</html>

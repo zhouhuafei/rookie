@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>有疑问</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+.box{width:400px; height:280px; position:relative; margin:200px auto;}
+ul{ width:100%; height:100%; position:absolute; left:0; top:0;}
+ul li{ width:100%; height:100%;}
+ol{ height:20px; width:120px; position:absolute; bottom:5px; right:0;}
+ol li{ width:20px; height:20px; border-radius:10px; float:left; margin-right:10px; background:#39F;}
+ol .li_active{ background:#F60;}
+</style>
+<script src="move.js"></script>
+<script>
+function eventBind(obj,ev,fn)
+{
+	if(obj.attachEvent)
+	{
+		obj.attachEvent('on'+ev,fn);	
+	}
+	else
+	{
+		obj.addEventListener(ev,fn,false);	
+	}
+}
+eventBind(window,'load',function()
+{
+	var oCut=document.getElementsByTagName('ul')[0];
+	var aCut=oCut.getElementsByTagName('li');
+	var aBtn=document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+	var now=0;
+	var num=0;
+	for(var i=0; i<aBtn.length;i++)
+	{
+		aBtn[i].index=i;
+		aBtn[i].onmouseover=function()
+		{
+			now=this.index;
+			num=this.index;
+			tab();
+		}	
+	}
+	function tab()
+	{
+		for(var i=0; i<aBtn.length;i++)
+		{
+			aBtn[i].className='';	
+		}
+		aBtn[now].className='li_active';
+		startMove(oCut,{top:-aCut[0].offsetHeight*now});
+	}
+	function next()
+	{
+		if(now==aBtn.length-1)				//先得到now 后自增		无缝切换的时候用的到
+		{
+			now=0;
+		}
+		else
+		{			
+			now++;
+		}
+		tab();
+	}	
+	/*
+	function next()
+	{
+		now++;					 	//先自增   后得到now
+		if(now==aBtn.length)
+		{
+			now=0;
+		}		
+		tab();
+	}
+	*/
+	/*
+	function next()
+	{
+		now++;
+		now%=aBtn.length;		
+		tab();
+	}
+	*/
+	setInterval(next,2000);
+		
+})
+</script>
+</head>
+<body>
+<div class="box">
+        <ul>
+                <li><img src="icon1.png" /></li>
+                <li><img src="icon2.png" /></li>
+                <li><img src="icon3.png" /></li>
+                <li><img src="icon4.png" /></li>
+        </ul>
+        <ol>
+                <li class="li_active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ol>
+</div>
+</body>
+</html>

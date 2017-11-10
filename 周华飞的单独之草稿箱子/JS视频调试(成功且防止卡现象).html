@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+body{ text-align:center;}
+#showVideo{ width:640px; height:360px; background:#000; margin:200px auto 20px;}
+span{ cursor:pointer;}
+
+</style>
+<script>
+window.onload=function()
+{
+	var oShowVideo=document.getElementById('showVideo');
+	var oVideoSrc=document.getElementById('videoSrc');
+	oShowVideo.innerHTML=oVideoSrc.innerHTML;
+}
+</script>
+</head>
+
+<body>
+<!----把视频代码放在网页最后加载,然后再通过JS的方式加载到页面中,这样可以防止视频在页面里加载时出现的卡一下现象---->
+<div id="showVideo"></div>
+<span onclick="changeBtn('57359674')">1</span>
+<span onclick="changeBtn('77868253')">2</span>
+<span onclick="changeBtn('106905079')">3</span>
+<span onclick="changeBtn('85666771')">4</span>
+<span onclick="changeBtn('77865796')">5</span>
+<span onclick="changeBtn('74155726')">6</span>
+<span onclick="changeBtn('57740509')">7</span>
+<div id="videoSrc" style="display:none;"><script language='javascript' src='http://www.5etv.com/video/player_choose_t.jsp?vid=57359674&s=www.5etv.com&width=440&height=330&toolzt=yes&startzt=no'></script></div>
+</body>
+</html>

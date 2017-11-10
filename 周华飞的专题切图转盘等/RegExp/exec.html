@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>exec</title>
+<script>
+/*
+var str='zhouhuafei 1993';
+var re=/\w+\s\d+/;
+alert(re.exec(str));//==>['zhouhuafei 1993']
+*/
+/*
+var str='zhouhuafei 1993';
+var re=/(\w+)\s(\d+)/;
+alert(re.exec(str));//==>['zhouhuafei 1993','zhouhuafei','1993'];
+*/
+/*
+var str='zhouhuafei 1993';
+var re=/(\w+)\s(\d+)/;
+alert(str.match(re));//==>['zhouhuafei 1993','zhouhuafei','1993'];
+*/
+/*
+var str='zhouhuafei 1993';
+var re=/\w+\s\d+/;
+alert(str.match(re));//==>['zhouhuafei 1993'];
+*/
+/*
+var str='zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993';
+var re=/\w+\s\d+/;
+alert(str.match(re));//==>['zhouhuafei 1993'];
+alert(re.exec(str));//==>['zhouhuafei 1993'];
+*/
+/*
+var str='zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993';
+var re=/\w+\s\d+/g;
+alert(str.match(re));//==>['zhouhuafei 1993','zhouhuafei 1993','zhouhuafei 1993','zhouhuafei 1993'];
+alert(re.exec(str));//==>['zhouhuafei 1993'];
+*/
+/*
+var str='zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993';
+var re=/(\w+)\s(\d+)/;
+alert(str.match(re));//==>['zhouhuafei 1993','zhouhuafei',' 1993'];
+alert(re.exec(str));//==>['zhouhuafei 1993','zhouhuafei',' 1993'];
+*/
+/*
+var str='zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993 zhouhuafei 1993';
+var re=/(\w+)\s(\d+)/g;
+alert(str.match(re));//==>['zhouhuafei 1993','zhouhuafei 1993','zhouhuafei 1993','zhouhuafei 1993'];
+alert(re.exec(str));//==>['zhouhuafei 1993','zhouhuafei',' 1993'];
+*/
+alert('在非全局匹配模式中match和exec实现的功能相同');
+confirm('在非全局匹配模式中match和exec实现的功能相同');
+prompt('在非全局匹配模式中match和exec实现的功能相同','你说的对');
+console.log('在非全局匹配模式中match和exec实现的功能相同');
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,117 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:12px; font-family:Verdana,Arial,"宋体";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none; color:#000;}
+p{ line-height:33px;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_80{ height:80px;}
+.hr_90{ height:90px;}
+.hr_100{ height:100px;}
+.hr_210{ height:210px;}
+.hr_110{ height:110px;}
+.hr_135{ height:135px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_800{ width:800px; margin:0 auto;}
+.commonWidth_900{ width:900px; margin:0 auto;}
+.commonWidth_980{ width:980px; margin:0 auto;}
+.commonWidth_grey{ width:100%; margin:0 auto; background:#f4f4f4;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+/*banner*/
+.banner{ width:1437px; height:500px; overflow:hidden; background:url(../images/banner_03.jpg) center center no-repeat; margin:0 auto; position:relative;}
+.banner a{ display:block; width:120px; height:30px; line-height:30px; text-align:center; font-size:17px; color:#F00; border:#F00 solid 1px; position:absolute; left:820px; bottom:80px;}
+
+
+
+/*til*/
+.til{ overflow:hidden; width:980px; margin:0 auto; padding:50px 0 30px 0;}
+.til h2{ font-size:32px; color:#006db8; text-align:center;}
+.til h2 span{ line-height:50px; display:inline-block; border-bottom:1px solid #006db8; height:50px;}
+.til em{ display:block; font-size:22px; height:41px; width:105px; line-height:30px; text-align:center; font-style:normal; color:#FFF; background:url(../images/icon_til_03.png) left top no-repeat; margin:0 auto;  }
+
+/*imgWord_box*/
+.imgWord_box{ overflow:hidden; font:24px;}
+.imgWord_box .vedio{ width:440px; height:320px; overflow:hidden;}
+.word{ overflow:hidden; width:480px;  position:relative; height:320px;}
+.word h2{ padding:0px 0 30px 0; height:30px; line-height:30px; padding-left:40px; background:url(../images/icon_101_03.png) left top no-repeat; font-size:24px;}
+.word p{ text-indent:30px; line-height:25px; color:#474747; font-size:14px;}
+.word p a{ color:#F00;}
+.po_a{ position:absolute; right:0; bottom:0; color:#d25e0d; font-size:24px;}
+.po_a span{ background:url(../images/icon_102_03.png) left 0px no-repeat; line-height:46px; display:inline-block; padding:0 10px 0 22px; font-size:13px;}
+.po_a a{ vertical-align:middle; background:url(../images/icon_18_10.jpg) left top no-repeat; color:#FFF; font-size:18px; display:inline-block; text-align:center; width:113px; height:34px; line-height:34px; padding-left:30px; margin:0 0 0 10px;}
+
+
+
+/*一堆DIV*/
+.div1,.div2,.div3{ height:291px; overflow:hidden; float:left; margin-bottom:10px; position:relative;}
+.div1{ width:240px;}
+.div2{ width:343px; padding:0 9px;}
+.div3{ width:379px;}
+.div3-1{ height:141px;}
+.div3-2{ height:140px; margin-top:9px;}
+.div4,.div5,.div6{ height:289px; overflow:hidden; float:left; position:relative;}
+.div4{ width:380px;}
+.div4-1{ height:140px;}
+.div4-2{ height:140px; margin-top:9px;}
+.div5{ width:239px; padding:0 9px;}
+.div6{ width:343px;}
+.div1 a,.div2 a,.div3 a,.div3-1 a,.div3-2 a ,.div4 a,.div4-1 a,.div4-2 a,.div5 a,.div6 a{ position:absolute; width:28px; height:28px; display:inline-block;}
+.div1 a,.div5 a{ background:url(../images/icon_samll_06_03.png) left top no-repeat;}
+.div2 a,.div3 a,.div3-1 a.div3-2 a ,.div4 a,.div4-1 a,.div4-2 a,.div6 a{ background:url(../images/small_icon_03.png) left top no-repeat;}
+.div1 a{ left:106px; top:131px;}
+.div2 a{ left:165px; top:131px;}
+.div3-1 a{ left:166px; top:56px;}
+.div3-2 a{ left:166px; bottom:56px;}
+.div4 a{ left:; top:;}
+.div4-1 a{ left:170px; top:56px;}
+.div4-2 a{ left:166px; bottom:56px;}
+.div5 a{ left:115px; top:131px;}
+.div6 a{ left:153px; top:131px;}
+
+
+
+
+
+
+
+
+/*图片3D翻转*/
+
+
+.box9{position:relative;width:995px;height:330px; margin-bottom:40px;}
+.box9 li{z-index:0;position:absolute; width:0px;height:0px;top:146px;cursor:pointer;left:377px;}
+.box9 li img{width:100%;background:url(images/loading.gif) no-repeat center 50%;height:100%;vertical-align:top}
+.box9 li p span{display:inline-block;width:70%;height:40px;overflow:hidden;}
+.box9 .prev,.box9 .next{display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:41px;height:54px;top:131px;}
+.box9 .prev{background:url(../images/xgl_22.png) no-repeat;left:190px}
+.box9 .next{background:url(../images/xgl_23.png) no-repeat;right:180px} 
+
+
+
+
+
+
+
+

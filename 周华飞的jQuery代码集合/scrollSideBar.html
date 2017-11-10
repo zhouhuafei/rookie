@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>粘性侧边栏定位</title>
+<script src="jquery-1.7.2.min.js"></script>
+<script src="scrollSideBar.js"></script>
+</head>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+#nav{ position:relative;}
+#scroll_nav{ position:absolute; top:200px; right:20px;}
+#scroll_nav ul li{ background:#39F;font-size: 14px;line-height: 23px;width:60px; text-align:center; margin-bottom:4px;}
+#scroll_nav ul li a{ color:#fff;}
+#scroll_nav ul li a:hover{ text-decoration:none;}
+#scroll_nav li:hover,#scroll_nav .active{ background:#F00;}
+.scroll_top{ height:500px;}
+</style>
+<body>
+<div id="nav">
+        <div id="scroll_nav">
+                <ul>
+                        <li class="active"><a href="javascript:void(0)">1</a></li>
+                        <li><a href="javascript:void(0)">2</a></li>
+                        <li><a href="javascript:void(0)">3</a></li>
+                        <li><a href="javascript:void(0)">4</a></li>
+                        <li><a href="javascript:void(0)">5</a></li>
+                        <li><a href="javascript:void(0)">6</a></li>
+                        <li><a href="javascript:void(0)">7</a></li>
+                </ul>
+        </div>
+</div>
+<div class="scroll_top" style="background:#0C3">1</div>
+<div class="scroll_top" style="background:#09F">2</div>
+<div class="scroll_top" style="background:#C66">3</div>
+<div class="scroll_top" style="background:#C9F">4</div>
+<div class="scroll_top" style="background:#FC6">5</div>
+<div class="scroll_top" style="background:#9F6">6</div>
+<div class="scroll_top" style="background:#FCF;height:800px;">7</div>
+</body>
+</html>

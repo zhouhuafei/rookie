@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>imgSrc</title>
+<style>
+body{ margin:0; text-align:center;}
+img{ vertical-align:middle;}
+</style>
+<script>
+window.onload=function(){		
+	imgSrc({src:"images/now.png"});
+}
+function imgSrc(json){
+	if(!json){var json={};}
+	obj=json.obj||document.getElementById('swt');
+	json.pic=json.src||'images/default.jpg';
+	obj.src=json.pic;	
+}
+</script>
+</head>
+<body>
+<img id="swt">
+</body>
+</html>

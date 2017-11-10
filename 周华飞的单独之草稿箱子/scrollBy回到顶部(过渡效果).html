@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>scrollBy回到顶部(过渡效果)</title>
+<style>
+body{ height:2000px;}
+#div{ width:120px; height:50px; text-align:center; line-height:50px; color:#fff; background:#000; position:fixed; right:20px; bottom:20px; cursor:pointer;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.querySelectorAll('#div')[0];
+	oDiv.onclick=function(){
+		returnTop();	
+	}
+	function returnTop(){
+		var timer=null;
+		var oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		scrollBy(0,-200);
+		clearTimeout(timer);
+		timer=setTimeout(arguments.callee,30)		//arguments.callee==>returnTop
+		if(oScrollTop==0){clearTimeout(timer)};
+	}	
+	/*
+	function returnTop(){
+		var timer=null;
+		var oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		clearInterval(timer);
+		timer=setInterval(function(){	
+			oScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			scrollBy(0,-200);
+			if(oScrollTop==0){clearInterval(timer);};
+		},30)
+	}
+	*/	
+}
+</script>
+</head>
+<body>
+<div id="div">归来吧</div>
+</body>
+</html>

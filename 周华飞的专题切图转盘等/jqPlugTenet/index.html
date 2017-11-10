@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>jq(plug)</title>
+<script src="jq.js"></script>
+<script>
+/*插件*/
+(function($){
+	$.fn.flowNav=function(){
+		this.animate({left:800}).queue(function(){
+			$(this).animate({left:0});//这意思就是队列动画执行完毕,才执行这里的,和下面被注释代码的效果是相同的
+			$(this).dequeue();//实现连缀功能
+		}).animate({top:400})
+		/*
+		this.animate({left:800}).animate({top:400}).queue(function(){
+			$(this).animate({left:0});//这意思就是队列动画执行完毕,才执行这里的
+			$(this).dequeue();//实现连缀功能
+		})
+		*/
+	}	
+})(jQuery);
+/*调用*/
+$(function(){
+	jQuery('div').flowNav();
+})
+//jq插件编写原则
+/**
+**(function($){
+**	$.fn.flowNav=function(opts){
+**		return this.each(function(index){		//1.返回jQuery对象本身,如果内部获取多组元素,则需要用$(obj).eq(index)找到指定元素进行操作
+**			var $this=$(this)			//2.获取jQuery对象的DOM元素
+**			var defaults={}				//3.创建参数默认值
+**			var settings=$.extend(defaults,opts);	//4.把默认值赋给opt并生成settings对象,以后的参数是可以通过settings.attr获取并判断
+**		})
+**	}	
+**})(jQuery);
+*/
+</script>
+</head>
+<body>
+<div style="background:#f00; width:200px; height:200px; position:absolute; left:0; top:0;"></div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>prototype(inherit)</title>
+<script>
+/*call<==>apply(常用<==>以后就这么用准没错了)*/
+/*
+function A(x,y){}
+function B(x,y){
+	A.call(this,x,y);//对象冒充继承构造函数的属性
+	//A.apply(this,[x,y]);
+	//A.apply(this,arguments);
+}
+//循环继承原型里的属性
+for(var attr in A.prototype){
+	B.prototype[attr]=A.prototype[attr];	
+}
+*/
+
+
+
+
+
+
+
+/*原型链继承*/
+/*
+function A(x,y){}//超类型
+function B(){}//子类型
+B.prototype=new A(x,y)//缺点1.子类无法给超类传参2.引用类型的属性会共享
+*/
+
+
+
+
+
+
+
+
+/*原型式继承*/
+//临时中转函数
+/*
+function inherit(obj){
+	function Fn(){}
+	Fn.prototype=obj;
+	return new Fn
+}
+var obj={names:"zhouhuafei",age:"22",arr:["a","b","c"]};
+var r=inherit(obj);//缺点:引用类型的属性会共享
+r.arr.push('d')
+alert(r.arr);//缺点:引用类型的属性会共享
+alert(obj.arr);//缺点:引用类型的属性会共享
+*/
+
+
+
+
+
+
+
+
+/*寄生式继承*/
+//寄生式继承=原型式继承+工厂模式
+//临时中转函数
+/*
+function inherit(obj){
+	function Fn(){}
+	Fn.prototype=obj;
+	return new Fn
+}
+//寄生函数
+function parasitism(obj){
+	var f=inherit(obj);
+	f.run=function(){	//优点:可以扩展
+		alert(this.names+'<==>'+this.age);	
+	}
+	return f;
+}
+var obj={names:"zhouhuafei",age:"22",arr:["a","b","c"]};
+var r=parasitism(obj);//缺点:引用类型的属性会共享
+r.arr.push('d');
+r.run();
+alert(r.arr);//缺点:引用类型的属性会共享
+alert(obj.arr);//缺点:引用类型的属性会共享
+*/
+
+
+
+
+
+
+
+/*组合式继承==>缺点:超类型被调用了两次*/
+/*
+function A(x,y){}
+function B(x,y){
+	A.call(this,x,y);//第二次调用
+	//A.apply(this,[x,y]);	
+}
+B.prototype=new A();//第一次调用
+*/
+
+
+
+
+
+
+
+/*寄生组合继承*/
+//临时中转函数
+function inherit(obj){
+	function Fn(){}
+	Fn.prototype=obj;
+	return new Fn
+}
+//寄生函数
+function parasitism(a,b){
+	var f=inherit(a.prototype);
+	f.constructor=b;
+	b.prototype=f;
+}
+//组合继承
+function A(names,ages){
+	this.names=names;
+	this.ages=ages;
+}
+A.prototype.add=function(){
+	return 	this.names+'<===>'+this.ages
+}
+function B(names,ages){
+	A.call(this,names,ages);
+}
+parasitism(A,B);//用这句话来代替B.prototype=new A();
+var r=new B('zhouhuafei','22');
+alert(r.add());
+
+
+
+
+
+
+/*
+function C(){
+	this.fn=function(){};
+}
+var r=new C();
+var r1=new C();
+alert(r1.fn==r.fn)//false	浪费内存
+
+function D(){
+}
+D.prototype.fn=function(){};
+var r=new D();
+var r1=new D();
+alert(r1.fn==r.fn)//true
+*/
+</script>
+</head>
+<body>
+</body>
+</html>

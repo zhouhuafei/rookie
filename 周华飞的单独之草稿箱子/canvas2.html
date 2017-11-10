@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>canvas2</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#000;}
+canvas{ display:block; margin:100px auto; background:#fff;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	/*obj*/
+	//oCanvas=document.querySelector('canvas');
+	oCanvas=document.querySelectorAll('canvas')[0];
+	oContext=oCanvas.getContext('2d');
+	
+	/*line*/
+	oContext.beginPath();
+	oContext.lineWidth='10';
+	oContext.lineCap='round';
+	//oContext.lineCap='square';//高度多出为宽度(lineWidth)一半的值(两个端点各多出一半,总共多出一个宽度值);
+	oContext.moveTo(200,100);
+	oContext.lineTo(200,200);
+	oContext.stroke();
+	oContext.closePath();
+	
+	/*triangle*/
+	oContext.beginPath();
+	oContext.moveTo(200,250);
+	oContext.lineTo(100,350);
+	oContext.lineTo(300,350);
+	oContext.closePath();
+	//oContext.fill();
+	oContext.stroke();
+	
+	/*rect*/
+	oContext.beginPath();
+	oContext.rect(100,20,200,20);
+	//oContext.fill();
+	oContext.stroke();
+	oContext.closePath();
+	
+	/*clearRect*/
+	//oContext.clearRect(0,0,oCanvas.width,oCanvas.height);
+},false)
+</script>
+</head>
+
+<body>
+<canvas width="400" height="400">您的浏览器不支持canvas</canvas>
+</body>
+</html>

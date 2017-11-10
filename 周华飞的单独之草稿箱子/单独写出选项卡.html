@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<style>
+*{ margin:0; padding:0;}
+#ch em{ width:200px; height:200px; border:1px solid #F00; border-radius:10px; display:none; 
+			
+			font-variant:small-caps;
+			 font-style:normal;
+			 
+			 } 
+#ch input{ width:40px; height:20px;}
+#ch .active{ background:#F00;}
+#ch .show{ display:block;}
+</style>
+<script>
+window.onload=function()
+{
+	var oCh=document.getElementById('ch');
+	var oBtn=oCh.getElementsByTagName('input');
+	var oDiv=oCh.getElementsByTagName('em');
+	for( var i=0; i<oBtn.length; i++)
+	{		
+			oBtn[i].index=i;
+			oBtn[i].onclick=function()
+			{
+				for(var j=0;j<oBtn.length;j++)
+				{
+					oBtn[j].className='';
+					oDiv[j].className='';
+				}
+				this.className='active';
+				oDiv[this.index].className='show';
+			}
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="ch">
+    <input class="active" type="button" value="1" />
+    <input type="button" value="2" />
+    <input type="button" value="3" />
+    <input type="button" value="4" />
+    <em class="show">111aaaaa</em>
+    <em><b>222aaaaa</b></em>
+    <em><div>333bbb</div></em>
+    <em>444ddd</em>
+</div>
+</body>
+</html>

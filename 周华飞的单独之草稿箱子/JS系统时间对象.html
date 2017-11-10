@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+
+/*-------------------------------补零函数------------------------------------------*/
+	function fillZero(n){return n<10?'0'+n:''+n;}	
+	
+/*-----------------------------获取系统时间-------------------------------------*/
+	function getNowTime()
+	{
+		//系统时间	类型    object
+		var myDate=new Date();
+		//类型    number
+		var nowYear=myDate.getFullYear();
+		var nowMonth=myDate.getMonth()+1;
+		var nowDate=myDate.getDate();
+		var nowWeek=myDate.getDay();
+		var nowHours=myDate.getHours();
+		var nowMin=myDate.getMinutes();
+		var nowSec=myDate.getSeconds();
+		var nowTime='';
+		if(nowWeek==0)nowWeek='星期日';
+		if(nowWeek==1)nowWeek='星期一';
+		if(nowWeek==2)nowWeek='星期二';
+		if(nowWeek==3)nowWeek='星期三';
+		if(nowWeek==4)nowWeek='星期四';
+		if(nowWeek==5)nowWeek='星期五';
+		if(nowWeek==6)nowWeek='星期六';
+		nowTime=nowYear+'年'+fillZero(nowMonth)+'月'+fillZero(nowDate)+'日 '+nowWeek+' '+fillZero(nowHours)+':'+fillZero(nowMin)+':'+fillZero(nowSec);
+		return nowTime;
+	}
+	document.body.innerHTML=getNowTime();
+	setInterval(function(){document.body.innerHTML=getNowTime();},1000);
+	
+	
+	
+
+
+	
+</script>
+</body>
+</html>

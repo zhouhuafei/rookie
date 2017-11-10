@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>onmousewheel</title>
+<style>
+*{ margin:0; padding:0;}
+body{ height:2000px;}
+div{width:200px; height:200px; background:#000;}
+</style>
+<script>
+window.onload=function(){
+	var oDiv=document.getElementsByTagName('div')[0];
+	onmousewheel({obj:oDiv,fnUp:up,fnDown:down});
+	function up(ev){
+		alert(this+'鼠标向上滚动'+ev.clientX);
+	}
+	function down(ev){
+		alert(this+'鼠标向下滚动'+ev.clientX);	
+	}
+}
+//封装滚轮事件
+function onmousewheel(json){
+	var json=json||{}
+	var obj=json.obj;
+	var fnDown=json.fnDown;
+	var fnUp=json.fnUp;
+	//IE Chrom Opera Safari 滑动之前需要点击一下obj
+	obj.onmousewheel=function(){
+		if(event.wheelDelta==120){
+			fnUp.call(obj,event);//this传递以及标准化event对象
+		}else{
+			fnDown.call(obj,event);//this传递以及标准化event对象
+		};
+		return false;//阻止默认事件(滚动条下滑)
+	}
+	//FF 火狐必须使用事件绑定 滑动之前需要点击一下obj
+	obj.addEventListener('DOMMouseScroll',function(ev){
+		if(ev.detail*-40==120){
+			fnUp.call(obj,ev);//this传递以及标准化event对象
+		}else{
+			fnDown.call(obj,ev);//this传递以及标准化event对象
+		}	
+		ev.preventDefault();//阻止默认事件(滚动条下滑)
+	},false);		
+}
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

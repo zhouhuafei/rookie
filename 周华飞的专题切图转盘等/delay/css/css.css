@@ -1,0 +1,27 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*main*/
+#main{ width:600px; height:400px; margin:50px auto; position:relative; color:#fff; font-size:12px; overflow:hidden;}
+#main ol{ position:absolute; right:0; bottom:5px; z-index:3;}
+#main ol li{ width:20px; text-align:center; height:20px; line-height:20px; border-radius:50%; margin:0 5px; cursor:pointer; background:#666; float:left; transition:0.4s;}
+#main ol li.active{ background:#900; transform:rotate(360deg);}
+#main ul{ width:100%; height:400px; overflow:hidden;}
+#main ul li{ width:100%; text-align:center; height:400px; line-height:200px; background:#030; font-size:16px; cursor:pointer; opacity:0; filter:alpha(opacity:0); position:absolute; left:0; top:0;}
+#main ul li span{ width:120px; height:60px; position:absolute; left:-120px; transition:0s;}
+#main ul li span.one{ top:10px;}
+#main ul li span.two{ top:90px;}
+#main ul li span.thr{ top:170px;}
+#main ul li span.fou{ top:250px;}
+#main ul li span.fiv{ top:330px;}
+#main ul li span a{ display:block; width:100%; height:100%; position:absolute; left:0; top:0; line-height:60px; color:#fff; background:#f00;}
+#main ul li.active{ opacity:1; filter:alpha(opacity:100);}
+#main ul li.active span.one{ left:50%; margin-left:-60px; top:10px; transition:0.5s 1s; transform:rotate(720deg);}
+#main ul li.active span.two{ left:50%; margin-left:-60px; top:90px; transition:1s; transform:rotate(720deg);}
+#main ul li.active span.thr{ left:50%; margin-left:-60px; top:170px; transition:0.5s 2s; transform:rotate(720deg);}
+#main ul li.active span.fou{ left:50%; margin-left:-60px; top:250px; transition:1s; transform:rotate(720deg);}
+#main ul li.active span.fiv{ left:50%; margin-left:-60px; top:330px; transition:0.5s 3s; transform:rotate(720deg);}

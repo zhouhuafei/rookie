@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<link rel="stylesheet" type="text/css" href="common/css.css"/>
+<script>
+window.onload=function()
+{	
+	var oNav=document.getElementById('nav')
+	var aLi=oNav.getElementsByTagName('li')	
+	var oDiv1=document.getElementById('content1')
+	var oDiv2=document.getElementById('content2')
+	var oDiv3=document.getElementById('content3')
+	var oDiv4=document.getElementById('content4')
+	
+		aLi[0].onmouseover=function()
+		{		
+			oDiv1.style.display='block'
+			oDiv2.style.display='none'
+			oDiv3.style.display='none'
+			oDiv4.style.display='none'
+			
+		}
+		aLi[1].onmouseover=function()
+		{	
+			oDiv1.style.display='none'
+			oDiv2.style.display='block'
+			oDiv3.style.display='none'
+			oDiv4.style.display='none'
+		}	
+		aLi[2].onmouseover=function()
+		{
+			oDiv1.style.display='none'
+			oDiv2.style.display='none'
+			oDiv3.style.display='block'
+			oDiv4.style.display='none'
+		}	
+		aLi[3].onmouseover=function()
+		{
+			oDiv1.style.display='none'
+			oDiv2.style.display='none'
+			oDiv3.style.display='none'
+			oDiv4.style.display='block'
+		}		
+}
+</script>
+</head>
+
+<body>
+
+<!--header-->
+<div class="header commonWidth">
+	<h1><a href="javascript:;"><img src="image/del.png" alt="" /></a>优订生活服务平台</h1>    
+</div>
+
+
+<!--nav-->
+<div class="nav commonWidth show" id="nav">
+        <ul id="btn" class="fl">
+            <li><a  href="javascript:;">最新活动</a></li>
+            <li><a href="javascript:;"  class="user_port">商户端</a></li>
+            <li><a href="javascript:;">配送端</a></li>
+            <li><a href="javascript:;">顾客端</a></li>
+        </ul>
+        <ul  class="fr">
+            <li class="right_li">
+            <a href="javascript:;">关于我们</a>
+            	<ul>
+                	<li><a href="javascript:;">项目介绍</a></li>
+                    <li><a href="javascript:;">团队成绩</a></li>
+                    <li><a href="javascript:;">加入我们</a></li>
+                    <li><a href="javascript:;">咨询反馈</a></li>
+                </ul>
+            </li>
+        </ul>
+</div>
+
+
+<!--content第一模块-->
+<div class="content" id="content1">
+	<div  class="main_box">
+		<h2>活动模块<br />期待大家的建议</h2>
+		<p>Mali:simline@163.com</p>
+    </div>
+    <div class="icon">
+    	<span></span>
+        <span></span>
+    </div>    
+</div>
+
+
+<!--content第二模块-->
+<div class="content" id="content2" style="display:block">
+	<div  class="main_box2 fl">
+		<img alt="" src="image/left_img.png"; width="158px" height="260px"/>
+    </div>
+    <div  class="main_box_right fl">
+		<h3>商家端<span>下载入口:</span></h3>
+        <a href="javascript:;">Android<br />>2.2</a><a href="javascript:;">IOS<br />>4.3</a><a href="javascript:;">Wphone<br />>8.0</a></br>
+        <a href="javascript:;">Ipad<br />>4.3</a><a href="javascript:;">Windows<br />xp & 7 & 8</a><a href="javascript:;"><br />在线版</a>
+        <div class="article">
+        	<h4>V1.1版本更新</h4>
+            <ol>
+            	<li>增加了店内条形码打印功能</a></li>
+                <li>增加修改订单功能</li>
+                <li>优化了点单流程</li>
+            </ol>
+            <h4>BUG修复</h4>
+            <ol>
+            	<li>增加了店内条形码打印</li>               
+            </ol>
+        </div>
+    </div>
+    <div class="run">
+    	<a href="javascript:;"><div></div></a>
+        <a href="javascript:;"><div></div></a>
+        <a href="javascript:;"><div class="active"></div></a>
+        <a href="javascript:;"><div></div></a>
+    </div>
+    <div class="icon">
+    	<span></span>
+        <span></span>
+    </div>    
+</div>
+
+
+<!--content第三模块-->
+<div class="content " id="content3">
+	<div  class="main_box3 fl">
+		<img alt="" src="image/del.png" alt="" />
+        <h2>优订项目团队</h2>
+        <p>优订来自一个自发组织成立的团队</p>
+        <p>三四线城市的商业结构竞争愈演愈烈，为节省小型商业店人力成本，提高人群秘籍地区的推广效果，优化陈烨结构和消费者的购物体验，我们如实开发了这个平台。</p>
+    </div>
+</div>    
+
+
+<!--content第四模块-->
+<div class="content"  id="content4">
+	<div  class="main_box3 fl">
+		<img alt="" src="image/del.png" alt="" />
+        <h2>第四个模块</h2>
+        <p>优订来自一个自发组织成立的团队</p>
+        <p>三四线城市的商业结构竞争愈演愈烈，为节省小型商业店人力成本，提高人群秘籍地区的推广效果，优化陈烨结构和消费者的购物体验，我们如实开发了这个平台。</p>
+    </div>    
+
+    <div class="icon">
+    	<span></span>
+        <span></span>
+    </div>    
+</div>    
+
+</body>
+</html>

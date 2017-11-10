@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>tortoise</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+html,body{ width:100%; height:100%;}
+body{ background:#eee; box-shadow:0 0 10px #000 inset;}
+ul#tortoise{ position:absolute; left:50%; top:50%; margin:-200px 0 0 -200px; box-shadow:0 0 10px #000;}
+ul#tortoise:after{ content:""; display:block; height:0; overflow:hidden; clear:both;}
+ul#tortoise li{ width:50px; height:50px; float:left;}
+ul#tortoise li.gre{ background:#666;}
+ul#tortoise li.blu{ background:#00F;}
+ul#tortoise li.red{ background:#F00;}
+ul#tortoise li.wal{ background:url(wall.jpg);}
+ul#tortoise li.box{ background:url(box.jpg); position:absolute; float:none;}
+ul#tortoise li.tortoise{ background:url(tortoise.jpg) 0 0 no-repeat #e9f0f8; position:absolute; float:none;}
+ul#tortoise li.up{ background-position:4px 0;}
+ul#tortoise li.right{ background-position:-48px 0;}
+ul#tortoise li.down{ background-position:-98px 0;}
+ul#tortoise li.left{ background-position:-148px 0;}
+</style>
+<script src="jq.js"></script>
+<script>
+$(function(){
+	game.init('#tortoise');	
+});
+var game={
+	//关卡
+	passData:[
+		//第一关
+		{
+			map:[
+				'gre','gre','wal','wal','wal','wal','gre','gre',
+				'gre','gre','wal','red','red','wal','gre','gre',
+				'gre','wal','wal','blu','red','wal','wal','gre',
+				'gre','wal','blu','blu','blu','red','wal','gre',
+				'wal','wal','blu','blu','blu','blu','wal','wal',
+				'wal','blu','blu','wal','blu','blu','blu','wal',
+				'wal','blu','blu','blu','blu','blu','blu','wal',
+				'wal','wal','wal','wal','wal','wal','wal','wal',
+			],
+			box:[
+				{x:4,y:3},
+				{x:3,y:4},
+				{x:4,y:5},
+				{x:5,y:5},
+			],
+			tortoise:{x:3,y:6,dir:'up'},
+		},
+		//第二关
+		{
+			map:[
+				'gre','gre','gre','gre','wal','wal','wal','wal','wal','wal','wal','gre',
+				'gre','gre','gre','gre','wal','blu','blu','wal','blu','blu','wal','gre',
+				'gre','gre','gre','gre','wal','blu','blu','blu','blu','blu','wal','gre',
+				'wal','wal','wal','wal','wal','blu','blu','wal','blu','blu','wal','gre',
+				'red','red','red','wal','wal','wal','blu','wal','blu','blu','wal','wal',
+				'red','blu','blu','wal','blu','blu','blu','blu','wal','blu','blu','wal',
+				'blu','blu','blu','blu','blu','blu','blu','blu','blu','blu','blu','wal',
+				'red','blu','blu','wal','blu','blu','blu','blu','wal','blu','blu','wal',
+				'red','red','red','wal','wal','wal','blu','wal','blu','blu','wal','wal',
+				'wal','wal','wal','wal','wal','blu','blu','blu','blu','blu','wal','gre',
+				'gre','gre','gre','gre','wal','blu','blu','wal','blu','blu','wal','gre',
+				'gre','gre','gre','gre','wal','wal','wal','wal','wal','wal','wal','gre',
+			],
+			box:[
+				{x:5,y:6},
+				{x:6,y:3},
+				{x:6,y:5},
+				{x:6,y:7},
+				{x:6,y:9},
+				{x:7,y:2},
+				{x:8,y:2},
+				{x:9,y:6},
+			],
+			tortoise:{x:5,y:9,dir:'up'},
+		},	
+	],
+	//当前是第几关
+	pass:0,
+	//初始化
+	init:function(oParent){
+		//公共化父级
+		this.oParent=$(oParent);
+		this.fnMap(this.pass);	
+	},
+	//创建地图
+	fnMap:function(iNow){
+		var passName=this.passData[iNow];
+		this.passName=passName;
+		$.each(passName.map,$.proxy(function(i,v){
+			this.oParent.append($('<li class="'+v+'"></li>'));
+		},this))
+		this.oParent.width(Math.sqrt(passName.map.length)*50);
+		this.fnBox(passName);//调用创建箱子
+		this.fnTortoise(passName);//调用创建乌龟
+		this.oParent.css('margin-left',-this.oParent.width()/2);
+		this.oParent.css('margin-top',-this.oParent.height()/2);	
+	},
+	//创建箱子
+	fnBox:function(passName){
+		$.each(passName.box,$.proxy(function(i,v){
+			var oBox=$('<li class="box"></li>');
+			oBox.css({left:v.x*50,top:v.y*50});
+			oBox.data('x',v.x);
+			oBox.data('y',v.y);
+			this.oParent.append(oBox);
+		},this))
+		this.aBox=$('.box');
+	},
+	//创建乌龟
+	fnTortoise:function(passName){
+		var oTortoise=$('<li class="tortoise"></li>');	
+		oTortoise.css({left:passName.tortoise.x*50,top:passName.tortoise.y*50});
+		oTortoise.data('x',passName.tortoise.x);
+		oTortoise.data('y',passName.tortoise.y);
+		oTortoise.removeClass('left right up down');
+		oTortoise.addClass(passName.tortoise.dir);
+		this.oParent.append(oTortoise);
+		this.fnKeyDown(oTortoise);//调用给乌龟添加事件
+	},
+	//给乌龟添加事件
+	fnKeyDown:function(oTortoise){
+		$(document).keydown($.proxy(function(ev){
+			switch(ev.which){
+				case 37://左
+					if(oTortoise.attr('class')!='tortoise left'){
+						oTortoise.removeClass('left right up down');
+						oTortoise.addClass('left');
+					}
+					this.fnMove(oTortoise,{x:-1});//调用乌龟移动
+					/*
+					//这一坨坨的,不如直接封装成一个函数喽
+					if(this.passName.map[Math.sqrt(this.passName.map.length)*(oTortoise.data('y')+0)+(oTortoise.data('x')-1)]!='wal'){
+						oTortoise.css('left',(oTortoise.data('x')-1)*50);
+						oTortoise.data('x',oTortoise.data('x')-1);
+					}
+					*/
+					break;
+				case 38://上	
+					if(oTortoise.attr('class')!='tortoise up'){
+						oTortoise.removeClass('left right up down');
+						oTortoise.addClass('up');
+					}
+					this.fnMove(oTortoise,{y:-1});//调用乌龟移动
+					/*
+					//这一坨坨的,不如直接封装成一个函数喽						
+					if(this.passName.map[Math.sqrt(this.passName.map.length)*(oTortoise.data('y')-1)+(oTortoise.data('x')+0)]!='wal'){
+						oTortoise.css('top',(oTortoise.data('y')-1)*50);
+						oTortoise.data('y',oTortoise.data('y')-1);				
+						this.aBox.each($.proxy(function(i,v){
+							this.fnImpact(oTortoise,$(v),$.proxy(function(){
+								if(this.passName.map[Math.sqrt(this.passName.map.length)*$(v).data('y')+$(v).data('x')-Math.sqrt(this.passName.map.length)]=='wal'){
+									oTortoise.css('top',(oTortoise.data('y')+1)*50);
+									oTortoise.data('y',oTortoise.data('y')+1);
+								}else{
+									$(v).css('top',($(v).data('y')-1)*50);
+									$(v).data('y',$(v).data('y')-1);
+									this.aBox.each($.proxy(function(j,e){
+										if(i!=j){
+											this.fnImpact($(v),$(e),$.proxy(function(){								
+												$(v).css('top',($(v).data('y')+1)*50);
+												$(v).data('y',$(v).data('y')+1);
+												oTortoise.css('top',(oTortoise.data('y')+1)*50);
+												oTortoise.data('y',oTortoise.data('y')+1);
+											},this))
+										}	
+									},this))
+								}
+							},this));
+						},this))				
+					}
+					*/
+					break;	
+				case 39://右
+					if(oTortoise.attr('class')!='tortoise right'){
+						oTortoise.removeClass('left right up down');
+						oTortoise.addClass('right');
+					}
+					this.fnMove(oTortoise,{x:1});//调用乌龟移动
+					/*
+					//这一坨坨的,不如直接封装成一个函数喽				
+					if(this.passName.map[Math.sqrt(this.passName.map.length)*(oTortoise.data('y')+0)+(oTortoise.data('x')+1)]!='wal'){
+						oTortoise.css('left',(oTortoise.data('x')+1)*50);
+						oTortoise.data('x',oTortoise.data('x')+1);
+					}
+					*/
+					break;	
+				case 40://下	
+					if(oTortoise.attr('class')!='tortoise down'){
+						oTortoise.removeClass('left right up down');
+						oTortoise.addClass('down');
+					}
+					this.fnMove(oTortoise,{y:1});//调用乌龟移动
+					/*
+					//这一坨坨的,不如直接封装成一个函数喽													
+					if(this.passName.map[Math.sqrt(this.passName.map.length)*(oTortoise.data('y')+1)+oTortoise.data('x')+0]!='wal'){
+						oTortoise.css('top',(oTortoise.data('y')+1)*50);
+						oTortoise.data('y',oTortoise.data('y')+1);
+					}
+					*/
+					break;	
+			}
+		},this))	
+	},
+	//乌龟移动
+	fnMove:function(oTortoise,opt){
+		var stepX=opt.x||0;
+		var stepY=opt.y||0;	
+		if(this.passName.map[Math.sqrt(this.passName.map.length)*(oTortoise.data('y')+stepY)+(oTortoise.data('x')+stepX)]!='wal'){
+			oTortoise.css('top',(oTortoise.data('y')+stepY)*50);
+			oTortoise.css('left',(oTortoise.data('x')+stepX)*50);
+			oTortoise.data('y',oTortoise.data('y')+stepY);	
+			oTortoise.data('x',oTortoise.data('x')+stepX);
+			this.aBox.each($.proxy(function(i,v){
+				this.fnImpact(oTortoise,$(v),$.proxy(function(){
+					if(this.passName.map[Math.sqrt(this.passName.map.length)*(oTortoise.data('y')+stepY)+(oTortoise.data('x')+stepX)]=='wal'){
+						oTortoise.css('top',(oTortoise.data('y')-stepY)*50);
+						oTortoise.css('left',(oTortoise.data('x')-stepX)*50);
+						oTortoise.data('y',oTortoise.data('y')-stepY);
+						oTortoise.data('x',oTortoise.data('x')-stepX);
+					}else{
+						$(v).css('top',($(v).data('y')+stepY)*50);
+						$(v).css('left',($(v).data('x')+stepX)*50);
+						$(v).data('y',$(v).data('y')+stepY);
+						$(v).data('x',$(v).data('x')+stepX);
+						this.aBox.each($.proxy(function(j,e){
+							if(i!=j){
+								this.fnImpact($(v),$(e),$.proxy(function(){								
+									$(v).css('top',($(v).data('y')-stepY)*50);							
+									$(v).css('left',($(v).data('x')-stepX)*50);
+									$(v).data('y',$(v).data('y')-stepY);
+									$(v).data('x',$(v).data('x')-stepX);
+									oTortoise.css('top',(oTortoise.data('y')-stepY)*50);
+									oTortoise.css('left',(oTortoise.data('x')-stepX)*50);
+									oTortoise.data('y',oTortoise.data('y')-stepY);
+									oTortoise.data('x',oTortoise.data('x')-stepX);
+								},this))
+							}	
+						},this))
+					}
+				},this));
+			},this))			
+		}
+		this.fnPass();//调用闯关判定
+	},
+	//碰撞检测
+	fnImpact:function(obj1,obj2,fnSucc,fnFail){
+		var l1=obj1.position().left;
+		var t1=obj1.position().top;
+		var h1=obj1.height();
+		var w1=obj1.width();
+		var l2=obj2.position().left;
+		var t2=obj2.position().top;
+		var h2=obj2.height();
+		var w2=obj2.width();
+		if(l1+w1<=l2||l1>=l2+w2||t1+h1<=t2||t1>=t2+h2){
+			fnFail&&fnFail();
+		}else{
+			fnSucc&&fnSucc();			
+		}			
+	},
+	//闯关判定
+	fnPass:function(){
+		var iNum=0;
+		$('.red').each($.proxy(function(i,v){
+                        this.aBox.each($.proxy(function(j,e){
+				this.fnImpact($(v),$(e),function(){
+					iNum++;
+				});	
+			},this))
+                },this));
+		if(iNum==$('.red').size()){			
+			if(this.pass==1){
+				alert('you win');
+			}else{
+				this.pass++
+				//this.oParent.html('');
+				this.oParent.empty();
+				this.fnMap(this.pass);
+			}
+		}
+	},	
+}
+</script>
+</head>
+<body>
+<ul id="tortoise"></ul>
+</body>
+</html>
+
+

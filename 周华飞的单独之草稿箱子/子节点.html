@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var oUl=document.getElementById('ul1');
+	var aA=document.getElementsByTagName('a');
+	//alert(oUl.childNodes.length)
+	/*
+	for(var i=0;i<oUl.childNodes.length;i++)
+	{
+		//oUl.childNodes[i].style.background='red';
+		//错误,文本节点无background属性
+		//---------------------------------------
+		//nodeType==3  ->文本节点
+		//nodeType==1  ->元素节点
+		//alert(oUl.childNodes[i].nodeType);
+		if(oUl.childNodes[i].nodeType==1){oUl.childNodes[i].style.background='red';}	
+	}
+	*/
+	//children
+	for(var i=0;i<oUl.children.length;i++)
+	{
+		oUl.children[i].style.background='red';
+		//兼容处理
+		if(oUl.firstElementChild){oUl.firstElementChild.style.background='blue'}
+		else{oUl.firstChild.style.background='blue'}
+		if(oUl.lastElementChild){oUl.lastElementChild.style.background='blue'}
+		else{oUl.lastChild.style.background='blue'}
+	}
+	for(var j=0;j<aA.length;j++)
+	{
+		aA[j].style.color='#fff';
+		aA[j].onclick=function(){this.parentNode.style.display='none';}
+	}
+	prompt(oUl.children.length,'zhouhuafei');
+	alert(oUl.children.length);
+	confirm(oUl.children.length);
+}
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li><a href="#">隐藏1</a></li>
+	<li><a href="#">隐藏2</a></li>
+    <li><a href="#">隐藏3</a></li>
+	<li><a href="#">隐藏4</a></li>
+    <li><a href="#">隐藏5</a></li>
+	<li><a href="#">隐藏6</a></li>
+    <li><a href="#">隐藏7</a></li>
+	<li><a href="#">隐藏8</a></li>
+	<li><a href="#">隐藏9</a></li>
+    <li><a href="#">隐藏10</a></li>
+	<li><a href="#">隐藏11</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,p,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_300{ width:300px; margin:0 auto; overflow:hidden;}
+.commonWidth_320{ width:320px; margin:0 auto; overflow:hidden; color:#666666;}
+
+/*banners*/
+.banners_til{ border-bottom:1px solid #999; width:300px; padding-bottom:5px; margin:20px auto;}
+.banners_til em{ width:12px; height:12px; border-radius:20px; border:2px solid #1364b6; vertical-align:middle; margin-right:5px;}
+.banners_til a{ line-height:20px; font-size:16px;}
+.banners{ height:172px; margin:15px auto 0; width:320px; text-align:center;}
+.banners img{ width:300px;}
+.banners a{ width:100%; height:100%; display:block;}
+
+/*boxs1*/
+.boxs1 dl{ padding:30px 14px 30px 20px; margin:0 10px; background:#f4f4f4; line-height:24px; font-size:12px; position:relative;}
+.boxs1 dl:after,.boxs1 dl:before{ content:""; display:block; position:absolute;}
+.boxs1 dl:after{ width:33px; height:32px; background:url(../images/bg-s.png) left top no-repeat; left:0px; top:0px;}
+.boxs1 dl:before{ width:31px; height:30px; background:url(../images/bg-s2.png) left top no-repeat; bottom:0px; right:0px;}
+.boxs1 dd{ text-indent:30px;}
+
+/*common*/
+.tilss{ font-size:18px; color:#005cb9; width:302px; padding-left:18px; margin:36px auto 30px; border-top:1px solid #e8e8e8; line-height:24px; position:relative;}
+.tilss:before{ content:""; width:3px; height:34px; background:#fb4949; position:absolute; left:11px; top:-12px;}
+.tils{ margin-left:10px; margin-top:45px; font-size:16px; padding-top:2px; border-top:1px solid #79b1d8; text-indent:40px; position:relative; margin-bottom:14px;}
+.tils em{ width:30px; height:30px; background:#79b1d8; display:block; border-radius:50%; text-align:center; line-height:25px; color:#fff; position:absolute; left:-10px; top:-5px; text-indent:0;}
+.tils.t2{ border-top:1px solid #e9be81;} 
+.tils.t2 em{ background:#e9be81;}
+.tils.t3{ border-top:1px solid #e885a6;}
+.tils.t3 em{ background:#e885a6;}
+.tils.t4{ border-top:1px solid #59bbd0;}
+.tils.t4 em{ background:#59bbd0;}
+.common_btn{ text-align:center;}
+.common_btn a{ border-radius:5px 0 0 5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; padding:0 10px; margin-right:10px;}
+.common_btn .last_a{ margin-right:0; border-radius:0 5px 5px 0; background:#f96300;}
+.common_btn em{ vertical-align:middle; margin-right:10px;}
+a.ti{ text-indent:0 !important; display:inline-block !important;}
+p.ti{ font-size:12px; line-height:24px;}
+.mb10{ margin-bottom:10px;}
+.mb20{ margin-bottom:20px;}
+.mt10{ margin-top:10px;}
+.mt20{ margin-top:20px; text-align:center; width:100%;}
+
+/*reason*/
+.reason{ width:300px; margin:0 auto;}
+.reason p{ font-size:12px; text-indent:10px; color:#444444; margin:4px 0 10px;}
+.reason p.noMb{ margin-bottom:0;}
+.reason .red{ color:#df0500;}
+.reason a{ text-align:center;}
+.reason h2{ font-size:14px; margin-bottom:14px;}
+.reason h2.re{ padding-top:20px; margin-top:20px; border-top:1px dashed #ccc;}
+
+/*expert*/
+.expert{ background:#fdfdfd;}
+.expert dl{ height:199px; border:1px solid #e1e1e1; background:url(../images/expert.jpg) center center no-repeat #efefef;}
+.expert dd{ width:170px;}
+.expert dd h2{ font-size:20px; color:#444444; margin:10px 0 6px;}
+.expert dd p{ font-size:12px; line-height:18px;}
+.expert dd a{ width:103px; height:23px; text-align:center; line-height:23px; border:1px solid #fcd6a7; border-radius:10px; color:#fff; margin-top:10px; background:#ff9000; font-size:12px;}
+
+
+/*recovery*/
+.dashed_line{ width:296px; height:0px; border-top:1px dashed #808080; margin:20px 0;}
+.common_tils{ color:#ed6c00; font-size:16px; margin-bottom:8px; color:#005cb9; text-align:center; font-weight:bold;}
+.recovery .recoverys{ text-align:center; margin-bottom:5px;}
+.recovery .recoverys img{ width:300px;}
+.recovery  strong{ color:#005cb9; font-weight:bold;}
+.recovery p{ color:#646464; word-spacing:8px; font-size:12px;}
+.recovery ul{ margin-top:12px;}
+.recovery li{ width:148px; float:left; margin-right:2px; position:relative;}
+.recovery li img{ border:1px solid #4b7fc1;}
+.recovery .no_mr{ margin-right:0;}
+.recovery ul.reStyle li{ width:98px; margin-right:2px;}
+
+/*contrast*/
+.common_ul li{ width:148px; float:left; margin-right:4px; margin-bottom:10px;}
+.common_ul li.noMr{ margin-right:0;}
+.common_ul li.noMb{ margin-bottom:0;}
+.common_ul li img{ width:146px; border:1px solid #ededed;}
+.common_btn{ text-align:center;}
+.common_btn a{ border-radius:5px 0 0 5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; padding:0 10px; margin-right:10px;}
+.common_btn .last_a{ margin-right:0; border-radius:0 5px 5px 0; background:#f96300;}
+.common_btn em{ vertical-align:middle; margin-right:10px;}
+.common_rl li{ width:148px;}
+.common_rl li img{ width:146px; border:1px solid #ededed;}
+.common_rl li p{ height:30px; font-size:14px; color:#1264b6; text-align:center; line-height:30px; background:#ededed; margin-bottom:20px;}
+
+/*therapy*/
+#therapyMain{ position:relative;}
+.therapy{ margin-bottom:20px;}
+.therapy ol{ position:absolute; right:5px; bottom:0;}
+.therapy ol li{ width:10px; height:10px; background:#666; float:left; margin:5px; border-radius:50%;}
+.therapy ol li.on{ background:#F90;}
+.therapy .til a{ color:#005cb9;}
+
+/*ad*/
+.ad{ margin-bottom:20px;}
+.ad img{ width:300px;}
+
+/*about*/
+.about { padding-bottom:10px; border:#1364b6 1px solid; width:300px; margin:0 auto;}
+.about h2 { padding-left:15px; height:37px; margin-bottom:10px; background:#1364b6; font-size:16px; font-weight:100; font-family:'Microsoft Yahei'; line-height:37px; color:#fff; }
+.about dl{ width:300px; margin:0 auto; overflow:hidden;}
+.about dd{ width:100%; height:33px; margin-top:6px; font-size:14px; font-weight:700; line-height:33px;}
+.about dd a{ display:inline; text-align:center; color:#FFF;}
+.about dd a.a01{ float:left; background:#91c1e9; width:170px; margin-right:4px; }
+.about dd a.a02{ float:right; background:#db7077; width:126px; }
+.about dd a.a03{ float:left; background:#d0454e; width:134px; margin-right:4px;  }
+.about dd a.a04{ float:right; background:#e1822a; width:162px; }
+.about dd a.a05{ float:left; background:#13b9ad; width:170px; margin-right:4px;  }
+.about dd a.a06{ float:right; background:#f3b174; width:126px; }
+
+
+.common_dl{ margin:0 auto; margin-bottom:15px; width:300px;}
+.common_dl dt{ height:119px; width:124px;}
+.common_dl dd{ height:117px; width:162px; padding:0 3px 0 10px; background:#f6f6f6; border:1px solid #d7d7d7; border-left:none;}
+.common_dl dd h2{ font-size:16px; line-height:30px; color:#1364b6; margin:16px 0 8px;}
+.common_dl dd h2.noLh{ line-height:normal;}
+.common_dl dd p{ line-height:20px; font-size:12px;}

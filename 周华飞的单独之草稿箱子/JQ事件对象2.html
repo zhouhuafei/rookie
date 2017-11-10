@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ事件对象</title>
+<style>
+*{ margin:0; padding:0;}
+body{ margin:50px 100px; height:2000px;}
+.div1{ width:300px; height:200px; background:#F00;}
+.div1 input{ width:298px;}
+.div1 span{ display:block; width:100px; height:100px; background:#0FF;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	//e.stopPropagation()	阻止冒泡行为
+	/*
+	$('div').click(function(){alert(this.nodeName);})
+	$('span').click(function(e){alert(this.tagName);e.stopPropagation();})
+	$('input').click(function(){alert(this.tagName);})
+	*/
+	//e.preventDefault()	阻止默认行为
+	//$('a').click(function(e){e.preventDefault();})
+	//$('form').submit(function(e){e.preventDefault();})
+	
+	//return false		阻止冒泡行为以及默认行为
+	/*
+	$(document).click(function()
+	{
+		alert(this.nodeName);
+	})
+	$('a').click(function(e)
+	{
+		alert(this.nodeName);
+		return false;
+	})
+	*/
+	//e.isDefaultPrevented()			判断是否已经执行了阻止默认行为
+	//e.isPropagationStopped()			判断是否已经执行了阻止冒泡行为
+	//e.stopImmediatePropagation()			取消冒泡事件，并取消该事件的后续事件处理函数
+	//e.isImmediatePropagationStopped()		判断是否调用了stopImmediatePropagation()方法
+})
+</script>
+</head>
+
+<body>
+<form>
+<input type="text" value="123" />
+<input type="submit" />
+</form>
+<br />
+<a href="http://www.baidu.com" target="_blank">我是连接你造么</a>
+<div class="div1">
+<input class="input1" type="text" placeholder="用div能否获取焦点，能不能激活事件" />
+<span></span>
+</div>
+</body>
+</html>

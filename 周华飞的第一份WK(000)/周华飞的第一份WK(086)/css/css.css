@@ -1,0 +1,50 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"微软雅黑"; background:#8d0007;}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ font-size:18px; color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.r10{ border-radius:10px;}
+.circle{ border-radius:50%;}
+.bgGrey{ background:#f5fafa; overflow:hidden;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*header*/
+.header{ background:url(../images/header.jpg) center center no-repeat; height:670px;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:402px;}
+
+/*content*/
+.content{ color:#ffef6f;}
+.content h1{ font-size:18px; margin-top:40px; font-weight:bold;}
+.content h2{ font-size:18px; margin:30px 0; text-indent:40px;}
+.content p{ text-indent:40px; line-height:34px;}
+.content h3{ font-size:18px; margin-top:30px;}
+
+/*name*/
+.name{ background:url(../images/name.jpg) center center no-repeat;  height:221px;}
+
+/*footer*/
+.footer .img{ width:422px; height:165px; background:url(../images/footer.jpg) center center no-repeat;}
+.footer .word{ width:560px;}
+.footer p{ font-size:12px; color:#fff;}

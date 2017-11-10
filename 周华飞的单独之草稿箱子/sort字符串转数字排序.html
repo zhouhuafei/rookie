@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>sort字符串转数字排序</title>
+</head>
+
+<body>
+<script>
+var arr=['6px','1x','11px','12px','65px','63px','44px'];		//sort内部是按照字符串大小进行排序的
+arr.sort(function(n1,n2){return parseInt(n1)-parseInt(n2);});	//这里的parseInt()只会改变排序,不会改变输出结果,因为sort内部比较函数的返回值只要是数字就可以了,如果小于零则从小到大;如果大于零,则从大到小;如果相等，则不交换位置;
+alert(arr);
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="author" content="rookie" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>来院路线</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/css.css" />
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=xEW8Af1K3CzhxskrlCHRF64u"></script>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/base.js"></script>
+</head>
+<body>
+<!--header-->
+<script src="header.js"></script>
+<!--请不要把下面这个js.js文件放到header.js之前-->
+<script src="js/js.js"></script>
+
+<div id="container">
+	<div id="content" class="clearFix">
+        	<div id="aside" class="fl">
+                	<div id="wrap">
+                        	<ol>
+                                	<li><a href="/" target="_blank">江城首页<small>\homepage of the river</small></a></li>
+                                	<li><a href="#" target="_blank">品牌中心<small>\Brand center</small></a></li>
+                                	<li><a href="#" target="_blank">案例中心<small>\Case center</small></a></li>
+                                	<li><a href="#" target="_blank">专家团队<small>\Expert team</small></a></li>
+                                	<li><a href="#" target="_blank">塑美设备<small>\Plastic beauty equipment</small></a></li>
+                                	<li class="active"><a href="/zt/lylx/" target="_blank">来院路线<small>\Route to the college</small></a></li>
+                                	<li><a href="#" target="_blank">在线咨询<small>\Online consulting</small></a></li>
+                                </ol>
+                                <h2>联系我们</h2>
+                                <h3>
+                                	<em><img src="images/icon1.png" /></em>
+                                        <span>
+                                        	<i>塑美热线</i>
+                                                <strong>021-6519 1999</strong>
+                                        </span>
+                                </h3>
+                                <h3>
+                                	<em><img src="images/icon2.png" /></em>
+                                        <span>
+                                        	<i>QQ咨询</i>
+                                                <strong>1054199822</strong>
+                                        </span>
+                                </h3>
+                                <h3>
+                                	<em><img src="images/icon3.png" /></em>
+                                        <span>
+                                        	<i>医院地址</i>
+                                                <strong>上海市杨浦区黄兴路286号</strong>
+                                        </span>
+                                </h3>
+                                <div class="img"><img src="images/er.jpg" /></div>
+                        </div>
+                </div>
+                <div id="section" class="fr">
+                	<div class="til"><span>来院路线</span></div>
+                        <div class="tils">医院地址</div>
+                        <div id="maps">
+                        	<!--百度地图-->                        	
+                                <div id="l-map"></div>
+                        </div>
+                        <div class="tils">来院路线</div>
+                        <ol class="clearFix">
+                        	<li class="active">公交</li>
+                        	<li>地铁</li>
+                        	<li>火车</li>
+                        	<li>飞机</li>
+                        	<li class="noMr">打车与自驾</li>
+                        </ol>
+                        <ul>
+                        	<li>
+                                	<p>33路、137路、145路、169路、522路、554路、716路、723路、819路、870路、</p>
+                                	<p>962路、991路 </p>
+                                	<p>大桥三线、大桥四线、大桥五线</p>
+                                	<p><strong>【以上公交在黄兴路长阳路站下车沿黄兴路向南走200米。】</strong></p>
+                                	<p>38路、842路</p>
+                                	<p><strong>【以上公交在黄兴路周家嘴路站下车沿黄兴路向南走200米。】</strong></p>
+                                </li>
+                                <li>
+                                	<p><strong>地铁8号线：</strong>在黄兴路站下，（从３号或4号出口出站）</p>
+                                	<p><strong>地铁12号线：</strong>乘坐至在宁国路站下，2号出口，右转沿黄兴路直行600米</p>
+                                	<p><strong>地铁3号线：</strong>在虹口足球场下车，换乘地铁8号线，至黄兴路站下（从３号或4号出口出站）</p>
+                                	<p><strong>地铁4号线：</strong>在西藏南路下车，换乘地铁8号线，至黄兴路站下（从３号或4号出口出站）</p>
+                                	<p><strong>地铁3号线：</strong>（上海火车车站）→虹口足球场站→换乘8号线虹口足球场站）→黄兴路站</p>
+                                	<p><strong>地铁1号线：</strong>（上海南站站）→人民广场→换乘8号线（人民广场）→黄兴路站</p>
+                                </li>
+                                <li>
+                                	<p><strong>坐到总站：</strong>到上海火车站后，直接坐723路到黄兴路周家嘴路下车前行即到。</p>
+                                	<p><strong>坐到南站：</strong>到上海南站 坐地铁1号线到人民广场转地铁8号线至黄兴路站下，从3号出口，前行150米即到。</p>
+                                </li>
+                                <li>
+                                	<p><strong>虹桥国际机场：</strong>地铁2号线：虹桥2号航站楼站→人民广场→换乘8号线→黄兴路站下(或直接打车到江城医院约80元）</p>
+                                	<p><strong>浦东国际机场：</strong>地铁2号线--人民广场站换乘8号线--黄兴路站下 再步行5-10分钟（或直接打车到江城医院约140元）</p>
+                                </li>
+                                <li>
+                                	<p><strong>您就跟师傅说：</strong>我要去上海市杨浦区黄兴路286号(上海江城皮肤病医院)</p>
+                                	<p><strong>您可以到导航：</strong>上海市杨浦区黄兴路286号(上海江城皮肤病医院)</p>
+                                </li>
+                        </ul>
+                </div>
+        </div>
+</div>
+
+<!--footer-->
+<script src="footer.js"></script>
+</body>
+</html>

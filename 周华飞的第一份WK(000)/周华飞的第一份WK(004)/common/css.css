@@ -1,0 +1,188 @@
+@charset "gb2312";
+/* CSS Document */
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:12px; font-family:Verdana,Arial,"宋体";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none; color:#000;}
+p{ line-height:33px;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_80{ height:80px;}
+.hr_90{ height:90px;}
+.hr_100{ height:100px;}
+.hr_210{ height:210px;}
+.hr_110{ height:110px;}
+.hr_135{ height:135px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto; background:#f1f1f1;}
+.commonWidth_900{ width:900px; margin:0 auto;}
+.commonWidth_800{ width:800px; margin:0 auto;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+/*banner*/
+.banner{overflow:hidden; width:1400px; height:560px; background:url(../images/icon_6_02.jpg)  center center no-repeat; position:relative;}
+.banner a{ width:200px; height:50px; display:block; position:absolute; left:550px; bottom:75px;}
+
+/*能重用的til*/
+.til{ overflow:hidden; text-align:center; }
+.til h2{color:#585858; font-size:35px; height:40px; line-height:40px;}
+.til h2 b{ color:#009eff; font-size:38px; height:40px; line-height:40px;}
+.til h5{ color:#959595; font-size:15px; line-height:20px; height:20px;}
+
+
+/*毛囊炎类型切换*/
+#hair_type_box{ overflow:hidden; width:820px; padding:0 40px; margin:0 auto;}
+#hair_type_box li{ float:left; margin-right:7px;}
+#hair_type_box .li_last{ margin-right:0; float:right;}
+#hair_type_box li a{ width:158px; overflow:hidden; display:inline-block;}
+
+/*毛囊炎切换内容*/
+#hair_type_box2{ width:820px; overflow:hidden; position:relative; margin:0 auto;}
+.hair_a1,.hair_a2{ width:22px; height:51px; position:absolute; top:180px;-moz-transition:all 0.3s;-ms-transition:all 0.3s;transition:all 0.3s;-webkit-transition:all 0.3s;-o-transition:all 0.3s}
+.hair_a1:hover,.hair_a2:hover{ -moz-transform:scale(1.1,1.1);-ms-transform:scale(1.1,1.1);-webkit-transform:scale(1.1,1.1);-o-transform:scale(1.1,1.1);transform:scale(1.1,1.1); border-radius:10px;}
+.hair_a1{ left:0; background:url(../images/icon_4_03.jpg) left top no-repeat;}
+.hair_a2{ right:0; background:url(../images/icon_4_05.jpg) left top no-repeat;}
+/*滑动外盒子*/
+#hair_move_box{ width:700px; height:418px; overflow:hidden; margin:0 auto; position:relative;}
+/*滑动的盒子*/
+#hair_move{ width:700px; overflow:hidden; margin:0 auto; position:absolute; left:0; top:0;}
+.hair_type{ display:block;  width:700px; height:418px; overflow:hidden;}
+.hair_leftImg{ width:314px;}
+.hair_word{width:386px;}
+.hair_til{ background:url(../images/icon_2_03.jpg) 15px top no-repeat; border-bottom:1px solid #CCC; margin-bottom:10px;}
+.hair_til_bg{ font-size:32px; color:#FFF; height:40px; line-height:55px; padding:0px 15px 0 23px; text-align:center;}
+.hair_til h2{ font-size:35px; font-weight:bold; color:#3ac2ff; height:40px; line-height:40px; vertical-align:middle;}
+.hair_til h2 div,.hair_til h5 div{ display:inline; color:#2e2e2e; font-size:16px; height:20px; line-height:20px; padding-left:10px; white-space:normal;}
+.hair_til h5{ clear:both;*zoom:1; padding-left:80px; color:#7dd2ff; height:20px; line-height:20px; padding-bottom:20px; font-size:15px;}
+.hair_word p{ padding-top:10px;line-height:25px; font-size:14px;}
+.hair_word p em{ display:inline-block; line-height:25px; background:#3ac2ff; color:#FFF; padding:0px 5px; font-style:normal; margin-right:10px;}
+.hair_word ul{ overflow:hidden; padding:10px 0 20px 0;}
+.hair_word ul li{ float:left;}
+
+/*治疗毛囊炎*/
+.doctor_hair{ width:100%; background:#e5f5ff;}
+/*毛囊炎治疗方式*/
+.doctor_type_box{ width:930px; margin:0 auto;}
+.doctor_type{ position:relative; width:240px;padding:130px 25px 20px; margin-right:20px; background:#f0f0f0;}
+.octagon{ position:absolute; left:69px; top:-81px;}
+.doctor_type h2{ font-size:35px; height:40px; line-height:40px; color:#484747; padding-bottom:10px;}
+.doctor_type span{ padding:5px 10px; display:inline-block; color:#FFF; font-size:14px; background:#5a5a5a; margin-right:5px;}
+.doctor_type p{ padding:10px 0 40px; text-indent:30px; line-height:25px; color:#565656;}
+
+
+/*微波理疗综合疗法*/
+.microwave_box{ width:930px; overflow:hidden; margin:0 auto;}
+.microwave_left{ width:483px; overflow:hidden; position:relative;}
+.microwave_left a{ position:absolute; right:132px; bottom:56px;}
+.microwave_right{ width:417px; padding-right:30px;}
+.microwave_right p{ font-size:14px; color:a1a1a1; line-height:25px; margin-top:20px; height:70px; overflow:hidden;}
+.microwave_right p img{ float:left; margin-right:15px;}
+.microwave_right .mr_left{ position:relative; left:-50px; top:0;}
+
+
+/*患者就诊前后对比切换*/
+.help_both{ width:100%; margin:0 auto; overflow:hidden; text-align:center;}
+.help_tab_box{ width:930px; height:276px;overflow:hidden;margin:0 auto; position:relative; text-align:center;}
+.help_tab_box .hair_a1,.help_tab_box .hair_a2{top:100px;}
+#help_tab{ width:656px; overflow:hidden; margin:0 auto; height:276px;}
+#help{ position:relative;width:656px;height:276px; overflow:hidden;}
+#help li img{width:656px;height:276px;overflow:hidden;}
+.help_tab_a{ width:201px; margin:0 auto;}
+
+
+/*专家切换*/
+.Experts_move_box{ width:930px; height:581px; overflow:hidden; margin:0 auto; position:relative;}
+.Experts_move_box ul{ float:left;overflow:hidden; position:absolute; left:55px; bottom:110px;}
+.about_Experts{ margin-right:20px; width:20px; font-size:18px; padding-right:20px; border-right:1px dashed #999; line-height:20px;}
+.Experts_move_box ul li{ margin-right:15px; float:left; height:74px;}
+.Experts_box{ width:817px;overflow:hidden; margin:0 auto; position:relative;}
+.Experts_move{ width:817px; height:581px;  overflow:hidden; display:block;}
+.Experts_left{ width:465px; position:relative;}
+.Experts_left h2{ font-size:40px; height:55px; line-height:55px; color:#000;}
+.Experts_left h2 em{ padding:0 20px; font-style:normal;}
+.Experts_left h5{ height:30px; font-size:20px; color:#737272; line-height:30px; font-size:;}
+.Experts_left p{ background:url(../images/icon_32_03.jpg); width:469px; height:164px; overflow:hidden; position:absolute; left:0; top:100px; padding:10px 25px 0px;; text-indent:25px; line-height:25px; font-size:14px; color:#616060;}
+.Experts_right{ width:352px;}
+
+
+
+/*深入了解毛囊炎的危害*/
+.harm_box{ width:892px; height:357px; overflow:hidden; margin:0 auto; position:relative; background:url(../images/icon_301_03.jpg) left top no-repeat;}
+.harm{ position:relative;}
+.harm p{ line-height:24px;font-size:14px; color:#FFF;}
+.harm1{ width:545px; height:80px; margin:42px 0 0 110px;}
+.harm2{ width:500px; height:120px; margin:10px 0 0 210px; }
+.harm3{ width:500px; height:70px; margin-left:100px; }
+.harm h2{ font-weight:bold;font-size:18px; color:#FFF;}
+.notice{ width:831px; height:400px; background:url(../images/icon_501_03.jpg) left top no-repeat; margin:0 auto;}
+.notice div { width:207px; height:400px; position:relative;}
+.notice div a{ display:block; position:absolute; left:50px; bottom:15px;}
+.notice div p{padding:210px 10px 0px 10px; line-height:25px; color:#FFF; font-size:14px;}
+
+
+/*新的Til可以重用*/
+.new_til{ padding:30px 0; margin:0 auto; width:996px;}
+
+/*医院简介*/
+.The_hospital{ width:996px; height:386px; margin:0 auto; overflow:hidden; position:relative;}
+.hos_dba{ position:absolute; left:280px; bottom:30px;}
+.hos_dba a{ display:inline-block;}
+.hos_dba span{ width:10px; display:inline-block;}
+.hos_box{ display:block; overflow:hidden;}
+.hos_word{ width:376px; height:386px; padding:0 10px; background:#f4f4f4;}
+.hos_word h2{ font-size:28px; padding:35px 0;}
+.hos_word p{ color:#444444; line-height:30px; text-indent:30px;}
+.hos_bgimg{ width:426px; height:386px; overflow:hidden; text-align:center; line-height:386px;}
+
+/*医院简介切换*/
+.The_hospital ul{ width:174px; position:absolute; right:0; top:0;}
+.The_hospital ul li{ width:174px; height:60px; overflow:hidden; margin-bottom:5px;}
+.The_hospital ul li a{display:block;width:174px; height:60px;}
+.hos_ul_a1{ background:url(../images/icon_105.png) left top no-repeat;}
+.hos_ul_a2{ background:url(../images/icon_222_10.jpg) left top no-repeat;}
+.hos_ul_a3{ background:url(../images/icon_222_12.jpg) left top no-repeat;}
+.hos_ul_a4{ background:url(../images/icon_222_14.jpg) left top no-repeat;}
+.hos_ul_a5{ background:url(../images/icon_222_16.jpg) left top no-repeat;}
+.hos_ul_a6{ background:url(../images/icon_222_23.jpg) left top no-repeat;}
+.hos_ul_a1_active{ background:url(../images/icon_222_08.jpg) left top no-repeat;}
+.hos_ul_a2_active{ background:url(../images/icon_106.png) -2px top no-repeat;}
+.hos_ul_a3_active{ background:url(../images/icon_107.png) left top no-repeat;}
+.hos_ul_a4_active{ background:url(../images/icon_108.png) left top no-repeat;}
+.hos_ul_a5_active{ background:url(../images/icon_109.png) left top no-repeat;}
+.hos_ul_a6_active{ background:url(../images/icon_110.png) -2px top no-repeat;}
+
+
+/*医院简介切换内容*/
+#hos_span_box{ height:386px; width:822px; overflow:hidden;}
+#hos_span{width:822px; overflow:hidden;}
+
+/*项目推荐*/
+.Project_recommendation{ width:996px; margin:0 auto; overflow:hidden; padding-left:11px;}
+.Project_recommendation ul li{width:249px; height:117px; overflow:hidden; float:left;}
+.Project_recommendation ul li a{ display:inline-block;}
+
+
+/*悬浮侧边栏*/
+#nav{position:relative;}
+#scroll_nav { position:absolute; top:30px; right:20px;}
+#scroll_nav ul li {background: url(http://pfb.skinjc.com/special/shiyou//images/mny_06.png) no-repeat scroll left center #00b2c6;font-size: 14px;line-height: 23px; margin-bottom:4px;}
+#scroll_nav ul li a{ display:inline-block; color:#fff; padding:0 10px 0 30px;}
+#scroll_nav ul li a:hover{text-decoration:none;}
+#scroll_nav li:hover ,#scroll_nav .active {background: url(http://pfb.skinjc.com/special/shiyou//images/mny_06.png) no-repeat scroll left center #e82400;}

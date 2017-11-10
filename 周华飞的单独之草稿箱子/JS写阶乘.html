@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+	function factorial(num)
+	{
+		if(num<=1)
+		{
+			return 1;
+		}
+		else
+		{
+			//return num*factorial(num-1);
+			return num*arguments.callee(num-1);
+		}	
+	}
+	alert(factorial(8));
+						//实现原理：
+						//第一步：5*arguments.callee(4)
+						//第二步：arguments.callee(4)=4*arguments.callee(3)
+						//第三步：arguments.callee(3)=3*arguments.callee(2)
+						//第三步：arguments.callee(2)=2*arguments.callee(1)
+						//第四步：arguments.callee(1)=1
+						//第五步：5*4*3*2*1=120
+</script>
+</body>
+</html>

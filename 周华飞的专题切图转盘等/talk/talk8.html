@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+<meta name="author" content="rookie">
+<meta charset="gb2312">
+<title>转盘</title>
+<style>
+body,div,ul,li{ margin:0; padding:0;}
+#persons{ width:1000px; margin:0 auto; overflow:hidden;}
+#persons li{ display:inline-block; width:68px; padding:5px; list-style-type:none;}
+#persons li input.on{ color:#f00;}
+canvas{ margin:0 auto; display:block;}
+</style>
+</head>
+<body>
+<div id="persons">
+	<ul>
+        	<div>
+                        <li><input type="checkbox" uid="0" value="穆小军">穆小军</li>
+                        <li><input type="checkbox" uid="1" value="陈鑫">陈鑫</li>
+                        <li><input type="checkbox" uid="2" value="李焱达">李焱达</li>
+                        <li><input type="checkbox" uid="3" value="袁辉">袁辉</li>
+                        <li><input type="checkbox" uid="4" value="尹全明">尹全明</li>
+                        <li><input type="checkbox" uid="5" value="高杨">高杨</li>
+                        <li><input type="checkbox" uid="6" value="何康">何康</li>
+                        <li><input type="checkbox" uid="7" value="郑煜华">郑煜华</li>
+                        <li><input type="checkbox" uid="8" value="童万彬">童万彬</li>
+                        <li><input type="checkbox" uid="9" value="任红岩">任红岩</li> 
+                        <li><input type="checkbox" uid="10" value="黄澜钗">黄澜钗</li>
+                        <li><input type="checkbox" uid="11" value="范春侠">范春侠</li>
+                        <li><input type="checkbox" uid="12" value="吕兴朋">吕兴朋</li>
+                        <li><input type="checkbox" uid="13" value="翁绍斌">翁绍斌</li>
+                        <li><input type="checkbox" uid="14" value="陈忠文">陈忠文</li>
+                        <li><input type="checkbox" uid="15" value="李振帮">李振帮</li>
+                        <li><input type="checkbox" uid="16" value="周栋波">周栋波</li>
+                        <li><input type="checkbox" uid="17" value="陆彬">陆彬</li>
+                        <li><input type="checkbox" uid="18" value="谭龙">谭龙</li>
+                        <li><input type="checkbox" uid="19" value="唐杰">唐杰</li>
+                        <li><input type="checkbox" uid="20" value="曹磊">曹磊</li>
+                        <li><input type="checkbox" uid="21" value="张清波">张清波</li>
+                        <li><input type="checkbox" uid="22" value="姚慕龙">姚慕龙</li>
+                        <li><input type="checkbox" uid="23" value="林少通">林少通</li>
+                        <li><input type="checkbox" uid="24" value="许弘历">许弘历</li>
+                        <li><input type="checkbox" uid="25" value="程强">程强</li>
+                        <li><input type="checkbox" uid="26" value="陈清荣">陈清荣</li>
+                        <li><input type="checkbox" uid="27" value="李策">李策</li>
+                        <li><input type="checkbox" uid="28" value="李瑞鹏">李瑞鹏</li>
+                        <li><input type="checkbox" uid="29" value="张军林">张军林</li>
+                        <li><input type="checkbox" uid="30" value="任友超">任友超</li>
+                        <li><input type="checkbox" uid="31" value="郭明">郭明</li>
+                        <li><input type="checkbox" uid="32" value="杜伟民">杜伟民</li>
+                        <li><input type="checkbox" uid="33" value="戴翔">戴翔</li>
+                        <li><input type="checkbox" uid="34" value="刘思佳">刘思佳</li>
+                        <li><input type="checkbox" uid="35" value="樊萍凤">樊萍凤</li>
+                        <li><input type="checkbox" uid="36" value="吴军">吴军</li>
+                        <li><input type="checkbox" uid="37" value="莫素婧">莫素婧</li>
+                        <li><input type="checkbox" uid="38" value="苏今朝">苏今朝</li>
+                        <li><input type="checkbox" uid="39" value="王灿">王灿</li>
+                        <li><input type="checkbox" uid="40" value="付维">付维</li>
+                        <li><input type="checkbox" uid="41" value="晏超峰">晏超峰</li>
+                </div>
+                <li>操作:</li>
+                <li><input type="button" value="全选" id="all"></li>
+                <li><input type="button" value="反选" id="none"></li>
+                <li><input type="button" value="不选" id="clear"></li>
+                <li><input type="button" value="过滤" id="filter" class="on"></li>
+                <li><input type="button" value="停止" id="stop"></li>
+                <li><input type="button" value="走你" id="save"></li>
+        </ul>
+</div>
+<canvas width="600" height="600">您的浏览器不支持canvas,请更换更高级的浏览器</canvas>
+<script>
+var oSelect=document.getElementById('all');
+var oReverse=document.getElementById('none');
+var oClear=document.getElementById('clear');
+var oFilter=document.getElementById('filter');
+var oSave=document.getElementById('save');
+var oStop=document.getElementById('stop');
+var oDiv=document.querySelector('#persons div');
+var aInput=oDiv.getElementsByTagName('input');
+var oCanvas=document.querySelector('canvas');
+var oContext=oCanvas.getContext('2d');
+var iLen=aInput.length;//多选框个数
+var arr=[];//用来存储被选中人员的数据
+var arr2=[];//用来存储所有人员的数据
+var x=300.5;//圆心的x轴
+var y=300.5;//圆心的y轴
+var r=250;//大圆的半径
+var r2=80;//小圆的半径
+//角度转换为弧度需要这个
+var pi=Math.PI/180;
+var offsetY=null;//y轴偏移量
+var radian=null;//每个占多数弧度
+var aSize=null;//被选中人员的个数
+var timer=null;//自动减速至停止的控制器
+var step=null;//步长
+var timer2=null;//控制步长的定时器
+//var num=0;//默认箭头指向第几位,(被舍弃的第一种减速方式)
+var num=Math.round(Math.random()*(aInput.length-1));//默认箭头指向第几位(更加友好的第二种减速方式)
+//console.log(num,aInput.length-1)
+var iNum=null;//根据弧度计算指针停留的位置,所得到的值,即是人员在数组中的位置
+//var timing=30;//定时器运转时的间隔,越大转的时间越长,此乃毫秒数(被舍弃的第一种减速方式)
+var timing=500;//定时器运转时的间隔,越大转的时间越长,此乃毫秒数(更加友好的第二种减速方式)
+var onOff=true;//是否开始过滤功能(演讲过的就从圆盘中剔除)
+//10-aSize随机步长函数
+function UpDataStep(){
+	//step=Math.round(Math.random()*(aSize-10)+10);//(被舍弃的第一种减速方式)
+	step=Math.round(Math.random()*(3-1)+1);//(更加友好的第二种减速方式)
+	//console.log(step)
+}
+//把所有人员的数据存储起来
+for(var i=0;i<iLen;i++){
+	arr2[i]=aInput[i].value;		
+}
+//console.log(arr2)
+//多选框清除缓存
+for(var i=0;i<iLen;i++){
+	aInput[i].checked=false;
+	timer=null;
+	timer2=null;
+	onOff=true;
+}
+//清除定时器函数
+function clearTimer(){	
+	clearInterval(timer);
+	timer=null;
+	timer2=null;
+}
+//全选
+oSelect.onclick=function(){
+	for(var i=0;i<iLen;i++){
+		aInput[i].checked=true;	
+	}
+	clearTimer();//清除定时器函数调用
+	drawDisk();//点击全选时进行重绘
+}
+//反选
+oReverse.onclick=function(){
+	for(var i=0;i<iLen;i++){
+		if(aInput[i].checked==true){
+			aInput[i].checked=false;	
+		}else{
+			aInput[i].checked=true;	
+		}
+	}	
+	clearTimer();//清除定时器函数调用
+	drawDisk();//点击反选时进行重绘
+}
+//不选
+oClear.onclick=function(){
+	for(var i=0;i<iLen;i++){
+		aInput[i].checked=false;	
+	}
+	clearTimer();//清除定时器函数调用
+	drawDisk();//点击不选时进行重绘
+}
+//点击多选框时进行重绘
+oDiv.onclick=function(){
+	clearTimer();//清除定时器函数调用
+	drawDisk();
+}
+//过滤
+oFilter.onclick=function(){
+	onOff=!onOff;
+	if(onOff){
+		this.className='on';	
+	}else{
+		this.className='off';		
+	}
+}
+//停止
+oStop.onclick=function(){
+	clearInterval(timer);
+	timer=null;
+	UpDataStep();
+}
+//走你
+oSave.onclick=function(){
+	if(timer==null){
+		//console.log(onOff);
+		if(onOff){
+			//开关打开且转盘转过一次才可以进行剔除
+			if(timer2!=null){
+				//console.log(arr)
+				//console.log(arr2)
+				//剔除上次被选中的人员
+				for(var i=0;i<iLen;i++){
+					if(arr[iNum]==arr2[i]){
+						aInput[i].checked=false;
+					}
+				}		
+			}
+		}
+		UpDataStep();
+		//console.log(step);
+		if(arr.length<1){
+			alert('请邀请好友一起玩耍');
+			window.location.reload();
+		}else{
+			clearInterval(timer);
+			clearInterval(timer2);
+			timer2=setInterval(function(){
+				step--;
+				if(step==0){
+					clearInterval(timer);
+					timer=null;
+					clearInterval(timer2);
+				}
+			},timing)
+			timer=setInterval(function(){
+				//console.log(num);
+				num+=step;
+				drawDisk();
+			},30)
+		}
+	}
+}
+//画图
+function drawDisk(){
+	//把选中人员的数据进行存储
+	arr=[];
+	for(var i=0;i<iLen;i++){
+		if(aInput[i].checked==true){
+			arr.push(aInput[i].value);
+		}
+	}
+	//被选中人员的数据长度
+	aSize=arr.length;
+	//每个占多少弧度
+	radian=360/aSize;
+	oContext.clearRect(0,0,oCanvas.width,oCanvas.height);
+	//绘制圆盘
+	for(var i=0;i<aSize;i++){
+		oContext.save();
+		oContext.beginPath();	
+		//填充的颜色
+		if(i%2==0){		
+			oContext.fillStyle='#f78b22';
+		}else{
+			oContext.fillStyle='#ffcd46';
+		}
+		oContext.moveTo(x,y);
+		oContext.arc(x,y,r,radian*i*pi,radian*(i+1)*pi,false);
+		oContext.closePath();
+		oContext.fill();
+		oContext.restore();
+	}
+	//添加文字
+	offsetY=radian/2;
+	for(var i=0;i<aSize;i++){
+		oContext.save();
+		oContext.beginPath();
+		oContext.fillStyle='#fff';
+		oContext.font="15px 微软雅黑";
+		oContext.textAlign="center";
+		oContext.textBaseline="middle";
+		oContext.translate(x,y);
+		oContext.rotate((radian*i+offsetY)*pi);
+		oContext.fillText(arr[i],180,0);
+		oContext.closePath();
+		oContext.restore();
+	}
+	//绘制箭头
+	oContext.save();
+	oContext.beginPath();
+	oContext.lineWidth=2;
+	oContext.strokeStyle='#fff';
+	oContext.moveTo(x,y);
+	//箭头偏移量
+	oContext.arc(x,y,r,(2*num+1)*offsetY*pi,(2*num+1)*offsetY*pi,false);	
+	oContext.closePath();
+	oContext.stroke();
+	oContext.restore();
+	//绘制白色圆盘
+	oContext.save();
+	oContext.beginPath();
+	oContext.fillStyle='#fff';
+	oContext.moveTo(x,y);
+	oContext.arc(x,y,r2,0,360*pi,false);
+	oContext.closePath();
+	oContext.fill();
+	oContext.restore();
+	//给白色圆盘添加文字
+	if(arr.length>0){
+		oContext.save();
+		oContext.beginPath();
+		oContext.fillStyle='#f00';
+		oContext.font='30px 微软雅黑';
+		oContext.textAlign='center';
+		oContext.textBaseline='middle';	
+		//根据弧度计算位置
+		iNum=Math.floor((2*num+1)*offsetY/radian)%aSize;
+		//console.log(iNum);
+		oContext.fillText(arr[iNum],x,y);
+		oContext.closePath();
+		oContext.restore();
+	}
+}
+//给画布添加点击事件
+oCanvas.onclick=function(ev){
+	var ev=ev||event;
+	var iClinetW=document.documentElement.clientWidth;
+	var iCanvasLeft=this.offsetLeft;
+	var iCanvasTop=this.offsetTop;
+	var iL=ev.clientX;
+	var iT=ev.clientY;
+	if(iL-iCanvasLeft>=x-r2&&iL-iCanvasLeft<=x+r2&&iT-iCanvasTop>=x-r2&&iT-iCanvasTop<=x+r2){
+		for(var i=0;i<arr2.length;i++){
+			if(arr[iNum]==arr2[i]){
+				var uid=aInput[i].getAttribute('uid');
+				//console.log(uid)
+				window.open('http://www.365789615.com/home.php?mod=space&uid='+uid+'&do=thread&view=me&from=space','_target');
+			}
+		}						
+	}	
+}
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<style>
+*{ margin:0; padding:0; list-style:none; border:none; text-decoration:none;}
+#focus_box{ width:600px; height:200px; background:#0CC; position:relative; overflow:hidden; margin:100px auto;}
+#focus_box ul{position:absolute; left:0; top:0px; z-index:2;}
+#focus_box ul li{ height:200px;}
+#focus_box ul li a{ width:600px; height:200px; line-height:200px; text-align:center; display:inline-block; color:#FFF; background:#000; font-size:50px; font-weight:bold;}
+#focus_box #point_box{overflow:hidden; position:absolute; left:0; top:0; z-index:3;}
+#focus_box #point_box div{width:15px; height:15px; border-radius:10px; background:#ccc; margin-bottom:5px;} 
+#focus_box #point_box .point_color{background:#F30;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function()
+{
+	var oFocus_box=document.getElementById('focus_box');
+	var oPoint_box=document.getElementById('point_box');
+	var aBtn=oPoint_box.getElementsByTagName('div');	
+	var oFocus_img=document.getElementById('focus_img');
+	var now=0;
+	for(var i=0;i<aBtn.length;i++)
+	{
+		aBtn[i].index=i;
+		aBtn[i].onmouseover=function()
+		{
+			now=this.index;
+			tab();
+		}
+	}
+	function tab()
+	{
+		for(var j=0;j<aBtn.length;j++)
+			{
+				aBtn[j].className='#ccc';	
+			}
+			aBtn[now].className='point_color';
+			startMove(oFocus_img,{top:-200*now});
+	}
+	function next()
+	{
+		now++
+		if(now==aBtn.length)
+		{
+			now=0;
+		}	
+		tab();
+	}
+	var timer=setInterval(next,5000);
+	oFocus_box.onmouseover=function()
+	{
+		clearInterval(timer);	
+	}
+	oFocus_box.onmouseout=function()
+	{
+		timer=setInterval(next,5000);	
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div id="focus_box">
+	<ul id="focus_img">
+    	<li><a href="#" style="background:#999;">我其实才是第一张</a></li>
+        <li><a href="#" style="background:#333;">那我就是第二张喽</a></li>        
+        <li><a href="#" style="background:#666;">那我就是第三张喽</a></li>
+        <li><a href="#" style="background:#ccc;">那我就是第四张喽</a></li>
+        <li><a href="#" style="background:#eee;">那我就是第五张喽</a></li>
+        <li><a href="#" style="background:#000;">那我就是第六张喽</a></li>
+    </ul>
+    <div id="point_box">
+    	<div class="point_color"></div>
+    	<div></div>        
+    	<div></div>
+    	<div></div>
+    	<div></div>
+    	<div></div>
+    </div>
+</div>
+</body>
+</html>

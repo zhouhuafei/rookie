@@ -1,0 +1,26 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*content*/
+.content{ text-align:center; width:96%; margin:5% auto 0;}
+.content.bg{ background:#fff1ee; padding:2%;}
+
+/*more*/
+.more{ margin-top:5%;}
+
+
+
+
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	
+	
+}
+@media (min-width: 320px) and (max-width: 479px){
+	
+	
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>touch</title>
+<style>
+body,ul,li,div{ margin:0; list-style:none; padding:0;}
+html,body{ height:100%;}
+div{ height:100%; margin:0 auto; background:#000; position:relative;}
+ul{ position:absolute; left:0; top:0; width:400%; height:100%;}
+ul.active{ transition:0.4s;}
+li{ float:left; width:25%; text-align:center; height:100%; color:#fff; font-size:60px;}
+li:nth-of-type(1){ background:#300;}
+li:nth-of-type(2){ background:#900;}
+li:nth-of-type(3){ background:#60C;}
+li:nth-of-type(4){ background:#660;}
+</style>
+<script>
+window.onload=function(){
+	(function(){
+		var oUl=document.querySelector('ul');
+		var aLi=document.querySelectorAll('li');
+		var iW=aLi[0].offsetWidth;
+		var iH=oUl.offsetHeight;
+		var iLen=aLi.length;
+		oUl.style.lineHeight=iH+'px';
+		for(var i=0;i<iLen;i++){
+			aLi[i].index=i;
+			aLi[i].addEventListener('touchstart',function(ev){
+				var self=this;
+				var target=ev.targetTouches[0];
+				var pageStartX=target.pageX;
+				oUl.classList.remove('active');//移除过渡效果
+				this.addEventListener('touchmove',function(ev){
+					var target=ev.targetTouches[0];
+					oUl.style.left=(-self.index*iW)+target.pageX-pageStartX+'px';
+				},false)
+				this.addEventListener('touchend',function(ev){
+					var target=ev.targetTouches[0];				
+					var pageEndX=target.pageX;
+					oUl.classList.add('active');//添加过渡效果
+					if(oUl.offsetLeft>0){
+						oUl.style.left=0;
+					}else if(oUl.offsetLeft<iW-oUl.offsetWidth){
+						oUl.style.left=iW-oUl.offsetWidth+'px';
+					}else{
+						if(target.pageX<pageStartX){//向左滑动
+							if(Math.abs(pageEndX-pageStartX)>=50){
+								oUl.style.left=-(self.index+1)*iW+'px'
+							}else{
+								oUl.style.left=-self.index*iW+'px'							
+							}
+						}else if(target.pageX>pageStartX){//向右滑动						
+							if(Math.abs(pageEndX-pageStartX)>=50){
+								oUl.style.left=-(self.index-1)*iW+'px'
+							}else{
+								oUl.style.left=-self.index*iW+'px'							
+							}
+						}	
+					}
+				},false)
+			},false)
+		}
+	})();
+	document.oncentextmenu=function(){ return false;}
+}
+</script>
+</head>
+<body>
+<div>
+	<ul>
+        	<li>1</li>
+        	<li>2</li>
+        	<li>3</li>
+        	<li>4</li>
+        </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>pageApplication2</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; line-height:1;}
+ul{ height:400px; overflow:hidden;}
+li{ width:100%; height:100px; line-height:100px; text-align:center; font-size:40px; color:#fff; background:#000;}
+</style>
+<script>
+window.onload=function(){
+	(function(){		
+		var aLi=document.getElementsByTagName('li');
+		var iLen=aLi.length;
+		var iShowData=4;
+		var iShowNum=null;
+		page({
+			id:'page',
+			showPage:5,
+			nowPage:1,
+			allPage:Math.ceil(iLen/iShowData),
+			callBack:function(nowPage,allPage){
+				for(var i=0;i<iLen;i++){
+					aLi[i].style.display='none';	
+				}
+				iShowNum=nowPage*iShowData<iLen?iShowData:iLen-(nowPage-1)*iShowData;
+				for(var i=0;i<iShowNum;i++){
+					aLi[(nowPage-1)*iShowData+i].style.display='block';	
+				}				
+				//console.log('当前是:'+nowPage+'页,总页数:'+allPage+'页');
+			}	
+		})				
+	})();
+}
+function page(json){
+	if(!json.id){return;}//父级容器不存在时不执行下列代码
+	var obj=document.getElementById(json.id);//父级容器
+	obj.style.cssText="width:100%; text-align:center; height:20px; line-height:20px; font-size:16px; margin-top:40px;";//父级容器样式
+	var showPage=json.showPage||5;//显示页数
+	var nowPage=json.nowPage||1;//当前页数
+	var allPage=json.allPage||10;//总页数
+	var callBack=json.callBack||function(){};//回调函数
+	/*按钮的样式*/
+	var cssA=function(obj){
+		obj.style.cssText="display:inline-block; height:20px; line-height:20px; margin:0 5px; color:#00f; vertical-align:middle;";		
+	}
+	/*添加首页*/
+	var iFirst=Math.floor(showPage/2)+2;
+	showPage%2==0&&(iFirst=showPage/2+1);
+	if(nowPage>=iFirst&&allPage>=showPage+1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='首页';
+		oA.href='#'+1;
+		obj.appendChild(oA);	
+	}
+	/*添加上一页*/
+	if(nowPage>=2){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='上一页';
+		oA.href='#'+(nowPage-1);
+		obj.appendChild(oA);	
+	}
+	/*添加页码*/	
+	if(allPage<=showPage){
+		for(var i=1; i<=allPage;i++){
+			var oA=document.createElement('a');
+			cssA(oA);
+			if(nowPage==i){
+				oA.innerHTML=i;
+			}else{
+				oA.innerHTML='['+i+']';
+			}
+			oA.href='#'+i;
+			obj.appendChild(oA);
+		}	
+	}else{
+		for(var i=1; i<=showPage;i++){
+			var oA=document.createElement('a');
+			cssA(oA);
+			if(nowPage<=Math.floor(showPage/2)){
+				if(nowPage==i){
+					oA.innerHTML=i;
+				}else{
+					oA.innerHTML='['+i+']';
+				}
+				oA.href='#'+i;
+			}else if(allPage-nowPage<=Math.floor(showPage/2)-1){
+				oA.innerHTML='['+(allPage-showPage+i)+']';
+				for(var j=0;j<=Math.floor(showPage/2)-1;j++){
+					if(allPage-nowPage==j&&i==showPage-j){
+						//console.log('allPage-nowPage=='+j,'i=='+(showPage-j),'oA.innerHTML='+(allPage-showPage+i));
+						oA.innerHTML=(allPage-showPage+i);
+					}
+				}
+				oA.href='#'+(allPage-showPage+i);
+			}else{
+				if(i==Math.ceil(showPage/2)){
+					oA.innerHTML=(nowPage-Math.ceil(showPage/2)+i);
+				}else{
+					oA.innerHTML='['+(nowPage-Math.ceil(showPage/2)+i)+']';
+				}
+				oA.href='#'+(nowPage-Math.ceil(showPage/2)+i);
+			}
+			obj.appendChild(oA);
+		}			
+	}
+	/*添加下一页*/
+	if(allPage-nowPage>=1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='下一页';
+		oA.href='#'+(nowPage+1);
+		obj.appendChild(oA);
+	}
+	/*添加尾页*/
+	var last=Math.ceil(showPage/2);
+	last%2==0&&(last=showPage/2+1);
+	if(allPage-nowPage>=last&&allPage>=showPage+1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='尾页';
+		oA.href='#'+allPage;
+		obj.appendChild(oA);
+	}
+	/*添加回调函数*/
+	callBack(nowPage,allPage);
+	/*获取按钮并添加点击事件*/
+	var aA=obj.getElementsByTagName('a');
+	for(var i=0,iLen=aA.length; i<iLen;i++){
+		aA[i].onclick=function(){				
+			nowPage=parseInt(this.getAttribute('href').substring(1));
+			obj.innerHTML='';
+			page({
+				id:json.id,
+				showPage:showPage,
+				nowPage:nowPage,
+				allPage:allPage,
+				callBack:callBack
+			})
+			return false;
+		}
+	}
+	/*添加跳转*/
+	if(allPage>showPage){
+		/*添加跳转输入框*/
+		var oInput=document.createElement('input');
+		oInput.style.cssText='width:38px; text-align:center; height:18px; line-height:18px; border:1px solid #00f; color:#00f; margin:0 5px; vertical-align:middle;';
+		oInput.type='text';
+		if(allPage==nowPage){
+			oInput.value=1;
+		}else{
+			oInput.value=nowPage+1;
+		}
+		/*保存一个跳转之前的原始值*/
+		var iValue=parseInt(oInput.value);
+		obj.appendChild(oInput);
+		/*添加跳转按钮*/
+		var oSpan=document.createElement('span');
+		oSpan.style.cssText='display:inline-block; width:38px; height:20px; line-height:20px; font-size:14px; background:#00f; color:#fff; border-radius:4px; margin:0 5px; vertical-align:middle; cursor:pointer;';
+		oSpan.innerHTML='跳转';
+		obj.appendChild(oSpan);
+		var oI=document.createElement('i');
+		oI.style.cssText='display:inline-block; height:20px; line-height:20px; margin:0 5px; font-size:12px; color:#00f; font-style:italic;';
+		oI.innerHTML=nowPage+'/'+allPage;
+		obj.appendChild(oI);
+		/*封装局部跳转函数*/
+		var jump=function(){
+			nowPage=parseInt(oInput.value);
+			if(nowPage<1||nowPage>allPage){
+				alert('没有第'+nowPage+'页');
+				/*跳转如果超过界限则还原原始值*/
+				oInput.value=iValue;
+				return false;	
+			};
+			obj.innerHTML='';
+			page({
+				id:json.id,
+				showPage:showPage,
+				nowPage:nowPage,
+				allPage:allPage,
+				callBack:callBack
+			})			
+		}
+		/*给跳转按钮添加点击*/
+		oSpan.onclick=jump;
+		/*给跳转按输入框添加键盘事件*/
+		oInput.onkeyup=function(ev){
+			var ev=ev||event;
+			ev.keyCode==13&&jump();	
+		}		
+	}
+	
+}
+</script>
+</head>
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	<li>10</li>
+	<li>11</li>
+	<li>12</li>
+	<li>13</li>
+	<li>14</li>
+	<li>15</li>
+	<li>16</li>
+	<li>17</li>
+	<li>18</li>
+	<li>19</li>
+	<li>20</li>
+	<li>21</li>
+	<li>22</li>
+	<li>23</li>
+	<li>24</li>
+	<li>25</li>
+	<li>26</li>
+	<li>27</li>
+	<li>28</li>
+	<li>29</li>
+	<li>30</li>
+	<li>31</li>
+	<li>32</li>
+	<li>33</li>
+	<li>34</li>
+	<li>35</li>
+	<li>36</li>
+	<li>37</li>
+</ul>
+<div id="page"></div>
+</body>
+</html>

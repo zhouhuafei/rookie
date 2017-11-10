@@ -1,0 +1,86 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*case*/
+.till{ font-size:44px; color:#006db8; margin-top:50px;}
+.case{ padding:40px 80px; width:840px; margin:50px auto 0; position:relative;}
+.case_word{ width:460px; height:300px; position:relative;}
+.case_word h2{ line-height:42px; font-size:26px; margin-top:10px; padding-left:50px; background:url(../images/case.png) no-repeat;}
+.case_word p{ font-size:18px; text-indent:30px; margin-top:15px;}
+.case_btn{ width:86px; position:absolute; bottom:0px; right:0px;}
+.case_btn a{ width:38px; height:38px; background:url(../images/the_hospital.png) no-repeat; margin-right:10px;}
+.case_btn .first_a{ background-position:-36px -455px;}
+.case_btn .first_a:hover{ background-position:-36px -508px;}
+.case_btn .last_a{ background-position:-36px -562px; margin-right:0;}
+.case_btn .last_a:hover{ background-position:-36px -617px; margin-right:0;}
+.case_word .case_til1{ background-position: left top; }
+.case_word .case_til2{ background-position: left -66px; }
+.case_word .case_til3{ background-position: left -144px; }
+.case_word .case_til4{ background-position: left -216px; }
+.case_word .case_til5{ background-position: left -282px; }
+.three_black,.three_white{ width:33px; height:33px; position:absolute; background:url(../images/case.png) no-repeat;}
+.three_black{ background-position: left -344px; left:483px; bottom:-16px;}
+.three_white{ background-position: left -414px; left:483px; top:-16px;}
+.bg_black{ background:#000;}
+.word_white{ color:#FFF;}
+.word_blue{ color:#0064b4;}
+.word_grey{ color:#4b4b4b;}
+
+/*the_hospital*/
+.til{ font-size:36px; color:#006db8; margin-top:50px;}
+.tils{ font-size:18px; color:#b9b9b9; margin-bottom:40px;}
+.the_hospital{ margin-top:30px;}
+.the_hospital ul{ width:800px; height:385px;}
+.the_hospital ul li{ width:800px; height:100%; display:none;}
+.the_hospital ul .li_active{ display:block;}
+.the_hospital ul .the_word{ height:100%; width:335px; padding:0 20px; position:relative; color:#444444; background:#f4f4f4;}
+.the_hospital ul img{ width:425px; height:385px; background:#ccc;}
+.the_hospital ul h2{ margin:35px 0; font-size:26px;}
+.the_hospital ul p{ text-indent:30px;}
+.the_hospital ul .hospital_dbbtn{ position:absolute; right:20px; bottom:20px;}
+.the_hospital ul .hospital_dbbtn a{ width:38px; height:38px; margin-right:10px;}
+.the_hospital ul .hospital_dbbtn .hospital_left_a{ background:url(../images/the_hospital.png) -36px -455px no-repeat;}
+.the_hospital ul .hospital_dbbtn .hospital_left_a:hover{ background:url(../images/the_hospital.png) -36px -508px no-repeat;}
+.the_hospital ul .hospital_dbbtn .hospital_right_a{ background:url(../images/the_hospital.png) -36px -562px no-repeat; margin-right:0px;}
+.the_hospital ul .hospital_dbbtn .hospital_right_a:hover{ background:url(../images/the_hospital.png) -36px -617px no-repeat;}
+.the_hospital ol{ width:155px;}
+.the_hospital ol li{ height:60px; line-height:60px; background:#ebebeb; font-size:18px; color:#6a6a6a; position:relative; margin-bottom:5px;}
+.the_hospital ol .li_active{ background:#006db8; color:#fff;}
+.the_hospital ol em{ vertical-align:middle; width:35px; height:35px; margin:0 10px; transition:0.3s;}
+.the_hospital ol div{ width:0px; height:0px; border:10px solid; border-color:#fff #006db8 #fff #fff; position:absolute; left:-20px; top:20px; display:none;}
+.the_hospital ol .div_active{ display:block;}
+.the_hospital .the_hospital_icon1{ background:url(../images/the_hospital.png) -36px 0px no-repeat;}
+.the_hospital .the_hospital_icon11{ background:url(../images/the_hospital.png) -36px -36px no-repeat;}
+.the_hospital .the_hospital_icon2{ background:url(../images/the_hospital.png) -36px -72px no-repeat;}
+.the_hospital .the_hospital_icon21{ background:url(../images/the_hospital.png) -36px -108px no-repeat;}
+.the_hospital .the_hospital_icon3{ background:url(../images/the_hospital.png) -36px -145px no-repeat;}
+.the_hospital .the_hospital_icon31{ background:url(../images/the_hospital.png) -36px -181px no-repeat;}
+.the_hospital .the_hospital_icon4{ background:url(../images/the_hospital.png) -36px -217px no-repeat;}
+.the_hospital .the_hospital_icon41{ background:url(../images/the_hospital.png) -36px -254px no-repeat;}
+.the_hospital .the_hospital_icon5{ background:url(../images/the_hospital.png) -36px -290px no-repeat;}
+.the_hospital .the_hospital_icon51{ background:url(../images/the_hospital.png) -36px -326px no-repeat;}
+.the_hospital .the_hospital_icon6{ background:url(../images/the_hospital.png) -36px -363px no-repeat;}
+.the_hospital .the_hospital_icon61{ background:url(../images/the_hospital.png) -36px -399px no-repeat;}

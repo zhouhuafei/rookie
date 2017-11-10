@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>getRandomNum</title>
+<script>
+function getRandomNum(alls,nows){
+	var arrAll=[];
+	var arrNow=[];
+	for(var i=1;i<=alls;i++){
+		arrAll.push(i);
+	}
+	for(var i=0;i<nows;i++){
+		//Math.random()是令系统随机选取大于等于0且小于1的随机数,切记,切记,是小于1的,我勒个擦;
+		//var randoms=Math.round(Math.random()*(arrAll.length-1));//第一种写法
+		var randoms=Math.floor(Math.random()*arrAll.length);//第二种写法
+		arrNow.push(arrAll.splice(randoms,1));	
+	}
+	return arrNow;
+}
+alert(getRandomNum(30,10));
+</script>
+</head>
+<body>
+</body>
+</html>

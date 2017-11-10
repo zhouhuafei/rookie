@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+/*清零*/
+*{ margin:0; padding:0; list-style-type:none; outline:none; border:none; vertical-align:baseline; text-decoration:none;}
+
+
+/*header_top*/
+.header_top{ width:1000px; height:20px; border-top:#063 3px solid; padding-top:1px; background-color:#ccc;/*opacity:0.3; filter:alpha(opacity=30 blur=50);*/ margin:0 auto;}
+
+/*header*/
+.header{ background-image:url(../images/header_bg.png); background-repeat:no-repeat; height:70px;}
+.header a{display:block;background-image: url(../images/small.png); background-position:right center; background-repeat:no-repeat; text-decoration:underline; color:#666; text-align:right; padding-right:20px; margin-top:10px;}
+.header h3,
+.header h3 span{ color:#F00;}
+.header h3{ font-size:16px; margin-left:100px; margin-top:10px;}
+.header h3 span{ font-size:12px; line-height:20px;}
+
+/*nav*/
+.nav{ height:50px;}
+.nav ul{ float:left; border:1px solid #ccc; border-radius:10px; display:block;}
+.nav ul li{ float:left; position:relative; display:block; padding:10px 0px; background-image:url(../images/menu_bg.jpg); background-repeat:no-repeat;}
+.nav ul li a{line-height:30px; display:block; border-right:1px dashed #CCC; padding:0 29px; white-space:nowrap;-moz-transition:all 2s;-webkit-transition:all 2s;-ms-transition:all 2s;-o-transition:all 2s;transition:all 2s;}
+.nav ul li a:hover{border-right:#F00 1px solid;border-radius:50px;-moz-transform:rotate(360deg); text-shadow:1px 1px 1px #00F; box-shadow:1px 0 1px #00F;}
+.nav ul li ul{ clear:both; position:absolute; left:0px; top:50px; z-index:5px; display:none;}
+.nav ul li:hover ul{ display:block;}
+
+/*suggest_box*/
+.suggest_box{background-image:url(../images/banner.jpg); height:310px;-moz-transition:all 5s;}
+.suggest_box:hover{-moz-transform:rotatey(720deg); border-radius:500px; opacity:0.6; }
+.suggest{ margin-left:420px; width:320px;}
+.suggest h1{ font-size:32px; font-weight:normal; color:#FFF;padding-top:140px;}
+.suggest p{ color:#FFF; font-size:12px; padding-top:10px;}
+.suggest a{ display:block;width:100px; height:30px; background-color:#FFF;border-radius:10px; text-align:center; line-height:30px; margin-left:150px; margin-top:10px;}
+
+/*section_box*/
+.section_box{ overflow:hidden;}
+.section{width:240px;}
+.section h2{ padding-left:20px; font-size:16px; background-color:#069; line-height:50px; color:#FFF;border-radius:5px 5px 0 0;}
+.section h2 a{ border-radius:5px; border:1px #FFF solid; background-color:#FFF; color:#06F; font-size:12px; display:inline-block; height:18px; width:50px; line-height:18px; margin-left:90px; text-align:center;}
+.section ul{ padding:20px 0 30px 0px; border:1px solid #CCC; border-top:none;}
+.section ul li{ width:238px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+
+/*article_left*/
+.article_box{ overflow:hidden;}
+.article_left{ width:479px; border-right:1px solid #CCC; padding-right:10px;}
+.article_left h3{ color:#069; text-decoration:underline; font-size:14px;}
+.article_left img{ float:right; display:block; width:150px; height:100px; margin-top:20px;}
+.article_left p{ text-indent:22px; padding:10px 0 20px 0;}
+.article_left a{ display:block; text-align:right; border-radius:10px; text-decoration:underline;}
+/*article_right*/
+.article_right{ width:240px; padding-left:10px;}
+.article_right h3{ color:#069; text-decoration:underline;font-size:14px;}
+.article_right p{ padding:10px 0;}
+.article_right a{ display:block; text-align:right; border-radius:10px; text-decoration:underline;}
+
+
+/*footer*/
+/*.footer ul li{ float:left; line-height:20px; font-size:12px;}
+.footer ul li span{ padding:0 5px;}*/
+.footer p{ text-align:center;font-size:12px; line-height:20px;}
+.footer p span{ padding:0 5px;}
+	
+	
+/*通用的样式*/
+
+a{ color:#000;}
+a:hover{ color: #F00; text-decoration:underline;}
+.comonWidth{ width:740px; margin:0 auto;}
+.fl{ float:left;}
+.fr{ float:right;}
+.hr_5{ height:5px;}
+.hr_15{ height:15px;}
+.blueer{color:#069;}
+.mr_15{ margin-right:15px;}
+.mr_10{ margin-right:10px;}
+.mt_20{ margin-top:20px;}
+.hr_20{ width:1000px; margin:0 auto; border-bottom:3px solid #069; height:20px;}
+
+

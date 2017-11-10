@@ -1,0 +1,210 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none; display:block;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:33px;}
+em,i,strong,b,small{font-style:normal;}
+a,span,b,em,i,strong,small,label{display:inline-block;}
+em{ transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.pt_60{ padding-top:60px;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_80{ height:80px;}
+.hr_90{ height:90px;}
+.hr_100{ height:100px;}
+.hr_210{ height:210px;}
+.hr_270{ height:270px;}
+.hr_110{ height:110px;}
+.hr_150{ height:150px;}
+.hr_135{ height:135px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_500{ width:500px; margin:0 auto;}
+.commonWidth_800{ width:800px; margin:0 auto;}
+.commonWidth_900{ width:900px; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden;}
+.commonWidth_1440{ width:1440px; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_1100{ width:1100px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%; margin:0 auto; background:#f5fafa;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+
+
+
+
+
+/*---------------------------------head-----------------------------------------*/
+
+
+
+
+
+/*---------------------------------nav------------------------------------------*/
+
+
+
+
+
+/*---------------------------------banner---------------------------------------*/
+.banner{ height:489px; background:url(../images/banner_02.jpg) center center no-repeat; position:relative;}
+.banner a{ height:42px; width:100%; position:absolute; bottom:58px;}
+.introduction{ background:url(../images/introduction_03.jpg) center center no-repeat; height:229px;}
+.introduction p{ width:560px; margin:35px 0 0 160px; text-indent:40px; color:#444444;}
+
+
+.til_box{ background:#006db8; margin:50px 0 60px;}
+.til{ background:url(../images/til_03.png) center center no-repeat; padding-left:110px; height:54px; line-height:50px; font-size:26px; color:#FFF;}
+/*box1*/
+.symptom{ background:url(../images/symptom_03.jpg) center center no-repeat; height:355px; position:relative;}
+.symptom p{ width:200px; text-indent:20px; color:#444444; position:absolute; text-align:center;}
+.symptom1{ left:35px; top:125px;}
+.symptom2{ left:355px; top:95px; line-height:25px;}
+.symptom3{ right:35px; top:125px;}
+.consultation{ background:url(../images/consultation_03.png) center center no-repeat; height:47px; margin:50px 0;}
+.consultation a{ height:47px; width:100%;}
+
+/*box2*/
+.box2 h3{ font-size:16px; color:#444; margin-bottom:30px;}
+.box2 h3 strong{ color:#f40000;}
+.possible{ background:url(../images/possible_03.jpg) center center no-repeat; height:351px; position:relative;}
+.possible span{ width:170px; text-indent:30px; color:#444; position:absolute; top:180px; padding:0 10px;}
+.possible1{ left:3px;}
+.possible2{ left:202px;}
+.possible3{ left:400px;}
+.possible4{ right:193px;}
+.possible5{ right:-3px;}
+
+/*box3*/
+.diagnosis{ background:url(../images/diagnosis_03.jpg) center center no-repeat; height:448px; position:relative;}
+.diagnosis p{ position:absolute; bottom:74px; width:800px; left:160px; text-indent:30px; font-size:16px; color:#444; line-height:25px;}
+.diagnosis a{ position:absolute; height:40px; bottom:25px; width:100%;}
+
+/*box4*/
+.analysis_box{ padding-left:75px;}
+.analysis{ background:url(../images/analysis_03.jpg) right top no-repeat; height:160px; font-size:16px; padding-right:270px; text-indent:30px; color:#006db8; line-height:33px; padding-top:20px;}
+.analysis1 h2{ margin-top:40px;}
+.analysis1 p{ padding:20px; background:#ebf4f9; color:#444; text-indent:30px;}
+.analysis1 p a{ color:#F00;}
+.like_table{ overflow:hidden; border:1px solid #c3d5e0; margin-top:20px;}
+.like_table dl{ width:170px; border-right:1px solid #c3d5e0;}
+.like_table dt{ background:#eff5f9; font-size:18px; color:#006db8; text-align:center; line-height:40px; height:40px; border-bottom:1px solid #c3d5e0;}
+.like_table dd{ font-size:15px; color:#444; text-align:center; line-height:40px; height:40px; border-bottom:1px solid #c3d5e0;}
+.like_table1 dd{ color:#F00; text-align:center; line-height:40px; height:40px;} 
+.like_table .like_table3{ width:561px; border-right:none;}
+.analysis22{ margin-top:20px;}
+.analysis22 .like_table22{ position:relative; background:url(../images/like_table_03.jpg) -7px center no-repeat; height:297px; margin-top:20px;}
+.analysis22 .like_table22 p{ background:none; position:absolute; right:10px; width:395px; line-height:25px;}
+.analysis22 .like_table22_p1{ top:25px;}
+.analysis22 .like_table22_p2{ top:125px;}
+.analysis22 .like_table22_p3{ top:225px;}
+
+
+
+/*box5*/
+.box5_p{ color:#444; text-indent:30px;}
+.illness{ background:url(../images/illness_03.jpg); margin-top:50px; height:478px;}
+.illness h3{ font-size:18px; text-align:center; color:#ef6c01;}
+.illness span a{ color:#F00;}
+.illness span{ width:452px; height:225px; position:relative; overflow:hidden;}
+.illness .shadow{ position:absolute; left:0; top:-225px; width:432px; height:210px; padding:15px 10px 0; text-indent:30px; color:#444; line-height:30px; background:#eee; transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+.illness span:hover .shadow{ top:0px;}
+.illness1{ margin-left:20px;}
+.illness2{ margin-left:33px; *margin-left:36px;}
+.illness3{ margin-left:21px; margin-top:25px; *margin-left:20px; *margin-top:29px;}
+.illness4{ margin-left:32px; margin-top:25px; *margin-left:36px; *margin-top:29px;}
+
+
+
+
+/*box6*/
+.vigilant{ position:relative; background:url(../images/vigilant_03.jpg); height:271px;}
+.vigilant p{ width:536px; text-indent:30px; color:#444; position:absolute; right:0; top:50px; font-size:16px;}
+.vigilant a{ width:100%; position:absolute; bottom:0; height:50px;}
+
+
+/*box7*/
+.blind{ overflow:hidden;}
+.blind div{ width:260px;}
+.blind h2{ text-align:center; font-size:21px; color:#006db8;}
+.blind p{ color:#444;}
+
+
+
+/*box8*/
+.box8{ color:#444;}
+.box8 h2{ color:#444444; padding-bottom:20px; text-align:center; font-size:24PX;}
+.advantage{ height:665px; position:relative; background:url(../images/icon6_03.jpg) center center no-repeat;}
+.advantage div{ position:absolute; width:250px;}
+.advantage h2{ font-size:18px; color:#006db8; line-height:30px; height:30px; padding:0; text-align:left;}
+.advantage p{ text-indent:inherit;}
+.advantage a{ display:block; width:480px; height:60px; position:absolute; left:260px; bottom:60px;}
+.advantage1{ top:60px; left:40px;}
+.advantage2{ top:220px; left:10px;}
+.advantage3{ top:400px; left:60px;}
+.advantage4{ top:60px; right:40px;}
+.advantage .advantage5{ top:220px; right:0px; width:240px;}
+.advantage6{ top:400px; right:60px;}
+
+
+/*box9*/
+.expert{ position:relative; overflow:hidden;}
+#prev,#next{ width:50px; height:90px; position:absolute; top:220px; z-index:2;}
+#prev{ left:0;background:url(../images/LR_03.png) left center no-repeat;}
+#next{ right:0;background:url(../images/LR_05.png) right center no-repeat;}
+.expert ul{ height:535px; overflow:hidden;}
+.expert li{ height:535px; float:left; width:980px;}
+.expert1{ background:url(../images/expert1_03.jpg) left top no-repeat;}
+.expert2{ background:url(../images/expert2_03.jpg) left top no-repeat;}
+.expert3{ background:url(../images/expert3_03.jpg) left top no-repeat;}
+.expert li div{ width:535px; padding:240px 0 0 390px;}
+.expert li div p{ color:#444; text-indent:40px;}
+.consultation_son{ position:absolute; bottom:35px; width:100%; height:50px;}
+
+
+/*box10*/
+.equipment{ background:url(../images/equipment_03.jpg); height:436px; position:relative;}
+.equipment p{ width:345px; text-indent:30px; color:#444; position:absolute;}
+.equipment1{ left:0px; top:60px;}
+.equipment2{ left:0px; top:280px;}
+.equipment4{ right:0px; top:60px;}
+.equipment3{ right:0px; top:280px;}
+  
+
+
+/*box11*/
+.box11{ width:980px; margin:0 auto;}
+.box11 h2{ font-size:24px; text-align:center; color:#444; margin-bottom:30px;}
+.box11 p{ color:#444; text-indent:30px;}
+.box11 ul{ height:147px; position:relative; margin-top:40px;}
+#prev2,#next2{ width:50px; height:90px; position:absolute; z-index:2; top:28px;}
+#prev2{ left:-30px;background:url(../images/LR_03.png) left center no-repeat;}
+#next2{ right:-30px;background:url(../images/LR_05.png) right center no-repeat;}
+.box11 li{ float:left; text-align:center; height:147px; width:207px; padding:0 19px;}
+.box11 li img{ display:inline;}
+
+
+
+
+
+

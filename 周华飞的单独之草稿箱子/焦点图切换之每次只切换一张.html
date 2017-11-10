@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+.box{width:400px; height:280px; position:relative; margin:200px auto;}
+ul{ width:100%; height:100%; position:absolute; left:0; top:0;}
+ul li{ width:100%; height:100%; position:absolute; top:0;}
+ol{ height:20px; width:120px; position:absolute; bottom:5px; right:0;}
+ol li{ width:20px; height:20px; border-radius:10px; float:left; margin-right:10px; background:#39F;}
+ol .li_active{ background:#F60;}
+</style>
+<script src="move.js"></script>
+<script>
+function eventBind(obj,ev,fn)
+{
+	if(obj.attachEvent)
+	{
+		obj.attachEvent('on'+ev,fn);	
+	}
+	else
+	{
+		obj.addEventListener(ev,fn,false);	
+	}
+}
+eventBind(window,'load',function()
+{
+	var oCut=document.getElementsByTagName('ul')[0];
+	var aCut=oCut.getElementsByTagName('li');
+	var aBtn=document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+	var now=0;
+	for(var j=1; j<aBtn.length;j++)
+	{
+		aCut[j].style.left=aCut[0].offsetWidth+'px';	
+	}
+	for(var i=0; i<aBtn.length;i++)
+	{
+		aBtn[i].index=i;
+		aBtn[i].onmouseover=function()
+		{				
+			for(var i=0; i<aBtn.length;i++)
+			{
+				aBtn[i].className='';
+				
+			}
+			this.className='li_active';
+			if(now<this.index)
+			{
+				aCut[this.index].style.left=aCut[0].offsetWidth;
+				startMove(aCut[now],{left:-aCut[0].offsetWidth});
+			}
+			else if(now>this.index)
+			{			
+				aCut[this.index].style.left=-aCut[0].offsetWidth;	
+				startMove(aCut[now],{left:aCut[0].offsetWidth});
+			}
+			startMove(aCut[this.index],{left:0});
+			now=this.index;
+		}	
+	}
+	
+	
+		
+})
+</script>
+</head>
+<body>
+<div class="box">
+        <ul>
+                <li><img src="icon1.png" /></li>
+                <li><img src="icon2.png" /></li>
+                <li><img src="icon3.png" /></li>
+                <li><img src="icon4.png" /></li>
+        </ul>
+        <ol>
+                <li class="li_active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+        </ol>
+</div>
+</body>
+</html>

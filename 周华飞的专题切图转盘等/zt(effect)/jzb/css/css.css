@@ -1,0 +1,66 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+.banner img{ width:100%;}
+
+/*lead*/
+.lead{ font-size:2.4rem; line-height:2; color:#757171; background:url(../images/bg.jpg); padding:2% 0; margin:2% 0 0;}
+.lead p{ width:96%; margin:0 auto; border:2px dotted #0aa0b4; border-left:none; border-right:none; padding:2% 0; position:relative;}
+.lead img{ width:5%; position:absolute; left:50%; top:100%; margin-left:-2.5%; background:url(../images/bg.jpg);}
+
+
+/*test*/
+.test dl{ padding-bottom:3%; margin-bottom:3%; border-bottom:1px dashed #b0b0b0;}
+.test dt{ width:43%;}
+.test dt img{ width:100%;}
+.test dd{ width:54%;}
+.test dd h2{ color:#0aa0b4; font-size:3.2rem; line-height:1.4; margin-bottom:3%; border-bottom:1px solid #0aa0b4;}
+.test dd em{ background:#0aa0b4; color:#fff; font-size:3.9rem; width:14%; margin-right:5px; text-align:center; line-height:1.2; border-radius:50%;}
+.test dd p{ font-size:2.4rem; color:#717071; line-height:1.6;}
+.test dd strong{ color:#0aa0b4;}
+.test dl:nth-of-type(3){ border:none; margin:0; padding:0;}
+
+
+/*therapy*/
+.therapy p{ font-size:2.4rem; line-height:2.1; margin-top:3%;}
+.therapy h1{ font-size:3rem; color:#323131; margin:4% 0 3%;}
+.therapy h2{ font-size:2.4rem; margin-bottom:4%;}
+.therapy em{ width:4.5%; text-align:center; border-radius:50%; background:#f29600; color:#fff; margin-right:5px;}
+
+/*cut*/
+.cut{ position:relative;}
+.cut p{ background:#f8f8f8;}
+.cut i{ width:50%; font-size:2.4rem; text-align:center; line-height:1.5;}
+.cut .prev,.cut .next{ text-align:left; padding-left:5px; cursor:pointer; line-height:25px; font-size:20px; width:25px; height:30px; border-radius:0 50% 50% 0; background:rgba(0,0,0,0.3); color:rgba(255,255,255,0.6); position:absolute; top:50%; margin-top:-15px; left:0; z-index:2;}
+.cut .next{ text-align:right; left:auto; padding:0 5px 0 0; right:0; border-radius:50% 0 0 50%;}
+
+/*reason*/
+.reason ul{ margin-bottom:5%;}
+.reason li{ width:49%;}
+.reason p{ background:#f2f2f2; font-size:2.4rem; text-align:center; line-height:2;}
+
+/*common*/
+.w96{ width:96%; margin:0 auto; overflow:hidden; color:#757171;}
+.til{ font-size:3.5rem; color:#0aa0b4; border-bottom:1px solid #0aa0b4; border-bottom-left-radius:8%; margin:6% 0; position:relative;}
+.til img{ width:8%;}
+.til i{ width:8px; height:8px; position:absolute; right:0; bottom:-6px; border:2px solid #15a4b7; background:#82effd; border-radius:50%;}
+figure{ position:relative; padding:0; margin:9% 0 11%;}
+figure img{ width:100%;}
+figure a{ width:50%; height:100%; display:block; position:absolute; top:0;}
+figure a:nth-of-type(1){ left:0;}
+figure a:nth-of-type(2){ right:0;}
+.btn{ margin:9% 0 11%;}
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	
+	
+}
+@media (min-width: 320px) and (max-width: 479px){
+	
+	
+}

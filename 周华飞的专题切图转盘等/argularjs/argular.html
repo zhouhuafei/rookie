@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="">
+        <head>
+                <meta charset="gb2312">
+                <title>angularjs</title>
+                <link rel="stylesheet" href="css/base.css">
+                <link rel="stylesheet" href="css/css.css">
+                <script src="http://www.runoob.com/try/angularjs/1.2.5/angular.min.js"></script>
+                <script src="js/js.js"></script>
+        </head>
+        <body>
+       		<!--module1-->
+                <div class="module1" ng-controller="firstAngularjs">{{person.lastName+person.firstName}}</div>
+                
+       		<!--module2-->
+                <div class="module2">
+                	<input type="text" placeholder="双向数据绑定简单应用" ng-model="text">
+                        <div>{{text}}</div>
+                </div>
+        </body>
+</html>

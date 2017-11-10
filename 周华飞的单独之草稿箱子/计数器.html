@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+	if(localStorage.pagecount){localStorage.pagecount=Number(localStorage.pagecount)+1;}
+		else{localStorage.pagecount=1;}
+	document.write("总访问数：<br />"+localStorage.pagecount);
+	if(sessionStorage.pagecount){sessionStorage.pagecount=Number(sessionStorage.pagecount)+1}
+		else{sessionStorage.pagecount=1;}
+	document.write("<br />当前会话访问数：<br />"+sessionStorage.pagecount);
+</script>
+</head>
+
+
+<body>
+</body>
+</html>

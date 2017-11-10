@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*清零*/
+body,ul,ol,li,h1,h2,h3,h4,h5,h6,img,form,input,dl,dt,dd,div,p,header,nav,article,section,aside,footer{margin:0; padding:0;}
+body{ font-size:12px; font-family:"微软雅黑"; background:url(../image/body_bg.png);}
+img{border:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;}
+textarea{ resize:none;}
+p{ height:16px; font-size:12px; line-height:16px; overflow:hidden;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none;}
+
+/*清浮动*/
+.clearfix{ clear:both; display:block;}
+
+/*对HTML5元素进行兼容处理*/
+header,nav,article,section,aside,footer{ display:block;}
+
+/*公用的样式*/
+.fl{float:left;}
+.fr{float:right;}
+.mt_20{ height:20px;}
+
+/*顶端红线*/
+.top_red{ border-top:#F00 1px solid; position:relative;}
+
+/*commonWidth*/
+.commonWidth{width:958px; margin:0 auto; background:white; padding:0 20px; box-shadow:2px -2px 2px #CCF,-2px -2px 2px  #CCF;border-left:1px #CCC solid;border-right:1px #CCC solid; padding-top:10px; overflow:hidden;}
+
+/*header*/
+header img{ width:250px; height:35px; display:block;}
+
+/*nav*/
+nav{ height:55px; padding-top:25px;}
+nav ul li{float:left;}
+nav ul li a{ height:20px; line-height:20px; padding:5px 10px; font-size:20px; display:inline-block; color:#000;}
+nav ul li a:hover{ background:#000; color:#FFF;}
+
+/*section*/
+section{ width:636px; font-size:14px;}
+
+/*section第一块图片部分*/
+section p{ overflow:hidden; background:#000; color:#FFF; font-size:16px; height:30px; line-height:30px; padding:0 5px;}
+section p a{ color: #F90;}
+section p a:hover{ text-decoration: underline;}
+section .imgs_box{ overflow:hidden; background:#333;}
+section .imgs_big img{width:636px; margin-bottom:20px;}
+section .imgs_small img{ float:left;width:106px;}
+
+/*section第二块文字部分*/
+section h1{ clear:both; font-size:24px; line-height:24px; overflow:hidden; margin:20px 0;}
+section h1 a{color:#000;}
+section ul{ height:20px; margin-bottom:20px;}
+section ul li{ float:left;}
+section ul li a{ color:#F60;}
+section ul li a:hover{ text-decoration:underline;}
+section ul span{padding:0 5px;}
+section article{ overflow:hidden;}
+section article img{ margin-left:5px;}
+section article a{color:#F60;}
+section article a:hover{ text-decoration: underline;}
+section article .images_other{ margin:10px 0 10px 0px; width:100px; height:90px; display:block;}
+section .images_other_box{ overflow:hidden;}
+section .images_other_box span{ clear:both; display:block;}
+
+/*section第三块图片部分*/
+section article b a{ padding:10px 30px; background:#F60; color:#000; border-radius:10px; margin:20px 10px 10px 0px; display:inline-block;}
+section article b a:hover{ background:#F30; text-decoration:none;}
+section article h2{ font-size:20px; margin-bottom:10px;}
+section article .images_two{ overflow:hidden;}
+section article .images_two a{float:left; display:inline-block; margin:0 20px 0 0; height:298px; }
+section article .images_two .a1{width:250px;background:url(../image/images_other1.png);}
+section article .images_two .a2{width:218px; background:url(../image/images_other2.png);}
+section article .images_two a:hover,section article ul li a:hover{ opacity:0.9;filter:alpha(opacity=90);}
+section article ul{border-top:1px solid #000; padding:5px 0px; width:636px; height:130px; margin-bottom:0px;}
+section article ul li{ float:left;margin-right:25px; }
+section article ul li a{display:block; width:119px; height:119px; border:3px #930 solid;}
+section article ul li .a3{ background:url(../image/images_other3.png);}
+section article ul li .a4{ background:url(../image/images_other4.png);}
+section article ul li .a5{ background:url(../image/images_other5.png);}
+section article ul li .a6{ background:url(../image/images_other6.png);}
+
+/*section第四块图文部分*/
+section .word_image{overflow:hidden;}
+section .word_image h3{ font-size:16px; height:30px; overflow:hidden;}
+section .word_image h3 a{ color:#F60;}
+section .word_image h3 a:hover{ text-decoration:underline;}
+section .word_image span{display:block; color:#999;}
+section .word_image .cup_box{ height:110px; border-bottom:1px dashed #999;}
+section .word_image img{ display:block;}
+
+/*section第五块信息部分*/
+section .information{ margin-top:10px; background:url(../image/head_pic.png) left top no-repeat;}
+section .information input{ margin-left:110px; width:495px; height:50px; line-height:50px\9; padding:0 10px; border:#666 solid 1px; margin-top:10px;}
+section .information .txt_area{ padding:10px; width:495px; height:130px; resize:both;border:#666 solid 1px;margin-top:10px;margin-left:110px;}
+section .information p{ margin-left:110px; margin-top:5px; color:#999; background:#FFF;}
+section .information button{ height:42px; width:140px; border-radius:10px; background:#000; color:#FFF; font-size:16px; margin-left:110px; border:1px solid #000; margin-top:10px; line-height:44px\9;}
+
+
+/*aside*/
+aside {width:302px; font-size:14px; padding-bottom:50px; text-align:left;}
+/*右边第一块*/
+aside p{background:#000; height:30px; line-height:30px; font-size:16px; color:#FFF; padding-left:5px;}
+aside .aside_son{width:300px; border: #CCC 1px solid;border-top:none;padding:20px 0 20px 0;}
+aside .aside_son ul li{padding-left:25px; margin-left:20px;line-height:20px;}
+aside .aside_son ul li a{color:#000; font-size:14px;}
+aside .aside_son ul li a:hover{text-decoration:underline;}
+aside .aside_son ul .icon1{ background:url(../image/icon.png) 0 2px no-repeat;}
+aside .aside_son ul .icon2{ background:url(../image/icon.png) 0 -20px no-repeat;}
+aside .aside_son ul .icon3{ background:url(../image/icon.png) 0 -40px no-repeat;}
+aside .aside_son ul .icon4{ background:url(../image/icon.png) 0 -60px no-repeat;}
+/*第二块*/
+aside .aside_son2 ul li{background:url(../image/point.png) 0 8px no-repeat;} 
+/*第三块*/
+aside .aside_son dl{ text-align:left;}
+aside .aside_son dl a{color:#000; font-size:14px;} 
+aside .aside_son dl a:hover{text-decoration:underline;}
+aside .aside_son dl dt{ margin-left:20px;}
+aside .aside_son dl dd{ margin-left:40px;}
+/*第四块*/
+aside .aside_son4 dl dt{ color:#999; margin-bottom:20px;}
+aside .aside_son4 dl dd{ margin:20px 0 0px 20px;}
+/*第五块*/
+aside .aside_son5{padding-bottom:0px;}
+aside .aside_son5 dl dt{ margin:20px 0px 20px 20px;}
+/*第七块*/
+aside .aside_son7 dl dt a{font-weight:bold; font-size:20px;}
+/*第八块*/
+aside .aside_son8 dl dt{ margin:0 0px 0 20px; color:#999;}
+
+
+
+
+/*footer*/
+footer{border-top:2px solid #999; height:70px; background:#F63; font-size:14px;}
+footer h5{ text-align:center; margin-top:20px; color:#FFF; height:30px; line-height:30px;}
+footer h5 a{color:#000; display:inline-block;}
+footer h5 a:hover{ text-decoration:underline;}
+footer h5 span{padding:0 5px;}
+footer b{ font-size:16px; margin-left:200px;}

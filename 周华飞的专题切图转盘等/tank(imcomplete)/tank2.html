@@ -1,0 +1,194 @@
+<!--******************************
+**********************************
+******rookie QQ:1123486116********
+******rookie making***************
+******rookie Copyright************
+**********************************
+*******************************-->
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>坦克大战2</title>
+<style>
+canvas#tanke{ border:1px solid #000; margin:100px auto 0; display:block;}
+</style>
+<script>
+window.onload=function(){
+	var timer=null;
+	var opt=new Opts({x:490.5,y:469.5});
+	drawTank(opt);
+	document.onkeydown=function(ev){
+		var ev=ev||event;
+		clearInterval(timer);
+		switch(ev.keyCode){
+			case 37:
+				opt.moveLeft();
+				break;	
+			case 38:
+				opt.moveUp();
+				break;
+			case 39:
+				opt.moveRight();
+				break;
+			case 40:
+				opt.moveDown();
+				break;
+			case 32:
+				timer=setInterval(function(){
+					drawPoint(opt);
+				},30)				
+				break;
+		}
+		//clearTank();
+		drawTank(opt);	
+	}
+}
+function Opts(obj){
+	this.x=obj.x;
+	this.y=obj.y;
+	this.dir=obj.dir||'up';
+	this.speed=obj.speed||10;		
+}
+Opts.prototype.moveUp=function(){
+	this.y-=this.speed;
+	this.dir='up';
+}
+Opts.prototype.moveDown=function(){
+	this.y+=this.speed;
+	this.dir='down';
+}
+Opts.prototype.moveLeft=function(){
+	this.x-=this.speed;
+	this.dir='left';
+}
+Opts.prototype.moveRight=function(){
+	this.x+=this.speed;
+	this.dir='right';
+}
+function clearTank(){
+	var oCanvas=document.getElementById('tanke');
+	var oC=oCanvas.getContext('2d');
+	var iW=oCanvas.width;
+	var iH=oCanvas.height;
+	oC.clearRect(0,0,iW,iH);
+}
+function drawTank(obj){
+	var opt=obj;
+	var oCanvas=document.getElementById('tanke');
+	var oC=oCanvas.getContext('2d');
+	var iW=oCanvas.width;
+	var iH=oCanvas.height;
+	var iX=iW/2;
+	var iY=iH/2;
+	var iR=iY;
+	var iCoordx=opt.x;
+	var iCoordy=opt.y;
+	switch(opt.dir){
+		case 'up':
+		case 'down':		
+			oC.beginPath();
+			oC.save();
+			var oGradient=oC.createRadialGradient(iX,iY,0,iX,iY,iR);
+			oGradient.addColorStop(0,'red');
+			oGradient.addColorStop(0.1,'yellow');
+			oGradient.addColorStop(0.2,'blue');
+			oGradient.addColorStop(0.3,'green');
+			oGradient.addColorStop(0.4,'cyan');
+			oGradient.addColorStop(0.5,'orange');
+			oGradient.addColorStop(0.6,'purple');
+			oGradient.addColorStop(0.7,'grey');
+			oGradient.addColorStop(0.8,'black');
+			oGradient.addColorStop(0.9,'pink');
+			oGradient.addColorStop(1,'violet');
+			oC.strokeStyle=oGradient;
+			oC.fillStyle=oGradient;
+			oC.strokeRect(iCoordx,iCoordy,5,30);
+			oC.strokeRect(iCoordx+15,iCoordy,5,30);
+			oC.strokeRect(iCoordx+15,iCoordy,5,30);
+			oC.strokeRect(iCoordx+5,iCoordy+5,10,20);
+			oC.arc(iCoordx+10,iCoordy+15,5,0,Math.PI*2,false);
+			oC.moveTo(iCoordx+10,iCoordy+15);
+			if(opt.dir=='up'){
+				oC.lineTo(iCoordx+10,iCoordy);
+			}else{
+				oC.lineTo(iCoordx+10,iCoordy+30);
+			}
+			oC.stroke();
+			oC.restore();
+			oC.closePath();
+			break;	
+		case 'left':	
+		case 'right':
+			oC.beginPath();
+			oC.save();
+			var oGradient=oC.createRadialGradient(iX,iY,0,iX,iY,iR);
+			oGradient.addColorStop(0,'red');
+			oGradient.addColorStop(0.1,'yellow');
+			oGradient.addColorStop(0.2,'blue');
+			oGradient.addColorStop(0.3,'green');
+			oGradient.addColorStop(0.4,'cyan');
+			oGradient.addColorStop(0.5,'orange');
+			oGradient.addColorStop(0.6,'purple');
+			oGradient.addColorStop(0.7,'grey');
+			oGradient.addColorStop(0.8,'black');
+			oGradient.addColorStop(0.9,'pink');
+			oGradient.addColorStop(1,'violet');
+			oC.strokeStyle=oGradient;
+			oC.fillStyle=oGradient;
+			oC.strokeRect(iCoordx,iCoordy,30,5);
+			oC.strokeRect(iCoordx,iCoordy+15,30,5);
+			oC.strokeRect(iCoordx,iCoordy+15,30,5);
+			oC.strokeRect(iCoordx+5,iCoordy+5,20,10);
+			oC.arc(iCoordx+15,iCoordy+10,5,0,Math.PI*2,false);
+			oC.moveTo(iCoordx+15,iCoordy+10);
+			if(opt.dir=='left'){
+				oC.lineTo(iCoordx,iCoordy+10);
+			}else{
+				oC.lineTo(iCoordx+30,iCoordy+10);
+			}
+			oC.stroke();
+			oC.restore();
+			oC.closePath();
+			break;
+	}		
+}
+function drawPoint(obj){
+	var opt=obj;
+	var oCanvas=document.getElementById('tanke');
+	var oC=oCanvas.getContext('2d');
+	var iW=oCanvas.width;
+	var iH=oCanvas.height;
+	var iX=iW/2;
+	var iY=iH/2;
+	var iR=iY;
+	var iCoordx=opt.x;
+	var iCoordy=opt.y;
+	var oGradient=oC.createRadialGradient(iX,iY,0,iX,iY,iR);
+	oGradient.addColorStop(0,'red');
+	oGradient.addColorStop(0.1,'yellow');
+	oGradient.addColorStop(0.2,'blue');
+	oGradient.addColorStop(0.3,'green');
+	oGradient.addColorStop(0.4,'cyan');
+	oGradient.addColorStop(0.5,'orange');
+	oGradient.addColorStop(0.6,'purple');
+	oGradient.addColorStop(0.7,'grey');
+	oGradient.addColorStop(0.8,'black');
+	oGradient.addColorStop(0.9,'pink');
+	oGradient.addColorStop(1,'violet');
+	oC.strokeStyle=oGradient;
+	oC.beginPath();	
+	opt.y--;
+	if(opt.y<=0){
+		opt.y=0;	
+	}
+	oC.strokeRect(opt.x+9,opt.y-4,2,2);
+	oC.closePath();
+	oC.stroke();
+}
+</script>
+</head> 
+<body>
+<canvas id="tanke" width="1000px" height="500px">你浏览器不支持canvas,既然不支持canvas,就不要玩canvas游戏了</canvas>
+</body>
+</html>

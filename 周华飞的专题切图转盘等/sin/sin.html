@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>sin</title>
+<style>
+*{ margin:0; padding:0;}
+#circle{ width:400px; height:400px; margin:100px auto; border:1px solid #000; position:relative; border-radius:50%;}
+#move{ width:20px; height:20px; text-align:center; line-height:20px; color:#fff; background:#f00; position:absolute; left:100%; margin-left:-10px; top:50%; margin-top:-10px; border-radius:50%;}
+</style>
+<script>
+window.onload=function(){
+	(function(){
+		var oC=	document.getElementById('circle');
+		var oM=	document.getElementById('move');
+		var l=oM.offsetLeft;
+		var t=oM.offsetTop;
+		var r=200;
+		var num=0;
+		setInterval(function(){
+			num++;
+			var a=Math.sin(num*Math.PI/180)*r;
+			var b=Math.cos(num*Math.PI/180)*r;
+			var x=r-b-10;
+			var y=a+10;
+			oM.style.left=l-x+'px';
+			oM.style.top=t+y+'px';
+		},30)
+	})();	
+}
+</script>
+</head>
+<body>
+<div id="circle">
+	<div id="move">1</div>
+</div>
+</body>
+</html>

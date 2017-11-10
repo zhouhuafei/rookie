@@ -1,0 +1,41 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ height:510px; background:url(../images/banner.jpg) center center no-repeat; position:relative;}
+#banner a{ position:absolute; width:100%; height:30px; left:0; bottom:150px;}
+
+/*container*/
+#container{ overflow:hidden;}
+#container .content{ width:1200px; margin:0 auto;}
+#container .til h1{ font-size:130px; color:#0699a3; text-align:center; text-transform:uppercase; line-height:1.5; word-spacing:10px;}
+#container .til h1 div{ display:inline-block;}
+#container .til h1 span{ float:left; margin-left:10px;}
+#container .til h1 span.ml{ margin-left:44px;}
+#container .til h2{ font-size:20px; color:#333333; line-height:36px; text-align:center;}
+
+/*main*/
+#container .main dl{ padding-top:70px; border-top:1px dashed #a5a5a5; margin-top:70px;}
+#container .main dl.reset{ border:none; margin:0;}
+#container .main dd{ width:635px;}
+#container .main h2{ background:#0da7b1; padding:4px 0; margin:10px 0 28px;}
+#container .main span{ width:100%; height:43px; line-height:43px; font-size:30px; color:#fff; padding-left:10px; border-top:1px dashed #fff; border-bottom:1px dashed #fff;}
+#container .main p{ margin-bottom:17px; font-size:14px; line-height:23px; height:23px;}
+#container .main em{ width:23px; height:23px; background:#0da7b1; font-size:14px; color:#fff; border-radius:50%; margin-right:10px; text-align:center; line-height:23px;}
+
+
+
+
+
+
+
+
+
+
+
+
+

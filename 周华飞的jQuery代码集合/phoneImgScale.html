@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<style>
+body div img{ margin:0; padding:0; outline:none; border:none;}
+div{ text-align:center;}
+img{ width:80%; margin:0 auto;}
+</style>
+<body>
+<!--图片控制上用百分比，在前台显示的时候，无论是小图片还是大图片都会按照那百分比来显示，而且都是一样大。大图片的话可以用这样的方法；但小图片放大后就会模糊。所以现在需要的是获取图片的宽高。如果小于了你设定的宽高那就不作处理。而大于了你设定的宽高就用一段JS代码来控制。现在这里有一份代码！相信会解决这一难题！-->
+<div><img src="csj_07.jpg" id="img" /></div>
+<script>
+var oImg=document.getElementById('img');
+Wa_SetImgAutoSize(oImg);
+oImg.style.width='80%';
+function Wa_SetImgAutoSize(obj){
+	//var img=document.all.img1;//获取图片
+	var img=obj;
+	var MaxWidth=135;//设置图片宽度界限
+	var MaxHeight=100;//设置图片高度界限
+	var HeightWidth=img.offsetHeight/img.offsetWidth;//设置高宽比
+	var WidthHeight=img.offsetWidth/img.offsetHeight;//设置宽高比
+	if(img.readyState!="complete")return false;//确保图片完全加载
+	if(img.offsetWidth>MaxWidth){
+	img.width=MaxWidth;
+	img.height=MaxWidth*HeightWidth;
+	}
+	if(img.offsetHeight>MaxHeight){
+	img.height=MaxHeight;
+	img.width=MaxHeight*WidthHeight;
+	}
+}
+</script>
+</body>
+</html>

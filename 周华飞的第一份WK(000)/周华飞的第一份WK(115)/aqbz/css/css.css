@@ -1,0 +1,79 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*body*/
+body{ background:url(../images/bg.jpg);}
+
+/*contents*/
+.contents{ width:1000px; margin:0 auto;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:500px;}
+.banner a{ display:block; width:1000px; height:100%; margin:0 auto;}
+
+/*nav*/
+#nav{ width:100%; height:50px; position:absolute; left:0; top:650px; z-index:999; color:#fff;}
+#nav ul{ height:50px; line-height:50px; background:#0064b4;}
+#nav ul li{ height:50px; width:249px; text-align:center; line-height:50px; float:left; border-right:1px solid #fff; font-size:24px;}
+#nav ul .select{ background:#008eff;}
+
+/*check*/
+.check{ width:1003px; height:535px; background:url(../images/check.gif) center center no-repeat; position:relative;}
+.check p{ width:366px; font-size:16px; color:#646464; text-indent:30px; line-height:24px; position:absolute;}
+.check p.p1{ left:14px; top:30px;}
+.check p.p2{ left:630px; top:16px;}
+.check p.p3{ left:322px; top:442px;}
+
+/*ensure*/
+.ensure dl{ padding-bottom:40px; margin-bottom:40px; border-bottom:1px dashed #cdcdcd;}
+.ensure dl.reStyle{ padding-bottom:0; margin-bottom:0; border-bottom:none;}
+.ensure dd{ width:548px; height:220px; background:#ecf6fc; border:2px solid #daedf4; margin-top:10px; position:relative;}
+.ensure dd:after{ content:""; width:27px; height:28px; background:url(../images/triangle.png) left top no-repeat; position:absolute; left:-25px; top:50%; margin-top:-14px;}
+.ensure dd.dd2:after{ background-position:right top; left:inherit; right:-25px;}
+.ensure h2{ line-height:70px; text-align:center; color:#1079c1; font-size:24px;}
+.ensure p{ font-size:14px; color:#444444; text-indent:30px; line-height:28px; padding:0 15px;}
+
+/*security*/
+.security li{ height:360px; width:229px; background:#e5e5e5; overflow:hidden; margin-right:28px; float:left;}
+.security img{ display:block; margin:4px auto 0;}
+.security h2{ font-size:24px; color:#0064b4; height:40px; line-height:40px; text-align:center; width:90%; margin:20px auto 10px; border-bottom:2px solid #fff; box-shadow:0 1px 0 #d7d7d7;}
+.security p{ padding:0 10px; text-indent:30px; line-height:22px; color:#646464; font-size:14px;}
+
+/*expert*/
+.expert dl{ background:#e5e5e5;}
+.expert dd{ height:320px; padding:0 40px; width:500px; position:relative;}
+.expert h2{ font-size:18px; color:#0064b4; padding-left:30px; margin:60px 0 10px; background:url(../images/e-icon.png) left center no-repeat;}
+.expert p{ font-size:14px; color:#646464; line-height:24px;}
+.expert a{ font-size:24px; width:142px; height:38px; text-align:center; line-height:38px; color:#fff; background:#ff9c00; border-radius:5px; position:absolute; right:40px; bottom:30px;}
+
+/*share*/
+.share ul{ padding:0 2px;}
+.share ul li { float:left; margin:50px 14px 0px; width:221px; height:360px; background-color:#f9f9fa;}
+.share ul .text { padding:7px 10px; height:130px; background-color:#f9f9f9;}
+.share ul .text .p1 { padding-left:28px; background:url(../images/share_icon.jpg) 0px 6px no-repeat; line-height:30px; font-size:14px; color:#444444;}
+.share .more { padding-right:7px; padding-top:9px; height:26px; background-color:#ededed;}
+.share .more a {  font-size:14px; float:right; margin-right:3px; width:43px; height:17px; cursor:pointer; color:#646464; text-align:center; line-height:16px; border:1px #b7b7b7 solid; border-radius:2px;}
+.share .more_case { margin-top:30px; text-align:center;}
+.share .more_case a { display:inline-block; text-align:center; width:300px; height:30px;line-height:30px; font-size:16px; color:#FFF;  background-color:#0075bb;}
+
+/*common*/
+.til{ border-bottom:2px solid #e1e1e1; margin:70px 0;}
+.til span{ position:relative; padding:0 0 14px 60px; font-size:33px; color:#0064b4; border-bottom:2px solid #0064b4; margin-bottom:-2px;}
+.til span:before{ content:""; position:absolute; left:50%; margin-left:-6px; bottom:0px; width:0; height:0; border:6px solid transparent; border-bottom:6px solid #0064b4;}
+.til span.s1{ background:url(../images/icon.png) left top no-repeat;}
+.til span.s2{ background:url(../images/icon.png) left -100px no-repeat;}
+.til span.s3{ background:url(../images/icon.png) left -100px no-repeat;}
+.til span.s4{ background:url(../images/icon.png) left -200px no-repeat;}
+.til span.s5{ background:url(../images/icon.png) left -300px no-repeat;}
+.noMr{ margin-right:0 !important;}
+.noMt{ margin-top:0 !important;}
+.mb_26{ margin-bottom:26px !important;}
+.mb_36{ margin-bottom:36px !important;}
+
+
+/*foot*/
+.foot .content{ width:1000px; margin:0 auto;}

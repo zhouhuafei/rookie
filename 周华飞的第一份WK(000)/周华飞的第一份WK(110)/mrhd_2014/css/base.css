@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+html{ font-size:62.5%;}
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0;}
+input,select,textarea,img{ outline:none; border:none;}
+input,select,textarea{ background:#FFF;}
+img{ vertical-align:middle;}
+textarea{ resize:none;}
+ul,ol{ list-style-type:none;}
+body{ font-family:"微软雅黑";}
+em,i,strong,b,small,h1,h2,h3,h4,h5,h6{ font-style:normal;}
+em,strong,b,h1,h2,h3,h4,h5,h6{ font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,i,strong,b,small,span,li,a{ transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*html5*/
+header,nav,article,section,aside,footer,video,audio{ display:block; padding:0; margin:0;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w320{ width:320px; margin:0 auto; overflow:hidden;}

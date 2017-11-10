@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ padding:0; margin:0;}
+#nav{ width:1000px; margin:0 auto; height:30px;}
+#nav ul{ width:800px; height:30px; background:#F30; }
+#nav ul li{ float:left; position:relative; list-style-type:none;background:#F00; line-height:30px;}
+#nav ul li a{ color:#0F0; padding:5px 30px; text-decoration:none;line-height:20px;overflow:hidden; display:block; }
+/*#nav ul li a:hover{ background-color:#0F0;}*/
+#nav ul li dl{position:absolute;left:0px; top:30px; display:none; background:#Ff0;}
+#nav ul li .dl1{width:92px; margin-right:20px;}
+#nav ul li .show{display:block;}
+#nav ul li dl dt a{ color:#C00; white-space:nowrap; overflow:hidden;text-overflow:ellipsis;}
+#nav ul li dl dt a:hover{ background:red; color:#0F0;}
+</style>
+<script>
+window.onload=function()
+{
+	var oUl=document.getElementById('ul');
+	var oLi=oUl.getElementsByTagName('li');
+	var aDl=oUl.getElementsByTagName('dl');
+	for(var i=0; i<oLi.length; i++ )
+	{	
+		oLi[i].index=i;
+		oLi[i].onclick=function()
+		{	
+			if(aDl[this.index].style.display=='block')
+			{
+				aDl[this.index].style.display='none'
+			}			
+			else 
+			{
+				for(var j=0; j<oLi.length;j++)
+				{
+					oLi[j].style.background='red';
+					aDl[j].style.display='none';				
+				}
+				this.style.background='black';
+				aDl[this.index].style.display='block'
+		    }					                                                     
+		}
+	}
+}
+/*
+window.onload=function()
+{
+	var oUl=document.getElementById('ul');
+	var oLi=oUl.getElementsByTagName('li');
+	var aDl=oUl.getElementsByTagName('dl');
+	for(var i=0; i<oLi.length; i++ )
+	{	
+		oLi[i].index=i;
+		oLi[i].onmouseover=function()
+		{			
+				aDl[this.index].style.display='block'			                                                     
+		}
+		oLi[i].onmouseout=function()
+		{		
+				aDl[this.index].style.display='none'							                                                     
+		}
+	}
+}
+*/
+</script>
+
+</head>
+
+<body>
+<div id="nav">
+	<ul id="ul">
+    	<li>
+        	<a href="#">单击</a>
+            <dl>
+            	<dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+            </dl>        
+        </li>
+        <li>
+        	<a href="#">单击</a>
+            <dl>
+            	<dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+            </dl>        
+        </li>
+        <li>
+        	<a href="#">单击</a>
+            <dl>
+            	<dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+            </dl>        
+        </li>
+        <li>
+        	<a href="#">单击</a>
+            <dl class="dl1">
+            	<dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+                <dt><a href="#">我出现了</a></dt>
+            </dl>        
+        </li>
+    </ul>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>animate</title>
+<style>
+*{ margin:0; padding:0;}
+div{ background:#F00; width:100px; height:100px; margin:0 auto; position:relative; overflow:hidden;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('button').click(function()
+	{
+		//$('div').slideToggle("slow");	
+		 var div=$('div');
+		 div.animate({left:'400px',fontSize:'40px'},'slow');
+		 div.animate({top:'400px',fontSize:'60px'},'slow');
+		 div.animate({left:'0px',fontSize:'80px'},'slow');
+		 div.animate({top:'0px',fontSize:'100px'},'slow');
+	});
+});
+</script>
+</head>
+
+<body>
+<button type="button" style=" display:block; width:100px; margin:0 auto;">开始动画</button>
+<div>123</div>
+</body>
+</html>

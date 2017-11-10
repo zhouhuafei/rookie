@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS之中间弹出窗口残缺版</title>
+<style>
+*{ margin:0; padding:0; list-style:none; overflow:hidden;}
+div{ width:0px; height:0px; position:absolute; background:#F00;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementsByTagName('div')[0];
+	var speed=10;
+	var timer=null;
+	function startMove(iTarget)
+	{
+		var W=oDiv.offsetWidth+speed;
+		var H=oDiv.offsetHeight+speed;
+		if(W>iTarget)W=iTarget;
+		oDiv.style.width=W+'px';
+		if(H>iTarget)H=iTarget;
+		oDiv.style.height=H+'px';
+		oDiv.style.left=(document.documentElement.clientWidth-oDiv.offsetWidth)/2+'px';
+		oDiv.style.top=(document.documentElement.clientHeight-oDiv.offsetHeight)/2+'px';
+	}
+	timer=setInterval(function(){startMove(200);},30)
+}
+</script>
+</head>
+
+<body>
+<div></div>
+</body>
+</html>

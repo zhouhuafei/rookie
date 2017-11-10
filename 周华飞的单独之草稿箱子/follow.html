@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>follow</title>
+<style>
+*{ margin:0; padding:0;}
+body{ overflow:hidden;}
+div{ width:10px; height:10px; margin-left:20px; background:#F00; float:left; font-size:10px; text-align:center; line-height:10px;}
+</style>
+<script>
+window.onload=function(){
+	var aDiv=document.getElementsByTagName('div');
+	var arr=[];
+	for(var i=0; i<aDiv.length;i++){
+		arr.push([aDiv[i].offsetLeft,aDiv[i].offsetTop])
+	}
+	for(var i=0; i<aDiv.length;i++){
+		aDiv[i].style.position='absolute';
+		aDiv[i].style.left=arr[i][0]+'px';
+		aDiv[i].style.top=arr[i][1]+'px';
+	}
+	document.onmousemove=function(ev){
+		var ev=ev||event;	
+		for(var i=aDiv.length-1; i>0;i--){
+			aDiv[i].style.left=aDiv[i-1].offsetLeft+'px';
+			aDiv[i].style.top=aDiv[i-1].offsetTop+'px';
+		}
+		aDiv[0].style.left=ev.clientX+'px';
+		aDiv[0].style.top=ev.clientY+'px';	
+	}	
+}
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

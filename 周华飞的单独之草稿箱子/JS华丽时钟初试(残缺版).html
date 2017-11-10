@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>华丽的时钟初试</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+body{ background:#000;}
+ul{ text-align:center; width:580px; margin:300px auto;}
+li{ float:left; width:70px; height:120px;}
+span{ float:left;font-size:90px; width:70px; height:120px; line-height:120px; color:#FFF; text-shadow:-1px -1px 5px #FF0,1px 1px 5px #FF0;}
+</style>
+<script>
+window.onload=function()
+{
+	nowTime();
+	function nowTime()
+	{
+		var myDate=new Date();
+		var nowHou=fillZero(myDate.getHours());
+		var nowMin=fillZero(myDate.getMinutes());
+		var nowSec=fillZero(myDate.getSeconds());
+		var aImg=document.getElementsByTagName('img');
+		aImg[0].src='num'+nowHou.charAt(0)+'.jpg';
+		aImg[1].src='num'+nowHou.charAt(1)+'.jpg';
+		aImg[2].src='num'+nowMin.charAt(0)+'.jpg';
+		aImg[3].src='num'+nowMin.charAt(1)+'.jpg';
+		aImg[4].src='num'+nowSec.charAt(0)+'.jpg';
+		aImg[5].src='num'+nowSec.charAt(1)+'.jpg';
+	}
+	setInterval(nowTime,1000)
+}
+function fillZero(n)
+{
+	if(n<10)
+	{
+		return '0'+n;	
+	}	
+	else
+	{
+		return ''+n;	
+	}
+}
+</script>
+</head>
+
+<body>
+<ul>
+        <li><img src="num0.jpg"></li>
+        <li><img src="num0.jpg"></li>
+        <span>:</span>
+        <li><img src="num0.jpg"></li>
+        <li><img src="num0.jpg"></li>
+        <span>:</span>
+        <li><img src="num0.jpg"></li>
+        <li><img src="num0.jpg"></li>
+</ul>
+</body>
+</html>

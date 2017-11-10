@@ -1,0 +1,114 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ color:#444444; font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:25px;}
+em,i,strong,b,small{font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{display:inline-block;}
+em{ vertical-align:middle; transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_980{ width:980px; margin:0 auto; overflow:hidden; margin-bottom:60px;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_1100{ width:1100px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%;   margin:0 auto; overflow:hidden; background:#f3f3f3;}
+.commonWidth_grey .commonWidth_980{ margin-bottom:0;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+/*---------------------------------head-----------------------------------------*/
+
+/*---------------------------------banner---------------------------------------*/
+.banner_box{ background:url(../images/banner_02.jpg) center center no-repeat; height:533px;}
+.banner{ position:relative; height:100%;}
+.banner a{ position:absolute; background:#0064b4; color:#fff; border-radius:20px;}
+.banner a:hover{ background:#f17100;}
+.banner a:hover em{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+.banner .long_a{ line-height:33px; padding:0 20px; text-align:center; left:70px; bottom:10px;}
+.banner .short_a{ line-height:40px; padding:0 30px; text-align:center; right:90px; bottom:65px; font-size:18px;}
+.banner em{ margin-left:5px;}
+
+/*seven_style*/
+.til{ height:60px; font-size:35px; line-height:60px; color:#006db8; margin:70px 0 50px;}
+.til em{ margin-right:10px; width:41px; height:44px; background:url(../images/icon.png) -36px -252px;}
+.til:hover em{ transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+.seven_style ol{ overflow:hidden; padding:0 31px; margin-bottom:40px; border-bottom:1px solid #ccc;}
+.seven_style ol li{ float:left; margin-right:13px; width:120px; line-height:40px; text-align:center; font-size:18px; background:#e1e0e0; transition:0.3s;}
+.seven_style ol .li_active{ background:#006db8; color:#fff;}
+.seven_style ul{ overflow:hidden;}
+.seven_style ul li{ overflow:hidden; display:none;}
+.seven_style ul .li_active{ display:block;}
+.style_word{ height:284px; position:relative; width:570px;}
+.style_word h2{ color:#006db8; font-size:30px; line-height:60px;}
+.style_word p{ text-indent:30px; font-size:16px;}
+.style_btn{ position:absolute; right:0; bottom:0; width:220px;}
+.style_btn i{ text-align:center; display:block; font-size:16px; line-height:40px;}
+.style_btn a{ text-align:center; color:#fff; line-height:40px; background:#006db8; width:100%; font-size:18px;}
+.style_btn a:hover{ background:#f17100;}
+
+/*wrong*/
+.wrong dl{ overflow:hidden;}
+.wrong dt{ float:right;}
+.wrong dd{ float:left; width:550px; padding:10px 20px; height:100px; margin-bottom:28px; color:#fff; background:#006db8;}
+.wrong dd h2{ font-size:18px;}
+.wrong .style_btn{ position:static; margin:30px auto 50px;}
+
+/*method*/
+.method ul{ overflow:hidden;}
+.method li{ width:309px; border:1px solid #ccc; height:388px; float:left; margin-right:23px;}
+.method li h2{ background:#006db8; line-height:44px; color:#fff; font-size:24px; margin:25px 0 15px;}
+.method li i{ line-height:44px; background:#fff; margin:0 10px 0 20px; padding:0 5px; color:#006db8;}
+.method li img{ margin:0 10px;}
+.method li p{ text-indent:30px; padding:5px 10px;}
+.method_a{ text-align:center; line-height:40px; color:#fff; background:#006db8; width:220px; display:block; margin:50px auto 60px; font-size:18px;}
+.method_a:hover{ background:#f17100;}
+
+/*case*/
+.case{ overflow:hidden; padding-bottom:60px;}
+.case .style_word{ width:610px; height:278px;}
+.case .style_word h2{ color:#fb6400; font-size:24px;}
+.case .detailed{ color:#F00; margin-left:-30px;}
+.case .detailed:hover{ text-shadow:1px 1px 1px #000;}
+.dashed_line{ height:0px; width:100%; border-bottom:1px dashed #999; float:left; margin:40px 0;}
+
+/*expert*/
+.expert{ overflow:hidden; position:relative;}
+.expert_word{ width:540px; height:536px; padding-top:20px;}
+.expert_word h2{ font-size:60px; color:#006db8; margin-bottom:30px;}
+.expert_word i{ font-size:30px; margin-left:20px;}
+.expert_word strong{ color:#006db8; font-size:16px; margin:15px 0;}
+.expert_word p{ font-size:16px; text-indent:30px;}
+.expert_word img{ margin-top:60px;}
+.expert_btn{ line-height:40px; text-align:center; color:#fff; width:220px; font-size:18px; background:#006db8; position:absolute; bottom:20px; left:105px;}
+.expert_btn:hover{ background:#f17100;}
+
+/*success*/
+.success_case{ height:260px; overflow:hidden; position:relative;}
+.success_case a{ position:absolute; top:105px; width:25px; height:49px; z-index:2;}
+#prev{ left:0; background:url(../images/prev.png);}
+#next{ right:0; background:url(../images/next.png);}
+.success ul{ overflow:hidden; position:absolute; left:40px; top:0px;}
+.success li{ float:left; margin-right:30px;}
+.success .expert_btn{ position:static; display:block; margin:40px auto 60px;}
+.success .expert_btn:hover{ background:#f17100;}
+
+/*--------------------------左侧悬浮窗-------------------------*/
+#slide_barrrrr{ overflow:hidden; position:fixed; left:10px; top:200px; border:3px solid #eee; z-index:9999999999;}
+
+/*--------------------------中间弹出框------------------------*/
+.alert_middle_img{ overflow:hidden; position:fixed; left:35%; top:110px; width:450px; height:300px; z-index:999999999;background:url(/zt/qcd0304/swt/Center.gif) left top no-repeat;}
+.alert_middle_img a{ display:block;height:300px; width:450px;position:absolute;left:0px;top:0px; z-index:89; }
+.alert_middle_img em{display:block;cursor:pointer; width:30px; height:30px; position:absolute; right:0; top:0; z-index:90;}

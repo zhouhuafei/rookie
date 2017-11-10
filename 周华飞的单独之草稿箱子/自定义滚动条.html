@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#div1{ width:20px; height:400px; background:#666; position:relative;border-radius:10px;  float:left; border:1px solid #0F0;}
+#div2{ width:20px; height:20px; background:#F00; position:absolute; border-radius:10px; float:left;}
+#div3{ width:180px; height:400px; background:#666; position:relative;border-radius:10px; float:left; padding:0 10px; margin-left:10px; overflow:hidden; float:left; border:1px solid #0F0;}
+#div4{position:absolute;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv1=document.getElementById('div1');
+	var oDiv2=document.getElementById('div2');
+	var oDiv3=document.getElementById('div3');
+	var oDiv4=document.getElementById('div4');
+		
+	document.onkeydown=function(ev)
+	{
+		var oEvent=ev||event;
+		if(oEvent.keyCode==38)
+		{
+			oDiv2.style.top=oDiv2.offsetTop-1+'px';			
+			if(oDiv2.offsetTop<0)
+			{
+				oDiv2.style.top=0+'px'
+			}
+			document.title=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight);
+			var scale=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight);
+			oDiv4.style.top=-scale*(oDiv4.offsetHeight-oDiv3.offsetHeight)+'px';
+		}
+		else if(oEvent.keyCode==40)
+		{
+			oDiv2.style.top=oDiv2.offsetTop+1+'px';
+			if(oDiv2.offsetTop>oDiv1.offsetHeight-oDiv2.offsetHeight)
+			{
+				oDiv2.style.top=oDiv1.offsetHeight-oDiv2.offsetHeight+'px'
+			}			
+			document.title=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight);
+			var scale=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight);
+			oDiv4.style.top=-scale*(oDiv4.offsetHeight-oDiv3.offsetHeight)+'px';
+		}
+	}
+	oDiv2.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		disY=oEvent.clientY-oDiv2.offsetTop;
+		oDiv2.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			//document.title=oDiv2.offsetTop;
+			oDiv2.style.top=oEvent.clientY-disY+'px';
+			if(oDiv2.offsetTop<0){oDiv2.style.top=0+'px';}
+			else if(oDiv2.offsetTop>oDiv1.offsetHeight-oDiv2.offsetHeight){oDiv2.style.top=oDiv1.offsetHeight-oDiv2.offsetHeight+'px';}
+			document.title=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight);
+			var scale=oDiv2.offsetTop/(oDiv1.offsetHeight-oDiv2.offsetHeight);
+			oDiv4.style.top=-scale*(oDiv4.offsetHeight-oDiv3.offsetHeight)+'px';
+		}
+		oDiv2.onmouseup=function(ev)
+		{
+			var oEvent=ev||event;
+			oDiv2.onmousemove=null;
+			oDiv2.releaseCapture();
+		}
+		oDiv2.setCapture();
+		return false;
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="div1">
+<div id="div2">
+</div>
+</div>
+<div id="div3">
+<div id="div4">
+汉·许慎《〈说文解字〉叙》："盖依类象形，故谓之文；其後形声相益，即谓之字，"按，依类象形，即独体，为文；形声相益，即合体，为字。《史记·秦始皇本纪》："一法度衡石丈尺，车同轨，书同文字。" 北齐·颜之推《颜氏家训·勉学》："夫文字者，坟籍根本，世之学徒，多不晓字。"唐·韩愈《读〈鹖冠子〉》："文字脱谬，为之正三十有五字。" 清·陈澧《东塾读书记·小学》："声者象乎意而宣之者也，声不能传於异地，留於异时，於是乎书之为文字。"鲁迅《汉文学史纲要》第一篇："要之文字成就，所当绵历岁时，且由众手，全羣共喻，乃得流行，谁为作者，殊难确指，归功一圣，亦凭臆之说也。"
+
+2、字记录的书面语。
+
+唐·孟郊《老恨》诗："无子抄文字，老吟多飘零。"元·刘祁《归潜志》卷八："雷 则云作文字无句法，委靡不振，不足规。"《醒世恒言·钱秀才错占凤凰俦》："有几个考学，看了舍亲的文字，都许他京解之才。"夏丏尊、叶圣陶《文心》三："一篇文字的题目，往往是完篇之后才取定的。"
+
+3、字记录词和句子。
+
+唐·韩愈《荆潭唱和诗序》："搜奇抉怪，雕镂文字，与韦布里闾憔悴专一之士，较其毫釐分寸。"
+
+4、公文；案卷。
+
+宋·范仲淹《耀州谢上表》："今后贼界差人齎到文字，如依前僭伪，立便发遣出界，不得收接。"《宣和遗事》前集："有那押司宋江接了文字看了，星夜走去石碣村，报与晁盖几个。"《秦并六国平话》卷上："各路州县接得文字，得知韩王被虏，诸将皆亡，未免具降书投降。"《古今小说·简帖僧巧骗皇甫妻》："钱大尹看罢，即时教押下一箇所属去处，叫将山前行山定来。当时山定承了这件文字。"
+
+5、奏疏或札子。
+
+宋·朱弁《曲洧旧闻》卷八："熙宁初议新法，中外惶骇，韩魏公有文字到朝廷，裕陵之意稍疑。"明·冯梦龙《智囊补·上智·韩琦》："一日，入札子，以山陵有事取覆，乞晚临，后上殿独对，谓官家不得惊，有一文字须进呈，说破只莫泄。"[3] 
+
+
+
+2基本含义编辑
+
+属性
+
+文字在语言学中指书面语的视觉形式，古代把独体字叫做"文"，把合体字叫做"字"，如今联合起来叫做"文字"，文字的基本个体叫做"字"。在日常生活中，"文字"还可以指书面语、语言、文章、字等。视觉符号形式，突破口语的时间和空间限制。例如汉字、拉丁字母。
+
+唐朝张怀作有《文字论》"论曰：文字者，总而为言。若分而为义，则文者祖父，字者子孙。察其物形，得其文理，故谓之曰文；母子相生，孽乳寝多，因名之为字。题於竹帛，则目之曰书。字之与书理亦归一因文也者，其道焕焉。日月星辰，天之文也；五岳四渎，地之文也；城阙翰仪，人之文也。文为用，相须而成，......"
+
+视觉
+
+文字是简单的视觉图案再现 口语的声音，因而更加清晰，可以反复阅读，可以突破时间和空间的限制。
+
+约定
+
+文字是人类约定创造的视觉形式。必要的时候可以重新约定，形成文字改革。
+
+系统
+
+无论是语素文字、音节文字还是音素文字都有自己严密的系统，因此不能望文生义，改革也会牵一发动全身。
+
+各项分类
+
+辨析方向
+
+人类长期只有口语，用文字记录口语形成的书面语历史很短。系统的语言成为人和禽兽分离的重要工具，文字使人类能进入有历史记录的文明社会。把时空的影像变化转码成视觉可见的符号系统，使后人能通过间接的文字想象出画面，了解历史和学习技术经验。使文字成为文化的主要载体。
+
+文字突破口语受到时间和空间的限制，是人类可以在书面语的基础上完整地传承人类的智慧和精神财富，使人类能够完善教育体系，提高自己的智慧，发展科学技术，进入文明社会。
+
+普通文字是用简单图形形成，早期更加接近图画，更加接近几何线条。例如拉丁字母是简单的直线、弧线和点构成。汉字主要是由直线构成，所以叫做"方块汉字"。古代的甲骨文汉字，埃及象形文字和玛雅文字等古老文字图画性比较强。
+
+由于特殊人群视觉能力的局限，还可以发明变异的视觉符号或者触觉符号来代替普通文字。盲文是为了适应没有视觉能力的盲人发明的触觉符号。手语是为了适应没有语音能力的哑巴发明的用手舞动的动态视觉符号。旗语是为了适应航海等远距离听觉和视觉局限发明的用旗子舞动的动态视觉符号。这些代码文字，一律建立在表音文字或者表意文字的拼音方案的基础上，传统汉字是无法使用这种代码的，因为字的数量太多。
+
+在电子信息传输的初期，人们还采用阿拉伯数字代替汉字传输书面语。这种数字代码可以给任何文字编码。但是汉字因为数量多，需要专门的代码翻译人员才能使用。
+
+有人把文字分成线性文字和非线性文字。这样不科学，因为无论是普通文字还是代码文字都有线条和点等视觉元素。
+</div>
+</div>
+</body>
+</html>

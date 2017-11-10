@@ -1,0 +1,61 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0;}
+input,select,textarea,img{ outline:none; border:none;}
+input,select,textarea{ background:#FFF;}
+img{ vertical-align:middle;}
+textarea{ resize:none;}
+ul,ol{ list-style-type:none;}
+body{ font-family:"微软雅黑"; font-size:14px;}
+p{ line-height:24px;}
+em,i,strong,b,small,h1,h2,h3,h4,h5,h6{ font-style:normal;}
+em,strong,b,h1,h2,h3,h4,h5,h6{ font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,i,strong,b,small,span,li,a{ transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.r10{ border-radius:10px;}
+.circle{ border-radius:50%;}
+.bgGrey{ background:#f5fafa; overflow:hidden;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+/*ellipsis*/
+.ellipsis{ overflow:hidden; white-space:nowrap/*强制不换行*/; text-overflow:ellipsis;}
+/*wrap(chinese/english)*/
+.wrap{ word-wrap:break-word/*自动换行*/; word-break:break-all/*强制换行*/;}
+/*gradient*/
+.gradient{ -ms-filter:"progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=red,endColorStr=yellow)"/*IE8,IE9,gradientType=0/1(垂直渐变/水平渐变)*/; background:-moz-linear-gradient(top,red,yellow)/*从顶部开始渐变*/; background:-webkit-linear-gradient(top,red,yellow)/*(top left,red,yellow)这样写是从左上角开始渐变*/; background:-ms-linear-gradient(top,red,yellow); background:linear-gradient(top,red,yellow); +background:#ff7a00/*IE6,IE7取中间色*/;}
+/*html5*/
+header,nav,article,section,aside,footer,video,audio{ display:block;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat #000;}
+.banner div{ position:relative; height:500px;}
+.banner a{ width:170px; height:50px; position:absolute; right:270px; bottom:130px; background:#fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

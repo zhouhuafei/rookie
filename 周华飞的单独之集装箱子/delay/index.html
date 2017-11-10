@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>delay</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+div{ width:800px; margin:0 auto; height:600px; position:relative; background:#000; overflow:hidden;}
+ol{ position:absolute; right:0; top:0; z-index:3;}
+ol li{ width:10px; height:10px; border-radius:50%; background:#ccc; float:left; margin:5px;}
+ol li.on{ background:#f00;}
+ul{ height:100%; width:100%; color:#fff; font-size:200px;}
+ul li{ width:100%; height:100%; text-align:left; line-height:600px; position:absolute; left:0; top:0; background:#000; opacity:0;}
+ul li:nth-of-type(1){ z-index:2; opacity:1;}
+ul li em{ display:block; width:200px; text-align:center; height:200px; line-height:200px; background:#F00; position:absolute; left:300px; top:200px;}
+</style>
+<script src="jquery-2.1.3.min.js"></script>
+<script>
+//JQ版本
+$(function(){
+	$('ol li').mouseover(function(){
+		//全部清零
+		$('ol li').removeClass('on');
+		$('ul li').stop().animate({'zIndex':1,'opacity':0});
+		$('ul li em').stop().animate({'left':-200,'opacity':0},0);
+		//当前赋值		
+		$(this)	.addClass('on');
+		$('ul li').eq($(this).index()).stop().animate({'zIndex':2,'opacity':1});
+		$('ul li em').eq($(this).index()).stop().delay(200).animate({'left':300,'opacity':1});
+	})	
+})
+</script>
+</head>
+<body>
+<div>
+	<ol>
+        	<li class="on"></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        </ol>
+	<ul>
+        	<li><a href="#1">1</a>1<em>1</em></li>
+        	<li><a href="#2">2</a>2<em>2</em></li>
+        	<li><a href="#3">3</a>3<em>3</em></li>
+        	<li><a href="#4">4</a>4<em>4</em></li>
+        </ul>
+</div>
+</body>
+</html>

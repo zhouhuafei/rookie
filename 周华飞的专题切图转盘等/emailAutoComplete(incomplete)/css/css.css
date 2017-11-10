@@ -1,0 +1,14 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+body{ padding-top:20px;}
+/*#email-box*/
+#email-box{ width:400px;}
+#email-box input.active{ transition:1s; border:1px solid #900 !important; color:#900 !important;}
+#email-box ul.active{ opacity:1 !important; filter:alpha(opacity:100) !important; height:auto !important;}
+#email-box li.active{ background:#900; color:#fff !important;}
+#email-box span.active{ border:1px solid #900 !important; color:#900 !important; opacity:1 !important; filter:alpha(opacity:100) !important;}

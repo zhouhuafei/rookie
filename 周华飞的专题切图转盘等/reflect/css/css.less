@@ -1,0 +1,88 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+//zero
+html{
+	font-size:62.5%;
+	height:100%;	
+}
+body,div,ul,ol,li{
+	padding:0;
+	margin:0;
+}
+img{
+	vertical-align:middle;
+	width:300px;
+}
+//clear
+.clear{
+	&:after{
+		content:"";
+		clear:both;
+		display:block;
+		height:0;
+		overflow:hidden;
+	}
+}
+//common
+.3d{
+	transform-style:preserve-3d;
+	perspective:400px;
+}
+.c3(@val:0.4s){
+	transition:@val;
+}
+.bg(@val:#000){
+	background:@val;
+}
+.f{
+	-webkit-box-reflect:below 0 -webkit-linear-gradient(top,rgba(0,0,0,0.1),rgba(0,0,0,1));
+}
+//main
+body{
+	.bg;
+	height:100%;
+}
+#box{
+	.l{
+		transform-origin:0% 0%;
+		transform:rotateY(15deg) translateZ(-50px);
+	}
+	.c{
+		transform:translateZ(-20px) translateZ(20px);
+	}
+	.r{
+		transform-origin:100% 50%;
+		transform:rotateY(-15deg) translateZ(-50px);
+	}
+	height:100%;
+	position:relative;
+	overflow:hidden;
+	#imgList{
+		.3d;
+		.clear;
+		position:relative;
+		width:1300px;
+		height:226px;
+		margin:200px auto;
+		img{
+			border-radius:10px;
+			transition:0.4s;
+			position:absolute;
+			bottom:0;
+			.f;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

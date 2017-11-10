@@ -1,0 +1,93 @@
+@charset "gb2312";
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"Î¢ÈíÑÅºÚ";}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w300{ width:300px; margin:0 auto; overflow:hidden;}
+.w310{ width:310px; margin:0 auto; overflow:hidden;}
+.w320{ width:320px; margin:0 auto; overflow:hidden;}
+.til{ width:320px; text-align:center; height:36px; line-height:36px; font-size:18px; background:#a2151e; color:#fff; margin:20px auto;}
+a.btn{ display:block; width:222px; text-align:center; height:32px; line-height:32px; color:#fff; font-size:16px; background:#ff6700; margin:20px auto 0; border-radius:10px;}
+
+/*classify*/
+.classify ol{ margin-bottom:20px;}
+.classify ol li{ width:102px; text-align:center; height:30px; line-height:30px; font-size:12px; color:#fff; margin-right:2px; background:#a2151e; float:left; position:relative;}
+.classify ol li.noMr{ margin-right:0;}
+.classify ol li.on{ background:#ff6700;}
+.classify ol em{ width:0; height:0; border:6px solid transparent; border-top:6px solid #ff6700; position:absolute; bottom:-12px; left:43px; opacity:0; filter:alpha(opacity:0);}
+.classify ol li.on em{ opacity:1; filter:alpha(opacity:100);}
+.classify .classify_dlBox{ width:310px; height:130px; overflow:hidden; position:relative;}
+.classify .classify_dlMain{ width:2000px; position:absolute; left:0; top:0; transition:0.4s;}
+.classify dl{ float:left;}
+.classify dl dt{ width:118px; height:128px; border:1px solid #cccccc;}
+.classify dl dd{ padding:5px 10px; width:170px; height:120px; background:#f6f6f6; font-size:12px; color:#666666; text-indent:30px; line-height:20px;}
+
+/*notice*/
+.notice .txt{ height:200px; padding:10px; border:1px solid #cccccc; position:relative;}
+.notice .txt h2{ font-size:14px; color:#a2151e; margin-bottom:10px;}
+.notice .txt p{ font-size:12px; color:#666666; line-height:22px; text-indent:30px;}
+.notice .txts{ width:150px; position:absolute; right:10px; bottom:5px;}
+.notice .txts p{ font-size:12px; color:#666666; text-align:center;}
+.notice .tab{ width:308px; border:1px solid #C1C1C1; color:#444444; margin:10px auto 66px; position:relative;}
+.notice .tab h2{ height:40px; line-height:40px; text-align:center; font-size:18px; color:#a71e26; border-bottom:1px solid #C1C1C1;}
+.notice .tab dt{ background:#f7f7f7; height:30px; line-height:30px; border-bottom:1px solid #C1C1C1;}
+.notice .tab dd{ height:60px; line-height:60px; border-bottom:1px solid #C1C1C1;}
+.notice .tab .no_bor{ border:none; width:55px;}
+.notice .tab .no_bor2{ border:none;}
+.notice .tab strong{ width:79px; height:100%; border-right:1px solid #C1C1C1; float:left; text-align:center;}
+.notice .tab span{ width:56px; height:100%; border-right:1px solid #C1C1C1; float:left; text-align:center;}
+.notice .tab span a{ display:block;}
+.notice .tab .green{ color:#4a9600;}
+.notice .tab .red{ color:#a71e26;}
+.notice .tab .grey{ color:#c6c6c6;}
+.notice .tab p{ width:100%; line-height:18px; font-size:13px; position:absolute; left:0; bottom:-46px;}
+
+/*team*/
+.team dl{ margin-bottom:20px;}
+.team dl.noMb{ margin-bottom:0;}
+.team dl.active{ margin-bottom:0;}
+.team dt{ width:118px; height:128px; border:1px solid #cccccc;}
+.team dd{ width:184px; height:130px; padding-left:6px; position:relative;}
+.team dd p{ font-size:12px; line-height:24px; color:#444444;}
+.team dd a{ width:140px; text-align:center; height:28px; line-height:28px; background:#ff6700; font-size:14px; color:#fff; position:absolute; bottom:0; left:25px;}
+
+/*article*/
+.article ol{ margin-bottom:20px; padding:0 5px;}
+.article ol li{ width:145px; text-align:center; height:26px; line-height:26px; font-size:12px; color:#444444; border-bottom:2px solid #f0f0f0; background:#f0f0f0; margin-right:10px; float:left; position:relative;}
+.article ol li.noMr{ margin-right:0;}
+.article ol li.active{ border-bottom:2px solid #a71e26; color:#a71e26;}
+.article ol em{ width:0; height:0; border:6px solid transparent; border-top:6px solid #a71e26; position:absolute; bottom:-14px; left:66px; opacity:0; filter:alpha(opacity:0);}
+.article ol li.active em{ opacity:1; filter:alpha(opacity:100);}
+.article .article_ulMain{ width:310px; height:299px; overflow:hidden; position:relative; transition:0.4s;}
+.article ul{ width:2000px; position:absolute; left:0; top:0; transition:0.4s;}
+.article ul li{ width:310px; float:left;}
+.article ul .img{ text-align:center; padding:1px 0;}
+.article ul h2{ height:17px; line-height:17px; font-size:12px; color:#666666;}
+.article ul h3{ height:17px; line-height:17px; font-size:12px; color:#a1a1a1; margin-bottom:11px;}
+.article ul h3.noMb{ margin-bottom:0;}
+.article ul a{ display:block; width:56px; height:29px; margin:0 auto; background:url(../images/article_a.png) center center no-repeat;}
+
+/*peoples*/
+.peoples h2{ margin-bottom:10px; height:28px; border:1px dashed #cccccc; font-size:14px; color:#444444;}
+.peoples h2 em{ font-size:18px; color:#ff6700; margin:0 10px;}
+.peoples .img{ text-align:center; border:1px solid #a2151e; margin-bottom:20px;}
+.peoples dt{ text-align:center; height:38px; line-height:38px; color:#a2151e; font-size:16px; border:1px solid #cccccc;}
+.peoples dd{ height:39px; line-height:39px; color:#666666; border:1px solid #cccccc; border-top:none;}
+.peoples dd span{ width:149px; text-align:center; float:left;}
+.peoples dd span.br{ width:148px; border-right:1px solid #cccccc;}
+
+/*flow*/
+.flow .img{ width:277px; margin:0 auto;}

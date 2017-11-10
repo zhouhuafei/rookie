@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>缓冲运动</title>
+</head>
+
+<body>
+<div style="width:200px; height:200px; position:absolute; left:0; top:0; background:#000;"></div>
+<script>
+	function bufferMove(iTarget)
+	{
+		var oDiv=document.getElementsByTagName('div')[0];
+		clearInterval();
+		timer=setInterval(function()
+		{
+			var speed=(iTarget-oDiv.offsetTop)/10;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			if(oDiv.offsetTop==iTarget)
+			{
+				clearInterval(timer);	
+			}
+			else
+			{
+				oDiv.style.top=oDiv.offsetTop+speed+'px';
+			}	
+		},30)	
+	}
+	bufferMove(500)
+</script>
+</body>
+</html>

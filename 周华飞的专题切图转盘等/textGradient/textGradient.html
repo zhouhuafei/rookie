@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>textGradient</title>
+<style>
+body,div{ padding:0; margin:0;}
+body{ height:2000px; background:#000; line-height:1; font-size:50px;}
+span{ display:inline-block;}
+em{ background:#f00; display:block; width:200px; height:200px; margin:50px auto;}
+div.div1{ background:#f00; color:#fff; height:100px; line-height:100px; margin:50px auto; width:100%; text-align:center;}
+div.div1,div.div1 span{ background:-webkit-linear-gradient(-90deg,#F0F,#0FF,#FF0,#00F,#F00,#0F0);/*线性渐变*/ -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+div.div2{ background:#f00; color:#fff; height:100px; line-height:100px; margin:50px auto; width:300px; text-align:center;}
+div.div2,div.div2 span{ background-image:-webkit-radial-gradient(circle,#F0F,#0FF,#FF0,#00F,#F00,#0F0);/*径向渐变*/ -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+div:hover span{ transform:rotate(360deg); -webkit-transform:rotate(360deg);}
+div:hover span:nth-child(1){ transition:0.4s 0.1s;}
+div:hover span:nth-child(2){ transition:0.4s 0.2s;}
+div:hover span:nth-child(3){ transition:0.4s 0.3s;}
+div:hover span:nth-child(4){ transition:0.4s 0.4s;}
+div:hover span:nth-child(5){ transition:0.4s 0.5s;}
+div:hover span:nth-child(6){ transition:0.4s 0.6s;}
+
+/*线性渐变*/
+.linera{
+	background:-webkit-linear-gradient(-90deg,#F0F,#0FF,#FF0,#00F,#F00,#0F0); 
+	background:-moz-linear-gradient(-90deg,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+	background:-ms-linear-gradient(-90deg,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+	background:-o-linear-gradient(-90deg,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+}
+/*径向渐变*/
+.radial{
+	background:-webkit-radial-gradient(circle,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+	background:-moz-radial-gradient(circle,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+	background:-ms-radial-gradient(circle,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+	background:-o-radial-gradient(circle,#F0F,#0FF,#FF0,#00F,#F00,#0F0);
+}
+</style>
+</head>
+<body>
+<div class="div1"><span>这</span><span>是</span><span>线</span><span>性</span><span>渐</span><span>变</span></div>
+<em class="linera"></em>
+<div class="div2"><span>这</span><span>是</span><span>径</span><span>向</span><span>渐</span><span>变</span></div>
+<em class="radial"></em>
+</body>
+</html>

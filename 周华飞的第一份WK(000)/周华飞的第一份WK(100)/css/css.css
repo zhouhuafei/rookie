@@ -1,0 +1,17 @@
+@charset "gb2312";
+/* CSS Document */
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat; margin-bottom:20px;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:238px; bottom:148px;}
+
+/*main*/
+#main{ margin-top:30px;}
+#main dl{ padding:60px 0; border-bottom:1px solid #c1c1c1;}
+#main dl.reStyle{ border-bottom:none; padding-bottom:0;}
+#main dd{ width:460px; height:292px; font-size:16px; color:#646464; line-height:36px; text-indent:30px; position:relative;}
+#main a{ position:absolute; right:0; bottom:10px;}
+
+/*common*/
+.til{ font-size:40px; color:#006ab6; margin:60px 0;}
+.til small{ font-size:22px; color:#606060; margin-left:10px;}

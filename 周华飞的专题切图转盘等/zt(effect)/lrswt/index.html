@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>左右两侧悬浮添加</title>
+<style>
+*{ margin:0; padding:0;}
+</style>
+<script src="jq.js"></script>
+</head>
+<body>
+<style>
+#left-fix,#right-fix{ position:fixed; top:50%; margin-top:-185px; display:none;}
+#right-fix{ right:0;}
+#left-fix a,#right-fix a{ cursor:pointer; display:block; font-size:20px; color:#060; font-weight:bold; border:3px solid #060; border-radius:50%; width:20px; text-align:center; height:20px; line-height:20px; position:absolute; right:0; top:0;}
+#left-fix img,#right-fix img{ vertical-align:middle; border-top-right-radius:20px;}
+</style>
+<div id="left-fix">
+	<a>×</a>
+	<img src="swt/left-fix.gif" usemap="#Map">
+        <map name="Map"><area shape="rect" coords="18,283,131,311" href="javascript:void(0);return false;" onclick="openZoosUrl();return false;"></map>
+</div>
+<div id="right-fix">
+	<a>×</a>
+	<img src="swt/right-fix.gif" usemap="#Map2">
+        <map name="Map2"><area shape="rect" coords="7,221,143,299" href="javascript:void(0);return false;" onclick="openZoosUrl();return false;"></map>
+</div>
+<script>
+	setTimeout(show,1000);
+	$('#left-fix a,#right-fix a').click(function(){
+		var $this=$(this);
+		fadeOut($this);
+		setTimeout(function(){	fadeIn($this)},1000);	
+	});
+	function show(){$('#left-fix,#right-fix').fadeIn();}
+	function fadeOut(_this){$(_this).parent().fadeOut();}
+	function fadeIn(_this){$(_this).parent().fadeIn();}
+</script>
+</body>
+</html>

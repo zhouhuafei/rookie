@@ -1,0 +1,77 @@
+/* Compiled Less CSS File */
+/* Generated from "css.css" */
+
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+body,
+div,
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+}
+img {
+  vertical-align: middle;
+  width: 300px;
+}
+.clear:after {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.3d {
+  transform-style: preserve-3d;
+  perspective: 400px;
+}
+.f {
+  -webkit-box-reflect: below 0 -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), #000000);
+}
+body {
+  background: #000000;
+  height: 100%;
+}
+#box {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#box .l {
+  transform-origin: 0% 0%;
+  transform: rotateY(15deg) translateZ(-50px);
+}
+#box .c {
+  transform: translateZ(-20px) translateZ(20px);
+}
+#box .r {
+  transform-origin: 100% 50%;
+  transform: rotateY(-15deg) translateZ(-50px);
+}
+#box #imgList {
+  transform-style: preserve-3d;
+  perspective: 400px;
+  position: relative;
+  width: 1300px;
+  height: 226px;
+  margin: 200px auto;
+}
+#box #imgList:after {
+  content: "";
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+#box #imgList img {
+  border-radius: 10px;
+  transition: 0.4s;
+  position: absolute;
+  bottom: 0;
+  -webkit-box-reflect: below 0 -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), #000000);
+}

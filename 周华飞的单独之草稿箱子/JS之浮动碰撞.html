@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS之浮动碰撞</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+div{ width:200px; height:200px; position:absolute; left:0; top:0; background:#F00;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementsByTagName('div')[0];
+	var speedX=10;
+	var speedY=10;
+	function startMove()
+	{
+		var clientWidth=document.documentElement.clientWidth;
+		var clientHeight=document.documentElement.clientHeight;
+		var l=oDiv.offsetLeft+speedX;
+		var t=oDiv.offsetTop+speedY;
+		if(t>clientHeight-oDiv.offsetHeight)
+		{
+			t=clientHeight-oDiv.offsetHeight;
+			speedY*=-1;
+		}
+		else if(t<0)
+		{
+			t=0;
+			speedY*=-1;
+		}
+		if(l>clientWidth-oDiv.offsetWidth)
+		{
+			l=clientWidth-oDiv.offsetWidth;
+			speedX*=-1;				
+		}
+		else if(l<0)
+		{
+			l=0;
+			speedX*=-1;				
+		}		
+		oDiv.style.left=l+'px';
+		oDiv.style.top=t+'px';	
+	}
+	setInterval(startMove,30);
+}
+</script>
+</head>
+
+<body style="height:2000px;">
+<div></div>
+</body>
+</html>

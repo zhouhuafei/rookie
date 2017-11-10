@@ -1,0 +1,27 @@
+@charset "gb2312";
+/* CSS Document */
+/*
+**author:rookie
+**qq:1123486116
+**/
+/*zero*/
+body,div,ul,li,p{ margin:0; padding:0;}
+/*slider*/
+div#slider{ line-height:1; position:absolute; left:90px; top:800px; height:494px; width:72px;}
+div#slider ul{ list-style-type:none; position:absolute; top:0;}
+div#slider li{ color:#555555; background:#fff; font-size:12px; text-align:center; width:70px; height:70px; margin-bottom:10px; border-radius:50%; border:1px solid #555555; cursor:pointer;}
+div#slider li.last{ margin-bottom:0;}
+div#slider em{ transition:0.4s cubic-bezier(.02,.98,.47,1.37); display:inline-block; width:27px; height:25px; margin:10px 0; background:url(../images/asideNav.png) no-repeat;}
+div#slider em.one{ background-position:left top;}
+div#slider em.two{ background-position:left -72px;}
+div#slider em.thr{ background-position:left -144px;}
+div#slider em.fou{ background-position:left -216px;}
+div#slider em.fiv{ background-position:left -288px;}
+div#slider em.six{ background-position:left -360px;}
+div#slider li.active{ color:#fff; background:#1a7ac7;}
+div#slider li.active em.one{ background-position:left -36px;}
+div#slider li.active em.two{ background-position:left -108px;}
+div#slider li.active em.thr{ background-position:left -180px;}
+div#slider li.active em.fou{ background-position:left -252px;}
+div#slider li.active em.fiv{ background-position:left -324px;}
+div#slider li.active em.six{ background-position:left -396px;}

@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>page</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; line-height:1;}
+</style>
+<script>
+window.onload=function(){
+	page({
+		id:'page',
+		nowPage:1,
+		allPage:10,
+		callBack:function(nowPage,allPage){
+			//console.log('当前是:'+nowPage+'页,总页数:'+allPage+'页');
+		}	
+	})	
+}
+function page(json){
+	if(!json.id){return;}
+	var obj=document.getElementById(json.id);
+	obj.style.cssText="width:100%; text-align:center;";
+	var nowPage=json.nowPage||1;
+	var allPage=json.allPage||10;
+	var callBack=json.callBack||function(){};
+	var cssA=function(obj){
+		obj.style.cssText="margin:0 5px; color:#00f;";		
+	}
+	if(nowPage>=4&&allPage>=6){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='首页';
+		oA.href='#'+1;
+		obj.appendChild(oA);	
+	}
+	if(nowPage>=2){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='上一页';
+		oA.href='#'+(nowPage-1);
+		obj.appendChild(oA);	
+	}
+	if(allPage<=5){
+		for(var i=1; i<=allPage;i++){
+			var oA=document.createElement('a');
+			cssA(oA);
+			if(nowPage==i){
+				oA.innerHTML=i;
+			}else{
+				oA.innerHTML='['+i+']';
+			}
+			oA.href='#'+i;
+			obj.appendChild(oA);
+		}	
+	}else{
+		for(var i=1; i<=5;i++){
+			var oA=document.createElement('a');
+			cssA(oA);
+			if(nowPage==1||nowPage==2){
+				if(nowPage==i){
+					oA.innerHTML=i;
+				}else{
+					oA.innerHTML='['+i+']';
+				}
+				oA.href='#'+i;
+			}else if(allPage-nowPage==0||allPage-nowPage==1){
+				if(allPage-nowPage==0&&i==5){
+					oA.innerHTML=(allPage-5+i);
+				}else if(allPage-nowPage==1&&i==4){
+					oA.innerHTML=(allPage-5+i);
+				}else{
+					oA.innerHTML='['+(allPage-5+i)+']';
+				}
+				oA.href='#'+(allPage-5+i);
+			}else{
+				if(i==3){
+					oA.innerHTML=(nowPage-3+i);
+				}else{
+					oA.innerHTML='['+(nowPage-3+i)+']';
+				}
+				oA.href='#'+(nowPage-3+i);
+			}
+			obj.appendChild(oA);
+		}			
+	}
+	if(allPage-nowPage>=1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='下一页';
+		oA.href='#'+(nowPage+1);
+		obj.appendChild(oA);
+	}
+	if(allPage-nowPage>=3&&allPage>=6){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='尾页';
+		oA.href='#'+allPage;
+		obj.appendChild(oA);
+	}
+	callBack(nowPage,allPage);
+	var aA=obj.getElementsByTagName('a');
+	for(var i=0,iLen=aA.length; i<iLen;i++){
+		aA[i].onclick=function(){				
+			nowPage=parseInt(this.getAttribute('href').substring(1));
+			obj.innerHTML='';
+			page({
+				id:json.id,
+				nowPage:nowPage,
+				allPage:allPage,
+				callBack:callBack
+			})
+			return false;
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="page"></div>
+</body>
+</html>

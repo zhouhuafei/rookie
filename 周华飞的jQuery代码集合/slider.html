@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<title>slider</title>
+<style>
+/*zero*/
+*{ margin:0; padding:0; list-style:none;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w310{ width:310px; margin:0 auto; overflow:hidden;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*classify*/
+.classify ol{ margin:20px 0;}
+.classify ol li{ width:102px; text-align:center; height:30px; line-height:30px; font-size:12px; color:#fff; margin-right:2px; background:#a2151e; float:left; position:relative; cursor:pointer; transition:0.4s;}
+.classify ol li.noMr{ margin-right:0;}
+.classify ol li.on{ background:#ff6700;}
+.classify ol em{ width:0; height:0; border:6px solid transparent; border-top:6px solid #ff6700; position:absolute; bottom:-12px; left:43px; opacity:0; filter:alpha(opacity:0); transition:0.4s;}
+.classify ol li.on em{ opacity:1; filter:alpha(opacity:100);}
+.classify .classify_dlBox{ width:310px; height:130px; overflow:hidden; position:relative;}
+.classify .classify_dlMain{ width:2000px; position:absolute; left:0; top:0; transition:0.4s;}
+.classify dl{ float:left;}
+.classify dl dt{ width:118px; text-align:center; height:128px; line-height:128px; background:#000; color:#fff; border:1px solid #cccccc;}
+.classify dl dd{ padding:5px 10px; width:170px; height:120px; background:#f6f6f6; font-size:12px; color:#666666; text-indent:30px; line-height:20px;}
+</style>
+<script src="slider.js"></script>
+<script>
+window.addEventListener('load',function(){
+	/*classify*/
+	(function(){
+		TouchSlide({ slideCell:"#classify",titCell:"ol li",mainCell:".classify_dlMain" });		
+	})();	
+},false)
+</script>
+</head>
+<body>
+<div class="classify w310" id="classify">
+	<ol class="clearFix">
+        	<li class="on"><em></em>无实习生门诊教学</li>
+        	<li><em></em>华山专家联合会诊</li>
+        	<li class="noMr"><em></em>提前预约不用排队</li>
+        </ol>
+        <div class="classify_dlBox">
+                <div class="classify_dlMain clearFix">
+                        <dl>
+                                <dt class="fl">1</dt>
+                                <dd class="fl">总院门诊人流量过大，安排实习生看诊在所难免，往往患者还没弄清楚病情就被"送走"。曹安路门诊的开设就是为了避免患者被随意安排或由缺少经验的实习生接诊。</dd>
+                        </dl>
+                        <dl>
+                                <dt class="fl">2</dt>
+                                <dd class="fl">华山专家闵自强主任、李长恒教授、王家俊教授齐聚城市。凡是在网上预约成功的患者，可享受闵自强主任亲诊，李长恒教授年事已高、王家俊教授课题繁忙，仅参加会诊。</dd>
+                        </dl>
+                        <dl>
+                                <dt class="fl">3</dt>
+                                <dd class="fl">曹安路华山专家门诊施行严格的预约就诊制度，网上或电话预约挂号，无需排队等候。接诊专家一定是闵自强主任。就诊时遵循一医一室一患原则，确保面诊时间。</dd>
+                        </dl>
+                </div>
+        </div>
+</div>
+</body>
+</html>

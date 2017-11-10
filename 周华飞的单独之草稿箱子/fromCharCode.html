@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>fromCharCode</title>
+<style>
+body{ margin:0; padding:0; background:#000;}
+span{ width:500px; margin:0 auto; display:block; color:#f00; overflow:hidden;}
+</style>
+</head>
+
+<body>
+<span></span>
+<script>
+
+//alert('周'.charCodeAt())
+
+//fromCharCode   根据计算机中的Unicode编码值返回字符串
+
+//alert(String.fromCharCode(21608,21326,39134,22823,24069,21733));
+
+var str='';
+for(var i=20000; i<=40000-6; i++)		//0-9(48-57)   //a-z(97-122)   //A-Z(65-90)
+{
+	str+=String.fromCharCode(i);
+}
+document.getElementsByTagName('span')[0].innerHTML=str;
+</script>
+</body>
+</html>

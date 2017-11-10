@@ -1,0 +1,46 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,p,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth_300{ width:300px; margin:0 auto; overflow:hidden;}
+
+/*main*/
+.main2{ width:320px; margin:0 auto; overflow:hidden; background:#f8f8f8;}
+
+/*banners*/
+.banners_til{ border-bottom:1px solid #999; width:300px; padding-bottom:5px; margin:20px auto;}
+.banners_til em{ width:12px; height:12px; border-radius:20px; border:2px solid #1364b6; vertical-align:middle; margin-right:5px;}
+.banners_til a{ line-height:20px; font-size:16px;}
+
+/*common*/
+.dashed_line{ width:300px; height:0px; border-top:1px dashed #808080; margin:30px auto 0;}
+.ad{ width:300px; margin:0 auto;}
+
+/*content*/
+.content .banner{ width:298px; border:1px solid #1264b6;}
+.content .til{ font-size:14px; color:#1264b6; margin:30px 0 20px;}
+.content .img{ width:145px; border:1px solid #1264b6; margin:0 6px 20px 0;}
+.content .img img{ vertical-align:middle;}
+.content p{ font-size:13px; color:#646464; text-indent:30px;}
+
+
+
+/*ad*/
+.ad{ margin:20px auto;}

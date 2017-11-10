@@ -1,0 +1,95 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+.banner{ border-top:1px solid #9a9a9a; border-bottom:1px solid #9a9a9a;}
+
+/*nav*/
+nav ol{ margin-top:20px;}
+nav li{ float:left; margin:0 9px;}
+nav li p{ font-size:1.4rem; color:#333333; text-align:center; margin-top:8px;}
+nav li img{ width:62px; height:62px; transition:1s;}
+
+/*protect*/
+.protect dl{ margin:15px 0; padding-bottom:15px; border-bottom:1px dashed #9a9a9a;}
+.protect dt{ padding:4px;}
+.protect dl:nth-of-type(1) dt{ background:#f39fb3;}
+.protect dl:nth-of-type(2) dt{ background:#f19f88;}
+.protect dl:nth-of-type(3) dt{ background:#e68ab1;}
+.protect dl:nth-of-type(4) dt{ background:#87e2cc;}
+.protect dl:nth-of-type(5) dt{ background:#a0afed;}
+.protect dt em{ width:50px; height:50px; text-align:center; line-height:50px; color:#fff; font-size:1.4rem; border:1px dashed #fff;}
+.protect dd{ width:248px;}
+.protect dl:nth-of-type(2) dd{ margin-top:7px;}
+.protect dd h2{ font-size:1.6rem; color:#d33c60; margin-bottom:0.4rem;}
+.protect dd p{ font-size:1.2rem; color:#333333; line-height:2rem;}
+.protect h5{ font-size:1.4rem; color:#333333; text-align:center; margin-top:8px;}
+
+/*adverse*/
+.adverse p{ font-size:1.4rem; line-height:24px; text-indent:24px; padding:0 6px; margin-bottom:30px;}
+.adverse .black_line{ height:1px; background:#000; margin:20px 0;}
+.adverse .btns{ margin-top:20px;}
+
+/*reliable*/
+.reliable .tils{ height:56px; background:#ee7090; margin-bottom:20px;}
+.reliable .tils h2{ height:38px; line-height:38px; font-size:26px; color:#fff; text-align:center;}
+.reliable .tils h3{ height:18px; background:url(../images/victory.png) center center no-repeat;}
+.reliable p{ font-size:1.4rem; color:#333333; border-bottom:1px dotted #9a9a9a; line-height:26px; text-align:center;}
+.reliable .noBb{ text-align:left; text-indent:14px;}
+.reliable .reliable_img{ display:block; margin:14px auto 0; border:1px solid #9a9a9a;}
+.reliable .btns{ margin:20px auto;}
+
+/*trust*/
+.trust img{ display:block; margin:0 auto;}
+.trust h2{ font-size:16px; line-height:26px; color:#fff; background:#c5254d; margin-bottom:2px; padding-left:6px;}
+.trust h3{ font-size:20px; line-height:34px; color:#fff; background:#c5254d; margin-bottom:20px; padding-left:6px;}
+.trust p{ text-indent:24px; font-size:1.4rem; color:#333333; line-height:26px;}
+.trust p:nth-child(3){ margin-bottom:10px;}
+.trust p:nth-child(6){ margin-top:10px;}
+.trust .btns{ margin-top:20px;}
+.trust .btns img{ display:inline-block;}
+.trust ul{ margin-bottom:20px; padding:0 7px; background:url(../images/trust_bg.jpg) center center no-repeat;}
+.trust ul li{ width:104px; font-size:1.4rem; color:#c5254d; float:left; padding-left:44px; line-height:37px; margin-bottom:10px;}
+.trust ul li:nth-child(even){ float:right;}
+
+/*notice*/
+.notice h2{ font-size:1.4rem; color:#333333; margin-bottom:6px;}
+.notice h2:nth-of-type(2){ margin-top:20px;}
+.notice dl{ padding:10px; position:relative;}
+.notice dl:nth-of-type(1){ background:#ff6035;}
+.notice dl:nth-of-type(2){ background:#df2473;}
+.notice p{ color:#fff; font-size:1.2rem; line-height:24px;}
+.notice em{ width:15px; text-align:center; height:15px; line-height:15px; background:#fff; vertical-align:middle; color:#ff6035; border-radius:50%; margin-right:3px;}
+.notice dl:nth-of-type(2) p:nth-of-type(2) em{ background:none;}
+.notice dt{ position:absolute; right:10px; top:15px; border-radius:50%; overflow:hidden;}
+
+/*footer*/
+footer a{ display:block; font-size:16px; text-align:center; color:#fff; height:46px; line-height:46px; border-radius:10px;}
+footer a p:nth-of-type(1){ font-size:14px; line-height:18px; padding-top:4px;}
+footer a p:nth-of-type(2){ font-size:18px; line-height:20px;}
+footer a:nth-of-type(1){ background:#d55675; margin:30px 0 10px;}
+footer a:nth-of-type(2){ background:#ff9900; margin-bottom:30px;}
+footer h3{ line-height:24px; text-align:center; font-size:14px; color:#444444;}
+footer h3:last-child{ margin-bottom:80px;}
+
+/*common*/
+.til{  width:320px; margin:30px auto 20px;}
+.til dl{ color:#c5254d; border-bottom:1px solid #c5254d;}
+.til dt{ float:left; font-size:20px; height:28px; line-height:28px; border-bottom:3px solid #c5254d; margin:0 6px -2px 0;}
+.til dd{ float:left; font-size:16px; height:28px; line-height:28px;}
+.noBb{ border-bottom:none !important;}
+.noMb{ margin-bottom:0 !important;}
+.btns{ display:block; height:44px; line-height:44px; width:186px; text-align:center; font-size:1.6rem; background:#ff5a00; color:#fff; border-radius:10px; margin:0 auto;}
+
+
+
+
+
+
+
+
+

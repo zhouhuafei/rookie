@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+var a=1;
+console.log(typeof a);
+console.log(Object.prototype.toString());
+console.log(Object.prototype.toString.call(a).slice(8,-1));
+//查看对象的类属性;
+console.log('--------------查看对象的类属性----------------');
+function classOf(obj){
+	if(obj===null){ return 'Null';}
+	if(obj===undefined){ return 'Undefined';}
+	return Object.prototype.toString.call(obj).slice(8,-1);
+}
+console.log(classOf(null));
+console.log(classOf(undefined));
+console.log(classOf('str'));
+console.log(classOf(1));
+console.log(classOf(true));
+console.log(classOf([]));
+console.log(classOf({}));
+console.log(classOf(function(){}));
+console.log(classOf(/./));
+function F(){};
+console.log(classOf(new F));
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>helper</title>
+</head>
+<body>
+<ul>
+	<li>我</li>
+	<li>爱</li>
+	<li>你</li>
+	<li>中</li>
+	<li>国</li>
+</ul>
+</body>
+</html>
+<script>
+var aLi=document.querySelectorAll('li');
+var iLen=aLi.length;
+function helper(num){
+	return function(){
+		aLi[num].innerHTML=num;
+	}	
+}
+for(var i=0;i<iLen;i++){
+	aLi[i].onclick=helper(i);
+}		
+</script>

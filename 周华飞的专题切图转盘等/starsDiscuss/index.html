@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>starsDiscuss</title>
+<link rel="stylesheet" href="css/base.css" />
+<script>
+window.onload=function(){
+	starsDiscuss('starsDiscuss');
+}
+function starsDiscuss(id){
+	var obj=document.getElementById('starsDiscuss');
+	obj.style.cssText="text-align:center;height:19px;";
+	var cssLig=function(obj){obj.style.cssText="width:23px; height:19px; float:left; background:url(images/starsDiscuss.png) 2px top no-repeat;";}
+	var cssLiy=function(obj){obj.style.cssText="width:23px; height:19px; float:left; background:url(images/starsDiscuss.png) 2px -28px no-repeat;";}
+	var now=0;
+	var clickNow=null;
+	/*创建星星盒子*/
+	var oUl=document.createElement('ul');
+	oUl.style.cssText="display:inline-block; vertical-align:middle;";
+	/*创建星星*/
+	for(var i=0;i<5;i++){
+		var oLi=document.createElement('li');
+		oUl.appendChild(oLi);
+		cssLig(oLi);
+	}
+	obj.appendChild(oUl);
+	/*创建分数*/
+	var oSpan=document.createElement('span');
+	oSpan.innerHTML='0分';
+	oSpan.style.cssText='margin-left:10px; width:30px; height:17px; text-align:center; font-size:12px; color:#f00; line-height:17px; border:1px solid #dcdcdc; vertical-align:middle;';
+	obj.appendChild(oSpan);
+	/*给全部星星加事件*/
+	var aLi=document.getElementsByTagName('li');
+	var iLen=aLi.length;
+	for(var i=0; i<iLen;i++){		
+		aLi[i].index=i;
+		/*给星星加滑入事件*/
+		aLi[i].onmouseover=function(){
+			now=this.index;
+			oSpan.innerHTML=(now+1)+'分';
+			for(var i=0; i<iLen;i++){
+				/*进行一次判定*/
+				if(now>=i){
+					cssLiy(aLi[i]);
+				}else{
+					cssLig(aLi[i]);	
+				}
+			}
+			
+		}
+		/*当星星被点击时进行标记*/
+		aLi[i].onclick=function(){
+			clickNow=now;
+		}		
+		/*给星星加滑出事件*/
+		aLi[i].onmouseout=function(){
+			/*滑出前是否进行了点击*/	
+			if(clickNow!=null){
+				oSpan.innerHTML=(clickNow+1)+'分';
+				for(var i=0; i<iLen;i++){
+					/*进行二次判定*/
+					if(clickNow>=i){
+						cssLiy(aLi[i]);	
+					}else{
+						cssLig(aLi[i]);		
+					}
+				}
+								
+			}else{
+				oSpan.innerHTML='0分';
+				for(var i=0; i<iLen;i++){
+					cssLig(aLi[i]);	
+				}				
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="starsDiscuss"></div>
+</body>
+</html>

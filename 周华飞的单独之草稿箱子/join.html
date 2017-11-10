@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+var str='howareyou';					//split()  把字符串分割成数组									
+/*
+alert(str.split());					//返回值是['howareyou']
+alert(typeof str.split());				//返回值的类型是object
+alert(typeof str)					//string 字符串本身并没有变化
+*/
+/*
+alert(str.split(''));					//返回值是['h','o','w','a','r','e','y','o','u']
+alert(typeof str.split(''));
+alert(typeof str)
+*/
+/*
+alert(str.split('',3));					//返回值是['h','o','w']
+alert(typeof str.split('',3));	
+alert(typeof str);
+*/
+
+var arr=['h','o','w','a','r','e','y','o','u'];
+/*				   
+alert(arr.join());					//join   把数组分割链接成字符串 	此处返回值'h,o,w,a,r,e,y,o,u'
+alert(typeof arr.join());				//string 返回值的类型是string
+alert(typeof arr);					//object 数组本身并没有改变		
+*/
+/*
+alert(arr.join(''));					//返回值是'howareyou'
+alert(typeof arr.join(''));
+alert(typeof arr);
+*/
+/*
+alert(arr.join('-'));					//返回值是'h-o-w-a-r-e-y-o-u'
+alert(typeof arr.join('-'));
+alert(typeof arr);
+*/
+	
+//alert(arr.splice(0,1));				//splice()  数组的万能操作	两个参数：这里表示从第0个删除1个,并返回删除的那个数组			
+//alert(arr.splice(0,2));				//splice()  数组的万能操作	两个参数：这里表示从第0个删除2个,并返回删除的那个数组
+/*
+alert(arr.splice(0,0,'我','了','个','去'));		//只返回删除的那个数组,没有删除就返回空
+alert(arr);						//数组经过splice(0,0,'我','了','个','去')后变成了['我','了','个','去','h','o','w','a','r','e','y','o','u']
+*/
+/*
+var arr=['9','88','7',88,'6','5','4','3','2','1'];
+var a=arr.splice(0,1);				//返回值是一个数组对象['9']
+var b=arr.splice(0,2);				//返回值是一个数组对象['88','7']	因为arr.splice(0,1)把数组的第一位删除了，于是'88'成为了数组的第一位
+alert(a);					//['9']
+alert(b);					//['88,7']
+alert(a+b);					//因为返回值是对象,虽有通过+号进行了隐式类型转换，转换为字符串，再进行字符串连接，结果为字符串'988,7'
+alert(typeof (a+b));				//string
+alert(typeof a);				//onject
+alert(typeof b);				//object
+alert(a>b);					//虽然a和b都是数组对象，但是通过小于号进行了隐式类型转换，转换为了字符串，再进行了比较，比较的是ASCLL码值 结果为true
+var c=arr.splice(0,1);				//返回值是数组对象[88]
+alert(c);					//[88]
+alert(typeof c);				//object
+alert(a>c);					//先转换为字符串再进行比较（字符串的比较是一位一位的进行比较'9'的ASCLL码值大于'8'）	true
+alert(20>c);					//小于号和大于号在比较的时候偏爱数字，所以会转换为数字再进行比较			false
+*/
+</script>
+</body>
+</html>

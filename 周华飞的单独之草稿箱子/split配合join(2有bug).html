@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>splitAndJoin(2有bug)</title>
+<style>
+body div span{ margin:0; padding:0;}
+div{ width:200px; margin:0 auto;}
+span{ display:inline-block; font-size:18px; color:#000; width:40px; height:40px; text-align:center; line-height:40px; vertical-align:middle;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementById('div');
+	var oTxt=document.getElementById('txt');
+	var oBtn=document.getElementById('btn');
+	var arrColor=['red','yellow','blue','green','orange','grey',];
+	var str='';
+	var strs='';
+	oBtn.onclick=function()
+	{
+		str=oTxt.value;
+		for(var i=0; i<str.length;i++)
+		{
+			strs+='<span style="background:'+arrColor[i%arrColor.length]+';">'+str.charAt(i)+'</span>';	
+		}
+		oDiv.innerHTML=strs;
+	}	
+}
+</script>
+</head>
+
+<body>
+<input id="txt" type="text" />
+<input id="btn" type="button" value="splitAndJoin" />
+<div id="div"></div>
+</body>
+</html>

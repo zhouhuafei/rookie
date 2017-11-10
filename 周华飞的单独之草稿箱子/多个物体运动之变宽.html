@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+div{ width:100px; height:50px; background:#F00; margin-top:20px;line-height:50px; text-align:center; color:#FFF; text-shadow:#000 1px 1px 1px;}
+/*加border和padding会出bug,解决方法一：就是加parseInt(getStyle(obj,name)请看案例offsetBug或者解决方法二：例如：加了border:1px solid red;和padiing:10px;则在设置下面样式的时候，要减去padding和border大小，即obj.style.width=obj.offsetWidth-2-20+speed+'px';;)*/
+</style>
+<script>
+/*window.onload=function()
+{
+	var aDiv=document.getElementsByTagName('div');
+	for(i=0;i<aDiv.length;i++)
+	{
+		aDiv[i].onmouseover=function()
+		{
+			this.style.width='300px';	
+		}
+		aDiv[i].onmouseout=function()
+		{
+			this.style.width='100px';	
+		}
+	}
+}*/
+window.onload=function()
+{
+	var aDiv=document.getElementsByTagName('div');
+	for(i=0;i<aDiv.length;i++)
+	{
+		aDiv[i].timer=null;
+		aDiv[i].onmouseover=function()
+		{
+			startMove(this,300);	
+		}
+		aDiv[i].onmouseout=function()
+		{
+			startMove(this,100);	
+		}
+	}
+}
+function startMove(obj,iTarget)
+{
+	
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function()
+	{
+		var speed=(iTarget-obj.offsetWidth)/6;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(obj.offsetWidth==iTarget)/*我认为if...else是多余的，只要这obj.style.width=obj.offsetWidth+speed+'px';	一句话就可以了，因为speed为0时，再次触发事件，div也不会发生变化！*/
+		{
+			clearInterval(obj.timer);	
+		}
+		else
+		{
+			obj.style.width=obj.offsetWidth+speed+'px';	
+		}
+		document.title=obj.offsetWidth;	
+	},30);
+	
+}
+</script>
+</head>
+
+<body>
+<div>周</div>
+<div>华</div>
+<div>飞</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>ie(detect1)</title>
+<script>
+//if(!window.innerWidth){alert('ie6,ie7,ie8不支持window.innerWidth')}		//ie6,ie7,ie8
+//if(!window.innerHeight){alert('ie6,ie7,ie8不支持window.innerHeight')}		//ie6,ie7,ie8
+
+
+
+
+
+
+
+//if(document.all){alert('ie6,ie7,ie8,ie9,ie10,ie11兼容模式支持document.all')}		//ie6,ie7,ie8,ie9,ie10,ie11兼容模式
+
+
+
+
+
+//if(!document.getSelection){alert('ie6,ie7,ie8不支持document.getSelection')};
+function returnText(){return document.getSelection?document.getSelection().toString():document.selection.createRange().text;}	//获取选中文本
+document.onmouseup=function(){
+	alert(returnText());
+}
+
+
+
+
+//alert(-[1,])	//ie6,ie7,ie8==>NAN
+//alert(!-[1,])	//ie6,ie7,ie8==>true
+
+
+
+
+//var ie=!-[1,];	//ie6,ie7,ie8
+//if(ie){alert('ie6,ie7,ie8')}
+
+
+
+
+//确定某对象的确切类型
+var obj=[];
+alert(Object.prototype.toString.call(obj));
+alert(Object.prototype.toString.call(obj).slice(8,-1));
+</script>
+</head>
+<body>
+<!--ie10以及以上-->
+<!--<input placeholder="123456">-->
+用鼠标选中你想选中的文字
+</body>
+</html>

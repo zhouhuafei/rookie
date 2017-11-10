@@ -1,0 +1,82 @@
+<style>
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+/*header*/
+#header{ height:122px; background:url(images/header.jpg) center center no-repeat;}
+/*headerNav*/
+#headerNav{ background:#0063b4;}
+#headerNav ul{ width:1008px; margin:0 auto;}
+#headerNav li{ float:left;}
+#headerNav a{ width:112px; text-align:center; height:56px; line-height:56px; font-size:18px; color:#fff; display:block;}
+#headerNav .navHot{ background:url(images/nav_hot.gif) 98% 6% no-repeat;}
+#headerNav .active{ background:#013b6b;}
+</style>
+<!--header-->
+<div id="header"></div>
+<!--headerNav-->
+<div id="headerNav">
+	<ul class="clearFix">
+        	<li class="active"><a href="/" target="_blank">首 页</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">医院简介</a></li>
+        	<li><a href="/zt/guchanglin/" target="_blank">权威专家</a></li>
+        	<li><a class="navHot" href="/zt/tslf" target="_blank">特色疗法</a></li>
+        	<li><a class="navHot" href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">媒体报道</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">典型案例</a></li>
+        	<li><a class="navHot" href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">仪器设备</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">来院路线</a></li>
+        	<li><a href="javascript:void(0);return false;" onclick="openZoosUrl();return false;" target="_blank">在线预约</a></li>
+        </ul>
+</div>
+<script>
+/*tabSwitch*/
+function tabSwitch(aBtn,aCut,bFalse){
+	var now=0;
+	var timer=null;
+	for(var i=0,len=aBtn.length; i<len;i++){
+		aBtn[i].index=i;
+		aBtn[i].onmouseover=function(){
+			now=this.index;
+			tab();
+		}			
+	}
+	function tab(){	
+		for(var i=0,len=aBtn.length; i<len;i++){
+			aBtn[i].className='';
+			aCut&&(aCut[i].className='');	
+		}
+		aBtn[now].className='active';
+		aCut&&(aCut[now].className='active');			
+	}
+	if(bFalse){
+		function next(){
+			now++;
+			now%=aBtn.length;
+			tab();	
+		}
+		timer=setInterval(next,6000);
+		aCut[0].parentNode.onmouseover=function(){clearInterval(timer);}
+		aCut[0].parentNode.onmouseout=function(){timer=setInterval(next,6000);}
+	}
+}
+/*headerNav*/
+$(function(){
+	var aBtn=$('#headerNav li');
+	tabSwitch(aBtn);	
+})
+</script>

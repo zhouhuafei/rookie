@@ -1,0 +1,31 @@
+﻿//JavaScript Document
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*createHtml5Element*/
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('article');
+document.createElement('footer');
+document.createElement('aside');
+document.createElement('video');
+document.createElement('audio');
+var r=new Rookie();
+r.version();
+r.addEvent(window,'load',function(){
+	/*nav*/
+	r.flowNav({obj:"#navMain",child:"#navMain li",target:".target"});	
+	/*til*/
+	r.sliderTil({aTil:".tils",oParent:".til"});
+	/*type*/
+	r.tabSwitch({aBtn:"#type ol li",aCut:"#type dl"});
+	/*want*/
+	r.tabSwitch({aBtn:"#want ol li",aCut:"#want ul li"});
+	/*effect*/
+	r.tabSwitch({aBtn:"#effect ol li",aCut:"#effect ul li",bAutoPlay:true});
+	/*expert*/
+	r.tabSwitch({aCut:"#expert ul li",oPrev:"#expert .prev",oNext:"#expert .next"});
+})

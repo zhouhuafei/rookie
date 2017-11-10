@@ -1,0 +1,45 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ text-align:center;}
+#banner a{ display:inline-block;}
+
+.tip{ font-size:12px; line-height:24px; color:#fff; background:#2b81cb;}
+.tip dt{ margin:0 10px;}
+.tip dd{ text-indent:30px; width:264px; padding:10px 0;}
+
+.reason h2.tils{ font-size:14px; color:#fff; width:134px; text-align:center; height:23px; line-height:24px; background:url(../images/tils.jpg) center center no-repeat;}
+.reason dl{ margin-top:40px;}
+.reason dd h2{ margin:20px 0;}
+.reason dd p{ font-size:12px; color:#666666; line-height:24px;}
+.reason dd i{ color:#006db8;}
+
+.contagion dl{ margin-bottom:20px; margin-top:0;}
+.contagion dt{ margin-bottom:10px;}
+.contagion .btn{ margin-top:0;}
+
+.com05{padding:0 10px;margin-top:20px;}
+.com05 ul li{width:144px;height:240px;border:1px solid #dbdbdb;margin:10px 2px;float:left;}
+.com05 ul li dl{padding:10px 5px 0 5px;}
+.com05 ul li dl dt{margin-bottom:6px;}
+.com05 ul li dl dt img{ vertical-align:middle;margin-right:6px;float:left;}
+.com05 ul li dl dt p{font-size:12px;line-height:16px;color:#666;width:113px;float:left; vertical-align:middle;}
+
+.com06{width:320px;margin:0 auto;margin-bottom:20px;}
+.com06 ul li{width:314px;height:48px;border:1px solid #dadada;margin:2px auto;}
+
+/*common*/
+.btn{ text-align:center; width:84%; margin:20px auto 0;}
+.btn a{ border-radius:5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; width:46%;}
+.btn a:last-child{ background:#f96300;}
+.btn em{ vertical-align:middle; margin-right:10px;}
+.til{ margin:40px 0 20px; position:relative;}
+.til h2{ padding-left:10px; margin-left:33px; color:#006db8; font-size:24px; font-weight:bold; padding-bottom:4px; border-bottom:1px solid #006db8;}
+.til em{ position:absolute; left:0; bottom:-14px;}
+
+

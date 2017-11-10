@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>move2</title>
+<style>
+div{ width:200px; height:200px; background:#f00; position:absolute; left:0; top:0;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	var oDiv=document.querySelectorAll('div')[0];
+	move(oDiv,'left',500,function(){
+		move(oDiv,'top',500,function(){
+			move(oDiv,'left',800);	
+		});
+	});
+},false)
+function getStyle(obj,attr){return obj.currentStyle?obj.currentStyele[attr]:getComputedStyle(obj,false)[attr];}
+function move(obj,attr,iTarget,fn){
+	var cur=null;
+	var speed=0;
+	obj.timer=null;
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		cur=(attr=='opacity')?Math.round(parseFloat(getStyle(obj,attr))*100):parseInt(getStyle(obj,attr));
+		speed=(iTarget-cur)/10;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		if(cur==iTarget){
+			clearInterval(obj.timer);
+			fn&&fn();
+		}else{
+			if(attr=='opacity'){
+				obj.style.opacity=(cur+speed)/100;			
+				obj.style.fillter='alpha(opacity:'+(cur+speed)+')';
+			}else{
+				obj.style[attr]=cur+speed+'px';
+			}				
+		}
+	},30)	
+}
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

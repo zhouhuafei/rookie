@@ -1,0 +1,70 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ position:relative;}
+#banner .hd{ position:absolute; left:0; bottom:0; width:100%; text-align:center;}
+#banner .hd li{ width:14.0625%; height:3px; background:#444444; display:inline-block; margin:5px 2px;}
+#banner .hd li.on{ background:#1364b6;}
+
+
+/*til*/
+.til{ background:#1364b6; font-size:2.8rem; color:#fff; text-align:center; line-height:1.6; margin:9% 0 4%;}
+.til.one{ margin-top:3%;}
+
+/*contents*/
+#contents{ width:96.875%; margin:0 auto; overflow:hidden;}
+
+/*type*/
+#type li{ float:left; width:24%; border:1px solid #eeeeee; box-sizing:border-box; text-align:center; font-size:2.4rem; color:#1364b6; margin:0 0.5%; padding:2% 0 4%; border-radius:50%;}/*media*/
+#type em{ width:40%;}
+
+
+
+
+/*zixun*/
+.zixun{text-align:center;margin:30px 0px;}
+.zaixian{display:inline-block;width:110px;line-height:30px;background:#1364b6;text-align:center;border-radius:4px;margin-right:10px;}
+.zaixian img{ vertical-align:middle;margin-right:5px; width:auto; height:auto;}
+.zaixian i{color:#fff;vertical-align:middle; font-size:16px;}
+.zaixian02{background:#ff8400;margin:0;}
+
+
+
+
+
+
+/*night*/
+#night{ margin:2% 0 1.6% 0;}
+
+/*tils*/
+#tils{ background:#1364b6; font-size:2.8rem; color:#fff; text-align:center; line-height:1.6;}
+
+/*forms*/
+#forms{ color:#666666; border:1px solid #1264b7; padding:1.5%; font-size:2.4rem;}
+#forms h2{ line-height:1.6;}
+#forms em{ margin-right:1.5%;}
+#forms i{ color:#f20000;}
+#forms form{ margin-top:3%;}
+#forms div.clearFix{ margin-bottom:4.8%;}
+#forms label[for='man'],#forms label[for='woman']{ width:auto; padding:0 5px;}
+#forms label{ width:21%; text-align:right; line-height:1.6;}
+#forms input[type='tel'],#forms input[type='text'],#forms textarea{ width:79%; border:1px solid #d6d6d6; font-size:2.4rem; text-indent:10px; line-height:1.6; box-sizing:border-box;}
+#forms input[type='submit']{ background:#fa9a00; line-height:1.6; font-size:2.4rem; text-align:center; width:180px; color:#fff;}
+#forms div.submit{ margin-bottom:4.8%; text-align:center;}
+
+/*footer*/
+#footer{ padding: 4.6875% 1.5625% 12.8125% 1.5625%; background:#0068af; margin-top:3.125%; font-size:2.4rem; color:#fff; text-align:center; line-height:2.7;}
+#footer div{ margin-top:3%; padding-top:3%; border-top:2px solid #fff;}
+
+/*fixedNav*/
+#fixedNav{width:100%;height:40px;position:fixed; left:0; bottom:0px;}
+#fixedNav img{ width:auto; height:auto; margin-right:5px;}
+#fixedNav a{display:block;height:40px;line-height:40px;overflow:hidden;font-size:14px;text-align:center;color:#fff;text-decoration:none;float:left;position:relative;}
+#fixedNav a.phone{width:33%;background:#368ce1;}
+#fixedNav a.home{width:34%;background:#F4C628;}
+#fixedNav a.message{width:33%;background:#368ce1;}

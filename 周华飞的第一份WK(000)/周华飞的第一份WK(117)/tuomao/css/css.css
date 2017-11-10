@@ -1,0 +1,138 @@
+@charset "gb2312";
+/* CSS Document */
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px!important; font-family:"Î¢ÈíÑÅºÚ"!important;}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.bg_green{ background:#effeff; overflow:hidden;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat #000;}
+.banner div{ position:relative; height:771px;}
+.banner a{ width:170px; height:50px; position:absolute; right:170px; bottom:290px;}
+.banner p{ width:800px; font-size:14px; color:#fff; line-height:30px; position:absolute; bottom:60px; left:120px; text-indent:30px;}
+.banner strong{ text-indent:0;}
+.banner strong.s1{ width:18px; height:17px; position:absolute; left:0; top:6px;}
+.banner strong.s2{ width:19px; height:18px; position:absolute; bottom:10px; right:0;}
+
+/*nav*/
+#scroll_nav{ width:96px; color:#fff; z-index:9999;  position:absolute; top:135px; right:5px;}
+#scroll_nav h2{ background:url(../images/scrool_h2.png) no-repeat center top; width:93px; height:37px; line-height:33px; color:#fff; font-size:16px; font-weight:normal; text-align:center;}
+#scroll_nav ul li {height:33px; line-height:33px;width: 84px; color:#fff; font-size:12px; font-family:Î¢ÈíÑÅºÚ; background:#44a2ab;margin:2px 0; padding-left:10px;}
+#scroll_nav ul li.dif{ background:#84bbc0;}
+#scroll_nav a {color: #FFFFFF;display: block; text-decoration: none; height:33px; line-height:33px;}
+#scroll_nav { left:5px; right:auto; }
+#scroll_nav ul li { padding:0; text-align:center; width:93px; }
+
+/*trouble*/
+.trouble{ width:1005px; margin:0 auto 60px;}
+
+/*try*/
+.try{ padding-bottom:60px;}
+.try a{ float:left;}
+.try a.mg{ margin:0 45px;}
+.try img{ transition:1s;}
+.try .img{ position:absolute; left:0; top:0;}
+.try .imgs{ position:absolute; left:0; top:0; opacity:0; transform:rotatey(180deg); -webkit-transform:rotatey(180deg);}
+.try div{ transition:1s; position:relative; width:303px; height:303px; prespective:200px; transform-style:preserve-3d;}
+.try a:hover div{ transform:rotatey(180deg); -webkit-transform:rotatey(180deg);}
+.try a:hover .img{ opacity:0;}
+.try a:hover .imgs{ opacity:1;}
+
+/*stop*/
+.stop{ margin:0 auto 60px; width:998px; padding:0 1px;}
+.stop div{ float:left; margin-right:34px; position:relative; overflow:hidden;}
+.stop p{ transition:0.4s; position:absolute; left:0; top:-167px; width:184px; height:127px; background:rgba(0,0,0,0.6); color:#fff; padding:20px; font-size:15px; line-height:28px;}
+.stop a:hover p{ top:0;}
+.stop h2{ width:184px; margin-top:10px; padding-left:40px; font-size:18px; line-height:30px; color:#000; position:relative;}
+.stop em{ width:27px; height:27px; text-align:center; line-height:27px; color:#fff; font-size:22px; border-radius:50%; position:absolute; left:5px; top:0;}
+.stop .em1{ background:#ff6c00;}
+.stop .em2{ background:#1bc38a;}
+.stop .em3{ background:#b87fff;}
+.stop .em4{ background:#1e8df3;}
+
+/*equipment*/
+.equipment{ padding-bottom:60px;}
+.equipment dd{ width:600px;}
+.equipment h2{ display:inline-block; padding:0 20px; margin:60px 0 36px; line-height:50px; font-size:35px; color:#fff; background:#149c8e;}
+.equipment p{ line-height:24px; margin-bottom:24px; font-size:18px; color:#080808;}
+.equipment p img{ margin-left:10px;}
+.equipment strong{ background:#9b9b9b; margin-right:4px; color:#fff; padding:0 4px;}
+
+/*expert*/
+.expert { position:relative; }
+.expert .bd { height:610px; overflow:hidden; }
+.expert dl { overflow:hidden; clear: both; width:100%; height:610px; }
+.expert dl dt { float:left; }
+.expert dl dd { float:right; width:520px; color:#151515; }
+.expert dl dd h3 { font-size:16px; line-height:25px; text-transform:uppercase; font-weight:normal; padding:7px 0 22px; }
+.expert dl dd h3 em { font-size:26px; line-height:25px; display:block; padding-top:1px; }
+.expert dl dd h2 { font-size:58px; line-height:58px; font-weight:normal; padding-bottom:10px; }
+.expert dl dd p { line-height:32px; font-size:16px; font-family:"Î¢ÈíÑÅºÚ"; padding:0; }
+.expert dl dd .p2 { font-size:14px; line-height:30px; padding-top:9px; }
+.expert .hd { position:absolute; bottom:0; right:0; }
+.expert .hd ul { overflow:hidden; }
+.expert .hd li { float:left; width:97px; margin:0 35px; display:inline; padding-top:8px; cursor:pointer; }
+.expert .hd li img { padding:8px; border-radius:97px; background:#fff; text-align:center; box-shadow:0px 0px 5px 5px #d4d4d4; }
+.expert .hd li em { font-size:16px; line-height:24px; padding-top:9px; display:block; }
+
+/*other*/
+.jpxm {
+	width:965px;
+	margin:0 auto;
+	height:137px;
+}
+.jpxm li {
+	float:left;
+	padding:15px 0 0 0;
+	margin:0 0 0 8px;
+	display:inline;
+}
+.jpxm li a {
+	background:#fff;
+	border:1px #fff solid;
+	padding:2px;
+	display:block;
+	box-shadow:0 0 4px rgba(0, 0, 0, .2);
+	float:left;
+}
+.jpxm li a:hover {
+	background:#2fc8bd;
+}
+.jpxm { width:100%; }
+.jpxm ul { padding-top:15px; }
+.jpxm li { padding:0; border:1px #fff solid;}
+.jpxm li a { padding:0; border:none; }
+.jpxm .backgrd { border:1px solid #2ebfb5; padding:0; }
+
+/*common*/
+@font-face{ font-family:fzht; src:url('../font/·½ÕýºÚÌå¼òÌå.TTF');}
+@font-face{ font-family:back; src:url('../font/baskoldface.ttf');}
+.til{ width:1000px; margin:60px auto; text-align:center; font-family:"back" !important; font-size:36px; color:#000000; position:relative; padding-bottom:24px; border-bottom:1px solid #cbcbcb;}
+.til span{ font-family:"fzht" !important; font-size:33px; color:#0092a0; margin-bottom:-44px; background:#fff; padding:0 10px;}
+.bg_green .til span{ background:#effeff;}
+.noMr{ margin-right:0 !important;}
+
+
+
+
+
+
+
+
+
+

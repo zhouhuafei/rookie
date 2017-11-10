@@ -1,0 +1,73 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+.banner{ margin-top:20px;}
+
+/*type*/
+.type dl{ margin-bottom:10px;}
+.type dl:nth-of-type(1){ border:1px solid #943634; background:#943634;}
+.type dl:nth-of-type(2){ border:1px solid #00b050; background:#00b050;}
+.type dl:nth-of-type(3){ border:1px solid #76923c; background:#76923c;}
+.type dl:nth-of-type(4){ border:1px solid #ff9900; background:#ff9900; margin-bottom:0;}
+.type dd{ width:164px; padding:0 5px 0 10px; color:#fff;}
+.type h2{ font-size:1.8rem; line-height:1.8rem; margin:1rem 0;}
+.type p{ font-size:1.4rem; line-height:2rem; text-indent:20px;}
+
+/*reason*/
+.reason dl{ margin-bottom:1.5rem;}
+.reason dt{ width:102px; text-align:center; height:3.8rem; line-height:3.8rem; border:1px solid #d33b61; color:#d33b61; background:#ffcdda; border-radius:6px; font-size:1.6rem;}
+.reason dd{ height:3.9rem; border-bottom:1px solid #d33b61; width:190px; color:#333333; line-height:1.8rem; font-size:1.4rem;}
+
+/*harm*/
+.harm dl{ border:1px solid #d5d5d5; margin:0 6px 10px 0;}
+.harm dt{ padding:3px 5px;}
+.harm dd{ height:2.2rem; line-height:2.2rem; color:#fff; font-size:1.4rem; background:#d22a54; text-align:center; border-radius:6px;} 
+
+/*check*/
+.check dl{ margin-bottom:10px; padding:5px 10px;}
+.check dl:nth-of-type(1){ border:none; background:#bc7ab8;}
+.check dl:nth-of-type(2){ border:none; background:#79b4bc;}
+.check dl:nth-of-type(3){ border:none; background:#7c7dbd;}
+.check dd{ width:170px; padding:0;}
+
+/*method*/
+.method p{ font-size:1.4rem; line-height:2.4rem; color:#333333;}
+.method span{ color:#d22a54;} 
+.method .img{ text-align:center;}
+.method .img img{ margin-top:20px;}
+.method .img .m3{ width:300px;}
+.method dl{ margin:10px 6px 0 0; border:1px solid #d5d5d5;}
+.method div.clearFix{ margin-top:10px;}
+.method dd{ text-align:center; height:26px; line-height:26px; color:#fff; background:#c5254d; font-size:18px;}
+
+/*share*/
+.share dt{ border:1px solid #d5d5d5;}
+.share h2{ font-size:1.8rem; line-height:1.8rem; color:#c5254d; text-align:center; margin:1.4rem 0 1rem;}
+.share p{ font-size:1.4rem; line-height:2.4rem; color:#333333;}
+
+/*atttion*/
+.attention a{ color:#fff; height:40px; line-height:40px; font-size:1.5rem; float:left; background:#000; margin:0 5px 5px 0; text-align:center;}
+.attention a:hover{ color:#f00;}
+.attention a:nth-of-type(1){ width:155px; background:#ffc000;}
+.attention a:nth-of-type(2){ width:140px; background:#92d050; margin-right:0;}
+.attention a:nth-of-type(3){ width:100%; background:#00b050; margin-right:0;}
+.attention a:nth-of-type(4){ width:185px; background:#57e171;}
+.attention a:nth-of-type(5){ width:110px; background:#bc7ab7; margin-right:0;}
+.attention a:nth-of-type(6){ width:105px; background:#eaa150; margin-bottom:0;}
+.attention a:nth-of-type(7){ width:190px; background:#00b0f0; margin:0;}
+
+/*common*/
+.til{ text-align:center; padding-top:20px; margin:20px 0; border-top:1px dashed #666666;}
+.til dt{ display:inline-block; width:33px; text-align:center; height:33px; line-height:33px; background:#d22a54; font-size:3.2rem; border-radius:50%; color:#fff; vertical-align:middle;}
+.til dd{ display:inline-block; vertical-align:middle; text-align:left;}
+.til h2{ font-size:2rem; color:#d22a54;}
+.til p{ text-transform:uppercase; font-size:1.2rem; color:#333333;}
+article{ padding:0 10px;}
+.btns{ text-align:center; margin-top:2rem;}
+.btns a{ font-size:16px; color:#fff; padding:0 10px; height:30px; line-height:30px; background:#ff5a00; border-radius:5px;}
+.btns img{ margin-left:5px;}

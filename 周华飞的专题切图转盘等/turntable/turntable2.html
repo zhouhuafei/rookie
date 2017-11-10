@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="author" content="rookie">
+        <meta name="qq" content="1123486116">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <title>turntable</title>
+        <style>
+                /*zero*/
+                html {
+                        font-size: 62.5%;
+                }
+                body, h1, h2, h3, h4, h5, h6, p, div, ul, ol {
+                        margin: 0;
+                        padding: 0;
+                        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+                }
+                li {
+                        list-style-type: none;
+                }
+                a {
+                        text-decoration: none;
+                        outline: none;
+                        color: inherit;
+                        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+                }
+                span, em, a, i, small, b, strong {
+                        display: inline-block;
+                        font-style: normal;
+                }
+                body {
+                        font-family: "Microsoft YaHei";
+                        background: url("images/bg.jpg");
+                        line-height: 1;
+                }
+                /*container*/
+                div#container {
+                        text-align: center;
+                        position: relative;
+                        background: url("images/star.png") repeat-x;
+                        overflow: hidden;
+                }
+                div#container h1 img {
+                        width: 100%;
+                        max-width: 480px;
+                }
+                /*reward*/
+                div#reward {
+                        position: fixed;
+                        left: 1%;
+                        top: 1%;
+                        font-size: 20px;
+                        color: #eee;
+                        background: rgba(0, 0, 0, 0.5);
+                        width: 140px;
+                        line-height: 40px;
+                        border-radius: 40px;
+                }
+                /*h1*/
+                h1 {
+                        margin-top: 2%;
+                }
+                /*list*/
+                div#list {
+                        font-size: 14px;
+                        color: #fff;
+                        background: rgba(0, 0, 0, 0.8);
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        transition: 0.4s;
+                        -webkit-transition: 0.4s;
+                        height: 0;
+                        overflow: hidden;
+                }
+                div#list.active {
+                        height: 100%;
+                }
+                div#list h2 {
+                        font-size: 18px;
+                        font-weight: normal;
+                        line-height: 8;
+                        border-bottom: 1px solid #fff;
+                        position: relative;
+                }
+                div#list h2:before, div#list h2:after {
+                        content: "";
+                        display: block;
+                        width: 30px;
+                        height: 5px;
+                        border-radius: 5px;
+                        background: rgba(255, 255, 255, 0.6);
+                        position: absolute;
+                        right: 10px;
+                        top: 25px;
+                }
+                div#list h2:before {
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                }
+                div#list h2:after {
+                        transform: rotate(-45deg);
+                        -webkit-transform: rotate(-45deg);
+                }
+                div#list div {
+                        position: relative;
+                }
+                div#list ul {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                }
+                div#list li {
+                        line-height: 40px;
+                        padding: 5px 0;
+                        border-bottom: 1px solid #fff;
+                }
+                div#list i {
+                        float: left;
+                }
+                div#list em {
+                        float: left;
+                        margin: 0 20px;
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                }
+                div#list em img {
+                        width: 100%;
+                        height: 100%;
+                }
+                div#list span {
+                        color: #DF5C59;
+                        float: right;
+                        margin-right: 20px;
+                }
+                div#list li:after {
+                        content: "";
+                        display: block;
+                        height: 0;
+                        overflow: hidden;
+                        clear: both;
+                }
+                /*canvas*/
+                canvas {
+                        border-radius: 50%;
+                        display: block;
+                        margin: 1% auto 2%;
+                }
+                /*btn*/
+                div#btn {
+                        width: 640px;
+                        margin: 0 auto;
+                        text-align: center;
+                        overflow: hidden;
+                }
+                div#btn a {
+                        width: 50%;
+                        background: #ff377c;
+                        font-size: 4rem;
+                        color: #fff;
+                        line-height: 2;
+                        border: 1px solid #eee;
+                        border-radius: 80px;
+                        box-shadow: 0 0 3px #000;
+                }
+                /*media*/
+                @media (min-width: 480px) and (max-width: 639px) {
+                        html {
+                                font-size: 46.875%;
+                        }
+                        div#btn {
+                                width: 100%;
+                        }
+                }
+                @media (min-width: 400px) and (max-width: 479px) {
+                        html {
+                                font-size: 39.0625%;
+                        }
+                        div#btn {
+                                width: 100%;
+                        }
+                }
+                @media (min-width: 320px) and (max-width: 399px) {
+                        html {
+                                font-size: 31.25%;
+                        }
+                        div#btn {
+                                width: 100%;
+                        }
+                }
+        </style>
+</head>
+<body>
+<!--container-->
+<div id="container">
+        <!--reward-->
+        <div id="reward">获奖名单</div>
+        <!-- list-->
+        <div id="list">
+                <h2>已有好多人获奖</h2>
+
+                <div>
+                        <ul>
+                                <!--<li><em><img src="" alt="头像"/></em><i>用户id</i><span>奖品</span></li>-->
+                        </ul>
+                </div>
+        </div>
+        <!--top-->
+        <h1><img src="images/top.png" alt="转盘"/></h1>
+        <!--canvas-->
+        <canvas width="280" height="280">您的浏览器不支持canvas</canvas>
+        <!--btn-->
+        <div id="btn"><a href="">关注我们</a></div>
+</div>
+<!--微信开发接口-->
+<script type='text/javascript' src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js'></script>
+<!--转盘效果实现-->
+<script>
+        //ajax封装
+        function ajax(url, fnSuccess, fnFailure) {
+                var oAjax = new XMLHttpRequest();
+                oAjax.open('GET', url + '?t=' + new Date().getTime(), true);
+                oAjax.send(null);
+                oAjax.onreadystatechange = function () {
+                        if (oAjax.readyState == 4) {
+                                if (oAjax.status == 200) {
+                                        fnSuccess(oAjax.responseText);
+                                } else {
+                                        if (fnFailure) {
+                                                fnFailure(oAjax.status);
+                                        }
+                                }
+                        }
+                }
+        }
+        //ajax调用
+        ajax('data.json', function (res) {
+                var data=JSON.parse(res);
+                console.log(data);//ajax返回的客户数据
+        }, function (res) {
+                alert('错误代码:'+res);//ajax错误代码提示
+        });
+        //转盘系列代码
+        var turntable = {
+                //初始化
+                init: function () {
+                        this.fnEle();//调用获取元素以及控制参数
+                        this.fnTurntable(0);//调用画出转盘
+                        this.fnMove();//调用开始运动
+                        this.fnReward();//调用获奖名单的一系列操作
+                },
+                //获取元素以及控制参数
+                fnEle: function () {
+                        this.container = document.getElementById('container');//容器
+                        this.reward = document.getElementById('reward');//获奖名单
+                        this.rewardList = document.getElementById('list');//获奖名单的数据列表
+                        this.rewardClose = document.getElementById('list').getElementsByTagName('h2')[0];//获奖名单的关闭按钮
+                        this.rewardUl = document.getElementById('list').getElementsByTagName('ul')[0];//获奖名单中用来填充数据的盒子
+                        this.canvas = document.getElementsByTagName('canvas')[0];//canvas
+                        this.content = this.canvas.getContext('2d');//画布环境
+                        this.x = this.canvas.width / 2;//大转盘的圆心x坐标点
+                        this.y = this.canvas.width / 2;//大转盘的圆心y坐标点
+                        this.r = this.canvas.width / 2;//大转盘的圆的半径
+                        this.lineColor = ['#661502', '#9e2800', ['#fff', '#33cc00'], '#f7d102', '#9f4300'];//依次为,第一段线条颜色,第二段线条颜色,第二段线条内圆点颜色,第三段线条颜色,第四段线条颜色
+                        this.lineWidth = [4, 16, 10, 8];//依次为,第一段线条宽度,第二段线条宽度,第三段线条宽度,第四段线条宽度
+                        this.pointNum = 24;//第二段线条内圆点的个数
+                        this.marquee = true;//跑马灯控制参数,true表示停止时为白灯,false表示停止时为绿灯
+                        this.marqueeTiming = 100;//跑马灯间隔,毫秒数
+                        this.marqueeNum = 0;//跑马灯初始值
+                        this.range = 50;//转盘旋转的周期,值越大旋转的越慢且旋转的时间越长,值越小旋转的越快且旋转的时间越短
+                        this.rewardColor = ['#d85b00', '#f7d102'];//中奖区块的区块颜色
+                        this.textColor = ['#fff', '#e5004f'];//中奖区块的文字颜色
+                        this.textSize = [18, 20];//依次为，奖品字体大小，指针内部字体大小
+                        this.guideColor = ['#661502', '#be2400', '#f7d102'];//依次为,指针的颜色(也是小圆的边框颜色),指针的背景颜色,指针的文字颜色
+                        this.rs = this.r / 4;//指针小圆的半径
+                        this.guideLine = 4;//指针小圆的边框大小
+                        this.rewardData = ['200元 抵用券', '1元 红包', '188元 抵用券', '5元 红包', '200元 抵用券', '3元 红包', '200元 抵用券', '10元 红包'];//奖品,如需换行,请在数据中间加空格,请保持空格后面的字数多余空格前面的字数(去掉空格可以让文字不换行,但是不太美观,因此不建议使用)
+                        //客户的数据,此处应该是从后台调取的,现在先模拟一下下,嘿嘿
+                        this.customerRewardData = [
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户一的id',
+                                        reward: 0
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户二的id',
+                                        reward: 1
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户三的id',
+                                        reward: 2
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户四的id',
+                                        reward: 3
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户五的id',
+                                        reward: 4
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户六的id',
+                                        reward: 5
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户七的id',
+                                        reward: 6
+                                },
+                                {
+                                        head: 'http://wx.qlogo.cn/mmopen/ajNVdqHZLLBeVceHRM9V4EQibJGuTHmJcZVW5RdNSic55l0HHTA3aibOj30gPZuXUqIVlBa35e48LAjKI9svHUOLg/0',
+                                        id: '客户八的id',
+                                        reward: 7
+                                }
+                        ];
+                        this.now = Math.round(Math.random() * (this.rewardData.length - 1));//控制指针最后停在哪一格,此值应该从后台接收，此值对应着转盘中的奖品
+                        this.nowTrue = true;//true表示开始点击随机生成now值,会导致上面的this.now失效,这是用来本地测试使用的,上线的时候直接改成false就行了
+                },
+                //画出转盘
+                fnTurntable: function (num) {
+                        //画画之前要保持画布干净整洁
+                        this.content.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                        //保存this指向
+                        var self = this;
+                        //旋转开始
+                        this.content.save();
+                        this.content.translate(this.x, this.y);
+                        this.content.rotate(num * Math.PI / 180);
+                        //封装画线段函数
+                        function line(width, color, value) {
+                                self.content.save();
+                                self.content.beginPath();
+                                self.content.lineWidth = width;
+                                self.content.strokeStyle = color;
+                                self.content.arc(0, 0, self.r - value, 0, Math.PI * 2, false);
+                                self.content.stroke();
+                                self.content.closePath();
+                                self.content.restore();
+                        }
+
+                        //画第一段线条
+                        line(this.lineWidth[0], this.lineColor[0], this.lineWidth[0] / 2);
+                        //画第二段线条
+                        line(this.lineWidth[1], this.lineColor[1], this.lineWidth[0] + this.lineWidth[1] / 2);
+                        //画第三段线条
+                        line(this.lineWidth[2], this.lineColor[3], this.lineWidth[0] + this.lineWidth[1] + this.lineWidth[2] / 2);
+                        //画第三段线条
+                        line(this.lineWidth[3], this.lineColor[4], this.lineWidth[0] + this.lineWidth[1] + this.lineWidth[2] + this.lineWidth[3] / 2);
+                        //画第二段线条内的圆点
+                        this.content.save();
+                        var pointRadian = 0;//各个圆点偏离的角度
+                        for (var i = 0; i < this.pointNum; i++) {
+                                this.content.beginPath();
+                                this.content.fillStyle = this.lineColor[2][this.marqueeNum % 2];//this.marqueeNum是跑马灯效果,换成i则是间隔变色效果
+                                pointRadian = 360 / this.pointNum * i;
+                                this.content.arc(Math.sin(pointRadian * Math.PI / 180) * (this.r - (this.lineWidth[0] + this.lineWidth[1] / 2)), -Math.cos(pointRadian * Math.PI / 180) * (this.r - (this.lineWidth[0] + this.lineWidth[1] / 2)), this.lineWidth[1] / 4, 0, Math.PI * 2, false);
+                                this.content.closePath();
+                                this.content.fill();
+                        }
+                        this.content.restore();
+                        //画出中奖分块
+                        this.content.save();
+                        var rewardRadian = 360 / this.rewardData.length;//各个中奖区块偏离的角度
+                        for (var j = 0; j < this.rewardData.length; j++) {
+                                this.content.fillStyle = this.rewardColor[j % 2];
+                                this.content.beginPath();
+                                this.content.moveTo(0, 0);
+                                this.content.arc(0, 0, this.r - this.lineWidth.reduce(function (x, y) {
+                                                return x + y;
+                                        }), (-90 + rewardRadian * j) * Math.PI / 180, (-90 + rewardRadian * (j + 1)) * Math.PI / 180, false);
+                                this.content.closePath();
+                                this.content.fill();
+                        }
+                        this.content.restore();
+                        //求出填充文字所需的数据
+                        var s = '';//奖品中,各个元素,空格之后,最长的那些字
+                        var h = 0;//一行字的高度
+                        var n = 0;//非换行文字内,数字的个数
+                        //求最长的s
+                        for (var l = 0; l < this.rewardData.length; l++) {
+                                if (this.rewardData[l].indexOf(' ') != -1) {//已换行文字最多的一组
+                                        if (s.length < this.rewardData[l].split(' ')[1].length) {
+                                                s = this.rewardData[l].split(' ')[1];
+                                        }
+                                } else {//未换行文字最多的一组
+                                        if (s.length < this.rewardData[l].length) {
+                                                s = this.rewardData[l];
+                                        }
+                                }
+                        }
+                        //求n的个数
+                        for (var m = 0; m < s.length; m++) {
+                                if (typeof parseInt(s[m]) == 'number' && !isNaN(s[m])) {
+                                        n++;
+                                }
+                        }
+                        //求w的宽度
+                        var w = this.textSize[0] * (s.length - n / 2) + 6;//奖品中,各个元素,空格之后,最长的那些字总共多宽
+                        //文字填充开始
+                        for (var k = 0; k < this.rewardData.length; k++) {
+                                this.content.save();
+                                this.content.beginPath();
+                                this.content.fillStyle = this.textColor[k % 2];
+                                this.content.font = this.textSize[0] + 'px 微软雅黑';
+                                this.content.textAlign = 'center';
+                                this.content.textBaseline = 'middle';
+                                h = this.content.measureText(this.rewardData[k].charAt(this.rewardData[k].length - 1)).width;
+                                if (this.rewardData[k].indexOf(' ') != -1) {//已换行文字分布
+                                        this.content.rotate((-90 + parseInt(rewardRadian / 2) + (k * rewardRadian)) * Math.PI / 180);
+                                        textWrap(this.rewardData[k], w / 2 + this.r - this.lineWidth.reduce(function (x, y) {
+                                                        return x + y;
+                                                }) - w, -h / 2);
+                                } else {//未换行文字分布
+                                        this.content.rotate((-90 + parseInt(rewardRadian / 2) + (k * rewardRadian)) * Math.PI / 180);
+                                        textWrap(this.rewardData[k], w / 2 + this.r - this.lineWidth.reduce(function (x, y) {
+                                                        return x + y;
+                                                }) - w, 0);
+                                }
+                                this.content.closePath();
+                                this.content.restore();
+                        }
+                        //textWrap封装文字换行
+                        function textWrap(str, x, y) {
+                                if (str.indexOf(' ') != -1) {
+                                        var arr = str.split(' ');
+                                        self.content.fillText(arr[0], x, y);
+                                        self.content.fillText(arr[1], x, y + h);
+                                } else {
+                                        self.content.fillText(str, x, y);
+                                }
+                        }
+
+                        //旋转结束
+                        this.content.restore();
+                        this.fnGuide(textWrap);//调用画出指针
+                },
+                //画出指针
+                fnGuide: function (textWrap) {
+                        //画出指针
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.fillStyle = this.guideColor[0];
+                        this.content.globalAlpha = '0.8';
+                        this.content.moveTo(this.x, this.y - this.rs * 2);
+                        this.content.lineTo(this.x - this.rs / 2, this.y - this.rs / 2);
+                        this.content.lineTo(this.x + this.rs / 2, this.y - this.rs / 2);
+                        this.content.fill();
+                        this.content.restore();
+                        //画出指针圆环的边框
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.globalAlpha = '0.8';
+                        this.content.lineWidth = this.guideLine;
+                        this.content.fillStyle = this.guideColor[0];
+                        this.content.arc(this.x, this.y, this.rs + this.guideLine, 0, 2 * Math.PI, false);
+                        this.content.closePath();
+                        this.content.fill();
+                        this.content.restore();
+                        //画出指针圆盘
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.fillStyle = this.guideColor[1];
+                        this.content.arc(this.x, this.y, this.rs, 0, 2 * Math.PI, false);
+                        this.content.closePath();
+                        this.content.fill();
+                        this.content.restore();
+                        //填充指针文字
+                        this.content.save();
+                        this.content.beginPath();
+                        this.content.fillStyle = this.guideColor[2];
+                        this.content.textAlign = 'center';
+                        this.content.textBaseline = 'middle';
+                        this.content.font = this.textSize[1] + 'px 微软雅黑';
+                        textWrap('开始 抽奖', this.x, this.y - this.textSize[1] / 2);
+                        this.content.closePath();
+                        this.content.restore();
+                },
+                //让转盘转起来
+                fnMove: function () {
+                        var self = this;//保存this指向
+                        var bTrue = true;//转盘旋转期间只能点一次的控制开关
+                        var timer = null;//转盘的定时器
+                        var timer2 = null;//跑马灯的定时器
+                        var num = 0;//初始角度
+                        var step = 0;//步长
+                        var radian = 0;//结束时的角度
+                        var oneRadian = 360 / this.rewardData.length;//每格占据的角度
+                        this.canvas.onclick = function (ev) {
+                                if (self.nowTrue) {
+                                        self.now = Math.round(Math.random() * (self.rewardData.length - 1));//本地模拟中奖编号，上线的时候可以删了,或者把开关关闭
+                                }
+                                var disl = self.canvas.offsetLeft;//画布的left值
+                                var dist = self.canvas.offsetTop;//画布的top值
+                                var disx = ev.pageX - disl;//鼠标点击的位置距离画布左边框的值
+                                var disy = ev.pageY - dist;//鼠标点击的位置距离画布上边框的值
+                                if (disx >= self.r - self.rs && disx <= self.r + self.rs && disy >= self.r - self.rs && disy <= self.r + self.rs) {
+                                        //开关控制
+                                        if (!bTrue) {
+                                                return false;
+                                        }
+                                        bTrue = false;
+                                        //找到对应的奖品旋转过后应该对应的角度
+                                        for (var i = 0; i < self.rewardData.length; i++) {
+                                                if (i == self.now) {
+                                                        radian = 1800 + (360 - Math.ceil(oneRadian / 2)) + (360 - oneRadian * i);
+                                                }
+                                        }
+                                        //开启转盘定时器
+                                        timer = setInterval(function () {
+                                                step = Math.ceil((radian - num) / self.range);//步长赋值
+                                                num += step;
+                                                //console.log('结束弧度：'+radian, '步长：'+step, '此值等于结束弧度的值就清除定时器：'+num, '中奖的编号：'+self.now, '中奖的内容：'+self.rewardData[self.now].replace(/\s+/,''), '跑马灯的数据：'+self.marqueeNum);//数据观测以及调试
+                                                //清除定时器
+                                                if (num == radian) {
+                                                        clearInterval(timer);
+                                                        clearInterval(timer2);
+                                                        //跑马灯结束时的颜色
+                                                        if (self.marquee) {//白灯
+                                                                if (self.marqueeNum % 2 != 0) {
+                                                                        self.marqueeNum++;
+                                                                }
+                                                        } else {//绿灯
+                                                                if (self.marqueeNum % 2 == 0) {
+                                                                        self.marqueeNum++;
+                                                                }
+                                                        }
+                                                        self.fnTurntable(num);
+                                                        alert('对应编号:' + self.now + '\n对应奖品:' + self.rewardData[self.now].replace(/\s+/g, ''));
+                                                        //重置
+                                                        num = 0;
+                                                        bTrue = true;
+                                                } else {
+                                                        self.fnTurntable(num);
+                                                }
+                                        }, 30);
+                                        //开启跑马灯定时器,保证一闪一闪亮晶晶
+                                        timer2 = setInterval(function () {
+                                                self.marqueeNum++;
+                                        }, self.marqueeTiming);
+                                }
+                        }
+                },
+                //获奖名单的一系列操作
+                fnReward: function () {
+                        var self = this;//保存this指向
+                        //container容器背景走你
+                        var left = 0;
+                        setInterval(function () {
+                                left--;
+                                self.container.style.backgroundPosition = left + 'px 0';
+                        }, 30);
+                        //点击获奖名单
+                        this.reward.onclick = function () {
+                                var str = '';//用来存储所有中奖名单的数据列表
+                                self.rewardList.className = 'active';
+                                for (var i = 0; i < self.customerRewardData.length; i++) {
+                                        str += '<li><em><img src="' + self.customerRewardData[i].head + '" alt="头像"/></em><i>' + self.customerRewardData[i].id + '</i><span>' + self.rewardData[self.customerRewardData[i].reward] + '</span></li>';
+                                }
+                                self.rewardUl.innerHTML = str;
+                        };
+                        //点击获奖名单关闭按钮
+                        this.rewardClose.onclick = function () {
+                                self.rewardList.className = '';
+                        };
+                }
+        };
+        turntable.init();
+</script>
+</body>
+</html>

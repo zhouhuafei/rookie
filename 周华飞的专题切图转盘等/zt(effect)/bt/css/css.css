@@ -1,0 +1,47 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ text-align:center; margin-top:10px;}
+#banner a{ display:inline-block;}
+
+/*experience*/
+#experience img{ display:block;}
+#experience li{ width:99px; text-align:center;}
+#experience .re{ margin:0 11px;}
+#experience strong{ font-size:18px; color:#b1b1b1; margin-top:7px; padding-bottom:5px; border-bottom:1px solid #b1b1b1; margin-bottom:6px;}
+#experience p{ font-size:14px; color:#0064b4; margin-bottom:2px;}
+
+/*can*/
+#can dl{ width:50%; box-sizing:border-box; border:1px solid #dbdbdb;}
+#can dl:nth-child(2n){ border-left:none;}
+#can dl:nth-child(n+3){ border-top:none;}
+#can dt{ background:#e3933e; text-align:center; color:#fff; line-height:38px; font-size:18px;}
+#can dd{ text-indent:20px; line-height:22px; font-size:14px; padding:10px; color:#777777; height:110px;}
+
+/*process*/
+#process dl{ width:300px; margin:0 auto; padding-bottom:15px; margin-bottom:15px; border-bottom:1px dashed #bacbe1;}
+#process dl:last-of-type{ padding-bottom:0; margin-bottom:0; border-bottom:none;}
+#process dd{ width:100px; line-height:22px; color:#282828; font-size:14px; text-indent:20px;}
+
+/*case*/
+#case dl{ margin-bottom:10px;}
+#case div{ padding:10px; width:288px; margin:0 auto; border:1px solid #d1d1d1;}
+#case strong{ font-size:16px; color:#282828; font-weight:bold; line-height:35px;}
+#case p{ line-height:20px; font-size:14px;}
+
+/*read*/
+#read{ text-align:center;}
+
+/*common*/
+.til{ margin:40px 0 20px; padding-bottom:10px; border-bottom:1px dashed #c9b9b9; font-size:26px; color:#282828; padding-left:35px; background:url(../images/til.jpg) left center no-repeat; font-weight:bold;}
+section.btn{ text-align:center; margin-top:20px;}
+section.btn mark{ display:inline-block; position:relative;}
+section.btn a{ position:absolute; left:0; top:0; height:100%; width:116px;}
+section.btn a:last-child{ left:auto; right:0; top:0;}
+
+

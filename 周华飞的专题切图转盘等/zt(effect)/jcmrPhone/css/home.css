@@ -1,0 +1,75 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ position:relative; margin-bottom:10px; overflow:hidden;}
+#banner .prev,#banner .next{ width:45px; height:80px; position:absolute; top:50%; margin-top:-40px; z-index:2;}
+#banner .prev{ left:0;}
+#banner .next{ right:0;}
+#banner ul{ width:9000px;}
+#banner li{ float:left;}
+#banner a{ display:block;}
+#banner img{ width:100%;}
+
+/*menu*/
+#menu{ overflow:hidden;}
+#menu div{ background:#f8f6f6; padding-top:10px; border:2px solid #b4b3b3; margin-bottom:10px;}
+#menu h2{ margin-bottom:10px;}
+#menu span{ width:50%; font-size:3.5rem; color:#47aab6; padding-bottom:6px; border-bottom:1px dashed #959494;}
+#menu img{ margin:0 6% 0 3%; width:17%;}
+#menu li{ width:24.5%; float:left; margin:0 0 6px 0.4%;}
+#menu a{ display:block; border:1px solid #bdb9b9; font-size:3rem; text-align:center; color:#666666; background:#fff; line-height:3;}
+#menu div.two h2{ text-align:right;}
+#menu div.two img{ margin:0 3% 0 6%;}
+#menu div.two li{ width:33%; margin-left:0.25%;}
+#menu div.thr li{ width:49.4%; margin-left:0.4%;}
+
+/*project*/
+#project{ margin-bottom:20px;}
+#project .til{ margin-bottom:3px;}
+#project li{ background:#f8f6f6; width:24.5%; float:left; margin:0.4% 0 0 0.4%;}
+#project a{ display:block; text-align:center; border:1px solid #b4b3b3; font-size:2.4rem; color:#6a6a6a;}
+#project a img{ width:44%; margin-top:20%;}
+#project p{ line-height:3;}
+
+/*expert*/
+#expert{ padding-bottom:17px; margin-bottom:14px; border-bottom:1px dashed #666666;}
+#expert .til{ margin-bottom:10px;}
+#expert #expertMain{ border:1px solid #cdcdcd; position:relative;}
+#expert .prev,#expert .next{ width:26px; position:absolute; top:50%; margin-top:-24px; z-index:2;}
+#expert .prev{ left:0;}
+#expert .next{ right:0;}
+#expert ul{ overflow:hidden;}
+#expert li{ background:#efefef;}
+#expert dt,#expert dd{ width:50%; float:left;}
+#expert img{ width:100%;}
+#expert h2{ font-size:4.8rem; line-height:2; color:#000; margin-left:5%;}
+#expert small{ font-size:2.8rem; margin-left:3%;}
+#expert p{ font-size:2.4rem; line-height:2; color:#666666; margin-left:5%;}
+#expert a{ display:block; width:70%; font-size:2.4rem; line-height:2.5; background:#0a8e9e; text-align:center; color:#fff; margin:10px auto 0; border-radius:10px;}
+
+/*other*/
+#other{ text-align:center; margin-bottom:10px;}
+#other a{ display:block;}
+#other img{ width:100%;}
+
+/*common*/
+.til{ font-size:3.5rem; line-height:2.2; text-align:center; color:#fff; background:#47aab6; border:2px solid #a4a3a3;}
+
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	/*banner*/	
+	#banner .prev,#banner .next{ width:32px; margin-top:-30px;}
+}
+@media (min-width: 320px) and (max-width: 479px){
+	/*banner*/	
+	#banner .prev,#banner .next{ width:22px; margin-top:-20px;}
+	/*menu*/
+	#menu div{ border:1px solid #b4b3b3;}
+	/*til*/
+	.til{ border:1px solid #a4a3a3;}
+}

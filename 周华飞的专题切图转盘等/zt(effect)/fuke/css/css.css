@@ -1,0 +1,37 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+.banner{ margin:5px 0;}
+
+/*test*/
+.test ol{ margin-bottom:3%;}
+.test li{ font-size:2.8rem; color:#be0069; line-height:2.8; width:24%; margin-left:0.8%; box-sizing:border-box; border:1px solid #b0b0b0; text-align:center;}
+
+/*navi*/
+.navi{ font-size:3rem; text-align:center;}
+.navi ol{ margin-bottom:6%;}
+.navi li{ width:33.3333333%;}
+.navi a{ width:71%;}
+.navi img{ width:100%;}
+.navi p{ margin-top:10%;}
+
+/*expert*/
+.expert{ font-size:2.4rem; color:#010101;}
+.expert img{ width:100%;}
+.expert dl{ margin-bottom:8%; padding-bottom:8%; border-bottom:1px dashed #787878;}
+.expert dt{ width:36%;}
+.expert dd{ width:60%;}
+.expert h2{ font-size:3rem; color:#be0069;}
+.expert small{ color:#010101; margin-left:10px;}
+.expert p{ line-height:1.6; margin:5% auto 10%;}
+.expert mark{ display:block;}
+.expert a{ color:#fff; background:#00a454; font-size:3.2rem; line-height:1.7; border-radius:10px; width:43%; text-align:center;}
+.expert a:nth-of-type(2){ background:#be0069;}
+.expert dl:last-child{ padding-bottom:0; border-bottom:none;}
+.expert dl.re{ padding-bottom:8%; border-bottom:1px dashed #787878;}
+.expert-box section:last-child{ display:none;}

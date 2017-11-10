@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>move3</title>
+<style>
+div{ width:200px; height:200px; background:#f00; position:absolute; left:0; top:0; opacity:0;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	var oDiv=document.querySelectorAll('div')[0];
+	move(oDiv,{'width':600,'height':600,'opacity':100},function(){
+		move(oDiv,{'width':200,'height':200,'opacity':0})
+	})
+},false)
+function getStyle(obj,attr){return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];}
+function move(obj,json,fnEnd){
+	var cur=null;
+	var speed=0;
+	var bStop=null;
+	obj.timer=null;
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		bStop=true;
+		for(var attr in json){//Math.round(getStyle(obj,attr)*100)//parseFloat转换为数字,但是*号貌似有转换为数字的功效,所以我认为可以省略
+			cur=(attr=='opacity')?Math.round(parseFloat(getStyle(obj,attr))*100):parseInt(getStyle(obj,attr));
+			speed=(json[attr]-cur)/10;
+			speed=(speed>0)?Math.ceil(speed):Math.floor(speed);
+			(cur!==json[attr])&&(bStop=false);
+			if(attr=='opacity'){
+				obj.style.opacity=(cur+speed)/100;			
+				obj.style.fillter='alpha(opacity:'+(cur+speed)+')';
+			}else{
+				obj.style[attr]=cur+speed+'px';
+			}
+		}
+		if(bStop)
+		{
+			clearInterval(obj.timer);
+			fnEnd&&fnEnd();
+		}
+	},30)	
+}
+</script>
+</head>
+<body>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>indexOf配合push进行数组去重</title>
+</head>
+
+<body>
+<script>
+var arr1=[1,2,2,2,3,4,5,6,7,5,8,9];
+var arr2=[];
+for(var i=0; i<arr1.length; i++)
+{
+	if(arr2.indexOf(arr1[i])==-1)
+	{
+		arr2.push(arr1[i]);	
+	}	
+}
+alert(arr2);
+</script>
+</body>
+</html>

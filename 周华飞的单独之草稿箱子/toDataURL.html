@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>toDataURL</title>
+<script>
+window.addEventListener('load',function(){
+	var oC=document.getElementsByTagName('canvas')[0];
+	var oGc=oC.getContext('2d');
+	var oGr=oGc.createLinearGradient(0,0,400,400);
+	oGr.addColorStop(0,'#f00');
+	oGr.addColorStop(1,'#00f');
+	oGc.strokeStyle=oGr;
+	oGc.arc(200,200,100,0,360*Math.PI/180,false);
+	oGc.stroke();
+	var oImgURL=oC.toDataURL('image/jpeg');
+	//var oImgURL=oC.toDataURL('image/png');
+	var oImg=document.createElement('img');
+	oImg.src=oImgURL;
+	document.body.appendChild(oImg);
+	//document.body.removeChild(oC);
+},false)
+</script>
+</head>
+<body>
+<canvas width="400" height="400" style='background:#000;'></canvas>
+</body>
+</html>

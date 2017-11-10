@@ -1,0 +1,73 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:500px;}
+.banner a{ display:block; width:1000px; height:100%; margin:0 auto;}
+
+/*what*/
+.what dl{ padding:0 20px;}
+.what dt{ width:390px; height:242px; padding:50px 40px; font-size:14px; line-height:28px; background:#81bbff; text-indent:30px; color:#fff;}
+.what a{ text-indent:0; display:block; margin:0 auto; width:235px; text-align:center; height:40px; line-height:40px; font-size:18px; color:#0064b4; background:#fff; margin-top:30px;}
+.what dd{}
+
+/*about*/
+.about li{ width:328px; text-align:center; float:left; color:#fff;}
+.about li.bg1{ background:#ff714d;}
+.about li.bg2{ background:#41d4c4; margin:0 8px;}
+.about li.bg3{ background:#ea6489;}
+.about h2{ height:60px; line-height:60px; font-size:24px;}
+.about p{ text-indent:30px; text-align:left; padding:0 20px; line-height:24px; margin:14px 0 20px; font-size:14px;}
+
+/*harm*/
+.harm ul{ padding:0 1px;}
+.harm li{ width:194px; margin:10px 0; background:#b4b4b4; margin-right:7px; padding:10px 0;}
+.harm p{ padding:0 30px; margin:0; text-align:center; text-indent:0;}
+.harm h2{ padding:0 150px; line-height:28px; margin-top:10px; text-align:center; font-size:14px; color:#999999;}
+
+/*before*/
+.before{ background:url(../images/before.jpg) center center no-repeat; height:225px;}
+.before li{ width:140px; height:175px; position:relative;}
+.before p{ margin:0; text-indent:0; padding:25px 0 0;}
+.before a{ width:100%; text-align:center; height:30px; line-height:30px; font-size:16px; color:#0075bb; position:absolute; bottom:0; left:0;}
+.before .l1{ left:72px;}
+.before .l2{ left:168px;}
+.before .l3{ left:267px;}
+.before .l4{ left:368px;}
+.before .l4 a{ bottom:20px;}
+
+/*after*/
+.after{ background:url(../images/after_bg.jpg); padding:20px; position:relative;}
+.after dd{ font-size:14px; color:#999999; line-height:24px; margin-bottom:30px; background:url(../images/before_icon.jpg) left 6px no-repeat; padding-left:20px;}
+.after dl{ position:relative;}
+.after dl img{ position:absolute; right:20px; top:50px;}
+
+/*share*/
+.share ul{ padding:0 2px;}
+.share ul li { float:left; margin:50px 14px 0px; width:221px; height:360px; background-color:#f9f9fa;}
+.share ul .text { padding:7px 10px; height:130px; background-color:#f9f9f9;}
+.share ul .text .p1 { padding-left:28px; background:url(../images/share_icon.jpg) 0px 6px no-repeat; line-height:30px; font-size:14px; color:#444444;}
+.share .more { padding-right:7px; padding-top:9px; height:26px; background-color:#ededed;}
+.share .more a {  font-size:14px; float:right; margin-right:3px; width:43px; height:17px; cursor:pointer; color:#646464; text-align:center; line-height:16px; border:1px #b7b7b7 solid; border-radius:2px;}
+.share .more_case { margin-top:30px; text-align:center;}
+.share .more_case a { display:inline-block; text-align:center; width:300px; height:30px;line-height:30px; font-size:16px; color:#FFF;  background-color:#0075bb;}
+
+/*recommend*/
+.recommend{ padding:0 4px;}
+.recommend a{ margin-right:8px;}
+
+/*common*/
+.til{ font-size:30px; color:#0064b4; padding-bottom:10px; border-bottom:1px solid #dbdbdb; margin:40px 0 20px; text-align:center;}
+.til em{ font-size:30px; color:#ea6489;}
+.noMr{ margin-right:0 !important;}
+.noMt{ margin-top:0 !important;}
+.btn{ font-size:18px; color:#0075bb; text-align:center; margin-top:30px;}
+.btn img{ margin-top:-4px;}
+.btn a{ width:300px; text-align:center; height:30px; line-height:30px; background:#0075bb; color:#fff; font-size:18px;}
+
+/*foot*/
+.foot .content{ width:1000px; margin:0 auto;}

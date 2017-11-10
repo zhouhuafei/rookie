@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<style>
+/*清零*/
+body,ul,ol,li,h1,h2,h3,h4,h5,h6,img,form,input,dl,dt,dd,div,p,header,nav,article,section,aside,footer{margin:0; padding:0;}
+img{ border:none;}
+body{font-size:14px; background:#000; color:#FFF;}
+textarea{resize:none;}
+a{ text-decoration:none;}
+ul,ol{list-style-type:none;}
+header,nav,article,section,aside,footer{ display:block;}
+input,select,textarea{outline:none; border:none; background:#FFF;}
+/*清浮动*/
+.clearfix{ clear:both;}
+/*公用的样式*/
+.commonWidth{ width:962px; margin:0 auto;}
+.fl{ float:left;}
+.fr{ float:right;}
+/*header*/
+header{border-top:10px solid #0F0; height:400px;}
+header .head_box ul{width:962px; margin:0 auto;}
+header .head_box ul li{float:left;position:relative; margin-left:190px; display:inline;}
+header .head_box ul .l1{ margin-left:0px;}
+header .head_box ul li a{display:inline-block; width:2px;background:#0F0;height:50px;}
+header .head_box ul li .a_200{height:200px;}
+header .head_box ul li .a_400{height:400px;}
+header .head_box ul li .a_600{height:600px;}
+header .head_box ul li div{ color:#CF0; font-size:30px;font-weight:bold; position:absolute; left:-48px; top:52px; display:block; width:100px; height:100px; border-radius:50px;  text-align:center; line-height:100px; box-shadow:10px 10px 10px #0F0 inset; -moz-transition:all,1s;transition:all,1s;-webkit-transition:all,1s;-o-transition:all,1s;-ms-transition:all,1s;}
+header .head_box ul li:hover div{-moz-transform:rotate(300deg);-webkit-transform:rotate(300deg);-o-transform:rotate(300deg);transform:rotate(300deg);-ms-transform:rotate(300deg);}
+header .head_box ul .l_200 div{position:absolute; left:-48px; top:202px;}
+header .head_box ul .l_400 div{position:absolute; left:-48px; top:402px;}
+header .head_box ul .l_600 div{position:absolute; left:-48px; top:602px;}
+/*section*/
+section{height:100px; border-bottom:#0F0 10px solid;border-radius:100px; margin-bottom:40px;}
+section nav ul{margin-left:30px;}
+section nav ul li{ float:left;}
+section nav ul li a{text-align:center; line-height:100px; display:inline-block; width:100px; height:100px; border-radius:50px; color:#CF0; font-size:20px;box-shadow:-10px -10px 10px #0F0 inset; margin-right:60px;  -moz-transition:all,1s;transition:all,1s;-webkit-transition:all,1s;-o-transition:all,1s;-ms-transition:all,1s;}
+section nav ul li a:hover{-moz-transform:scale(2,2);transform:scale(2,2);-webkit-transform:scale(2,2);-o-transform:scale(2,2);-ms-transform:scale(2,2);}
+section nav ul .ll{ margin-right:0px;}
+/*photo*/
+.photo_box{border-bottom:#0F0 10px solid;overflow:hidden;}
+.photo_box  .p1{ text-align:center; color:#CF0; font-size:12px;overflow:hidden;}
+.photo_box .photo{width:200px; height:200px; border:#0F0 1px solid;position:relative;overflow:hidden; margin:40px 0px;}
+.photo_box .photo b{ width:50px; height:5px; overflow:hidden; display:inline-block; margin:20px 25px 10px 25px; background:#0F0;}
+.photo_box .photo span{width:40px; height:20px;overflow:hidden; display:inline-block; border:5px solid #0F0;margin:0px 25px; text-align:center;}
+.photo_box .photo span a{ width:10px; height:10px; border-radius:10px; background:#0F0; display:inline-block; margin-top:5px; overflow:hidden;}
+.photo_box .photo i{ display:inline-block; overflow:hidden; width:10px; height:50px; background:#0F0; margin-left:95px;}
+.photo_box .photo em{ display:inline-block; overflow:hidden; width:100px; height:100px; margin:-30px 0 0 50px; border-radius:50px; box-shadow:-10px -10px 10px #0F0 inset; -webkit-transform:rotate(40deg);-o-transform:rotate(40deg);-moz-transform:rotate(40deg);transform:rotate(40deg);-ms-transform:rotate(40deg); border:#0F0 1px solid;}
+.photo_box .photo .information{width:200px; height:200px; position:absolute; left:0; top:-202px; background:#0F0;-moz-transition:all 2s;transition:all 2s;-webkit-transition:all 2s;-o-transition:all 2s;-ms-transition:all 2s;}
+.photo_box .photo .information p{color:#F00; text-align:center; font-size:20px; font-weight:bold; line-height:40px;}
+.photo_box .photo:hover .information{top:0px;}
+.photo_box h1{text-align:center; color:#3F0; margin-top:40px; font-size:30px;}
+
+/*form*/
+form article{ clear:both; color:#3F0; font-size:16px;}
+form article .my_name{border-left:#0F0 10px solid;border-right:#0F0 100px solid; margin:40px 0;position:relative;}
+form article .my_name .tit{ width:40px; height:100px; color:#0F0; position:absolute;left:-60px; top:80px; text-align:center; line-height:25px; font-weight:bold; }
+form article .my_name label{ margin-right:20px;height:20px; line-height:20px\9; display:inline-block; margin-left:30px; overflow:hidden;vertical-align: middle;}
+form article .my_name input{ color:#3F0;font-size:16px;background:#000;width:300px; height:20px; line-height:20px\9; overflow:hidden;vertical-align: middle;}
+form article .my_name .sex{ width:10px;height:20px; line-height:20px\9; overflow:hidden;}
+form article .my_name select{ color:#3F0;font-size:16px;background:#000;height:20px; line-height:20px\9; overflow:hidden;}
+form article .my_name textarea{width:600px; height:262px; background:#000; color:#3F0;resize:none; font-size:16px; overflow:hidden;}
+form article .my_name p{ margin-left:30px;}
+form article .my_name button{ margin:200px 0 0 30px; color:#3F0; font-weight:bold; border:none; width:100px; height:30px; font-size:20px;-moz-transition:all 1s;transition:all 1s;-webkit-transition:all 1s;-ms-transition:all 1s;-o-transition:all 1s; background:none;}
+form article .my_name button:hover{-moz-transform:scale(2,2) rotate(360deg);transform:scale(2,2) rotate(360deg);-webkit-transform:scale(2,2) rotate(360deg);-o-transform:scale(2,2) rotate(360deg);-ms-transform:scale(2,2) rotate(360deg); box-shadow:10px -10px 10px #0F0 inset; border-radius:100px;}
+/*footer*/
+footer{ height:100px;border-top:10px solid #0F0; border-radius:100px;}
+footer p{ text-align:center; color:#0f0; margin-top:30px;}
+</style>
+<script language="javascript">
+/*
+//创建HTML5元素
+document.createElement('header');
+document.createElement('nav');
+document.createElement('section');
+document.createElement('aside');
+document.createElement('article');
+document.createElement('footer');
+*/
+(function() 
+	{
+	    if (!/*@cc_on!@*/0) return;
+ 	    var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+ 	    var i= e.length;
+	    while (i--){document.createElement(e[i])} 
+	})() 
+</script>
+</head>
+<body>
+<!--header-->
+<header>
+	<div class="head_box">
+    	<ul> 
+            <li class="l_200 l1">
+            	<a class="a_200" href="javascript:;"></a>
+                <div class="clearfix">这</div>
+            </li>        
+        	<li>
+            	<a href="javascript:;"></a>
+                <div class="clearfix">是</div>
+            </li>
+            <li class="l_200">
+            	<a class="a_200" href="javascript:;"></a>
+                <div class="clearfix">我</div>
+            </li> 
+             <li>
+            	<a href="javascript:;"></a>
+                <div class="clearfix">的</div>
+            </li>         
+            <li class="l_200">
+            	<a class="a_200" href="javascript:;"></a>
+                <div class="clearfix">原</div>           
+            <li>
+            	<a href="javascript:;"></a>
+                <div class="clearfix">创</div>
+            </li>
+        </ul>
+    </div>
+</header>
+<!--section-->
+<section>
+	<nav class="commonWidth">
+    	<ul>
+        	<li><a href="javascript:;">自</a></li>
+            <li><a href="javascript:;">制</a></li>
+            <li><a href="javascript:;">求</a></li>
+            <li><a href="javascript:;">职</a></li>
+            <li><a href="javascript:;">简</a></li>
+            <li><a class="ll" href="javascript:;">历</a></li>
+        </ul>
+    </nav>
+    <div class="section_top"></div>
+</section>
+<!--photo-->
+<div class="photo_box commonWidth">
+    <div class="photo fl">
+        <b></b><b></b>
+        <span><a></a></span><span><a></a></span>
+        <i></i>
+        <em></em>
+        <div class="information">
+        <p>具</p>
+        <p>面</p>
+        <p>瞎</p>
+        <p>闪</p>
+        <p>防</p>
+        </div>            
+    </div>
+    <div class="photo fr">
+        <b></b><b></b>
+        <span><a></a></span><span><a></a></span>
+        <i></i>
+        <em></em>
+        <div class="information">
+        <p>具</p>
+        <p>面</p>
+        <p>瞎</p>
+        <p>闪</p>
+        <p>防</p>
+        </div>            
+    </div>
+    <p class=" clearfix p1">纳尼？上面这两个头像是页主的头像？我次奥！救命啊！我的双眼睁不开了啊！闪瞎了啊！呜呜！你赔我的钛合金双眼！</p>
+    <h1>求职简历</h1>
+</div>
+<!--form-->
+<form>
+	<article class="commonWidth clearfix">
+    	<div class="my_name">
+        	<div class="tit"><p>求</p><p>职</p><p>意</p><p>向</p></div>        	
+        	<textarea>
+            
+            
+            
+            
+    web前端开发工程师（网页制作师）
+    web前端开发工程师（网页制作师）
+    web前端开发工程师（网页制作师）
+    web前端开发工程师（网页制作师）
+    web前端开发工程师（网页制作师）
+            </textarea>          
+        </div>
+    	<div class="my_name">
+        	<div class="tit"><p>基</p><p>本</p><p>信</p><p>息</p></div>        	
+        	<label for="username">姓名:</label><input type="text" id="username" value="周华飞" /><br />
+            <label for="sex">性别:</label><input id="sex" class="sex" type="radio" name="sex" checked="checked"/>男<input type="radio" class="sex" name="sex"  />女<br />
+            <label for="native_place">籍贯:</label><input type="text" id="native_place" value="皖" /><br />
+            <label for="age">年龄:</label><input type="text" id="age" value="21" /><br />
+            <label for="height">身高:</label><input type="text" id="height" value="182cm" /><br />
+            <label for="professional">专业:</label><input type="text" id="professional" value="计算机应用" /><br />         
+            <label for="mask">政治面貌:</label><input type="text" id="mask" value="团员" /><br />
+            <label for="tel">电话号码:</label><input type="text" id="tel" value="15551992700" /><br />
+            <label for="email">电子邮箱:</label><input type="email" id="email" value="1123486116@qq.com" /><br />
+            <label for="school">毕业院校:</label><input type="text" id="school" value="安徽城市管理职业学院" /><br />
+            <label for="address">家庭住址:</label><input type="text" id="address" value="亳州市谯城区古城镇" /><br />
+            <label for="address1">现在住址:</label><input type="text" id="address1" value="上海市闵行区纪王镇鹫山小区" /><br />            
+            <label for="education">学历:</label> 
+            <select>
+            	<option>幼儿园</option>
+            	<option>小学</option>
+                <option>中职/技校</option>
+                <option>高中</option>                
+                <option selected="selected">大专</option>
+                <option>本科</option>
+                <option>研究僧</option>
+                <option>叫兽</option>
+            </select><br />            
+        </div>
+        <div class="my_name">
+        	<div class="tit"><p>教</p><p>育</p><p>背</p><p>景</p></div>        	
+        	<textarea>
+            
+            
+            
+            
+    1999-2005	古城小学
+    2005-2008	古城中学
+    2008-2011	亳州第二完全中学
+    2011-2014	安徽城市管理职业学院
+            </textarea>          
+        </div>
+         <div class="my_name">
+        	<div class="tit"><p>掌</p><p>握</p><p>技</p><p>能</p></div>        	
+        	<textarea>
+            
+            
+            
+            
+    html+css
+    html5+css3
+    一些简单的js特效
+    dreamweaver              
+            </textarea>          
+        </div>
+        <div class="my_name">
+        	<div class="tit"><p>工</p><p>作</p><p>经</p><p>历</p></div>        	
+        	<textarea>            
+            
+            
+    很惭愧，这也是很致命的一点
+    我是应届毕业生，没工作经验，
+    至今我已仿制了12份首页静态页面
+    每个页面仿制完成至少需要5-6个小时
+    能兼容IE6,IE8,firefox,
+    HTML5+CSS3我做不到兼容IE,
+    IE只能实现部分HTML5+CSS3效果
+    IE7没测试过,因为我下载的IETester,打不开IE7        
+            </textarea>          
+        </div>
+        <div class="my_name">
+        	<div class="tit"><p>自</p><p>我</p><p>评</p><p>价</p></div>        	
+        	<textarea>             
+    看完了这个我花了一天半时间自制的简历,
+    也许你的打双眼已瞎,
+    那还真是抱歉，也许你也发现了，我没有设计天分,
+    我想当一名网页制作师,我觉得我能精确的还原设计图,           
+    我很热爱web前端开发工程师这个行业,
+    我想学更多东西,
+    但是有用的东西在工作中才能学到更多,
+    希望能有人收留,我自认接受能力还是很强的,
+    每天自学，敲代码，一敲就是12个小时,但是自学效率太慢,
+    我很想学JS，但是到现在我也是只会写几个简单的特效, 
+    我希望能投身到工作中，学到更多,       
+            </textarea>          
+        </div>
+        <div class="my_name">
+        	<div class="tit"><p>观</p><p>众</p><p>点</p><p>评</p></div>
+            <p>包大人对着魔镜问道:"魔镜啊魔镜，这世界上最黑的人是谁？"</p>
+            <p>魔镜惊愕,茫然道:"谁在和我说话？"</p>
+            <p>包大人对着元芳问道:"元芳,我设计的这个页面,从审美观方面,你觉得如何"</p>
+            <p>元芳笑而不语,心里默默的想到了三个灰常华丽的形容词</p>
+            <button>丑</button>
+            <button>很丑</button>
+            <button>非常丑</button>       	       
+        </div>
+    </article>
+<footer>
+<p>温馨提示：由于这是本人第一次设计(以前都是仿制即还原设计图),所以请在观看时带好墨镜,以防闪瞎双眼,毁了三观!</p>
+<p>Copyright © rookie making 版权所有 谁盗版 谁小狗</p>
+</footer>
+</form>
+</body>
+</html>

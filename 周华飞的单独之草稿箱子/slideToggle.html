@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+div{color:#F00; display:none;}
+p{ border-top:1px solid #000; padding:10px; text-align:center; line-height:30px; background:#0FF;color:#F00;}
+div p{ background:#0F9;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(document).ready(function()
+{
+	$('.flip').click(function()
+	{
+		$('.panel').slideToggle("slow");	
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="panel">
+<p>W3School - 领先的 Web 技术教程站点</p>
+<p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+</div>
+<p class="flip">请点击这里</p>
+</body>
+</html>

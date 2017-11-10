@@ -1,0 +1,56 @@
+@charset "gb2312";
+/* CSS Document */
+/*zero*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px!important; font-family:"Î¢ÈíÑÅºÚ"!important;}
+img{ border:none; outline:none; vertical-align:middle;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:24px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em,li,a{ transition:all 0.4s; -webkit-transition:all 0.4s; -moz-transition:all 0.4s; -o-transition:all 0.4s;}
+a{ color:#000; text-decoration:none; outline:none;}
+/*clearFix*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w1000{ width:1000px; margin:0 auto; overflow:hidden;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat;}
+.banner div{ height:728px;}
+.banner a{ width:100%; height:100%;}
+
+/*common*/
+.til{ text-align:center; margin:50px 0;}
+.btn{ width:164px; height:35px; margin:50px auto; display:block;}
+
+/*main*/
+#main{ position:relative;}
+
+
+/*doctor*/
+.doctor{ height:556px; background:url(../images/doctor_bg.jpg) center center no-repeat; position:relative;}
+.doctor .txt{ width:280px; font-size:14px; color:#666666; text-indent:30px; line-height:35px; position:absolute; right:170px; top:150px;}
+
+/*patient*/
+.patient .line{ width:730px; height:1px; background:#b4b4b4; margin:0 auto;}
+
+/*free*/
+.free p{ text-indent:30px; width:700px; margin:0 auto 50px; font-size:14px; color:#666666; text-align:center;}
+.free p a{ color:#fa7404; text-indent:0;}
+
+/*box111*/
+.box111{ position:relative;width:995px;height:330px; margin:0 auto;}
+.box111 li{ z-index:0;position:absolute; width:0px;height:0px;top:146px;cursor:pointer;left:377px; transition:0s;}
+.box111 li img{ width:100%;height:100%;vertical-align:top;}
+.box111 li p span{ display:inline-block;width:70%;height:40px;overflow:hidden;}
+.box111 .prev,.box111 .next{ display:block;z-index:100;overflow:hidden;cursor:pointer;position:absolute;width:47px;height:61px;top:131px;}
+.box111 .prev{ background:url(../images/csj_10.png) no-repeat;left:195px;}
+.box111 .next{ background:url(../images/csj_11.png) no-repeat;right:175px;} 
+
+
+

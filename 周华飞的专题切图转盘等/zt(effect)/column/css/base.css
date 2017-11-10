@@ -1,0 +1,98 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*zero*/
+html{ font-size:62.5%;}
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img,textarea,figure{ padding:0; margin:0;}
+input,select,textarea,img{ outline:none; border:none;}
+input,select,textarea{ background:#FFF;}
+img{ vertical-align:middle;}
+textarea{ resize:none;}
+ul,ol{ list-style-type:none;}
+body{ font-family:"微软雅黑"; line-height:1;}
+em,i,strong,b,small,h1,h2,h3,h4,h5,h6{ font-style:normal;}
+em,strong,b,h1,h2,h3,h4,h5,h6{ font-weight:normal; font-size:100%;}
+span,b,em,i,strong,small,label{ display:inline-block;}
+em,i,strong,b,small,span,a{ transition:all 0.4s;}
+a{ display:block; color:inherit; text-decoration:none; outline:none;}
+/*html5*/
+header,nav,article,section,aside,footer,video,audio{ display:block; padding:0; margin:0;}
+/*clear*/
+.clear{ clear:both; *zoom:1;}
+.clear:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*common*/
+.fl{ float:left;}
+.fr{ float:right;}
+.w300{ width:300px; margin:0 auto; overflow:hidden;}
+.w320{ width:320px; margin:0 auto; overflow:hidden;}
+/*noSpacing*/
+.noMt{ margin-top:0 !important;}
+.noMr{ margin-right:0 !important;}
+.noMb{ margin-bottom:0 !important;}
+.noMl{ margin-left:0 !important;}
+.noPt{ padding-top:0 !important;}
+.noPr{ padding-right:0 !important;}
+.noPb{ padding-bottom:0 !important;}
+.noPl{ padding-left:0 !important;}
+.noBt{ border-top:none !important;}
+.noBr{ border-right:none !important;}
+.noBb{ border-bottom:none !important;}
+.noBl{ border-left:none !important;}
+
+/*头部样式*/
+header{ text-align:center; background:#1364b6;}
+nav li{ float:left; font-size:15px; color:#1364B6; width:25%; height:66px; text-align:center; box-sizing:border-box; border-right:2px solid #fff; border-bottom:2px solid #fff;}
+nav li a{ background:#ececec; width:100%; height:100%; box-sizing:border-box; border-right:1px solid #d2d2d2; border-bottom:1px solid #d2d2d2;}
+nav li:nth-child(4n){ border-right:none;}
+nav li:nth-child(n+5){ border-bottom:none;}
+nav img{ margin:5px 0;}
+
+/*尾部样式*/
+#ad{ text-align:center; margin-top:20px;}
+#ad a{ display:inline-block;}
+#pass .tilss{ margin:20px 0 10px; text-align:center; line-height:40px; background:#2e8aca; color:#fff; font-size:20px;}
+#guahao{margin:0 auto 20px; font-size:12px;}
+#guahao .content{border:1px solid #2E8ACB;border-top:none;padding:5px 0px;}
+#guahao p.description{line-height:1.7;margin:0 auto; color:#676767; font-size:12px; width:96.875%;}
+#guahao p.description span{font-weight:bold;font-size:13px; font-size:14px;}
+#guahao form{margin:10px auto; width:96.875%;}
+#guahao form p{width:100%;height:20px;line-height:20px;text-indent:25px;color:#000;background:url(../images/guahao.jpg) no-repeat left center; font-size:12px;}
+#guahao form dl{padding:15px 0 0 0;width:100%;color:#000;}
+#guahao form dl dd{width:100%;margin-bottom:10px;}
+#guahao form dl dd:last-child{ text-align:center;}
+#guahao form dl em{font-style:normal;color:red;font-weight:bold;padding:0 3px 0 0;}
+#guahao form dl label{display:inline-block;width:70px;text-align:right;}
+#guahao form dl label.textarea{vertical-align:top;}
+#guahao form dl input[type="text"],#guahao form dl input[type="tel"]{width:70%;height:25px;line-height:25px; text-indent:10px;border:1px solid #ddd;background:#fff;transition: all 0.3s linear 0s;}
+#guahao form dl input[type="text"]:focus,#guahao form dl input[type="tel"]:focus{border-color:#2E8ACB;}
+#guahao form dl textarea{ text-indent:10px; width:70%;height:60px;transition: all 0.3s linear 0s;height:65px;border:1px solid #ddd;background:#fff; font-size:12px; line-height:16px;}
+#guahao form dl textarea:focus{border-color:#2E8ACB;}
+#guahao form dl input.submit{width:120px;height:20px;line-height:15px;color:#fff;text-align:center;background:#F09403;cursor:pointer; margin-top:10px;}
+footer{ background:#0068af; padding:20px 0 60px; text-align:center;}
+footer .footer{ width:93.75%; margin:0 auto;}
+footer figure{ margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #fff;}
+footer p{ font-size:14px; color:#fff; text-align:center; margin-bottom:14px;}
+.fixednav{height:40px;position:fixed;bottom:0px;}
+.fixednav a{display:block;height:40px;line-height:40px;overflow:hidden;font-size:14px;text-align:center;color:#fff;text-decoration:none;float:left;position:relative;}
+.fixednav a.phone{width:33%;background:#368ce1;}
+.fixednav a.home{width:34%;background:#F4C628;}
+.fixednav a.message{width:33%;background:#368ce1;}
+.fixednav img{ margin-right:5px;}
+
+
+
+/*media*/
+@media (min-width:320px){
+	.w320{ width:100%; margin:0 auto; overflow:hidden;}		
+}
+@media (max-width:319px){
+	.w320{ width:320px; margin:0 auto; overflow:hidden;}		
+}
+
+
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>canvas6</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#fff;}
+canvas{ display:block; margin:100px auto; background:#fff; border-radius:50%;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	/*obj*/
+	oCanvas=document.querySelectorAll('canvas')[0];
+	oContext=oCanvas.getContext('2d');
+	
+	/*createRadialGradient*/
+	oGradient=oContext.createRadialGradient(200,200,0,200,200,200);
+	oGradient.addColorStop(0,'rgb(255,0,0)');
+	oGradient.addColorStop(0.1,'rgb(255,165,0)');
+	oGradient.addColorStop(0.3,'rgb(255,255,0)');
+	oGradient.addColorStop(0.5,'rgb(0,255,0)');
+	oGradient.addColorStop(0.7,'rgb(0,127,255)');
+	oGradient.addColorStop(0.9,'rgb(0,0,255)');
+	oGradient.addColorStop(1,'rgb(139,0,255)');
+	oContext.strokeStyle=oGradient;
+	
+	/*drawWatch*/
+	function drawWatch(){
+		var x=200;
+		var y=200;
+		var r=198;
+		var nowDate=new Date();
+		var nowHour=nowDate.getHours();
+		var nowMinu=nowDate.getMinutes();
+		var nowSeco=nowDate.getSeconds();
+		var hourRadian=(-90+nowHour*30+nowMinu/2)*Math.PI/180;//分针走30分钟时针走15度(分针走2分钟时针走1度)==>nowMinu/2;
+		var minuRadian=(-90+nowMinu*6)*Math.PI/180;
+		var secoRadian=(-90+nowSeco*6)*Math.PI/180;
+		
+		/*先清空画布*/
+		oContext.clearRect(0,0,oCanvas.width,oCanvas.height);
+					
+		/*分秒表盘*/
+		/*1.画弧线*/
+		oContext.beginPath();
+		for(var i=0;i<60;i++){
+			oContext.moveTo(x,y);
+			oContext.arc(x,y,r,6*i*Math.PI/180,6*(i+1)*Math.PI/180,false);
+		}
+		oContext.stroke();
+		oContext.closePath();		
+		/*2.画白布覆盖*/
+		oContext.beginPath();
+		oContext.fillStyle='#fff';
+		oContext.moveTo(x,y);
+		oContext.arc(x,y,r*19/20,0,180,false);
+		oContext.fill();
+		oContext.closePath();
+		
+		/*时针盘*/
+		/*1.画弧线*/
+		oContext.beginPath();
+		oContext.lineWidth='4';
+		for(var i=0;i<12;i++){
+			oContext.moveTo(x,y);
+			oContext.arc(x,y,r,30*i*Math.PI/180,30*(i+1)*Math.PI/180,false);
+		}
+		oContext.stroke();
+		oContext.closePath();	
+		/*2.画白布覆盖*/
+		oContext.beginPath();
+		oContext.moveTo(x,y);
+		oContext.arc(x,y,r*18/20,0,180,false);
+		oContext.fill();
+		oContext.closePath();
+		
+		/*时针*/
+		oContext.beginPath();
+		oContext.lineWidth='4';
+		oContext.moveTo(x,y);
+		oContext.arc(x,y,r*10/20,hourRadian,hourRadian,false);
+		oContext.stroke();
+		oContext.closePath();
+		
+		/*分针*/
+		oContext.beginPath();
+		oContext.lineWidth='2';
+		oContext.moveTo(x,y);
+		oContext.arc(x,y,r*14/20,minuRadian,minuRadian,false);
+		oContext.stroke();
+		oContext.closePath();
+		
+		/*秒针*/
+		oContext.beginPath();
+		oContext.lineWidth='1';
+		oContext.moveTo(x,y);
+		oContext.arc(x,y,r*19/20,secoRadian,secoRadian,false);
+		oContext.stroke();
+		oContext.closePath();	
+	}
+	drawWatch();
+	setInterval(drawWatch,1000);
+},false)
+</script>
+</head>
+
+<body>
+<canvas width="400" height="400">您的浏览器不支持canvas</canvas>
+</body>
+</html>

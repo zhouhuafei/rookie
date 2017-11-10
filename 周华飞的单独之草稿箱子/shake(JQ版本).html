@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>shake(JQ版本)</title>
+<script src="jquery-1.7.2.min.js"></script>
+<style>
+#div{ width:200px; height:200px; background:#f00; position:fixed; bottom:0; right:0;}
+</style>
+<script>
+$(function(){
+	shake($('#div'));
+	setInterval(function(){
+		shake($('#div'));	
+	},1000)	
+	
+	/*shake*/
+	function shake(obj){ 
+		var a=['bottom','right'],b=0;
+		var u=setInterval(function(){
+		obj.css( a[b%2],(b++)%4<2?0:4 );
+			if(b>17){
+				clearInterval(u);
+				b=0;
+			}
+	 	},30)
+	}
+})
+</script>
+</head>
+
+<body>
+<div id="div"></div>
+</body>
+</html>

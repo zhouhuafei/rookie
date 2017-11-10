@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ background:#000;}
+#move_box,#img_box{ height:200px; position:relative; overflow:hidden;}
+#move_box{ width:680px;margin:200px auto;}
+#img_box{width:600px;margin:0 auto;}
+#move_box #btn_left,#move_box #btn_right{ width:40px; height:40px; background:#fff; color:#000; display:block;border-radius:20px; text-align:center; line-height:40px; z-index:3;position:absolute;top:80px;}
+#move_box #btn_left{left:0;}
+#move_box #btn_right{right:0;}
+#move_box ul{ position:absolute; left:0; top:0; z-index:2;}
+#move_box ul li{ float:left;}
+#img_1,#img_2,#img_3,#img_4,#img_5,#img_6{ width:200px; height:200px; display:inline-block; line-height:200px; color:#000; font-size:50px; text-align:center; border-radius:100px;}
+#img_1{ background:#F00;}
+#img_2{ background:#0F0;}
+#img_3{ background:#FF0;}
+#img_4{ background:#00F;}
+#img_5{ background:#0FF;}
+#img_6{ background:#F0F;}
+</style>
+<script>
+window.onload=function()
+{
+	var oBtn_left=document.getElementById('btn_left');
+	var oBtn_right=document.getElementById('btn_right');
+	var oMove_img=document.getElementById('move_img');
+	var oLi=oMove_img.getElementsByTagName('li');
+	oMove_img.innerHTML+=oMove_img.innerHTML;
+	oMove_img.style.width=oLi[0].offsetWidth*oLi.length+'px';
+	oBtn_right.onclick=function()
+	{
+		oMove_img.style.left=oMove_img.offsetLeft-oLi[0].offsetWidth+'px';
+		if(oMove_img.offsetLeft<-oMove_img.offsetWidth/2){oMove_img.style.left=-oLi[0].offsetWidth+'px';}
+	}
+	oBtn_left.onclick=function()
+	{
+		oMove_img.style.left=oMove_img.offsetLeft+oLi[0].offsetWidth+'px';
+		if(oMove_img.offsetLeft>0){oMove_img.style.left=-oLi[0].offsetWidth*5+'px';}
+	}
+		
+}
+</script>
+</head>
+
+<body>
+<div id="move_box">
+	
+    <a id="btn_left" href="#">左</a>
+    <a id="btn_right" href="#">右</a>
+	<div id="img_box">
+        <ul id="move_img">
+            <li><a id="img_1" href="#">一</a></li>
+            <li><a id="img_2" href="#">二</a></li>
+            <li><a id="img_3" href="#">三</a></li>
+            <li><a id="img_4" href="#">四</a></li>
+            <li><a id="img_5" href="#">五</a></li>
+            <li><a id="img_6" href="#">六</a></li>
+        </ul>
+    </div>   
+</div>
+</body>
+</html>

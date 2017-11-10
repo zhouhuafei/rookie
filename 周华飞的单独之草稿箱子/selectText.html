@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>selectText</title>
+<script>
+window.onload=function(){
+	function selectText(){
+		if(document.selection){//ie
+			return document.selection.createRange().text;	
+		}else{//标准
+			return window.getSelection().toString();			
+		}	
+	}
+	var oP=document.getElementsByTagName('p')[0];
+	oP.onmouseup=function(){
+		alert(selectText());	
+	}	
+}
+</script>
+</head>
+<body>
+<p>寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字寻中文字</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+@charset "gb2312";
+/* CSS Document */
+/*body*/
+body{ font-size:20px;}
+/*module1*/
+.module1{}
+.module1 .side{ background:#000; color:#fff;}
+.module1 .main{ background:#ccc; color:#fff;}
+/*
+.module1 [class*="col-lg"]{ border-right:100px solid #f00;}
+*/
+
+.l1{}
+.l2{}
+.l3{}
+.l4{}
+.l5{}

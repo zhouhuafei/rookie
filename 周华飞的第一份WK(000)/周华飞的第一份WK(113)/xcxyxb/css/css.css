@@ -1,0 +1,30 @@
+@charset "gb2312";
+/* CSS Document */
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:250px; bottom:100px;}
+
+/*nav*/
+#nav{ width:100%; height:50px; position:absolute; left:0; top:678px; z-index:999;}
+#nav em{ display:block; font-style:normal; height:50px; line-height:50px; width:1000px; margin:0 auto; text-align:center; color:#fff; background:#0063b4;}
+#nav span{ width:199px; border-right:1px solid #fff; font-size:22px;}
+#nav ul{ width:800px; height:50px; line-height:50px; background:#0063b4; font-size:18px;}
+#nav ul li{ height:50px; width:100px; text-align:center; line-height:50px; float:left;}
+#nav ul .select{ background:#013b6b;}
+
+/*contrast*/
+.contrast img{ vertical-align:middle;}
+.contrast ul{ padding:0 20px;}
+.contrast li{ float:left; margin:0 30px 26px 0; }
+
+/*common*/
+.til{ width:1000px; margin:40px auto 30px; text-align:center; color:#0063b4; padding-bottom:10px; border-bottom:1px solid #0063b4; position:relative;}
+.til h2{ font-size:43px;}
+.til h3{ font-size:12px; font-variant:small-caps;}
+.til:after{ content:""; width:0px; height:0px; border:8px solid transparent; border-top:11px solid #ef601c; position:absolute; left:50%; margin-left:-5px; bottom:-20px;}
+.noMr{ margin-right:0 !important;}
+.noMb{ margin-bottom:0 !important;}
+.noPt{ padding-top:0 !important;}
+.noPb{ padding-bottom:0 !important;}
+.noBb{ border-bottom:none !important;}

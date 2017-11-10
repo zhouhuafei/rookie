@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS初试评论特效(残缺版)</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+ol{ width:200px; height:20px; margin:200px auto; overflow:hidden;}
+li{ width:20px; height:20px; margin-right:10px; background:#000; float:left;}
+.li_active{ background:#F60;}
+</style>
+<script>
+function eventBind(obj,ev,fn)
+{
+	if(obj.attachEvent)
+	{
+		obj.attachEvent('on'+ev,fn);
+	}
+	else
+	{
+		obj.addEventListener(ev,fn,false);
+	}	
+}
+/*
+var a=1;
+var b=2;
+window.onload=function(){alert(a);}
+window.onload=function(){alert(b);}
+eventBind(window,'load',function(){alert(a);})
+eventBind(window,'load',function(){alert(b);})
+*/
+eventBind(window,'load',function()
+{	
+	var aLi=document.getElementsByTagName('li');	
+	var oOl=document.getElementsByTagName('ol')[0];
+	for (var i=0;i<=aLi.length;i++)
+	{
+		aLi[i].index=i;
+		aLi[i].onmouseover=function ()
+		{
+			for (i=0;i<aLi.length;i++)
+			{
+				if(i<=this.index )
+				{
+					aLi[i].className='li_active';
+				}
+				else
+				{
+					aLi[i].className='';	
+				}	
+			}
+		}
+	}	
+})
+</script>
+</head>
+
+<body>
+<ol>
+	<li title="非常差"></li>
+	<li title="差"></li>
+	<li title="一般"></li>
+	<li title="好"></li>
+	<li title="非常好"></li>
+</ol>
+</body>
+</html>

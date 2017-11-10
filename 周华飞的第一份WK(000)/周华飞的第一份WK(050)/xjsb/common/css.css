@@ -1,0 +1,61 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,p,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_320{ width:320px; margin:0 auto; overflow:hidden;}
+
+/*main*/
+.main{ width:320px; margin:0 auto; overflow:hidden; background:#f8f8f8;}
+
+/*banners*/
+.banners_til{ border-bottom:1px solid #999; width:300px; padding-bottom:5px; margin:20px auto;}
+.banners_til em{ width:12px; height:12px; border-radius:20px; border:2px solid #1364b6; vertical-align:middle; margin-right:5px;}
+.banners_til a{ line-height:20px; font-size:16px;}
+
+/*common*/
+.common_til{ font-size:18px; color:#006db8; line-height:26px; margin:15px 0;}
+.common_til em{ vertical-align:middle; width:26px; height:26px; line-height:13px; font-size:11px; color:#fff; background:url(../images/til_bg.png) no-repeat; text-align:center; margin-right:7px;}
+.common_tils{ color:#006fb5; font-size:16px; margin-bottom:8px;}
+.common_btn{ text-align:center; margin:30px 0;}
+.common_btn a{ border-radius:5px 0 0 5px; line-height:36px; background:#0167b7; font-size:16px; color:#fff; padding:0 10px; margin-right:10px;}
+.common_btn .last_a{ margin-right:0; border-radius:0 5px 5px 0;}
+.common_btn em{ vertical-align:middle; margin-right:10px;}
+.dashed_line{ width:296px; height:0px; border-top:1px dashed #808080;}
+.equipment,.ad,.surgery{ width:300px; margin:0 auto; padding:0 10px;}
+
+/*equipment*/
+.equipment li{ width:143px; float:left; margin:20px 10px 0 0; word-break:break-all;}
+.equipment .no_mr{ margin-right:0;}
+.equipment .first_li{ margin-top:0px;}
+.equipment li img{ vertical-align:middle; border:1px solid #d6d6d6; margin-bottom:8px;}
+.equipment p{ color:#666666; font-size:12px; line-height:16px; margin-bottom:8px;}
+.equipment p em{ width:16px; height:16px; vertical-align:middle; margin:0 3px; text-align:center;}
+.equipment li p img{ border:none; margin-top:2px;}
+.equipment h3{ font-size:14px; color:#444444; line-height:25px;}
+.equipment .common_btn{ margin-top:17px;}
+
+/*surgery*/
+.surgery img{ border:1px solid #d6d6d6;}
+.surgery p{ font-size:12px; color:#666666; text-align:center; line-height:30px; margin-top:5px;}
+.surgery .dashed_line{ margin-top:10px;}
+
+/*ad*/
+.ad{ margin:20px 0;}

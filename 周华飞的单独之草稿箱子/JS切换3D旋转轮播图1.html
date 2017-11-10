@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS切换3D旋转轮播图1</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+ul{ width:1000px; height:400px; margin:200px auto; position:relative;}
+span{ width:41px; height:54px; line-height:60px; color:#0F0; position:absolute; top:173px; cursor:pointer; z-index:10; text-align:center; font-size:30px;}
+#prev{ left:150px; background:url(prev.png) center center no-repeat;}
+#next{ right:150px; background:url(next.png) center center no-repeat;}
+li{ position:absolute; overflow:hidden;}
+.try1{ left:0px;   top:70px; z-index:2; height:250px;}
+.try2{ left:50px;  top:50px; z-index:3; height:300px;}
+.try3{ left:100px; top:25px; z-index:4; height:350px;}
+.try4{ left:150px; top:0px;  z-index:5; height:400px;}
+.try5{ left:200px; top:25px; z-index:4; height:350px;}
+.try6{ left:250px; top:50px; z-index:3; height:300px;}
+.try7{ left:300px; top:75px; z-index:2; height:250px;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function()
+{
+	var oUl=document.getElementsByTagName('ul')[0];
+	var aLi=document.getElementsByTagName('li');
+	var oPrev=document.getElementById('prev');
+	var oNext=document.getElementById('next');
+	var arr=[];
+	var timer=null;
+	for(var i=0; i<aLi.length; i++)
+	{
+		arr.push([parseInt(getStyle(aLi[i],'left')),parseInt(getStyle(aLi[i],'top')),parseInt(getStyle(aLi[i],'height')),getStyle(aLi[i],'zIndex')])
+	}
+	oPrev.onclick=function()
+	{
+		arr.push(arr[0]);
+		arr.shift(arr[0]);
+		for(var i=0; i<aLi.length; i++)
+		{		
+			startMove(aLi[i],{left:arr[i][0],top:arr[i][1],height:arr[i][2]});
+			aLi[i].style.zIndex=arr[i][3];
+		}		
+	}
+	oNext.onclick=function()
+	{
+		arr.unshift(arr[arr.length-1]);
+		arr.pop(arr[arr.length-1]);
+		for(var i=0; i<aLi.length; i++)
+		{		
+			startMove(aLi[i],{left:arr[i][0],top:arr[i][1],height:arr[i][2]});
+			aLi[i].style.zIndex=arr[i][3];
+		}		
+	}
+	/*
+	timer=setInterval(oNext.onclick,7000);
+	oUl.onmouseover=function()
+	{
+		clearInterval(timer);	
+	}
+	oUl.onmouseout=function()
+	{
+		timer=setInterval(oNext.onclick,7000);
+	}
+	*/	
+}
+function getStyle(obj,attr)
+{
+	if(obj.currentStyle)
+	{
+		return obj.currentStyle	[attr];
+	}
+	else
+	{
+		return getComputedStyle(obj,false)[attr];	
+	}	
+}	
+
+</script>
+</head>
+
+<body>
+<ul>
+	<span id="prev"></span>
+	<span id="next"></span>
+	<li class="try1"><img src="try1.png" /></li>
+	<li class="try2"><img src="try2.png" /></li>
+	<li class="try3"><img src="try3.png" /></li>
+	<li class="try4"><img src="try4.png" /></li>
+	<li class="try5"><img src="try5.png" /></li>
+	<li class="try6"><img src="try6.png" /></li>
+	<li class="try7"><img src="try7.png" /></li>
+</ul>
+</body>
+</html>

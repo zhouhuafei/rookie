@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>倒计时2</title>
+<style>
+*{ margin:0 auto;}
+body{ font-family:"楷体";}
+#div1,#div2{ width:500px; height:60px; margin-top:20px; background:#000; color:#F00; line-height:60px; padding-left:20px; font-size:20px;}
+#div1 label{ vertical-align:middle;}
+#div1 input{ width:300px; height:30px; line-height:30px; font-size:14px; color:#00F; padding-left:20px;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv1=document.getElementById('div1');
+	var oInput1=oDiv1.getElementsByTagName('input')[0];
+	var oDiv2=document.getElementById('div2');
+	var oSpan2=oDiv2.getElementsByTagName('span')[0];
+	var timer=setInterval(countDown,1000);
+	function countDown()
+	{
+		var iFutureTime=new Date(oInput1.value);				//以字符串形式获取未来时间;
+		var iNowTime=new Date();
+		var iSurplusTime=Math.floor(iFutureTime-iNowTime)/1000;	
+		var iSurplusDays=Math.floor(iSurplusTime/86400);
+		var iSurplusHour=Math.floor(iSurplusTime%86400/3600);
+		var iSurplusMinu=Math.floor(iSurplusTime%86400%3600/60);
+		var iSurplusSeco=Math.floor(iSurplusTime%60);
+		var iSurplusAlls=fillZero(iSurplusDays)+'天'+fillZero(iSurplusHour)+'时'+fillZero(iSurplusMinu)+'分'+fillZero(iSurplusSeco)+'秒数';
+		if(iSurplusTime>=0)
+		{  
+		    oSpan2.innerHTML=iSurplusAlls;
+		}
+		else
+		{
+		    oSpan2.innerHTML='未来时间已被终结';
+		}
+	}
+	countDown();
+}
+function fillZero(n)
+{
+	if(n<10)
+	{
+		return '0'+n;	
+	}
+	else
+	{
+		return ''+n;	
+	}
+}
+
+//January February March April May June July August September October November December 
+</script>
+</head>
+<body>
+<div id="div1"><label for="time">未来时间:</label><input id="time" value="October 26,2014 14:50:00"></input></div>
+<div id="div2">距离未来时间还剩余:<span></span></div>
+</body>
+</html>

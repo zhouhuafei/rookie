@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+
+function getRandomNum(Min,Max)
+{   
+	var Range = Max - Min;   
+	var Rand = Math.random();  
+	return  Min + Math.round(Rand * Range); 
+} 
+document.body.innerHTML=getRandomNum(10,99);
+
+
+//0-1 		Math.round(Math.random())
+
+//0-5  		Math.round(Math.random()*5)
+//5-10  	Math.round(Math.random()*5+5)
+
+//0-10  	Math.round(Math.random()*10)
+//10-20  	Math.round(Math.random()*10+10)
+
+//0-80		Math.round(Math.random()*80)
+//20-100 	Math.round(Math.random()*80+20)
+
+//0-max		Math.round(Math.random()*max)
+//1-max		Math.ceil(Math.random()*max)
+//min-max	Math.round(Math.random()*(max-min)+min)
+ 
+</script>
+</body>
+</html>

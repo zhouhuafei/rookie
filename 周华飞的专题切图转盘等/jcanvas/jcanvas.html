@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>jcanvas</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#000;}
+canvas{ background:#fff; margin:100px auto; display:block;}
+</style>
+<script src="jq.js"></script>
+<script src="jcanvas.js"></script>
+<script>
+$(function(){
+	for(var i=0;i<10;i++){
+		$('#canvas1').drawArc({
+			draggable:true,
+			strokeStyle:'#f00',
+			strokeWidth:1,
+			x:200,
+			y:200,
+			radius:50
+		});
+	}
+})
+</script>
+</head>
+<body>
+<canvas id="canvas1" width="400" height="400"></canvas>
+</body>
+</html>

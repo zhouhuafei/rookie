@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>fadeOut</title>
+<style>
+div{ float:left; margin:0 10px; width:200px; height:200px; background:#F00;}
+</style>
+<script>
+window.onload=function(){
+	var aDiv=document.getElementsByTagName('div');
+	for(var i=0;i<aDiv.length;i++){
+		aDiv[i].onmouseover=function(){
+			FadeOut(this);				
+		}	
+	}
+}
+function getStyle(obj,attr){return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];}
+function FadeOut(obj){
+	var cur=getStyle(obj,'opacity')*100;
+	var speed=-5;
+	if(cur==0){return;}	
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function(){
+		cur+=speed;
+		if(cur<0){
+			clearInterval(obj.timer);	
+		}else{
+			//console.log(cur);
+			obj.style.opacity=cur/100;
+			obj.style.fillter='alpha(opacity:'+cur+')';
+		}			
+	},30)	
+}
+</script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

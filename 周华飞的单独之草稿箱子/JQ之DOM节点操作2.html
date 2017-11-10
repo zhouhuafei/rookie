@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQDOM接点操作2</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ height:2000px;}
+.bg_red{ background:#F00;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	$('div').wrap('<b></b>')			//wrap()包裹节点	第一种写法
+	//$('div').wrap('<b />')			//第二种写法
+	//$('div').wrap('<b>123<b/>')			//第三种写法
+	//$('div').wrap('<b><h3><em></em></h3></b>')	//第四种写法
+	//$('div').wrap($('strong').get(0));		//先获取strong再进行包裹
+	//$('div').wrap(document.createElement('h1'));	//原生创建再进行包裹
+	/*
+	$('div').wrap(function(index)
+	{
+		return '<h3>'+index+'</h3>';	
+	})
+	*/
+	
+	//$('em').unwrap('<div><p></p></div>');		//unwrap 移除外层包裹元素
+	//$('em').unwrap('<p></p>');	//这两句效果效果相同
+	
+	
+	//如果移除两层外面的包裹元素就需要unwrap两次
+	//$('em').unwrap('<p></p>');
+	//$('em').unwrap('<div></div>');
+	
+	//$('div').wrap('<h3 />');		//wrap        每对div各自都被一对h3包裹
+	//$('div').wrapAll('<h3 />');		//wrapAll     所有的div都被一对h3包裹	
+	
+	//$('div').wrapInner('<h3 />')		//wrapInner   包裹div里面的元素
+
+	/*
+	$('.div1').click(function()
+	{
+		$(this).toggleClass('bg_red');
+	})
+	$('.div1').clone(true).appendTo('body');  //参数true会把复制的节点的事件也复制过来
+	*/
+	//$('.div1').remove();			   //remove()    删除节点
+	//$('div').remove('.div0');			   //remove()    删除class="div0"的节点
+	
+	//remove()删除节点会把节点的事件也删除，当你再把你删除的节点再添加到（appendTo/append）页面时，以前的事件不会再次被触发
+	//detach()删除节点会保留节点的事件，当你再把你删除的节点再添加到（appendTo/append）页面时，以前的事件可以再次被触发
+	//empty() 删除节点里面的内容  保留空节点   相当于清空节点
+	
+	//下述的两种替换节点方式不同，但结果相同
+	//replaceWith()    替换节点(替换内容和标签并清空事件)
+	//$('.div1').replaceWith('<a href="#">123</a>')
+	//replaceAll()     替换节点(替换内容和标签并清空事件)
+	//$('<a href="#">123</a>').replaceAll('.div1')
+
+})
+
+</script>
+</head>
+
+<body>
+	
+	<div class="div0">
+        	<strong>我是strong</strong>
+        	<p><em>em</em>我是div里面的标签p</p>
+                <h2>我是div里面的h2</h2>
+        </div> 
+        
+        <div class="div1">123</div>
+        
+        
+        
+        
+        
+</body>
+</html>

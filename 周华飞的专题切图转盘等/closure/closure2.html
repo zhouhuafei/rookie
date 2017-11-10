@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script>
+//题目一
+/*
+(function(){
+	function a(a){
+		alert(a);
+		var a=2;
+		function a(a){
+			alert(a);	
+		}
+		a();
+	}
+	a(1);
+})();
+*/
+//题目二
+/*
+(function(){
+	function a(a){
+		alert(a);
+		var a=2;
+		return function a(a){
+			alert(a);	
+		};
+	}
+	a(1)();
+})();
+*/
+//题目三
+/*
+(function(){
+	function a(a){
+		alert(a);
+		var a=2;
+		return function a(a){
+			alert(a);	
+		};
+	}
+	a(1)(1);
+})();
+*/
+//题目四
+/*
+(function(){
+	function a(a){
+		alert(a);
+		var a=2;
+		return function a(){
+			alert(a);	
+		};
+	}
+	a(1)(1);
+})();
+*/
+</script>
+</body>
+</html>

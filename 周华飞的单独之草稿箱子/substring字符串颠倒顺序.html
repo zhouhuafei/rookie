@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>substring字符串颠倒顺序</title>
+</head>
+
+<body>
+<script>
+var str='nmlkjihgfedcba';
+function upside(str)
+{
+	var str2='';
+	for(var i=str.length;i>=0;i--)
+	{
+		str2+=str.substring(i,i+1);
+	}
+	return str2;	
+}
+alert(upside(str));
+</script>
+</body>
+</html>

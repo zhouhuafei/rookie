@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>无标题文档</title>
+<style>
+*{ margin:0;}
+canvas{ display:block; margin:0 auto;}
+</style>
+</head>
+<body>
+<canvas width="500" height="500"></canvas>
+<script>
+	var oCan=document.getElementsByTagName('canvas')[0];
+	var oC=oCan.getContext('2d');
+	var oCorloe=oC.createRadialGradient(250,250,0,250,250,250);
+	oCorloe.addColorStop(0,"#ccc");
+	oCorloe.addColorStop(0.2,"#f0f");
+	oCorloe.addColorStop(0.4,"#00f");
+	oCorloe.addColorStop(0.6,"#90f");
+	oCorloe.addColorStop(0.8,"#90d");
+	oCorloe.addColorStop(1,"#f00");
+	oC.strokeStyle=oCorloe;
+	oC.save();
+	oC.beginPath();
+	oC.arc(250,250,250,0,Math.PI*2,false);
+	oC.stroke();
+	oC.closePath();
+	oC.restore();	
+	var num=6;
+	var radian=Math.PI/180;
+	var curve=360/num*radian;
+	for(var i=0;i<num;i++){
+		oC.save();
+		oC.beginPath();
+		oC.moveTo(250,250);
+		oC.lineTo(250+Math.sin(curve*i)*250,0+250-Math.cos(curve*i)*250);
+		oC.stroke();
+		oC.closePath();
+		oC.restore();			
+	}
+</script>
+</body>
+</html>

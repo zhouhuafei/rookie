@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>wall</title>
+<style>
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none; cursor:pointer;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+/*wall_case*/
+#wall_case{ width:993px; height:566px; margin:0 auto; position:relative;}
+#wall_case ul{ width:993px; height:519px; position:relative;}
+#wall_case ul li{ width:985px; height:511px; padding:3px; border:1px solid #006db8; position:absolute; left:0; top:0; display:none; background:#fff;}
+#wall_case ul .li_active{ display:block;}
+#wall_case ol{ width:93px; height:12px; margin:35px auto 0;}
+#wall_case ol li{ width:12px; height:12px; margin-right:15px; background:#a5a5a5; float:left; border-radius:50%;}
+#wall_case ol .li_active{ background:#fff;}
+#wall_case #wall_prev{ width:39px; height:89px; position:absolute; top:209px; z-index:2; left:4px;}
+#wall_case #wall_next{ width:39px; height:89px; position:absolute; top:209px; z-index:2; right:4px;}
+</style>
+<script>
+eventBind(window,'load',function(){	
+	/*wall_case*/
+	(function(){
+		var oWall=document.getElementById('wall_case');
+		var oPrev=document.getElementById('wall_prev');
+		var oNext=document.getElementById('wall_next');
+		var oUl=oWall.getElementsByTagName('ul')[0];
+		var aCut=oUl.getElementsByTagName('li');
+		var oOl=oWall.getElementsByTagName('ol')[0];
+		var aBtn=oOl.getElementsByTagName('li');
+		var now=0;
+		var timer=null;
+		for(var i=0;i<aCut.length;i++){
+			aBtn[i].index=i;
+			aBtn[i].onmouseover=function(){
+				now=this.index;
+				tab();		
+			}	
+		}
+		function tab(){
+			for(var i=0;i<aCut.length;i++){
+				aBtn[i].className='';
+				aCut[i].className='';
+			}
+			aBtn[now].className='li_active';
+			aCut[now].className='li_active';
+		}
+		function next(){
+			now++;
+			now%=aCut.length;
+			tab();	
+		}
+		function prev(){
+			now--;
+			if(now==-1){
+				now=aCut.length-1;
+			}
+			tab();
+		}
+		timer=setInterval(next,5000);
+		oWall.onmousemove=function(){
+			clearInterval(timer);	
+		}
+		oWall.onmouseout=function(){				
+			timer=setInterval(next,5000);
+		}
+		oPrev.onclick=function(){
+			prev();	
+		};
+		oNext.onclick=function(){
+			next();	
+		};				
+	})();
+})
+function eventBind(obj,ev,fn){
+	if(obj.attachEvent){
+		obj.attachEvent('on'+ev,fn);
+	}else{
+		obj.addEventListener(ev,fn,false);
+	}	
+}
+</script>
+</head>
+<body>
+<!--wall_case-->
+<div id="wall_case">
+	<a id="wall_prev"><img src="/images/wall_prev.png" /></a>
+        <a id="wall_next"><img src="/images/wall_next.png" /></a>
+	<ul>
+        	<li class="li_active"><img src="/images/wall_case1.jpg" /></li>
+        	<li><img src="/images/wall_case2.jpg" /></li>
+        	<li><img src="/images/wall_case3.jpg" /></li>
+        	<li><img src="/images/wall_case4.jpg" /></li>
+        </ul>
+        <ol>
+        	<li class="li_active"></li>
+        	<li></li>
+        	<li></li>
+        	<li style="margin-right:0px;"></li>
+        </ol>
+</div>
+</body>
+</html>

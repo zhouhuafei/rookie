@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>substring文字搬运工</title>
+<style>
+textarea,body,div,input{ margin:0; padding:0;}
+#btn{ float:left;}
+#txt,#div{ width:499px; height:499px; float:left; padding:20px; border:1px solid #999; overflow-y:scroll;}
+</style>
+<script>
+window.onload=function()
+{
+	var oBtn=getId('btn');
+	var oDiv=getId('div');
+	var oTxt=getId('txt');
+	var str=oTxt.value;
+	var timer=null;
+	oBtn.onclick=function()
+	{		
+		clearInterval(timer);
+		timer=setInterval(function()
+		{
+			str=oTxt.value;
+			if(str!='')
+			{
+				oDiv.innerHTML+=str.substring(0,1);
+				oTxt.value=str.substring(1);	
+			}
+			else
+			{
+				clearInterval(timer);				
+			}					
+		},30)
+	}
+}
+function getId(id){return document.getElementById(id);}
+</script>
+</head>
+
+<body>
+<textarea id="txt">
+飞写了一段文字用来搬运东西周华飞写了一段文字用来搬运东西周华飞写了一段文字用来搬运东西周华飞写了一段文字用来搬运
+</textarea>
+<input id="btn" value="搬运" type="button" />
+<div id="div"></div>
+</body>
+</html>

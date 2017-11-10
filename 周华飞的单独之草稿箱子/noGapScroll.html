@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>noGapScroll</title>
+<style>
+*{ margin:0; padding:0;}
+#NoGapScroll{ position:relative; width:300px; height:300px; margin:200px auto; overflow:hidden;}
+#NoGapScroll ul{ width:300px; position:absolute; left:0; top:0; overflow:hidden;}
+#NoGapScroll li{ width:300px; height:50px; background:#ccc;}
+</style>
+<script>
+window.onload=function(){
+	NoGapScroll('NoGapScroll');
+	function NoGapScroll(oParentId){
+		var oParent=document.getElementById(oParentId);
+		var oUl=oParent.children[0];
+		var aLi=oUl.children;
+		var speed=2;
+		var timer=null;
+		oUl.innerHTML+=oUl.innerHTML;
+		oUl.style.height=aLi[0].offsetHeight*aLi.length;
+		function up(){
+			if(oUl.offsetTop<-oUl.offsetHeight/2){oUl.style.top=0;}		
+			oUl.style.top=oUl.offsetTop-speed+'px';
+		}
+		timer=setInterval(up,30);
+		oUl.onmouseover=function(){clearInterval(timer);}
+		oUl.onmouseout=function(){timer=setInterval(up,30);}
+	}
+}
+</script>
+</head>
+<body>
+	<div id="NoGapScroll">
+        	<ul>
+                	<li>1</li>
+                	<li>2</li>
+                	<li>3</li>
+                	<li>4</li>
+                	<li>5</li>
+                	<li>6</li>
+                </ul>
+        </div>
+</body>
+</html>

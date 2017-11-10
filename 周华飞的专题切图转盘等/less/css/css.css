@@ -1,0 +1,21 @@
+/* Compiled Less CSS File */
+/* Generated from "css.css" */
+
+@import 'base.css';
+@charset "gb2312";
+/* CSS Document */
+div {
+  background: #000000;
+  color: #ffffff;
+  width: 200px;
+  height: 200px;
+  line-height: 100px;
+  font-size: 20px;
+  margin: 0 auto;
+}
+div p {
+  text-align: center;
+}
+div h2 {
+  text-align: right;
+}

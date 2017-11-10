@@ -1,0 +1,76 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,p,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_320{ width:320px; margin:0 auto; overflow:hidden;}
+
+/*main*/
+.main{ width:320px; margin:0 auto; overflow:hidden; background:#f8f8f8;}
+
+/*banners*/
+.banners_til{ border-bottom:1px solid #999; width:300px; padding-bottom:5px; margin:20px auto;}
+.banners_til em{ width:12px; height:12px; border-radius:20px; border:2px solid #1364b6; vertical-align:middle; margin-right:5px;}
+.banners_til a{ line-height:20px; font-size:16px;}
+
+/*common*/
+.conmon_til{ width:300px; margin:20px auto 10px; background:#0f60b3; height:26px;}
+.conmon_til span{ width:62px; line-height:21px;  margin:5px 0 0 7px; font-size:12px; color:#0f60b3; font-weight:bold; padding-left:35px;}
+.conmon_til a{ line-height:26px; margin-right:7px; font-size:12px; color:#fff; padding-left:20px; background:url(../images/phone.jpg) left center no-repeat;}
+.conmon_til .bg1{ background:url(../images/til1.jpg) 8px 4px no-repeat #f8f8f8;}
+.conmon_til .bg2{ background:url(../images/til2.jpg) 8px 4px no-repeat #f8f8f8;}
+.conmon_til .bg3{ background:url(../images/til3.jpg) 8px 4px no-repeat #f8f8f8;}
+.conmon_til .bg4{ background:url(../images/til4.jpg) 8px 4px no-repeat #f8f8f8;}
+.conmon_til .bg5{ background:url(../images/til5.jpg) 8px 4px no-repeat #f8f8f8;}
+.dashed_line{ width:320px; height:0px; border-top:1px dashed #808080; margin-top:20px;}
+.address,.drive,.ad{ width:300px; margin:0 auto; padding:0 10px;}
+
+/*address*/
+.address p{ font-size:12px; color:#666666;}
+.address strong{ font-weight:bold; color:#000;}
+.address span{ color:#1264b6;}
+
+/*drive*/
+.dashed_bg1{ background:url(../images/drive1.jpg) 4px 2px no-repeat;}
+.dashed_bg2{ background:url(../images/drive2.jpg) 4px 2px no-repeat;}
+.dashed_bg3{ background:url(../images/drive3.jpg) 4px 7px no-repeat;}
+.dashed_bg4{ background:url(../images/drive4.jpg) 4px 2px no-repeat;}
+.dashed_bg5{ background:url(../images/drive5.jpg) 4px 2px no-repeat;}
+.drive p,.drive h3,.drive strong{ padding-left:22px; font-size:12px; color:#666666; line-height:24px;}
+.drive h3{ font-weight:bold; margin-top:9px;}
+.drive strong{ padding-left:0; font-weight:bold;}
+.drive .dashed_bg3 p{ line-height:33px;}
+.drive .dashed_bg4 p{ line-height:25px;}
+
+/*ad*/
+.ad{ margin:20px 0;}
+
+/*about*/
+.about { padding-bottom:10px; border:#1364b6 1px solid; width:300px; margin:0 auto;}
+.about h2 { padding-left:15px; height:37px; margin-bottom:10px; background:#1364b6; font-size:16px; font-weight:100; font-family:'Microsoft Yahei'; line-height:37px; color:#fff; }
+.about dl{ width:300px; margin:0 auto; overflow:hidden;}
+.about dd{ width:100%; height:33px; margin-top:6px; font-size:14px; font-weight:700; line-height:33px;}
+.about dd a{ display:inline; text-align:center; color:#FFF; font-size:12px;}
+.about dd a.a01{ float:left; background:#91c1e9; width:170px; margin-right:4px; }
+.about dd a.a02{ float:right; background:#db7077; width:126px; }
+.about dd a.a03{ float:left; background:#d0454e; width:134px; margin-right:4px;  }
+.about dd a.a04{ float:right; background:#e1822a; width:162px; }
+.about dd a.a05{ float:left; background:#13b9ad; width:170px; margin-right:4px;  }
+.about dd a.a06{ float:right; background:#f3b174; width:126px; }

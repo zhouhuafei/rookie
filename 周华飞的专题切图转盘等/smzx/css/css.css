@@ -1,0 +1,67 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*change*/
+.change .tils{ margin-bottom:10px; line-height:1.6; font-size:3.4rem; background:#e24f3d; color:#fff; text-align:center;}
+.change dl{ margin-bottom:8%; position:relative;}
+.change dd{ position:absolute; left:10px; bottom:8%; width:48%; font-size:2.4rem;}
+.change p{ line-height:1.5; margin-bottom:13%; text-indent:20px;}
+
+
+/*old*/
+.old{ padding-bottom:8%;}
+.old p{ font-size:2.4rem; line-height:1.25; color:#fff; text-indent:30px; margin-bottom:8%;}
+.old dl{ padding-bottom:4%; margin-bottom:4%; border-bottom:1px solid #696969;}
+.old dl:last-of-type{ margin-bottom:0; padding-bottom:0; border-bottom:none;}
+.old dt{ width:25%;}
+.old dd{ width:72%;}
+.old dd h2{ font-size:3.6rem; color:#fff; margin:4% 0;}
+.old dd strong{ font-style:italic; font-size:7rem; color:#f62f17; margin-right:5%;}
+.old dd p{ line-height:1.45;}
+.old .btn{ width:72%; font-size:2.4rem; line-height:1.75;}
+
+/*effect*/
+.effect li{ width:40%;}
+.effect li{ margin-bottom:5%;}
+.effect li.fl{ margin-left:5%;}
+.effect li.fr{ margin-right:5%;}
+
+/*advantage*/
+.advantage dl{ position:relative;}
+.advantage .til{ position:absolute; left:0; top:0;}
+.advantage dt{ width:64%;}
+.advantage dd{ width:51%; position:absolute; bottom:4%; right:1.5%;}
+.advantage dd img{ margin-bottom:4%;}
+
+/*case*/
+.case dl{ margin-bottom:8%;}
+.case dt{ width:37%;}
+.case dd{ width:60%; font-size:2.4rem;}
+.case p{ font-size:2.4rem; line-height:1.4; position:relative;}
+.case em{ vertical-align:middle; margin-right:6px; width:5%;}
+.case em img{ width:100%;}
+
+/*question*/
+.question{ padding-bottom:7%; text-align:center;}
+.question a{ line-height:1.75; font-size:2.4rem; color:#282828; background:#fff; padding:0 1%; margin:1%;}
+.question a:nth-of-type(2n+1){ color:#fff; background:#e24f3d;}
+/*common*/
+.til{ margin:8% auto; width:96.875%;}
+.wrap{ width:96.875%; margin:0 auto;}
+.bg{ background:#282828; overflow:hidden;}
+.btn a{ color:#fff; background:#4a4a4a; width:47%; line-height:1.7; text-align:center; border-radius:5px;}
+.btn a:first-of-type{ background:#e24f3d;}
+
+/*media*/
+@media (min-width: 480px) and (max-width: 639px){
+	
+	
+}
+@media (min-width: 320px) and (max-width: 479px){
+	
+	
+}

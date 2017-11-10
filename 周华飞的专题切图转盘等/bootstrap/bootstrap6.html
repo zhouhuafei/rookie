@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>bootstrap</title>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/css.css">
+        <style>
+        a{ outline: none !important;}
+        .nav{ margin: 20px 0;}
+        </style>
+</head>
+<body>
+        <div class="container">
+                <ul id="tab" class="nav nav-pills" role="tablist">
+                        <li role="presentation" class="active"><a>1</a></li>
+                        <li role="presentation"><a href="">2</a></li>
+                        <li role="presentation"><a href="">3</a></li>
+                        <li role="presentation"><a href="">4</a></li>
+                        <li role="presentation"><a href="">5</a></li>
+                        <li role="presentation"><a href="">6</a></li>
+                        <li role="presentation"><a href="">7</a></li>
+                        <li role="presentation"><a href="">8</a></li>
+                        <li role="presentation"><a href="">9</a></li>
+                        <li role="presentation"><a href="">10</a></li>
+                </ul>
+                <ul id="tab2" class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a>1</a></li>
+                        <li role="presentation"><a href="">2</a></li>
+                        <li role="presentation"><a href="">3</a></li>
+                        <li role="presentation"><a href="">4</a></li>
+                        <li role="presentation"><a href="">5</a></li>
+                        <li role="presentation"><a href="">6</a></li>
+                        <li role="presentation"><a href="">7</a></li>
+                        <li role="presentation"><a href="">8</a></li>
+                        <li role="presentation"><a href="">9</a></li>
+                        <li role="presentation"><a href="">10</a></li>
+                </ul>
+                <ul id="tab3" class="nav nav-tabs nav-justified" role="tablist">
+                        <li role="presentation" class="active"><a>1</a></li>
+                        <li role="presentation"><a href="">2</a></li>
+                        <li role="presentation"><a href="">3</a></li>
+                        <li role="presentation"><a href="">4</a></li>
+                        <li role="presentation"><a href="">5</a></li>
+                        <li role="presentation"><a href="">6</a></li>
+                        <li role="presentation"><a href="">7</a></li>
+                        <li role="presentation"><a href="">8</a></li>
+                        <li role="presentation"><a href="">9</a></li>
+                        <li role="presentation" class="disabled"><a href="">10</a></li>
+                </ul>
+        </div>
+        <script src="http://7xk2hb.dl1.z0.glb.clouddn.com/js/jquery-1.11.3.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+        $('#tab a,#tab2 a,#tab3 a').click(function(event) {
+                /* Act on the event */
+               event.preventDefault();
+               $(this).tab('show'); 
+        });
+
+        </script>
+</body>
+</html>

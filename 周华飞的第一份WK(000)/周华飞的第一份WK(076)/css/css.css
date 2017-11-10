@@ -1,0 +1,76 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+input,select,textarea{ outline:none; border:none; background:#FFF; resize:none;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+ul,ol{ list-style-type:none;}
+p{ line-height:25px;}
+em,i,strong,b,small{ font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label,img{ display:inline-block;}
+em{ transition:all 1s; -webkit-transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s;}
+a{ outline:none; text-decoration:none; color:#000; transition:all 0.3s; -webkit-transition:all 0.3s; -moz-transition:all 0.3s; -o-transition:all 0.3s;}
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_grey{ width:100%; margin:0 auto; overflow:hidden; background:#e8e8e8;}
+
+/*banner*/
+.banner{ background:url(../images/banner.jpg) center center no-repeat; height:524px; border-bottom:2px solid #2ba09e; position:relative;}
+.banner a{ width:100%; height:60px; position:absolute;  bottom:120px; left:0;}
+
+/*eight*/
+.commonTil{ border-bottom:1px solid #cacbcc; margin:50px 0 40px; text-align:center;}
+.commonTil em{ color:#2ba09e; border-bottom:1px solid #2ba09e; font-size:30px; padding:0 50px 20px; margin-bottom:-1px;}
+.eight{ width:1000px; margin:0 auto;}
+.eight ul{ box-shadow:-1px 1px 10px #000;}
+.eight ul li{ display:none; height:442px;}
+.eight ul .li_active{ display:block;}
+.eight .word{ width:286px; height:372px; padding:70px 60px 0; color:#666666;}
+.eight h2{ text-align:center; margin-bottom:40px; font-size:24px;}
+.eight p{ line-height:18px; text-indent:30px; font-size:14px;}
+.eight .img{ width:594px; height:442px; overflow:hidden;}
+.eight ol{ margin:20px auto 30px; height:24px; width:100px;}
+.eight ol em{ width:14px; height:24px; float:left; margin-right:6px; cursor:pointer;}
+.eight ol li{ width:10px; height:10px; border:3px solid #fff; background:#cacbcc; border-radius:100%; margin-top:4px; float:left; margin-right:6px;}
+.eight ol .li_active{ background:#fff; border:3px solid #cacbcc;}
+
+/*work*/
+.work div{ width:1000px; height:500px; overflow:hidden; position:relative; margin-bottom:40px;}
+.work p{ width:820px; height:70px; line-height:70px; padding-left:100px; font-size:18px; color:#fff; background:url(../images/work_bg.png); position:absolute; left:50px; bottom:30px;}
+.work ol{ position:absolute; right:100px; bottom:57px; width:104px;}
+.work li{ width:10px; height:10px; background:#fff; border-radius:100%; margin:7px 12px 0 0; float:left;}
+.work .li_active{ background:#333534; margin-top:4px; border:3px solid #fff;}
+
+/*life*/
+.life{ margin-bottom:50px; position:relative; height:756px;}
+.life div{ width:400px; color:#fff; position:absolute; left:310px; top:280px;}
+.life h2{ font-size:30px; letter-spacing:3px;}
+.life p{ font-size:18px; text-indent:30px; margin-top:30px;}
+
+/*case*/
+.case .commonTil div{ width:1000px; margin:0 auto; position:relative;}
+.case .commonTil a{ position:absolute; right:0; top:0;}
+.case li{ border:1px solid #b2b6b0; width:326px; color:#666666; background:#fff; margin:0 8px 10px 0; float:left;}
+.case li img{ vertical-align:middle;}
+.case li p{ height:50px; line-height:50px; text-align:center;}
+.case .laud{ text-align:right; padding-right:50px; margin-bottom:14px;}
+.case .laud em{ margin-right:14px;}
+.case .laud img{ margin-right:5px;}
+.case .more{ padding-top:20px; border-top:1px solid #f2f2f2;}
+.case .more strong{ width:280px; margin-left:20px; margin-bottom:30px; font-size:12px; position:relative;}
+.case .more img{ margin-right:20px; float:left;}
+.case .more a{ width:70px; color:#2ba09e; font-size:12px; position:absolute; right:0; bottom:-20px;}
+.case .case_btn{ width:176px; display:block; height:44px; line-height:44px; text-align:center; color:#fff; font-size:18px; background:#2ba09e; margin:10px auto 30px;}

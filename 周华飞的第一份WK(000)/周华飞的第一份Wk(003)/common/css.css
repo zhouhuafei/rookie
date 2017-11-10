@@ -1,0 +1,70 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:1em; font-family:Verdana,Arial,"宋体";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none; color:#000; transition:all 0.3s;}
+p{ line-height:33px;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.hr_100{ height:100px;}
+.hr_135{ height:135px;}
+.commonWidth{ width:100%; margin:0 auto; background:#006fb7;}
+.commonWidth_1000{ width:1000px; margin:0 auto;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+
+/*mian_box*/
+.main_box{ overflow:hidden; width:100%;}
+
+/*intro*/
+.intro_box{ width:100%; padding:15px 2% 0px;}
+.intro{ width:48%; padding:0 1%; position:relative;}
+.intro img{ width:50%;}
+.intro_word{ width:46%; padding:10px 3% 0 1%;}
+.intro_word p{ color:#333333; font-size:0.75em; width:100%; white-space:nowrap;}
+.intro_word a{ width:42%; padding:10px 2%; text-align:center; color:#FFF; background:#9b0da1; display:inline-block; font-size:0.75em; position:absolute; right:2%; bottom:0;}
+
+/*health_box*/
+.health_box{ overflow:hidden; width:100%;}
+.health_box h2{ width:96%; padding:10px 2%; font-size:1.1em; background:#9b0da1; color:#FFF;}
+.health_box p{ width:96%; padding:15px 2% 20px; font-size:0.85em; color:#323232; text-indent:1.6em; line-height:25px;}
+.health_imgs{ overflow:hidden; width:96%; padding:10px 2% 0px; background:#f1f1f1;}
+.health_imgs .health_big{ width:100%; display:block;}
+.health_small_box{ width:100%; overflow:hidden;}
+.health_samll_box img{ width:25%;}
+.health_samll_box .mr_0{ margin-right:0;}
+.health_a{ padding:0 2%; overflow:hidden; width:96%;}
+.health_a ul li{ border:2px solid #cb6dd4;width:38%; float:left; border-radius:8px; margin:0 5%;}
+.health_a ul li a{ width:100%; display:inline-block; color:#FFF; padding:10px 0; border-radius:8px; text-align:center; border:1px solid #ccc; margin-left:-1px;background:#bc53c6; }
+.health_a ul li .span_a1{ width:29px; height:15px; display:inline-block; background:url(../images/icon_imgs.png) 0 -44px; margin-right:5px;}
+.health_a ul li .span_a2{ width:23px; height:18px; display:inline-block; background:url(../images/icon_imgs.png) 0 -26px; margin-right:5px;}
+
+/*footer_box*/
+.footer_box{ width:100%; overflow:hidden;}
+.footer_box ul li{ float:left; width:33%; padding:10px 0; transition:all 0.3s; background:#881ca7;}
+.footer_box ul .li2{ background:#f09403;}
+.footer_box ul li a{ width:100%; display:inline-block; text-align:center;}
+.footer_box ul li a .span1{ width:26px; height:26px; background:url(../images/icon_imgs.png) 0 0 no-repeat;}
+.footer_box ul li a .span2{ width:23px; height:26px; background:url(../images/icon_imgs.png) 0 -85px no-repeat;}
+.footer_box ul li a .span3{ width:35px; height:26px; background:url(../images/icon_imgs.png) 0 -59px no-repeat;}
+.footer_box ul li a span{display:inline-block;}

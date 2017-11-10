@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>nav</title>
+<link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+<style>
+/*nav*/
+#nav{ width:1000px; margin:60px auto; background:#d2d2d2;}
+#nav li{ float:left;}
+#nav a{ height:90px; line-height:90px; padding:0 10px 0 124px; color:#626262; font-size:20px; position:relative;}
+#nav em{ margin-right:5px; width:31px; height:30px; vertical-align:middle; background:url(images/nav-btn1.png) center center no-repeat; position:relative;}
+#nav em:before,#nav em:after{ content:""; width:29px; height:28px; border-radius:50%; border:1px solid #fff; position:absolute; left:0; top:0;}
+#nav i{ width:124px; height:127px; position:absolute; top:-20px; left:0;}
+#nav li:hover a{ color:#0064b4;}
+#nav li:hover em{ color:#0064b4; background:url(images/nav-btn2.png) center center no-repeat; transform:rotatey(360deg); -webkit-transform:rotatey(360deg);}
+#nav li:hover em:before{ animation:ripple 1s linear infinite; -webkit-animation:ripple 1s linear infinite;}
+#nav li:hover em:after{ animation:ripple 1s 0.5s linear infinite;  -webkit-animation:ripple 1s 0.5s linear infinite;}
+#nav li:hover i{ animation:move 2s linear; -webkit-animation:move 2s linear;}
+@keyframes ripple{
+	0%	{ opacity:1; transform:scale(1,1);}
+	100%	{ opacity:0; transform:scale(1.8,1.8);}
+}
+@-webkit-keyframes ripple{
+	0%	{ opacity:1; -webkit-transform:scale(1,1);}
+	100%	{ opacity:0; -webkit-transform:scale(1.8,1.8);}
+}
+@keyframes move{
+	0%	{ top:-20px;}
+	5%	{ top:-37px;}
+	10%	{ top:-20px;}
+}
+@-webkit-keyframes move{
+	0%	{ top:-20px;}
+	5%	{ top:-37px;}
+	10%	{ top:-20px;}
+}
+</style>
+<div id="nav">
+	<ul class="clearFix">
+        	<li><a href="/zt/xcxyxb/" target="_blank"><i><img src="images/nav-cut1.png"></i><em></em>点击进入</a></li>
+        	<li><a href="/zt/gjxyxb/" target="_blank"><i><img src="images/nav-cut2.png"></i><em></em>点击进入</a></li>
+        	<li><a href="/zt/npxyxb/" target="_blank"><i><img src="images/nav-cut3.png"></i><em></em>点击进入</a></li>
+        	<li><a href="/zt/hpxyxb/" target="_blank"><i><img src="images/nav-cut4.png"></i><em></em>点击进入</a></li>
+        </ul>
+</div>
+</body>
+</html>

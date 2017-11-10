@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>upDate</title>
+</head>
+
+<body>
+<script>
+	//获取任意日期的实现思路
+	//1.获取当前时间的毫秒数加上day天之后的毫秒数
+	//2.设置为day天之后
+	//3.获取day天之后的日期数据
+	function upDate(day){  
+	       var iMyDate=new Date(); 		 
+	       var iMinSen=iMyDate.getTime() + 1000*60*60*24*day;		//day天之后的毫秒数
+	       iMyDate.setTime(iMinSen);					//设置为day天之后
+	       var iYear=iMyDate.getFullYear();
+	       var iMonth=iMyDate.getMonth()+1;  
+	       var iDate=iMyDate.getDate();
+	       var iHour=iMyDate.getHours();
+	       var iMin=iMyDate.getMinutes();
+	       var iSen=iMyDate.getSeconds();
+	       return iYear+'年'+fullZero(iMonth)+"月"+fullZero(iDate)+'日'+fullZero(iHour)+'时'+fullZero(iMin)+'分'+fullZero(iSen)+'秒';  
+	} 
+	function fullZero(n){
+		return n=n<10?'0'+n:''+n;	
+	}
+	function time(){
+		document.body.innerHTML='10天之后是:'+upDate(10);
+	}
+	time();
+	setInterval(time,1000);
+</script>
+</body>
+</html>

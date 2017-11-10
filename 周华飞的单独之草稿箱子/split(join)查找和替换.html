@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>split(join)查找和替换</title>
+<style>
+div{ width:500px; margin:0 auto;}
+span{ background:#FF0; color:#F00;}
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=getId('div');
+	var oBtn1=getId('btn1');
+	var oBtn2=getId('btn2');
+	var oTxt1=getId('txt1');
+	var oTxt2=getId('txt2');
+	var str=oDiv.innerHTML;
+	oBtn1.onclick=function()
+	{	
+		str=oDiv.innerHTML;
+		if(oTxt1.value!='')
+		{
+			oDiv.innerHTML=str.split(oTxt1.value).join('<span>'+oTxt1.value+'</span>');		
+		}
+		
+	}
+	oBtn2.onclick=function()
+	{
+		str=oDiv.innerHTML;
+		if(oTxt1.value!=''&&oTxt2.value!='')
+		{
+			oDiv.innerHTML=str.split(oTxt1.value).join('<span>'+oTxt2.value+'</span>');		
+		}
+		
+	}	
+}
+function getId(id){return document.getElementById(id);}
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+<input type="button" id="btn1"  value="查找"/>
+<input type="text" id="txt2" />
+<input type="button" id="btn2"  value="替换"/>
+<div id="div">
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+	周华飞的写了一段文字用来查找做实验的滴答滴答滴答滴答滴答滴答
+</div>
+</body>
+</html>

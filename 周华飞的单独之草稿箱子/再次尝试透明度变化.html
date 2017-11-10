@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#opac{ width:200px; height:200px; background:#F00; opacity:0.3; filter:alpha(opacity:30);}
+</style>
+<script>
+var timer=null
+var alpha=30;
+function startMove(iTarget)
+{
+	var oOpac=document.getElementById('opac');
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		var speed=0;
+		if(alpha<iTarget)
+		{
+			speed=1;	
+		}
+		else
+		{
+			speed=-1;	
+		}
+		if(alpha==iTarget)
+		{
+			clearInterval(timer);	
+		}
+		else
+		{
+				alpha+=speed;
+				oOpac.style.filter='alpha(opacity:'+alpha+')';
+				oOpac.style.opacity=alpha/100;
+		}	
+	},30);
+	
+}
+window.onload=function()
+{
+	var oOpac=document.getElementById('opac');
+	oOpac.onmouseover=function()
+	{
+		startMove(100);	
+	}
+	oOpac.onmouseout=function()
+	{
+		startMove(30);	
+	}	
+}
+</script>
+</head>
+
+<body>
+<div id="opac"></div>
+</body>
+</html>

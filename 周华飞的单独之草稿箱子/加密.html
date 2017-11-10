@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>加密</title>
+<script>
+var rookie={}
+rookie.tools={}
+rookie.tools.getId=function(id){return document.getElementById(id);}
+rookie.tools.getTagName=function(tagName){return document.getElementsByTagName(tagName);}
+rookie.tools.eventBind=function(obj,ev,fn){return obj.attachEvent?obj.attachEvent('on'+ev,fn):obj.addEventListener(ev,fn,false);}
+rookie.tools.eventBind(window,'load',function()
+{
+	var oDiv=rookie.tools.getId('div');
+	var oTxt=rookie.tools.getId('txt');
+	var oBtn=rookie.tools.getTagName('input')[1];
+	oBtn.onclick=function()
+	{
+		oDiv.innerHTML='';
+		for(var i=0; i<oTxt.value.length;i++)
+		{
+			oDiv.innerHTML+=String.fromCharCode(oTxt.value.charCodeAt(i)+10000)+' ';			
+		}
+		oTxt.value='';
+	}	
+})
+</script>
+</head>
+
+<body>
+<input id="txt" type="text" /><input id="btn" type="button" value="加密" />
+<p>加密之后：</p>
+<div id="div"></div>
+</body>
+</html>

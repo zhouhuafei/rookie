@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>addEvent</title>
+<script>
+function addEvent(obj,ev,fn){obj.attachEvent?obj.attachEvent('on'+ev,fn):obj.addEventListener(ev,fn,false);}
+function removeEvent(obj,ev,fn){obj.detachEvent?obj.detachEvent('on'+ev,fn):obj.removeEventListener(ev,fn,false);}
+function alerts(ev){
+	alert(this);//IE8this是window,火狐和其他this是document;
+	alert(ev.clientX);//IE8和其他浏览器用事件绑定,都支持标准化的事件对象event
+}
+addEvent(document,'click',alerts);
+//removeEvent(document,'click',alerts);
+</script>
+</head>
+
+<body>
+</body>
+</html>

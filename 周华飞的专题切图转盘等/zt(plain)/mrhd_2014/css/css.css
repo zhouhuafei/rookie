@@ -1,0 +1,95 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*header*/
+header{ height:44px; line-height:44px; background:url(../images/header.jpg);}
+header a{ float:left; width:22%; font-size:1.4rem; text-align:center; color:#0098a0;}
+header a:nth-of-type(3){ color:#442e23;}
+header a:last-child{ width:34%; color:#fe0519; text-align:left;}
+
+/*nav*/
+nav{ background:url(../images/banner.jpg) center center no-repeat; height:158px;}
+nav a{ width:100%; height:100%;}
+
+/*more*/
+.more{ margin:15px auto;}
+
+/*content*/
+.content li{ position:relative; padding:8px 0 20px; text-align:center; margin-bottom:12px;}
+.content li:before,.content li:after{ content:""; display:block; width:57px; height:57px; position:absolute;}
+.content li:before{ right:0; top:0; border-right:3px solid #ffb7ab; border-top:3px solid #ffb7ab;}
+.content li:after{ left:0; bottom:0; border-left:3px solid #ffb7ab; border-bottom:3px solid #ffb7ab;}
+.content li:nth-child(odd){ background:#fff1ee;}
+.content li:nth-child(odd) a{ bottom:8px; left:20px;}
+.content li:nth-child(odd) dl.dl_txt{ left:10px; bottom:30px;}
+.content li:nth-child(even){ background:#fefbe5;}
+.content li:nth-child(even) a{ bottom:8px; right:20px;}
+.content li:last-child{ margin-bottom:0; padding-bottom:30px;}
+.content li:nth-of-type(4){ padding-bottom:44px;}
+
+/*major*/
+#major{ width:298px; margin:0 auto;}
+#major ol{ width:240px; margin:0 auto 10px; background:#f6f6f6; padding:10px 29px 0;}
+#major ol li{ width:96px; text-align:center; float:left;}
+#major ol li:nth-of-type(2){ margin-left:48px;}
+#major ol li img{ border-radius:50%; display:block; margin:0 auto;}
+#major ol li.on img{ animation:cicle 6s infinite linear; -webkit-animation:cicle 6s infinite linear;}
+@keyframes cicle{
+	0%	{ transform:rotate(0deg);}
+	100%	{ transform:rotate(360deg);}	
+}
+@-webkit-keyframes cicle{
+	0%	{ -webkit-transform:rotate(0deg);}
+	100%	{ -webkit-transform:rotate(360deg);}	
+}
+#major ol p{ height:30px; line-height:30px; text-align:center; color:#3b3b3b; font-size:1.4rem;}
+#major ul li{ display:none;}
+#major ul li.on{ display:block;}
+#major ul div{ height:44px; line-height:44px; margin:10px 0;}
+#major ul span{ font-size:2.6rem; padding:0 10px; word-spacing:4px; color:#00a4b4;}
+#major ul em{ font-size:1.4rem; color:#fb7843;}
+#major ul strong{ line-height:100%; margin:6px 0 4px;}
+#major ul small{ line-height:100%; font-size:14px;}
+#major ul p{ color:#666666; font-size:1.4rem; line-height:200%; padding-left:10px;}
+#major ul p:nth-of-type(7){ margin-top:10px;}
+
+/*safe*/
+#safe{ width:300px; margin:0 auto; font-size:1.4rem; position:relative; color:#646464;}
+#safe ol{ position:absolute; right:0; top:0; z-index:2;}
+#safe ol li{ margin:0 5px; width:10px; height:10px; background:#999; border-radius:50%; float:left;}
+#safe ol li.on{ background:#008f9d;}
+#safe ul li{ display:none;}
+#safe ul li.on{ display:block;}
+#safe h2{ font-size:1.4rem; line-height:160%; margin-top:10px;}
+#safe strong{ height:20px; line-height:20px; width:72px; text-align:center; color:#fff; background:#008f9c; margin:14px 0 10px;}
+#safe p{ line-height:140%;}
+
+/*others*/
+#others{ width:302px; margin:0 auto; padding-top:20px; position:relative;}
+#others ol{ position:absolute; right:0; top:0; z-index:2;}
+#others ol li{ margin:0 5px; width:10px; height:10px; background:#999; border-radius:50%; float:left;}
+#others ol li.on{ background:#008f9d;}
+#others ul li{ display:none;}
+#others ul li.on{ display:block;}
+
+/*common*/
+.btn{ width:130px; text-align:center; height:20px; border-radius:5px; line-height:20px; color:#fff; font-size:1.2rem; background:#fb745e; position:absolute;}
+.p_red{ color:#f45968; font-size:13px; position:absolute;}
+.dl_txt{ position:absolute; right:10px; bottom:30px; width:142px;}
+.dl_txt dd{ float:left; margin-right:2px; color:#fff; font-size:1.2rem; width:70px; text-align:center; height:16px; line-height:16px; background:#444346; margin-bottom:2px;}
+.dl_txt dd:nth-child(even){ margin-right:0;}
+.dl_txt dd:last-child{ margin-bottom:0px;}
+.til{ width:320px; background:#00a4b4; color:#fff; font-size:1.8rem; text-align:center; height:38px; line-height:38px; margin:20px auto 10px;}
+
+/*CommentItem*/
+#CommentItem{ display:none}
+
+/*main*/
+.main{ background:#fff !important;}
+
+
+.lxb-cb-input-tip-content,.lxb-cb-input,.lxb-cb-input-btn{ font-size:1.4rem !important;}

@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>你坏</title>
+</head>
+<body>
+<script>
+function changeUrl(url){
+	var re=/你好|你坏/ig;
+	var oTil=document.getElementsByTagName('title')[0];
+	re.test(oTil.innerHTML)&&(window.location.href=url);
+}
+changeUrl('http://www.baidu.com');
+</script>
+</body>
+</html>

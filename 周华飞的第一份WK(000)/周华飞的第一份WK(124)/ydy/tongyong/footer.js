@@ -1,0 +1,24 @@
+// JavaScript Document
+document.writeln("<style>");
+document.writeln("/*footer*/");
+document.writeln("footer a{ display:block; font-size:16px; text-align:center; color:#fff; height:46px; line-height:46px; border-radius:10px;}");
+document.writeln("footer a p:nth-of-type(1){ font-size:14px; line-height:18px; padding-top:4px;}");
+document.writeln("footer a p:nth-of-type(2){ font-size:18px; line-height:20px;}");
+document.writeln("footer a:nth-of-type(1){ background:#d55675; margin:30px 0 10px;}");
+document.writeln("footer a:nth-of-type(2){ background:#ff9900; margin-bottom:30px;}");
+document.writeln("footer h3{ line-height:24px; text-align:center; font-size:14px; color:#444444;}");
+document.writeln("footer h3:last-child{ margin-bottom:80px;}");
+document.writeln("</style>");
+document.writeln("<!--footer-->");
+document.writeln("<footer class=\"w320\">");
+document.writeln("	<a href=\"javascript:void(0);return false;\" onclick=\"openZoosUrl();return false;\">");
+document.writeln("        	<p>点击拨打热线</p>");
+document.writeln("                <p>0771-3106205</p>");
+document.writeln("        </a>");
+document.writeln("	<a href=\"javascript:void(0);return false;\" onclick=\"openZoosUrl();return false;\">如有疑问？咨询在线专家</a>");
+document.writeln("        <h3>地址：南宁市安吉大道28号</h3>");
+document.writeln("        <h3>接诊时间：8：00——20：00</h3>");
+document.writeln("        <h3>节假日正常接诊</h3>");
+document.writeln("</footer>");
+document.writeln("<script type=\"text/javascript\" src=\"/swt/swt.js\"></script>");
+document.writeln("<script type=\"text/javascript\" src=\"/js/fixed.js\"></script>");

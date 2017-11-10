@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JS之求扯蛋时的加速度</title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+div{ width:200px; height:200px; overflow:hidden; position:absolute; background:#F60; border-radius:100px; text-align:center; line-height:200px; color:#fff; text-shadow:1px 1px 1px #00F,-1px -1px 1px #00F; box-shadow:1px 1px 100px #f00,-1px -1px 100px #f00,-1px -1px 50px #f00 inset,10px 10px 50px #f00 inset;}
+.box{ width:10px; height:10px; background:#f00; position:absolute; display:block; border-radius:10px;} 
+</style>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementsByTagName('div')[0];
+	var speed=10;	
+	var timer=null;
+	var clientWidth=document.documentElement.clientWidth;
+	var clientHeight=document.documentElement.clientHeight;
+	var speedX=0;
+	var speedY=0;
+	oDiv.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		var disX=oEvent.clientX-oDiv.offsetLeft;
+		var disY=oEvent.clientY-oDiv.offsetTop;
+		var prevX=oEvent.clientX;
+		var prevY=oEvent.clientY;
+		document.onmousemove=function(ev)
+		{
+			var oEvent=ev||event;
+			var L=oEvent.clientX-disX;
+			var T=oEvent.clientY-disY;
+			if(L<=0){L=0;}
+			else if(L>=clientWidth-oDiv.offsetWidth){L=clientWidth-oDiv.offsetWidth}
+			if(T<=0){T=0;}
+			else if(T>=clientHeight-oDiv.offsetHeight){T=clientHeight-oDiv.offsetHeight}
+			oDiv.style.left=L+'px';
+			oDiv.style.top=T+'px';
+			
+			speedX=oEvent.clientX-prevX;	//出手时的速度
+			speedY=oEvent.clientY-prevY;	//出手时的速度
+			
+			prevX=oEvent.clientX;
+			prevY=oEvent.clientY;
+					
+			//速度是根据下列方式计算得出
+			//因为移动的很快的时候
+			//两点之间的距离就是速度			
+			var aBox=document.createElement('span');			//移动的时候创建盒子
+			aBox.className='box';
+			aBox.style.left=oEvent.clientX+'px';
+			aBox.style.top=oEvent.clientY+'px';
+			document.body.appendChild(aBox);
+			
+		}
+		document.onmouseup=function()
+		{
+			startMove();
+			document.onmousemove=null;
+			document.onmouseup=null;
+			if(oDiv.releaseCapture){oDiv.releaseCapture();}	
+		}
+		if(oDiv.setCapture){oDiv.setCapture();}
+		return false;	
+	}
+	function startMove()
+	{
+		clearInterval(timer);
+		setInterval(function()
+		{	
+			oDiv.style.left=oDiv.offsetLeft+speedX+'px';	
+			oDiv.style.top=oDiv.offsetTop+speedY+'px';		
+		},30)
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<div>我是一颗羞涩的蛋蛋</div>
+</body>
+</html>

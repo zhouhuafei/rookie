@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>touchMove</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; color:#000; text-decoration:none; outline:none;}
+nav{ width:640px; height:50px; margin:0 auto; position:relative; overflow:hidden;}
+nav ul{ width:9000px; height:50px; background:#000; position:relative; left:0; top:0;}
+nav li{ width:220px; text-align:center; height:100%; line-height:50px; background:#FF0; float:left;}
+nav a{ display:block; color:#00F;}
+</style>
+</head>
+<body>
+<nav>
+	<ul>
+        	<li><a>1</a></li>
+        	<li><a>2</a></li>
+        	<li><a>3</a></li>
+        	<li><a>4</a></li>
+        	<li><a>5</a></li>
+        	<li><a>6</a></li>
+        </ul>
+</nav>
+<script>
+var oNav=document.getElementsByTagName('nav')[0];
+var oUl=document.getElementsByTagName('ul')[0];
+var aLi=document.getElementsByTagName('li');
+var iLen=aLi.length;
+var iLiWidth=aLi[0].offsetWidth;
+var iNavWidth=oNav.offsetWidth;
+oUl.onmousedown=function(ev){
+	var ev=ev||event;
+	var disx=ev.clientX-oUl.offsetLeft;
+	document.onmousemove=function(ev){
+		var ev=ev||event;
+		l=ev.clientX-disx
+		l>0&&(l=0);
+		l<=iNavWidth-iLen*iLiWidth&&(l=iNavWidth-iLen*iLiWidth);
+		oUl.style.left=l+'px';
+	}
+	document.onmouseup=function(){
+		document.onmousemove=null;
+		document.onmouseup=null;		
+	}	
+}
+</script>
+</body>
+</html>

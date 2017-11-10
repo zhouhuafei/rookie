@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#check_de .active{ background:#FF0;}
+#check_de div{width:200px; height:200px; background:#333; display:none;}
+#check_de .show{ display:block;}
+</style>
+<script>
+window.onload=function()
+{	
+ 	var oCh=document.getElementById('check_de');
+	var oBtn=oCh.getElementsByTagName('input');
+	var oDiv=oCh.getElementsByTagName('div');
+	for(var i=0; i<oBtn.length; i++)
+	{
+		oBtn[i].index=i;
+		oBtn[i].onmousemove=function()
+		{	
+			for(var j=0; j<oBtn.length;j++)
+			{
+				oBtn[j].className='';
+				oDiv[j].style.display='none'				
+			}
+			this.className='active';
+			oDiv[this.index].style.display='block'
+		}
+	}	
+}
+</script>
+</head>
+
+<body>
+<div id="check_de">
+	<input class="active" type="button" value="教育"  />
+	<input type="button" value="培训" />
+	<input type="button" value="招生" />
+	<input type="button" value="出国" />
+	<div class="show">1111</div>
+	<div>2222</div>
+	<div>3333</div>
+	<div>4444</div>
+</div>
+</body>
+</html>

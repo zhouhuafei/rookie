@@ -1,0 +1,60 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*location*/
+.location{padding:0 5%;}
+.location img{width:3.6%;vertical-align:middle;margin-right:2%;}
+.location span{font-size:2.8rem;line-height:3.8;color:#be0069; vertical-align:middle;}
+.location span a{color:#000;}
+
+/*package*/
+.package{background:#f5f5f5;}
+.package_top{border-top:1px dashed #787878;border-bottom:1px dashed #787878;}
+.package_top dl dt{width:49.8%;float:left;text-align:center;padding:3% 0;}
+.package_top dl dt h3{font-size:4.6rem;line-height:1.5;color:#00a454;}
+.package_top dl dt strong{font-size:4rem;line-height:1.5;color:#be0069;}
+.package_top dl dt strong span{color:#00a454;}
+.package_top dl dt p{font-size:3rem;line-height:2;color:#00a454;}
+.package_bottom{border-bottom:1px dashed #787878;text-align:center;padding:3% 0;}
+.package_bottom dl dt{display:inline-block;text-align:center;width:33%;font-size:2.8rem;line-height:1.5;background:#be0069;}
+.package_bottom dl dt a{color:#fff; width:100%;}
+.package_bottom .zaixian{background:#00a454;margin-left:10%;}
+
+/*article*/
+.article{padding:5%;}
+.article h3{font-size:3.4rem;line-height:2.76;color:#be0069;text-align:center;}
+.article p{font-size:2.4rem;line-height:1.5;text-indent:2em;}
+.article_img01{width:56.4%;margin:5% auto;}
+.article_img01 img{width:100%;}
+.article dl{padding-top:5%;}
+.article dl dt{margin-bottom:8%;}
+.article dl dt span{font-size:2.8rem;line-height:1.6;background:#f97400;padding:0 2.5%;color:#fff;}
+.article dl dt h3{font-size:2.8rem;line-height:1.6;background:#0078c8;padding:0 2.5%;display:inline-block;color:#fff;margin-bottom:3%;}
+.article_img02{width:86.8%;margin:5% auto;}
+.article_img02 img{width:100%;}
+.article p span{text-indent:0;}
+.article ul{padding-top:5%;}
+.article ul li{width:28%;float:left;margin-right:8%;}
+.article ul li img{width:100%;}
+
+/*team*/
+.team{padding:0 5%;}
+.team hgroup h2{ width:70%;}
+.team ul li {width:100%;margin-top: 5%;padding:3% 0 5.6% 0;border-bottom:1px dashed #aeaeae;}
+.team ul li img{width:34%;float:left;margin-right:8%;}
+.team_inner{width:58%;float:left;}
+.team ul li h3{font-size:3rem;line-height:1;color:#0078c8;display:inline;}
+.team ul li h3:after{content: "";margin-right:4.6%;}
+.team ul li span{font-size:2.4rem;line-height:1.25;color:#000;}
+.team ul li p{font-size:2.4rem;line-height:1.58;margin:3.5% 0;color:#666;}
+.team ul li:last-child{ padding-bottom:0; border-bottom:none;}
+.team .zixun{text-align:center;}
+.team .zixun dl dt{display:inline-block;text-align:center;width:33%;font-size:2.4rem;line-height:1.5;background:#0078c8;}
+.team .zixun dl dt a{color:#fff;}
+.team .zixun .zaixian{background:#f97400;margin-right:10%;}
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	oTxt=document.getElementById('email');
+	oHint=document.getElementById('hint');
+	oBtn=document.getElementById('btn');
+	//oTxt.onblur=function()
+	oBtn.onclick=function()
+	{
+		//邮箱格式
+		//一串英文、数字、下划线	@	一串英文、数字	.	一串英文
+		//\w+	@	[a-z0-9]+	\.	[a-z]+
+		var re=/^\w+@[a-z0-9]+\.[a-z]+$/i;
+		if(re.test(oTxt.value)){oHint.innerHTML="合法的邮箱"}
+		//test	字符串一部分符合要求	true
+		else{oHint.innerHTML="非法的邮箱"}
+	}		
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text"  id="email" placeholder="请输入邮箱"/>
+<span style="color:red" id="hint"></span><br />
+<input type="button" id="btn" value="校验"/><input type="reset"/>
+</form>
+</body>
+</html>

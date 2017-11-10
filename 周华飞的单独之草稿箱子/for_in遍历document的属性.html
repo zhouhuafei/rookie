@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>for_in遍历document的属性</title>
+</head>
+
+<body>
+<script>
+var str='';
+var num=0;
+function fillZero(n)
+{
+	if(n<10)
+	{
+		return '00'+n;	
+	}
+	else if(n>=10&&n<100)
+	{
+		return '0'+n;	
+	}
+	else
+	{
+		return ''+n;	
+	}
+}
+for(attr in document)	//for(attr in window)
+{
+	str+=fillZero(num)+':) '+attr+':'+window[attr]+'<br/>';	
+	num++;
+}
+document.body.innerHTML=str;
+</script>
+</body>
+</html>

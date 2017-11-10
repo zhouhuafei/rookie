@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="x-ua-compatible" content="ie=7">
+<title>来院路线</title>
+<link rel="stylesheet" type="text/css" href="common/css.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/viscosityNav.js"></script>
+
+<!--百度地图-->
+
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=RLOvUKE4v2Pncx05cmGOckav"></script>
+		<style type="text/css">
+                        #panorama {height: 100%;overflow: hidden;}
+                        #normal_map {height:100%;overflow: hidden;}
+                </style>
+	
+</head>
+
+<body>
+
+<!--周华飞制作-->
+
+
+
+<!----------------------------------head---------------------------------------->
+<div id="head" >
+	<div class="topnav">
+		<div class="w1000">
+			<ul class="fr">
+				<li class="li1"><a href="/english/" target="_blank">English</a></li>
+				<li class="li2"><a href="/">中文版</a></li>
+				<li class="li3"><a href="" target="_blank" id="wap">手机客户端</a></li>
+				<script>$(function(){
+                                        (function(){
+                                                var url=window.location.hostname;
+                                                var arr = url.split(".");
+                                                   $("#wap").attr("href","http://wap."+arr[1]+"."+arr[2]);
+                                
+                                                })()
+                                        })
+                                </script>
+			</ul>
+			<p>您好，欢迎访问上海南浦妇科医院官方网站！咨询电话：021-58891199 </p>
+		</div>
+	</div>
+	<div class="logo">
+		<div class="w1000">
+			<div class="fl"><img src="images/np_01.jpg" /></div>
+			<div class="scoll">
+				<ul>
+					<li><img src="images/np_03.jpg"  /></li>
+					<li><img src="images/np_04.jpg" /></li>
+					<li><img src="images/np_05.jpg"  /></li>
+					<li><img src="images/np_06.jpg"  /></li>
+					<li><img src="images/np_07.jpg"  /></li>
+				</ul>
+			</div>
+			<div class="fr"><img src="images/np_02.jpg" /></div>
+		</div>
+	</div>
+	<div class="nav">
+		<ul class="w1000">
+			<li><a class="hover" href="/" target="_blank">网站首页</a></li>
+			<li><a href="/about/jianjie/" target="_blank">医院介绍</a></li>
+			<li><a href="/about/npxw/" target="_blank">院内新闻</a></li>
+			<li><a href="/zt/npzj/" target="_blank">妇科专家</a></li>
+			<li><a href="/kbjl/" target="_blank">看病经历</a></li>
+			<li><a href="/zt/mtbd/" target="_blank">媒体报道</a></li>
+			<li><a href="/zt/wcjs/" target="_blank">特色技术</a></li>
+			<li><a href="/huodong/" target="_blank">公益事业</a></li>
+			<li><a onclick="openZoosUrl();return false;" href="javascript:void(0);"  target="_blank">预约挂号</a></li>
+			<li><a href="/zt/lylx/" target="_blank">来院路线</a></li>
+		</ul>
+	</div>
+
+</div>
+
+  
+<!----------------------------------banner-------------------------------------->
+<div class="commonWidth banner_box" id="banner_box">
+	<ul id="ul">
+        	<li class="banner1"></li>
+        	<li class="banner2"><a onclick="openZoosUrl();return false;" href="javascript:void(0);"  target="_blank"></a></li>
+        </ul>
+        <ol id="ol">
+        	<li><a class="a_active"></a></li>
+        	<li><a></a></li>
+        </ol>
+         <script>
+		function getStyle(obj,name)
+		{
+			if(obj.currentStyle)
+			{
+				return obj.currentStyle[name];
+			}
+			else
+			{
+				return getComputedStyle(obj,false)[name];
+			}
+		}
+		function startMove(obj,json,fnEnd)
+		{
+			clearInterval(obj.timer);
+			obj.timer=setInterval(function()
+			{
+				var bStop=true;   //假设所有的值都已经到了
+				for(var attr in json)
+				{
+					var cur=0;
+					if(attr=='opacity')
+					{
+						cur=Math.round(parseFloat(getStyle(obj,attr)*100));
+					}
+					else
+					{
+						cur=parseInt(getStyle(obj,attr));
+					}
+					var speed=(json[attr]-cur)/10;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					if(cur!=json[attr])bStop=false;					
+					if(attr=='opacity')
+					{
+						obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+						obj.style.opacity=(cur+speed)/100;
+					}
+					else
+					{
+						obj.style[attr]=cur+speed+'px';
+					}			
+				}
+				//document.title=obj.offsetHeight+','+cur;
+				if(bStop)
+				{
+					clearInterval(obj.timer);
+					if(fnEnd)fnEnd;
+				}
+			},30);
+		}
+		
+			var oUl=document.getElementById('ul');
+			var oOl=document.getElementById('ol');
+			var aLi_point=oOl.getElementsByTagName('a');
+			var aLi_img=oUl.getElementsByTagName('li');
+			var now=0;
+			for(var i=0; i<aLi_point.length; i++)
+			{
+				aLi_point[i].index=i;
+				aLi_point[i].onmouseover=function()
+				{
+					now=this.index;
+					tab();
+				}
+			}
+			function tab()
+			{
+				for(var j=0; j<aLi_point.length; j++)
+					{
+							aLi_point[j].className='';
+							aLi_img[j].style.display='none';
+							aLi_img[j].style.opacity='0';
+					}	
+					aLi_point[now].className='a_active';
+					aLi_img[now].style.display='block';
+					startMove(aLi_img[now],{opacity:100});
+					//startMove(oUl,{top:-aLi_img[0].offsetHeight*now});		
+			}
+			function next()
+			{
+				now++;
+				if(now==aLi_point.length)
+				{
+					now=0;	
+				}
+				tab();
+			}
+			setInterval(next,7000)
+	</script>
+</div>
+
+
+
+<!----------------------------------nav----------------------------------------->
+<div class="hr_50"></div>
+<div id="nav">
+	<div class=""></div>
+        <div class="nav_nav">
+            <div class="fl nav_div">南浦来院路线<span>|</span></div>
+            <ul class="navm fl">
+                <li><a href="javascript:;">百度地图</a></li>
+                <li><a href="javascript:;">地铁</a></li>
+                <li><a href="javascript:;">出租车与自驾</a></li>
+                <li><a href="javascript:;">公交</a></li>
+                <li><a href="javascript:;">高铁</a></li>
+                <li><a href="javascript:;">飞机</a></li>
+                <li><a href="javascript:;">社会责任</a></li>
+                <li><a href="javascript:;">患者点评</a></li>
+            </ul>
+        </div>   
+</div>
+<div class="clearFix" style=" height:0px; overflow:hidden;"></div>
+
+
+
+<div class="main commonWidth_grey">
+	<!----------------------------------box1----------------------------------------->
+	<div class="box1 commonWidth_1000 position">
+        	<div class="icon img_active2" id="icon">
+                	<a class="icon_a1" id="i_a1" href="javascript:;"></a>
+                        <a class="icon_a2" id="i_a2" href="javascript:;"></a>
+                        
+                </div>
+        	<div class="til_box"><div class="til"><em></em>我们的医院在这里<i>Our hospital here</i></div></div>
+        
+                        	<!--百度地图-->
+				
+                                <div style="width:1000px; height:450px; margin:0 auto; overflow:hidden;" id="map">
+        				<div id="panorama"></div>
+					<div id="normal_map"></div>
+                                        <script>
+						var oIcon=document.getElementById('icon');
+						var oI_a1=document.getElementById('i_a1');
+						var oI_a2=document.getElementById('i_a2');
+						var aIconLi=oIcon.getElementsByTagName('a');
+						var oMap=document.getElementById('map');
+						var aMapDiv=oMap.getElementsByTagName('div');
+						oI_a1.onclick=function()
+						{
+							oIcon.className='icon img_active2'
+							for(var i=0;i<aIconLi.length;i++)
+							{
+								aIconLi[i].index=i;
+								for(var j=0; j<aIconLi.length;j++)
+								{
+									aMapDiv[j].style.display='none';								
+								}
+								aMapDiv[this.index].style.display='block';								
+							}
+							
+						}
+						oI_a2.onclick=function()
+						{
+							oIcon.className='icon img_active1'
+							for(var i=0;i<aIconLi.length;i++)
+							{
+								aIconLi[i].index=i;
+								for(var j=0; j<aIconLi.length;j++)
+								{
+									aMapDiv[j].style.display='none';								
+								}
+								aMapDiv[this.index].style.display='block';
+							}
+						}
+                       		</script>
+                                </div>        
+                                <script type="text/javascript">
+                                //全景图展示
+                                var panorama = new BMap.Panorama('panorama');
+                                panorama.setPosition(new BMap.Point(121.520165,31.21002)); //根据经纬度坐标展示全景图
+                                panorama.setPov({heading: -40, pitch: 6});
+                        
+                                panorama.addEventListener('position_changed', function(e){ //全景图位置改变后，普通地图中心点也随之改变
+                                        var pos = panorama.getPosition();
+                                        map.setCenter(new BMap.Point(pos.lng, pos.lat));
+                                        marker.setPosition(pos);
+                                });
+                                //普通地图展示
+                                var mapOption = {
+                                                mapType: BMAP_NORMAL_MAP,
+                                                maxZoom: 18,
+                                                drawMargin:0,
+                                                enableFulltimeSpotClick: true,
+                                                enableHighResolution:true
+                                        }
+                                var map = new BMap.Map("normal_map", mapOption);
+                                var testpoint = new BMap.Point(121.520165,31.21002);
+                                map.centerAndZoom(testpoint, 18);
+                                var marker=new BMap.Marker(testpoint);
+                                marker.enableDragging();
+                                map.addOverlay(marker);  
+                                marker.addEventListener('dragend',function(e){
+                                        panorama.setPosition(e.point); //拖动marker后，全景图位置也随着改变
+                                        panorama.setPov({heading: -40, pitch: 6});}
+                                );
+                                </script>
+
+        </div>
+
+
+	<!----------------------------------box2----------------------------------------->
+	<div class="box2 commonWidth_1000 position">
+        	<div class="til_box"><div class="til"><em></em>如果您乘地铁来<i>If you have the subway</i></div></div>
+                <div class="img_word">
+                	<img src="images/icon_11_03.jpg" class="fl" />
+                	<div class="word fr">
+                        	<p><span></span><strong>地铁4号线：</strong>
+塘桥站出站（3号口出），出站即可看见由由大酒店，左手边上天桥，左手边下来，直走5-8分钟即到。</p>
+
+				<p><span></span><strong>地铁6号线：</strong>上海儿童医学中心站出站，步行至东方路浦建路站→乘坐614路，在临沂北路龙阳路站→下车步行280米即可到。</p>
+                                <a target="_blank" onclick="openZoosUrl();return false;" href="javascript:void(0)"><img src="images/icon_19.png" /></a>
+                        </div>
+                </div>
+        </div>
+
+
+
+
+
+	<!----------------------------------box3----------------------------------------->
+	<div class="box3 commonWidth_1000 position">
+        	<div class="til_box"><div class="til"><em></em>如果您乘出租车或自驾<i>If you take a taxi or drive</i></div></div>
+                <div class="img_word">
+                	<img src="images/icon_22_03.jpg" class="fr" />
+                	<div class="word fl">
+                        	<p><span class="span1"></span><strong>您就跟师傅说：</strong>
+我要去上海市浦东新区浦东南路2250号（上海南浦妇科医院）</p>
+
+				<p><span class="span2"></span><strong>您可以到导航：</strong>上海市浦东新区浦东南路2250号（上海南浦妇科医院）</p>
+                                <a target="_blank" onclick="openZoosUrl();return false;" href="javascript:void(0)"><img src="images/icon_19.png" /></a>
+                        </div>
+                </div>
+        </div>
+
+
+
+
+
+
+
+
+	<!----------------------------------box4----------------------------------------->
+	<div class="box4 commonWidth_1000 position">
+        	<div class="til_box"><div class="til"><em></em>如果您乘公交来<i>If you by bus</i></div></div>
+                <div class="img_word">
+                	<img src="images/icon33_03.jpg" class="fl" />
+                	<div class="word fr">
+                        	<p><span></span><strong>787路、978路、1011路：</strong><br />
+【以上公交车在浦东南路龙阳路下，下车步行90米即到】</p>
+				<p><span></span><strong>浦卫线, 塘南专线， 塘邵专线：</strong><br />
+【以上公交车在龙阳路浦东南路下，下车步行213米即到】</p>
+<p><span></span><strong>787路、</strong><strong>119路， 614路， 640路， 785路， 992路， 江南专线：</strong><br />
+【以上公交车在临沂北路龙阳路下，下车步行457米即到】</p>
+                                <a target="_blank" onclick="openZoosUrl();return false;" href="javascript:void(0)"><img src="images/icon_19.png" /></a>
+                        </div>
+                </div>
+        </div>
+        
+        
+        
+        
+        <!----------------------------------box5----------------------------------------->
+	<div class="box5 commonWidth_1000 position">
+        	<div class="til_box"><div class="til"><em></em>如果您乘动车来<i>If you came here by train</i></div></div>
+                <div class="img_word">
+                	<img src="images/icon44_03.jpg" class="fr" />
+                	<div class="word fl">
+                        	<p><span></span><strong>上海火车站</strong>
+→地铁4号线→塘桥站出站（3号口出），出站即可看见由由大酒店，左手边上天桥，左手边下来，直走5-8分钟即到。</p>
+				<p><span></span><strong>虹桥火车站</strong>
+→地铁2号线（广兰路方向），在世纪大道站→地铁4号线（宜山路方向），在塘桥站下车（3号口出）步行5-8分钟即到。<a class="word_a" href="javascript:;">或乘坐地铁10号线（新江湾城方向），在虹桥路站下→地铁4号线（宜山路方向），在塘桥站下车（3号口出）步行5-8分钟即到。</a></p>
+                                <a target="_blank" onclick="openZoosUrl();return false;" href="javascript:void(0)"><img src="images/icon_19.png" /></a>
+                        </div>
+                </div>
+        </div>
+
+
+
+ <!----------------------------------box6----------------------------------------->
+	<div class="box6 commonWidth_1000 position">
+        	<div class="til_box"><div class="til"><em></em>如果您坐飞机来<i>If you came here by air</i></div></div>
+                <div class="img_word">
+                	<img src="images/icon55_03.jpg" class="fl" />
+                	<div class="word fr">
+				<p><span></span><strong>虹桥国际机场</strong>
+→步行至虹桥1号航站楼站→地铁10号线(新江湾城方向), 在虹桥路站下车→地铁4号线(宜山路方向) 在塘桥站下车(3号口出) →步行5-8分钟即到。<a class="word_a" href="javascript:;">或乘坐地铁2号线（广兰路方向），在世纪大道站→地铁4号线（宜山路方向），在塘桥站下车（3号口出）步行5-8分钟即到。</a></p>
+                        	<p><span></span><strong>浦东国际机场</strong>
+→磁悬浮， 在龙阳路站下车→乘坐地铁2号线（徐泾东方向），在世纪大道站下→乘坐地铁4号线（宜山路方向），在塘桥站下（3号口出）→步行5-8分钟即到。</p>
+                                <a target="_blank" onclick="openZoosUrl();return false;" href="javascript:void(0)"><img src="images/icon_19.png" /></a>
+                        </div>
+                </div>
+                <div class="clearFix" style=" height:70px; overflow:hidden;"></div>
+                <div class="read"></div>
+        </div>
+
+
+
+ <!----------------------------------box7----------------------------------------->
+	<div class="box7 commonWidth_1000 position">
+        	<div class="til_box"><div class="til"><em></em>我们社会责任<i>Nanpu public welfare</i></div></div>
+		<div class="vedio_box">
+                	<div class="vedio fl">
+                        	<div class="vedio_son">
+                                	<script language='javascript' src='http://www.5etv.com/video/v2_player_t.jsp?vid=148170394&s=www.5etv.com&width=320&height=240&soValue=100&playMode=0&toolzt=yes&startzt=no'></script>
+                                </div>
+                                <div class="vedio_word">南浦"宅医送"上门服务金阿婆</div>
+                        </div> 
+                        <div class="vedio fl" style=" padding:0 20px">
+                        	<div class="vedio_son">
+                                	<script language='javascript' src='http://www.5etv.com/video/v2_player_html5.jsp?vid=144261307&s=www.5etv.com&width=320&height=240&soValue=100&playMode=0&toolzt=yes&startzt=no'></script>
+                                </div>
+                                <div class="vedio_word">南浦"宅医送"关注特殊女性</div>
+                        </div>
+                        <div class="vedio fr">
+                        	<div class="vedio_son">
+                                	<script language='javascript' src='http://www.5etv.com/video/v2_player_t.jsp?vid=148715848&s=www.5etv.com&width=320&height=240&soValue=100&playMode=0&toolzt=yes&startzt=no'></script>
+                                </div>
+                                <div class="vedio_word">东方卫视报道南浦"宅医送"公益活动</div>
+                        </div>
+                </div>
+                <div class="clearFix" style=" height:50px; overflow:hidden;"></div>
+		<div class="vedio_box">
+                	<div class="vedio fl">
+                        	<div class="vedio_son">
+                                	<script language='javascript' src='http://www.5etv.com/video/v2_player_html5.jsp?vid=148718305&s=www.5etv.com&width=320&height=240&soValue=100&playMode=0&toolzt=yes&startzt=no'></script>
+                                </div>
+                                <div class="vedio_word">上海电视台报道南浦"进工地,送健康"活动</div>
+                        </div> 
+                        <div class="vedio fl" style=" padding:0 20px">
+                        	<div class="vedio_son">
+                                	<script language='javascript' src='http://www.5etv.com/video/v2_player_html5.jsp?vid=145396441&s=www.5etv.com&width=320&height=240&soValue=100&playMode=0&toolzt=yes&startzt=no'></script>
+                                </div>
+                                <div class="vedio_word">腾讯&bull;大申网邀请南浦王桂兰主任讲解妇科炎症</div>
+                        </div>
+                        <div class="vedio fr">
+                        	<div class="vedio_son">
+                                	<script language='javascript' src='http://www.5etv.com/video/v2_player_t.jsp?vid=144258850&s=www.5etv.com&width=320&height=240&soValue=100&playMode=0&toolzt=yes&startzt=no'></script>
+                                </div>
+                                <div class="vedio_word">上海电视台报道南浦援助外来媳活动</div>
+                        </div>
+                </div>
+	</div>
+
+
+
+
+ <!----------------------------------box8----------------------------------------->
+	<div class="box8 commonWidth_1100 position">
+        	<div class="til_box"><div class="til"><em></em>患者点评<i>Patients with comments</i></div></div>
+       				<script src="http://pj.skinjc.com/socket.php?ym=http://wap.jcyiyuan.com/&title=通用&action=1" type="text/javascript"></script>
+   				<script src="/pingjia/nppjzt.js" type="text/javascript"></script>
+				<script language="javascript" type="text/javascript" src="/pingjia/page.js"></script>
+		
+	</div>
+
+
+
+</div>
+<script src="/js/npztfoot.js" type="text/javascript"></script>
+<script src="/swt/new_swt.js"></script>
+<script src="/new_js/jtClite1.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>offsetParent(封装offsetTop兼容定位版本)</title>
+</head>
+<style>
+*{ margin:0; padding:0;}
+div{ width:200px; height:200px; position:relative;}
+span,em{ width:100px; height:100px; background:#000; position:absolute;}
+</style>
+<script>
+window.onload=function(){
+	var oSpan=document.getElementsByTagName('span')[0];
+	alert(oSpan.offsetTop);				//定位状态下皆为0
+	alert(oSpan.offsetParent.nodeName);		//定位状态下皆一样(EM有定位的情况下)
+	alert(offsetTop(oSpan));			//兼容IE7版本
+									
+										//定位状态下不需要转换为块元素,
+										//1.EM有定位那么oSpan.offsetParent显示为EM
+										//2.EM无定位那么oSpan.offsetParent显示为DIV.
+}
+//兼容IE7的offsetTop;
+function offsetTop(obj){
+	var iTop=obj.offsetTop;
+	var oParent=obj.offsetParent;
+	while(oParent){//oParent存在即oParent!=null;
+		iTop+=oParent.offsetTop;
+		oParent=oParent.offsetParent;
+	}
+	return iTop;	
+}
+</script>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>        
+	<div></div>
+	<div>
+        	<em>
+        		<span></span>
+        	</em>
+        </div>
+</body>
+</html>

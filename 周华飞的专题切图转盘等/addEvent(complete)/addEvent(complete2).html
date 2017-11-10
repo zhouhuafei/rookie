@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>addEvent(complete2)</title>
+<script>
+window.onload=function(){
+	addEvent(document,'click',fn1);
+	addEvent(document,'click',fn2);
+	addEvent(document,'click',fn3);
+	//removeEvent(document,'click',fn1);	
+	var obj=document.getElementById('a1');
+	addEvent(obj,'click',function(e){
+		e.preventDefault();
+		e.stopPropagation();
+	});
+}
+function fn1(){
+	alert('函数1');
+}
+function fn2(){
+	alert('函数2');
+}
+function fn3(ev){
+	alert('可视区鼠标x轴坐标:'+ev.clientX);
+}
+/*事件绑定封装*/
+function addEvent(obj,type,fn){
+	if(obj.addEventListener){
+		obj.addEventListener(type,fn,false);
+	}else{		
+		if(!obj.events){
+			addEvent.id=0;//为每个事件分配一个计数器,实现累加,并且清晰的指出是专门给addEvent用的,js一切皆为对象,所以语法正确,实际上是一个全局对象,也可以加在obj对象身上
+			obj.events={}//创建一个存放事件的哈希表(散列表)
+		};
+		if(!obj.events[type]){obj.events[type]=[];}
+		if(addEvent.equal(obj.events[type],fn)==true){return false;}
+		obj.events[type][addEvent.id++]=fn;		
+		alert(obj.events[type]);
+		obj['on'+type]=addEvent.exec;
+	}
+}
+addEvent.exec=function(){//执行事件处理函数
+	var e=addEvent.fixEvent(event);
+	var es=this.events[e.type]
+	for(var i in es){
+		es[i].call(this,e);
+	}
+}
+addEvent.equal=function(es,fn){//同一个注册函数进行屏蔽,不添加到计数器中
+	for(var i in es){
+		if(es[i]==fn){
+			return true;
+		}
+	}
+	return false;
+}
+addEvent.fixEvent=function(event){//把IE常用的event对象配对到W3C去
+	event.preventDefault=addEvent.fixEvent.preventDefault;
+	event.stopPropagation=addEvent.fixEvent.stopPropagation;
+	return event;
+}
+addEvent.fixEvent.preventDefault=function(){
+	this.returnValue=false;
+}
+addEvent.fixEvent.stopPropagation=function(){
+	this.cancelBubble=true;	
+}
+function removeEvent(obj,type,fn){
+	if(obj.removeEventListener){
+		obj.removeEventListener(type,fn,false);	
+	}else{
+		if(obj.events){
+			for(var i in obj.events[type]){
+				if(obj.events[type][i]==fn){
+					delete obj.events[type][i];	
+				}	
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+<a id="a1" href='https://www.baidu.com/' target="_blank">去百度看看</a>
+</body>
+</html>

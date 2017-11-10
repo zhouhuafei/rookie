@@ -1,0 +1,91 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ outline:none; text-decoration:none; color:#000;transition:all 0.3s;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;-o-transition:all 0.3s;}
+p{ line-height:25px;}
+em,i,strong,b,small{font-style:normal; font-weight:normal;}
+a,span,b,em,i,strong,small,label{display:inline-block;}
+img{ vertical-align:top;}
+em{transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-o-transition:all 1s;}
+
+/*清楚浮动*/
+.clearFix{ clear:both; *zoom:1;}
+.clearFix:after{ clear:both; display:block; visibility:hidden; height:0; line-height:0; content:""; font-size:0;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.commonWidth_320{ width:320px; margin:0 auto; overflow:hidden;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+/*head*/
+.header{ width:320px; height:115px; background:#0c81fa; padding:50px 0 10px; margin: 0 auto 5px;}
+.header div{ background: url(../images/topLogo.png) no-repeat 5px center; color: #fff; font-size: 12px; height:56px; margin: 0 auto; padding: 0 0 0 60px; width: 250px;}
+.header p{ width:236px;font-size:22px;padding:0px 0 3px;border-bottom:1px solid #5aaafc;margin-bottom:3px;text-align:center;}
+.header em{ color:#fff; display:inline-block; font-size:20px; letter-spacing:2px; font-style:normal; font-weight:bold; padding:10px 0 0; text-align:center; width:100%;}
+.header em span{ color:red;}
+
+/*nav*/
+nav{ background:#2082ed; width:320px; margin:5px auto 0;}
+nav li{ float:left;}
+nav a{ width:74px; text-align:center; line-height:38px; font-size:16px; color:#FFF;}
+nav span{ width:8px; text-align:center; color:#fff; font-size:16px;}
+
+/*main*/
+.main{ width:320px; margin:0 auto; padding-top:10px;}
+
+/*banner*/
+#banner{ background:url(../images/banner_02.jpg) center center no-repeat; height:142px; position:relative; margin-bottom:10px;}
+#banner a{ width:100%; height:20px; position:absolute; bottom:5px; left:0;}
+
+/*choice*/
+.til{ line-height:35px; background:#0662ab; color:#fff; font-size:15px;}
+.til em{ vertical-align:middle; margin:0 3px;}
+.choice_p{ font-size:12px; color:#6c6c6c; font-size:13px; text-indent:30px; padding:5px;}
+.choice li{ margin-bottom:10px; height:106px;}
+
+/*what*/
+.what ul{ padding-top:10px;}
+.what li{ margin-bottom:10px; height:96px;}
+
+/*process*/
+.process ul{ padding-top:10px;}
+.process li{ margin-bottom:10px;}
+.process li a{ vertical-align:top;}
+
+/*price*/
+.price ul{ padding-top:10px;}
+.price li{ margin-bottom:10px; color:#fff;}
+.price em{ line-height:28px; vertical-align:middle; width:28px; height:28px; border-radius:28px; background:#fb6800; text-align:center; margin-right:5px;}
+.price span{ line-height:28px; width:260px; padding-left:10px; background:#fb6800;}
+.price a{ margin-bottom:10px;}
+
+/*final*/
+.final ul{ padding-top:10px;}
+.final li{ margin-bottom:10px;}
+.final a{ margin-bottom:10px;}
+
+/*case*/
+.case h2{ font-size:24px; color:#0662ab; padding-left:5px;}
+.case p{ font-size:18px; color:#0662ab; padding-left:5px;}
+.case_num{ font-size:14px; font-weight:bold; color:#0066cb; font-size:16px; width:180px; margin:20px 5px 10px 115px;}
+.case span{ color:#fff; background:#0066cb; font-size:36px; width:25px; text-align:center; height:52px; line-height:52px; margin-right:2px; vertical-align:bottom;}
+
+/*footer*/
+#footer{ width:320px; height:42px; margin:0 auto;}
+#nnFooter{height:42px;line-height:42px;position:fixed;bottom:0px;margin:0 auto;background:#0c81fa;z-index:10;}
+#nnFooter div{height:42px;text-indent:40px;font-size:14px;color:#fff;}
+#nnFooter a.left{width:33%;height:100%;background:url(../images/footer_c_bg.jpg) no-repeat right center;float:left;}
+#nnFooter a.center{width:34%;height:100%;background:url(../images/footer_c_bg.jpg) no-repeat right center;float:left;}
+#nnFooter a.right{width:33%;height:100%;float:left;}
+#nnFooter a.left div{width:107px;background:url(../images/footer_icon1.png) no-repeat 10px center;margin:0 auto;}
+#nnFooter a.center div{width:106px;background:url(../images/footer_icon2.png) no-repeat 10px  center;margin:0 auto;}
+#nnFooter a.right div{width:107px;background:url(../images/footer_icon3.png) no-repeat 10px  center;margin:0 auto;}

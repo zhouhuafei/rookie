@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title></title>
+</head>
+<body>
+<form action="" method="post">
+        <fieldset>
+                <legend>用户名：</legend>
+                <input type="text" name="user" value="user" placeholder="user"/>
+        </fieldset>
+        <fieldset>
+                <legend>密码：</legend>
+                <input type="email" name="email" value="1123486116@qq.com" placeholder="email"/>
+        </fieldset>
+        <fieldset>
+                <legend>上传文件：</legend>
+                <input type="file" name="file" multiple/>
+        </fieldset>
+        <input type="submit" value="提交"/>
+</form>
+<script>
+        var oForm = document.forms[0];
+        var data = new FormData(oForm);
+        var oAjax = new XMLHttpRequest();
+        oAjax.open('POST', '',true);
+        oAjax.onreadystatechange = function () {
+                if(this.readyState==4){
+                        if(this.status==200){
+                                alert(this.responseText);
+                        }else{
+                                alert(this.status);
+                        }
+                }
+        };
+        oAjax.send(data);
+</script>
+</body>
+</html>

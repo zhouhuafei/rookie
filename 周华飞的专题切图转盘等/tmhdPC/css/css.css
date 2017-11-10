@@ -1,0 +1,174 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*banner*/
+#banner{ height:650px; background:url(../images/banner.jpg) center center no-repeat;}
+
+/*viscosity*/
+#viscosity{ height:70px; line-height:70px; position:relative;}
+#viscosity #viscosity-flow{ width:100%; height:70px; background:#303542; color:#fff; font-size:20px; position:absolute; left:0; top:0;}
+#viscosity span{ width:189px; border-right:1px solid #fff; text-align:center;}
+#viscosity a{ width:132px; text-align:center; height:34px; line-height:34px; background:#0aa0b4; border-radius:10px; margin-top:18px; color:#fff;}
+#viscosity li{ float:left; width:170px; text-align:center; cursor:pointer;}
+#viscosity li.active{ background:#191f2d;}
+#viscosity li:hover{ background:#191f2d;}
+
+/*reward*/
+.reward dl{ width:344px; color:#fff;}
+.reward dl.two{ margin:0 20px;}
+.reward dt{ background:#008f9d; font-size:32px; padding:40px 120px 40px 20px; position:relative; line-height:1.3;}
+.reward dt img{ position:absolute; right:5px; bottom:5px;}
+.reward dd{ background:#f47e00; font-size:24px; line-height:1.3; padding:25px 20px; box-sizing:border-box;}
+
+/*stop*/
+.stop div{ float:left; margin-right:101px; position:relative; overflow:hidden;}
+.stop p{ border-radius:5px; transition:0.4s; position:absolute; left:0; top:-167px; width:184px; height:127px; background:#0092a0; color:#fff; padding:20px; font-size:15px; line-height:28px;}
+.stop a:hover p{ top:0;}
+.stop h2{ width:184px; margin-top:10px; padding-left:40px; font-size:18px; line-height:30px; color:#000; position:relative;}
+.stop em{ width:27px; height:27px; text-align:center; line-height:27px; color:#fff; font-size:22px; border-radius:50%; position:absolute; left:5px; top:0;}
+.stop .em1{ background:#ff6c00;}
+.stop .em2{ background:#1bc38a;}
+.stop .em3{ background:#b87fff;}
+.stop .em4{ background:#1e8df3;}
+
+
+/*equipment*/
+.equipment{ position:relative;}
+.equipment  dl{ overflow:hidden;}
+.equipment dt{ margin-left:60px;}
+.equipment dd{ width:600px;}
+.equipment h2{ display:inline-block; margin:30px 0; line-height:50px; font-size:35px; color:#fff; color:#008f9d;}
+.equipment p{ line-height:24px; margin-bottom:16px; font-size:18px; color:#080808;}
+.equipment p img{ margin-left:10px;}
+.equipment strong{ background:#008f9d; margin-right:4px; color:#fff; padding:0 4px;}
+.equipment .prev,.equipment .next{ position:absolute; left:0; top:164px; cursor:pointer; z-index:5;}
+.equipment .next{ left:auto; right:0;}
+
+
+/*case*/
+.case dl{ padding-bottom:30px; border-bottom:1px dashed #1498aa;}
+.case dl.reset{width: 1000px;margin: 0 auto; border-bottom:none; padding-bottom:0; margin-bottom:0;}
+.case dl.deset{width: 1000px;margin: 0 auto; margin-bottom:30px;}
+.case dd{ width:626px;}
+.case dd img.fl{ margin-left:24px;}
+.case dd h2{ width:315px; line-height:37px; font-size:18px; color:#1498aa; font-weight:bold; border-bottom:1px dashed #1498aa;}
+.case dd h2 strong{ color:#717071; font-weight:normal;}
+.case dd div.clearFix{ margin-bottom:30px;}
+.case dd p{ font-size:16px; color:#717071; line-height:34px;}
+.case dd a{ color:#0aa0b4; display:inline;}
+.case li{ text-align:center;}
+.case li img{ border:10px solid #f7f7f7; width:100%;}
+.case li div{ width:48%;}
+.case li p{ line-height:62px; color:#717071; font-size:24px;}
+.case .prev,.case .next{ position:absolute; left:-50px; top:144px; cursor:pointer;}
+.case .next{ left:auto; right:-70px;}
+.case2{ width:1040px; margin:60px auto; position:relative;}
+
+
+/*common*/
+#container{ overflow:hidden; color:#5d5d5d;}
+p.ti{ font-size:15px; line-height:30px; color:#5d5d5d; text-indent:30px;}
+.btn{ width:190px; height:50px; text-align:center; line-height:50px; font-size:24px; color:#efcc76; background:#660000; border-radius:10px;}
+.bg{ background:#f6f6f6; overflow:hidden;}
+.til{ height:97px; width:1200px; margin:75px auto 45px;}
+.til em{ margin-right:20px; width:3px; border-left:2px solid #008f9d; border-right:5px solid #008f9d; height:100%;}
+.til i{ width:1170px; position:relative;}
+.til a{ width:160px; font-size:26px; background:#f47e00; color:#fff; text-align:center; height:48px; line-height:48px; position:absolute; right:0; top:50%; margin-top:-24px; border-radius:10px;}
+.til h2{ height:66px; font-size:50px; color:#008f9d; line-height:66px; font-weight:bold;}
+.til h3{ padding-bottom:5px; height:26px; font-size:24px; color:#e1e1e1; font-weight:bold; text-transform:uppercase; border-bottom:1px solid #008f9d;}
+.til:hover span{ transform:rotate(360deg); -webkit-transform:rotate(360deg); color:#008f9d;}
+.til:hover span:nth-of-type(1){ transition:0.4s 0.1s;}
+.til:hover span:nth-of-type(2){ transition:0.4s 0.2s;}
+.til:hover span:nth-of-type(3){ transition:0.4s 0.3s;}
+.til:hover span:nth-of-type(4){ transition:0.4s 0.4s;}
+.til:hover span:nth-of-type(5){ transition:0.4s 0.5s;}
+.til:hover span:nth-of-type(6){ transition:0.4s 0.6s;}
+.til:hover span:nth-of-type(7){ transition:0.4s 0.7s;}
+.til:hover span:nth-of-type(8){ transition:0.4s 0.8s;}
+.til:hover span:nth-of-type(9){ transition:0.4s 0.9s;}
+.til:hover span:nth-of-type(10){ transition:0.4s 1s;}
+.til:hover span:nth-of-type(11){ transition:0.4s 1.1s;}
+.til:hover span:nth-of-type(12){ transition:0.4s 1.2s;}
+.til:hover span:nth-of-type(13){ transition:0.4s 1.3s;}
+.til:hover span:nth-of-type(14){ transition:0.4s 1.4s;}
+.til:hover span:nth-of-type(15){ transition:0.4s 1.5s;}
+.til:hover span:nth-of-type(16){ transition:0.4s 1.6s;}
+.til:hover span:nth-of-type(17){ transition:0.4s 1.7s;}
+.til:hover span:nth-of-type(18){ transition:0.4s 1.8s;}
+.til:hover span:nth-of-type(19){ transition:0.4s 1.9s;}
+.til:hover span:nth-of-type(20){ transition:0.4s 2s;}
+.til:hover span:nth-of-type(21){ transition:0.4s 2.1s;}
+.til:hover span:nth-of-type(22){ transition:0.4s 2.2s;}
+.til:hover span:nth-of-type(23){ transition:0.4s 2.3s;}
+.til:hover span:nth-of-type(24){ transition:0.4s 2.4s;}
+.til:hover span:nth-of-type(25){ transition:0.4s 2.5s;}
+.til:hover span:nth-of-type(26){ transition:0.4s 2.6s;}
+.til:hover span:nth-of-type(27){ transition:0.4s 2.7s;}
+.til:hover span:nth-of-type(28){ transition:0.4s 2.8s;}
+.til:hover span:nth-of-type(29){ transition:0.4s 2.9s;}
+.til:hover span:nth-of-type(30){ transition:0.4s 3s;}
+.til:hover span:nth-of-type(31){ transition:0.4s 3.1s;}
+.til:hover span:nth-of-type(32){ transition:0.4s 3.2s;}
+.til:hover span:nth-of-type(33){ transition:0.4s 3.3s;}
+.til:hover span:nth-of-type(34){ transition:0.4s 3.4s;}
+.til:hover span:nth-of-type(35){ transition:0.4s 3.5s;}
+.til:hover span:nth-of-type(36){ transition:0.4s 3.6s;}
+.til:hover span:nth-of-type(37){ transition:0.4s 3.7s;}
+.til:hover span:nth-of-type(38){ transition:0.4s 3.8s;}
+.til:hover span:nth-of-type(39){ transition:0.4s 3.9s;}
+.til:hover span:nth-of-type(40){ transition:0.4s 4s;}
+.til:hover span:nth-of-type(41){ transition:0.4s 4.1s;}
+.til:hover span:nth-of-type(42){ transition:0.4s 4.2s;}
+.til:hover span:nth-of-type(43){ transition:0.4s 4.3s;}
+.til:hover span:nth-of-type(44){ transition:0.4s 4.4s;}
+.til:hover span:nth-of-type(45){ transition:0.4s 4.5s;}
+.til:hover span:nth-of-type(46){ transition:0.4s 4.6s;}
+.til:hover span:nth-of-type(47){ transition:0.4s 4.7s;}
+.til:hover span:nth-of-type(48){ transition:0.4s 4.8s;}
+.til:hover span:nth-of-type(49){ transition:0.4s 4.9s;}
+.til:hover span:nth-of-type(50){ transition:0.4s 5s;}
+.til:hover span:nth-of-type(51){ transition:0.4s 5.1s;}
+.til:hover span:nth-of-type(52){ transition:0.4s 5.2s;}
+.til:hover span:nth-of-type(53){ transition:0.4s 5.3s;}
+.til:hover span:nth-of-type(54){ transition:0.4s 5.4s;}
+.til:hover span:nth-of-type(55){ transition:0.4s 5.5s;}
+.til:hover span:nth-of-type(56){ transition:0.4s 5.6s;}
+.til:hover span:nth-of-type(57){ transition:0.4s 5.7s;}
+.til:hover span:nth-of-type(58){ transition:0.4s 5.8s;}
+.til:hover span:nth-of-type(59){ transition:0.4s 5.9s;}
+.til:hover span:nth-of-type(60){ transition:0.4s 6s;}
+.til:hover span:nth-of-type(61){ transition:0.4s 6.1s;}
+.til:hover span:nth-of-type(62){ transition:0.4s 6.2s;}
+.til:hover span:nth-of-type(63){ transition:0.4s 6.3s;}
+.til:hover span:nth-of-type(64){ transition:0.4s 6.4s;}
+.til:hover span:nth-of-type(65){ transition:0.4s 6.5s;}
+.til:hover span:nth-of-type(66){ transition:0.4s 6.6s;}
+.til:hover span:nth-of-type(67){ transition:0.4s 6.7s;}
+.til:hover span:nth-of-type(68){ transition:0.4s 6.8s;}
+.til:hover span:nth-of-type(69){ transition:0.4s 6.9s;}
+.til:hover span:nth-of-type(70){ transition:0.4s 7s;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

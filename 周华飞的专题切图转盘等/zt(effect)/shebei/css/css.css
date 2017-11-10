@@ -1,0 +1,59 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+#container{ padding:70px 0 170px; overflow:hidden;}
+
+#content{ width:1200px; margin:0 auto;}
+
+#aside{ width:302px; margin-left:20px; transform:translateX(-500px); -webkit-transform:translateX(-500px); opacity:0;}
+#aside #wrap{ padding:37px 0 40px; background:#2d2d2d; width:302px;}
+#aside ol{ margin-bottom:42px;}
+#aside li{ position:relative; width:98%; margin-bottom:14px; box-shadow:0 0 5px #000; height:40px; line-height:40px; background:#fff; font-size:20px; margin-left:-20px;}
+#aside li:before{ transition:0.4s; content:""; display:block; width:0; height:100%; background:#0aa0b4; position:absolute; left:0; top:0;}
+#aside li:after{ transition:0.4s; content:""; display:block; width:11px; height:23px; position:absolute; right:2px; top:50%; margin-top:-11px; background:url(/zt/lylx/images/arrow.png) -11px top no-repeat;}
+#aside small{ font-size:12px; color:#b4b4b4; margin-left:4px;}
+#aside li a{ color:#7b7b7b; position:absolute; left:8px; top:0;}
+#aside li.active{ margin-left:-10px;}
+#aside li.active:before{ width:100%;}
+#aside li.active:after{ transition:0.4s 0.3s; background:url(/zt/lylx/images/arrow.png) left top no-repeat;}
+#aside li.active a{ color:#fff;}
+#aside li.active small{ color:#fff;}
+#aside li:hover{ margin-left:-10px;}
+#aside li:hover:before{ width:100%;}
+#aside li:hover:after{ transition:0.4s 0.3s; background:url(/zt/lylx/images/arrow.png) left top no-repeat;}
+#aside li:hover a{ color:#fff;}
+#aside li:hover small{ color:#fff;}
+#aside h2{ height:24px; line-height:24px; font-size:22px; color:#fff; margin-left:13px; padding-left:11px; border-left:2px solid #0aa0b4;}
+#aside h3{ margin-top:18px; padding-left:15px;}
+#aside em{ margin-right:5px; vertical-align:middle;}
+#aside span{ vertical-align:middle; color:#fff;}
+#aside i{ display:block; font-size:12px; margin-bottom:10px;}
+#aside strong{ font-size:18px;}
+#aside .img{ text-align:center; margin-top:40px;}
+
+#section .til{ margin-bottom:40px; border-bottom:1px solid #e6e6e6;}
+#section .til span{ padding-bottom:15px; font-size:30px; border-bottom:2px solid #0aa0b4; margin-bottom:-1px;}
+
+#section{ width:852px; transform:translateX(800px); -webkit-transform:translateX(800px); opacity:0;}
+#section #section-main{ position:relative;}
+#section ul{ width:852px; height:440px; overflow:hidden;}
+#section #section-main div.prev,#section #section-main div.next{ width:31px; height:79px; position:absolute; top:50%; margin-top:-40px; left:0; cursor:pointer; z-index:2;}
+#section #section-main div.next{ left:auto; right:0;}
+#section ul li{ width:852px; height:440px;}
+#section ul dt{ width:303px; padding:0 1px; height:440px; transition:0.4s; transform:translateX(800px); -webkit-transform:translateX(800px);}
+#section ul dt img{ width:303px; height:440px; vertical-align:middle;}
+#section ul dd{ width:491px; height:440px; padding-left:56px; transition:0.4s; transform:translateX(-800px); -webkit-transform:translateX(-800px);}
+#section li.active dt,#section li.active dd{ transform:translateX(0); -webkit-transform:translateX(0);}
+#section ul h2{ font-size:28px; margin-top:40px;}
+#section ul h3{ font-size:18px; margin-top:30px; font-weight:bold;}
+#section ul p{ font-size:16px; line-height:32px; margin-top:8px;}
+#section ol{ overflow:hidden; border-top:1px dashed #898989;}
+#section ol li{ float:left; border:1px solid #898989; margin:0 8px 8px 0;}
+#section ol li.active{ border:1px solid #0aa0b4;}
+#section ol h2{ font-size:20px; margin:40px 0 20px;}
+
+#content.active #aside,#content.active #section{ transition:0.4s; transform:translateX(0); -webkit-transform:translateX(0); opacity:1;}

@@ -1,0 +1,751 @@
+//var
+@color: #006db8;
+@colors: #f45205;
+.w {
+        width: 1000px;
+        margin: 0 auto;
+}
+.wa {
+        background: #f4f8fa;
+        overflow: hidden;
+        padding-bottom: 40px;
+        margin-top: 40px;
+        .til span {
+                background: #f4f8fa;
+        }
+}
+.p {
+        font-size: 16px;
+        line-height: 26px;
+        color: #666;
+        text-indent: 30px;
+}
+//banner
+.banner {
+        background: url("../images/banner.jpg");
+        height: 500px;
+        div {
+                height: 100%;
+                position: relative;
+        }
+        a {
+                width: 190px;
+                height: 50px;
+                position: absolute;
+                right: 110px;
+                bottom: 50px;
+        }
+}
+//lead
+.lead {
+        padding: 40px 0;
+        font-size: 16px;
+        line-height: 30px;
+        color: #fff;
+        background: url("../images/lead.jpg");
+        dd {
+                width: 530px;
+                text-indent: 30px;
+        }
+}
+//til
+.til {
+        text-align: center;
+        font-size: 40px;
+        line-height: 60px;
+        color: @color;
+        margin: 60px 0 40px 0;
+        position: relative;
+        span {
+                padding: 0 40px 0 40px;
+                position: relative;
+                background: #fff;
+                z-index: 2;
+                &:after, &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                }
+                &:after {
+                        width: 24px;
+                        height: 44px;
+                        background: url("../images/til1.png") no-repeat;
+                        left: 0;
+                        top: 0;
+                }
+                &:before {
+                        width: 51px;
+                        height: 35px;
+                        background: url("../images/til2.png") no-repeat;
+                        right: 0;
+                        bottom: 0;
+                }
+        }
+        &:after, &:before {
+                content: "";
+                display: block;
+                width: 50%;
+                position: absolute;
+                top: 50%;
+                height: 1px;
+                background-color: #d4d4d4;
+                z-index: 1;
+        }
+        &:after {
+                left: 0;
+        }
+        &:before {
+                right: 0;
+        }
+}
+//back
+.back {
+        .w;
+        position: relative;
+        dl {
+                width: 426px;
+                box-shadow: 1px 1px 2px #ccc;
+                dt {
+                        text-align: center;
+                        img {
+                                height: 236px;
+                        }
+                }
+                dd {
+                        background: #f8f8f8;
+                        padding: 20px;
+                        height: 248px;
+                        position: relative;
+                        h2 {
+                                font-size: 18px;
+                                font-weight: bold;
+                                color: @color;
+                                margin-bottom: 10px;
+                        }
+                        p {
+                                font-size: 14px;
+                                line-height: 24px;
+                                color: #666;
+                        }
+                        a {
+                                font-size: 18px;
+                                width: 170px;
+                                text-align: center;
+                                line-height: 48px;
+                                color: #fff;
+                                border-radius: 10px;
+                                position: absolute;
+                                left: 50%;
+                                bottom: 10px;
+                                margin-left: -85px;
+                                background: @color;
+                                &:hover {
+                                        background: @colors;
+                                }
+                        }
+                }
+        }
+        .run {
+                padding: 5px;
+                border: 1px solid #489cd5;
+                display: inline-block;
+                border-radius: 50%;
+                position: absolute;
+                left: 50%;
+                margin-left: -124px;
+                top: 20px;
+                z-index: 2;
+                span {
+                        width: 174px;
+                        height: 200px;
+                        border-radius: 50%;
+                        background: #489cd5;
+                        color: #fff;
+                        font-size: 16px;
+                        line-height: 26px;
+                        padding: 36px 30px 0;
+                }
+        }
+}
+//therapy
+.therapy {
+        h3 {
+                margin-bottom: 40px;
+        }
+        ol {
+                background: url("../images/therapy-green.jpg") no-repeat;
+                width: 381px;
+                li {
+                        padding-left: 76px;
+                        font-size: 21px;
+                        color: #4e4e4e;
+                        float: none;
+                        height: 72px;
+                        line-height: 72px;
+                        margin-bottom: 8px;
+                        transition: 0s;
+                }
+                li.on {
+                        background: url("../images/therapy-blue.jpg") 0 0 no-repeat;
+                        color: #fff;
+                }
+                li.two.on {
+                        background-position: 0 -80px;
+                }
+                li.thr.on {
+                        background-position: 0 -160px;
+                }
+                li.fou.on {
+                        background-position: 0 -240px;
+                }
+                li.fiv.on {
+                        background-position: 0 -319px;
+                }
+        }
+        ul {
+                width: 600px;
+                height: 392px;
+                overflow: hidden;
+                li {
+                        position: relative;
+                        div {
+                                height: 180px;
+                                position: absolute;
+                                left: 0;
+                                bottom: 0;
+                                width: 100%;
+                                color: #fff;
+                                h2 {
+                                        font-size: 24px;
+                                        padding: 20px 0 20px 60px;
+                                }
+                                p {
+                                        padding: 0 15px;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                }
+                                a {
+                                        position: absolute;
+                                        right: 24px;
+                                        bottom: 18px;
+                                        font-size: 18px;
+                                        width: 130px;
+                                        height: 35px;
+                                        line-height: 35px;
+                                        text-align: center;
+                                        border-radius: 10px;
+                                        background: @color;
+                                        &:hover {
+                                                background: @colors;
+                                        }
+                                }
+                        }
+                }
+
+        }
+}
+//.box4
+.box4 ul {
+        height: 50px;
+        border-bottom: 1px solid #969696;
+}
+.box4 ul li.first {
+        margin-left: 98px;
+}
+.box4 ul li {
+        margin-top: 4px;
+        font-size: 21px;
+        color: #fff;
+        width: 193px;
+        line-height: 50px;
+        background: #969696;
+        float: left;
+        display: inline;
+        text-align: center;
+        margin-left: 17px;
+        cursor: pointer;
+}
+.box4 ul li.on {
+        background: @color;
+}
+.box4 dl {
+        height: 400px;
+        margin: 35px 0 55px;
+}
+.box4 dl dd {
+        width: 570px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+}
+.box4 dl dd b {
+        font-size: 30px;
+        color: @colors;
+        font-weight: normal;
+        display: block;
+        margin-bottom: 15px;
+}
+.box4 dl dd p {
+        font-size: 16px;
+        line-height: 2;
+        color: #343434;
+}
+.box4 dl dd p span {
+        color: @color;
+}
+.box4 .zx span {
+        font-size: 18px;
+        margin: 0 10px 0 0;
+}
+.box4 .zx a {
+        width: 240px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 24px;
+        color: #fff;
+        border-radius: 10px;
+        background: @color;
+        &:hover {
+                background: @colors;
+        }
+}
+.box4 font {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+}
+//security
+.security {
+        background: url("../images/security.jpg") no-repeat;
+        div {
+                width: 660px;
+                margin-left: 340px;
+                img {
+                        margin: 20px 0 60px;
+                }
+                a {
+                        width: 240px;
+                        height: 50px;
+                        text-align: center;
+                        line-height: 50px;
+                        font-size: 24px;
+                        color: #fff;
+                        border-radius: 10px;
+                        background: @color;
+                        &:hover {
+                                background: @colors;
+                        }
+                }
+        }
+}
+//expert
+.box7 {
+        position: relative;
+}
+.box7 ul {
+        height: 610px;
+        overflow: hidden;
+}
+.box7 .box7_1 {
+        width: 900px;
+        height: 610px;
+        margin: 0 auto;
+        .w;
+        position: relative;
+}
+.box7 .box7_1 ul {
+        width: 900px;
+        margin: 0 auto;
+}
+.box7 .box7_1 ul li {
+        width: 900px;
+        height: 610px;
+}
+.box7 .prev {
+        position: absolute;
+        top: 200px;
+        left: -10px;
+        z-index: 10;
+}
+.box7 .next {
+        position: absolute;
+        top: 200px;
+        right: -10px;
+        z-index: 10;
+}
+.box7 dl dd {
+        width: 496px;
+}
+.box7 dl dd b img {
+        margin-top: 60px;
+}
+.box7 dl dd p {
+        font-size: 16px;
+        line-height: 200%;
+        text-indent: 2em;
+        margin: 25px 0;
+}
+.box7 dl dd font {
+        display: block;
+        width: 225px;
+        margin: 35px auto 0;
+}
+.box7 dl dd a {
+        width: 240px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 24px;
+        color: #fff;
+        border-radius: 10px;
+        background: @color;
+        &:hover {
+                background: @colors;
+        }
+}
+//understand
+.sub dl {
+        overflow: hidden;
+        padding-bottom: 73px;
+}
+.sub dt {
+        float: left;
+        width: 223px;
+        height: 120px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 120px;
+        border: none;
+        background: #ef3a5b;
+}
+.sub a {
+        color: #fff;
+        display: block;
+        font-size: 18px;
+}
+.sub dd {
+        float: left;
+        width: 772px;
+        overflow: hidden;
+        height: auto;
+}
+.sub dd a {
+        display: block;
+        color: #fff;
+        margin: 0 0 4px 4px;
+        line-height: 58px;
+        text-align: center;
+        float: left;
+}
+.sub dd .a1 {
+        background: #2fb1be;
+        width: 276px;
+}
+.sub dd .a2 {
+        background: #f2854c;
+        width: 248px;
+}
+.sub dd .a3 {
+        background: #17ccd3;
+        width: 236px;
+}
+.sub dd .a4 {
+        background: #117bde;
+        width: 248px;
+}
+.sub dd .a5 {
+        background: #bb8bf7;
+        width: 236px;
+}
+.sub dd .a6 {
+        background: #8bba30;
+        width: 276px;
+}
+//case
+.box9 dd b {
+        color: #fb6400;
+        display: block;
+        font-size: 24px;
+        line-height: 38px;
+}
+.box9 dd p {
+        color: #646464;
+        font-size: 16px;
+        height: 172px;
+        line-height: 30px;
+        padding: 20px 0 0;
+        text-indent: 2em;
+}
+.box9 dd p a {
+        color: #f00;
+}
+.box9 {
+        padding: 30px 0 0;
+}
+.box9 dt {
+        border: 5px solid #c9c9c9;
+        height: 371px;
+        width: 519px;
+}
+.box9 dd {
+        height: 381px;
+        position: relative;
+        width: 400px;
+}
+.box9 dd b {
+        font-weight: normal;
+}
+.box9 dd b.blue {
+        color: @color;
+}
+.box9 dd p {
+        height: 200px;
+}
+.box9 dd .a_btn {
+        padding-left: 305px;
+}
+.a_btn a {
+        background: url("../images/Hospital_info.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: block;
+        float: left;
+        height: 38px;
+        margin-left: 5px;
+        overflow: hidden;
+        transition: all 0.3s linear 0s;
+        width: 38px;
+}
+.a_btn a.xx {
+        background-position: 0 0;
+        border: none;
+}
+.a_btn a.zx {
+        background-position: -46px 0;
+}
+.a_btn a.xx:hover {
+        background-position: 0 -42px;
+}
+.a_btn a.zx:hover {
+        background-position: -46px -42px;
+}
+//hospital
+#HospitalAll {
+        width: 1000px;
+        margin: 0 auto;
+}
+#HospitalCon {
+        width: 800px;
+        height: 397px;
+        float: left;
+        overflow: hidden;
+}
+#HospitalCon dl {
+        width: 800px;
+        height: 397px;
+}
+#HospitalCon dl dt {
+        width: 270px;
+        height: 337px;
+        padding: 30px 20px;
+        float: left;
+        position: relative;
+}
+#HospitalCon dl dt span {
+        font-size: 24px;
+        color: #fa7404;
+}
+#HospitalCon dl dt span i {
+        font-style: normal;
+        font-size: 18px;
+        color: #f90;
+        display: none;
+}
+#HospitalCon dl dt p {
+        font-size: 14px;
+        color: #333;
+        line-height: 190%;
+        text-indent: 26px;
+        padding: 20px 0px 20px;
+}
+#HospitalCon dl dt div {
+        width: 90px;
+        height: 38px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+}
+#HospitalCon dl dt div a {
+        display: block;
+        width: 38px;
+        height: 38px;
+        background: url(../images/Hospital_info.png) no-repeat;
+        overflow: hidden;
+        float: left;
+        margin-left: 5px;
+        transition: all 0.3s linear 0s;
+}
+#HospitalCon dl dt div a.xx {
+        background-position: 0px 0px;
+}
+#HospitalCon dl dt div a.zx {
+        background-position: -46px 0px;
+}
+#HospitalCon dl dt div a.xx:hover {
+        background-position: 0px -42px;
+}
+#HospitalCon dl dt div a.zx:hover {
+        background-position: -46px -42px;
+}
+#HospitalCon dl dd {
+        width: 459px;
+        height: 389px;
+        border: 4px solid #ccc;
+        float: right;
+        transition: all 0.6s linear 0s;
+        opacity: 0;
+}
+#HospitalCon dl dd.active {
+        opacity: 1;
+}
+#HospitalNav, #HospitalNav ul {
+        width: 193px;
+        height: 397px;
+        float: right;
+}
+#HospitalNav ul li {
+        width: 193px;
+        height: 49px;
+        cursor: pointer;
+        position: relative;
+        background: url(../images/Hospital_nav_bg.png) no-repeat;
+        color: #111;
+        margin-bottom: 9px;
+        font-size: 17px;
+}
+#HospitalNav ul li.last {
+        margin: 0px;
+}
+#HospitalNav ul li.select {
+        background: url(../images/Hospital_nav_hover.png) no-repeat;
+        color: #fff;
+}
+#HospitalNav ul li div {
+        text-indent: 75px;
+        padding: 5px 0 0 0;
+}
+#HospitalNav ul li p {
+        font-size: 12px;
+        text-indent: 75px;
+}
+#HospitalNav ul li i {
+        display: block;
+        width: 30px;
+        height: 30px;
+        overflow: hidden;
+        float: left;
+        background: url(../images/Hospital_icon.png) no-repeat;
+        transition: all 0.3s linear 0s;
+        position: absolute;
+        top: 10px;
+        left: 35px;
+}
+#HospitalNav ul li i.i1 {
+        background-position: 0px 0px;
+}
+#HospitalNav ul li i.i2 {
+        background-position: 0px -62px;
+}
+#HospitalNav ul li i.i3 {
+        background-position: 0px -124px;
+}
+#HospitalNav ul li i.i4 {
+        background-position: 0px -186px;
+}
+#HospitalNav ul li i.i5 {
+        background-position: 0px -248px;
+}
+#HospitalNav ul li i.i6 {
+        background-position: 0px -310px;
+}
+#HospitalNav ul li i.i7 {
+        background-position: 0px -372px;
+}
+#HospitalNav ul li.select i.i1 {
+        background-position: 0px -31px;
+}
+#HospitalNav ul li.select i.i2 {
+        background-position: 0px -93px;
+}
+#HospitalNav ul li.select i.i3 {
+        background-position: 0px -155px;
+}
+#HospitalNav ul li.select i.i4 {
+        background-position: 0px -217px;
+}
+#HospitalNav ul li.select i.i5 {
+        background-position: 0px -279px;
+}
+#HospitalNav ul li.select i.i6 {
+        background-position: 0px -341px;
+}
+#HospitalNav ul li.select i.i7 {
+        background-position: 0px -403px;
+}
+//other
+.box111 {
+        position: relative;
+        width: 995px;
+        height: 330px;
+        margin-bottom: 40px;
+        margin: 20px auto;
+}
+.box111 li {
+        z-index: 0;
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        top: 146px;
+        cursor: pointer;
+        left: 377px;
+}
+.box111 li img {
+        width: 100%;
+        background: url(images/loading.gif) no-repeat center 50%;
+        height: 100%;
+        vertical-align: top
+}
+.box111 li p span {
+        display: inline-block;
+        width: 70%;
+        height: 40px;
+        overflow: hidden;
+}
+.box111 .prev, .box111 .next {
+        display: block;
+        z-index: 100;
+        overflow: hidden;
+        cursor: pointer;
+        position: absolute;
+        width: 47px;
+        height: 61px;
+        top: 131px;
+}
+.box111 .prev {
+        background: url(../images/csj_10.png) center center no-repeat;
+        left: 195px;
+}
+.box111 .next {
+        background: url(../images/csj_11.png) center center no-repeat;
+        right: 175px;
+}
+//reset
+#nkHd {
+        display: none;
+}
+a.ghBtn {
+        width: 170px !important;
+        height: 45px !important;
+        top: 207px !important;
+        left: 215px !important;
+}

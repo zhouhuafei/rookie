@@ -1,0 +1,46 @@
+#ztComment{width:935px;height:600px;margin:10px auto;border:1px solid #eee;padding:2px;font-size:12px;background:#fff;font-family:'Î¢ÈíÑÅºÚ';}
+#ztContent{width:99%;height:auto;font-size:14px;color:#000;margin-top:10px;margin:20px auto 0px;}
+#ztContent dl{width:100%;height:auto;padding:10px 0px;border-bottom:1px dashed #ccc;}
+#ztContent dl dt{width:100%;height:20px;}
+#ztContent dl dt ul{width:97%;height:20px;margin:0 auto;overflow:hidden;}
+#ztContent dl dt ul li{float:left;height:20px;line-height:22px;}
+#ztContent dl dt ul li.name{width:350px;}
+#ztContent dl dt ul li.name span{color:#222;}
+#ztContent dl dt ul li.score{width:400px;}
+#ztContent dl dt ul li.score span{display:block;width:38px;height:20px;line-height:22px;float:left;}
+#ztContent dl dt ul li.score span img{display:block;float:left;}
+#ztContent dl dt ul li.praise{width:70px;text-align:right;float:right;}
+#ztContent dl dt ul li.praise span{display:block;width:45px;height:20px;line-height:22px;float:left;}
+#ztContent dl dt ul li.praise span em{font-style:normal;color:#333;}
+#ztContent dl dt ul li.praise img{cursor:pointer;display:block;float:left;}
+#ztContent dl dd{width:100%;height:auto;margin:10px 0 10px 0;line-height:150%;text-indent:13px;}
+#page{width:100%;text-align:center;padding:20px 0px;font-size:16px;}
+#page a{text-align:center;padding:3px 6px;color:#333;text-decoration:none;border:1px solid #eee;outline:none; cursor:pointer;}
+#mySend{display:none;border-radius:2px;width:450px;height:310px;padding:25px;font-family:'Microsoft Yahei';margin-top:-200px;margin-left:-250px;position:fixed;top:0px;left:0px;z-index:10002;background:#fff;}
+#mySend table{margin:auto;text-align: left;width:100%;height:310px;}
+#mySend table th {background:#EEF3F7;border-bottom: 1px solid #D5DFE8;font-weight:normal;color: #006DB8;text-indent:26px;height: 30px;line-height: 32px;font-weight:bold;}
+#mySend table tr{background:#fff;}
+#mySend table tr:hover{background:#DBECFD;}
+#mySend table td {padding:1px 0 1px 5px;border-bottom: 1px solid #EEEEEE;color: #333333;height: 30px;line-height: 30px;}
+#mySend table td div.middle {float: left;height: 100px;line-height: 100px;}
+#mySend table td div.sc {float: left;}
+#mySend table td div.default{float: left;}
+#mySend table td div.default img{display: inline-block;}
+#mySend form input.text{background:#FFFFFF;border: 1px solid #eee;height:19px;width: 248px;}
+#mySend form textarea{ background:#FFFFFF;border: 1px solid #eee;float: left;height: 100px;width: 248px;max-height:100px;min-height:100px;max-width: 248px;min-width: 248px;}
+#mySend form input.btn{background:#006DB8;border: 1px solid #006DB8;color: #FFF;outline:none;cursor: pointer;height: 21px;outline:none;width: 124px;margin-left:40px;}
+#mySend form input.btnClose{margin-left:10px;}
+#mySend div.close{width:20px;height:20px;line-height:20px;text-align:center;background:#fff;position:absolute;top:-10px;right:-10px;color:#888;cursor:pointer;box-shadow: 1px 1px 1px #222;border-radius: 50px;border:1px solid #eee;}
+#fkShow{padding:20px 10px;}
+#fkShow p{width:170px;height:20px;line-height:20px;text-align:center;color:#000; font-size:14px;text-indent:0px;float:left;font-family:'Microsoft Yahei';}
+#clickBtn{ cursor:pointer;display:block;width:90px;height:20px;line-height:20px;border-radius:2px;outline:none;text-align:center;color:#fff;text-decoration:none;font-size:13px;background:#006DB8;}
+#fkShow p em{font-style:normal;font-size:18px;fong-weight:bold;color:#FFA902;}
+.clear{clear:both;}
+.blackBg{width:100%;height:100%;background:#000;opacity:0.8;filter:alpha(opacity=80);position:fixed;left:0px;top:0px;z-index:10001;display:none;}
+  
+  
+  
+  
+  
+  
+  

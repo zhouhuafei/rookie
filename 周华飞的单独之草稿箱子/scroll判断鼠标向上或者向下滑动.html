@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>up判断鼠标向上滑动</title>
+</head>
+
+<body style="height:2000px;">
+<script>
+var timer=null;
+var oldScroll=0;
+var nowScroll=0;
+window.onscroll=function(){	
+	if(timer){return;}
+	oldScroll=document.documentElement.scrollTop||document.body.scrollTop;
+	timer=setTimeout(function(){
+		nowScroll=document.documentElement.scrollTop||document.body.scrollTop;		
+		alert('oldScroll:'+oldScroll)
+		alert('nowScroll:'+nowScroll)
+		//向上滑动的时候执行
+		if(oldScroll>nowScroll){
+			alert('向上滚动');
+		}
+		//向下滑动的时候执行
+		if(oldScroll<nowScroll){
+			alert('向下滚动');
+		}	
+		timer=null;	
+	},1500)	
+}
+</script>
+</body>
+</html>

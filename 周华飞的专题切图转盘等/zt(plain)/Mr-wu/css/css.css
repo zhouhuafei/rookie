@@ -1,0 +1,16 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*wrap*/
+.wrap dt{ background:#e5e5e5; padding:10px; margin-bottom:40px;}
+.wrap p{ line-height:28px; text-indent:30px; margin-bottom:60px; font-size:18px; color:#000;}
+.wrap div{ width:485px; height:407px; overflow:hidden;}
+.wrap a{ display:block; width:209px; height:50px; margin:0 auto; margin-bottom:60px;}
+
+
+/*common*/
+h2.til{ font-size:44px; color:#0064b4; margin:65px; text-align:center;}

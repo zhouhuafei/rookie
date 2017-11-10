@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>ie(detect2)</title>
+<script>
+//检测ie6,ie7,ie8,ie9,ie10,ie11兼容模式(msie 7.0)
+document.writeln(window.navigator.userAgent);
+function ieVersion(){
+	var str=window.navigator.userAgent.toLowerCase();
+	var re=new RegExp('msie\\s([\\d\\.]+)','i');
+	return re.test(str)?re.exec(str)[1]:'不是ie6,ie7,ie8,ie9,ie10,ie11兼容模式(msie 7.0)中的任意版本';
+}
+alert(ieVersion());
+</script>
+</head>
+<body>
+</body>
+</html>

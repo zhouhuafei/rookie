@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>pageUpgrade</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; line-height:1;}
+</style>
+<script>
+window.onload=function(){
+	page({
+		id:'page',
+		showPage:9,
+		nowPage:1,
+		allPage:20,
+		callBack:function(nowPage,allPage){				
+			console.log('当前是:'+nowPage+'页,总页数:'+allPage+'页');
+		}	
+	})
+}
+function page(json){
+	if(!json.id){return;}//父级容器不存在时不执行下来代码
+	var obj=document.getElementById(json.id);//父级容器
+	obj.style.cssText="width:100%; text-align:center;";//父级容器样式
+	var showPage=json.showPage||5;//显示页数
+	var nowPage=json.nowPage||1;//当前页数
+	var allPage=json.allPage||10;//总页数
+	var callBack=json.callBack||function(){};//回调函数
+	/*按钮的样式*/
+	var cssA=function(obj){
+		obj.style.cssText="margin:0 5px; color:#00f;";		
+	}
+	/*添加首页*/
+	var iFirst=Math.floor(showPage/2)+2;
+	showPage%2==0&&(iFirst=showPage/2+1);
+	if(nowPage>=iFirst&&allPage>=showPage+1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='首页';
+		oA.href='#'+1;
+		obj.appendChild(oA);	
+	}
+	/*添加上一页*/
+	if(nowPage>=2){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='上一页';
+		oA.href='#'+(nowPage-1);
+		obj.appendChild(oA);	
+	}
+	/*添加页码*/	
+	if(allPage<=showPage){
+		for(var i=1; i<=allPage;i++){
+			var oA=document.createElement('a');
+			cssA(oA);
+			if(nowPage==i){
+				oA.innerHTML=i;
+			}else{
+				oA.innerHTML='['+i+']';
+			}
+			oA.href='#'+i;
+			obj.appendChild(oA);
+		}	
+	}else{
+		for(var i=1; i<=showPage;i++){
+			var oA=document.createElement('a');
+			cssA(oA);
+			if(nowPage<=Math.floor(showPage/2)){
+				if(nowPage==i){
+					oA.innerHTML=i;
+				}else{
+					oA.innerHTML='['+i+']';
+				}
+				oA.href='#'+i;
+			}else if(allPage-nowPage<=Math.floor(showPage/2)-1){
+				oA.innerHTML='['+(allPage-showPage+i)+']';
+				for(var j=0;j<=Math.floor(showPage/2)-1;j++){
+					if(allPage-nowPage==j&&i==showPage-j){
+						//console.log('allPage-nowPage=='+j,'i=='+(showPage-j),'oA.innerHTML='+(allPage-showPage+i));
+						oA.innerHTML=(allPage-showPage+i);
+					}
+				}
+				oA.href='#'+(allPage-showPage+i);
+			}else{
+				if(i==Math.ceil(showPage/2)){
+					oA.innerHTML=(nowPage-Math.ceil(showPage/2)+i);
+				}else{
+					oA.innerHTML='['+(nowPage-Math.ceil(showPage/2)+i)+']';
+				}
+				oA.href='#'+(nowPage-Math.ceil(showPage/2)+i);
+			}
+			obj.appendChild(oA);
+		}			
+	}
+	/*添加下一页*/
+	if(allPage-nowPage>=1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='下一页';
+		oA.href='#'+(nowPage+1);
+		obj.appendChild(oA);
+	}
+	/*添加尾页*/
+	var last=Math.ceil(showPage/2);
+	last%2==0&&(last=showPage/2+1);
+	if(allPage-nowPage>=last&&allPage>=showPage+1){
+		var oA=document.createElement('a');
+		cssA(oA);
+		oA.innerHTML='尾页';
+		oA.href='#'+allPage;
+		obj.appendChild(oA);
+	}
+	/*添加回调函数*/
+	callBack(nowPage,allPage);
+	/*获取按钮并添加点击事件*/
+	var aA=obj.getElementsByTagName('a');
+	for(var i=0,iLen=aA.length; i<iLen;i++){
+		aA[i].onclick=function(){				
+			nowPage=parseInt(this.getAttribute('href').substring(1));
+			obj.innerHTML='';
+			page({
+				id:json.id,
+				showPage:showPage,
+				nowPage:nowPage,
+				allPage:allPage,
+				callBack:callBack
+			})
+			return false;
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="page"></div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+@charset "gb2312";
+/* CSS Document */
+
+/*清零*/
+body,div,ol,ul,li,dl,dd,dt,h1,h2,h3,h4,h5,h6,input,p,form,img{ padding:0; margin:0; font-weight:normal;}
+body{ font-size:14px; font-family:"微软雅黑",Verdana,Arial,"宋体","微软雅黑";}
+img{ border:none; outline:none;}
+input,select,textarea{ outline:none; border:none; background:#FFF;resize:none;}
+ul,ol{ list-style-type:none;}
+a{ text-decoration:none; color:#000;}
+p{ line-height:25px;}
+
+/*清楚浮动*/
+.clearFix{ clear:both;*zoom:1;}
+
+/*公用的样式*/
+.fl{ float:left;}
+.fr{ float:right;}
+.pt_60{ padding-top:60px;}
+.mr_50{ margin-top:50px;}
+.hr_20{ height:20px;}
+.hr_30{ height:30px;}
+.hr_40{ height:40px;}
+.hr_50{ height:50px;}
+.hr_60{ height:60px;}
+.hr_65{ height:65px;}
+.hr_70{ height:70px;}
+.hr_80{ height:80px;}
+.hr_90{ height:90px;}
+.hr_100{ height:100px;}
+.hr_210{ height:210px;}
+.hr_270{ height:270px;}
+.hr_110{ height:110px;}
+.hr_150{ height:150px;}
+.hr_135{ height:135px;}
+.hr_100bt{ height:100px; border-top:1px solid #CCC; width:1000px; margin:0 auto;}
+.commonWidth{ width:100%; margin:0 auto; overflow:hidden;}
+.commonWidth_1000{ width:1000px; margin:0 auto; overflow:hidden;}
+.commonWidth_1440{ width:1440px; margin:0 auto; overflow:hidden;}
+.commonWidth_1400{ width:1400px; margin:0 auto; overflow:hidden;}
+.commonWidth_800{ width:800px; margin:0 auto;}
+.commonWidth_900{ width:900px; margin:0 auto;}
+.commonWidth_980{ width:980px; margin:0 auto;}
+.commonWidth_grey{ width:100%; margin:0 auto; background:#f4f4f4;}
+
+/*HTML5兼容处理*/
+header,nav,article,section,aside,footer,video,audio{display:block;}
+
+
+
+
+
+
+/*---------------------------------head-----------------------------------------*/
+.head{ background:#f5f5f5; width:100%; margin:0 auto; overflow:hidden;}
+.head ul li{ float:left}
+.head ul li a{ color:#7f579d; font-size:18px; height:78px; line-height:78px;}
+.head ul li span{ color:#e0e0e0; font-size:18px; padding:0 10px;}
+
+
+
+/*---------------------------------nav------------------------------------------*/
+#nav{overflow:hidden; width:100%; background:#dab4b2;position:absolute;top:654px; height:52px;z-index:999;}
+#nav ul{height:52px; margin:0 auto; width:1140px; overflow:hidden;}
+#nav ul li{ float:left;transition:all 0.4s;}
+#nav ul li a{ display:inline-block; padding:15px 30px; color:#FFF; font-size:16px;}
+#nav ul .select{ background:#965758;}
+
+
+
+
+/*---------------------------------banner---------------------------------------*/
+
+.banner{ width:100%; height:602px; margin:0 auto; overflow:hidden; position:relative;background:url(../images/icon_1_03.jpg) center center no-repeat;}
+.banner img{ width:1423px; margin:0 auto; height:602px; overflow:hidden;}
+.banner a{ display:block; width:100%; height:50px;position:absolute; bottom:152px;}
+
+
+
+
+/*---------------------------------box1---------------------------------------*/
+h2{ height:50px; line-height:50px; text-align:center; color:#985858; padding:50px 0; font-size:40px;}
+.intro{ height:80px; line-height:80px; font-size:15px; padding-bottom:25px;}
+.symptom_box{ height:322px; background:url(../images/icon_symptom_03.jpg) left top no-repeat;}
+.symptom{ width:176px; padding:0 37px;}
+.symptom h2{ font-size:26px; color:#FFF; padding:10px 0px;}
+.symptom p{ text-indent:30px; color:#656d78; font-size:14px; line-height:20px;}
+.consultation{ width:1000px; height:45px; background:url(../images/icon_77_03.jpg) left top no-repeat; margin:50px 0; position:relative;}
+.consultation a{ width:155px; height:50px; display:block; position:absolute; left:330px; bottom:0px;}
+
+
+
+/*---------------------------------box2---------------------------------------*/
+.some{ height:409px; background:url(../images/icon_some_03.jpg) left top no-repeat; position:relative;}
+.some p{ width:388px; position:absolute; right:20px; top:0px;}
+.some ul{position:absolute; right:220px; top:60px;}
+.some ul li{line-height:23px; height:23px;  float:none; margin-bottom:6px;}
+
+
+
+
+/*---------------------------------box3---------------------------------------*/
+.box3 .symptom_box{ height:424px; background:url(../images/icon_easy_03.jpg) left top no-repeat;}
+.box3 .symptom{ width:176px; padding:0 37px;}
+.box3 .symptom h2{line-height:30px; padding-top:15px;}
+.box3 .symptom p{ color:#FFF;}
+.box3 .h2_head{ padding-right:10px;}
+.box3 .h2_foot{ padding-left:10px;}
+
+
+
+
+
+
+
+/*---------------------------------box4---------------------------------------*/
+.hidden_danger{ color:#FFF; height:657px; position:relative; background:url(../images/hidden_danger_03.jpg) left top no-repeat;}
+.hidden_danger p{ width:215px; position:absolute; line-height:20px;}
+.hidden_danger h2{ width:75px; position:absolute; line-height:30px; font-size:23px; color:#FFF;}
+.hidden_danger h3{ width:210px; line-height:30px; font-size:24px; color:#000; position:absolute;left:408px; bottom:115px;}
+.hideen_danger_p1{ left:67px; top:100px;}
+.hideen_danger_p2{ right:78px; top:100px;}
+.hideen_danger_p3{ left:86px; bottom:125px;}
+.hideen_danger_p4{ right:60px; bottom:125px;}
+.hideen_danger_h2_1{left:250px; top:162px;}
+.hideen_danger_h2_2{right:255px; top:162px;}
+.hideen_danger_h2_3{left:269px; bottom:8px;}
+.hideen_danger_h2_4{right:238px; bottom:8px;}
+
+
+
+/*---------------------------------box5---------------------------------------*/
+.box5 .hidden_danger{ height:333px; background:url(../images/icon_check_03.jpg) left top no-repeat; position:relative;}
+.box5 .hidden_danger p{ width:265px;}
+.box5 .hidden_danger p strong{ display:block; font-size:22px; font-weight:normal; line-height:30px;}
+.box5 .hidden_danger p a{ display:block;color:#FFF; font-weight:bold;-ms-transition:all 1s;transition:all 1s;-webkit-transition:all 1s;-o-transition:all 1s;-moz-transition:all 1s;}
+.box5 .hidden_danger p a:hover{ color:#F33;-ms-transform:scale(1.2,1.2);transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);-o-transform:scale(1.2,1.2);-moz-transform:scale(1.2,1.2);}
+.box5 .hideen_danger_p1{ left:51px; top:10px;}
+.box5 .hideen_danger_p2{ right:35px; top:10px;}
+.box5 .hideen_danger_p3{ left:51px; bottom:20px;}
+.box5 .hideen_danger_p4{ right:35px; bottom:20px;}
+.box5 .hidden_danger h3{ position:absolute; left:458px; bottom:105px;}
+
+
+
+
+/*---------------------------------box6---------------------------------------*/
+.hinge_box{background:url(../images/icon_hinge_03.jpg) left top no-repeat; height:461px;}
+.hinge{ width:250px; overflow:hidden; color:#FFF;}
+.hinge p{ padding:0 15px;}
+.hinge h2{ font-size:20px; padding:30px 0; text-align:center; color:#FFF; width:84px;}
+.hinge h3{ font-size:18px; text-align:center; padding-bottom:10px;}
+.hinge a{ font-size:20px; padding:20px 0; text-align:center; display:block; color:#FFF;-ms-transition:all 1s;transition:all 1s;-webkit-transition:all 1s;-o-transition:all 1s;-moz-transition:all 1s;}
+.hinge a:hover{ color:#F33;-ms-transform:scale(1.2,1.2);transform:scale(1.2,1.2);-webkit-transform:scale(1.2,1.2);-o-transform:scale(1.2,1.2);-moz-transform:scale(1.2,1.2);}
+
+
+
+
+
+/*---------------------------------box7---------------------------------------*/
+.authority{ height:500px; position:relative; background:url(../images/icon_authority_03.jpg) left top no-repeat;}
+.authority a{ display:block; width:160px; height:50px; position:absolute; left:70px; bottom:10px;}
+.authority p{ width:650px; position:absolute; text-indent:30px; color:#4f4f4f;}
+.authority .authority_p1{ right:30px; top:120px;}
+.authority .authority_p2{ right:30px; top:270px;}
+.expert_team{ padding:50px 0 30px; color:#4f4f4f; line-height:20px; padding-right:40px;}
+.expert_team strong{ font-size:24px; height:40px; display:inline-block; float:left; line-height:40px; font-weight:normal;}
+.expert{ background:url(../images/icon_expert_03.jpg) center center no-repeat; height:438px; width:100%;}
+.consultation2{ width:1000px; height:80px; background:url(../images/icon_77_10_02.jpg) left top no-repeat; position:relative;}
+.consultation2 a{ width:285px; height:80px; display:block; position:absolute; left:360px; bottom:0px;}
+
+
+
+/*---------------------------------box8---------------------------------------*/
+.vedio_word{ overflow:hidden;}
+.vedio{ width:430px;}
+.vedio h2{ font-size:30px; color:#383838; padding:10px 0;}
+.vedio_ing{ width:350px; height:260px; overflow:hidden; margin:0 auto; text-align:center;}
+.word{ width:530px; padding-right:40px;}
+.word p{ text-indent:30px; color:#383838; padding-top:40px;}
+.contact a{ display:block; height:200px; background:url(../images/icon_contact_03.jpg) left top no-repeat;}

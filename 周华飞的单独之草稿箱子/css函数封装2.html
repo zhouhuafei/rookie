@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css函数封装2</title>
+<style>
+#div1{ height:100px; width:100px; border:1px solid #000; background:black;}
+</style>
+<script>
+//只能获取行间样式  需要再封装一个getStyle函数配合使用才可以获取非行间样式
+function getStyle(obj,attr){return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];}
+function css(obj,attr,value)
+{
+	if(arguments.length==2)
+	{
+		return getStyle(obj,attr);
+	}
+	else
+	{
+		obj.style[attr]=value;
+	}
+}
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	alert(css(oDiv,'width'));
+	css(oDiv,'background','green');
+}
+
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

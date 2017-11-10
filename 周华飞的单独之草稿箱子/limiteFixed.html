@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>limitFixed</title>
+<style>
+*{ margin:0; padding:0;}
+div{ height:800px; background:#000;}
+#div1{ background:#CCC;}
+#div2{ width:1000px; margin:0 auto; background:#000; position:relative;}
+#span{ width:100px; height:200px; background:#F00;border:20px solid #00f; position:absolute; left:0; top:0;}
+#div3{ background:#CCC;}
+</style>
+<script>
+window.onload=function(){
+	var oSpan=document.getElementById('span');
+	limitFixed(oSpan);
+	/*limitFixed*/
+	function limitFixed(obj){
+		if(typeof obj=='string'){var oSon=document.getElementById(obj);}else{var oSon=obj;}
+		var oParent=oSon.parentNode;
+		var iScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+		var iClientWidth=document.documentElement.clientWidth;
+		var iParentHeight=oParent.offsetHeight;
+		var iParentWidth=oParent.offsetWidth;
+		var iParentTop=offset(oParent).y;
+		var iParentLeft=offset(oParent).x;
+		var iSonHeight=oSon.offsetHeight;
+		var iSonTop=offset(oSon).y;
+		var iSonFixLeft=offset(oSon).x;
+		var iSonAbsLeft=oSon.offsetLeft;
+		eventBind(window,'scroll',function(){
+			iScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			if(iScrollTop>=iParentHeight+iParentTop-iSonHeight){
+				oSon.style.position='absolute';
+				oSon.style.top=iParentHeight-iSonHeight+'px';
+				oSon.style.left=iSonAbsLeft+'px';
+			}else if(iScrollTop>=iSonTop){
+				oSon.style.position='fixed';
+				oSon.style.top=0;
+				oSon.style.left=iSonFixLeft+'px';
+			}else{
+				oSon.style.position='absolute';
+				oSon.style.left=iSonAbsLeft+'px';
+			}
+		})		
+	}
+	/*offset*/
+	function offset(obj){
+		if(typeof obj=='string'){var obj=document.getElementById(obj);}
+		var x=0,y=0;
+		while(obj!=null){
+			x+=obj.offsetLeft;
+			y+=obj.offsetTop;
+			obj=obj.offsetParent;
+		}
+		return{x:x,y:y}
+	}
+	function eventBind(obj,ev,fn){obj.attachEvent?obj.attachEvent('on'+ev,fn):obj.addEventListener(ev,fn,false);}
+}
+</script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2">
+	<span id="span"></span>
+</div>
+<div id="div3"></div>
+</body>
+</html>

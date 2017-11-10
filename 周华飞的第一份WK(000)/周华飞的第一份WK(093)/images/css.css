@@ -1,0 +1,70 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *周华飞制作 QQ:1123486116
+ *rookie making
+ *rookie Copyright
+ *未经允许禁止复制和盗用违权必究
+**********************************/
+/*banner*/
+#banner{ background:url(../images/banner.jpg) center center no-repeat; margin-bottom:20px;}
+#banner div{ position:relative; height:500px;}
+#banner a{ width:170px; height:50px; position:absolute; right:238px; bottom:148px;}
+
+/*文章页和列表页公用样式*/
+#list{ margin-top:30px;}
+#listMain{ width:670px;}
+#listMain div.list_til{ height:30px; line-height:30px; border-top:2px solid #0064b4; font-size:14px; color:#323232; background:#f2f2f2; margin-bottom:12px; padding-left:20px; word-spacing:10px;}
+#listMain #listMainTab{ width:670px; height:150px; overflow:hidden; margin-bottom:20px; position:relative;}
+#listMain ul li{ display:none;}
+#listMain ul li.active{ display:block;}
+#listMain ul a{ display:block;}
+#listMain ol{ position:absolute; right:0; bottom:5px;}
+#listMain ol li{ width:10px; height:10px; background:#a6a9a9; border-radius:50%; margin:0 5px; float:left;}
+#listMain ol li.active{ background:#0064b4;}
+#listSide{ width:290px; overflow:hidden;}
+#listHospital{ border:1px solid #dbdbdb;}
+div.sideTil{ height:20px; line-height:20px; margin:7px 0 16px; margin-left:14px; padding-left:4px; font-size:16px; color:#0064b4; border-left:3px solid #0064b4;}
+div.sideTil small{ margin-left:4px; font-size:12px; color:#7b7b7b; text-transform:uppercase;}
+#listHospital p{ width:260px; margin:20px auto; padding-bottom:20px; border-bottom:1px dashed #dbdbdb;}
+#listHospital p a{ color:#0064b4;}
+#listHospital div.btn{ width:260px; margin:0 auto 20px;}
+#listHospital div.btn a{ width:121px; height:44px; font-size:14px; color:#666666; border:1px solid #dbdbdb; padding:1px; background:url(side_btn_bg.jpg) 56px top no-repeat;}
+#listHospital div.btn em{ margin-right:15px; vertical-align:middle;}
+#listHospital div.btn a:hover em{transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+#listSide .sideExpert{ border:1px solid #dbdbdb; margin-top:20px;}
+#listSide .sideExpert dl{ width:264px; margin:0 auto 30px; border-bottom:1px dashed #979797;}
+#listSide .sideExpert dd{ padding-top:4px;}
+#listSide .sideExpert dd h2{ font-size:18px; color:#4f4f4f; margin-bottom:10px; text-align:center;}
+#listSide .sideExpert dd small{ font-size:12px; color:#cf0000; margin-left:4px;}
+#listSide .sideExpert dd p{ font-size:12px; color:#666666;}
+#listSide .sideExpert dd p a{ color:#0064b4;}
+#listSide .sideExpert dd a.btn{ display:block; width:222px; text-align:center; height:26px; line-height:26px; border-radius:13px; background:#035ea2; font-size:14px; color:#fff; margin:14px auto 24px;}
+
+/*列表页样式*/
+#list_dl dl{ padding:40px 0; border-top:1px dashed #dbdbdb;}
+#list_dl dt{ width:185px; height:125px; overflow:hidden; margin-right:20px;}
+#list_dl dd{ width:440px;}
+#list_dl dd h2{ font-size:16px; color:#333333; padding-bottom:8px;}
+#list_dl dd em{ width:10px; height:10px; border-radius:50%; vertical-align:middle; margin-right:4px; background:#0064b4;}
+#list_dl dd p{ font-size:12px; color:#666666; line-height:24px; margin-top:4px; text-indent:30px;}
+#list_dl dd a{ color:#0064b4; text-indent:0;}
+
+/*文章页样式*/
+#article{ border:1px solid #dbdbdb;}
+#article .til{ color:#006db8; text-align:center; font-size:18px; height:54px; line-height:54px;}
+#article .tils{ text-align:center; font-size:12px; color:#6d6d6d; height:30px; line-height:30px; border-top:1px dotted #dbdbdb; border-bottom:1px dotted #dbdbdb; margin-bottom:30px;}
+#article .tils span{ margin:0 10px;}
+#article .tils em{ vertical-align:middle; margin:0 2px;}
+#article .tils a{ display:block;}
+#article .tils em:hover{ transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+#article_dl dd{ margin-bottom:30px; text-indent:30px; color:#646464; line-height:26px; padding:0 20px;}
+#article_dl dt{ text-align:center; margin-bottom:30px;}
+#article .codeDre{ width:568px; margin:0 auto 30px; padding:20px 30px; background:#e6f5fb; border:1px dashed #3ba8d6;}
+#article .codeDre .img{ text-align:center;}
+#article .about_txt{ margin-left:20px; text-align:center; font-size:16px; color:#fff; background:#035ea2; height:26px; line-height:26px; padding:0 10px; margin-bottom:20px;}
+#txt_dl{ padding:0 20px 50px;}
+#txt_dl dl{ width:300px;}
+#txt_dl dd{ padding-left:20px; height:46px; line-height:46px; background:url(article_icon4.jpg) left center no-repeat; border-bottom:1px dotted #333333;}	
+#txt_dl dd:hover{ color:#f00;}
+#txt_dl dd.noBb{ border-bottom:none;}

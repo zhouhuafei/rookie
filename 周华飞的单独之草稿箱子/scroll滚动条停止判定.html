@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>scroll滚动条停止判定</title>
+</head>
+
+<body style="height:2000px;">
+<script>
+var timer=null;
+var initTop=0; //上次滚动条到顶部的距离
+var iScrollTop=0;
+window.onscroll=function(){	
+	if(timer!=null){return;}	
+	timer=setTimeout(test,1000); //这里就是判定时间，当前是1秒一判定	
+	function test(){					
+		if(iScrollTop==initTop){ //判断此刻到顶部的距离是否和1秒前的距离相等
+			iScrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			alert('滚动条的停在了：'+iScrollTop+'px的位置');
+         		clearInterval(timer);
+			initTop=iScrollTop;
+			timer=null;
+		}
+	}
+}
+</script>
+</body>
+</html>

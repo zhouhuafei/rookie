@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>JQ表单选择器</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none; text-decoration:none;}
+body{ height:2000px;}
+</style>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+$(function()
+{
+	//alert($('form :enabled').size());	//enabled   可用表单元素
+	//alert($('form :disabled').size());	//disabled   不可用表单元素
+	//alert($('form :checked').val());	//checked     被选中的表单元素 
+	//alert($('form :selected').val());	//selected      下拉菜单被选中的元素   火狐有缓存，请强刷
+})
+
+</script>
+</head>
+
+<body>
+<form>
+	<input type="hidden" name="user" value="123" />	
+	<input type="text" disabled="disabled" name="user" value="123" />
+	<input type="text" name="user" value="123" />	
+	<input type="password" name="pass" value="456" />
+        <select multiple="multiple">
+        	<option>1111</option>
+        	<option>2222</option>
+        	<option selected="selected">3333</option>
+        	<option>4444</option></select>
+        <textarea>
+        </textarea>
+        <input type="radio" name="sex" checked="checked" value="男" />男
+        <input type="radio" name="sex" value="女" />女
+        
+</form>
+        
+        
+        
+        
+        
+</body>
+</html>

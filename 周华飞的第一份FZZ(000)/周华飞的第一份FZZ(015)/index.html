@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>rookie making</title>
+<link rel="stylesheet" type="text/css" href="common/css.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+
+</head>
+
+<body>
+<!--head_box-->
+<div class="head_box">
+	<div class="head">
+        <div class="logo_box fl">
+            <img src="img/logo_2802ebcf.png" alt="图片加载中" />       
+        </div>
+        <div class="btn_box fl">
+            <a href="#" class="active">在线翻译</a>
+            <a href="#">
+            	英语作文帮
+                <span><div class="three"></div>新</span>
+            </a>
+        </div>
+        <div class="nav_box_login_before fr">
+            <ul>
+                <li><a href="#">手机版</a><span>|</span></li>
+                <li><a href="#">百度词典</a><span>|</span></li>
+                <li><a href="#">百度首页</a><span>|</span></li>
+                <li id="login_li"><a href="#">登陆</a><span>|</span></li>
+                <div class="login_box_box" id="login_box_box">   
+                        <div class="login_box">
+                            <div class="login_box_close" id="login_box_close">关闭</div>
+                            <h2 id="move_box">
+                            	<img src="img/icon_3.png" class="fl" />
+                            	登陆百度账号
+                            </h2>
+                            <div class="user_name">请输入用户名</div>
+                            <input type="text" id="userName" placeholder="请输入用户名" />
+                            <div class="pass_word">请输入密码</div>
+                            <input type="password" id="passWord" placeholder="请输入密码"/>
+                            <input type="checkbox" id="next_login" /><label for="next_login">下次自动登录</label><a href="#" target="_blank" id="forget_password">忘记密码</a>
+                            <button>登陆</button>
+                            <a href="#" target="_blank" id="now_login">立即注册</a>
+                            <hr />
+                            <p>可以使用以下方式登陆</p>
+                            <a href="#" target="_blank" id="login_mothod"></a>
+                        </div>
+                    </div>   
+                <li><a href="#">注册</a></li>
+            </ul>
+        </div>
+        <div class="nav_box_login_after" style="display:none;">
+            <ul>
+                <li>
+                    <a href="#">一位有礼貌的先生</a><span>|</span>
+                    <ul>
+                        <li><a href="#">我的主页</a></li>
+                        <li><a href="#">账号设置</a></li>
+                        <li><a href="#">退出</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">我的翻译</a><span>|</span></li>
+                <li><a href="#">手机版</a><span>|</span></li>
+                <li><a href="#">百度词典</a><span>|</span></li>
+                <li><a href="#">百度首页</a></li>
+            </ul>
+        </div>
+	</div>    
+</div>
+<!--main_box-->
+<div class="main_box clearFix">
+	<div class="search_box">
+    	<div class="search_after">
+        	源语言：中文
+            <div class="thr3"></div>            
+            <div class="language" id="language1">
+            	<a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a><a href="#">中文</a>
+            </div>
+        </div>
+        <div class="search_ing"></div>
+        <div class="search_before">
+        	目标语言：英文
+            <div class="thr3"></div>
+            <div class="language"id="language2">
+            	<a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a><a href="#">英文</a>
+            </div>
+        </div>
+        <div class="search" id="search">翻译</div>
+        <div class="ad_word"><marquee behavior="scroll" direction="up" height="20"  scrollamount="20"><p><a href="#">周华飞仿制，请求面试通过</a></p></marquee></div>
+    </div>
+    <div class="textarea_box clearFix">
+    	<div class="txt_box">
+    		<textarea id="txt1" class="fl" placeholder="请输入您要翻译的文字内容或网页地址，然后你会发现，本人做的这个页面，并没有翻译的功能。--！"></textarea>
+        	<div class="clc">清空</div>
+        </div>
+        <div class="translate fr" id="translate"></div>
+    </div>
+    <div class="on_off_box">
+    	<div class="on_off fl" id="on_off">
+    		<input class="off fl" type="button" value="off" />
+            <input class="on fl on_ing" type="button" value="on" />
+            划词翻译
+        </div>
+        <div class="on_off fl" id="on_offf">
+    		<input class="off fl" type="button" value="off" />
+            <input class="on fl on_ing" type="button" value="on" />
+            实时翻译
+        </div>        
+        <div class="share fr"></div>
+        <div class="share_box fr">
+        </div>
+    </div>
+</div>
+<!--ad_box-->
+<div class="ad_box">
+	<div class="ad_box_box clearFix">
+        <div class="ad fl">这里是广告
+        	<div class="close">关闭</div>
+        </div>
+        <div class="more_box fr">
+            <h5>体验更多百度翻译功能</h5>
+            <div class="more fl">
+                <div class="icon1" id="icon1">
+                    <div class="two_code" id="two_code1">
+                    	这是二维码
+                    </div>
+                    <div class="two_co" id="two_co1"></div>
+                </div>
+            </div>
+            <div class="more fl">
+                <div class="icon2" id="icon2">
+                    <div class="two_code" id="two_code2">
+                    	这是二维码
+                    </div>
+                    <div class="two_co" id="two_co2"></div>
+                </div>
+            </div>    
+            <div class="more fl">
+                <div class="icon3" id="icon3">
+                    <div class="two_code" id="two_code3">
+                    	这是二维码
+                    </div>
+                    <div class="two_co" id="two_co3"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+<!--footer_box-->
+<div class="footer_box clearFix">
+	<p>©2014 Baidu  <a href="#">使用百度前必读</a><span>|</span><a href="#">手机版</a><span>|</span><a href="#">百度翻译 API</a><span>|</span><a href="#">翻译协议</a><span>|</span><a href="#">建议与反馈</a><span>|</span><a href="#">帮助</a></p>
+</div>
+<!--other_box-->
+<div class="other_box">
+	<p>意见</p>
+    <p>反馈</p>
+	<div class="suggest">    	
+    </div>
+</div>
+<div class="suggest_box">
+    <div class="suggest_box_close">关闭</div>
+    <h2>发送反馈</h2>
+    <form>
+        <label>问题类型:</label><input name="problem" type="radio" checked="checked"/>翻译质量<input type="radio" name="problem"/>意见反馈<input type="radio" name="problem"/>其他问题<br />
+        <label>反馈内容：<span>(*必填)</span><br /></label><textarea placeholder="亲爱的百度翻译用户:请在这里直接填写您遇到的问题或意见反馈，您的意见是我们前进的动力（100字以内)"></textarea><br />
+        <label>截图：</label><input type="button"  id="btnn"/>点我，可以在当前页面截图哦<a href="#" target="_blank"><sup>~</sup>使用方法</a><br />
+        <label>联系方式：</label><input type="email" id="email" placeholder="请留下邮箱，比便我们将处理的结果通知给您。" />
+        <p>百度翻译官方反馈QQ群:336340054</p>
+        <div class="submit_box">
+            <input type="submit" value="提交反馈" id="submit" />
+        </div>
+    </form>
+</div>
+</body>
+</html>

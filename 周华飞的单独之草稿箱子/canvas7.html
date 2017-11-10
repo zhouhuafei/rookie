@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>canvas7</title>
+<style>
+*{ margin:0; padding:0;}
+body{ background:#ccc;}
+canvas{ display:block; margin:100px auto; background:#fff;}
+</style>
+<script>
+window.addEventListener('load',function(){
+	/*obj*/
+	oCanvas=document.querySelectorAll('canvas')[0];
+	oContext=oCanvas.getContext('2d');
+	
+	/*createRadialGradient*/
+	oGradient=oContext.createRadialGradient(200,200,0,200,200,200);
+	oGradient.addColorStop(0,'rgb(255,0,0)');
+	oGradient.addColorStop(0.1,'rgb(255,165,0)');
+	oGradient.addColorStop(0.3,'rgb(255,255,0)');
+	oGradient.addColorStop(0.5,'rgb(0,255,0)');
+	oGradient.addColorStop(0.7,'rgb(0,127,255)');
+	oGradient.addColorStop(0.9,'rgb(0,0,255)');
+	oGradient.addColorStop(1,'rgb(139,0,255)');
+	
+	/*arcTo(圆切弧线:两个切线确定一个圆弧)*/
+	oContext.save();
+	oContext.strokeStyle=oGradient;
+	oContext.beginPath();
+	oContext.moveTo(0,350);//起始点
+	oContext.arcTo(100,350,200,200,200);
+	//arcTo(第一组坐标,第二组坐标,半径）
+	oContext.stroke();
+	oContext.closePath();
+	oContext.restore();
+	
+	/*quadraticCurveTo(二次元方程曲线)*/
+	oContext.save();
+	oContext.strokeStyle=oGradient;
+	oContext.beginPath();
+	oContext.moveTo(380,300);//起始点
+	oContext.quadraticCurveTo(180,300,380,100);
+	//quadraticCurveTo(第一组控制点,第二组结束坐标)
+	oContext.stroke();
+	oContext.closePath();
+	oContext.restore();
+	
+	/*bezierCurveTo(贝塞尔曲线)*/
+	oContext.save();
+	oContext.strokeStyle=oGradient;
+	oContext.beginPath();
+	oContext.moveTo(0,0);//起始点
+	oContext.bezierCurveTo(0,100,200,0,200,200);
+	//bezierCurveTo(第一组控制点,第二组控制点,第三组结束坐标)
+	oContext.stroke();
+	oContext.closePath();
+	oContext.restore();	
+},false)
+</script>
+</head>
+
+<body>
+<canvas width="400" height="400">您的浏览器不支持canvas</canvas>
+</body>
+</html>

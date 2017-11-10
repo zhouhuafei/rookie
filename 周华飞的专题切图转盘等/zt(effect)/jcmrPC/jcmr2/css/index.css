@@ -1,0 +1,95 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*news*/
+#news{ margin-bottom:50px;}
+#news dl{ float:left; position:relative;}
+#news dl.dynamic{ width:402px; padding-right:33px;}
+#news dl.experts{ width:347px; padding:0 32px; border-right:1px dashed #dcdcdc; border-left:1px dashed #dcdcdc;}
+#news dl.shows{ width:320px; padding-left:32px;}
+#news dt{ color:#656565; font-size:20px; margin-bottom:16px;}
+#news dl.experts dt,#news dl.shows dt{ text-indent:16px; height:26px; line-height:26px; padding-bottom:9px; border-bottom:1px solid #fff;}
+#news dd{ position:relative;}
+#news dd .tils li{ transition:0.4s;}
+#news dd strong{ width:402px; height:364px; opacity:0; filter:alpha(opacity:0); position:absolute; left:0; top:0; transition:0s; z-index:1;}
+#news dd strong.active{ opacity:1; filter:alpha(opacity:100); z-index:2;}
+#news dd div{ margin-bottom:38px; width:100%; height:220px;}
+#news dd p{ font-size:16px; color:#656565; margin-bottom:14px; position:relative;}
+#news dd p a{ display:block; color:#656565;}
+#news dd p a:hover{ color:#0aa0b4;}
+#news dl.dynamic dd p{ padding-left:14px;}
+#news dl.dynamic dd p:before{ content:""; display:block; width:2px; height:2px; background:#656565; position:absolute; left:4px; top:8px;}
+#news ol{ position:absolute; right:43px; top:6px;}
+#news ol li{ width:13px; height:13px; margin:0 3px; float:left; background:#dcdcdc; border-radius:50%;}
+#news ol li.active{ background:#0aa0b4;}
+#news dd ul{ width:100%; height:100%; position:relative;}
+#news dd ul li{ width:100%; height:100%; opacity:0; filter:alpha(opacity:0); position:absolute; left:0; top:0;}
+#news dd ul li.active{ opacity:1; filter:alpha(opacity:100); z-index:2;}
+#news dd span{ padding-bottom:6px;}
+#news dd span a{ font-size:14px; color:#656565; height:24px; line-height:24px; padding:0 8px; border:1px solid #dcdcdc; border-radius:4px; float:left; margin:0 5px 10px 0;}
+#news dd span a.last{ color:#0aa0b4; border:1px solid #0aa0b4;}
+#news dd span a:hover{ color:#0aa0b4; border:1px solid #0aa0b4;}
+#news dd div.vedio{ background:#000;}
+#news dl.shows dd a.first{ margin-bottom:25px;}
+
+/*technology*/
+#technology{ width:1196px; padding:1px; margin:0 auto 40px; border:1px solid #dcdcdc;}
+#technology ol{ margin-bottom:3px;}
+#technology ol li{ width:396px; text-align:center; height:52px; line-height:52px; overflow:hidden; background:#e0e0e0; float:left; margin-right:4px; font-size:18px; position:relative;}
+#technology ol li.active{ background:#0aa0b4; color:#fff;}
+#technology ol small{ font-size:12px; margin-left:7px;}
+#technology ol li:before{ content:""; display:inline-block; width:37px; height:26px; vertical-align:middle; margin-right:10px; background:url(../images/technology.png) no-repeat; transition:0.4s;}
+#technology ol li.one:before{ background-position:left top;}
+#technology ol li.two:before{ background-position:left -144px;}
+#technology ol li.noMr:before{ background-position:left -288px;}
+#technology ol li.active.one:before{ background-position:left -72px;}
+#technology ol li.active.two::before{ background-position:left -216px;}
+#technology ol li.active.noMr::before{ background-position:left -360px;}
+#technology ol li:after{ content:""; display:block; width:16px; height:9px; background:url(../images/technology.png) left -432px no-repeat; position:absolute; left:50%; margin-left:-8px; bottom:-9px; opacity:0; filter:alpha(opacity:0); display:none\0; transition:0.4s;}
+#technology ol li.active:after{ opacity:1; filter:alpha(opacity:100); bottom:0; display:block\0;}
+#technology ul{ height:449px; overflow:hidden; position:relative;}
+#technology ul li{ width:1196px; text-align:center; height:100%; position:absolute; left:0; top:0; opacity:0; filter:alpha(opacity:0); z-index:1;}
+#technology ul li.first{ width:1194px; padding:0 1px;}
+#technology ul li.active{ opacity:1; filter:alpha(opacity:100); z-index:2;}
+#technology dl{ width:234px; margin-right:8px; transition:0.2s;}
+#technology dl dd{ float:left; width:232px; border:1px solid #dcdcdc; overflow:hidden; position:relative; transition:0.2s;}
+#technology dl div.txt{ color:#fff; height:128px; width:100%; background:#0aa0b4; opacity:0.7; filter:alpha(opacity:70); position:absolute; left:0; bottom:0; transition:0.2s;}
+#technology dl img{ width:462px; height:447px; transiton:0.2s;}
+#technology dl h2{ margin:20px 0 10px 0; text-indent:13px; font-size:20px;}
+#technology dl p{ padding:0 23px 0 17px; line-height:20px; font-size:13px; color:#000;}
+#technology dl div.btns{ opacity:0; filter:alpha(opacity:0); z-index:-1; right:-100px; transition:0.2s;}
+#technology dl.active{ width:468px;}
+#technology dl.active dd{ width:462px; border:3px solid #0aa0b4;}
+#technology dl.active div.txt{ bottom:-128px}
+#technology dl.active img{ width:462px; height:443px;}
+#technology dl.active div.btns{ opacity:100; filter:alpha(opacity:100); z-index:2; right:8px;}
+#technology ul li .prev,#technology ul li .next{ width:36px; height:66px; margin-top:-33px; position:absolute; top:50%; cursor:pointer;}
+#technology ul li .prev{ left:10px;}
+#technology ul li .next{ right:10px;}
+#technology ul li div.diary{ width:1080px; height:439px; margin:0 auto; padding:5px 0; position:relative;}
+#technology ul li div.diary img{ width:1080px; height:439px; position:absolute; left:0; top:5px; opacity:0; filter:alpha(opacity:0);}
+#technology ul li div.diary img.active{ opacity:1; filter:alpha(opacity:100); z-index:2;}
+
+/*safe*/
+.safe h2{ font-size:20px; margin:40px 0 30px; text-indent:14px; color:#656565;}
+
+/*common*/
+.tils{ border-bottom:1px solid #dcdcdc; font-size:20px; color:#656565;}
+.tils li{ float:left; width:121px; text-align:center; margin-bottom:-1px; position:relative;}
+.tils li.active{ color:#0aa0b4;}
+.tils li:after,.tils li:before{ content:""; display:block; position:absolute;}
+.tils li:after{ width:1px; height:26px; background:#dcdcdc; right:0; top:0;}
+.tils li.last:after{ display:none;}
+.tils li:before{ width:0px; height:0px; border:6px solid transparent; border-top:10px solid #0aa0b4; left:50%; margin-left:-6px; bottom:-16px; opacity:0; filter:alpha(opacity:0); display:none\0; transition:0.4s;}
+.tils li.active:before{ opacity:1; filter:alpha(opacity:100); display:block\0;}
+.tils li span{ height:26px; line-height:26px; padding-bottom:9px; border-bottom:1px solid #dcdcdc;}
+.tils li.active span{ border-bottom:1px solid #0aa0b4;}
+.btns{ position:absolute; right:8px; bottom:32px;}
+.btns a{ width:38px; height:38px; float:left; background:url(../images/technology.png) left -612px no-repeat;}
+.btns a:hover{ background-position:left -684px;}
+.btns a.mr3{ margin-right:2px; background-position:left -468px;}
+.btns a.mr3:hover{ background-position:left -540px;}

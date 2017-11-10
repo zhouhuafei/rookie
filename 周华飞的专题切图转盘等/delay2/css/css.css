@@ -1,0 +1,34 @@
+@charset "gb2312";
+/* CSS Document */
+/*********************************
+ *rookie QQ:1123486116
+ *rookie making
+ *rookie Copyright
+**********************************/
+/*main*/
+#main{ width:800px; height:400px; margin:50px auto; position:relative; color:#fff; font-size:12px; overflow:hidden;}
+#main ol{ position:absolute; right:0; bottom:5px; z-index:3;}
+#main ol li{ width:20px; text-align:center; height:20px; line-height:20px; border-radius:50%; margin:0 5px; cursor:pointer; background:#666; float:left; transition:0.4s;}
+#main ol li.active{ background:#900; transform:rotate(360deg);}
+#main ul{ width:100%; height:400px; overflow:hidden;}
+#main ul li{ width:800px; text-align:center; height:400px; line-height:200px; overflow:hidden; background:#030; font-size:16px; cursor:pointer; position:relative;}
+#main ul li.one{ background:#660;}
+#main ul li.two{ background:#0F0;}
+#main ul li.thr{ background:#00f;}
+#main ul li.fou{ background:#FF0;}
+#main ul li span{ width:120px; height:60px; position:absolute; left:-120px; transition:0.3s;}
+#main ul li span.one{ top:10px;}
+#main ul li span.two{ top:90px;}
+#main ul li span.thr{ top:170px;}
+#main ul li span.fou{ top:250px;}
+#main ul li span.fiv{ top:330px;}
+#main ul li span a{ display:block; width:100%; height:100%; position:absolute; left:0; top:0; line-height:60px; color:#fff; background:#f00;}
+#main ul li.active span{ transform:rotate(720deg); -webkit-transform:rotate(720deg);}
+#main ul li.active span.one{ left:50%; margin-left:-60px; top:10px; transition:0.5s 1s;}
+#main ul li.active span.two{ left:50%; margin-left:-60px; top:90px; transition:1s;}
+#main ul li.active span.thr{ left:50%; margin-left:-60px; top:170px; transition:0.5s 2s;}
+#main ul li.active span.fou{ left:50%; margin-left:-60px; top:250px; transition:1s;}
+#main ul li.active span.fiv{ left:50%; margin-left:-60px; top:330px; transition:0.5s 3s;}
+#main .prev,#main .next{ width:40px; text-align:center; height:40px; line-height:40px; cursor:pointer; background:rgba(0,0,0,0.5); position:absolute; top:50%; margin-top:-20px;}
+#main .prev{ border-radius:0 50% 50% 0; left:0;}
+#main .next{ border-radius:50% 0 0 50%; right:0;}

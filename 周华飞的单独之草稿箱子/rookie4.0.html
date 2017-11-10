@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>rookie4.0</title>
+<style>
+*{ margin:0; padding:0; list-style-type:none;}
+div,p{ width:200px; height:50px; background:#000; text-align:center; line-height:50px; font-size:40px; color:#fff;}
+.b{ background:blue;}
+.a{ color:#f00; height:200px; line-height:200px;}
+.center{ position:absolute; right:0; top:0;}
+</style>
+<script src="rookie4.0.js"></script>
+<script>
+fnR().eventBind(window,'load',function(){
+	//fnR().getId('div').css('background','red');
+	//fnR().getTag('p').css('background','red');
+	//alert(fnR().getTag('p').css('width'));
+	//fnR().getClass('p').getOne(1).css('background','red');	
+	//fnR().getClass('p','span').css('background','red');
+	//fnR().getClass('p').getOne(1).addClass('b').addClass('a');
+	//fnR().getClass('p').getOne(1).removeClass('a');
+	/*
+	fnR().getId('div').hover(function(){
+		fnR(this).css('background','red');		//this是个div,传入构造函数的数组(this.aEle)中,便可以进行后续操作
+		fnR().getClass('p').getOne(1).hide();
+	},function(){	
+		fnR(this).css('background','black');		//this是个div,传入构造函数的数组(this.aEle)中,便可以进行后续操作
+		fnR().getClass('p').getOne(1).show();
+	})
+	*/
+	/*
+	fnR().getClass('center').center(parseInt(fnR().getClass('center').css('width')),parseInt(fnR().getClass('center').css('height')));
+	fnR().resize(function(){		
+		fnR().getClass('center').center(parseInt(fnR().getClass('center').css('width')),parseInt(fnR().getClass('center').css('height')));	
+	})
+	*/
+	//alert(fnR().getTag('body').getInner().height);
+	//fnR().getClass('center').css('cursor','move').drag().resize();	
+	//fnR().getClass('center').css('cursor','move').drag().resize(function(){fnR().getClass('center').center(200,50);});	
+})
+</script>
+</head>
+<body>
+<div id="div">div</div>
+<p class="p">p0</p>
+<p class="p">p1</p>
+<p class="p">p2</p>
+<span id="span">
+	<p class="p">span=>p</p>
+</span>
+<div class="center">center</div>
+</body>
+</html>

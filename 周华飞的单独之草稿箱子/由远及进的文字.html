@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>由远及近的文字</title>
+<style>
+div{ position:absolute; transition:10s; top:200px;}
+</style>
+</head>
+
+<body>
+<script>
+	for(var i=0; i<128;i++)
+	{
+		document.write('<div>love</div>')			
+		var aDiv=document.getElementsByTagName('div');
+		aDiv[i].style.left=(500-i)+'px';
+		aDiv[i].style.fontSize=i+100+'px';
+		aDiv[i].style.color='#'+i*4+'';
+	}
+</script>
+</body>
+</html>

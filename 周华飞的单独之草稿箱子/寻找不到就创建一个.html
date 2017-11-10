@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	document.onclick=function()
+	{
+		var oZ=document.getElementById('z');
+		if(!oZ)
+		{
+			oZ=document.createElement('div');
+			oZ.id='z';
+			oZ.innerHTML='<h1>既然找不到，哪就创建一个吧</h1>';
+			document.body.appendChild(oZ);
+			var oZh=document.createElement('zhouhuafei');	
+			var oText=document.createTextNode('zhouhuafei is a handesome man');
+			oZh.appendChild(oText);
+			document.body.appendChild(oZh);
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

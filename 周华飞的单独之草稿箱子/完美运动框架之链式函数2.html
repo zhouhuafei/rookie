@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style>
+#div1 { width:200px; height:200px; background:#F00; position:absolute; left:0; top:0; }
+</style>
+</head>
+
+<body>
+<div id="div1"></div>
+<script>
+var oDiv=document.getElementById('div1');
+startMove(oDiv,{left:800},function(){alert('居然真的可以哎')})
+	function getStyle(obj, attr)
+	{
+		if(obj.currentStyle)
+		{
+			return obj.currentStyle[attr];
+		}
+		else
+		{
+			return getComputedStyle(obj, false)[attr];
+		}
+	}
+	function startMove(obj,json,fnEnd)
+        {
+                clearInterval(obj.timer);
+                obj.timer=setInterval(function()
+                {
+                        var bStop=true;   //假设所有的值都已经到了
+                        for(var attr in json)
+                        {
+                                var cur=0;
+                                if(attr=='opacity')
+                                {
+                                        cur=Math.round(parseFloat(getStyle(obj,attr)*100));
+                                }
+                                else
+                                {
+                                        cur=parseInt(getStyle(obj,attr));
+                                }
+                                var speed=(json[attr]-cur)/10;
+                                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+                                if(cur!=json[attr])bStop=false;					
+                                if(attr=='opacity')
+                                {
+                                        obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+                                        obj.style.opacity=(cur+speed)/100;
+                                }
+                                else
+                                {
+                                        obj.style[attr]=cur+speed+'px';
+                                }			
+                        }
+                        document.title=obj.offsetHeight+','+cur;
+                        if(bStop)
+                        {
+                                clearInterval(obj.timer);
+                                if(fnEnd)fnEnd();	//这里的函数要加括号
+                        }
+                },30);
+        }
+</script>
+</body>
+</html>
