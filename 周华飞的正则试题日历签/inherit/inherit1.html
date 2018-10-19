@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <meta charset="UTF-8">
-                <title></title>
-        </head>
-        <body>
-                <script>
-                        //拷贝继承＝》通用型
-                        function A(name){
-                                this.name=name;
-                        }
-                        A.prototype.showName=function(){
-                                alert(this.name);
-                        };
-                        function B(name){
-                                A.call(this,name);//属性继承
-                        }
-                        for(var attr in A.prototype){
-                                B.prototype[attr]=A.prototype[attr];//方法继承
-                        }
-                        var b= new B('zhou');
-                        b.showName();
-                </script>
-        </body>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script>
+            //拷贝继承＝》通用型
+            function A(name) {
+                this.name = name;
+            }
+
+            A.prototype.showName = function () {
+                alert(this.name);
+            };
+
+            function B(name) {
+                A.call(this, name);//属性继承
+            }
+
+            for (var attr in A.prototype) {
+                B.prototype[attr] = A.prototype[attr];//方法继承
+            }
+            var b = new B('zhou');
+            b.showName();
+        </script>
+    </body>
 </html>

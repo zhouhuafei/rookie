@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <meta charset="UTF-8">
-                <title></title>
-        </head>
-        <body>
-                <script>
-                        //类式继承＝》多用于有new的对象
-                        function A(name){
-                                this.name=name;
-                        }
-                        A.prototype.showName=function(){
-                                alert(this.name);
-                        };
-                        function B(name){
-                                A.call(this,name);//属性继承
-                        }
-                        function F(){};
-                        F.prototype=A.prototype;//方法继承
-                        B.prototype=new F();
-                        B.prototype.constructor=B;//修正指向,不然会指向A
-                        var b= new B('zhou');
-                        b.showName();
-                </script>
-        </body>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script>
+            //类式继承＝》多用于有new的对象
+            function A(name) {
+                this.name = name;
+            }
+
+            A.prototype.showName = function () {
+                alert(this.name);
+            };
+
+            function B(name) {
+                A.call(this, name);//属性继承
+            }
+
+            function F() {
+            }
+
+            F.prototype = A.prototype;//方法继承
+            B.prototype = new F();
+            B.prototype.constructor = B;//修正指向,不然会指向A
+            var b = new B('zhou');
+            b.showName();
+        </script>
+    </body>
 </html>

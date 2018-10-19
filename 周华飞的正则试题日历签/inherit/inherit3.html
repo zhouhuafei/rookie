@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-                <meta charset="UTF-8">
-                <title></title>
-        </head>
-        <body>
-                <script>
-                        //原型继承＝》多用于没有new的对象
-                        var obj={
-                                name:'zhou',
-                                showName:function(){
-                                        alert(this.name);
-                                }
-                        };
-                        function inherit(obj){
-                                function F(){}
-                                F.prototype=obj;
-                                return new F();
-                        }
-                        var b= inherit(obj);
-                        b.name='hua';
-                        b.showName();
-                </script>
-        </body>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script>
+            //原型继承＝》多用于没有new的对象
+            var obj = {
+                name: 'zhou',
+                showName: function () {
+                    alert(this.name);
+                },
+            };
+
+            function inherit(obj) {
+                function F() {
+                }
+
+                F.prototype = obj;
+                return new F();
+            }
+
+            var b = inherit(obj);
+            b.name = 'hua';
+            b.showName();
+            /*
+            如果对象的键对应的值是一个对象，则这个值是依然存在引用的。其实这里所谓的继承，无非就是对象深拷贝。
+            建议使用：https://github.com/zhouhuafei/zhf.obj-remove-quote
+            */
+        </script>
+    </body>
 </html>
